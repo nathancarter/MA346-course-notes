@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Welcome to your Jupyter Book &#8212; MA346 Course Notes</title>
+    <title>Course Notes for Data Science (MA346) &#8212; MA346 Course Notes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -28,11 +28,9 @@
     <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/intro.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Content in Jupyter Book" href="content.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -41,8 +39,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/intro.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Welcome to your Jupyter Book" />
-<meta property="og:description" content="Welcome to your Jupyter Book  This is a small sample book to give you a feel for how book content is structured.  Check out the content pages bundled with this " />
+<meta property="og:title"       content="Course Notes for Data Science (MA346)" />
+<meta property="og:description" content="Course Notes for Data Science (MA346)  These course notes are for Bentley University’s Data Science course (MA346) that will be taught by Nathan Carter in Fall " />
 <meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
 
 <meta name="twitter:card" content="summary">
@@ -75,17 +73,7 @@
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   
-  <ul class="nav sidenav_l1">
-  <li class="active">
-    <a href="#">1. Welcome to your Jupyter Book</a>
-  </li>
-  <li class="">
-    <a href="content.html">2. Content in Jupyter Book</a>
-  </li>
-  <li class="">
-    <a href="syntax.html">3. Jupyter Book markdown syntax</a>
-  </li>
-</ul>
+  
 </nav>
 <p class="navbar_footer">Powered by <a href="https://jupyterbook.org">Jupyter Book</a></p>
 </div>
@@ -116,7 +104,7 @@
                 <!-- ipynb file if we had a myst markdown file -->
                 
                 <!-- Download raw file -->
-                <a class="dropdown-buttons" href="_sources/intro.md.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
+                <a class="dropdown-buttons" href="_sources/intro.ipynb.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
                 <!-- Download PDF via print -->
                 <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
             </div>
@@ -130,6 +118,17 @@
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+            <div class="dropdown-buttons">
+                
+                <a class="binder-button" href="https://mybinder.org/v2/gh/nathancarter/ma346-course-notes/master?urlpath=tree/intro.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
+                
+                
+                
+            </div>
+        </div>
         
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
@@ -148,12 +147,12 @@
         
               <div>
                 
-  <div class="section" id="welcome-to-your-jupyter-book">
-<h1>Welcome to your Jupyter Book<a class="headerlink" href="#welcome-to-your-jupyter-book" title="Permalink to this headline">¶</a></h1>
-<p>This is a small sample book to give you a feel for how book content is
-structured.</p>
-<p>Check out the content pages bundled with this sample book to get started.</p>
-<div class="toctree-wrapper compound">
+  <div class="section" id="course-notes-for-data-science-ma346">
+<h1>Course Notes for Data Science (MA346)<a class="headerlink" href="#course-notes-for-data-science-ma346" title="Permalink to this headline">¶</a></h1>
+<p>These course notes are for <a class="reference external" href="http://www.bentley.edu">Bentley University</a>’s Data Science course (MA346) that will be taught by <a class="reference external" href="http://nathancarter.github.io">Nathan Carter</a> in Fall 2020.</p>
+<div class="alert alert-warning">
+<p class="admonition-title">Warning</p>
+<p>This course notes website is just beginning, so the content here is incomplete.  Check back later.</p>
 </div>
 </div>
 
@@ -166,7 +165,6 @@ structured.</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="content.html" title="next page">Content in Jupyter Book</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
