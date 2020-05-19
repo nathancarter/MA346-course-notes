@@ -1,0 +1,15 @@
+# Book settings
+title: MA346 Course Notes
+author: Nathan Carter
+logo: logo.png
+
+repository:
+  url: https://github.com/nathancarter/ma346-course-notes
+
+html:
+  baseurl: "https://nathancarter.github.io/ma346-course-notes"
+  navbar_number_sections: true
+
+latex:
+  latex_documents:
+    targetname: book.tex
