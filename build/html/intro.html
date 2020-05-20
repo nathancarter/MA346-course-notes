@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Course Notes for Data Science (MA346) &#8212; MA346 Course Notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="./static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="./static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="./static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="./static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="./static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="./static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="./static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="./static/documentation_options.js"></script>
+    <script src="./static/sphinx-book-theme.js"></script>
+    <script src="./static/jquery.js"></script>
+    <script src="./static/underscore.js"></script>
+    <script src="./static/doctools.js"></script>
+    <script src="./static/language_data.js"></script>
+    <script src="./static/togglebutton.js"></script>
+    <script src="./static/clipboard.min.js"></script>
+    <script src="./static/copybutton.js"></script>
+    <script src="./static/mystnb.js"></script>
+    <script src="./static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/intro.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/intro.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Course Notes for Data Science (MA346)" />
+<meta property="og:description" content="Course Notes for Data Science (MA346)  These course notes are for Bentley University’s Data Science course (MA346) that will be taught by Nathan Carter in Fall " />
+<meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/./static/logo.png" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="./static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  
+</nav>
+<p class="navbar_footer">Powered by <a href="https://jupyterbook.org">Jupyter Book</a></p>
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="./sources/intro.ipynb.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Edit this page -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+            <div class="dropdown-buttons">
+                
+                <a class="binder-button" href="https://mybinder.org/v2/gh/nathancarter/ma346-course-notes/master?urlpath=tree/intro.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="./static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
+                
+                
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#course-schedule-fall-2020" class="nav-link">Course schedule, Fall 2020</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="course-notes-for-data-science-ma346">
+<h1>Course Notes for Data Science (MA346)<a class="headerlink" href="#course-notes-for-data-science-ma346" title="Permalink to this headline">¶</a></h1>
+<p>These course notes are for <a class="reference external" href="http://www.bentley.edu">Bentley University</a>’s Data Science course (MA346) that will be taught by <a class="reference external" href="http://nathancarter.github.io">Nathan Carter</a> in Fall 2020.</p>
+<div class="alert alert-warning">
+<p class="admonition-title">Warning</p>
+<p>This course notes website is just beginning, so the content here is incomplete.  Check back later.</p>
+</div>
+<div class="section" id="course-schedule-fall-2020">
+<h2>Course schedule, Fall 2020<a class="headerlink" href="#course-schedule-fall-2020" title="Permalink to this headline">¶</a></h2>
+<p>Each topic below will become a link to what we will cover in class that day, once I’ve made more progress in completing these course notes.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Week</p></th>
+<th class="head"><p>Date in Fall 2020</p></th>
+<th class="head"><p>Content for the day</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>9/3</p></td>
+<td><p>Introduction and mathematical foundations</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>9/10</p></td>
+<td><p>Jupyter and a Python/pandas review</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>9/17</p></td>
+<td><p>Before and after, and single-table verbs</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>9/24</p></td>
+<td><p>Abstraction, Version Control, and GitHub</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>10/1</p></td>
+<td><p>Math and Stats in Python, with Visualization</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>10/8</p></td>
+<td><p>Processing the rows of a DataFrame</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>10/15</p></td>
+<td><p>Concatenation and Merging</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>10/22</p></td>
+<td><p>Miscellaneous Munging Methods (ETL)</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>10/29</p></td>
+<td><p>Dashboards</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>11/5</p></td>
+<td><p>Relations as Graphs and Network Analysis</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>11/12</p></td>
+<td><p>Relations as Matrices and Decompositions</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>11/19</p></td>
+<td><p>Introduction to Machine Learning</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>11/26</p></td>
+<td><p>Thanksgiving break</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p>12/3</p></td>
+<td><p>Final Exam Review and Final Project Workshop</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Carter<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="./static/js/index.js"></script>
+    
+  </body>
+</html>

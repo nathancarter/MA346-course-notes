@@ -1,6 +1,6 @@
 
 echo "Removing build/ folder..."
-rm -rf build/
+rm -rf build
 echo "Running build..."
 jupyter-book build .
 echo "Renaming _build/_static/_sources to remove underscores..."
