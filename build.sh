@@ -11,10 +11,10 @@ echo "Updating all links to remove underscores..."
 for file in build/html/*.html
 do
     echo "    $file"
-    sed 's/_static\//static\//g' $file > $file.tmp
+    sed 's/_static\//build\/html\/static\//g' $file > $file.tmp
     rm $file
     mv $file.tmp $file
-    sed 's/_sources\//sources\//g' $file > $file.tmp
+    sed 's/_sources\//build\/html\/sources\//g' $file > $file.tmp
     rm $file
     mv $file.tmp $file
 done
