@@ -6,7 +6,7 @@ These course notes are for [Bentley University](http://www.bentley.edu)'s Data S
 This course notes website is just beginning, so the content here is incomplete.  Check back later.
 ```
 
-## Course schedule, Fall 2020
+## Course schedule
 
 Each topic below will become a link to what we will cover in class that day, once I've made more progress in completing these course notes.
 
@@ -26,4 +26,3 @@ Each topic below will become a link to what we will cover in class that day, onc
 | 12   | 11/19 | Introduction to Machine Learning             |
 | 13   | 11/26 | Thanksgiving break                           |
 | 14   | 12/3  | Final Exam Review and Final Project Workshop |
-

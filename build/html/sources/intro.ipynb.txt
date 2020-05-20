@@ -17,7 +17,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Course schedule, Fall 2020\n",
+    "## Course schedule\n",
     "\n",
     "Each topic below will become a link to what we will cover in class that day, once I've made more progress in completing these course notes.\n",
     "\n",
@@ -38,13 +38,6 @@
     "| 13   | 11/26 | Thanksgiving break                           |\n",
     "| 14   | 12/3  | Final Exam Review and Final Project Workshop |"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
   }
  ],
  "metadata": {
