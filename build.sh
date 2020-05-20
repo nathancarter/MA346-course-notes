@@ -5,8 +5,8 @@ echo "Running build..."
 jupyter-book build .
 echo "Renaming _build/_static/_sources to remove underscores..."
 mv _build build
-mv build/_static build/static
-mv build/_sources build/sources
+mv build/html/_static build/html/static
+mv build/html/_sources build/html/sources
 echo "Updating all links to remove underscores..."
 for file in build/html/*.html
 do
