@@ -1,0 +1,16 @@
+
+```{admonition} Big Picture
+---
+class: alert alert-primary
+---
+Content
+```
+
+
+```{admonition} Learning on Your Own - Topic Name Here
+---
+class: alert alert-danger
+---
+Content
+```
+
