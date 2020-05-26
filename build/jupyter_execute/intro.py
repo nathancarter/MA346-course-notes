@@ -26,3 +26,12 @@ Each topic below will become a link to what we will cover in class that day, onc
 | 12   | 11/19 | Introduction to Machine Learning             |
 | 13   | 11/26 | Thanksgiving break                           |
 | 14   | 12/3  | Final Exam Review and Final Project Workshop |
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+
+
+chapter-1-intro-to-data-science.ipynb
+```
