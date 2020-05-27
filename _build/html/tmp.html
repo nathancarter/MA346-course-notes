@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Week 5 &#8212; MA346 Course Notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/tmp.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/tmp.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Week 5" />
+<meta property="og:description" content="Week 5  Python Data Science Toolbox 2/2  Chapter 1: Using iterators in PythonLand  To convert an iterable to an iterator and use it:  my_iterable = [ 'one', 'tw" />
+<meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="intro.html">1. Course Notes for Data Science (MA346)</a>
+  </li>
+  <li class="">
+    <a href="chapter-1-intro-to-data-science.html">2. Introduction to Data Science</a>
+  </li>
+  <li class="">
+    <a href="big-cheat-sheet.html">3. Big Cheat Sheet</a>
+  </li>
+</ul>
+</nav>
+<p class="navbar_footer">None</p>
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="_sources/tmp.md.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Edit this page -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#python-data-science-toolbox-2-2" class="nav-link">Python Data Science Toolbox 2/2</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#chapter-1-using-iterators-in-pythonland" class="nav-link">Chapter 1: Using iterators in PythonLand</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#chapter-2-list-comprehensions-and-generators" class="nav-link">Chapter 2: List comprehensions and generators</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#chapter-3-bringing-it-all-together" class="nav-link">Chapter 3: Bringing it all together!</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="week-5">
+<h1>Week 5<a class="headerlink" href="#week-5" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="python-data-science-toolbox-2-2">
+<h2><a class="reference external" href="https://www.datacamp.com/courses/python-data-science-toolbox-part-2">Python Data Science Toolbox 2/2</a><a class="headerlink" href="#python-data-science-toolbox-2-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="chapter-1-using-iterators-in-pythonland">
+<h3>Chapter 1: Using iterators in PythonLand<a class="headerlink" href="#chapter-1-using-iterators-in-pythonland" title="Permalink to this headline">¶</a></h3>
+<p>To convert an iterable to an iterator and use it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_iterable</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span> <span class="p">]</span>  <span class="c1"># example</span>
+<span class="n">my_iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span> <span class="n">my_iterable</span> <span class="p">)</span>
+<span class="n">first_value</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span> <span class="n">my_iterator</span> <span class="p">)</span>        <span class="c1"># &#39;one&#39;</span>
+<span class="n">second_value</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span> <span class="n">my_iterator</span> <span class="p">)</span>       <span class="c1"># &#39;two&#39;</span>
+<span class="c1"># and so on</span>
+</pre></div>
+</div>
+<p>To attach indices to the elements of an iterable:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_iterable</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span> <span class="p">]</span>  <span class="c1"># example</span>
+<span class="n">with_indices</span> <span class="o">=</span> <span class="nb">enumerate</span><span class="p">(</span> <span class="n">my_iterable</span> <span class="p">)</span>
+<span class="n">my_iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span> <span class="n">with_indices</span> <span class="p">)</span>
+<span class="n">first_value</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span> <span class="n">my_iterator</span> <span class="p">)</span>        <span class="c1"># (0,&#39;one&#39;)</span>
+<span class="n">second_value</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span> <span class="n">my_iterator</span> <span class="p">)</span>       <span class="c1"># (1,&#39;two&#39;)</span>
+<span class="c1"># and so on; see also &quot;Looping Constructs&quot; earlier</span>
+</pre></div>
+</div>
+<p>To join iterables into tuples, use <code class="docutils literal notranslate"><span class="pre">zip</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">iterable1</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">5</span> <span class="p">)</span>
+<span class="n">iterable2</span> <span class="o">=</span> <span class="s1">&#39;five!&#39;</span>
+<span class="n">iterable3</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;How&#39;</span><span class="p">,</span> <span class="s1">&#39;are&#39;</span><span class="p">,</span> <span class="s1">&#39;you&#39;</span><span class="p">,</span> <span class="s1">&#39;today&#39;</span><span class="p">,</span> <span class="s1">&#39;?&#39;</span> <span class="p">]</span>
+<span class="nb">all</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">iterable1</span><span class="p">,</span> <span class="n">iterable2</span><span class="p">,</span> <span class="n">iterable3</span> <span class="p">)</span>
+<span class="nb">next</span><span class="p">(</span> <span class="nb">all</span> <span class="p">)</span>     <span class="c1"># (0,&#39;f&#39;,&#39;How&#39;)</span>
+<span class="nb">next</span><span class="p">(</span> <span class="nb">all</span> <span class="p">)</span>     <span class="c1"># (1,&#39;i&#39;,&#39;are&#39;)</span>
+<span class="c1"># and so on, or use this syntax:</span>
+<span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">iterable1</span><span class="p">,</span> <span class="n">iterable2</span> <span class="p">):</span>
+    <span class="n">do_something_with</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Think of <code class="docutils literal notranslate"><span class="pre">zip</span></code> as converting a list of rows into a list of columns, a “matrix transpose,” which is its own inverse:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">row1</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">]</span>
+<span class="n">row2</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span> <span class="p">]</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">row1</span><span class="p">,</span> <span class="n">row2</span> <span class="p">)</span>     <span class="c1"># swap rows and columns</span>
+<span class="nb">print</span><span class="p">(</span> <span class="o">*</span><span class="n">cols</span> <span class="p">)</span>               <span class="c1"># (1,4) (2,5) (3,6)</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">row1</span><span class="p">,</span> <span class="n">row2</span> <span class="p">)</span>     <span class="c1"># restart iterator</span>
+<span class="n">undo1</span><span class="p">,</span> <span class="n">undo2</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span> <span class="o">*</span><span class="n">cols</span> <span class="p">)</span>  <span class="c1"># swap rows/cols again</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">undo1</span><span class="p">,</span> <span class="n">undo2</span> <span class="p">)</span>        <span class="c1"># (1,2,3) (4,5,6)</span>
+</pre></div>
+</div>
+<p>Pandas can read CSV files into DataFrames in chunks, creating an iterable out of a file too large for memory:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="n">filename</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">100</span> <span class="p">):</span>
+    <span class="n">process_one_chunk</span><span class="p">(</span> <span class="n">chunk</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="chapter-2-list-comprehensions-and-generators">
+<h3>Chapter 2: List comprehensions and generators<a class="headerlink" href="#chapter-2-list-comprehensions-and-generators" title="Permalink to this headline">¶</a></h3>
+<p>List comprehensions build a list from an output expression and a <code class="docutils literal notranslate"><span class="pre">for</span></code> clause:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="p">]</span>      <span class="c1"># == [9,16,25]</span>
+</pre></div>
+</div>
+<p>You can nest list comprehensions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="p">]</span>
+  <span class="c1"># == [(0,0),(0,1),(0,2),(0,3),</span>
+  <span class="c1">#     (1,0),(1,1),(1,2),(1,3),</span>
+  <span class="c1">#     (2,0),(2,1),(2,2),(2,3)]</span>
+</pre></div>
+</div>
+<p>You can put conditions on the <code class="docutils literal notranslate"><span class="pre">for</span></code> clause:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="p">]</span>  <span class="c1"># == [ (1,2), (2,1), (2,2) ]</span>
+</pre></div>
+</div>
+<p>You can put conditions in the output expression:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">some_data</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">0.65</span><span class="p">,</span> <span class="mf">9.12</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.1</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">50.6</span> <span class="p">]</span>
+<span class="p">[</span> <span class="n">x</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;NEG&#39;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">some_data</span> <span class="p">]</span>
+  <span class="c1"># == [ 0.65, 9.12, &#39;NEG&#39;, 2.8, &#39;NEG&#39; ]</span>
+</pre></div>
+</div>
+<p>A dict comprehension creates a dictionary from an output expression in <code class="docutils literal notranslate"><span class="pre">key:value</span></code> form, plus a <code class="docutils literal notranslate"><span class="pre">for</span></code> clause:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span><span class="s1">&#39;two&#39;</span><span class="p">,</span><span class="s1">&#39;three&#39;</span><span class="p">]</span> <span class="p">}</span>
+  <span class="c1"># == { &#39;one&#39;:&#39;One&#39;, &#39;two&#39;:&#39;Two&#39;, &#39;three&#39;:&#39;Three&#39; }</span>
+</pre></div>
+</div>
+<p>Just like list comprehensions, but with parentheses:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="p">(</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">next</span><span class="p">(</span> <span class="n">g</span> <span class="p">)</span>                         <span class="c1"># == 9</span>
+<span class="nb">next</span><span class="p">(</span> <span class="n">g</span> <span class="p">)</span>                         <span class="c1"># == 16</span>
+<span class="nb">next</span><span class="p">(</span> <span class="n">g</span> <span class="p">)</span>                         <span class="c1"># == 25</span>
+</pre></div>
+</div>
+<p>You can build generators with functions and <code class="docutils literal notranslate"><span class="pre">yield</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">just_like_range</span> <span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">a</span>
+    <span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">counter</span>
+        <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">list</span><span class="p">(</span> <span class="n">just_like_range</span><span class="p">(</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span> <span class="p">)</span> <span class="p">)</span>   <span class="c1"># == [5,6,7,8]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="chapter-3-bringing-it-all-together">
+<h3>Chapter 3: Bringing it all together!<a class="headerlink" href="#chapter-3-bringing-it-all-together" title="Permalink to this headline">¶</a></h3>
+<p>(This chapter was review only.)</p>
+</div>
+</div>
+</div>
+<div class="section" id="week-7">
+<h1>Week 7<a class="headerlink" href="#week-7" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction-to-data-visualization-with-python">
+<h2><a class="reference external" href="https://www.datacamp.com/courses/introduction-to-data-visualization-in-python">Introduction to Data Visualization with Python</a><a class="headerlink" href="#introduction-to-data-visualization-with-python" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="chapter-2-plotting-2d-arrays">
+<h3>Chapter 2: Plotting 2D arrays<a class="headerlink" href="#chapter-2-plotting-2d-arrays" title="Permalink to this headline">¶</a></h3>
+<p>To plot a bivariate function using colors:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># choose the sampling points in both axes:</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">num_xpoints</span> <span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span><span class="p">,</span> <span class="n">num_ypoints</span> <span class="p">)</span>
+<span class="c1"># create pairs from these axes:</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="p">)</span>
+<span class="c1"># broadcast a function across those points:</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span>
+<span class="c1"># plot it in color:</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolor</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>       <span class="c1"># optional but helpful</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span> <span class="s1">&#39;tight&#39;</span> <span class="p">)</span>  <span class="c1"># remove whitespace</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># optionally, the pcolor call can take a color</span>
+<span class="c1"># map parameter, one of a host of palettes, e.g.:</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolor</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;autumn&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>To make a contour plot instead of a color map plot:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># replace the pcolor line with this:</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="mi">50</span> <span class="p">)</span>  <span class="c1"># choose num. contours</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">)</span>     <span class="c1"># fill the contours</span>
+</pre></div>
+</div>
+<p>To make a bivariate histogram:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># for rectangular bins:</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist2d</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="p">(</span><span class="n">xbins</span><span class="p">,</span><span class="n">ybins</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="c1"># with optional x and y ranges:</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist2d</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="p">(</span><span class="n">xbins</span><span class="p">,</span><span class="n">ybins</span><span class="p">),</span>
+            <span class="nb">range</span><span class="o">=</span><span class="p">((</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">),(</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span><span class="p">))</span> <span class="p">)</span>
+<span class="c1"># for hexagonal bins:</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hexbin</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
+            <span class="n">gridsize</span><span class="o">=</span><span class="p">(</span><span class="n">num_x_hexes</span><span class="p">,</span><span class="n">num_y_hexes</span><span class="p">)</span> <span class="p">)</span>
+<span class="c1"># with optional x and y ranges:</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hexbin</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
+            <span class="n">gridsize</span><span class="o">=</span><span class="p">(</span><span class="n">num_x_hexes</span><span class="p">,</span><span class="n">num_y_hexes</span><span class="p">),</span>
+            <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>To display an image from a file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span> <span class="s1">&#39;filename.png&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span> <span class="n">image</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span> <span class="s1">&#39;off&#39;</span> <span class="p">)</span>           <span class="c1"># axes don&#39;t apply here</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># to collapse a color image to grayscale:</span>
+<span class="n">gray_img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span> <span class="n">gray_img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span> <span class="p">)</span>
+<span class="c1"># to alter the aspect ratio:</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span> <span class="n">gray_img</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="n">height</span><span class="o">/</span><span class="n">width</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Carter<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
