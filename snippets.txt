@@ -14,3 +14,7 @@ class: alert alert-danger
 Content
 ```
 
+<a href="../../_slides/chapter-1-slides.html">See also the slides that summarize a portion of this content.</a>
+
+[See also the corresponding course notes, here.](../_build/html/chapter-1-intro-to-data-science.html)
+
