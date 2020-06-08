@@ -1,5 +1,7 @@
 # Introduction to Data Science
 
+<a href="../../_slides/chapter-1-slides.html">See also the slides that summarize a portion of this content.</a>
+
 ## What is data science?
 
 The term "data science" was coined in 2001, attempting to describe a new field.  Some argue that it's nothing more than the natural evolution of statistics, and shouldn't be called a new field at all.  But others argue that it's more interdisciplinary.  For example, in *The Data Science Design Manual* (2017), Steven Skiena says the following.
@@ -11,6 +13,21 @@ This echoes a famous blog post by Drew Conway in 2013, called [The Data Science 
 ![Drew Conway's Data Science Venn Diagram](https://images.squarespace-cdn.com/content/v1/5150aec6e4b0e340ec52710a/1364352051365-HZAS3CLBF7ABLE3F5OBY/ke17ZwdGBToddI8pDm48kB2M2-8_3EzuSSXvzQBRsa1Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxPe_8B-x4gq2tfVez1FwLYYZXud0o-3jV-FAs7tmkMHY-a7GzQZKbHRGZboWC-fOc/Data_Science_VD.png?format=1500w)
 
 Regardless of whether data science is just a part of statistics, and regardless of the domain to which we're applying data science, the goal is the same: **to turn data into actionable value.**  The professional society INFORMS defines the related field of analytics as "the scientific process of transforming data into insight for making better decisions."
+
+# What do data scientists do?
+
+Turning data into actionable value usually involves answering questions using data.  Here's a typical workflow for how that plays out in practice.
+
+1. Obtain data that you hope will help answer the question.
+1. Explore the data to understand it.
+1. Clean and prepare the data for analysis.
+1. Perform analysis, model building, testing, etc.
+
+   (The analysis is the step most people think of as data science, but it's just one step!  Notice how much more there is that surrounds it.)
+1. Draw conclusions from your work.
+1. Report those conclusions to the relevant stakeholders.
+
+Our course focuses on all the steps *except for* the analysis.  You've learned some introductory statistical analysis in one of the course prerequisites (GB213), and we will leverage that.  (Later in our course we will review simple linear regression and hypothesis testing.)  If you have taken other relevant courses in statistics, mathematical modeling, econometrics, etc., and want to bring that knowledge in to use in this course, great, but it's not a requirement.  Other advanced statistics and modeling courses you take later will essentially plug into step 4 in this data science workflow.
 
 ## What's in our course?
 

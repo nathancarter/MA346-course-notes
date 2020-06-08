@@ -6,8 +6,6 @@ This file summarizes all the coding concepts learned from DataCamp in MA346, as 
 
 ## Before Week 2: Review of CS230
 
----
-
 ### [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science) (optional, basic review)
 
 #### Chapter 1: Python Basics
@@ -230,8 +228,6 @@ np.std( a )
 # and others
 ```
 
----
-
 ### [Python Data Science Toolbox, Part 1](https://www.datacamp.com/courses/python-data-science-toolbox-part-1) (optional, basic review)
 
 #### Chapter 1: Writing your own functions
@@ -353,8 +349,6 @@ def solve_equation ( a, b ):
 solve_equation( 2, -1 )    # == 0.5
 solve_equation( 0, 5 )     # == None
 ```
-
----
 
 ### [Intermediate Python](https://www.datacamp.com/courses/intermediate-python-for-data-science) (required review)
 
@@ -566,8 +560,6 @@ my_dataframe["column"].apply( function )  # a Series
 ```
 
 
----
-
 ### [pandas Foundations](https://www.datacamp.com/courses/pandas-foundations) (required review)
 
 #### Chapter 1: Data ingestion & inspection
@@ -660,8 +652,6 @@ To save a plot to a file:
 plt.savefig( 'filename.png' )  # or .jpg or .pdf
 ```
 
----
-
 ### [Manipulating DataFrames with pandas](https://www.datacamp.com/courses/manipulating-dataframes-with-pandas) (required review)
 
 #### Chapter 1: Extracting and transforming data
@@ -723,8 +713,6 @@ You can also map columns through `dict`s, not just functions.
 ---
 
 ## Before Week 3
-
----
 
 ### [Manipulating DataFrames with pandas](https://learn.datacamp.com/courses/manipulating-dataframes-with-pandas)
 
@@ -882,8 +870,6 @@ df['col A'] = grouped['col A']
 
 ## Before Week 4: Review of Visualization in CS230
 
----
-
 ### [pandas Foundations](https://www.datacamp.com/courses/pandas-foundations)
 
 #### Chapter 2: Exploratory data analysis
@@ -910,8 +896,6 @@ df.describe()        # summary statistics
 ---
 
 ## Before Week 5
-
----
 
 ### [Intermediate Python](https://www.datacamp.com/courses/intermediate-python-for-data-science)
 
@@ -1251,8 +1235,6 @@ sns.heatmap( M )
 
 ## Before Week 6
 
----
-
 ### [Merging DataFrames with pandas](https://learn.datacamp.com/courses/merging-dataframes-with-pandas)
 
 #### Chapter 1: Preparing data
@@ -1379,8 +1361,6 @@ merged = pd.merge_asof( df1, df2 )
 ---
 
 ## Before Week 8
-
----
 
 ### [Streamlined Data Ingestion with pandas](https://learn.datacamp.com/courses/streamlined-data-ingestion-with-pandas)
 
@@ -1555,8 +1535,6 @@ result = json_normalize( data["maybe a column"],
 
 ## Before Week 9
 
----
-
 ### [Introduction to SQL](https://learn.datacamp.com/courses/introduction-to-sql)
 
 #### Chapter 1: Selecting columns
@@ -1722,9 +1700,6 @@ ORDER BY division;
 ---
 
 ## Additional Useful References
-
----
-
 
 ### [Python Data Science Toolbox, Part 2](https://www.datacamp.com/courses/python-data-science-toolbox-part-2)
 
