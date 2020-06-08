@@ -1,4 +1,4 @@
 ~*.*x
 .DS_Store
-.ipynb_checkpoints/*
+*-checkpoint.ipynb
 *.swp
