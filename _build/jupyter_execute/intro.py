@@ -64,5 +64,6 @@ Each topic below will become a link to what we will cover in class that day, onc
 
 
 chapter-1-intro-to-data-science.ipynb
+chapter-2-mathematical-foundations.ipynb
 big-cheat-sheet.ipynb
 ```

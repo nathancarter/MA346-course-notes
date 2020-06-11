@@ -14,6 +14,17 @@ class: alert alert-danger
 Content
 ```
 
+
+```{admonition} Exercise <num>
+---
+class: alert alert-secondary
+---
+Content
+```
+
+All alert classes:
+    primary, secondary, success, danger, warning, info, light, dark
+
 <a href="../../_slides/chapter-1-slides.html">See also the slides that summarize a portion of this content.</a>
 
 [See also the corresponding course notes, here.](../_build/html/chapter-1-intro-to-data-science.html)
