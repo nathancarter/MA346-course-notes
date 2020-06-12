@@ -25,7 +25,7 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/mystnb.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -77,21 +77,20 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="intro.html">1. Course Notes for Data Science (MA346)</a>
-  </li>
   <li class="active">
-    <a href="">2. Introduction to Data Science</a>
+    <a href="">1. Introduction to Data Science</a>
   </li>
   <li class="">
-    <a href="chapter-2-mathematical-foundations.html">3. Mathematical Foundations</a>
+    <a href="chapter-2-mathematical-foundations.html">2. Mathematical Foundations</a>
   </li>
   <li class="">
-    <a href="big-cheat-sheet.html">4. Big Cheat Sheet</a>
+    <a href="big-cheat-sheet.html">3. Big Cheat Sheet</a>
   </li>
 </ul>
 </nav>
-<p class="navbar_footer">None</p>
+
+ <!-- To handle the deprecated key -->
+
 </div>
 
 
@@ -120,31 +119,20 @@
                 <!-- ipynb file if we had a myst markdown file -->
                 
                 <!-- Download raw file -->
-                <a class="dropdown-buttons" href="_sources/chapter-1-intro-to-data-science.ipynb.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <a class="dropdown-buttons" href="_sources/chapter-1-intro-to-data-science.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
                 <!-- Download PDF via print -->
                 <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
             </div>
             
         </div>
 
-        <!-- Edit this page -->
+        <!-- Source interaction buttons -->
         
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
-        
-        <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-            <div class="dropdown-buttons">
-                
-                <a class="binder-button" href="https://mybinder.org/v2/gh/nathancarter/ma346-course-notes/master?urlpath=tree/chapter-1-intro-to-data-science.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
-                
-                
-                
-            </div>
-        </div>
         
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
@@ -215,7 +203,7 @@
 <p>But there are two focuses of our course that will make a big difference.</p>
 <div class="section" id="learning-on-your-own-loyo">
 <h3>Learning on your own (LOYO)<a class="headerlink" href="#learning-on-your-own-loyo" title="Permalink to this headline">¶</a></h3>
-<div class="alert alert-primary">
+<div class="alert alert-primary admonition">
 <p class="admonition-title">Big Picture</p>
 <p>I once heard a director of informatics in the health care industry describe how quickly the field of data science changes by saying, “There aren’t any experts; it’s just who’s the fastest learner.”  For that reason, it’s essential to cultivate the skill of being able to learn new tools and concepts on your own.</p>
 </div>
@@ -225,7 +213,7 @@
 <div class="section" id="excellent-communication">
 <h3>Excellent communication<a class="headerlink" href="#excellent-communication" title="Permalink to this headline">¶</a></h3>
 <p>This was already mentioned earlier, but I will re-emphasize it here, because of how important it is.  In a meeting between the Bentley University Career Services office and about a dozen employers of our graduates, the employers were asked whether they preferred technical knowledge or what some call “soft skills” and others call “power skills,” which include communication perhaps first and foremost.  Unanimously every employer chose the latter.</p>
-<div class="alert alert-primary">
+<div class="alert alert-primary admonition">
 <p class="admonition-title">Big Picture</p>
 <p>Data science is about turning data into actionable knowledge.  If a data scientist cannot take the results of their analysis and effectively communicate them to decision makers, they have not turned data into actionable knowledge, and have therefore failed at their goal.  Even if the insights are brilliant, if they are never shared with those who need them, they achieve nothing.  Good communication is essential for data work.</p>
 </div>
@@ -235,7 +223,7 @@
 <div class="section" id="where-should-i-start">
 <h2>Where should I start?<a class="headerlink" href="#where-should-i-start" title="Permalink to this headline">¶</a></h2>
 <p>There are several topics you can investigate on your own that will help you get a leg up in our course.  All of these topics are optional, and in our course are available for teams to investigate outside of class and report back, as described above.</p>
-<div class="alert alert-danger">
+<div class="alert alert-danger admonition">
 <p class="admonition-title">Learning on Your Own - File Explorers and Shell Commands</p>
 <p>On Windows, the file explorer is called Windoows Explorer; on Mac, it is called Finder.  It is essential that every computer-literate person knows how to use these tools.  Most of the actions you can take with your mouse in Windows Explorer or OS X Finder can also be taken using commands at a command prompt.  On Windows, this prompt can be found by running command.exe; on Mac, it can be found in Terminal.app.  It is very useful to know how to do at least basic file manipulation tools with the command prompt, because it enables you to take such action in cloud computing evironments where a file explorer is not always available.</p>
 </div>
@@ -263,7 +251,7 @@
 </ul>
 </li>
 </ul>
-<div class="alert alert-danger">
+<div class="alert alert-danger admonition">
 <p class="admonition-title">Learning on Your Own - Python IDEs</p>
 <p>One of the prerequisites for MA346 is CS230, which introduces the Python language.  I assume that you know from that course how to install Python on your own computer and use at least one Python Integrated Development Environment (IDE), such as <a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a>, <a class="reference external" href="https://code.visualstudio.com/">VS Code</a>, <a class="reference external" href="https://realpython.com/python-idle/">IDLE</a>, <a class="reference external" href="http://www.pydev.org/">Eclipse (through PyDev)</a>, <a class="reference external" href="https://atom.io/packages/ide-python">Atom (through the ide-python package)</a>, and others.</p>
 </div>
@@ -275,7 +263,7 @@
 <li><p>a list of the features that IDEs have that computational notebooks typically do not have</p></li>
 <li><p>a demonstration of a few of the most useful distinguishing features of these tools</p></li>
 </ul>
-<div class="alert alert-danger">
+<div class="alert alert-danger admonition">
 <p class="admonition-title">Learning on Your Own - Numerical Analysis</p>
 <p>One valuable contribution that computers make to mathematics is the ability to get excellent approximations to mathematical questions without needing to do extensive by-hand calculations.  For instance, recall the trapezoidal rule for estimating the result of an integral (covered in the courses MA126 and MA139).  It says that we can estimate the value of
 <span class="math notranslate nohighlight">\(\int_a^b f(x)\;dx\)</span>

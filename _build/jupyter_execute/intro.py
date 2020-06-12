@@ -13,7 +13,7 @@ Each topic below will become a link to what we will cover in class that day, onc
 | Week | Date      | Content for the day   |
 |------|-----------|-----------------------|
 | 1    | 9/3/2020  | Introduction to data science ([notes](chapter-1-intro-to-data-science), <a href='../../_slides/chapter-1-slides.html'>slides</a>) |
-|      |           | Mathematical foundations (not yet ready) |
+|      |           | Mathematical foundations ([notes](chapter-2-mathematical-foundations), slides not yet ready) |
 |      |           | [DataCamp to review before Week 2](big-cheat-sheet.html#before-week-2-review-of-cs230) |
 |      |           | &nbsp;       |
 | 2    | 9/10/2020 | Computational notebooks (Jupyter) (not yet ready) |
