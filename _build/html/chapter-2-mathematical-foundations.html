@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
@@ -472,7 +473,7 @@
 <div class="section" id="relations-and-functions-in-data">
 <h2>Relations and functions in data<a class="headerlink" href="#relations-and-functions-in-data" title="Permalink to this headline">¶</a></h2>
 <div class="alert alert-secondary admonition">
-<p class="admonition-title">Exercise 4</p>
+<p class="admonition-title">Exercise 4 - food inspections</p>
 <p>The table below shows a sample of data taken from <a class="reference external" href="https://data.world/cityofchicago/food-inspections">a larger dataset on data.world about Chicago city food inspections</a>.  Imagine the entire dataset of over 150,000 rows based on the sample of the first 10 rows shown below.</p>
 <ol class="simple">
 <li><p>Name at least two relations expressed by the contents of this table.  (You need not use all the columns.)</p></li>
@@ -554,7 +555,7 @@
 </tbody>
 </table>
 <div class="alert alert-secondary admonition">
-<p class="admonition-title">Exercise 5</p>
+<p class="admonition-title">Exercise 5 - tech companies</p>
 <p>The table below shows a sample of data taken from <a class="reference external" href="https://data.world/datanerd/2016-technology-fast-500">a larger dataset on data.world about the 2016 Technology Fast 500</a>.  Imagine the entire dataset of 500 rows based on the sample of the first 10 rows shown below.</p>
 <ol class="simple">
 <li><p>Name at least two relations expressed by the contents of this table.  (You need not use all the columns.)</p></li>
@@ -671,23 +672,28 @@
 <li><p>As with every function, for each input company, there is exactly one CEO output.</p></li>
 <li><p>But in this case, also, for each CEO output, there is exactly one input company.</p></li>
 </ul>
-<p>While we chose to use the company as input and provide the CEO name as output, we could also have done it in the other order.  That is, we could have created a function <code class="docutils literal notranslate"><span class="pre">find_company_for_ceo</span></code> that takes a CEO name as input and provides the corresponding company name as output.</p>
-<ul class="simple">
-<li><p>Point out the earlier example of an invertible function, and that it simply means swapping two columns in the data table that defines the function.</p></li>
-<li><p>In other words, an invertible function is a relation that’s also a function when you swap inputs and outputs; a function is invertible if <em>for each</em> output, <em>there is exactly one</em> input.</p></li>
-</ul>
+<p>While we chose to use the company as input and provide the CEO name as output, we could also have done it in the other order.  That is, we could have created a function <code class="docutils literal notranslate"><span class="pre">find_company_for_ceo</span></code> that takes a CEO name as input and provides the corresponding company name as output.  It just depends on which column you chose to use as the input and which you choose to use as the output.</p>
+<p>This concept is probably familiar from mathematics, where we speak of <em>inverting</em> a function.  In mathematical notation, we write the inverse of <span class="math notranslate nohighlight">\(f\)</span> as <span class="math notranslate nohighlight">\(f^{-1}\)</span>, but in computing, we can use more descriptive names, like the example of <code class="docutils literal notranslate"><span class="pre">find_ceo_for_company</span></code> and <code class="docutils literal notranslate"><span class="pre">find_company_for_ceo</span></code>.</p>
+<p>In summary:  For a relation to be a function, it has to provide just one output for each input.  For it to be invertible, it has to have just one input for each output.</p>
 </div>
 </div>
 <div class="section" id="an-extremely-common-data-operation-lookup">
 <h2>An extremely common data operation: Lookup<a class="headerlink" href="#an-extremely-common-data-operation-lookup" title="Permalink to this headline">¶</a></h2>
-<p>Things to think about regarding the concept of “lookup”:</p>
+<p>When working with data and writing code, we “look up” values in many different ways.  We’ve already discussed above how applying a function expressed in a table is done by looking up the input and finding the corresponding output.</p>
+<p>Let’s review the most common ways that lookup operations show up in Python coding.  Almost all of them use square brackets, because that’s the common coding notation for looking up an item in a larger structure.</p>
+<ol class="simple">
+<li><p>If we have a Python list <code class="docutils literal notranslate"><span class="pre">L</span></code> then we can look up the fourth item in it using the syntax <code class="docutils literal notranslate"><span class="pre">L[3]</span></code>, for example.  In this way, you can think of a list as a function from numbers to the contents of the list.</p></li>
+<li><p>If we have a Python dictionary <code class="docutils literal notranslate"><span class="pre">D</span></code> then we can look up an item in it using the syntax <code class="docutils literal notranslate"><span class="pre">D[my_item]</span></code>.  So a dictionary is very much like a function; it maps its keys to their corresponding values.</p></li>
+<li><p>If we have a pandas DataFrame, there are many ways to look up items in it, including:</p>
 <ul class="simple">
-<li><p>Let’s say we’ve got a Python list <code class="docutils literal notranslate"><span class="pre">L</span></code>.  How would you describe looking up <code class="docutils literal notranslate"><span class="pre">L[i]</span></code> in the list…is it like a function or a relation?  What are the input and output types?</p></li>
-<li><p>Let’s say we’ve got a Python dict <code class="docutils literal notranslate"><span class="pre">D</span></code>.  How would you describe looking up <code class="docutils literal notranslate"><span class="pre">D[key]</span></code> in the dict…is it like a function or a relation?  What are the input and output types?</p></li>
-<li><p>Let’s say we’ve got a pandas DataFrame <code class="docutils literal notranslate"><span class="pre">df</span></code>.  How would you describe looking up <code class="docutils literal notranslate"><span class="pre">df[df.X==Y].Z</span></code> in the DataFrame…how is it like a function, a relation, both, or neither?  What are the relevant inputs and outputs?</p></li>
+<li><p>filtering for just some rows, as discussed earlier, using syntax like <code class="docutils literal notranslate"><span class="pre">df[df.X==Y]</span></code>, and then selecting the column to use as the result, as in <code class="docutils literal notranslate"><span class="pre">df[df.Name=='Smith'].Employer</span></code></p></li>
+<li><p>choosing one or more rows and/or columns by their names, using <code class="docutils literal notranslate"><span class="pre">df.loc[rows,cols]</span></code>, as in <code class="docutils literal notranslate"><span class="pre">df.loc['May':'June','Rainfall']</span></code></p></li>
+<li><p>choosing one or more rows and/or columns by their zero-based index, using <code class="docutils literal notranslate"><span class="pre">df.iloc[rows,cols]</span></code>, as in <code class="docutils literal notranslate"><span class="pre">df.iloc[:,5]</span></code></p></li>
 </ul>
-<p>Conclusion: Sometimes “lookup” is a function and sometimes it’s a relation.  In this last example, you can force it to be a function with <code class="docutils literal notranslate"><span class="pre">.iloc[0]</span></code> on the end.</p>
-<p>Later in the course we will see that <code class="docutils literal notranslate"><span class="pre">df1.join(df2)</span></code> is highly related (sort of a vectorized lookup), and thus so are SQL joins, which are essentially the same</p>
+</li>
+</ol>
+<p>Some of the lookup operations shown above act like functions and some act like relations.  For instance, a Python list always returns one value when you use square brackets for lookup, so that behaves like a function.  But a pandas DataFrame might yield multiple values when you execute code like <code class="docutils literal notranslate"><span class="pre">df[df.Name=='Smith'].Employer</span></code>, because there may be many Smiths in the dataset.  If you don’t care about getting <em>all</em> the results, but want to just choose one of them, you can always add <code class="docutils literal notranslate"><span class="pre">.iloc[0]</span></code> on the end of the code to select just the first result from the list, as in <code class="docutils literal notranslate"><span class="pre">df[df.Name=='Smith'].Employer.iloc[0]</span></code>.</p>
+<p>Later in the course we will see that SQL joins (called by various names in pandas, including merge, concat, and join) are highly related to all the lookup concepts just discussed.  A SQL or pandas join is like doing many lookups all at once, which is why it is such a common operation.</p>
 </div>
 </div>
 

@@ -48,13 +48,13 @@ is_a_long_word( 'Hello' )
  
 Here's an example, which converts Bentley email IDs to real names for a few members of the Mathematical Sciences Department:
 
-| User ID | Name |
-|---------|------|
-| aaltidor | Alina Altidor |
-| mbhaduri | Moinak Bhaduri |
-| wbuckley | Winston Buckley |
-| ncarter | Nathan Carter |
-| lcherveny | Luke Cherveny |
+| User ID   | Name            |
+|-----------|-----------------|
+| aaltidor  | Alina Altidor   |
+| mbhaduri  | Moinak Bhaduri  |
+| wbuckley  | Winston Buckley |
+| ncarter   | Nathan Carter   |
+| lcherveny | Luke Cherveny   |
 
 (We could add more names, but it's just an example.)
 
@@ -231,7 +231,7 @@ df[df['age'] >= 18]
 
 ## Relations and functions in data
 
-```{admonition} Exercise 4
+```{admonition} Exercise 4 - food inspections
 ---
 class: alert alert-secondary
 ---
@@ -256,7 +256,7 @@ The table below shows a sample of data taken from [a larger dataset on data.worl
 | SAFARI SOMALI CUISINE | 6319 N RIDGE AVE | 11/07/2017 | License | Fail |
 | DATA RESTAURANT | 2306 W DEVON AVE | 11/06/2017 | Complaint | Out of Business |
 
-```{admonition} Exercise 5
+```{admonition} Exercise 5 - tech companies
 ---
 class: alert alert-secondary
 ---
@@ -305,18 +305,25 @@ For example, consider the Technology Fast 500 table again, and let's assume that
  * As with every function, for each input company, there is exactly one CEO output.
  * But in this case, also, for each CEO output, there is exactly one input company.
 
-While we chose to use the company as input and provide the CEO name as output, we could also have done it in the other order.  That is, we could have created a function `find_company_for_ceo` that takes a CEO name as input and provides the corresponding company name as output.
+While we chose to use the company as input and provide the CEO name as output, we could also have done it in the other order.  That is, we could have created a function `find_company_for_ceo` that takes a CEO name as input and provides the corresponding company name as output.  It just depends on which column you chose to use as the input and which you choose to use as the output.
 
- * Point out the earlier example of an invertible function, and that it simply means swapping two columns in the data table that defines the function.
- * In other words, an invertible function is a relation that's also a function when you swap inputs and outputs; a function is invertible if *for each* output, *there is exactly one* input.
+This concept is probably familiar from mathematics, where we speak of *inverting* a function.  In mathematical notation, we write the inverse of $f$ as $f^{-1}$, but in computing, we can use more descriptive names, like the example of `find_ceo_for_company` and `find_company_for_ceo`.
+
+In summary:  For a relation to be a function, it has to provide just one output for each input.  For it to be invertible, it has to have just one input for each output.
 
 ## An extremely common data operation: Lookup
 
-Things to think about regarding the concept of "lookup":
- * Let's say we've got a Python list `L`.  How would you describe looking up `L[i]` in the list…is it like a function or a relation?  What are the input and output types?
- * Let's say we've got a Python dict `D`.  How would you describe looking up `D[key]` in the dict…is it like a function or a relation?  What are the input and output types?
- * Let's say we've got a pandas DataFrame `df`.  How would you describe looking up `df[df.X==Y].Z` in the DataFrame…how is it like a function, a relation, both, or neither?  What are the relevant inputs and outputs?
+When working with data and writing code, we "look up" values in many different ways.  We've already discussed above how applying a function expressed in a table is done by looking up the input and finding the corresponding output.
 
-Conclusion: Sometimes "lookup" is a function and sometimes it's a relation.  In this last example, you can force it to be a function with `.iloc[0]` on the end.
+Let's review the most common ways that lookup operations show up in Python coding.  Almost all of them use square brackets, because that's the common coding notation for looking up an item in a larger structure.
 
-Later in the course we will see that `df1.join(df2)` is highly related (sort of a vectorized lookup), and thus so are SQL joins, which are essentially the same
+ 1. If we have a Python list `L` then we can look up the fourth item in it using the syntax `L[3]`, for example.  In this way, you can think of a list as a function from numbers to the contents of the list.
+ 2. If we have a Python dictionary `D` then we can look up an item in it using the syntax `D[my_item]`.  So a dictionary is very much like a function; it maps its keys to their corresponding values.
+ 3. If we have a pandas DataFrame, there are many ways to look up items in it, including:
+     * filtering for just some rows, as discussed earlier, using syntax like `df[df.X==Y]`, and then selecting the column to use as the result, as in `df[df.Name=='Smith'].Employer`
+     * choosing one or more rows and/or columns by their names, using `df.loc[rows,cols]`, as in `df.loc['May':'June','Rainfall']`
+     * choosing one or more rows and/or columns by their zero-based index, using `df.iloc[rows,cols]`, as in `df.iloc[:,5]`
+
+Some of the lookup operations shown above act like functions and some act like relations.  For instance, a Python list always returns one value when you use square brackets for lookup, so that behaves like a function.  But a pandas DataFrame might yield multiple values when you execute code like `df[df.Name=='Smith'].Employer`, because there may be many Smiths in the dataset.  If you don't care about getting *all* the results, but want to just choose one of them, you can always add `.iloc[0]` on the end of the code to select just the first result from the list, as in `df[df.Name=='Smith'].Employer.iloc[0]`.
+
+Later in the course we will see that SQL joins (called by various names in pandas, including merge, concat, and join) are highly related to all the lookup concepts just discussed.  A SQL or pandas join is like doing many lookups all at once, which is why it is such a common operation.
