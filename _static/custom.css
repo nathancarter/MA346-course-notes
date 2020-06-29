@@ -3,3 +3,10 @@ b, strong {
     font-weight: bold;
 }
 
+.center-box-image {
+    border: solid 1px black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
