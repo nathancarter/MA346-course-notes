@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Review of Python and pandas &#8212; MA346 Course Notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/chapter-4-review-of-python-and-pandas.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Big Cheat Sheet" href="big-cheat-sheet.html" />
+    <link rel="prev" title="Jupyter" href="chapter-3-jupyter.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/chapter-4-review-of-python-and-pandas.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Review of Python and pandas" />
+<meta property="og:description" content="Review of Python and pandas  <a href="../../_slides/chapter-4-slides.html">See also the slides that summarize a portion of this content.</a>  <font color='red'>" />
+<meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="chapter-1-intro-to-data-science.html">1. Introduction to Data Science</a>
+  </li>
+  <li class="">
+    <a href="chapter-2-mathematical-foundations.html">2. Mathematical Foundations</a>
+  </li>
+  <li class="">
+    <a href="chapter-3-jupyter.html">3. Jupyter</a>
+  </li>
+  <li class="active">
+    <a href="">4. Review of Python and pandas</a>
+  </li>
+  <li class="">
+    <a href="big-cheat-sheet.html">5. Big Cheat Sheet</a>
+  </li>
+  <li class="">
+    <a href="anaconda-installation.html">6. Anaconda Installation</a>
+  </li>
+  <li class="">
+    <a href="vs-code-installation.html">7. VS Code for Python Installation</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="_sources/chapter-4-review-of-python-and-pandas.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="review-of-python-and-pandas">
+<h1>Review of Python and pandas<a class="headerlink" href="#review-of-python-and-pandas" title="Permalink to this headline">¶</a></h1>
+<p><a href="../../_slides/chapter-4-slides.html">See also the slides that summarize a portion of this content.</a></p>
+<p><font color='red'>THIS PAGE IS NOT COMPLETELY WRITTEN.  What is below is in outline/draft form.</font></p>
+<ol class="simple">
+<li><p>Python review that focuses on remembering pandas</p></li>
+</ol>
+<ul class="simple">
+<li><p>(Don’t forget to ask yourself: How can I connect this back to functions and relations?)</p></li>
+<li><p>Where to get these exercises:</p>
+<ul>
+<li><p>Start with the dataset I’ve downloaded for you and the notebook/script that loads it, a sample of approximately 0.1% of all mortgage applications in the US in 2018, filtered to include only those that are a conventional loan for home purchase of a principal residence, etc., etc.  (That is, I’ve done all the filtering that was required in MA346 S20 Project1.)</p></li>
+<li><p>Drop all columns except these: <code class="docutils literal notranslate"><span class="pre">interest_rate</span></code>, <code class="docutils literal notranslate"><span class="pre">property_value</span></code>, <code class="docutils literal notranslate"><span class="pre">state_code</span></code>, <code class="docutils literal notranslate"><span class="pre">tract_minority_population_percent</span></code>, <code class="docutils literal notranslate"><span class="pre">derived_race</span></code>, <code class="docutils literal notranslate"><span class="pre">derived_sex</span></code>, <code class="docutils literal notranslate"><span class="pre">applicant_age</span></code></p></li>
+<li><p>Use info/head to understand the contents of the table.</p></li>
+<li><p>Convert columns to numeric or categorical, as needed.</p></li>
+<li><p>Show that you remember how to select just those rows that are, say, for women, or for Asians, or for people over age 75.</p></li>
+<li><p>Somehow get them to bump into the error of writing to a view on a dataframe, so that you can cover the essential view/copy distinction, which should be a big-picture item. :framed_picture:</p></li>
+</ul>
+</li>
+<li><p>Have them write up solutions in Colab and then Slack/Teams chat the link to the #general channel.</p></li>
+<li><p>Keep Slack/Teams open in the podium browser and click the links as they come in to discuss the solutions together.</p></li>
+<li><p>What to do with this work:</p>
+<ul>
+<li><p>Keep it because we will build on it in the future.</p></li>
+<li><p>If we didn’t finish all this, take a team as volunteers to do it and share it with everyone afterwards.</p></li>
+<li><p>They are NOT yet required to comment their code!  See below.  (You haven’t yet modeled it.)</p></li>
+<li><p>Connect as much of this as possible to Excel, because they’ll bump into Excel very often in their careers, and often that’s the best tool for a job rather than R/Python.  Show which things are easier in Excel and which are not.</p></li>
+</ul>
+</li>
+</ul>
+<ol class="simple">
+<li><p>What if you don’t remember this stuff?</p></li>
+</ol>
+<ul class="simple">
+<li><p>Where to find docs and how to read them</p></li>
+<li><p>How to do a good help search</p></li>
+<li><p>How to distinguish good advice from crap advice</p>
+<ul>
+<li><p>Maybe even an assignment that asks them to find some incorrect coding advice (blog, docs, etc.) and say how they discerned that it was bad?  This might be too hard.</p></li>
+</ul>
+</li>
+</ul>
+<ol class="simple">
+<li><p>Python review that focuses on mathematical exercises to really strengthen their coding fluency and mathematical understanding</p>
+<ul class="simple">
+<li><p>Where to get these exercises:</p>
+<ul>
+<li><p>Create some that will make them think about functions and relations.</p></li>
+<li><p>Create some that will make them remember the foundations of pandas.</p></li>
+<li><p>Consider poaching from any of the <span class="math notranslate nohighlight">\(&gt;400\)</span> exercises in A Primer on Scientific Programming, listed on pages xxiii-xxxi.</p></li>
+</ul>
+</li>
+<li><p>Have them write up solutions in Colab and then Slack chat the link to the #general channel.</p></li>
+<li><p>Keep Slack open in the podium browser and click the links as they come in to discuss the solutions together.</p></li>
+</ul>
+</li>
+<li><p>Functional-style code (lots of nesting) vs. imperative-style code (lots of lines)</p>
+<ul class="simple">
+<li><p>Explanatory power of naming variables well</p></li>
+<li><p>Ability to split it over multiple cells, with more documentation between</p></li>
+<li><p>More understandable for those new to coding, because each thing to understand is smaller</p></li>
+</ul>
+</li>
+</ol>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="chapter-3-jupyter.html" title="previous page">Jupyter</a>
+    <a class='right-next' id="next-link" href="big-cheat-sheet.html" title="next page">Big Cheat Sheet</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Carter<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>

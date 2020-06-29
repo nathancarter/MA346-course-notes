@@ -16,8 +16,8 @@ Each topic below will become a link to what we will cover in class that day, onc
 |      |           | Mathematical foundations ([notes](chapter-2-mathematical-foundations), <a href='../../_slides/chapter-2-slides.html'>slides</a>) |
 |      |           | [DataCamp to review before Week 2](big-cheat-sheet.html#before-week-2-review-of-cs230) |
 |      |           | &nbsp;       |
-| 2    | 9/10/2020 | Computational notebooks (Jupyter) (not yet ready) |
-|      |           | Python review focusing on pandas and mathematical foundations (not yet ready) |
+| 2    | 9/10/2020 | Computational notebooks (Jupyter) ([notes](chapter-3-jupyter), <a href='../../_slides/chapter-3-slides.html'>slides</a>) |
+|      |           | Python review focusing on pandas and mathematical foundations ([notes](chapter-4-review-of-python-and-pandas), <a href='../../_slides/chapter-4-slides.html'>slides</a>) |
 |      |           | Functional-style code vs. imperative-style code (not yet ready) |
 |      |           | [DataCamp to review before Week 3](big-cheat-sheet.html#before-week-3) |
 |      |           | &nbsp;       |
@@ -65,5 +65,9 @@ Each topic below will become a link to what we will cover in class that day, onc
 
 chapter-1-intro-to-data-science.ipynb
 chapter-2-mathematical-foundations.ipynb
+chapter-3-jupyter.ipynb
+chapter-4-review-of-python-and-pandas.ipynb
 big-cheat-sheet.ipynb
+anaconda-installation.md
+vs-code-installation.md
 ```

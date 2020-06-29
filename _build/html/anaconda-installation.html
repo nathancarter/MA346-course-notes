@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Search &#8212; MA346 Course Notes</title>
+    <title>Anaconda Installation &#8212; MA346 Course Notes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -15,7 +15,6 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
-    
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
@@ -31,26 +30,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="_static/searchtools.js"></script>
-    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/search.html" />
+    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/anaconda-installation.html" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" />
-  <script src="searchindex.js" defer></script>
-  
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="VS Code for Python Installation" href="vs-code-installation.html" />
+    <link rel="prev" title="Big Cheat Sheet" href="big-cheat-sheet.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
 
 
 <!-- Opengraph tags -->
-<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/search.html" />
+<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/anaconda-installation.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Search" />
-<meta property="og:description" content="" />
+<meta property="og:title"       content="Anaconda Installation" />
+<meta property="og:description" content="Anaconda Installation  Anaconda is a tool that installs Python together with the conda package manager and several related apps, tools, and packages.  It’s one " />
 <meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
 
 <meta name="twitter:card" content="summary">
-
 
 
   </head>
@@ -73,7 +70,7 @@
 </a>
 </div>
 
-<form class="bd-search d-flex align-items-center" action="#" method="get">
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
@@ -96,8 +93,8 @@
   <li class="">
     <a href="big-cheat-sheet.html">5. Big Cheat Sheet</a>
   </li>
-  <li class="">
-    <a href="anaconda-installation.html">6. Anaconda Installation</a>
+  <li class="active">
+    <a href="">6. Anaconda Installation</a>
   </li>
   <li class="">
     <a href="vs-code-installation.html">7. VS Code for Python Installation</a>
@@ -131,6 +128,15 @@
             <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
 
             
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="_sources/anaconda-installation.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
         </div>
 
         <!-- Source interaction buttons -->
@@ -143,9 +149,28 @@
         
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#visit-the-anaconda-website" class="nav-link">Visit the Anaconda website</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#choose-your-os" class="nav-link">Choose your OS</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#download-the-installer" class="nav-link">Download the Installer</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#run-the-installer" class="nav-link">Run the Installer</a>
+        </li>
     
     </ul>
 </nav>
@@ -158,29 +183,59 @@
         
               <div>
                 
-  <h1 id="search-documentation">Search</h1>
-  <div id="fallback" class="admonition warning">
-  <script>$('#fallback').hide();</script>
-  <p>
-    Please activate JavaScript to enable the search
-    functionality.
-  </p>
-  </div>
-  <p>
-    From here you can search these documents. Enter your search
-    words into the box below and click "search". Note that the search
-    function will automatically search for all of the words. Pages
-    containing fewer words won't appear in the result list.
-  </p>
-  <form action="" method="get">
-    <input type="text" name="q" aria-labelledby="search-documentation" value="" />
-    <input type="submit" value="search" />
-    <span id="search-progress" style="padding-left: 10px"></span>
-  </form>
-  
-  <div id="search-results">
-  
-  </div>
+  <div class="section" id="anaconda-installation">
+<h1>Anaconda Installation<a class="headerlink" href="#anaconda-installation" title="Permalink to this headline">¶</a></h1>
+<p>Anaconda is a tool that installs Python together with the <code class="docutils literal notranslate"><span class="pre">conda</span></code> package
+manager and several related apps, tools, and packages.  It’s one of the
+easiest ways to get Python installed on your system and ready to use for
+data work.</p>
+<p>These instructions are written primarily for Windows, with Mac
+instructions in parentheses.</p>
+<div class="section" id="visit-the-anaconda-website">
+<h2>Visit the Anaconda website<a class="headerlink" href="#visit-the-anaconda-website" title="Permalink to this headline">¶</a></h2>
+<p>It is at this URL:
+<a class="reference external" href="http://www.anaconda.com/distribution">www.anaconda.com/distribution</a></p>
+<p>It looks like this:</p>
+<p><img alt="A screenshot of the Anaconda website at
+www.anaconda.com/distribution" src="../../_images/install-image-1.png" class="center-box-image"/></p>
+</div>
+<div class="section" id="choose-your-os">
+<h2>Choose your OS<a class="headerlink" href="#choose-your-os" title="Permalink to this headline">¶</a></h2>
+<p>Scroll down on that same website and click the Windows link to indicate
+that you want to download the installer for Windows.</p>
+<p><img alt="A screenshot of the three OS options on the Anaconda website download
+page: Windows, macOS, and Linux, with the Windows option
+chosen" src="../../_images/install-image-2.png" class="center-box-image"/></p>
+<p>(Mac users obviously click the macOS link instead.)</p>
+</div>
+<div class="section" id="download-the-installer">
+<h2>Download the Installer<a class="headerlink" href="#download-the-installer" title="Permalink to this headline">¶</a></h2>
+<p>Click the download button for the Python 3.7 distribution of Anaconda,
+as shown on the left below.</p>
+<p><img alt="A screenshot of the two Python versions available on the Anaconda
+website download page, Python 3.7 and Python 2.7, with the Python 3.7
+version highlighted" src="../../_images/install-image-3.png" class="center-box-image"/></p>
+</div>
+<div class="section" id="run-the-installer">
+<h2>Run the Installer<a class="headerlink" href="#run-the-installer" title="Permalink to this headline">¶</a></h2>
+<p>Run the installer once it’s downloaded, probably by clicking the
+downloaded file in your browser’s list of downloaded files, usually at
+the bottom left of the window.</p>
+<p><img alt="A screenshot of the item in the browser status bar showing the
+downloaded installer file for the Anaconda
+distribution" src="../../_images/install-image-4.png" class="center-box-image"/></p>
+<p>(For Mac users, this will be a .pkg file instead of an .exe.)</p>
+<p>Accept all the default choices during installation. This may take up to
+10 minutes.</p>
+<p><img alt="A screenshot of the first screen in the Anaconda Windows installer,
+welcoming the user to the installation
+process" src="../../_images/install-image-5.png" class="center-box-image"/></p>
+<p>(For Mac users, the installer will look slightly different than the one
+above.)</p>
+<p>After this, you may wish to <a class="reference internal" href="vs-code-installation.html"><span class="doc">install VS Code</span></a> as well.</p>
+</div>
+</div>
+
 
               </div>
               
@@ -190,6 +245,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="big-cheat-sheet.html" title="previous page">Big Cheat Sheet</a>
+    <a class='right-next' id="next-link" href="vs-code-installation.html" title="next page">VS Code for Python Installation</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

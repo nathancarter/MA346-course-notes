@@ -1,0 +1,302 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>VS Code for Python Installation &#8212; MA346 Course Notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/vs-code-installation.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Anaconda Installation" href="anaconda-installation.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/vs-code-installation.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="VS Code for Python Installation" />
+<meta property="og:description" content="VS Code for Python Installation  This assumes you have installed Anaconda already.  Open the Anaconda Navigator  Start Menu > Anaconda3 > Anaconda Navigator<br " />
+<meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="chapter-1-intro-to-data-science.html">1. Introduction to Data Science</a>
+  </li>
+  <li class="">
+    <a href="chapter-2-mathematical-foundations.html">2. Mathematical Foundations</a>
+  </li>
+  <li class="">
+    <a href="chapter-3-jupyter.html">3. Jupyter</a>
+  </li>
+  <li class="">
+    <a href="chapter-4-review-of-python-and-pandas.html">4. Review of Python and pandas</a>
+  </li>
+  <li class="">
+    <a href="big-cheat-sheet.html">5. Big Cheat Sheet</a>
+  </li>
+  <li class="">
+    <a href="anaconda-installation.html">6. Anaconda Installation</a>
+  </li>
+  <li class="active">
+    <a href="">7. VS Code for Python Installation</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="_sources/vs-code-installation.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#open-the-anaconda-navigator" class="nav-link">Open the Anaconda Navigator</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#find-and-install-the-vs-code-application" class="nav-link">Find and Install the VS Code application</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#installing-and-configuring-code-runner" class="nav-link">Installing and Configuring Code Runner</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#testing-your-installation" class="nav-link">Testing your Installation</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="vs-code-for-python-installation">
+<h1>VS Code for Python Installation<a class="headerlink" href="#vs-code-for-python-installation" title="Permalink to this headline">¶</a></h1>
+<p>This assumes you have <a class="reference internal" href="anaconda-installation.html"><span class="doc">installed Anaconda</span></a> already.</p>
+<div class="section" id="open-the-anaconda-navigator">
+<h2>Open the Anaconda Navigator<a class="headerlink" href="#open-the-anaconda-navigator" title="Permalink to this headline">¶</a></h2>
+<p>Start Menu &gt; Anaconda3 &gt; Anaconda Navigator<br />
+(On Mac: Finder &gt; Applications &gt; Anaconda Navigator.app.)</p>
+<p><img alt="A screenshot of the main window for the Anacdona Navigator application
+on Windows, showing icons for the applications JupyterLab, Jupyter
+Notebook, Spyder, VS Code, Glueviz, and Orange
+3." src="../../_images/install-image-6.png" class="center-box-image"/></p>
+</div>
+<div class="section" id="find-and-install-the-vs-code-application">
+<h2>Find and Install the VS Code application<a class="headerlink" href="#find-and-install-the-vs-code-application" title="Permalink to this headline">¶</a></h2>
+<p>Scroll down in the list of applications until you find VS Code (Visual
+Studio Code, by Microsoft).</p>
+<p><img alt="The VS Code application tile as it would appear in the Anaconda
+Navigator main window, with an &quot;Install&quot; button beneath
+it" src="../../_images/install-image-7.png" class="center-box-image"/></p>
+<p>Click the Install button beneath it.</p>
+<p>Once you have installed VS Code, its application icon will change to
+contain a “Launch” button.</p>
+<p><img alt="The VS Code application tile as it would appear in the Anaconda
+Navigator main window, with a &quot;Launch&quot; button beneath
+it" src="../../_images/install-image-8.png" class="center-box-image"/></p>
+<p>Click that button now to launch VS Code.</p>
+</div>
+<div class="section" id="installing-and-configuring-code-runner">
+<h2>Installing and Configuring Code Runner<a class="headerlink" href="#installing-and-configuring-code-runner" title="Permalink to this headline">¶</a></h2>
+<p>VS Code is all ready to let you edit Python code, but there’s an
+Extension to VS Code, called Code Runner, that makes it more convenient
+to run Python code when testing your work. Let’s install it now.</p>
+<p>Click the Extensions button on the left of the VS Code window.  It is the bottom button shown below, which looks like four squares:</p>
+<p><img alt="A screenshot of the icons on the left edge of the VS Code window,
+showing icons for Explorer (two file icons), Search (magnifying glass
+icon), Source Control (small graph icon), Debug (insect icon), and
+Extensions (small blocks
+icon)" src="../../_images/install-image-9.png" class="center-box-image"/></p>
+<p>Then search for the Code Runner Extension as shown below and click its
+install button.  (The install button is green and is just below and to the right of hte large orange “.run” icon.)</p>
+<p><img alt="Screenshot of most of the VS Code window during the installation of
+the Code Runner Extension, including the Extension\'s
+description" src="../../_images/install-image-10.png" class="center-box-image"/></p>
+<p>The Code Runner Extension in the Extensions list will then have a
+settings gear icon, as shown below.</p>
+<img alt="" src="../../_images/install-image-11png" class="center-box-image"/>
+<p>Click that gear icon to bring up the settings menu for Code Runner, as shown below.</p>
+<img alt="" src="../../_images/install-image-12.png" class="center-box-image"/>
+<p>Choose “Configure Extension Settings,” the bottom item on that menu.</p>
+<p>It will bring up a settings window as shown below.</p>
+<img alt="" src="../../_images/install-image-13.png" class="center-box-image"/>
+<p>Scroll down until you find the settings for saving files before running,
+and check both boxes, as shown here.</p>
+<img alt="A small portion of the list of settings for the Code Runner Extension in VS Code, highlighting just the two settings relevant for saving files before running them, both of which are checked (enabled)" src="../../_images/install-image-14.png" class="center-box-image"/>
+<p>Your Code Runner Extension is correctly configured. Try it out as shown
+on the next page.</p>
+</div>
+<div class="section" id="testing-your-installation">
+<h2>Testing your Installation<a class="headerlink" href="#testing-your-installation" title="Permalink to this headline">¶</a></h2>
+<p>Let’s verify now that you can successfully run Python code.</p>
+<p>Create a new file:</p>
+<p><img alt="A screenshot of the File Menu in VS Code, with the &quot;New File&quot; item
+selected" src="../../_images/install-image-15.png" class="center-box-image"/></p>
+<img alt="" src="../../_images/install-image-16.png" class="center-box-image"/>
+<p>Save the file and give it the name <code class="docutils literal notranslate"><span class="pre">test.py</span></code> to indicate that it is a Python file.</p>
+<img alt="A screenshot of the File Menu in VS Code, with the &quot;Save As&quot; item selected" src="../../_images/install-image-17.png" class="center-box-image"/>
+<p>Enter the following small amount of Python code in the new, empty file.</p>
+<p><em>Be sure to press Enter after the code to start a new line!</em></p>
+<img alt="A screenshot of a one-line Python program shown in the VS Code editor.  The Python program contains just the one command print( 2+2 )." src="../../_images/install-image-18.png" class="center-box-image"/>
+<p>Save the file again.</p>
+<p>Run the file by clicking the small Run icon (which looks like a “Play”
+triangle) on the top right of the window.  (If you don’t see this button,
+check your work above—did you save the file with a <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension?)</p>
+<img alt="A screenshot of the upper right corner of the VS Code interface, after the Code Runner Extension has been installed, so that a triangular &quot;Play&quot; button appears, allowing the user to run the code in the current file" src="../../_images/install-image-19.png" class="center-box-image"/>
+<p>You should see the following output at the bottom of the window,
+indicating that your code was run, and produced the output <code class="docutils literal notranslate"><span class="pre">4</span></code> (which is
+the result of 2+2, of course).</p>
+<img alt="A screenshot showing the output of running the simply Python program shown earlier. The output includes a line indicating that Python was run, a single line of output containing the number 4, and a final line indicating that the code completed with code=0 in 0.102 seconds." src="../../_images/install-image-20.png" class="center-box-image"/>
+<p>(The first line means that the “python” command was run on the <code class="docutils literal notranslate"><span class="pre">test.py</span></code>
+file you saved. The final line means the process ended with error code
+0, which means no errors, and took 0.102 seconds in total.)</p>
+<p>You have a successful Python installation that you can run from Visual
+Studio!</p>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="anaconda-installation.html" title="previous page">Anaconda Installation</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Carter<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>

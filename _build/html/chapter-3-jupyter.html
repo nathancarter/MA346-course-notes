@@ -1,0 +1,417 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Jupyter &#8212; MA346 Course Notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/chapter-3-jupyter.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Review of Python and pandas" href="chapter-4-review-of-python-and-pandas.html" />
+    <link rel="prev" title="Mathematical Foundations" href="chapter-2-mathematical-foundations.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/chapter-3-jupyter.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Jupyter" />
+<meta property="og:description" content="Jupyter  <a href="../../_slides/chapter-3-slides.html">See also the slides that summarize a portion of this content.</a>  What’s Jupyter?  The Jupyter project m" />
+<meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="chapter-1-intro-to-data-science.html">1. Introduction to Data Science</a>
+  </li>
+  <li class="">
+    <a href="chapter-2-mathematical-foundations.html">2. Mathematical Foundations</a>
+  </li>
+  <li class="active">
+    <a href="">3. Jupyter</a>
+  </li>
+  <li class="">
+    <a href="chapter-4-review-of-python-and-pandas.html">4. Review of Python and pandas</a>
+  </li>
+  <li class="">
+    <a href="big-cheat-sheet.html">5. Big Cheat Sheet</a>
+  </li>
+  <li class="">
+    <a href="anaconda-installation.html">6. Anaconda Installation</a>
+  </li>
+  <li class="">
+    <a href="vs-code-installation.html">7. VS Code for Python Installation</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="_sources/chapter-3-jupyter.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#what-s-jupyter" class="nav-link">What’s Jupyter?</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#how-does-jupyter-work" class="nav-link">How does Jupyter work?</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#jupyter-in-the-cloud" class="nav-link">Jupyter in the cloud</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#jupyter-on-your-machine" class="nav-link">Jupyter on your machine</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#closing-comments" class="nav-link">Closing comments</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="jupyter">
+<h1>Jupyter<a class="headerlink" href="#jupyter" title="Permalink to this headline">¶</a></h1>
+<p><a href="../../_slides/chapter-3-slides.html">See also the slides that summarize a portion of this content.</a></p>
+<div class="section" id="what-s-jupyter">
+<h2>What’s Jupyter?<a class="headerlink" href="#what-s-jupyter" title="Permalink to this headline">¶</a></h2>
+<p>The Jupyter project makes it possible to use code to experiment with and process data in your web browser.  It lets you do all of these things in one page (or browser tab):</p>
+<ul class="simple">
+<li><p>write and run code</p></li>
+<li><p>write explanations of code and data, including with mathematical formulas</p></li>
+<li><p>view tables, plots, and other visualizations of data</p></li>
+<li><p>interact with certain types of data visualizations</p></li>
+</ul>
+<p>It’s pronounced just like Jupiter, but has the funny spelling because it was originally built for Python, so they wanted to work a “py” in there somewhere.</p>
+<p>You may prefer to use another tool to accomplish these tasks; your MA346 instructor won’t force you to use Jupyter.  But you should still know about Jupyter for the following reasons:</p>
+<ul class="simple">
+<li><p>Lots of people in data science and analytics use Jupyter notebooks, so you’ll definitely encounter them and want to be familiar with how to read them, edit them, and run them.</p></li>
+<li><p>It’s becoming the <em>lingua franca</em> for how to share your data research online, so you may want to know how to publish Jupyter notebooks, something our course will cover.</p></li>
+<li><p>It was a big enough deal to win one of the highest awards in the computer science profession, the <a class="reference external" href="https://blog.jupyter.org/jupyter-receives-the-acm-software-system-award-d433b0dfe3a2">2017 ACM Software System Award</a>.</p></li>
+</ul>
+<p>In fact, these course notes were written in Jupyter.  That’s why you’ll see code inputs and outputs interspersed among them, because Jupyter lets you write documents with code built in, and it runs the code for you and shows you the output.  Here’s an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-3-jupyter_2_0.png" src="_images/chapter-3-jupyter_2_0.png" />
+</div>
+</div>
+<p>Okay, sounds great, so where do we point our browser to start using this thing?  Well, you’ve got lots of options, so let’s see what they are first.</p>
+</div>
+<div class="section" id="how-does-jupyter-work">
+<h2>How does Jupyter work?<a class="headerlink" href="#how-does-jupyter-work" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-primary admonition">
+<p class="admonition-title">Big Picture</p>
+<p>Jupyter is made of two pieces:</p>
+<ol class="simple">
+<li><p>The notebook interface, which shows you a document with code and visualizations in it, called “a Jupyter notebook.”</p></li>
+<li><p>The engine behind the notebook, which runs your code, and is doing its work invisibly in the background; this engine is called the “kernel.”</p></li>
+</ol>
+<p>How you interact with each of these two pieces is important, and comes with some pitfalls to avoid.</p>
+</div>
+<div class="section" id="jupyter-in-the-cloud">
+<h3>Jupyter in the cloud<a class="headerlink" href="#jupyter-in-the-cloud" title="Permalink to this headline">¶</a></h3>
+<p>The easiest way to start using Jupyter is to just point your browser at a website that offers you access to Jupyter in the cloud.  In such a situation, Jupyter’s two pieces work like this:</p>
+<ol class="simple">
+<li><p>The notebook interface runs in your browser on your computer</p></li>
+<li><p>The kernel runs in the cloud on a server provided by someone else</p></li>
+</ol>
+<p>Here are three examples of where you can use Jupyter notebooks in the cloud:</p>
+<ol class="simple">
+<li><p>Best choice: <a class="reference external" href="https://deepnote.com/">Deepnote</a><br/><a class="reference external" href="https://deepnote.com/"><img src='https://media-exp1.licdn.com/dms/image/C4E0BAQHeGGvBVLIhnQ/company-logo_200_200/0?e=2159024400&v=beta&t=DXm5dzcOA3HBAvB0BNQTnwrHdxt4QpshfMU0DtiyRK0' width=200 height=200/></a></p>
+<ul class="simple">
+<li><p>They took the standard Jupyter interface and added more goodies</p></li>
+<li><p>You can read and write files to/from your Google Drive</p></li>
+<li><p>You can use multiple languages (though we’ll stick to Python)</p></li>
+<li><p>The amount of computing power they give you for free is pretty good</p></li>
+<li><p>It’s extremely easy to share your work with anyone</p></li>
+<li><p>But you have access to Deepnote only because I signed our class up; they’re a startup and they’re not letting everyone in yet</p></li>
+</ul>
+</li>
+<li><p>Next best choice: <a class="reference external" href="https://colab.research.google.com/">Google Colab</a><br/><a class="reference external" href="https://colab.research.google.com/"><img src='https://colab.research.google.com/img/colab_favicon_256px.png' width=200 height=200/></a></p>
+<ul class="simple">
+<li><p>All the same positives as Deepnote except without as many interface goodies</p></li>
+<li><p>Supports more languages than Deepnote does, but that’s not relevant in MA346</p></li>
+</ul>
+</li>
+<li><p>Third choice: <a class="reference external" href="https://cocalc.com/">CoCalc</a><br/><a class="reference external" href="https://cocalc.com/"><img src='https://upload.wikimedia.org/wikipedia/en/thumb/7/72/CoCalc_Logo.png/280px-CoCalc_Logo.png' width=241 height=200/></a></p>
+<ul class="simple">
+<li><p>Many features that the previous two don’t have, including a nice palette of common code snippets you can insert</p></li>
+<li><p>But the notebook interface is nonstandard and different from Jupyter’s in several ways</p></li>
+<li><p>Perhaps the most limited in terms of how much computing you get for free, though this is not very important for MA346</p></li>
+</ul>
+</li>
+</ol>
+<p>Obviously, none of these is going to give you access to a supercomputer for free.  If you want to do any intense or lengthy computing in the cloud, you have to pay for them to let the kernel you’re using run on big hardware.</p>
+</div>
+<div class="section" id="jupyter-on-your-machine">
+<h3>Jupyter on your machine<a class="headerlink" href="#jupyter-on-your-machine" title="Permalink to this headline">¶</a></h3>
+<p>You can also choose to run Jupyter on your own machine.  In contrast to accessing Jupyter in the cloud, when you run it on your own machine, Jupyter’s two pieces work like this:</p>
+<ol class="simple">
+<li><p>The notebook interface still runs in your browser on your computer</p></li>
+<li><p>The kernel now also runs on your computer, which has both advantages and disadvantages</p></li>
+</ol>
+<p>Let’s consider the major tradeoffs in each of these approaches.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Why put Jupyter on my computer?</p></th>
+<th class="head"><p>Why choose the cloud instead?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1. Not limited by how much power a cloud company will give you for free.</p></td>
+<td><p>1. You don’t have to install anything on your computer.</p></td>
+</tr>
+<tr class="row-odd"><td><p>2. Even if I don’t have good wifi access, I can still use it.</p></td>
+<td><p>2. You can use it on a phone/tablet.</p></td>
+</tr>
+<tr class="row-even"><td><p>3. May be easier to add specific Python packages you need for your work.</p></td>
+<td><p>3. Avoid accidentally leaving a kernel running invisibly. (See below.)</p></td>
+</tr>
+</tbody>
+</table>
+<p>If you want to go this route, there are several ways to install Jupyter on your machine.</p>
+<p><strong>Easiest way:</strong>  <a class="reference internal" href="anaconda-installation.html"><span class="doc">Install Anaconda</span></a></p>
+<ul class="simple">
+<li><p>This is by far the easiest method, so start here.</p></li>
+<li><p>Follow the link above for detailed instructions within these course notes; it is not necessary to also install VS Code, which the instructions make optional.</p></li>
+<li><p>Once Anaconda is installed, you can launch it from the Windows Start menu or Mac Applications folder, then choose to launch either Jupyter Lab or the Jupyter Notebook.</p></li>
+</ul>
+<p>Before we discuss the other methods of installing Jupyter, let’s discuss the difference between Jupyter Lab and the Jupyter Noteboook.  Here’s a summary:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Jupyter Notebook</p></th>
+<th class="head"><p>Jupyter Lab</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>The original Jupyter project</p></td>
+<td><p>Its newer successor</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uses multiple browser tabs</p></td>
+<td><p>Does everything in one tab</p></td>
+</tr>
+<tr class="row-even"><td><p>Supports many extensions</p></td>
+<td><p>Doesn’t yet support all extensions</p></td>
+</tr>
+<tr class="row-odd"><td><p>Has no console/terminal access</p></td>
+<td><p>Has both console and terminal access</p></td>
+</tr>
+</tbody>
+</table>
+<p>Both technologies let you edit Jupyter notebooks.  (Yes, it’s confusing that one app is called “the Jupyter Notebook” and the files are also called “Jupyter notebooks.”  Sorry.)</p>
+<div class="alert alert-primary admonition">
+<p class="admonition-title">Big Picture</p>
+<p>When you launch either the Jupyter Notebook or Jupyter Lab, you launch both the user interface (which you see in your browser) and the kernel (which you don’t!).  <strong>Just closing the browser tab DOES NOT CLOSE THE KERNEL.</strong>  Doing this repeatedly (e.g., each day in class) will clog up your computer with many kernels running invisibly in the background.</p>
+<p>Instead, do one of these things EVERY TIME you’re done coding:</p>
+<ul class="simple">
+<li><p>In Jupyter Notebook: File Menu &gt; Close and Halt</p></li>
+<li><p>In Jupyter Lab: File Menu &gt; Shut down</p></li>
+</ul>
+<p>These close the (invisible) kernel first, then let you close the user interface after that.</p>
+</div>
+<p>But that’s a hassle!  Wouldn’t it be easier if Jupyter were just an app I could run on my machine, like every other app?  In fact, because Jupyter is <em>not</em> an app, you can’t even double-click Jupyter notebook files (which end with the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> extension) and have them automatically open in Jupyter.  Another hassle!  How can we fix these things?</p>
+<p><strong>Another option:</strong>  Install <a class="reference external" href="https://nteract.io/">nteract</a> (pronounced “interact”)</p>
+<ul class="simple">
+<li><p>This assumes you have a working Python installation.  The easiest way to do that is to install Anaconda, using the instructions up above.  That’s why this one is listed second; it assumes you’ve done that first.</p></li>
+<li><p>Then visit the website linked to above and follow the very easy process of installing the nteract app.</p></li>
+<li><p>When you run nteract, it shows you a new, blank Jupyter notebook.  It has already launched the invisible kernel behind the scenes for you.  (No need to go to Anaconda Navigator first!)</p></li>
+<li><p>You can also double-click notebooks to open them in nteract.  Easy, just like every other app on your machine.</p></li>
+<li><p>When you quit nteract, it quits not only the user interface you see, but the invisible kernel as well.  Nothing to remember.</p></li>
+</ul>
+<p>The only disadvantage here is that some Jupyter notebook extensions don’t work in nteract.  But we won’t be using many of those in MA346 anyway.</p>
+</div>
+</div>
+<div class="section" id="closing-comments">
+<h2>Closing comments<a class="headerlink" href="#closing-comments" title="Permalink to this headline">¶</a></h2>
+<p>There are many websites that make it easy to view Jupyter notebooks online.  This is very useful for sharing the results of your work when you’re done.  Examples include <a class="reference external" href="https://nbviewer.jupyter.org/">NbViewer</a> and <a class="reference external" href="https://github.com/">GitHub</a>, but there are others.  Notebooks are often shared in nerdy places on the Internet, with websites supporting viewing them with all their plots, tables, and math displayed nicely.  We will learn how to use GitHub in a future week.</p>
+<p>There are various pros and cons to using Jupyter notebooks vs. plain old Python scripts, as you probably did in CS230.  There are also some hybrid technologies that exist to make notebooks more like scripts, or scripts more like notebooks (such as <a class="reference external" href="https://papermill.readthedocs.io/en/latest/">Papermill</a>, <a class="reference external" href="https://code.visualstudio.com/docs/python/jupyter-support">VSCode notebook support</a>, and others).  In this class, you can usually use whatever technology you prefer.  The instructor will use notebooks because they are good for communicating, and communicating is your instructor’s job.</p>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - Problems with Notebooks</p>
+<p>Some folks <a class="reference external" href="https://twitter.com/joelgrus/status/1033035196428378113?lang=en">really don’t like Jupyter notebooks</a>.  And they have good points!  Study what pitfalls notebooks have, based on the presentation at that link, and report on them to the class.</p>
+</div>
+<p>Such a report would include:</p>
+<ul class="simple">
+<li><p>From the many problems the presentation lists, choose the 4-6 that are most relevant to MA346 students.</p></li>
+<li><p>For each such problem:</p>
+<ul>
+<li><p>Explain it carefully.</p></li>
+<li><p>Show how a tool other than Jupyter doesn’t have the same problem.</p></li>
+<li><p>Suggest specific ways that MA346 students can avoid pitfalls surrounding that problem.</p></li>
+</ul>
+</li>
+</ul>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - Math in Notebooks</p>
+<p>You can add mathematics to Jupyter notebooks and it looks very nice.  Here’s an example of the quadratic formula:</p>
+<div class="math notranslate nohighlight">
+\[x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\]</div>
+<p>This can be useful for explaining mathematical and statistical concepts in your work clearly, without resorting to ugly text attempts to look sort of like math.</p>
+</div>
+<p>Such a report would include:</p>
+<ul class="simple">
+<li><p>An explanation of what a student would type into a Markdown cell to make some simple mathematics</p></li>
+<li><p>A list of the 5-10 most common math notation or symbols the student will want to know how to create (particularly those relevant to statistics and/or data science)</p></li>
+<li><p>Suggestions for where the student can go to learn more symbols or notation if they need it</p></li>
+</ul>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="chapter-2-mathematical-foundations.html" title="previous page">Mathematical Foundations</a>
+    <a class='right-next' id="next-link" href="chapter-4-review-of-python-and-pandas.html" title="next page">Review of Python and pandas</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Carter<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
