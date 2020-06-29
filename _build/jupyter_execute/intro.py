@@ -17,7 +17,7 @@ Each topic below will become a link to what we will cover in class that day, onc
 |      |           | [DataCamp to review before Week 2](big-cheat-sheet.html#before-week-2-review-of-cs230) |
 |      |           | &nbsp;       |
 | 2    | 9/10/2020 | Computational notebooks (Jupyter) ([notes](chapter-3-jupyter), <a href='../../_slides/chapter-3-slides.html'>slides</a>) |
-|      |           | Python review focusing on pandas and mathematical foundations ([notes](chapter-4-review-of-python-and-pandas), <a href='../../_slides/chapter-4-slides.html'>slides</a>) |
+|      |           | Python review focusing on pandas and mathematical foundations ([notes](chapter-4-review-of-python-and-pandas), no slides) |
 |      |           | Functional-style code vs. imperative-style code (not yet ready) |
 |      |           | [DataCamp to review before Week 3](big-cheat-sheet.html#before-week-3) |
 |      |           | &nbsp;       |

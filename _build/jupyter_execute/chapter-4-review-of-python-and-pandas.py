@@ -1,6 +1,6 @@
 # Review of Python and pandas
 
-<a href="../../_slides/chapter-4-slides.html">See also the slides that summarize a portion of this content.</a>
+Unlike most chapters, there are no slides corresponding to this chapter, because they consist mostly of in-class exercises.
 
 <font color='red'>THIS PAGE IS NOT COMPLETELY WRITTEN.  What is below is in outline/draft form.</font>
 
