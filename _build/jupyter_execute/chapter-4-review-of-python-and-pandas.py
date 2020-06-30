@@ -1,39 +1,171 @@
 # Review of Python and pandas
 
-Unlike most chapters, there are no slides corresponding to this chapter, because they consist mostly of in-class exercises.
-
-<font color='red'>THIS PAGE IS NOT COMPLETELY WRITTEN.  What is below is in outline/draft form.</font>
+Unlike most chapters, there are no slides corresponding to this chapter, because they consist mostly of in-class exercises.  They aim to help you remember the Python and pandas you learned in CS230 and be sure they're refreshed and at the front of your mind, so that we can build on them in future weeks.
 
 
-1. Python review that focuses on remembering pandas
-  * (Don't forget to ask yourself: How can I connect this back to functions and relations?)
-  * Where to get these exercises:
-    * Start with the dataset I've downloaded for you and the notebook/script that loads it, a sample of approximately 0.1% of all mortgage applications in the US in 2018, filtered to include only those that are a conventional loan for home purchase of a principal residence, etc., etc.  (That is, I've done all the filtering that was required in MA346 S20 Project1.)
-    * Drop all columns except these: `interest_rate`, `property_value`, `state_code`, `tract_minority_population_percent`, `derived_race`, `derived_sex`, `applicant_age`
-    * Use info/head to understand the contents of the table.
-    * Convert columns to numeric or categorical, as needed.
-    * Show that you remember how to select just those rows that are, say, for women, or for Asians, or for people over age 75.
-    * Somehow get them to bump into the error of writing to a view on a dataframe, so that you can cover the essential view/copy distinction, which should be a big-picture item. :framed_picture:
-  * Have them write up solutions in Colab and then Slack/Teams chat the link to the #general channel.
-  * Keep Slack/Teams open in the podium browser and click the links as they come in to discuss the solutions together.
-  * What to do with this work:
-    * Keep it because we will build on it in the future.
-    * If we didn't finish all this, take a team as volunteers to do it and share it with everyone afterwards.
-    * They are NOT yet required to comment their code!  See below.  (You haven't yet modeled it.)
-    * Connect as much of this as possible to Excel, because they'll bump into Excel very often in their careers, and often that's the best tool for a job rather than R/Python.  Show which things are easier in Excel and which are not.
-2. What if you don't remember this stuff?
-  * Where to find docs and how to read them
-  * How to do a good help search
-  * How to distinguish good advice from crap advice
-    * Maybe even an assignment that asks them to find some incorrect coding advice (blog, docs, etc.) and say how they discerned that it was bad?  This might be too hard.
-3. Python review that focuses on mathematical exercises to really strengthen their coding fluency and mathematical understanding
-   * Where to get these exercises:
-     * Create some that will make them think about functions and relations.
-     * Create some that will make them remember the foundations of pandas.
-     * Consider poaching from any of the $>400$ exercises in A Primer on Scientific Programming, listed on pages xxiii-xxxi.
-   * Have them write up solutions in Colab and then Slack chat the link to the #general channel.
-   * Keep Slack open in the podium browser and click the links as they come in to discuss the solutions together.
-4. Functional-style code (lots of nesting) vs. imperative-style code (lots of lines)
-   * Explanatory power of naming variables well
-   * Ability to split it over multiple cells, with more documentation between
-   * More understandable for those new to coding, because each thing to understand is smaller
+## Python review 1: Remembering pandas
+
+This first set of exercises works with a database from the U.S. Consumer Financial Protection Bureau.  The dataset recorded all mortgage applications in the U.S. in 2018, over 15 million of them.  Here we will work with a sample of about 0.1% of that data, just over 15 thousand entries.  These 15 thousand entries are randomly sampled from just those applications that were for a conventional loan for a typical home purchase of a principal residence (i.e., not a rental property, not an office building, etc., just standard house or condo for an individual or family).
+
+<a href="../../_static/practice-project-dataset-1.csv">Download the dataset as a CSV file here.</a>  If you have questions about the meanings of any column in the dataset, they are fully documented [on the government website](https://ffiec.cfpb.gov/documentation/2018/lar-data-fields/) from which I got the original (much larger) dataset.
+
+```{admonition} Exercise 1
+---
+class: alert alert-secondary
+---
+In class, we will work independently to perform the following tasks, using a cloud Jupyter provider such as Deepnote or Colab.
+
+ 1. Create a new project and name it something sensible, such as "MA346 Practice Project 1."
+ 2. Upload the data file into the project.
+ 3. Start a new Jupyter notebook in the same project and load the data file into a pandas DataFrame in that notebook.
+ 4. Explore the data using pandas's built-in `info` and/or `head` methods.
+ 5. The dataset has many columns we won't use.  Drop all columns except for `interest_rate`, `property_value`, `state_code`, `tract_minority_population_percent`, `derived_race`, `derived_sex`, and `applicant_age`.
+ 6. Reading a CSV file does not always ensure that columns are assigned the correct data type.  Use pandas's built-in `astype` function to correct any columns that have the wrong data type.
+ 7. Practice selecting just a subset of the DataFrame by trying each of these things:
+     * Define a new variable `women` that contains just the rows of the dataset containing mortgage applications from females.  How many are there?  What are the mean and median loan amounts for that group?
+     * Repeat the previous bullet point, but for Asian applicants, stored in a variable named `asians`.
+     * Repeat the previous bullet point, but for applicants whose age is 75 or over, stored in a variable `age75andup`.
+ 8. Make your notebook presentable, using appropriate Markdown comments between cells to explain your code.  (Chapter 5 will cover best practices for how to write such comments, but do what you think is best for now.)
+ 9. Use Deepnote or Colab's publishing feature to create a shareable link to your notebook.  Paste that link into our class's Microsoft Teams chat, so that we can share our work with one another and learn from each other's work.
+```
+
+```{admonition} Learning on Your Own - Basic pandas work in Excel
+---
+class: alert alert-danger
+---
+Investigate the following questions.  A report on this topic would give complete answers to each.
+ * Which of the tasks in Exercise 1 are possible to do in Excel and which are not?
+ * For those that are possible in Excel, what steps does the user take to do them?
+ * Will the resulting Excel workbook continue to function correctly if the original data changes?
+ * Which steps are more convenient in Excel and which are more convenient in Python and pandas, and why?
+```
+
+## Adding a new column
+
+As you may recall from CS230, you can add new columns to a pandas DataFrame using code like the example below.  This example calculates how much interest the loan would accrue in the first year.  (This is not fully accurate, since of course the borrower would make some payments that year, but it's just an example.)
+
+```python
+df['interest_first_year'] = df['property_value'] * df['interest_rate'] / 100
+df.head()
+```
+
+Running this code in the notebook you've created would work just fine, and would create that new column.  It would have missing values for any rows that had missing property values or interest rates, naturally, but it would compute correct numerical values in all other rows.
+
+But what happens if you try to run the same code, but just on the `women` DataFrame (or `asians` or `age75andup`)?
+
+```{admonition} Big Picture
+---
+class: alert alert-primary
+---
+The warning message you see when you attempt to run the code described above is an important one!  It relates to the difference between a DataFrame and a *view* of that DataFrame.  You can add columns to a DataFrame, but if you add to just a view, you'll receive a warning.  We will discuss the details of this in class.
+```
+
+## What if you don't remember CS230 very well?
+
+I have several recommendations of resources you can use:
+
+### DataCamp
+
+I will regularly be assigning you exercises from [DataCamp](http://www.datacamp.com), some of which will review CS230 materials.  If you remember everything from CS230, the first few weeks of these exercises should be easy and quick for you.  If not, you will need to put in more time, but it will help you catch up.
+
+### Bentley faculty
+
+I'm glad to meet with students who need help catching up on material from CS230 they may not remember.  Please feel free to come to office hours!
+
+I know that Prof. Masloff, who teaches CS230, made an extensive set of course notes available to her students.  You may wish to review key portions of that document to help you stay caught up in MA346.  If you did not have Prof. Masloff, you might consider [contacting her](https://faculty.bentley.edu/details.asp?uname=jmasloff) and asking for her course notes anyway.
+
+
+### Stack Overflow
+
+The premiere question and answer website for technical subjects is [Stack Overflow](https://stackoverflow.com/).  You don't need to visit the site, though; if you do a good Google search for any specific Python or pandas question, one of the top hits will almost alway be from Stack Overflow.  Here are a few tips to using it well:
+ * When you do a search, put as many specific words related to your question as possible.
+    * Be sure to mention Python, pandas, or whatever other libraries your question might touch upon.
+    * If your question is about an error message, put the specific key words from the error message in your search.
+ * When viewing questions and answers on Stack Overflow, don't just accept the top answer; see if later answers might be better suited to you.
+
+### O'Reilly books
+
+You have free access to O'Reilly Online Learning through the Bentley Library.  They are one of the top publishers of high-quality tutorial books on technical subjects.  To get started, [visit this page and at the bottom choose to download a mobile app for your phone or tablet.](https://www.oreilly.com/online-learning/try-now.html)
+
+Then browse their book catalog and see what looks like it might be good for you.  I recommend starting here:
+ * Python Data Science Handbook by Jake VanderPlas, chapter 3 (or perhaps start earlier if you need to)
+ * Python for Data Analysis by Wes McKinney, chapter 5 (or perhaps start earlier if you need to)
+ 
+### Official documentation
+
+Official documentation is used mostly for reference.  It does not make a good tutorial or lesson.  But it is the definitive reference, so I mention it here.
+
+ * [Python official documentation](https://docs.python.org/3/)
+ * [pandas official documentation](https://pandas.pydata.org/docs/)
+
+
+## Python review 2: mathematical exercises
+
+As before, do these exercises in a new notebook in Deepnote or Colab, and when you're done, share the link to the published version into our class's Teams chat.
+
+```{admonition} Exercise 2
+---
+class: alert alert-secondary
+---
+If $r$ is the annual interest rate and $P$ is the principal, we're all familiar with the standard formula for the present value after $n$ periods, $P(1+r)^n$.  Write this as a Python function.  Also consider:
+ 1. How many inputs does it take and what are their data types?
+ 2. What is the data type of its output?
+ 3. Evaluate your function on $P=1,000$, $r=0.01$, and $n=7$.  Ensure you get approximately \$1,072.14.
+```
+
+```{admonition} Exercise 3
+---
+class: alert alert-secondary
+---
+Create a pandas DataFrame with two columns.  The first column should be entitled F for Fahrenheit, and should contain the numbers from 0 to 100, counting by fives.  The next column should be entitled C for Celsius, and contain the corresponding temperature in degrees Celsius for the number in the first column.  Display the resulting table in the notebook.
+```
+
+```{admonition} Exercise 4
+---
+class: alert alert-secondary
+---
+The NumPy function `np.random.randint(a,b)` picks a random integer between $a$ and $b-1$.  Use that to create a function that behaves as follows:
+ * Your function takes as input a positive integer $n$, how many times to "roll the dice."
+ * Each roll of the dice simulates two dice being rolled (each with a number from 1 to 6) and adds the results together (thus generating a number between 2 and 12).
+ * After all $n$ rolls, return a pandas DataFrame with three columns:
+    1. the numbers 2 through 12
+    2. the number of times that number showed up
+    3. the percentage of the time that number showed up
+ * Ensure the resulting DataFrame is sorted by its first column.
+```
+
+
+## Functional-style code vs. imperative-style code
+
+As you wrote the functions above, you might have found yourself falling into one of two styles.  To see examples of each style, let's consider the definition of the statistical concept of *variance.*  The variance of a list of data $x_1,\ldots,x_n$ is defined to be
+
+$$\frac{\sum_{i=1}^{n} (x_i-\bar{x})^2}{n-1},$$
+
+where we write $\bar{x}$ to mean the mean of the data, and we pronounce it "$x$ bar."  If we take that function and convert it directly into Python, we might write it as follows.
+
+import numpy as np
+
+def variance_style_1 ( data ):
+    return sum( [ ( x - np.mean(data) )**2 for x in data ] ) / ( len(data) - 1 )
+
+test_data = [ 5, 10, 3, 9, -1, 5, 3, 1 ]
+variance_style_1( test_data )
+
+Although this function computes the variance of a list of data correctly, it piles up a lot of parentheses and brackets that some readers find unnecessarily confusing when reading code.  We can make the function less compact and more explanatory by breaking the nested parentheses into several different lines of code, each storing its result in a variable.  Here is an example.
+
+def variance_style_2 ( data ):
+    n = len(data)
+    xbar = np.mean( data )
+    squared_differences = [ ( x - xbar )**2 for x in data ]
+    return sum( squared_differences ) / ( n - 1 )
+
+variance_style_2( test_data )
+
+I call the first one *functional style* because we're composing a lot of functions, each inside another.  I call the second one *imperative style* because this is a programming term used to describe a line of code that gives a command; here we've broken the formula out into three separate commands to create variables, followed by the final formula.
+
+Neither of these is always right or always wrong.  For a short formula, you probably just want to use functional style.  But for a long formula, imperative style has these advantages:
+ * You can use good, descriptive variable names to clarify for the reader of your code what it's computing in each step.
+ * If the code you're writing isn't inside a function, you can split imperative-style code over multiple cells, and put explanations in between.
+ * If you know the reader of your code is new to coding (such as a new teammate in your organization) then imperative style gives them small pieces of code to digest one at a time, rather than a big pile of code they must understand all at once.
+
+So consider using each style for those situations that it fits best.

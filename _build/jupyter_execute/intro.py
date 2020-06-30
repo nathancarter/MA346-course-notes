@@ -67,6 +67,7 @@ chapter-1-intro-to-data-science.ipynb
 chapter-2-mathematical-foundations.ipynb
 chapter-3-jupyter.ipynb
 chapter-4-review-of-python-and-pandas.ipynb
+chapter-5-before-and-after.ipynb
 big-cheat-sheet.ipynb
 anaconda-installation.md
 vs-code-installation.md
