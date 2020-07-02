@@ -311,11 +311,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>The tall form is typically more useful when computing with data,</strong> because we often want to filter for just the rows we care about.  So the more separated the data is into rows, the easier it is to select just the data we need.</p>
 <p>Although it’s not part of MA346, it’s worth mentioning that: In the famous paper <a class="reference external" href="https://vita.had.co.nz/papers/tidy-data.pdf">Tidy Data</a>, data scientist and R developer Hadley Wickham calls tall form “tidy data” and defines it as having exactly one “observation” per row.  (What an observation is depends on what you’ve gathered data about.  In the first table above, an observation seems to be the amount of sales by a particular person on a particular day.)  His rationale comes from people who’ve studied databases, and if you’ve taken CS350 at Bentley, you may be familiar with the related concept of database normal forms.  The <a class="reference external" href="https://www.tidyverse.org/">tidyverse</a> is a collection of R packages that help you work smoothly with data if you organize it in tidy form.</p>
+<div class="alert alert-primary admonition">
+<p class="admonition-title">Big Picture</p>
+<p><strong>The tall form is typically more useful when computing with data,</strong> because we often want to filter for just the rows we care about.  So the more separated the data is into rows, the easier it is to select just the data we need.</p>
 <p><strong>The wide form is typically more useful when presenting data to humans.</strong>  Although this tiny table is just an example, data in the real world has far more rows, meaning that the tall form will not fit on a page.  Reshaping it into a rectangle that does fit on one page is usually preferred.</p>
 <p><strong>Pivot</strong> is the verb that converts tall form to wide form.</p>
 <p><strong>Melt</strong> is the verb that converts wide form to tall form.</p>
+</div>
 <p>Let’s investigate them.</p>
 </div>
 <div class="section" id="pivot">
@@ -441,7 +444,7 @@
 <li><p>The gray cells:</p>
 <ul class="simple">
 <li><p>Because we’ll be spreading a student’s data out over more than one row, these will be copied.</p></li>
-<li><p>These function as unique IDs for each row, so pandas calls them the <code class="docutils literal notranslate"><span class="pre">id_vars</span></code>.</p></li>
+<li><p>These function as unique IDs for each row, so pandas calls these columns the <code class="docutils literal notranslate"><span class="pre">id_vars</span></code>.</p></li>
 </ul>
 </li>
 <li><p>The red cells:</p>

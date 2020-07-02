@@ -26,15 +26,20 @@ The following two tables show the same data, but in different forms.  One is tal
 | Amy   | Smith | 39     | 68      | 10        |
 | Bob   | Jones | 93     | 85      | 0         |
 
-**The tall form is typically more useful when computing with data,** because we often want to filter for just the rows we care about.  So the more separated the data is into rows, the easier it is to select just the data we need.
-
 Although it's not part of MA346, it's worth mentioning that: In the famous paper [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf), data scientist and R developer Hadley Wickham calls tall form "tidy data" and defines it as having exactly one "observation" per row.  (What an observation is depends on what you've gathered data about.  In the first table above, an observation seems to be the amount of sales by a particular person on a particular day.)  His rationale comes from people who've studied databases, and if you've taken CS350 at Bentley, you may be familiar with the related concept of database normal forms.  The [tidyverse](https://www.tidyverse.org/) is a collection of R packages that help you work smoothly with data if you organize it in tidy form.
+
+```{admonition} Big Picture
+---
+class: alert alert-primary
+---
+**The tall form is typically more useful when computing with data,** because we often want to filter for just the rows we care about.  So the more separated the data is into rows, the easier it is to select just the data we need.
 
 **The wide form is typically more useful when presenting data to humans.**  Although this tiny table is just an example, data in the real world has far more rows, meaning that the tall form will not fit on a page.  Reshaping it into a rectangle that does fit on one page is usually preferred.
 
 **Pivot** is the verb that converts tall form to wide form.
 
 **Melt** is the verb that converts wide form to tall form.
+```
 
 Let's investigate them.
 
@@ -113,7 +118,7 @@ For example, let's say we were given the table below of students' performance on
 Drag the slider to see the melting in action.  While you do so, watch the following parts of the table:
  1. The gray cells:
      * Because we'll be spreading a student's data out over more than one row, these will be copied.
-     * These function as unique IDs for each row, so pandas calls them the `id_vars`.
+     * These function as unique IDs for each row, so pandas calls these columns the `id_vars`.
  2. The red cells:
      * These are the titles for each of several different functions.
      * Each function takes a student as input and gives a type of exam score as output.
