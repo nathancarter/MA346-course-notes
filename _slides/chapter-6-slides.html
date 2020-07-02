@@ -13203,7 +13203,246 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Chapter-6---Single-Table-Verbs">Chapter 6 - Single-Table Verbs<a class="anchor-link" href="#Chapter-6---Single-Table-Verbs">&#182;</a></h1><p><a href="../_build/html/chapter-6-single-table-verbs.html">See also the corresponding course notes, here.</a></p>
-<p><font color='red'>THESE SLIDES ARE NOT YET WRITTEN.</font></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Data-in-&quot;tall&quot;-form">Data in "tall" form<a class="anchor-link" href="#Data-in-&quot;tall&quot;-form">&#182;</a></h2><table>
+<thead><tr>
+<th>First</th>
+<th>Last</th>
+<th>Day</th>
+<th>Sales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amy</td>
+<td>Smith</td>
+<td>Monday</td>
+<td>39</td>
+</tr>
+<tr>
+<td>Amy</td>
+<td>Smith</td>
+<td>Tuesday</td>
+<td>68</td>
+</tr>
+<tr>
+<td>Amy</td>
+<td>Smith</td>
+<td>Wednesday</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>Jones</td>
+<td>Monday</td>
+<td>93</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>Jones</td>
+<td>Tuesday</td>
+<td>85</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>Jones</td>
+<td>Wednesday</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>From the reading, what is the value of this form of data?</p>
+<p>And what is the other name for this form of data?</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Data-in-&quot;wide&quot;-form">Data in "wide" form<a class="anchor-link" href="#Data-in-&quot;wide&quot;-form">&#182;</a></h2><table>
+<thead><tr>
+<th>First</th>
+<th>Last</th>
+<th>Monday</th>
+<th>Tuesday</th>
+<th>Wednesday</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amy</td>
+<td>Smith</td>
+<td>39</td>
+<td>68</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>Jones</td>
+<td>93</td>
+<td>85</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>From the reading, what is the value of this form of data?</p>
+<p>And what are the verbs used to convert from tall to wide form, or wide to tall form?</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Pivot-(animation)">Pivot (<a href="https://nathancarter.github.io/dataframe-animations/pivot.html">animation</a>)<a class="anchor-link" href="#Pivot-(animation)">&#182;</a></h2><p>Names</p>
+<ul>
+<li>Gray cells are called <code>index</code></li>
+<li>Blue cells are called <code>columns</code></li>
+<li>Green cells are called <code>values</code></li>
+</ul>
+<p>Requirements</p>
+<ul>
+<li>The relationship from <code>index</code> and <code>columns</code> to <code>values</code> must be a <em>function</em>.</li>
+</ul>
+<p>Guarantees</p>
+<ul>
+<li>That one function will become many functions, each in its own column, one for each value in the original <code>columns</code> column.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Melt-(animation)">Melt (<a href="https://nathancarter.github.io/dataframe-animations/melt.html">animation</a>)<a class="anchor-link" href="#Melt-(animation)">&#182;</a></h2><p>Names</p>
+<ul>
+<li>Gray columns are called <code>id_vars</code></li>
+<li>Red column headers are called <code>value_vars</code></li>
+</ul>
+<p>Requirements</p>
+<ul>
+<li>The <code>id_vars</code> uniquely identify each row.</li>
+<li>The relationship from <code>id_vars</code> to each <code>value_vars</code> column is a <em>function</em>.</li>
+</ul>
+<p>Guarantees</p>
+<ul>
+<li>The <code>value_vars</code> column headers will be merged into one single column entitled <code>variable</code>.</li>
+<li>The <code>value_vars</code> column entries will be merged into one single column entitled <code>value</code>.</li>
+<li>The <code>id_vars</code> entries will be replicated so that the result is still a function from <code>id_vars</code> and <code>variable</code> to <code>value</code>.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Pivot-table-(animation)">Pivot table (<a href="https://nathancarter.github.io/dataframe-animations/pivot-table.html">animation</a>)<a class="anchor-link" href="#Pivot-table-(animation)">&#182;</a></h2><p>Same as pivot, except:</p>
+<ul>
+<li>The relationship between <code>index</code> and <code>columns</code> need not be a function.</li>
+<li>Therefore some values will need to be combined.</li>
+<li>And so we must provide a function that will combine them, called <code>aggfunc</code>.</li>
+</ul>
+<p>Pivot tables are extremely common for summarizing data, especially since there are so many different aggregation functions.
+<a href="https://cmdlinetips.com/2019/10/pandas-groupby-13-functions-to-aggregate/">Here is a list of all the built-in ones</a>, and you can also code your own.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">&#182;</a></h2><p>After the break in class today, you'll be diving into working on some datasets for practice.</p>
+<p>To prepare for that, let's do a few exercises for discussion, to refresh your memory on other pandas tools, functions, and syntax.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">&#182;</a></h3><p>Which of the following sentences correctly describes the uses of the pandas functions loc and iloc?</p>
+<ol>
+<li>For a DataFrame <code>df</code>, you can use <code>df.loc[...]</code> to look up rows, columns, or cells by their names, and <code>df.iloc[...]</code> to look up rows, columns, or cells by their zero-based numerical index.</li>
+<li>For a DataFrame <code>df</code>, you can use <code>df.loc[...]</code> to access rows and <code>df.iloc[...]</code> to access columns.</li>
+<li>For a DataFrame <code>df</code>, you can use <code>df.loc[...]</code> to look up one or more rows by integer index and <code>df.iloc[...]</code> to do the same, but counting from the end of the DataFrame (<code>iloc</code> = "inverted loc").</li>
+<li>For a DataFrame <code>df</code>, you can use <code>df[...]</code>, <code>df.loc[...]</code>, and <code>df.iloc[...]</code> interchangeably to get access to individual entries in the DataFrame.</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h3><p>If you have a DataFrame in the variable <code>df</code>, which of the following are situations in which you would want to execute the code <code>df["sales"] = 0</code>?</p>
+<ol>
+<li>You want to remove from your DataFrame a column entitled "sales"</li>
+<li>You want to replace the data in an existing "sales" row with zero entries</li>
+<li>You want to add a new row entitled "sales," initially populated with zero entries</li>
+<li>You want to remove from your DataFrame a row entitled "sales"</li>
+<li>You want to replace the data in an existing "sales" column with zero entries</li>
+<li>You want to add a new column entitled "sales," initially populated with zero entries</li>
+<li>You want to replace one existing entry, named "sales," with a zero</li>
+<li>You want to add one new entry, named "sales," initially containing a zero</li>
+<li>You want to remove from your DataFrame one entry, the one named "sales"</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-3">Exercise 3<a class="anchor-link" href="#Exercise-3">&#182;</a></h3><p>Assume we have a DataFrame <code>df</code> with several columns, including "Salary" and "Job Title". How would we find the salaries of anyone whose job title is "Engineer"?  (Fill in the blanks.)</p>
+<div class="highlight"><pre><span></span><span class="n">indices</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">___________</span><span class="p">]</span> <span class="o">=</span> <span class="n">__________</span>
+<span class="n">salaries</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">____________________</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-4">Exercise 4<a class="anchor-link" href="#Exercise-4">&#182;</a></h3><p>What happens when we run the code <code>df["column"].apply( f )</code>?</p>
+<ol>
+<li>Python replaces each entry <code>x</code> in <code>df["column"]</code> with the result of <code>f(x)</code></li>
+<li>Python computes and returns the result of <code>f(df["column"])</code></li>
+<li>Python computes and returns a new Series containing <code>f(x)</code> for each entry <code>x</code> in <code>df["columns"]</code></li>
+<li>Python replaces the column <code>df["column"]</code> with the result of <code>f(df["column"])</code></li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-5">Exercise 5<a class="anchor-link" href="#Exercise-5">&#182;</a></h3><p>Assume that we have read a DataFrame <code>df</code> from a CSV file, and provided no default index, so that its index is the integers from 0 to 9.</p>
+<p>Assume further that the rows in df each represent data collected in one particular year.  The data were collected beginning with the year 1970, and repeating the data collection every five years, so that the first row is from 1970, the second row is from 1975, and so on.</p>
+<p>We want the index of <code>df</code> to represent the year of data collection, which is not currently stored in any of the columns of the DataFrame.  Which of the following pieces of code would accomplish that goal?</p>
+<div class="highlight"><pre><span></span><span class="c1"># Option 1:</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">*</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">1965</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Year&#39;</span>
+<span class="c1"># Option 2:</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">*</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">1970</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Year&#39;</span>  
+<span class="c1"># Option 3:</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1965</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Year&#39;</span>
+<span class="c1"># Option 4:</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1970</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Year&#39;</span>
+</pre></div>
 
 </div>
 </div>
