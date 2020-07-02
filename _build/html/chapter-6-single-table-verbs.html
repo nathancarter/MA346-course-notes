@@ -1,0 +1,645 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Single-Table Verbs &#8212; MA346 Course Notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/chapter-6-single-table-verbs.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Big Cheat Sheet" href="big-cheat-sheet.html" />
+    <link rel="prev" title="Before and After" href="chapter-5-before-and-after.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/chapter-6-single-table-verbs.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Single-Table Verbs" />
+<meta property="og:description" content="Single-Table Verbs  <a href="../../_slides/chapter-6-slides.html">See also the slides that summarize a portion of this content.</a>  The function we’ll discuss " />
+<meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="chapter-1-intro-to-data-science.html">1. Introduction to Data Science</a>
+  </li>
+  <li class="">
+    <a href="chapter-2-mathematical-foundations.html">2. Mathematical Foundations</a>
+  </li>
+  <li class="">
+    <a href="chapter-3-jupyter.html">3. Jupyter</a>
+  </li>
+  <li class="">
+    <a href="chapter-4-review-of-python-and-pandas.html">4. Review of Python and pandas</a>
+  </li>
+  <li class="">
+    <a href="chapter-5-before-and-after.html">5. Before and After</a>
+  </li>
+  <li class="active">
+    <a href="">6. Single-Table Verbs</a>
+  </li>
+  <li class="">
+    <a href="big-cheat-sheet.html">7. Big Cheat Sheet</a>
+  </li>
+  <li class="">
+    <a href="anaconda-installation.html">8. Anaconda Installation</a>
+  </li>
+  <li class="">
+    <a href="vs-code-installation.html">9. VS Code for Python Installation</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="_sources/chapter-6-single-table-verbs.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#tall-and-wide-form" class="nav-link">Tall and Wide Form</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#pivot" class="nav-link">Pivot</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#the-general-idea" class="nav-link">The general idea</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#the-precise-definition" class="nav-link">The precise definition</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#purpose-of-pivoting" class="nav-link">Purpose of pivoting</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#melt" class="nav-link">Melt</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#the-genreal-idea" class="nav-link">The genreal idea</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#id1" class="nav-link">The precise definition</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#pivot-tables" class="nav-link">Pivot tables</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#id2" class="nav-link">The general idea</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#id3" class="nav-link">The precise definition</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#stack-and-unstack" class="nav-link">Stack and unstack</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#animation-for-unstack-stack-at-level-1" class="nav-link">Animation for unstack/stack at level 1</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#animation-for-unstack-stack-at-level-0" class="nav-link">Animation for unstack/stack at level 0</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="single-table-verbs">
+<h1>Single-Table Verbs<a class="headerlink" href="#single-table-verbs" title="Permalink to this headline">¶</a></h1>
+<p><a href="../../_slides/chapter-6-slides.html">See also the slides that summarize a portion of this content.</a></p>
+<p>The function we’ll discuss today got the name “verbs” because coders in the R community developed what they call <a class="reference external" href="https://beanumber.github.io/sds192/lab-single_table.html">a “grammar” for data transformation</a>, and the function we’ll look at today are some of that grammar’s “verbs.”  The origins in R are unimportant for our course; what matters is that verbs are things you can <em>do</em> with tables of data.</p>
+<div class="section" id="tall-and-wide-form">
+<h2>Tall and Wide Form<a class="headerlink" href="#tall-and-wide-form" title="Permalink to this headline">¶</a></h2>
+<p>The following two tables show the same data, but in different forms.  One is tall while the other is wide.</p>
+<p><strong>Tall form:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>First</p></th>
+<th class="head"><p>Last</p></th>
+<th class="head"><p>Day</p></th>
+<th class="head"><p>Sales</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Amy</p></td>
+<td><p>Smith</p></td>
+<td><p>Monday</p></td>
+<td><p>39</p></td>
+</tr>
+<tr class="row-odd"><td><p>Amy</p></td>
+<td><p>Smith</p></td>
+<td><p>Tuesday</p></td>
+<td><p>68</p></td>
+</tr>
+<tr class="row-even"><td><p>Amy</p></td>
+<td><p>Smith</p></td>
+<td><p>Wednesday</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bob</p></td>
+<td><p>Jones</p></td>
+<td><p>Monday</p></td>
+<td><p>93</p></td>
+</tr>
+<tr class="row-even"><td><p>Bob</p></td>
+<td><p>Jones</p></td>
+<td><p>Tuesday</p></td>
+<td><p>85</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bob</p></td>
+<td><p>Jones</p></td>
+<td><p>Wednesday</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Wide form:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>First</p></th>
+<th class="head"><p>Last</p></th>
+<th class="head"><p>Monday</p></th>
+<th class="head"><p>Tuesday</p></th>
+<th class="head"><p>Wednesday</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Amy</p></td>
+<td><p>Smith</p></td>
+<td><p>39</p></td>
+<td><p>68</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bob</p></td>
+<td><p>Jones</p></td>
+<td><p>93</p></td>
+<td><p>85</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The tall form is typically more useful when computing with data,</strong> because we often want to filter for just the rows we care about.  So the more separated the data is into rows, the easier it is to select just the data we need.</p>
+<p>Although it’s not part of MA346, it’s worth mentioning that: In the famous paper <a class="reference external" href="https://vita.had.co.nz/papers/tidy-data.pdf">Tidy Data</a>, data scientist and R developer Hadley Wickham calls tall form “tidy data” and defines it as having exactly one “observation” per row.  (What an observation is depends on what you’ve gathered data about.  In the first table above, an observation seems to be the amount of sales by a particular person on a particular day.)  His rationale comes from people who’ve studied databases, and if you’ve taken CS350 at Bentley, you may be familiar with the related concept of database normal forms.  The <a class="reference external" href="https://www.tidyverse.org/">tidyverse</a> is a collection of R packages that help you work smoothly with data if you organize it in tidy form.</p>
+<p><strong>The wide form is typically more useful when presenting data to humans.</strong>  Although this tiny table is just an example, data in the real world has far more rows, meaning that the tall form will not fit on a page.  Reshaping it into a rectangle that does fit on one page is usually preferred.</p>
+<p><strong>Pivot</strong> is the verb that converts tall form to wide form.</p>
+<p><strong>Melt</strong> is the verb that converts wide form to tall form.</p>
+<p>Let’s investigate them.</p>
+</div>
+<div class="section" id="pivot">
+<h2>Pivot<a class="headerlink" href="#pivot" title="Permalink to this headline">¶</a></h2>
+<p>As just stated, pivot is the verb for converting tall-form data to wide-form data.  We’ll give a precise definition later on.  Let’s first get some intuition for how it works.</p>
+<div class="section" id="the-general-idea">
+<h3>The general idea<a class="headerlink" href="#the-general-idea" title="Permalink to this headline">¶</a></h3>
+<p>The table below shows the same table from above, in “tall” form.  Drag the slider back and forth to watch the transition from tall to wide form.  While you do so, watch each of these parts of the table:</p>
+<ol class="simple">
+<li><p>The gray cells:</p>
+<ul class="simple">
+<li><p>These are the unique IDs used in both shapes, tall or wide.</p></li>
+<li><p>They function like row headers.</p></li>
+<li><p>In pandas, we call them the <code class="docutils literal notranslate"><span class="pre">index</span></code> of the pivot.</p></li>
+</ul>
+</li>
+<li><p>The blue cells:</p>
+<ul class="simple">
+<li><p>The most important change happens here.</p></li>
+<li><p>In tall form they’re data, but in wide form they’re column headers.</p></li>
+<li><p>In pandas, we call them the <code class="docutils literal notranslate"><span class="pre">columns</span></code> of the pivot (because they turn into columns when we pivot).</p></li>
+</ul>
+</li>
+<li><p>The green cells:</p>
+<ul class="simple">
+<li><p>These contain the values, typically numbers.</p></li>
+<li><p>They do not change, but merely move to sit in the appropriate place in each table.</p></li>
+<li><p>In pandas, we call them the <code class="docutils literal notranslate"><span class="pre">values</span></code> of the pivot.</p></li>
+</ul>
+</li>
+</ol>
+<p>(This animation can be viewed <a class="reference external" href="https://nathancarter.github.io/dataframe-animations/pivot.html">in its own page here</a>.)</p>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+<span class="n">IFrame</span><span class="p">(</span> <span class="s1">&#39;https://nathancarter.github.io/dataframe-animations/pivot.html?hide-title=true&#39;</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="800"
+    src="https://nathancarter.github.io/dataframe-animations/pivot.html?hide-title=true"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+</div>
+<div class="section" id="the-precise-definition">
+<h3>The precise definition<a class="headerlink" href="#the-precise-definition" title="Permalink to this headline">¶</a></h3>
+<p>We can state precisely what <code class="docutils literal notranslate"><span class="pre">df.pivot()</span></code> does by building on what we’ve learned in previous chapters.  We can describe both the <em>requirements</em> and <em>guarantees</em> of the pivot function, and can do so in terms of functions and relations.</p>
+<ul class="simple">
+<li><p>Requirements of <code class="docutils literal notranslate"><span class="pre">df.pivot()</span></code>:</p>
+<ul>
+<li><p>The table to be pivoted must express a <em>function</em> from at least two input columns (called <code class="docutils literal notranslate"><span class="pre">index</span></code> and <code class="docutils literal notranslate"><span class="pre">columns</span></code>, above) to one output column (called <code class="docutils literal notranslate"><span class="pre">values</span></code>, above).</p></li>
+<li><p>It is acceptable for the <code class="docutils literal notranslate"><span class="pre">index</span></code> to comprise more than one column, as in the example above.</p></li>
+<li><p>Recall that for it to be a function, inputs cannot be repeated, because that could connect them with more than one output.</p></li>
+</ul>
+</li>
+<li><p>Guarantees of <code class="docutils literal notranslate"><span class="pre">df.pivot()</span></code>:</p>
+<ul>
+<li><p>Each value from the <code class="docutils literal notranslate"><span class="pre">index</span></code> columns will appear only once in the resulting table.</p></li>
+<li><p>A new column will be created for each unique value in the old <code class="docutils literal notranslate"><span class="pre">columns</span></code> column.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">values</span></code> column will have been removed.</p></li>
+<li><p>For each <code class="docutils literal notranslate"><span class="pre">index</span></code> entry <span class="math notranslate nohighlight">\(i\)</span> in the original DataFrame and each <code class="docutils literal notranslate"><span class="pre">columns</span></code> entry <span class="math notranslate nohighlight">\(c\)</span>, if <span class="math notranslate nohighlight">\(v\)</span> is the unique value associated with it, then the new table will contain a row with <code class="docutils literal notranslate"><span class="pre">index</span></code> <span class="math notranslate nohighlight">\(i\)</span> and with <span class="math notranslate nohighlight">\(v\)</span> in the column entitled <span class="math notranslate nohighlight">\(c\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<p>You can think of <code class="docutils literal notranslate"><span class="pre">df.pivot()</span></code> as turning one function into many.  In the example above, it worked like this:</p>
+<ul class="simple">
+<li><p>Original table</p>
+<ul>
+<li><p>One function</p>
+<ul>
+<li><p>Inputs: first name, last name, day</p></li>
+<li><p>Output: sales</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Result of pivoting</p>
+<ul>
+<li><p>First function</p>
+<ul>
+<li><p>Inputs: first name, last name</p></li>
+<li><p>Output: Monday sales</p></li>
+</ul>
+</li>
+<li><p>Second function</p>
+<ul>
+<li><p>Inputs: first name, last name</p></li>
+<li><p>Output: Tuesday sales</p></li>
+</ul>
+</li>
+<li><p>Third function</p>
+<ul>
+<li><p>Inputs: first name, last name</p></li>
+<li><p>Output: Wednesday sales</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="purpose-of-pivoting">
+<h3>Purpose of pivoting<a class="headerlink" href="#purpose-of-pivoting" title="Permalink to this headline">¶</a></h3>
+<p>Recall that pivoting just turns “tall” data into “wide” data.  And tall form is how you typically store data when doing an analysis, because of the ease of processing tall data using code, while wide form is often more attractive for a human reading data from a table.  <strong>So the purpose of pivoting is typically when you’re generating reports for human consumption.</strong></p>
+</div>
+</div>
+<div class="section" id="melt">
+<h2>Melt<a class="headerlink" href="#melt" title="Permalink to this headline">¶</a></h2>
+<p>The reverse operation to a pivot is called “melt.”  This comes from the fact that wide data “falls down” (like the drips of a melting icicle perhaps?) into tall form, which you can watch happen in the animation below.</p>
+<div class="section" id="the-genreal-idea">
+<h3>The genreal idea<a class="headerlink" href="#the-genreal-idea" title="Permalink to this headline">¶</a></h3>
+<p>Just as pivoting was usually to turn data stored for computers into data readable by humans, melting is for the reverse.  If you’re given data in wide form, but you want to prepare it for analysis, you often want to convert it into tall form to make subsequent data processing code easier.</p>
+<p>For example, let’s say we were given the table below of students’ performance on various exams.  (Obviously, this is fake data.)  If we would rather view each exam as a separate observation, so that each row is a single exam score, we can melt the table.</p>
+<p>Drag the slider to see the melting in action.  While you do so, watch the following parts of the table:</p>
+<ol class="simple">
+<li><p>The gray cells:</p>
+<ul class="simple">
+<li><p>Because we’ll be spreading a student’s data out over more than one row, these will be copied.</p></li>
+<li><p>These function as unique IDs for each row, so pandas calls them the <code class="docutils literal notranslate"><span class="pre">id_vars</span></code>.</p></li>
+</ul>
+</li>
+<li><p>The red cells:</p>
+<ul class="simple">
+<li><p>These are the titles for each of several different functions.</p></li>
+<li><p>Each function takes a student as input and gives a type of exam score as output.</p></li>
+<li><p>They will change from being column headers to being values in the table, so pandas calls them the <code class="docutils literal notranslate"><span class="pre">value_vars</span></code>.</p></li>
+</ul>
+</li>
+<li><p>The other colors:</p>
+<ul class="simple">
+<li><p>Each other color represents a separate function (blue maps students to SAT score, green maps students to ACT score, and yellow maps students to GPA).</p></li>
+<li><p>Because we’re collecting all scores into a single column, these will stack up to become just one column.</p></li>
+</ul>
+</li>
+</ol>
+<p>(This animation can be viewed <a class="reference external" href="https://nathancarter.github.io/dataframe-animations/melt.html">in its own page here</a>.)</p>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+<span class="n">IFrame</span><span class="p">(</span> <span class="s1">&#39;https://nathancarter.github.io/dataframe-animations/melt.html?hide-title=true&#39;</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">900</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="900"
+    src="https://nathancarter.github.io/dataframe-animations/melt.html?hide-title=true"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>The precise definition<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Unsurprisingly, the requirements and guarantees of the melt operation are the reverse of those from the pivot operation.</p>
+<ul class="simple">
+<li><p>Requirements of <code class="docutils literal notranslate"><span class="pre">df.melt()</span></code></p>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">id_vars</span></code> are one or more columns that contain unique identifiers for each row.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">value_vars</span></code> columns are each a function from the <code class="docutils literal notranslate"><span class="pre">id_vars</span></code>.  (That is, no value in <code class="docutils literal notranslate"><span class="pre">id_vars</span></code> appears twice.)</p></li>
+</ul>
+</li>
+<li><p>Guarantees of <code class="docutils literal notranslate"><span class="pre">df.melt()</span></code></p>
+<ul>
+<li><p>For each value <span class="math notranslate nohighlight">\(i\)</span> in the <code class="docutils literal notranslate"><span class="pre">id_vars</span></code> column and for each column <span class="math notranslate nohighlight">\(c\)</span> in the <code class="docutils literal notranslate"><span class="pre">value_vars</span></code>, if we write <span class="math notranslate nohighlight">\(f\)</span> for the function that column represents, then the new table will contain a row with ID <span class="math notranslate nohighlight">\(i\)</span> and values <span class="math notranslate nohighlight">\(c\)</span> and <span class="math notranslate nohighlight">\(f(c)\)</span>.</p></li>
+<li><p>This new table will therefore be a function from the <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(c\)</span> columns to the <span class="math notranslate nohighlight">\(f(c)\)</span> column.  (By default, pandas calls those two new columns “variable” and “value” but you can give them more meaningful names.)</p></li>
+<li><p>There are no other rows in the resulting table besides those just described.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="pivot-tables">
+<h2>Pivot tables<a class="headerlink" href="#pivot-tables" title="Permalink to this headline">¶</a></h2>
+<p>All this talk of pivoting should remind you of the very common Excel operation called “pivot table.”  It is very much like the pivot operation, with two differences.  First, it doesn’t require the table to represent a function.  Second, it does require you to explain how values will be summarized or combined.  Naturally, pandas suppoorts this operation as well, and it’s extremely useful.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">df.pivot()</span></code> makes a tall table wide, then <code class="docutils literal notranslate"><span class="pre">df.pivot_table()</span></code> makes a tall table sort of wide.  We’ll see why below.</p>
+<div class="section" id="id2">
+<h3>The general idea<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>In the table shown below, notice that mapping from the gray columns to the blue column is <em>not</em> a function.  If it were, we could pivot on the blue column, and the green cells would rearrange themselves just as they did in the first animation up above.  But try dragging the slider below <em>slowly</em> and you will see that some green cells collide.</p>
+<p>For instance, Amy Smith has two different sales to the same customer, Facebook, and Bob Jones has two different sales to the same customer, Amazon.  So we cannot simply create a Facebook column and an Amazon column and rearrange the sales data into them.  When two sales figures need to be placed under the same customer heading, we need some way to combine them.</p>
+<p>The way the table below combines cells is by adding, which is a very sensible thing to do with sales data for a customer.  You can see that the code asks this by specifying the aggregation function (or <code class="docutils literal notranslate"><span class="pre">aggfunc</span></code>) to be “sum.”</p>
+<p>This is why a <code class="docutils literal notranslate"><span class="pre">pivot_table</span></code> operation doesn’t make a table that’s as wide as a <code class="docutils literal notranslate"><span class="pre">pivot</span></code> might, because some cells are combined, meaning that the overall table reduces in size.</p>
+<p>(This animation can be viewed <a class="reference external" href="https://nathancarter.github.io/dataframe-animations/pivot-table.html">in its own page here</a>.)</p>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+<span class="n">IFrame</span><span class="p">(</span> <span class="s1">&#39;https://nathancarter.github.io/dataframe-animations/pivot-table.html?hide-title=true&#39;</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="800"
+    height="800"
+    src="https://nathancarter.github.io/dataframe-animations/pivot-table.html?hide-title=true"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>The precise definition<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>I will alter the precise definition of <code class="docutils literal notranslate"><span class="pre">df.pivot()</span></code> as little as possible when creating this definition of <code class="docutils literal notranslate"><span class="pre">df.pivot_table().</span></code></p>
+<ul class="simple">
+<li><p>Requirements of <code class="docutils literal notranslate"><span class="pre">df.pivot_table()</span></code>:</p>
+<ul>
+<li><p>The table to be pivoted can express any <em>relation</em> among least three columns (called <code class="docutils literal notranslate"><span class="pre">index</span></code>, <code class="docutils literal notranslate"><span class="pre">columns</span></code>, and <code class="docutils literal notranslate"><span class="pre">values</span></code>, above).</p></li>
+<li><p>It is acceptable for the <code class="docutils literal notranslate"><span class="pre">index</span></code> to comprise more than one column, as in the example above.  (Same as for <code class="docutils literal notranslate"><span class="pre">df.pivot()</span></code>.)</p></li>
+<li><p>We must have some aggregation function (called <code class="docutils literal notranslate"><span class="pre">aggfunc</span></code>, above) that can combine many entries from the <code class="docutils literal notranslate"><span class="pre">values</span></code> column into one.  In the example above, we used “sum.”  Let’s call this function <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Guarantees of <code class="docutils literal notranslate"><span class="pre">df.pivot_table()</span></code>:</p>
+<ul>
+<li><p>Each value from the <code class="docutils literal notranslate"><span class="pre">index</span></code> columns will appear only once in the resulting table.  (Same as for <code class="docutils literal notranslate"><span class="pre">df.pivot()</span></code>.)</p></li>
+<li><p>A new column will be created for each unique value in the old <code class="docutils literal notranslate"><span class="pre">columns</span></code> column.  (Same as for <code class="docutils literal notranslate"><span class="pre">df.pivot()</span></code>.)</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">values</span></code> column will have been removed.  (Same as for <code class="docutils literal notranslate"><span class="pre">df.pivot()</span></code>.)</p></li>
+<li><p>For each <code class="docutils literal notranslate"><span class="pre">index</span></code> entry <span class="math notranslate nohighlight">\(i\)</span> in the original DataFrame and each <code class="docutils literal notranslate"><span class="pre">columns</span></code> entry <span class="math notranslate nohighlight">\(c\)</span>, if <span class="math notranslate nohighlight">\(v_1,v_2,\ldots,v_n\)</span> are the various values associated with it, then the new table will contain a row with <code class="docutils literal notranslate"><span class="pre">index</span></code> <span class="math notranslate nohighlight">\(i\)</span> and with <span class="math notranslate nohighlight">\(A(v_1,v_2,\ldots,v_n)\)</span> in the column entitled <span class="math notranslate nohighlight">\(c\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="stack-and-unstack">
+<h2>Stack and unstack<a class="headerlink" href="#stack-and-unstack" title="Permalink to this headline">¶</a></h2>
+<p>There are two other single-table verbs that you studied in the DataCamp review before today’s reading.  These are less common because they apply only in the context where there is a multi-index, either on rows or columns.  But we give animations of each below to help the reader visualize them.</p>
+<p>The stack operation takes nested column indices (which are arranged horizontally) and makes them nested row indices (which are arranged vertically).  This is why it’s called “stack,” because it arranges the headings vertically.  Unstack is the same operation in reverse.</p>
+<p>When applying these operations, it is possible to choose which level of a multi-index gets stacked or unstacked.  The two animations below use two different levels, so that you can compare the differences.</p>
+<div class="section" id="animation-for-unstack-stack-at-level-1">
+<h3>Animation for unstack/stack at level 1<a class="headerlink" href="#animation-for-unstack-stack-at-level-1" title="Permalink to this headline">¶</a></h3>
+<p>The level of a stack/unstack operation refers to which level of the multi-index will be moved.  The animation below shows <code class="docutils literal notranslate"><span class="pre">df.unstack(</span> <span class="pre">level=1</span> <span class="pre">)</span></code> when you move the slider from left to right, so level 1 of the row multi-index (the weeks) moves up to become part of the column index.  It is always placed as an inner index, but this can be changed afterwards with <code class="docutils literal notranslate"><span class="pre">df.swaplevel()</span></code>.</p>
+<p>The reverse operation is exactly <code class="docutils literal notranslate"><span class="pre">df.stack(</span> <span class="pre">level=1</span> <span class="pre">)</span></code>, because it moves level 1 from the column headings back to be inside the row headings instead.</p>
+<p>(This animation can be viewed <a class="reference external" href="https://nathancarter.github.io/dataframe-animations/stack-1.html">in its own page here</a>.)</p>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+<span class="n">IFrame</span><span class="p">(</span> <span class="s1">&#39;https://nathancarter.github.io/dataframe-animations/stack-1.html?hide-title=true&#39;</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">900</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="800"
+    height="900"
+    src="https://nathancarter.github.io/dataframe-animations/stack-1.html?hide-title=true"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+</div>
+<div class="section" id="animation-for-unstack-stack-at-level-0">
+<h3>Animation for unstack/stack at level 0<a class="headerlink" href="#animation-for-unstack-stack-at-level-0" title="Permalink to this headline">¶</a></h3>
+<p>The level of a stack/unstack operation refers to which level of the multi-index will be moved.  The animation below shows <code class="docutils literal notranslate"><span class="pre">df.unstack(</span> <span class="pre">level=0</span> <span class="pre">)</span></code> when you move the slider from left to right, so level 0 of the row multi-index (the months) moves up to become part of the column index.  It is always placed as an inner index, but this can be changed afterwards with <code class="docutils literal notranslate"><span class="pre">df.swaplevel()</span></code>.</p>
+<p>The reverse operation is therefore actually a combination of <code class="docutils literal notranslate"><span class="pre">df.stack()</span></code> (which would put the months inside the weeks) and <code class="docutils literal notranslate"><span class="pre">df.swaplevel()</span></code> (which would fix that) all in one.</p>
+<p>(This animation can be viewed <a class="reference external" href="https://nathancarter.github.io/dataframe-animations/stack-0.html">in its own page here</a>.)</p>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+<span class="n">IFrame</span><span class="p">(</span> <span class="s1">&#39;https://nathancarter.github.io/dataframe-animations/stack-0.html?hide-title=true&#39;</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">900</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="900"
+    src="https://nathancarter.github.io/dataframe-animations/stack-0.html?hide-title=true"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="chapter-5-before-and-after.html" title="previous page">Before and After</a>
+    <a class='right-next' id="next-link" href="big-cheat-sheet.html" title="next page">Big Cheat Sheet</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Carter<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>

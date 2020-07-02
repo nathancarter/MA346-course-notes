@@ -18,11 +18,10 @@ Each topic below will become a link to what we will cover in class that day, onc
 |      |           | &nbsp;       |
 | 2    | 9/10/2020 | Computational notebooks (Jupyter) ([notes](chapter-3-jupyter), <a href='../../_slides/chapter-3-slides.html'>slides</a>) |
 |      |           | Python review focusing on pandas and mathematical foundations ([notes](chapter-4-review-of-python-and-pandas), no slides) |
-|      |           | Functional-style code vs. imperative-style code (not yet ready) |
 |      |           | [DataCamp to review before Week 3](big-cheat-sheet.html#before-week-3) |
 |      |           | &nbsp;       |
-| 3    | 9/17/2020 | Before and after, in mathematics and communication (not yet ready) |
-|      |           | Pandas in greater depth (not yet ready) |
+| 3    | 9/17/2020 | Before and after, in mathematics and communication ([notes](chapter-5-before-and-after), <a href='../../_slides/chapter-5-slides.html'>slides</a>) |
+|      |           | Pandas single-table verbs ([notes](chapter-6-single-table-verbs), <a href='../../_slides/chapter-6-slides.html'>slides</a>) |
 |      |           | [DataCamp to review before Week 4](big-cheat-sheet.html#before-week-4-review-of-visualization-in-cs230) |
 |      |           | &nbsp;       |
 | 4    | 9/24/2020 | Abstraction in mathematics and computing (not yet ready) |
@@ -68,6 +67,7 @@ chapter-2-mathematical-foundations.ipynb
 chapter-3-jupyter.ipynb
 chapter-4-review-of-python-and-pandas.ipynb
 chapter-5-before-and-after.ipynb
+chapter-6-single-table-verbs.ipynb
 big-cheat-sheet.ipynb
 anaconda-installation.md
 vs-code-installation.md
