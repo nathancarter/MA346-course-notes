@@ -160,10 +160,10 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#assumptions-and-guarantees-the-math-and-logic-part" class="nav-link">Assumptions and Guarantees (the math and logic part)</a><ul class="nav section-nav flex-column">
+            <a href="#requirements-and-guarantees" class="nav-link">Requirements and Guarantees</a><ul class="nav section-nav flex-column">
                 
         <li class="nav-item toc-entry toc-h3">
-            <a href="#assumptions" class="nav-link">Assumptions</a>
+            <a href="#requirements" class="nav-link">Requirements</a>
         </li>
     
         <li class="nav-item toc-entry toc-h3">
@@ -215,23 +215,24 @@
 <p><a href="../../_slides/chapter-5-slides.html">See also the slides that summarize a portion of this content.</a></p>
 <p>The phrase “before and after” has two meanings for us in MA346.</p>
 <ul class="simple">
-<li><p>First, it relates to math and logic:  What assumptions do we need to satisfy <em>before</em> doing something with data, and what guarantees do the math and stats techniques we use provide <em>after</em> we’ve used them?</p></li>
+<li><p>First, it relates to code:  What <em>requirements</em> do we need to satisfy <em>before</em> doing something with data, and what <em>guarantees</em> do the math and stats techniques we use provide <em>after</em> we’ve used them?</p></li>
 <li><p>Second, it relates to communicating about code:  When we’re writing explanations about our code, how do we know what kind of explanations to insert <em>before and after</em> a piece of code?</p></li>
 </ul>
 <p>Let’s look at each of these meanings separately.</p>
-<div class="section" id="assumptions-and-guarantees-the-math-and-logic-part">
-<h2>Assumptions and Guarantees (the math and logic part)<a class="headerlink" href="#assumptions-and-guarantees-the-math-and-logic-part" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="assumptions">
-<h3>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="requirements-and-guarantees">
+<h2>Requirements and Guarantees<a class="headerlink" href="#requirements-and-guarantees" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
 <p>Almost nobody ever writes a piece of code with no clear purpose in mind.  You can’t write code the way you can doodle in the margins of a notebook, aimless, purposeless, spacing out.  Code almost always accomplishes something; that’s what it was built for and that’s why we use it.  So when we’re coding, it’s helpful to think about our code in a purposeful way.  It helps to do so in a “before and after” way.</p>
 <p>Before writing a piece of code, you need to know what situation you’re currently in (including your data, variables, files, etc.).  This is because the code you write will almost certainly have requirements that need to be true before that code can be run.  Here are some examples:</p>
 <ul class="simple">
 <li><p>If I’m going to sort a health care DataFrame by the “heart rate” column, the DataFrame had better have a “heart rate” column, not a “heart_rate” column, or a “HeartRate” column, etc.  (This is a requirement imposed by the sorting routine.  It can’t guess the column name’s correct spelling; you have to provide it.)</p></li>
 <li><p>If I’m going to fit a linear model to the relationship between the “heart rate” variable and the “oxygen replacement” variable, I should be sure that the relationship between those two variables appears to be approximately linear.  (This is a requirement imposed by the nature of linear models.  It isn’t always a smart idea to use a linear model if that doesn’t reflect the actual relationship in the data.)</p></li>
 </ul>
-<p>In other words, the code I’m about to run makes certain <em>assumptions</em> before it runs, and if those assumptions are false, it will either give you an error or silently do the wrong thing.  For instance, in the “heart rate” example above, we would get an error, because the column we tried to sort by didn’t exist.  But in the linear model example above, we would get no error, just a linear model that probably wasn’t very useful, or might produce poor predictions.</p>
-<p>You can think of these assumptions as <strong>what to know before running your code.</strong>  They are almost always phrased in terms of the inputs to the function you’re about to run, such as the data type it must have, or the size/shape it must have, or the contents it must have.</p>
-<p>How do we avoid messing this up?  <em>Know what the relevant assumptions are</em> for the code you’re about to run and <em>check them before you run the code.</em>  In some cases, the assumptions are so small that it doesn’t make sense to waste time checking them, as in the “heart rate” example above.  (If we get it wrong, the error message will tell us, and we’ll fix it, nice and easy.)  But in other cases, the assumptions are important and take time to check, as in the linear model example above.  In fact, let’s see how that would work:</p>
+<p>Any code I’m about to run has <em>requirements</em> that must be true in order for that code to work, and if those requirements aren’t satisfied, the code will either give you an error or silently do the wrong thing.  Sometimes these are called “assumptions” instead of requirements, because the code assumes you’re running it in a situation where it makes sense to do so.</p>
+<p>For instance, in the “heart rate” example above, we would get an error, because the column we tried to sort by didn’t exist.  But in the linear model example above, we would get no error, just a linear model that probably wasn’t very useful, or might produce poor predictions.</p>
+<p>You can think of these requirements as <strong>what to know before running your code</strong> (or what to check if you don’t yet know it).  They are almost always phrased in terms of the inputs to the function you’re about to run, such as the data type the input must have, or the size/shape it must have, or the contents it must have.</p>
+<p>How do we avoid messing this up?  <em>Know what the relevant requirements are</em> for the code you’re about to run and <em>check them before you run the code.</em>  In some cases, the requirements are so small that it doesn’t make sense to waste time checking them, as in the “heart rate” example above.  (If we get it wrong, the error message will tell us, and we’ll fix it, nice and easy.)  But in other cases, the requirements are important and take time to check, as in the linear model example above.  In fact, let’s see how that would work:</p>
 <p>Let’s say we’ve loaded a dataset of mortgages, with columns for <code class="docutils literal notranslate"><span class="pre">property_value</span></code> and <code class="docutils literal notranslate"><span class="pre">total_loan_costs</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -261,7 +262,7 @@
 <img alt="_images/chapter-5-before-and-after_4_0.png" src="_images/chapter-5-before-and-after_4_0.png" />
 </div>
 </div>
-<p>Hmm…While some portions of that picture are linear (such as the top and bottom edges, as well as a thick strip at about <span class="math notranslate nohighlight">\(y=4000\)</span>), it’s pretty clear that the whole shape is not at all close to a straight line.  Any model that predicts total costs just based on property value is going to be an unreliable predictor.  I almost certainly don’t want to make a linear model for this after all (unless I’m in a situation in which I just need an <em>extremely</em> rough estimate).  Good thing I checked the assumptions before making the model!</p>
+<p>Hmm…While some portions of that picture are linear (such as the top and bottom edges, as well as a thick strip at about <span class="math notranslate nohighlight">\(y=4000\)</span>), it’s pretty clear that the whole shape is not at all close to a straight line.  Any model that predicts total costs just based on property value is going to be an unreliable predictor.  I almost certainly don’t want to make a linear model for this after all (unless I’m in a situation in which I just need an <em>extremely</em> rough estimate).  Good thing I checked the requirements before making the model!</p>
 </div>
 <div class="section" id="guarantees">
 <h3>Guarantees<a class="headerlink" href="#guarantees" title="Permalink to this headline">¶</a></h3>
@@ -283,6 +284,7 @@
 <li><p>Before each piece of code, explain the motivation for the code.</p></li>
 <li><p>After each piece of code, explain what the output means.</p></li>
 </ol>
+<p><strong>Connect the two!</strong> Your output explanation should directly address your motivation for running the code.</p>
 </div>
 <p>This is so important that we should see some examples.</p>
 <div class="section" id="example-1">
@@ -336,7 +338,7 @@ Name: state_code, dtype: int64
 </div>
 </div>
 </div>
-<p>Because the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> function sorts its output by descending frequency, we can just examine the top 10 values, as we do above.  Each state is shown next to the number of applications from that state in our dataset.</p>
+<p>Each state is shown next to the number of applications from that state in our dataset, largest first, then descending.  Here we show just the top 10.</p>
 <hr class="docutils" />
 <p>Even with just a small piece of code, notice how easy it is to understand when we have the two explanations.  The sentence before the code asks an easy-to-understand question that shows the writer’s motivation for the code.  The two sentences after the code explain what the output shows and why we can trust it.</p>
 <p>We help the reader out (and ourselves later when we come back to thise code!) by following those two simple rules of explanation.</p>

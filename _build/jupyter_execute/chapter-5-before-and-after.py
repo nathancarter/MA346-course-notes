@@ -3,14 +3,14 @@
 <a href="../../_slides/chapter-5-slides.html">See also the slides that summarize a portion of this content.</a>
 
 The phrase "before and after" has two meanings for us in MA346.
- * First, it relates to math and logic:  What assumptions do we need to satisfy *before* doing something with data, and what guarantees do the math and stats techniques we use provide *after* we've used them?
+ * First, it relates to code:  What *requirements* do we need to satisfy *before* doing something with data, and what *guarantees* do the math and stats techniques we use provide *after* we've used them?
  * Second, it relates to communicating about code:  When we're writing explanations about our code, how do we know what kind of explanations to insert *before and after* a piece of code?
 
 Let's look at each of these meanings separately.
 
-## Assumptions and Guarantees (the math and logic part)
+## Requirements and Guarantees
 
-### Assumptions
+### Requirements
 
 Almost nobody ever writes a piece of code with no clear purpose in mind.  You can't write code the way you can doodle in the margins of a notebook, aimless, purposeless, spacing out.  Code almost always accomplishes something; that's what it was built for and that's why we use it.  So when we're coding, it's helpful to think about our code in a purposeful way.  It helps to do so in a "before and after" way.
 
@@ -18,11 +18,13 @@ Before writing a piece of code, you need to know what situation you're currently
  * If I'm going to sort a health care DataFrame by the "heart rate" column, the DataFrame had better have a "heart rate" column, not a "heart_rate" column, or a "HeartRate" column, etc.  (This is a requirement imposed by the sorting routine.  It can't guess the column name's correct spelling; you have to provide it.)
  * If I'm going to fit a linear model to the relationship between the "heart rate" variable and the "oxygen replacement" variable, I should be sure that the relationship between those two variables appears to be approximately linear.  (This is a requirement imposed by the nature of linear models.  It isn't always a smart idea to use a linear model if that doesn't reflect the actual relationship in the data.)
 
-In other words, the code I'm about to run makes certain *assumptions* before it runs, and if those assumptions are false, it will either give you an error or silently do the wrong thing.  For instance, in the "heart rate" example above, we would get an error, because the column we tried to sort by didn't exist.  But in the linear model example above, we would get no error, just a linear model that probably wasn't very useful, or might produce poor predictions.
+Any code I'm about to run has *requirements* that must be true in order for that code to work, and if those requirements aren't satisfied, the code will either give you an error or silently do the wrong thing.  Sometimes these are called "assumptions" instead of requirements, because the code assumes you're running it in a situation where it makes sense to do so.
 
-You can think of these assumptions as **what to know before running your code.**  They are almost always phrased in terms of the inputs to the function you're about to run, such as the data type it must have, or the size/shape it must have, or the contents it must have.
+For instance, in the "heart rate" example above, we would get an error, because the column we tried to sort by didn't exist.  But in the linear model example above, we would get no error, just a linear model that probably wasn't very useful, or might produce poor predictions.
 
-How do we avoid messing this up?  *Know what the relevant assumptions are* for the code you're about to run and *check them before you run the code.*  In some cases, the assumptions are so small that it doesn't make sense to waste time checking them, as in the "heart rate" example above.  (If we get it wrong, the error message will tell us, and we'll fix it, nice and easy.)  But in other cases, the assumptions are important and take time to check, as in the linear model example above.  In fact, let's see how that would work:
+You can think of these requirements as **what to know before running your code** (or what to check if you don't yet know it).  They are almost always phrased in terms of the inputs to the function you're about to run, such as the data type the input must have, or the size/shape it must have, or the contents it must have.
+
+How do we avoid messing this up?  *Know what the relevant requirements are* for the code you're about to run and *check them before you run the code.*  In some cases, the requirements are so small that it doesn't make sense to waste time checking them, as in the "heart rate" example above.  (If we get it wrong, the error message will tell us, and we'll fix it, nice and easy.)  But in other cases, the requirements are important and take time to check, as in the linear model example above.  In fact, let's see how that would work:
 
 Let's say we've loaded a dataset of mortgages, with columns for `property_value` and `total_loan_costs`.
 
@@ -42,7 +44,7 @@ plt.xlabel( 'Property value (USD)' )
 plt.ylabel( 'Total loan costs (USD)' )
 plt.show()
 
-Hmm...While some portions of that picture are linear (such as the top and bottom edges, as well as a thick strip at about $y=4000$), it's pretty clear that the whole shape is not at all close to a straight line.  Any model that predicts total costs just based on property value is going to be an unreliable predictor.  I almost certainly don't want to make a linear model for this after all (unless I'm in a situation in which I just need an *extremely* rough estimate).  Good thing I checked the assumptions before making the model!
+Hmm...While some portions of that picture are linear (such as the top and bottom edges, as well as a thick strip at about $y=4000$), it's pretty clear that the whole shape is not at all close to a straight line.  Any model that predicts total costs just based on property value is going to be an unreliable predictor.  I almost certainly don't want to make a linear model for this after all (unless I'm in a situation in which I just need an *extremely* rough estimate).  Good thing I checked the requirements before making the model!
 
 ### Guarantees
 
@@ -63,6 +65,8 @@ class: alert alert-primary
 The best code notebooks explain their contents according to two rules:
  1. Before each piece of code, explain the motivation for the code.
  2. After each piece of code, explain what the output means.
+
+**Connect the two!** Your output explanation should directly address your motivation for running the code.
 ```
 
 This is so important that we should see some examples.
@@ -83,7 +87,7 @@ Which states have the most mortgage applications in our dataset?
 
 df['state_code'].value_counts().head( 10 )
 
-Because the `value_counts()` function sorts its output by descending frequency, we can just examine the top 10 values, as we do above.  Each state is shown next to the number of applications from that state in our dataset.
+Each state is shown next to the number of applications from that state in our dataset, largest first, then descending.  Here we show just the top 10.
 
 ---
 
