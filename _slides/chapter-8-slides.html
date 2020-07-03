@@ -13204,8 +13204,130 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Chapter-8---Version-control">Chapter 8 - Version control<a class="anchor-link" href="#Chapter-8---Version-control">&#182;</a></h1><p><a href="../_build/html/chapter-8-version-control.html">See also the corresponding course notes, here.</a></p>
 
-<pre><code>{warning}
-These slides are not yet written.  Coming soon.</code></pre>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-is-git?">What is <code>git</code>?<a class="anchor-link" href="#What-is-git?">&#182;</a></h2><p>The most common version control system is called <code>git</code>.  It helps you with:</p>
+<ul>
+<li>keeping old snapshots of your work in case you need to undo a mistake</li>
+<li>collaborating with others on your team by sharing a project</li>
+<li>publishing your project online, for sharing or as a backup</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Reviewing-terminology">Reviewing terminology<a class="anchor-link" href="#Reviewing-terminology">&#182;</a></h2><p>From your pre-class reading, what does each of these terms mean?</p>
+<ul>
+<li>Easy:<ul>
+<li>repository (or repo)</li>
+<li>commits and committing</li>
+</ul>
+</li>
+<li>Medium:<ul>
+<li>local and remote</li>
+<li>push and pull</li>
+</ul>
+</li>
+<li>Hard:<ul>
+<li>clone</li>
+<li>branch</li>
+<li>merge conflict</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Choosing-when-to-commit">Choosing when to commit<a class="anchor-link" href="#Choosing-when-to-commit">&#182;</a></h2><p>Recall the example story of work on a project from the notes, shown below.  When are the best times to commit?</p>
+<ol>
+<li>You start by downloading a dataset from the instructor and starting a new blank Python script or Jupyter notebook in your repo folder.  Everything's fine so far.  😀</li>
+<li>You try to load the dataset but keep getting errors.  You don't manage to solve it before you have to go to dinner.  😡</li>
+<li>A friend at dinner reminded you about setting the text encoding, and that fixed the problem.  You get the dataset loading before bed.  Yes!  😀</li>
+<li>The next day before MA346 you get the data cleaned without a problem.  😀</li>
+<li>During class, the instructor asks your team to make progress on a hypothesis test, but you run out of time in class before you can figure out all the details.  The last few lines of code still give errors.  😡</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Commit-messages">Commit messages<a class="anchor-link" href="#Commit-messages">&#182;</a></h2><p><strong>Warning:</strong> You will be tempted to not take commit messages seriously, and you will later wish that you had.  Remember the importance of good code explanations; the same advice applies here.  Write clearly and meaningfully!</p>
+<p>Examples:</p>
+<ul>
+<li>Downloaded dataset and started new Python script</li>
+<li>Wrote code to load data</li>
+<li>Added code to clean data</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Avoiding-merge-conflicts">Avoiding merge conflicts<a class="anchor-link" href="#Avoiding-merge-conflicts">&#182;</a></h2><p>Anita and Barry are teammates on Project 1.  <strong>Which of the following scenarios are correct ways to collaborate using <code>git</code>?</strong>  What could go wrong?</p>
+<ul>
+<li>Anita edits code near the top of <code>project-1.py</code> that cleans the data while Barry edits code near the middle of <code>project-1.py</code> that filters the dataset.</li>
+<li>Anita edits data analysis code in <code>analysis.ipynb</code> while Barry creates a presentation in <code>project-1.pptx</code>.</li>
+<li>Anita and Barry both edit <code>hypothesis-test.py</code>, which contains just 10 lines of code, each making various edits to add features, fix bugs, or tweak the output.</li>
+<li>Anita edits a Jupyter notebook that analyzes data while Barry edits a different Jupyter notebook that cleans data and gets it ready for the analsis in the notebook Anita's writing.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">&#182;</a></h2><ol>
+<li>Create a GitHub account and the GitHub app, <a href="../_build/html/chapter-8-version-control.html#get-a-github-account">as described here in the course notes</a>.</li>
+<li>Create and publish an empty (and private) repository to use in Project 1 for this course, <a href="../_build/html/chapter-8-version-control.html#create-a-repository">as described here in the course notes</a>.</li>
+<li>Add the Project 1 datasets to that repository and publish again, <a href="../_build/html/chapter-8-version-control.html#make-a-commit">as described here in the course notes</a>.</li>
+<li>Invite your instructor as a collaborator, so he can see your Project 1 repository, <a href="../_build/html/chapter-8-version-control.html#how-to-let-someone-view-your-private-repository">as described here in the course notes</a>.</li>
+<li>Do the same for your Project 1 teammate, if you've chosen to have one.</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h2><p>Which of the following statements are true, and why?</p>
+<ol>
+<li>If I don't intend to share my work online, there's no value to using <code>git</code> or the GitHub app.</li>
+<li>It is possible to use <code>git</code> without using the GitHub app.</li>
+<li>If I'm teammates with my friend Erl, then once I've pulled Erl's most recent commits from our shared repo, I can push my commits and they will have merged with one another successfully.</li>
+<li>It's best practice to commit your latest changes at the end of your work each day.</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Homework">Homework<a class="anchor-link" href="#Homework">&#182;</a></h2><p>Add a Python script or Jupyter notebook to your Project 1 repository.</p>
+<p>In that script or notebook, write a Python function that behaves as follows:</p>
+<ol>
+<li>It takes as input the name of a state in the U.S.</li>
+<li>It returns as output a pandas Series of the number of confirmed cases of COVID-19 in that state over time.</li>
+</ol>
+<p>We will use that function in class next time, so the work is due before class next week.</p>
+<p>Submit your work by committing and pushing to the repository.  I will be able to see it because you have already invited me to the repository as a collaborator.</p>
 
 </div>
 </div>

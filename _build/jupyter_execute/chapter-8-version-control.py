@@ -51,7 +51,7 @@ In fact, these course notes are stored in a `git` repository, and you can [see i
 
 ### Sharing online
 
-When you want to back your work up on another computer (in case yours gets broken, or if you want to publish it for others to see) there are websites that specialize in `git`.  The most popular is `GitHub`, acquired by Microsoft in 2018.  In these notes, we'll teach you how to use GitHub and assume that's where you're publishing your work.
+When you want to back your work up on another computer (in case yours gets broken, or if you want to publish it for others to see) there are websites that specialize in `git`.  The most popular is [GitHub](https://github.com/), acquired by Microsoft in 2018.  In these notes, we'll teach you how to use GitHub and assume that's where you're publishing your work.
 
 The `git` term for a site on which you back up or publish a repository is called a **remote.**  This is in contrast to the repo folder on your computer, which is called your **local** copy.
 
@@ -74,15 +74,19 @@ When you're reading this chapter to prepare for Week 4's class, you do not need 
 
 ### Get a GitHub account
 
-[Do so on this page of the GitHub website.](https://github.com/join)  Easy!  (Please choose a GitHub username that lets me know who you are.  Grading will be a confusing challenge if everyone has names like `DarkKitten75XD`.)
+[Do so on this page of the GitHub website.](https://github.com/join)  Easy!
+
+```{warning}
+Please choose a GitHub username that lets me know who you are.  Grading will be a confusing challenge if everyone has names like `DarkKitten75XD`.
+```
 
 Just be sure to remember the username and password, because you'll need them in the next step.
 
 ### Download the GitHub app
 
-If you ever hear horror stories of people dealing with `git`, there are two main reasons for this.  First, they may have had a repo get screwed up because multiple people were trying to edit it in conflicting ways.  We will avoid such problems by focusing first on using `git` by yourself before we consider how to use it on a team project.  Second, they may have been using `git`'s command-line interface, meaning they interact with it through typing commands, rather than using an app.  We will avoid this hassle by getting the app.
+If you ever hear horror stories of people dealing with `git`, there are two main reasons for this.  First, they may have had a repo get screwed up because multiple people were trying to edit it in conflicting ways.  We will avoid such problems by focusing first on using `git` by yourself before we consider how to use it on a team project.  Second, they may have been using `git`'s command-line interface, meaning they interact with it through typing commands, rather than using an app.  We will avoid this hassle by getting the GitHub app.
 
-[Download and install the app from here.](https://desktop.github.com/)
+[Download and install the GitHub app from here.](https://desktop.github.com/)
 
 When you set the app up, it will ask for the username and password of your GitHub account, so it can connect to the GitHub site.
 
