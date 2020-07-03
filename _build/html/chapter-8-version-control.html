@@ -1,0 +1,523 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Version Control &#8212; MA346 Course Notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/chapter-8-version-control.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Big Cheat Sheet" href="big-cheat-sheet.html" />
+    <link rel="prev" title="Abstraction" href="chapter-7-abstraction.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/chapter-8-version-control.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Version Control" />
+<meta property="og:description" content="Version Control  <a href="../../_slides/chapter-8-slides.html">See also the slides that summarize a portion of this content.</a>  What is version control and wh" />
+<meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="chapter-1-intro-to-data-science.html">1. Introduction to Data Science</a>
+  </li>
+  <li class="">
+    <a href="chapter-2-mathematical-foundations.html">2. Mathematical Foundations</a>
+  </li>
+  <li class="">
+    <a href="chapter-3-jupyter.html">3. Jupyter</a>
+  </li>
+  <li class="">
+    <a href="chapter-4-review-of-python-and-pandas.html">4. Review of Python and pandas</a>
+  </li>
+  <li class="">
+    <a href="chapter-5-before-and-after.html">5. Before and After</a>
+  </li>
+  <li class="">
+    <a href="chapter-6-single-table-verbs.html">6. Single-Table Verbs</a>
+  </li>
+  <li class="">
+    <a href="chapter-7-abstraction.html">7. Abstraction</a>
+  </li>
+  <li class="active">
+    <a href="">8. Version Control</a>
+  </li>
+  <li class="">
+    <a href="big-cheat-sheet.html">9. Big Cheat Sheet</a>
+  </li>
+  <li class="">
+    <a href="anaconda-installation.html">10. Anaconda Installation</a>
+  </li>
+  <li class="">
+    <a href="vs-code-installation.html">11. VS Code for Python Installation</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="_sources/chapter-8-version-control.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#what-is-version-control-and-why-should-i-care" class="nav-link">What is version control and why should I care?</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#details-and-terminology" class="nav-link">Details and terminology</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#repositories" class="nav-link">Repositories</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#tracking-changes" class="nav-link">Tracking changes</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#sharing-online" class="nav-link">Sharing online</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#how-to-use-git-and-github" class="nav-link">How to use git and GitHub</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#get-a-github-account" class="nav-link">Get a GitHub account</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#download-the-github-app" class="nav-link">Download the GitHub app</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#create-a-repository" class="nav-link">Create a repository</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#publish-the-repository" class="nav-link">Publish the repository</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#view-it-online" class="nav-link">View it online</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#make-a-commit" class="nav-link">Make a commit</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#publish-your-commit" class="nav-link">Publish your commit</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#repeat-as-needed" class="nav-link">Repeat as needed</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#what-if-i-want-to-collaborate" class="nav-link">What if I want to collaborate?</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#how-to-let-someone-view-your-private-repository" class="nav-link">How to let someone view your private repository</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#how-to-have-two-contributors-in-a-repository" class="nav-link">How to have two contributors in a repository</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#complications-we-re-skipping" class="nav-link">Complications we’re skipping</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="version-control">
+<h1>Version Control<a class="headerlink" href="#version-control" title="Permalink to this headline">¶</a></h1>
+<p><a href="../../_slides/chapter-8-slides.html">See also the slides that summarize a portion of this content.</a></p>
+<div class="section" id="what-is-version-control-and-why-should-i-care">
+<h2>What is version control and why should I care?<a class="headerlink" href="#what-is-version-control-and-why-should-i-care" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-primary admonition">
+<p class="admonition-title">Big Picture</p>
+<p>The most common version control system is called <code class="docutils literal notranslate"><span class="pre">git</span></code>.  It helps you with:</p>
+<ul class="simple">
+<li><p>keeping old snapshots of your work in case you need to undo a mistake</p></li>
+<li><p>collaborating with others on your team by sharing a project</p></li>
+<li><p>publishing your project online, for sharing or as a backup</p></li>
+</ul>
+</div>
+<p>It’s called “version control” software because of the first of those bullet points.  The other two are also important, but aren’t the main purpose of <code class="docutils literal notranslate"><span class="pre">git</span></code>.  Let’s dive a little deeper into each of those three points and learn some terminology.</p>
+</div>
+<div class="section" id="details-and-terminology">
+<h2>Details and terminology<a class="headerlink" href="#details-and-terminology" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="repositories">
+<h3>Repositories<a class="headerlink" href="#repositories" title="Permalink to this headline">¶</a></h3>
+<p>When you start a new project, you should make a folder to contain just the stuff for that project.  By default, a folder on your computer is <em>not</em> tracked by <code class="docutils literal notranslate"><span class="pre">git</span></code>.  If you want <code class="docutils literal notranslate"><span class="pre">git</span></code> to start tracking a folder and keeping snapshots, to enable the features listed above, you have to turn the folder into what is called a <strong><code class="docutils literal notranslate"><span class="pre">git</span></code> repository</strong>, or for short, a <strong>repo.</strong>  (You might also hear “source code repository” or “source repo” or similar terms.)</p>
+<p>Once you do so, <code class="docutils literal notranslate"><span class="pre">git</span></code> is ready to track the changes in that folder.  But it need some direction from you.  Let’s see why.</p>
+</div>
+<div class="section" id="tracking-changes">
+<h3>Tracking changes<a class="headerlink" href="#tracking-changes" title="Permalink to this headline">¶</a></h3>
+<p>As you work on the project, inevitably you have ups and downs.  Maybe it goes like this:</p>
+<ol class="simple">
+<li><p>You start by downloading a dataset from the instructor and starting a new blank Python script or Jupyter notebook in your repo folder.  Everything’s fine so far.  😀</p></li>
+<li><p>You try to load the dataset but keep getting errors.  You don’t manage to solve it before you have to go to dinner.  😡</p></li>
+<li><p>A friend at dinner reminded you about setting the text encoding, and that fixed the problem.  You get the dataset loading before bed.  Yes!  😀</p></li>
+<li><p>The next day before MA346 you get the data cleaned without a problem.  😀</p></li>
+<li><p>During class, the instructor asks your team to make progress on a hypothesis test, but you run out of time in class before you can figure out all the details.  The last few lines of code still give errors.  😡</p></li>
+</ol>
+<p>And so on.  You could make the story up yourself.</p>
+<p>If you were keeping snapshots of your work for the project, you typically wouldn’t want to have any broken ones.  That is, you might want to have stored your work in steps 1, 3, and 4, because if you ever had to undo some mistake you made later, you’d want to go back to a situation where you know everything was working fine. 😀    Nobody wants to rewind to a broken repository; that’s not helpful. 😡</p>
+<p>So you wouldn’t want your version control system to automatically make snapshots for you; it would probably save a snapshot after 1, 2, 3, 4, and 5, some broken and some not.  Therefore <code class="docutils literal notranslate"><span class="pre">git</span></code> doesn’t do this.  If you want to save a snapshot, you have to tell <code class="docutils literal notranslate"><span class="pre">git</span></code> to do so; this is called <strong>committing</strong> your changes.  (Or sometimes you’ll hear people call it <strong>making a commit.</strong>)  When you do so, you attach a brief note (one phrase or half a sentence) describing it, called a <strong>commit message.</strong></p>
+<p>If you did so after each of steps 1, 3, and 4, above, you might have a list of commit messages that look like this:</p>
+<ul class="simple">
+<li><p>Downloaded dataset and started new Python script</p></li>
+<li><p>Wrote code to load data</p></li>
+<li><p>Added code to clean data</p></li>
+</ul>
+<p>Later, if you wanted to go back to some old snapshot, <code class="docutils literal notranslate"><span class="pre">git</span></code> can show you this list of commit messages so you know exactly which one you’d like to rewind to.  (At this point, I’ll stop calling them “snapshots” and start using the official term, “commits.”)</p>
+<p>In fact, these course notes are stored in a <code class="docutils literal notranslate"><span class="pre">git</span></code> repository, and you can <a class="reference external" href="https://github.com/nathancarter/MA346-course-notes/commits/master">see its list of commits online, here</a>.</p>
+</div>
+<div class="section" id="sharing-online">
+<h3>Sharing online<a class="headerlink" href="#sharing-online" title="Permalink to this headline">¶</a></h3>
+<p>When you want to back your work up on another computer (in case yours gets broken, or if you want to publish it for others to see) there are websites that specialize in <code class="docutils literal notranslate"><span class="pre">git</span></code>.  The most popular is <code class="docutils literal notranslate"><span class="pre">GitHub</span></code>, acquired by Microsoft in 2018.  In these notes, we’ll teach you how to use GitHub and assume that’s where you’re publishing your work.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">git</span></code> term for a site on which you back up or publish a repository is called a <strong>remote.</strong>  This is in contrast to the repo folder on your computer, which is called your <strong>local</strong> copy.</p>
+<p>There are three important terms to know regarding dealing with remotes in <code class="docutils literal notranslate"><span class="pre">git</span></code>; I’ll phrase each of them in terms of using GitHub, but the same terms apply to any remote:</p>
+<ul class="simple">
+<li><p>For repositories you created:</p>
+<ul>
+<li><p>Sending my most recent commits to GitHub is called <strong>pushing</strong> my changes (that is, my commits).</p></li>
+</ul>
+</li>
+<li><p>For repositories someone else created:</p>
+<ul>
+<li><p>Getting a copy of a repository is called <strong>cloning</strong> the repository.  It’s not the same as downloading.  A download contains just the latest version; a clone contains all past snapshots, too.</p></li>
+<li><p>If the original author updates the repository with new content and I want to update my clone, that’s called <strong>pulling</strong> the changes (opposite of push, obviously).</p></li>
+</ul>
+</li>
+</ul>
+<p>Although technically it’s possible to pull and push to the same repository, we’ll come to that later.  Let’s start simple.</p>
+<p>So how do we do all the things just described?  The next section gives the specifics.</p>
+</div>
+</div>
+<div class="section" id="how-to-use-git-and-github">
+<h2>How to use <code class="docutils literal notranslate"><span class="pre">git</span></code> and GitHub<a class="headerlink" href="#how-to-use-git-and-github" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When you’re reading this chapter to prepare for Week 4’s class, you do not need to follow all these instructions.  We will do them together in class.  Feel free to just skim this section for now, and begin reading again in <a class="reference external" href="#what-if-i-want-to-collaborate">the next section</a>.</p>
+</div>
+<div class="section" id="get-a-github-account">
+<h3>Get a GitHub account<a class="headerlink" href="#get-a-github-account" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/join">Do so on this page of the GitHub website.</a>  Easy!  (Please choose a GitHub username that lets me know who you are.  Grading will be a confusing challenge if everyone has names like <code class="docutils literal notranslate"><span class="pre">DarkKitten75XD</span></code>.)</p>
+<p>Just be sure to remember the username and password, because you’ll need them in the next step.</p>
+</div>
+<div class="section" id="download-the-github-app">
+<h3>Download the GitHub app<a class="headerlink" href="#download-the-github-app" title="Permalink to this headline">¶</a></h3>
+<p>If you ever hear horror stories of people dealing with <code class="docutils literal notranslate"><span class="pre">git</span></code>, there are two main reasons for this.  First, they may have had a repo get screwed up because multiple people were trying to edit it in conflicting ways.  We will avoid such problems by focusing first on using <code class="docutils literal notranslate"><span class="pre">git</span></code> by yourself before we consider how to use it on a team project.  Second, they may have been using <code class="docutils literal notranslate"><span class="pre">git</span></code>’s command-line interface, meaning they interact with it through typing commands, rather than using an app.  We will avoid this hassle by getting the app.</p>
+<p><a class="reference external" href="https://desktop.github.com/">Download and install the app from here.</a></p>
+<p>When you set the app up, it will ask for the username and password of your GitHub account, so it can connect to the GitHub site.</p>
+</div>
+<div class="section" id="create-a-repository">
+<h3>Create a repository<a class="headerlink" href="#create-a-repository" title="Permalink to this headline">¶</a></h3>
+<p>Let’s create a repository for you to use when submitting Project 1 later in a little over two weeks.</p>
+<ul class="simple">
+<li><p>If you haven’t already done so, create a folder on your computer for storing your work on Project 1.</p>
+<ul>
+<li><p>You don’t have to put anything in the repository at all—the folder can stay empty for now.</p></li>
+</ul>
+</li>
+<li><p>Using the GitHub app, turn that folder into a repository.</p>
+<ul>
+<li><p>From the File menu, choose “Add local repository…” and pick the folder you just created.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="publish-the-repository">
+<h3>Publish the repository<a class="headerlink" href="#publish-the-repository" title="Permalink to this headline">¶</a></h3>
+<p>It’s okay that your repository is still empty; you can add files later.</p>
+<ul class="simple">
+<li><p>In the center of the GitHub app window there should be a button called “Publish repository.”</p></li>
+<li><p>If not, go to the Repository menu and choose “Push.”</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ensure that you check the box to <strong>keep the code private.</strong>  This is so that when you actually begin work on Project 1, you are not tempting anyone else to violate Bentley’s academic integrity policy by looking at your work.</p>
+</div>
+</div>
+<div class="section" id="view-it-online">
+<h3>View it online<a class="headerlink" href="#view-it-online" title="Permalink to this headline">¶</a></h3>
+<p>From the GitHub app, click the Repository menu, and “View on GitHub.”  Easy!  You’ve successfully found where the repository lives online.</p>
+<p>Because you marked the repository private, anyone other than you who visits that page won’t be allowed to see the repository.  You can see it only because you’ve already logged in to GitHub with your username and password.</p>
+<p>Later you’ll share this repository with your instructor so that he can visit it to grade your Project 1, once it’s complete.</p>
+</div>
+<div class="section" id="make-a-commit">
+<h3>Make a commit<a class="headerlink" href="#make-a-commit" title="Permalink to this headline">¶</a></h3>
+<p>In order to commit some changes to our new Project 1 repo, we have to actually do something in that folder, so there <em>are</em> some changes to commit.  Let’s do some simple setup.</p>
+<ul class="simple">
+<li><p>The Project 1 assignment on Blackboard lists three datasets you should download for use in the project.  If you haven’t already downloaded them, do so now.  Once you’ve downloaded them, move them into the folder for your new repo.</p></li>
+<li><p>Return to the GitHub app and you should notice the three new files listed in the left column, showing you what’s new in the repo since it was created.</p></li>
+<li><p>On the bottom left of the page, type an appropriate commit message, such as “Adding data files,” and click “Commit to master.”</p>
+<ul>
+<li><p>You can have multiple different flavors of a project all in one repo.  They’re called <strong>branches</strong> and the main one is called the <strong>master branch</strong> by default.</p></li>
+<li><p>In an effort to remove any potential reference to slavery, however indirect, <a class="reference external" href="https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/">GitHub is in the process of changing the term “master” to “main,”</a> but that process is not yet complete as of this writing.</p></li>
+<li><p>In the meantime, think of the term “master” as just a reference to the primary copy of your work.</p></li>
+<li><p>You probably won’t need to create any other branches in any repo in MA346.</p></li>
+</ul>
+</li>
+</ul>
+<p>You should see your changes disappear from the left column.  This doesn’t mean that they’ve been removed!  It just means that the snapshot has been saved, so those changes aren’t “new” any more.  They’ve been committed (saved) to the repo’s history.</p>
+</div>
+<div class="section" id="publish-your-commit">
+<h3>Publish your commit<a class="headerlink" href="#publish-your-commit" title="Permalink to this headline">¶</a></h3>
+<p>Push your changes to the repo with the Push button in the center of the app, then reload the webpage that views the repo online.  You should see your new data files in the web interface.  That’s how easy it is to publish your work to GitHub!</p>
+</div>
+<div class="section" id="repeat-as-needed">
+<h3>Repeat as needed<a class="headerlink" href="#repeat-as-needed" title="Permalink to this headline">¶</a></h3>
+<p>Whenever you make changes to your work and want to save a snapshot, feel free to repeat the “commit” instructions you see above.  The best practice is to do this as often as possible, but to try to never commit a project that’s got errors or broken code.  So try to make small, successful changes and commit after each one.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The GitHub app and <code class="docutils literal notranslate"><span class="pre">git</span></code> in general can see <em>only changes that you have saved to disk!</em>  So if you’ve edited a Python script but <em>have not saved,</em> then <code class="docutils literal notranslate"><span class="pre">git</span></code>/GitHub will not be able to see those changes.  The GitHub app looks only at the files on your hard drive.  It does not spy on what you’re doing in Jupyter or VS Code or any other app you have open.</p>
+<p><strong>The takeaway:</strong>  Be sure to save your files to disk before you try to commit.</p>
+</div>
+<p>Whenever you want to publish your most recent commits to the GitHub site, repeat the “publish” instructions you see above.</p>
+</div>
+</div>
+<div class="section" id="what-if-i-want-to-collaborate">
+<h2>What if I want to collaborate?<a class="headerlink" href="#what-if-i-want-to-collaborate" title="Permalink to this headline">¶</a></h2>
+<p>Collaborating with <code class="docutils literal notranslate"><span class="pre">git</span></code> is a very specific type of collaboration.</p>
+<p>On the one hand, it’s much less snappy and convenient than Google-docs-style collaboration, which happens instantaneously.  You can see one another’s cursors moving about the document and making edits in real time, live.  (You can do this on Deepnote and CoCalc, too, in Jupyter notebooks.)</p>
+<p>On the other hand, that’s actually a good thing.  If you and someone else are editing code at the same time, one of you might make changes to a variable name at the top of the file that breaks code you’re writing using that variable at the bottom of the file.  With <code class="docutils literal notranslate"><span class="pre">git</span></code>, you have to take intentional steps to combine two people’s work, and this helps you make sure that the changes are consistent and don’t lead to broken code.</p>
+<p>Here’s how you do it.</p>
+<div class="section" id="how-to-let-someone-view-your-private-repository">
+<h3>How to let someone view your private repository<a class="headerlink" href="#how-to-let-someone-view-your-private-repository" title="Permalink to this headline">¶</a></h3>
+<p>You will want to do this with your Project 1 repository in two different ways.</p>
+<ul class="simple">
+<li><p>Recall that you’re permitted to have a collaborator on Project 1 in MA346 if you want one.  If so, you would add them as a collaborator using the steps below.</p></li>
+<li><p>Every team will share their Project 1 repository with the instructor, so that I can grade it later.</p></li>
+</ul>
+<p>The steps for sharing a private repository with selected individuals are very straightforward:</p>
+<ul class="simple">
+<li><p>Visit your repository on GitHub.</p></li>
+<li><p>Click Settings (rightmost tab near the top of the page), then Manage access (near the top left), and Invite teams or people (bottom center).</p></li>
+<li><p>You’ll need the GitHub username of your intended collaborator.  My username on GitHub is (unsurprisingly) <code class="docutils literal notranslate"><span class="pre">nathancarter</span></code>.</p></li>
+</ul>
+<p>To share a public repository, you can just email the link.  Also, people doing a web search or viewing your GitHub profile can see all your public repositories (but not your private ones, of course).</p>
+</div>
+<div class="section" id="how-to-have-two-contributors-in-a-repository">
+<h3>How to have two contributors in a repository<a class="headerlink" href="#how-to-have-two-contributors-in-a-repository" title="Permalink to this headline">¶</a></h3>
+<p>Let’s say Teammate A creates the repository and shares it with Teammate B, using the procedure described above.  Then Teammate B needs to get their own local copy, like so:</p>
+<ul class="simple">
+<li><p>Visit the repository on the GitHub website.</p></li>
+<li><p>Click the green Code button, and on the menu that appears, choose Open with GitHub Desktop.</p></li>
+<li><p>This will launch the GitHub app and ask Teammate B to choose where on their computer they’d like to store a clone of the repository.</p>
+<ul>
+<li><p>When you choose a folder, the repository will be placed as a new <em>folder</em> inside the one you choose.</p></li>
+<li><p>For example, if you pick <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Documents\MA346\</span></code>, then the repository will be cloned into <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Documents\MA346\the-repo-name\</span></code>, with all the files inside that inner folder.</p></li>
+</ul>
+</li>
+</ul>
+<p>Then Teammate A can go off and do some work on the project and <em>Teammate B can do work at the same time.</em>  They should coordinate, however, so that they don’t do conflicting work.  We’ll come back to this in detail later.</p>
+<p>Let’s say Teammate A accomplishes some stuff and wants to commit it and share it with Teammate B.  They can do this:</p>
+<ul class="simple">
+<li><p>Do a commit just as they ordinarily would.  (See instructions up above.)</p></li>
+<li><p>Push that commit to GitHub just as before.  (See instructions up above.)</p></li>
+<li><p>Tell Teammate B they have pushed, so that Teammate B knows there’s new work they’ll want to get.</p></li>
+</ul>
+<p>Then Teammate B uses the GitHub app to <strong>pull</strong> the latest changes from the repo.  This will download Teammate A’s work and automatically merge it in with Teammate B’s latest copy of things.</p>
+<p>But wait…that sounds like it could go horribly wrong!  What if Teammates A and B were editing the same file?  Yes, it is important to coordinate, like so:</p>
+<p><strong>Good ways to collaborate:</strong></p>
+<ul class="simple">
+<li><p>Teammate A can work on data cleaning in one Python script while Teammate B works on data analysis in a Jupyter notebook (a totally different file).</p></li>
+<li><p>Teammate A works on data analysis code (in a Python file) while Teammate B starts writing a report (in a Word doc).</p></li>
+<li><p>Teammate A edits code at the top of a file while Teammate B edits different code at the bottom of the same file.</p></li>
+</ul>
+<p>If you follow one of these workflows, then you will not run into any headaches.  But it is possible to create headaches in two different ways.</p>
+<p>The first headache comes if you both edit the same part of the same file.  Then when Teammate B tries to pull the changes from the repository, <code class="docutils literal notranslate"><span class="pre">git</span></code> will tell them there’s a conflict and they need to resolve it.  Resolving the conflict can be done, but it’s a huge pain, and would probably require a trip to office hours for help.  Try to avoid it.  (Not that I don’t want to see you in office hours—I do!  But I’d love to save you the headache of the problem in the first place.)</p>
+<p>The second headache comes if Teammate B doesn’t check to be sure that Teammate A’s changes integrate smoothly.  Here’s an example of how this might happen:</p>
+<ol class="simple">
+<li><p>Becky edits the last few cells of a Jupyter notebook, sees that they work well, and commits the changes to her local repo.</p></li>
+<li><p>She now wants to pass these edits to Carlo, so she uses the GitHub app to push.  The app tells her she can’t push yet, because Carlo pushed some changes that Becky needs to download first.  This is great, because it’s ensuring that the team makes sure that their work combines sensibly before publishing it online—nice!</p></li>
+<li><p>So Becky clicks the Pull button in the app.  Because the team was careful not to edit the same code, it works smoothly and brings Carlo’s changes down to Becky’s local repo on her laptop.  Great!</p></li>
+<li><p>At this point comes the danger:  Becky can push her latest changes to the web, <em>but she hasn’t yet checked to be sure they still work.</em>  She knows they worked <em>before</em> she pulle Carlo’s work in.  But what if Carlo changed something that makes Becky’s code no longer run?</p></li>
+</ol>
+<p>It’s always important, before pushing your code to the GitHub site, to check once more that it still runs correctly.  If it doesn’t, fix the problems and commit the fixes first, before you push to the web.</p>
+</div>
+</div>
+<div class="section" id="complications-we-re-skipping">
+<h2>Complications we’re skipping<a class="headerlink" href="#complications-we-re-skipping" title="Permalink to this headline">¶</a></h2>
+<p>Everything you need to know for using <code class="docutils literal notranslate"><span class="pre">git</span></code> in MA346 is described up above.  But there is much more to <code class="docutils literal notranslate"><span class="pre">git</span></code> than this simple chapter has covered.  In particular:</p>
+<ul class="simple">
+<li><p>We will not need to introduce the concept of “branches,” which are very important for software development teams.  Branches are less important in data science than they are in software development, so we won’t cover them.</p></li>
+<li><p>The instructions above help you avoid the concept of a “merge conflict” (when two people edit the same part of the same file).  Learning how to resolve merge conflicts is an important part of <code class="docutils literal notranslate"><span class="pre">git</span></code> usage, but the instructions above should help you avoid the problem in the first place.</p></li>
+<li><p>There are many ways to use <code class="docutils literal notranslate"><span class="pre">git</span></code> on the command line, without the GitHub app user interface.  We will not cover those in our course.</p></li>
+</ul>
+<p>If you’re a CIS major or minor and want to dive into the details we’re not covering, <a class="reference external" href="https://learn.datacamp.com/courses/introduction-to-git">DataCamp has a git course</a> that covers many low-level details.  Feel free to take that course if you like while you have free DataCamp access in MA346, but we won’t use all those details in our work.</p>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - VS Code’s git features</p>
+<p>If you use VS Code for your Python coding, you may find it convenient to use VS Code’s git features, rather than having to switch back and forth to the GitHub app.  Feel free to investigate those features on your own, and if you do so, prepare a tutorial video for the class covering:</p>
+<ul class="simple">
+<li><p>how to do each of the activities covered in these notes using VS Code’s <code class="docutils literal notranslate"><span class="pre">git</span></code> support rather than the GitHub app</p></li>
+<li><p>the advantages and disadvatages to each of those two options</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="chapter-7-abstraction.html" title="previous page">Abstraction</a>
+    <a class='right-next' id="next-link" href="big-cheat-sheet.html" title="next page">Big Cheat Sheet</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Carter<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>

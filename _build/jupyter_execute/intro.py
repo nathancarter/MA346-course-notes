@@ -68,6 +68,8 @@ chapter-3-jupyter.ipynb
 chapter-4-review-of-python-and-pandas.ipynb
 chapter-5-before-and-after.ipynb
 chapter-6-single-table-verbs.ipynb
+chapter-7-abstraction.ipynb
+chapter-8-version-control.ipynb
 big-cheat-sheet.ipynb
 anaconda-installation.md
 vs-code-installation.md

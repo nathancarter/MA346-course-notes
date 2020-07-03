@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Anaconda Installation &#8212; MA346 Course Notes</title>
+    <title>Abstraction &#8212; MA346 Course Notes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -30,21 +30,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/anaconda-installation.html" />
+    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/chapter-7-abstraction.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="VS Code for Python Installation" href="vs-code-installation.html" />
-    <link rel="prev" title="Big Cheat Sheet" href="big-cheat-sheet.html" />
+    <link rel="next" title="Version Control" href="chapter-8-version-control.html" />
+    <link rel="prev" title="Single-Table Verbs" href="chapter-6-single-table-verbs.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
 
 
 <!-- Opengraph tags -->
-<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/anaconda-installation.html" />
+<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/chapter-7-abstraction.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Anaconda Installation" />
-<meta property="og:description" content="Anaconda Installation  Anaconda is a tool that installs Python together with the conda package manager and several related apps, tools, and packages.  It’s one " />
+<meta property="og:title"       content="Abstraction" />
+<meta property="og:description" content="Abstraction  <a href="../../_slides/chapter-7-slides.html">See also the slides that summarize a portion of this content.</a>  Warning  These notes are not yet w" />
 <meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
 
 <meta name="twitter:card" content="summary">
@@ -96,8 +96,8 @@
   <li class="">
     <a href="chapter-6-single-table-verbs.html">6. Single-Table Verbs</a>
   </li>
-  <li class="">
-    <a href="chapter-7-abstraction.html">7. Abstraction</a>
+  <li class="active">
+    <a href="">7. Abstraction</a>
   </li>
   <li class="">
     <a href="chapter-8-version-control.html">8. Version Control</a>
@@ -105,8 +105,8 @@
   <li class="">
     <a href="big-cheat-sheet.html">9. Big Cheat Sheet</a>
   </li>
-  <li class="active">
-    <a href="">10. Anaconda Installation</a>
+  <li class="">
+    <a href="anaconda-installation.html">10. Anaconda Installation</a>
   </li>
   <li class="">
     <a href="vs-code-installation.html">11. VS Code for Python Installation</a>
@@ -144,7 +144,7 @@
                 <!-- ipynb file if we had a myst markdown file -->
                 
                 <!-- Download raw file -->
-                <a class="dropdown-buttons" href="_sources/anaconda-installation.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
+                <a class="dropdown-buttons" href="_sources/chapter-7-abstraction.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
                 <!-- Download PDF via print -->
                 <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
             </div>
@@ -161,28 +161,9 @@
         
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#visit-the-anaconda-website" class="nav-link">Visit the Anaconda website</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#choose-your-os" class="nav-link">Choose your OS</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#download-the-installer" class="nav-link">Download the Installer</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#run-the-installer" class="nav-link">Run the Installer</a>
-        </li>
     
     </ul>
 </nav>
@@ -195,57 +176,52 @@
         
               <div>
                 
-  <div class="section" id="anaconda-installation">
-<h1>Anaconda Installation<a class="headerlink" href="#anaconda-installation" title="Permalink to this headline">¶</a></h1>
-<p>Anaconda is a tool that installs Python together with the <code class="docutils literal notranslate"><span class="pre">conda</span></code> package
-manager and several related apps, tools, and packages.  It’s one of the
-easiest ways to get Python installed on your system and ready to use for
-data work.</p>
-<p>These instructions are written primarily for Windows, with Mac
-instructions in parentheses.</p>
-<div class="section" id="visit-the-anaconda-website">
-<h2>Visit the Anaconda website<a class="headerlink" href="#visit-the-anaconda-website" title="Permalink to this headline">¶</a></h2>
-<p>It is at this URL:
-<a class="reference external" href="http://www.anaconda.com/distribution">www.anaconda.com/distribution</a></p>
-<p>It looks like this:</p>
-<p><img alt="A screenshot of the Anaconda website at
-www.anaconda.com/distribution" src="../../_images/install-image-1.png" class="center-box-image"/></p>
+  <div class="section" id="abstraction">
+<h1>Abstraction<a class="headerlink" href="#abstraction" title="Permalink to this headline">¶</a></h1>
+<p><a href="../../_slides/chapter-7-slides.html">See also the slides that summarize a portion of this content.</a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These notes are not yet written.  I’ll come back and do that later.</p>
 </div>
-<div class="section" id="choose-your-os">
-<h2>Choose your OS<a class="headerlink" href="#choose-your-os" title="Permalink to this headline">¶</a></h2>
-<p>Scroll down on that same website and click the Windows link to indicate
-that you want to download the installer for Windows.</p>
-<p><img alt="A screenshot of the three OS options on the Anaconda website download
-page: Windows, macOS, and Linux, with the Windows option
-chosen" src="../../_images/install-image-2.png" class="center-box-image"/></p>
-<p>(Mac users obviously click the macOS link instead.)</p>
-</div>
-<div class="section" id="download-the-installer">
-<h2>Download the Installer<a class="headerlink" href="#download-the-installer" title="Permalink to this headline">¶</a></h2>
-<p>Click the download button for the Python 3.7 distribution of Anaconda,
-as shown on the left below.</p>
-<p><img alt="A screenshot of the two Python versions available on the Anaconda
-website download page, Python 3.7 and Python 2.7, with the Python 3.7
-version highlighted" src="../../_images/install-image-3.png" class="center-box-image"/></p>
-</div>
-<div class="section" id="run-the-installer">
-<h2>Run the Installer<a class="headerlink" href="#run-the-installer" title="Permalink to this headline">¶</a></h2>
-<p>Run the installer once it’s downloaded, probably by clicking the
-downloaded file in your browser’s list of downloaded files, usually at
-the bottom left of the window.</p>
-<p><img alt="A screenshot of the item in the browser status bar showing the
-downloaded installer file for the Anaconda
-distribution" src="../../_images/install-image-4.png" class="center-box-image"/></p>
-<p>(For Mac users, this will be a .pkg file instead of an .exe.)</p>
-<p>Accept all the default choices during installation. This may take up to
-10 minutes.</p>
-<p><img alt="A screenshot of the first screen in the Anaconda Windows installer,
-welcoming the user to the installation
-process" src="../../_images/install-image-5.png" class="center-box-image"/></p>
-<p>(For Mac users, the installer will look slightly different than the one
-above.)</p>
-<p>After this, you may wish to <a class="reference internal" href="vs-code-installation.html"><span class="doc">install VS Code</span></a> as well.</p>
-</div>
+<ul class="simple">
+<li><p>In mathematics</p>
+<ul>
+<li><p>Binders: limits, summations, products, integrals, quantification, etc.</p>
+<ul>
+<li><p>Note that we will be using quantification to discuss lots of stuff throughout the course, so don’t be shy with it!  I’m not suggesting we necessarily introduce <span class="math notranslate nohighlight">\(\forall,\exists\)</span>, but you can introduce “each” and “all” and various synonyms.</p></li>
+<li><p>Simply introduce these as small scopes.  They introduce a variable we use for just a short time.  That’s their job.</p></li>
+<li><p>But they connect to functions in that <span class="math notranslate nohighlight">\(f(x)=x^2\)</span> is shorthand for <span class="math notranslate nohighlight">\(f=\lambda x.x^2\)</span>, and thus all binders are really operations on functions that serve as the body.  Maybe don’t mention this here; you’re coming to lambda in Python below…revisit then.</p></li>
+</ul>
+</li>
+<li><p>Learning from examples to general principles, which humans are good at, but computers aren’t.</p></li>
+<li><p>“Given numbers x, y, and z, we define…”</p></li>
+</ul>
+</li>
+<li><p>In computing (:framed_picture: is being able to answer lots of questions about this, as well as being able to do it)</p>
+<ul>
+<li><p>Lambda expressions</p></li>
+<li><p>What should make a coder realize it’s time to apply this skill?</p>
+<ul>
+<li><p>Multi-line blocks of code repeated many times with different parameters that should use functions.</p></li>
+<li><p>A single-line block of code repeated many times but in a clear numeric progression, which should use a loop.</p></li>
+<li><p>For realistic examples of these, peruse the code submitted to MA346 Project 2 Spring 2020.</p></li>
+</ul>
+</li>
+<li><p>You can teach it as steps, perhaps starting with a smaller step such as “move all the changeable values out into parameters at the outset.”</p></li>
+<li><p>Are there IDEs that can help?  (Could be a team essay/video/presentation.)</p></li>
+</ul>
+</li>
+<li><p>Practice doing this with LOTS of code examples, creating functions, loops, etc. (and Streamlit scripts later)</p>
+<ul>
+<li><p>Once they’ve practiced it on small examples, have them do it on the same homework they turned in last week, in which the same analysis code was repeated twice for two different subsamples.  Merge these into function definitions and calls instead.  This will also require updating the comments!</p></li>
+</ul>
+</li>
+<li><p>LOYO (since we now know how to write DRY code):</p>
+<ul>
+<li><p>Making your own Python modules (see your old MA705/346 content on this) :bulb:</p></li>
+</ul>
+</li>
+</ul>
 </div>
 
 
@@ -257,8 +233,8 @@ above.)</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="big-cheat-sheet.html" title="previous page">Big Cheat Sheet</a>
-    <a class='right-next' id="next-link" href="vs-code-installation.html" title="next page">VS Code for Python Installation</a>
+    <a class='left-prev' id="prev-link" href="chapter-6-single-table-verbs.html" title="previous page">Single-Table Verbs</a>
+    <a class='right-next' id="next-link" href="chapter-8-version-control.html" title="next page">Version Control</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
