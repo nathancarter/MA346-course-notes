@@ -50,6 +50,14 @@ As just stated, pivot is the verb for converting tall-form data to wide-form dat
 
 ### The general idea
 
+The big picture idea of the pivot operation is illustrated here:
+
+<img alt="Overview of the pivot operation" src="../../_images/table-verb-pivot.png"/>
+
+We will make that more precise later, but it can serve as a reference for the general idea.
+
+&nbsp;
+
 The table below shows the same table from above, in "tall" form.  Drag the slider back and forth to watch the transition from tall to wide form.  While you do so, watch each of these parts of the table:
 
  1. The gray cells:
@@ -107,9 +115,17 @@ Recall that pivoting just turns "tall" data into "wide" data.  And tall form is 
 
 ## Melt
 
-The reverse operation to a pivot is called "melt."  This comes from the fact that wide data "falls down" (like the drips of a melting icicle perhaps?) into tall form, which you can watch happen in the animation below.
+The reverse operation to a pivot is called "melt."  This comes from the fact that wide data "falls down" (like the drips of a melting icicle perhaps?) into tall form.  The idea is summarized in the following picture, but you can watch it happen in the animation further below.
 
 ### The genreal idea
+
+The big picture idea of the pivot operation is illustrated here:
+
+<img alt="Overview of the melt operation" src="../../_images/table-verb-melt.png"/>
+
+We will make that more precise later, but it can serve as a reference for the general idea.
+
+&nbsp;
 
 Just as pivoting was usually to turn data stored for computers into data readable by humans, melting is for the reverse.  If you're given data in wide form, but you want to prepare it for analysis, you often want to convert it into tall form to make subsequent data processing code easier.
 
@@ -119,12 +135,12 @@ Drag the slider to see the melting in action.  While you do so, watch the follow
  1. The gray cells:
      * Because we'll be spreading a student's data out over more than one row, these will be copied.
      * These function as unique IDs for each row, so pandas calls these columns the `id_vars`.
- 2. The red cells:
+ 2. The blue cells:
      * These are the titles for each of several different functions.
      * Each function takes a student as input and gives a type of exam score as output.
      * They will change from being column headers to being values in the table, so pandas calls them the `value_vars`.
- 3. The other colors:
-     * Each other color represents a separate function (blue maps students to SAT score, green maps students to ACT score, and yellow maps students to GPA).
+ 3. The green cells:
+     * Each column represents a separate function (the first maps students to SAT score, the second maps students to ACT score, and the third maps students to GPA).
      * Because we're collecting all scores into a single column, these will stack up to become just one column.
 
 (This animation can be viewed [in its own page here](https://nathancarter.github.io/dataframe-animations/melt.html).)
@@ -152,7 +168,15 @@ If `df.pivot()` makes a tall table wide, then `df.pivot_table()` makes a tall ta
 
 ### The general idea
 
-In the table shown below, notice that mapping from the gray columns to the blue column is *not* a function.  If it were, we could pivot on the blue column, and the green cells would rearrange themselves just as they did in the first animation up above.  But try dragging the slider below *slowly* and you will see that some green cells collide.
+The big picture idea of the pivot operation is illustrated here:
+
+<img alt="Overview of the pivot table operation" src="../../_images/table-verb-pivot-table.png"/>
+
+We will make that more precise later, but it can serve as a reference for the general idea.
+
+&nbsp;
+
+In the table shown below, notice that if we try to consider the gray and blue columns as inputs and the green column as outputs, the relationship is *not* a function.  If it were, we could pivot on the blue column, and the green cells would rearrange themselves just as they did in the first animation up above.  But try dragging the slider below *slowly* and you will see that some green cells collide.
 
 For instance, Amy Smith has two different sales to the same customer, Facebook, and Bob Jones has two different sales to the same customer, Amazon.  So we cannot simply create a Facebook column and an Amazon column and rearrange the sales data into them.  When two sales figures need to be placed under the same customer heading, we need some way to combine them.
 

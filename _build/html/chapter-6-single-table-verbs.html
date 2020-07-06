@@ -332,6 +332,10 @@
 <p>As just stated, pivot is the verb for converting tall-form data to wide-form data.  We’ll give a precise definition later on.  Let’s first get some intuition for how it works.</p>
 <div class="section" id="the-general-idea">
 <h3>The general idea<a class="headerlink" href="#the-general-idea" title="Permalink to this headline">¶</a></h3>
+<p>The big picture idea of the pivot operation is illustrated here:</p>
+<img alt="Overview of the pivot operation" src="../../_images/table-verb-pivot.png"/>
+<p>We will make that more precise later, but it can serve as a reference for the general idea.</p>
+<p> </p>
 <p>The table below shows the same table from above, in “tall” form.  Drag the slider back and forth to watch the transition from tall to wide form.  While you do so, watch each of these parts of the table:</p>
 <ol class="simple">
 <li><p>The gray cells:</p>
@@ -440,9 +444,13 @@
 </div>
 <div class="section" id="melt">
 <h2>Melt<a class="headerlink" href="#melt" title="Permalink to this headline">¶</a></h2>
-<p>The reverse operation to a pivot is called “melt.”  This comes from the fact that wide data “falls down” (like the drips of a melting icicle perhaps?) into tall form, which you can watch happen in the animation below.</p>
+<p>The reverse operation to a pivot is called “melt.”  This comes from the fact that wide data “falls down” (like the drips of a melting icicle perhaps?) into tall form.  The idea is summarized in the following picture, but you can watch it happen in the animation further below.</p>
 <div class="section" id="the-genreal-idea">
 <h3>The genreal idea<a class="headerlink" href="#the-genreal-idea" title="Permalink to this headline">¶</a></h3>
+<p>The big picture idea of the pivot operation is illustrated here:</p>
+<img alt="Overview of the melt operation" src="../../_images/table-verb-melt.png"/>
+<p>We will make that more precise later, but it can serve as a reference for the general idea.</p>
+<p> </p>
 <p>Just as pivoting was usually to turn data stored for computers into data readable by humans, melting is for the reverse.  If you’re given data in wide form, but you want to prepare it for analysis, you often want to convert it into tall form to make subsequent data processing code easier.</p>
 <p>For example, let’s say we were given the table below of students’ performance on various exams.  (Obviously, this is fake data.)  If we would rather view each exam as a separate observation, so that each row is a single exam score, we can melt the table.</p>
 <p>Drag the slider to see the melting in action.  While you do so, watch the following parts of the table:</p>
@@ -453,16 +461,16 @@
 <li><p>These function as unique IDs for each row, so pandas calls these columns the <code class="docutils literal notranslate"><span class="pre">id_vars</span></code>.</p></li>
 </ul>
 </li>
-<li><p>The red cells:</p>
+<li><p>The blue cells:</p>
 <ul class="simple">
 <li><p>These are the titles for each of several different functions.</p></li>
 <li><p>Each function takes a student as input and gives a type of exam score as output.</p></li>
 <li><p>They will change from being column headers to being values in the table, so pandas calls them the <code class="docutils literal notranslate"><span class="pre">value_vars</span></code>.</p></li>
 </ul>
 </li>
-<li><p>The other colors:</p>
+<li><p>The green cells:</p>
 <ul class="simple">
-<li><p>Each other color represents a separate function (blue maps students to SAT score, green maps students to ACT score, and yellow maps students to GPA).</p></li>
+<li><p>Each column represents a separate function (the first maps students to SAT score, the second maps students to ACT score, and the third maps students to GPA).</p></li>
 <li><p>Because we’re collecting all scores into a single column, these will stack up to become just one column.</p></li>
 </ul>
 </li>
@@ -514,7 +522,11 @@
 <p>If <code class="docutils literal notranslate"><span class="pre">df.pivot()</span></code> makes a tall table wide, then <code class="docutils literal notranslate"><span class="pre">df.pivot_table()</span></code> makes a tall table sort of wide.  We’ll see why below.</p>
 <div class="section" id="id2">
 <h3>The general idea<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>In the table shown below, notice that mapping from the gray columns to the blue column is <em>not</em> a function.  If it were, we could pivot on the blue column, and the green cells would rearrange themselves just as they did in the first animation up above.  But try dragging the slider below <em>slowly</em> and you will see that some green cells collide.</p>
+<p>The big picture idea of the pivot operation is illustrated here:</p>
+<img alt="Overview of the pivot table operation" src="../../_images/table-verb-pivot-table.png"/>
+<p>We will make that more precise later, but it can serve as a reference for the general idea.</p>
+<p> </p>
+<p>In the table shown below, notice that if we try to consider the gray and blue columns as inputs and the green column as outputs, the relationship is <em>not</em> a function.  If it were, we could pivot on the blue column, and the green cells would rearrange themselves just as they did in the first animation up above.  But try dragging the slider below <em>slowly</em> and you will see that some green cells collide.</p>
 <p>For instance, Amy Smith has two different sales to the same customer, Facebook, and Bob Jones has two different sales to the same customer, Amazon.  So we cannot simply create a Facebook column and an Amazon column and rearrange the sales data into them.  When two sales figures need to be placed under the same customer heading, we need some way to combine them.</p>
 <p>The way the table below combines cells is by adding, which is a very sensible thing to do with sales data for a customer.  You can see that the code asks this by specifying the aggregation function (or <code class="docutils literal notranslate"><span class="pre">aggfunc</span></code>) to be “sum.”</p>
 <p>This is why a <code class="docutils literal notranslate"><span class="pre">pivot_table</span></code> operation doesn’t make a table that’s as wide as a <code class="docutils literal notranslate"><span class="pre">pivot</span></code> might, because some cells are combined, meaning that the overall table reduces in size.</p>
