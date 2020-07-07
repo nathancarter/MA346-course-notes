@@ -13204,8 +13204,260 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Chapter-7---Abstraction">Chapter 7 - Abstraction<a class="anchor-link" href="#Chapter-7---Abstraction">&#182;</a></h1><p><a href="../_build/html/chapter-7-abstraction.html">See also the corresponding course notes, here.</a></p>
 
-<pre><code>{warning}
-These slides are not yet written.  Coming soon.</code></pre>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Abstract/concrete-spectrum">Abstract/concrete spectrum<a class="anchor-link" href="#Abstract/concrete-spectrum">&#182;</a></h2><p>&nbsp;</p>
+$$ \text{Concrete (or specific)} ~ ~ \longleftrightarrow ~ ~ \text{Abstract (or general)} $$<p>&nbsp;</p>
+<p><em>Abstraction</em> means moving $\to$rightward$\to$ on the spectrum.</p>
+<p><em>Generalization</em> is another word for the same thing.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Example-of-generalization-in-mathematical-formula">Example of generalization in mathematical formula<a class="anchor-link" href="#Example-of-generalization-in-mathematical-formula">&#182;</a></h2><p><strong>Specific:</strong></p>
+<p>If it's $50^\circ$F outside, we can convert it $\frac59(50-32)=\frac59(18)=10$ and find that it's $10^\circ$C outside.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(Abstraction/generalization: Replace the specific constant 50 with a variable that could stand for any temperature.)</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>General:</strong></p>
+<p>Any temperature can be converted from degrees Fahrenheit to degrees Celsius using $C=\frac59(F-32)$.</p>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Example-of-generalization-in-programming">Example of generalization in programming<a class="anchor-link" href="#Example-of-generalization-in-programming">&#182;</a></h2><p>Non-generalized code, converting columns of currencies from text to float:</p>
+<div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tuition&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tuition&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tuition&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tuition&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tuition&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tuition&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">float</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fees&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fees&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fees&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fees&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fees&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fees&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">float</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Books&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Books&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Books&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Books&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Books&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Books&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">float</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Room and board&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Room and board&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Room and board&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Room and board&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Room and board&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Room and board&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">float</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Example-of-generalization-in-programming">Example of generalization in programming<a class="anchor-link" href="#Example-of-generalization-in-programming">&#182;</a></h2><p>Highlighting the repetition:</p>
+<div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tuition&#39;</span>       <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tuition&#39;</span>       <span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tuition&#39;</span>       <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tuition&#39;</span>       <span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tuition&#39;</span>       <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tuition&#39;</span>       <span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">float</span> <span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fees&#39;</span>          <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fees&#39;</span>          <span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fees&#39;</span>          <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fees&#39;</span>          <span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fees&#39;</span>          <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fees&#39;</span>          <span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">float</span> <span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Books&#39;</span>         <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Books&#39;</span>         <span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Books&#39;</span>         <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Books&#39;</span>         <span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Books&#39;</span>         <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Books&#39;</span>         <span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">float</span> <span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Room and board&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Room and board&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Room and board&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Room and board&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Room and board&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Room and board&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">float</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Example-of-generalization-in-programming">Example of generalization in programming<a class="anchor-link" href="#Example-of-generalization-in-programming">&#182;</a></h2><p>Creating a variable for what's in common really highlights the repetition:</p>
+<div class="highlight"><pre><span></span><span class="n">column</span> <span class="o">=</span> <span class="s1">&#39;Tuition&#39;</span>
+<span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">float</span> <span class="p">)</span>
+<span class="n">column</span> <span class="o">=</span> <span class="s1">&#39;Fees&#39;</span>
+<span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">float</span> <span class="p">)</span>
+<span class="n">column</span> <span class="o">=</span> <span class="s1">&#39;Books&#39;</span>
+<span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">float</span> <span class="p">)</span>
+<span class="n">column</span> <span class="o">=</span> <span class="s1">&#39;Room and board&#39;</span>
+<span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">float</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Example-of-generalization-in-programming">Example of generalization in programming<a class="anchor-link" href="#Example-of-generalization-in-programming">&#182;</a></h2><p>Use that variable to create a function and call it as many times as needed:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simplify_currency</span> <span class="p">(</span> <span class="n">column</span> <span class="p">):</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">float</span> <span class="p">)</span>
+
+<span class="n">simplify_currency</span><span class="p">(</span> <span class="s1">&#39;Tuition&#39;</span> <span class="p">)</span>
+<span class="n">simplify_currency</span><span class="p">(</span> <span class="s1">&#39;Fees&#39;</span> <span class="p">)</span>
+<span class="n">simplify_currency</span><span class="p">(</span> <span class="s1">&#39;Books&#39;</span> <span class="p">)</span>
+<span class="n">simplify_currency</span><span class="p">(</span> <span class="s1">&#39;Room and board&#39;</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Benefits-of-abstraction">Benefits of abstraction<a class="anchor-link" href="#Benefits-of-abstraction">&#182;</a></h2><ol>
+<li>Decrease in total number of lines of code <em>and</em> size of many lines, and so it's much more readable.</li>
+<li>What the code is doing is clearer, because we've given it a name (in this case, <code>simplify_currency</code>).</li>
+<li>It isn't always obvious in the original version that there is repetition of the same procedure three times.  In the new version, the repetition is obvious.</li>
+<li>If you later need to change how you simplify currency, you have to make that change in only one place (inside the function).  Before, you would have had to make the same change four times.</li>
+<li>Also, if you tried to make a change to the code later, but accidentally missed changing one of the four, you'd have broken code and not realize it.</li>
+<li>You could share this same function to other notebooks or with other coders if needed.</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Learn-this-reflex">Learn this reflex<a class="anchor-link" href="#Learn-this-reflex">&#182;</a></h2><p>&nbsp;</p>
+$$ \text{When I want to copy-and-paste code...} $$$$ \downarrow $$$$ \text{...instead I will create a function.} $$
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Second-example-of-generalization-in-programming">Second example of generalization in programming<a class="anchor-link" href="#Second-example-of-generalization-in-programming">&#182;</a></h2><p>As an alternative to the first example, you could create a loop instead:</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;Tuition&#39;</span><span class="p">,</span> <span class="s1">&#39;Fees&#39;</span><span class="p">,</span> <span class="s1">&#39;Books&#39;</span><span class="p">,</span> <span class="s1">&#39;Room and board&#39;</span> <span class="p">]:</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">float</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Second-example-of-generalization-in-programming">Second example of generalization in programming<a class="anchor-link" href="#Second-example-of-generalization-in-programming">&#182;</a></h2><p>Or you could create both a loop and a function:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simplify_currency</span> <span class="p">(</span> <span class="n">columns</span> <span class="p">):</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">float</span> <span class="p">)</span>
+
+<span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;Tuition&#39;</span><span class="p">,</span> <span class="s1">&#39;Fees&#39;</span><span class="p">,</span> <span class="s1">&#39;Books&#39;</span><span class="p">,</span> <span class="s1">&#39;Room and board&#39;</span> <span class="p">]:</span>
+    <span class="n">simplify_currency</span><span class="p">(</span> <span class="n">column</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Second-example-of-generalization-in-programming">Second example of generalization in programming<a class="anchor-link" href="#Second-example-of-generalization-in-programming">&#182;</a></h2><p>And if there had been too many columns to fit on one line, then:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simplify_currency</span> <span class="p">(</span> <span class="n">columns</span> <span class="p">):</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">float</span> <span class="p">)</span>
+
+<span class="n">columns_to_simplify</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Tuition&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Fees&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Books&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Room and board&#39;</span>
+    <span class="c1"># add as many as needed</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns_to_simplify</span><span class="p">:</span>
+    <span class="n">simplify_currency</span><span class="p">(</span> <span class="n">column</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">&#182;</a></h2><p>Examine the file <code>in-class-exercise-1.ipynb</code> your instructor will provide, together with the corresponding dataset of baseball statistics, <code>player-batting-2015.csv</code>.</p>
+<ol>
+<li>Run the entire notebook to be sure that it succeeds, including finding the input dataset and producing a cleaned version as output.</li>
+<li>Could any code in that file benefit from abstraction?</li>
+<li>Introduce the necessary abstraction to improve the code.</li>
+<li>Ensure the file still runs.  (You should probably delete the cleaned version of the data before re-running, to be sure that the notebook still creates the cleaned version successfully.)</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h2><p>Examine the file <code>in-class-exercise-2.ipynb</code> your instructor will provide, which will read the cleaned dataset produced when you ran <code>in-class-exercise-1.ipynb</code>.</p>
+<ol>
+<li>Run the entire notebook to be sure that it succeeds, including finding the input dataset and producing a folder of images as output.</li>
+<li>Could any code in that file benefit from abstraction?</li>
+<li>Introduce the necessary abstraction to improve the code.</li>
+<li>Ensure the file still runs.  (You should probably delete the folder of images before re-running, to be sure that the notebook still creates them successfully.)</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise-3">Exercise 3<a class="anchor-link" href="#Exercise-3">&#182;</a></h2><p>The homework assignment you turned in today required documenting some code that does several things, including (a) creating a pair of overlapping histograms for two subsamples, (b) computing the mean of those two subsamples, and (c) performing a hypothesis test on those two subsamples.</p>
+<p>But what if we wanted to perform the same test on subsamples other than just high/low minority percent areas, as that notebook did?</p>
+<p>(continued on next slide)</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise-3,-continued">Exercise 3, continued<a class="anchor-link" href="#Exercise-3,-continued">&#182;</a></h2><ol>
+<li>Abstract the code that creates the plot into a function that could do so for any two sub-populations.  (Before you begin: what parameters should it accept?)  Once you've done so, call the function with the appropriate inputs so that it creates the same plot that it did before you did the abstraction.</li>
+<li>Abstract the code that computes the two means and does the hypothesis test into a function that could do so for any two sub-populations.  Ensure the function returns multiple values, so that the caller gets everything they need.  Once you've done so, call the function with the appropriate inputs and then update your comments that interpret the outputs accordingly.</li>
+<li>Now that you've got re-usable functions, apply them to answer these questions, with accompanying plots:<ul>
+<li>Is the mean interest rate statistically significantly different between applications from males vs. females?</li>
+<li>Is the mean property value statistically significantly different between Asian applicants and non-Asian applicants?</li>
+</ul>
+</li>
+</ol>
 
 </div>
 </div>
