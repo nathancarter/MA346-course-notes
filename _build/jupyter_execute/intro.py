@@ -24,8 +24,8 @@ Each topic below will become a link to what we will cover in class that day, onc
 |      |           | Chapter 6: Pandas single-table verbs ([notes](chapter-6-single-table-verbs), <a href='../../_slides/chapter-6-slides.html'>slides</a>) |
 |      |           | [DataCamp to review before Week 4](big-cheat-sheet.html#before-week-4-review-of-visualization-in-cs230) |
 |      |           | &nbsp;       |
-| 4    | 9/24/2020 | Chapter 7: Abstraction in mathematics and computing (not yet ready) |
-|      |           | Chapter 8: Version control and GitHub (not yet ready) |
+| 4    | 9/24/2020 | Chapter 7: Abstraction in mathematics and computing ([notes](chapter-7-abstraction), <a href='../../_slides/chapter-7-slides.html'>slides</a>) |
+|      |           | Chapter 8: Version control and GitHub ([notes](chapter-8-version-control), <a href='../../_slides/chapter-8-slides.html'>slides</a>) |
 |      |           | [DataCamp to review before Week 5](big-cheat-sheet.html#before-week-5) |
 |      |           | &nbsp;       |
 | 5    | 10/1/2020 | Chapter 9: Math and stats in Python (not yet ready) |
