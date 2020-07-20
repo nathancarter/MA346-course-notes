@@ -1,12 +1,11 @@
 
 
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Index &#8212; MA346 Course Notes</title>
+    <title>Visualization &#8212; MA346 Course Notes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -31,19 +30,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/genindex.html" />
-    <link rel="index" title="Index" href="#" />
+    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/chapter-10-visualization.html" />
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Big Cheat Sheet" href="big-cheat-sheet.html" />
+    <link rel="prev" title="Mathematics and Statistics in Python" href="chapter-9-math-and-stats.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
 
 
 <!-- Opengraph tags -->
-<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/genindex.html" />
+<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/chapter-10-visualization.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Index" />
-<meta property="og:description" content="" />
+<meta property="og:title"       content="Visualization" />
+<meta property="og:description" content="Visualization  <a href="../../_slides/chapter-10-slides.html">See also the slides that summarize a portion of this content.</a>  The purpose here is to extend t" />
 <meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
 
 <meta name="twitter:card" content="summary">
@@ -104,8 +105,8 @@
   <li class="">
     <a href="chapter-9-math-and-stats.html">9. Mathematics and Statistics in Python</a>
   </li>
-  <li class="">
-    <a href="chapter-10-visualization.html">10. Visualization</a>
+  <li class="active">
+    <a href="">10. Visualization</a>
   </li>
   <li class="">
     <a href="big-cheat-sheet.html">11. Big Cheat Sheet</a>
@@ -148,6 +149,15 @@
             <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
 
             
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="_sources/chapter-10-visualization.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
         </div>
 
         <!-- Source interaction buttons -->
@@ -160,9 +170,28 @@
         
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#classifying-the-tools-from-datacamp" class="nav-link">Classifying the tools from DataCamp</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#quick-plotting" class="nav-link">Quick plotting</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#drawing-maps" class="nav-link">Drawing maps</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#loyo-stuff" class="nav-link">LOYO stuff</a>
+        </li>
     
     </ul>
 </nav>
@@ -175,11 +204,51 @@
         
               <div>
                 
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="visualization">
+<h1>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h1>
+<p><a href="../../_slides/chapter-10-slides.html">See also the slides that summarize a portion of this content.</a></p>
+<p>The purpose here is to extend the visualization skills they learned in CS230</p>
+<div class="section" id="classifying-the-tools-from-datacamp">
+<h2>Classifying the tools from DataCamp<a class="headerlink" href="#classifying-the-tools-from-datacamp" title="Permalink to this headline">¶</a></h2>
+<p>They already did this in the DC homework, so you’re reviewing that content here.  Explicitly state that they should do the DC before this reading.</p>
+<p>But our purpose now is to discuss the various merits of the viz tools, leveraging the mathematical vocabulary  offunctions and relations. :framed_picture:</p>
+<p>DC covered: seaborn, violin, bee swarm, heat map, pair plot, joint plot, lmplot</p>
+</div>
+<div class="section" id="quick-plotting">
+<h2>Quick plotting<a class="headerlink" href="#quick-plotting" title="Permalink to this headline">¶</a></h2>
+<p>Bonus: <a class="reference external" href="https://towardsdatascience.com/the-simplest-way-to-create-complex-visualizations-in-python-isnt-with-matplotlib-a5802f2dba92">You can actually plot data in lots of ways without loading matplotlib.</a></p>
+</div>
+<div class="section" id="drawing-maps">
+<h2>Drawing maps<a class="headerlink" href="#drawing-maps" title="Permalink to this headline">¶</a></h2>
+<p>Consider adding maps, too—very commonly useful.  <a class="reference external" href="https://www.earthdatascience.org/tutorials/introduction-to-leaflet-animated-maps/">See this blog post about an easy way to do so in Python.</a>  If you have no time, turn that into a LOYO, but I think you can cover it here.</p>
+</div>
+<div class="section" id="loyo-stuff">
+<h2>LOYO stuff<a class="headerlink" href="#loyo-stuff" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Advanced visualization such as images, contour maps, 3D plotting, and animation</p></li>
+<li><p>Tableau (highly optional!) but since it’s so popular:</p>
+<ul>
+<li><p>They should know it exists and what it’s good at</p></li>
+<li><p>They should know about its data flow diagram software and the free alternative of Knime</p></li>
+<li><p>They should know its limitations (e.g., can’t do complex merge in Tableau)</p></li>
+</ul>
+</li>
+<li><p>Visualization design principles, like those you find in these references: :framed_picture:</p>
+<ul>
+<li><p>See this free online textbook: https://serialmentor.com/dataviz/</p></li>
+<li><p>See this interesting blog post: https://flowingdata.com/2017/01/24/one-dataset-visualized-25-ways/</p></li>
+<li><p>See The Data Science Design Manual (free Springer ebook) Sections 6.2-4, which are a distilled Tufte</p></li>
+</ul>
+</li>
+<li><p>Styling matplotlib more nicely, either for following the visualization principles above or just for coolness/variety/eye-catchingness:</p>
+<ul>
+<li><p>https://towardsdatascience.com/the-last-matplotlib-tweaking-guide-youll-ever-need-dbd4374a1c1e</p></li>
+<li><p>https://towardsdatascience.com/cyberpunk-style-with-matplotlib-f47404c9d4c5</p></li>
+<li><p>more?</p></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 
 
@@ -191,6 +260,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="chapter-9-math-and-stats.html" title="previous page">Mathematics and Statistics in Python</a>
+    <a class='right-next' id="next-link" href="big-cheat-sheet.html" title="next page">Big Cheat Sheet</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

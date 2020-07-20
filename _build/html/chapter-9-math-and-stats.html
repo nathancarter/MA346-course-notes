@@ -1,0 +1,777 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mathematics and Statistics in Python &#8212; MA346 Course Notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/chapter-9-math-and-stats.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Visualization" href="chapter-10-visualization.html" />
+    <link rel="prev" title="Version Control" href="chapter-8-version-control.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/chapter-9-math-and-stats.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Mathematics and Statistics in Python" />
+<meta property="og:description" content="Mathematics and Statistics in Python  <a href="../../_slides/chapter-9-slides.html">See also the slides that summarize a portion of this content.</a>  Math in P" />
+<meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="chapter-1-intro-to-data-science.html">1. Introduction to Data Science</a>
+  </li>
+  <li class="">
+    <a href="chapter-2-mathematical-foundations.html">2. Mathematical Foundations</a>
+  </li>
+  <li class="">
+    <a href="chapter-3-jupyter.html">3. Jupyter</a>
+  </li>
+  <li class="">
+    <a href="chapter-4-review-of-python-and-pandas.html">4. Review of Python and pandas</a>
+  </li>
+  <li class="">
+    <a href="chapter-5-before-and-after.html">5. Before and After</a>
+  </li>
+  <li class="">
+    <a href="chapter-6-single-table-verbs.html">6. Single-Table Verbs</a>
+  </li>
+  <li class="">
+    <a href="chapter-7-abstraction.html">7. Abstraction</a>
+  </li>
+  <li class="">
+    <a href="chapter-8-version-control.html">8. Version Control</a>
+  </li>
+  <li class="active">
+    <a href="">9. Mathematics and Statistics in Python</a>
+  </li>
+  <li class="">
+    <a href="chapter-10-visualization.html">10. Visualization</a>
+  </li>
+  <li class="">
+    <a href="big-cheat-sheet.html">11. Big Cheat Sheet</a>
+  </li>
+  <li class="">
+    <a href="anaconda-installation.html">12. Anaconda Installation</a>
+  </li>
+  <li class="">
+    <a href="vs-code-installation.html">13. VS Code for Python Installation</a>
+  </li>
+  <li class="">
+    <a href="GB213-review-in-Python.html">14. GB213 Review in Python</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="_sources/chapter-9-math-and-stats.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#math-in-python" class="nav-link">Math in Python</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#naming-mathematical-variables" class="nav-link">Naming mathematical variables</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#but-what-about-numpy" class="nav-link">But what about NumPy?</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#binding-function-arguments" class="nav-link">Binding function arguments</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#gb213-in-python" class="nav-link">GB213 in Python</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#curve-fitting-in-general" class="nav-link">Curve fitting in general</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#say-we-have-some-data" class="nav-link">1. Say we have some data</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#choose-a-model" class="nav-link">2. Choose a model</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#have-scipy-find-the-betas" class="nav-link">3. Have SciPy find the \betas</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#describe-and-show-the-fit-model" class="nav-link">4. Describe and show the fit model</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="mathematics-and-statistics-in-python">
+<h1>Mathematics and Statistics in Python<a class="headerlink" href="#mathematics-and-statistics-in-python" title="Permalink to this headline">¶</a></h1>
+<p><a href="../../_slides/chapter-9-slides.html">See also the slides that summarize a portion of this content.</a></p>
+<div class="section" id="math-in-python">
+<h2>Math in Python<a class="headerlink" href="#math-in-python" title="Permalink to this headline">¶</a></h2>
+<p>Having had CS230, you are surely familiar with Python’s built-in math operators <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, and <code class="docutils literal notranslate"><span class="pre">**</span></code>.  You’re probably also familiar with the fact that Python has a <code class="docutils literal notranslate"><span class="pre">math</span></code> module that you can use for things like trigonometry.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="mi">0</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>I list here just a few highlights from that module that are relevant for statistical computations.</p>
+<p><code class="docutils literal notranslate"><span class="pre">math.exp(x)</span></code> is <span class="math notranslate nohighlight">\(e^x\)</span>, so the following computes <span class="math notranslate nohighlight">\(e\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2.718281828459045
+</pre></div>
+</div>
+</div>
+</div>
+<p>Natural logarithms are written <span class="math notranslate nohighlight">\(\ln x\)</span> in mathematics, but just <code class="docutils literal notranslate"><span class="pre">log</span></code> in Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="mi">10</span> <span class="p">)</span>  <span class="c1"># natural log of 10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2.302585092994046
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are some other functions useful for data work (like <code class="docutils literal notranslate"><span class="pre">math.dist()</span></code>, <code class="docutils literal notranslate"><span class="pre">math.comb()</span></code>, and <code class="docutils literal notranslate"><span class="pre">math.perm()</span></code>) coming in Python 3.8, but most Python tools (like pandas, NumPy, and SciPy) haven’t yet been udpated to work with Python 3.8.  So I do not cover those functions here, and I recommend that you stick with Python 3.7 for now.</p>
+</div>
+<div class="section" id="naming-mathematical-variables">
+<h2>Naming mathematical variables<a class="headerlink" href="#naming-mathematical-variables" title="Permalink to this headline">¶</a></h2>
+<p>In programming, we almost never name variables with unhelpful names like <code class="docutils literal notranslate"><span class="pre">k</span></code> and <code class="docutils literal notranslate"><span class="pre">x</span></code>, because later readers of the code (or even ourselves reading it in two months) won’t know what <code class="docutils literal notranslate"><span class="pre">k</span></code> and <code class="docutils literal notranslate"><span class="pre">x</span></code> actually do.  The one exception to this is in mathematics, where it is normal to use single-letter variables, and indeed sometimes the letters matter.</p>
+<p><strong>Example 1:</strong>  The quadratic formula is almost always written using the letters <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span>.  Yes, names like <code class="docutils literal notranslate"><span class="pre">x_squared_coefficient</span></code>, <code class="docutils literal notranslate"><span class="pre">x_coefficient</span></code>, and <code class="docutils literal notranslate"><span class="pre">constant</span></code> are more descriptive, but they would lead to much uglier code that’s not what anyone expects.  Compare:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># not super easy to read, but not bad:</span>
+<span class="k">def</span> <span class="nf">quadratic_nice</span> <span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span> <span class="p">(</span> <span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="p">(</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span> <span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="mi">2</span><span class="o">*</span><span class="n">a</span> <span class="p">),</span>
+             <span class="p">(</span> <span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="p">(</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span> <span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="mi">2</span><span class="o">*</span><span class="n">a</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># oh my make it stop:</span>
+<span class="k">def</span> <span class="nf">quadratic_bad</span> <span class="p">(</span> <span class="n">x_squared_coefficient</span><span class="p">,</span> <span class="n">x_coefficient</span><span class="p">,</span> <span class="n">constant</span> <span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">(</span> <span class="o">-</span><span class="n">x_coefficient</span> <span class="o">+</span> \
+             <span class="p">(</span> <span class="n">x_coefficient</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">x_squared_coefficient</span><span class="o">*</span><span class="n">constant</span> <span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="p">)</span> \
+           <span class="o">/</span> <span class="p">(</span> <span class="mi">2</span><span class="o">*</span><span class="n">x_squared_coefficient</span> <span class="p">),</span>
+        <span class="p">(</span> <span class="o">-</span><span class="n">x_coefficient</span> <span class="o">-</span> \
+             <span class="p">(</span> <span class="n">x_coefficient</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">x_squared_coefficient</span><span class="o">*</span><span class="n">constant</span> <span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="p">)</span> \
+           <span class="o">/</span> <span class="p">(</span> <span class="mi">2</span><span class="o">*</span><span class="n">x_squared_coefficient</span> <span class="p">)</span>
+    <span class="p">)</span>
+
+<span class="c1"># of course both work fine:</span>
+<span class="n">quadratic_nice</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">quadratic_bad</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>((2.0, 1.0), (2.0, 1.0))
+</pre></div>
+</div>
+</div>
+</div>
+<p>But the first one is so much easier to read.</p>
+<p><strong>Example 2:</strong>  Statistics always uses <span class="math notranslate nohighlight">\(\mu\)</span> for the mean of a population and <span class="math notranslate nohighlight">\(\sigma\)</span> for its standard deviation.  If we wrote code where we used <code class="docutils literal notranslate"><span class="pre">mean</span></code> and <code class="docutils literal notranslate"><span class="pre">standard_deviation</span></code> for those, that wouldn’t be hard to read, but it wouldn’t be as clear, either.</p>
+<p>Interestingly, you can actually type Greek letters into Python code and use them as variable names!  In Jupyter, just type a backslash (<code class="docutils literal notranslate"><span class="pre">\</span></code>) followed by the name of the letter (such as <code class="docutils literal notranslate"><span class="pre">mu</span></code>) and then press the Tab key.  It will replace the code <code class="docutils literal notranslate"><span class="pre">\mu</span></code> with the actual letter <span class="math notranslate nohighlight">\(\mu\)</span>.  I’ve done so in the example code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">normal_pdf</span> <span class="p">(</span> <span class="n">μ</span><span class="p">,</span> <span class="n">σ</span><span class="p">,</span> <span class="n">x</span> <span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The value of the probability density function for</span>
+<span class="sd">    the normal distribution N(μ,σ^2), with mean μ and</span>
+<span class="sd">    variance σ^2.&quot;&quot;&quot;</span>
+    <span class="n">shifted</span> <span class="o">=</span> <span class="p">(</span> <span class="n">x</span> <span class="o">-</span> <span class="n">μ</span> <span class="p">)</span> <span class="o">/</span> <span class="n">σ</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="o">-</span><span class="n">shifted</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="p">)</span> \
+         <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="p">)</span> <span class="o">/</span> <span class="n">σ</span>
+
+<span class="n">normal_pdf</span><span class="p">(</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.00876415024678427
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="but-what-about-numpy">
+<h2>But what about NumPy?<a class="headerlink" href="#but-what-about-numpy" title="Permalink to this headline">¶</a></h2>
+<p>Most data science projects in Python import both pandas and NumPy.  Since NumPy implements tons of mathematical tools, why bother using the ones in Python’s built-in <code class="docutils literal notranslate"><span class="pre">math</span></code> module?  Well, on the one hand, NumPy doesn’t have <em>everything</em>; for instance, the <code class="docutils literal notranslate"><span class="pre">math.comb()</span></code> and <code class="docutils literal notranslate"><span class="pre">math.perm()</span></code> functions mentioned above don’t exist in NumPy.  But when you <em>can</em> use NumPy, you <em>should,</em> for the following important reason.</p>
+<div class="alert alert-primary admonition">
+<p class="admonition-title">Big Picture</p>
+<p>All the functions in NumPy are <em>vectorized,</em> meaning that they will automatically apply themselves to every element of a NumPy array.  For instance, you can just as easily compute <code class="docutils literal notranslate"><span class="pre">square(5)</span></code> (and get 25) as you can compute <code class="docutils literal notranslate"><span class="pre">square(x)</span></code> if <code class="docutils literal notranslate"><span class="pre">x</span></code> is a list of 1000 entries.  NumPy notices that you provided a list of things to square, and it squares them all.  What are the benefits to vectorization?</p>
+<ol class="simple">
+<li><p>Using vectorization saves you <em>the work of writing loops.</em></p></li>
+<li><p>Using vectorization saves the readers of your code <em>the work of reading and understanding loops.</em></p></li>
+<li><p>If you had to write a loop to apply a Python function (like <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">x**2</span></code>) to a list of 1000 entries, then the loop would (obviously) run in Python.  Although Python is a very convenient language to code in, it does not produce very fast-running code.  Tools like NumPy are written in languages like C++, which are less convenient to code in, but produce faster-running results.  So if you can have NumPy automatically loop over your data, rather than writing a loop in Python, <em>the code will execute faster.</em></p></li>
+</ol>
+</div>
+<p>We will return to vectorization and loops in Chapter 11 of these notes.  For now, let’s just run a few NumPy functions.  In each case, notice that we give it an array as input, and it automatically knows that it should take action on each entry in the array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an array of 30 random numbers to work with.</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span> <span class="mi">30</span> <span class="p">)</span>
+<span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.74149733, 0.26079676, 0.24358045, 0.51730123, 0.42338556,
+       0.79087974, 0.4037113 , 0.83933334, 0.86947075, 0.34686963,
+       0.58518386, 0.50002195, 0.53737817, 0.69278721, 0.51002997,
+       0.51511676, 0.01107604, 0.08133614, 0.5039047 , 0.44594223,
+       0.10966614, 0.16340235, 0.88016071, 0.6757387 , 0.09700429,
+       0.52424308, 0.67339739, 0.55570386, 0.09015522, 0.08426084])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span> <span class="n">values</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span> <span class="c1"># round to 2 decimal digits</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.74, 0.26, 0.24, 0.52, 0.42, 0.79, 0.4 , 0.84, 0.87, 0.35, 0.59,
+       0.5 , 0.54, 0.69, 0.51, 0.52, 0.01, 0.08, 0.5 , 0.45, 0.11, 0.16,
+       0.88, 0.68, 0.1 , 0.52, 0.67, 0.56, 0.09, 0.08])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="n">values</span> <span class="p">)</span> <span class="c1"># compute e^x for each x in the array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([2.09907617, 1.29796384, 1.27580895, 1.67749437, 1.52712298,
+       2.20533569, 1.49737159, 2.31482326, 2.38564793, 1.41463229,
+       1.79532105, 1.64875747, 1.71151368, 1.99928018, 1.66534111,
+       1.67383392, 1.01113761, 1.08473546, 1.65517161, 1.56196122,
+       1.11590545, 1.17751036, 2.41128719, 1.96548434, 1.1018651 ,
+       1.68917979, 1.96088791, 1.7431675 , 1.09434413, 1.08791263])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span> <span class="n">values</span> <span class="p">)</span> <span class="c1"># square each value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([5.49818292e-01, 6.80149516e-02, 5.93314353e-02, 2.67600567e-01,
+       1.79255334e-01, 6.25490762e-01, 1.62982814e-01, 7.04480452e-01,
+       7.55979393e-01, 1.20318539e-01, 3.42440154e-01, 2.50021955e-01,
+       2.88775303e-01, 4.79954113e-01, 2.60130573e-01, 2.65345274e-01,
+       1.22678660e-04, 6.61556840e-03, 2.53919943e-01, 1.98864468e-01,
+       1.20266619e-02, 2.67003278e-02, 7.74682874e-01, 4.56622787e-01,
+       9.40983286e-03, 2.74830810e-01, 4.53464038e-01, 3.08806781e-01,
+       8.12796358e-03, 7.09988885e-03])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that this makes it very easy to compute certain mathematical formulas.  For example, when we want to measure the quality of a model, we might compute the RSSE, or Root Sum of Squared Errors, that is, the square root of the sum of the squared differences between each actual data value <span class="math notranslate nohighlight">\(y_i\)</span> and its predicted value <span class="math notranslate nohighlight">\(\hat y_i\)</span>.  In math, we write it like this:</p>
+<div class="math notranslate nohighlight">
+\[ \text{RSSE} = \sqrt{\sum_{i=1}^n (y_i-\hat y_i)^2} \]</div>
+<p>The summation symbol lets you know that a loop will take place.  But in NumPy, we can do it without writing any loops.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ys</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">]</span> <span class="p">)</span>   <span class="c1"># made up data</span>
+<span class="n">yhats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="p">]</span> <span class="p">)</span>   <span class="c1"># also made up</span>
+<span class="n">RSSE</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span> <span class="n">ys</span> <span class="o">-</span> <span class="n">yhats</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">RSSE</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.605551275463989
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice how the NumPy code also reads just like the English:  It’s the square root of the sume of the squared differences; the code literally says that in the formula itself!  If we had had to write it in pure Python, we would have used either a loop or a list comprehension, like in the example below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RSSE</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="nb">sum</span><span class="p">(</span> <span class="p">[</span> <span class="p">(</span> <span class="n">ys</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">yhats</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ys</span><span class="p">))</span> <span class="p">]</span> <span class="p">)</span> <span class="p">)</span> <span class="c1"># not as readable</span>
+<span class="n">RSSE</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.605551275463989
+</pre></div>
+</div>
+</div>
+</div>
+<p>A comprehensive list of NumPy’s math routines appear <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.math.html">in the NumPy documentation</a>.</p>
+</div>
+<div class="section" id="binding-function-arguments">
+<h2>Binding function arguments<a class="headerlink" href="#binding-function-arguments" title="Permalink to this headline">¶</a></h2>
+<p>Many functions in statistics have two types of parameters.  Some of the parameters you change very rarely, and others you change all the time.</p>
+<p><strong>Example 1:</strong>  Consider the <code class="docutils literal notranslate"><span class="pre">normal_pdf</span></code> function whose code appears earlier in this chapter.  It has three parameters, <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(\sigma\)</span>, and <span class="math notranslate nohighlight">\(x\)</span>.  You’ll probably have a particular normal distribution you want to work with, so you’ll choose <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>, and then you’ll want to use the function on many different values of <span class="math notranslate nohighlight">\(x\)</span>.  So the first two parameters we choose just once, and the third parameter changes all the time.</p>
+<p><strong>Example 2:</strong>  Consider fitting a linear model <span class="math notranslate nohighlight">\(\beta_0+\beta_1x\)</span> to some data <span class="math notranslate nohighlight">\(x_1,x_2,\ldots,x_n\)</span>.  That linear model is technically a function of three variables; we might write it as <span class="math notranslate nohighlight">\(f(\beta_0,\beta_1,x)\)</span>.  But when we fit the model to the data, then <span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span> get chosen, and we don’t change them after that.  But we might plug in hundreds or even thousands of different <span class="math notranslate nohighlight">\(x\)</span> values to <span class="math notranslate nohighlight">\(f\)</span>, using the same <span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span> values each time.</p>
+<p>Programmers have a word for this; they call it <em>binding</em> the arguments of a function.  Binding allows us to tell Python that we’ve chosen values for some parameters and won’t be changing them; Python can thus give us a function with fewer parameters, to make things simpler.  Python does this with a tool called <code class="docutils literal notranslate"><span class="pre">partial</span></code> in its <code class="docutils literal notranslate"><span class="pre">functools</span></code> module.  Here’s how we would apply it to the <code class="docutils literal notranslate"><span class="pre">normal_pdf</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+
+<span class="c1"># Let&#39;s say I want the standard normal distribution, that is,</span>
+<span class="c1"># I want to fill in the values μ=0 and σ=1 once for all.</span>
+<span class="n">my_pdf</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span> <span class="n">normal_pdf</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+
+<span class="c1"># now I can use that on as many x inputs as I like, such as:</span>
+<span class="n">my_pdf</span><span class="p">(</span> <span class="mi">0</span> <span class="p">),</span> <span class="n">my_pdf</span><span class="p">(</span> <span class="mi">1</span> <span class="p">),</span> <span class="n">my_pdf</span><span class="p">(</span> <span class="mi">2</span> <span class="p">),</span> <span class="n">my_pdf</span><span class="p">(</span> <span class="mi">3</span> <span class="p">),</span> <span class="n">my_pdf</span><span class="p">(</span> <span class="mi">4</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(0.3989422804014327,
+ 0.24197072451914337,
+ 0.05399096651318806,
+ 0.0044318484119380075,
+ 0.00013383022576488537)
+</pre></div>
+</div>
+</div>
+</div>
+<p>In fact, SciPy’s built-in random number generating procedures let you use them either by binding arguments or not, at your preference.  For instance, to generate 10 random floating point values between 0 and 100, we can do the following.  (The <code class="docutils literal notranslate"><span class="pre">rvs</span></code> function stands for “random values.”)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">uniform</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([28.20797667, 97.69911732, 29.42355639,  9.79136124, 45.75116887,
+       60.50366778, 22.10092973, 10.46337276, 27.20759345, 78.6972824 ])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or we can use built-in SciPy functionality to bind the first two arguments and create a specific random variable, then call <code class="docutils literal notranslate"><span class="pre">rvs</span></code> on that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span> <span class="p">)</span>  <span class="c1"># make a random variable</span>
+<span class="n">X</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span> <span class="p">)</span>             <span class="c1"># generate 10 values from it</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([90.38905689, 59.42631109, 73.88649776, 77.70883124, 39.98650078,
+       27.33167515, 79.53557962, 46.83346175, 42.00053977, 38.15631492])
+</pre></div>
+</div>
+</div>
+</div>
+<p>The same random variable can, of course, be used to create more values later.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">partial</span></code> tool built into Python only works if you want to bind the <em>first</em> arguments of the function.  If you need to bind later ones, then you can do it yourself using a <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, as in the following example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">subtract</span> <span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>   <span class="c1"># silly little example function</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+
+<span class="n">subtract_1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">subtract</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>  <span class="c1"># bind second argument to 1</span>
+
+<span class="n">subtract_1</span><span class="p">(</span> <span class="mi">5</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will also use the concept of binding function parameters when we come to curve fitting at the end of this chapter.</p>
+</div>
+<div class="section" id="gb213-in-python">
+<h2>GB213 in Python<a class="headerlink" href="#gb213-in-python" title="Permalink to this headline">¶</a></h2>
+<p>You can refer at any time to one of the appendices in these course notes, a <code class="xref any docutils literal notranslate"><span class="pre">review</span> <span class="pre">of</span> <span class="pre">GB213,</span> <span class="pre">but</span> <span class="pre">in</span> <span class="pre">Python</span></code>.</p>
+<p>Topics covered there:</p>
+<ul class="simple">
+<li><p>Discrete and continuous random variables</p>
+<ul>
+<li><p>creating</p></li>
+<li><p>plotting</p></li>
+<li><p>generating random values</p></li>
+<li><p>computing probabilities</p></li>
+<li><p>computing statistics</p></li>
+</ul>
+</li>
+<li><p>Hypothesis testing for a population mean</p>
+<ul>
+<li><p>one-sided</p></li>
+<li><p>two-sided</p></li>
+</ul>
+</li>
+<li><p>Simple linear regression (one predictor variable)</p>
+<ul>
+<li><p>creating the model from data</p></li>
+<li><p>computing <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(R^2\)</span></p></li>
+<li><p>visualizing the model</p></li>
+</ul>
+</li>
+</ul>
+<p>Topics not covered in that chapter, but that you may have seen in GB213:</p>
+<ul class="simple">
+<li><p>Basic probability (covered in every GB213 section)</p></li>
+<li><p>ANOVA (covered in some GB213 sections)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> tests (covered in some GB213 sections)</p></li>
+</ul>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - Pingouin</p>
+<p>The GB213 review appendix that I linked to above uses the very popular Python statistics tools <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> and <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>.  But there is a relatively new toolkit called Pingouin; it’s not as popular (yet?) but it has some advantages over the other two.  See <a class="reference external" href="https://towardsdatascience.com/the-new-kid-on-the-statistics-in-python-block-pingouin-6b353a1db57c">this blog post</a> for an introduction and consider a tutorial, video, presentation, or notebook for the class that showcases when you might prefer Pingouin to the others, and how to use it in such cases.  Be sure to include the installation procedure.</p>
+</div>
+</div>
+<div class="section" id="curve-fitting-in-general">
+<h2>Curve fitting in general<a class="headerlink" href="#curve-fitting-in-general" title="Permalink to this headline">¶</a></h2>
+<p>The final topic covered in the GB213 review mentioned above is simple linear regression, which fits a line to a set of (two-dimensional) data points.  But Python’s scientific tools permit you to handle much more complex models.  We cannot cover mathematical modeling in detail in MA346, because it can take several courses on its own, but you can learn more about regression modeling in particular in <a class="reference external" href="https://catalog.bentley.edu/search/?P=MA%20252">MA252 at Bentley</a>.  But we will cover how to fit an arbitrary curve to data in Python.</p>
+<div class="section" id="say-we-have-some-data">
+<h3>1. Say we have some data<a class="headerlink" href="#say-we-have-some-data" title="Permalink to this headline">¶</a></h3>
+<p>We will assume you have data stored in a pandas DataFrame, and we will lift out just two columns of the DataFrame, one that will be used as our <span class="math notranslate nohighlight">\(x\)</span> values (independent variable), and the other as our <span class="math notranslate nohighlight">\(y\)</span> values (dependent variable).  I’ll make up some data here just for use in this example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># example data only, totally made up:</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span>
+    <span class="s1">&#39;salt used (x)&#39;</span> <span class="p">:</span>     <span class="p">[</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">3.7</span><span class="p">,</span> <span class="mf">4.6</span> <span class="p">],</span>
+    <span class="s1">&#39;ice remaining (y)&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="mf">7.9</span><span class="p">,</span> <span class="mf">6.5</span><span class="p">,</span> <span class="mf">6.5</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">6.2</span><span class="p">,</span> <span class="mf">6.0</span> <span class="p">]</span>
+<span class="p">}</span> <span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>salt used (x)</th>
+      <th>ice remaining (y)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.1</td>
+      <td>7.9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.9</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.1</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3.5</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3.7</td>
+      <td>6.2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4.6</td>
+      <td>6.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;salt used (x)&#39;</span><span class="p">]</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ice remaining (y)&#39;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span> <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-9-math-and-stats_36_0.png" src="_images/chapter-9-math-and-stats_36_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="choose-a-model">
+<h3>2. Choose a model<a class="headerlink" href="#choose-a-model" title="Permalink to this headline">¶</a></h3>
+<p>Curve-fitting is a powerful tool, and it’s easy to misuse it by fitting to your data a model that doesn’t make sense for that data.  A mathematical modeling course can help you learn how to assess the appropriateness of a given type of line, curve, or more complex model for a given situation.  But for this small example, let’s pretend that we know that the following model makes sense, perhaps because some earlier work with salt and ice had success with it.  (Again, keep in mind that this example is really, truly, totally made up.)</p>
+<div class="math notranslate nohighlight">
+\[ y=\frac{\beta_0}{\beta_1+x}+\beta_2 \]</div>
+<p>We will use this model.  Obviously, it’s not the equation of a line, so linear regression tools like those covered in the GB213 review notebook won’t be sufficient.  To begin, we code the model as a Python function taking inputs in this order: first, <span class="math notranslate nohighlight">\(x\)</span>, then after it, all the model parameters <span class="math notranslate nohighlight">\(\beta_0,\beta_1\)</span>, and so on, however many model parameters there happen to be (in this case three).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_model</span> <span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">β0</span><span class="p">,</span> <span class="n">β1</span><span class="p">,</span> <span class="n">β2</span> <span class="p">):</span>
+    <span class="k">return</span> <span class="n">β0</span> <span class="o">/</span> <span class="p">(</span> <span class="n">β1</span> <span class="o">+</span> <span class="n">x</span> <span class="p">)</span> <span class="o">+</span> <span class="n">β2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="have-scipy-find-the-betas">
+<h3>3. Have SciPy find the <span class="math notranslate nohighlight">\(\beta\)</span>s<a class="headerlink" href="#have-scipy-find-the-betas" title="Permalink to this headline">¶</a></h3>
+<p>This step is called “fitting the model to your data.”  It finds the values of <span class="math notranslate nohighlight">\(\beta_0,\beta_1,\beta_2\)</span> that make the most sense for the particular <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> adata values that you have.  Using the language from earlier in this chapter, SciPy will tell us how to <em>bind values to the parameters</em> <span class="math notranslate nohighlight">\(\beta_0,\beta_1,\beta_2\)</span> of <code class="docutils literal notranslate"><span class="pre">my_model</span></code> so that the resulting function, which just takes <code class="docutils literal notranslate"><span class="pre">x</span></code> as input, is the one best fit to our data.</p>
+<p>For example, if we picked our own values for the model parameters, we would probably guess poorly.  Let’s try guessing <span class="math notranslate nohighlight">\(\beta_0=1,\beta_1=2,\beta_2=3\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">guess_model</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">my_model</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">many_xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span> <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span> <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">many_xs</span><span class="p">,</span> <span class="n">guess_model</span><span class="p">(</span> <span class="n">many_xs</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-9-math-and-stats_40_0.png" src="_images/chapter-9-math-and-stats_40_0.png" />
+</div>
+</div>
+<p>Yyyyyyeah…  Our model is nowhere near the data.  That’s why we need SciPy to find the <span class="math notranslate nohighlight">\(\beta\)</span>s.  Here’s how we ask it to do so.  You start with your own guess for the parameters, and SciPy will improve it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="n">my_guessed_betas</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">]</span>
+<span class="n">found_betas</span><span class="p">,</span> <span class="n">covariance</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span> <span class="n">my_model</span><span class="p">,</span> <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="n">my_guessed_betas</span> <span class="p">)</span>
+<span class="n">β0</span><span class="p">,</span> <span class="n">β1</span><span class="p">,</span> <span class="n">β2</span> <span class="o">=</span> <span class="n">found_betas</span>
+<span class="n">β0</span><span class="p">,</span> <span class="n">β1</span><span class="p">,</span> <span class="n">β2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(1.3739384272240622, -1.5255461192343747, 5.510233385761209)
+</pre></div>
+</div>
+</div>
+</div>
+<p>So how does SciPy’s found model look?</p>
+</div>
+<div class="section" id="describe-and-show-the-fit-model">
+<h3>4. Describe and show the fit model<a class="headerlink" href="#describe-and-show-the-fit-model" title="Permalink to this headline">¶</a></h3>
+<p>Rounding to a few decimal places, our model is therefore the following:</p>
+<div class="math notranslate nohighlight">
+\[ y=\frac{1.37}{-1.53+x}+5.51 \]</div>
+<p>It fits the data very well, as you can see below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fit_model</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">my_model</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">β0</span><span class="p">,</span> <span class="n">β1</span><span class="p">,</span> <span class="n">β2</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span> <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">many_xs</span><span class="p">,</span> <span class="n">fit_model</span><span class="p">(</span> <span class="n">many_xs</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-9-math-and-stats_44_0.png" src="_images/chapter-9-math-and-stats_44_0.png" />
+</div>
+</div>
+<p>In class, we will use this technique to fit a logistic growth model to COVID-19 data.  Be sure to have completed the preparatory work on writing a function that extracts the series of COVID-19 cases over time for a given state!  Recall that it appears on the final slide of <a href="../../_slides/chapter-8-slides.html">the Chapter 8 slides.</a></p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="chapter-8-version-control.html" title="previous page">Version Control</a>
+    <a class='right-next' id="next-link" href="chapter-10-visualization.html" title="next page">Visualization</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Carter<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>

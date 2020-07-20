@@ -3,7 +3,7 @@
 These course notes are for [Bentley University](http://www.bentley.edu)'s Data Science course (MA346) that will be taught by [Nathan Carter](http://nathancarter.github.io) in Fall 2020.
 
 ```{warning}
-This course notes website is just beginning, so the content here is incomplete.  Check back later.    
+This course notes website is still in development, so the content here is incomplete.  It will be ready by Fall 2020.
 ```
 
 ## Course schedule
@@ -70,7 +70,10 @@ chapter-5-before-and-after.ipynb
 chapter-6-single-table-verbs.ipynb
 chapter-7-abstraction.ipynb
 chapter-8-version-control.ipynb
+chapter-9-math-and-stats.ipynb
+chapter-10-visualization.ipynb
 big-cheat-sheet.ipynb
 anaconda-installation.md
 vs-code-installation.md
+GB213-review-in-Python.ipynb
 ```

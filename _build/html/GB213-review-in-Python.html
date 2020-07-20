@@ -1,0 +1,695 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>GB213 Review in Python &#8212; MA346 Course Notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/GB213-review-in-Python.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="VS Code for Python Installation" href="vs-code-installation.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/GB213-review-in-Python.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="GB213 Review in Python" />
+<meta property="og:description" content="GB213 Review in Python  We’re not covering everything  We’re omitting basic probability issues like experiments, sample spaces, discrete probabilities, combinat" />
+<meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="chapter-1-intro-to-data-science.html">1. Introduction to Data Science</a>
+  </li>
+  <li class="">
+    <a href="chapter-2-mathematical-foundations.html">2. Mathematical Foundations</a>
+  </li>
+  <li class="">
+    <a href="chapter-3-jupyter.html">3. Jupyter</a>
+  </li>
+  <li class="">
+    <a href="chapter-4-review-of-python-and-pandas.html">4. Review of Python and pandas</a>
+  </li>
+  <li class="">
+    <a href="chapter-5-before-and-after.html">5. Before and After</a>
+  </li>
+  <li class="">
+    <a href="chapter-6-single-table-verbs.html">6. Single-Table Verbs</a>
+  </li>
+  <li class="">
+    <a href="chapter-7-abstraction.html">7. Abstraction</a>
+  </li>
+  <li class="">
+    <a href="chapter-8-version-control.html">8. Version Control</a>
+  </li>
+  <li class="">
+    <a href="chapter-9-math-and-stats.html">9. Mathematics and Statistics in Python</a>
+  </li>
+  <li class="">
+    <a href="chapter-10-visualization.html">10. Visualization</a>
+  </li>
+  <li class="">
+    <a href="big-cheat-sheet.html">11. Big Cheat Sheet</a>
+  </li>
+  <li class="">
+    <a href="anaconda-installation.html">12. Anaconda Installation</a>
+  </li>
+  <li class="">
+    <a href="vs-code-installation.html">13. VS Code for Python Installation</a>
+  </li>
+  <li class="active">
+    <a href="">14. GB213 Review in Python</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="_sources/GB213-review-in-Python.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#we-re-not-covering-everything" class="nav-link">We’re not covering everything</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#discrete-random-variables" class="nav-link">Discrete Random Variables</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#creating-them" class="nav-link">Creating them</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#computing-probabilities-from-a-discrete-random-variable" class="nav-link">Computing probabilities from a Discrete Random Variable</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#generating-values-from-a-discrete-random-variable" class="nav-link">Generating values from a Discrete Random Variable</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#computing-statistics-about-a-discrete-random-variable" class="nav-link">Computing statistics about a Discrete Random Variable</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#plotting-the-distribution-of-a-discrete-random-variable" class="nav-link">Plotting the Distribution of a Discrete Random Variable</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#continuous-random-variables" class="nav-link">Continuous Random Variables</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#id1" class="nav-link">Creating them</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#computing-probabilities-from-a-continuous-random-variable" class="nav-link">Computing probabilities from a Continuous Random Variable</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#generating-values-from-a-continuous-random-variable" class="nav-link">Generating values from a Continuous Random Variable</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#plotting-the-distribution-of-a-continuous-random-variable" class="nav-link">Plotting the Distribution of a Continuous Random Variable</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#confidence-intervals" class="nav-link">Confidence Intervals</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#hypothesis-testing" class="nav-link">Hypothesis Testing</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#two-sided-test-for-h-0-mu-bar-x" class="nav-link">Two-sided test for H_0:\mu=\bar{x}</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#two-sided-test-for-h-0-bar-x-1-bar-x-2" class="nav-link">Two-sided test for H_0: \bar{x}_1=\bar{x}_2</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#linear-regression" class="nav-link">Linear Regression</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#creating-a-linear-model-of-data" class="nav-link">Creating a linear model of data</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#visualizing-the-model" class="nav-link">Visualizing the model</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#other-topics" class="nav-link">Other Topics</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#anova" class="nav-link">ANOVA</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#chi-2-tests" class="nav-link">\chi^2 Tests</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="gb213-review-in-python">
+<h1>GB213 Review in Python<a class="headerlink" href="#gb213-review-in-python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="we-re-not-covering-everything">
+<h2>We’re not covering everything<a class="headerlink" href="#we-re-not-covering-everything" title="Permalink to this headline">¶</a></h2>
+<p>We’re omitting basic probability issues like experiments, sample spaces, discrete probabilities, combinations, and permutations.  At the end we’ll provide links to example topics.  But everything else we’ll cover at least briefly.</p>
+<p>We begin by importing the necessary modules.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="discrete-random-variables">
+<h2>Discrete Random Variables<a class="headerlink" href="#discrete-random-variables" title="Permalink to this headline">¶</a></h2>
+<p>(For continuous random variables, <a class="reference external" href="#continuous-random-variables">see further below</a>.</p>
+<p>Discrete random variables taken on a finite number of different values.  For example, a Bernoulli trial is either 0 or 1 (usually meaning failure and success, respectively).  You can create random variables using <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> as follows.</p>
+<div class="section" id="creating-them">
+<h3>Creating them<a class="headerlink" href="#creating-them" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">bernoulli</span><span class="p">(</span> <span class="mf">0.25</span> <span class="p">)</span>  <span class="c1"># probability of success</span>
+<span class="n">b2</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="p">(</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.5</span> <span class="p">)</span>   <span class="c1"># number of trials, prob. of success on each</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="computing-probabilities-from-a-discrete-random-variable">
+<h3>Computing probabilities from a Discrete Random Variable<a class="headerlink" href="#computing-probabilities-from-a-discrete-random-variable" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span> <span class="mi">0</span> <span class="p">),</span> <span class="n">b1</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)</span>  <span class="c1"># stands for &quot;probability mass function&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(0.75, 0.25)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The same code works for any random variable, not just <code class="docutils literal notranslate"><span class="pre">b1</span></code>.</p>
+</div>
+<div class="section" id="generating-values-from-a-discrete-random-variable">
+<h3>Generating values from a Discrete Random Variable<a class="headerlink" href="#generating-values-from-a-discrete-random-variable" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span> <span class="mi">10</span> <span class="p">)</span>  <span class="c1"># asks for 10 random values (rvs)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1, 1, 0, 0, 1, 0, 0, 0, 0, 0])
+</pre></div>
+</div>
+</div>
+</div>
+<p>The same code works for any random variable, not just <code class="docutils literal notranslate"><span class="pre">b1</span></code>.</p>
+</div>
+<div class="section" id="computing-statistics-about-a-discrete-random-variable">
+<h3>Computing statistics about a Discrete Random Variable<a class="headerlink" href="#computing-statistics-about-a-discrete-random-variable" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">b1</span><span class="o">.</span><span class="n">var</span><span class="p">(),</span> <span class="n">b1</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>  <span class="c1"># mean, variance, standard deviation</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(0.25, 0.1875, 0.4330127018922193)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The same code works for any random variable, not just <code class="docutils literal notranslate"><span class="pre">b1</span></code>.</p>
+</div>
+<div class="section" id="plotting-the-distribution-of-a-discrete-random-variable">
+<h3>Plotting the Distribution of a Discrete Random Variable<a class="headerlink" href="#plotting-the-distribution-of-a-discrete-random-variable" title="Permalink to this headline">¶</a></h3>
+<p>Here’s a function you can use to plot (almost) any discrete probability distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_discrete_distribution</span> <span class="p">(</span> <span class="n">rv</span> <span class="p">):</span>
+    <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="n">rv</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span> <span class="mf">0.0001</span> <span class="p">),</span> <span class="n">rv</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span> <span class="mf">0.9999</span> <span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="o">+</span><span class="mi">1</span> <span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">rv</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span> <span class="n">x</span> <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span> <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span> <span class="n">bottom</span><span class="o">=</span><span class="mi">0</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Example use:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot_discrete_distribution</span><span class="p">(</span> <span class="n">b2</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/GB213-review-in-Python_15_0.png" src="_images/GB213-review-in-Python_15_0.png" />
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="continuous-random-variables">
+<h2>Continuous Random Variables<a class="headerlink" href="#continuous-random-variables" title="Permalink to this headline">¶</a></h2>
+<p>(For discrete random variables, <a class="reference external" href="#discrete-random-variables">see further above</a>.</p>
+<p>Continuous random variables take on an infinite number of different values, sometimes in a certain range (like the uniform distribution on <span class="math notranslate nohighlight">\([0,1]\)</span>, for example) and sometimes over the whole real number line (like the normal distribution, for example).</p>
+<div class="section" id="id1">
+<h3>Creating them<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># for uniform on the interval [a,b]: use loc=a, scale=b-a</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span> <span class="n">loc</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span> <span class="p">)</span>
+<span class="c1"># for normal use loc=mean, scale=standard deviation</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span> <span class="n">loc</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span> <span class="p">)</span>
+<span class="c1"># for t, same as normal, plus df=degrees of freedom</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="p">(</span> <span class="n">df</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="computing-probabilities-from-a-continuous-random-variable">
+<h3>Computing probabilities from a Continuous Random Variable<a class="headerlink" href="#computing-probabilities-from-a-continuous-random-variable" title="Permalink to this headline">¶</a></h3>
+<p>For a continuous random variable, you cannot compute the probability that it will equal a precise number, because such a probability is always zero.  But you can compute the probability that the value falls within a certain interval on the number line.</p>
+<p>To do so for an interval <span class="math notranslate nohighlight">\([a,b]\)</span>, compute the total probability accumulated up to <span class="math notranslate nohighlight">\(a\)</span> and subtract it from that up to <span class="math notranslate nohighlight">\(b\)</span>, as follows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">100</span>  <span class="c1"># or any values</span>
+<span class="n">n</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span> <span class="n">b</span> <span class="p">)</span> <span class="o">-</span> <span class="n">n</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span>  <span class="c1"># probability of being in that interval</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.3413447460685429
+</pre></div>
+</div>
+</div>
+</div>
+<p>The same code works for any continuous random variable, not just <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
+</div>
+<div class="section" id="generating-values-from-a-continuous-random-variable">
+<h3>Generating values from a Continuous Random Variable<a class="headerlink" href="#generating-values-from-a-continuous-random-variable" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span> <span class="mi">10</span> <span class="p">)</span>  <span class="c1"># same as for discrete random variables</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 95.25593445, 100.79459466, 102.22451861, 103.09444126,
+       103.60843334, 101.2332999 ,  98.93794136,  96.380259  ,
+        97.89898805,  95.6011801 ])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plotting-the-distribution-of-a-continuous-random-variable">
+<h3>Plotting the Distribution of a Continuous Random Variable<a class="headerlink" href="#plotting-the-distribution-of-a-continuous-random-variable" title="Permalink to this headline">¶</a></h3>
+<p>Here’s a function you can use to plot the center 99.98% of any continuous probability distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_continuous_distribution</span> <span class="p">(</span> <span class="n">rv</span> <span class="p">):</span>
+    <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="n">rv</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span> <span class="mf">0.0001</span> <span class="p">),</span> <span class="n">rv</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span> <span class="mf">0.9999</span> <span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="mi">100</span> <span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">rv</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span> <span class="n">x</span> <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Example use:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot_continuous_distribution</span><span class="p">(</span> <span class="n">n</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/GB213-review-in-Python_26_0.png" src="_images/GB213-review-in-Python_26_0.png" />
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="confidence-intervals">
+<h2>Confidence Intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this headline">¶</a></h2>
+<p>Recall from GB213 that certain assumptions about normality must hold in order for you to do statistical inference.  We do not cover those here; refer to your GB213 text or notes.</p>
+<p>Here we cover a confidence interval for the sample mean using confidence level <span class="math notranslate nohighlight">\(\alpha\)</span>, which must be between 0 and 1 (typically 0.95).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">α</span> <span class="o">=</span> <span class="mf">0.95</span>
+<span class="c1"># normally you&#39;de have data; for this example, I make some up:</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">435</span><span class="p">,</span><span class="mi">542</span><span class="p">,</span><span class="mi">435</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">54</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">543</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">432</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">876</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">5</span> <span class="p">]</span>
+<span class="n">est_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">data</span> <span class="p">)</span>  <span class="c1"># estimate for the population mean</span>
+<span class="n">sem</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">sem</span><span class="p">(</span> <span class="n">data</span> <span class="p">)</span>     <span class="c1"># standard error for the sample mean</span>
+<span class="c1"># margin of error:</span>
+<span class="n">moe</span> <span class="o">=</span> <span class="n">sem</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">α</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span> <span class="n">data</span> <span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span>
+<span class="p">(</span> <span class="n">est_mean</span> <span class="o">-</span> <span class="n">moe</span><span class="p">,</span> <span class="n">est_mean</span> <span class="o">+</span> <span class="n">moe</span> <span class="p">)</span>  <span class="c1"># confidence interval</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(70.29847811072423, 350.0544630657464)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="hypothesis-testing">
+<h2>Hypothesis Testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">¶</a></h2>
+<p>Again, in GB213 you learned what assumptions must hold in order to do a hypothesis test, which I do not review here.</p>
+<p>Let <span class="math notranslate nohighlight">\(H_0\)</span> be the null hypothesis, the currently held belief.  Let <span class="math notranslate nohighlight">\(H_a\)</span> be the alternative, which would result in some change in our beliefs or actions.</p>
+<p>We assume some chosen value <span class="math notranslate nohighlight">\(0\leq\alpha\leq1\)</span>, which is the probability of a Type I error (false positive, finding we should reject <span class="math notranslate nohighlight">\(H_0\)</span> when it’s actually true).</p>
+<div class="section" id="two-sided-test-for-h-0-mu-bar-x">
+<h3>Two-sided test for <span class="math notranslate nohighlight">\(H_0:\mu=\bar{x}\)</span><a class="headerlink" href="#two-sided-test-for-h-0-mu-bar-x" title="Permalink to this headline">¶</a></h3>
+<p>Say we have a population whose mean <span class="math notranslate nohighlight">\(\mu\)</span> is known to be 10.  We take a sample <span class="math notranslate nohighlight">\(x_1,\ldots,x_n\)</span> and compute its mean, <span class="math notranslate nohighlight">\(\bar{x}\)</span>.  We then ask whether this sample is significantly different from the population at large, that is, is <span class="math notranslate nohighlight">\(\mu=\bar{x}\)</span>?  We can do a two-sided test of <span class="math notranslate nohighlight">\(H_0:\mu=\bar{x}\)</span> as follows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">α</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">μ</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span> <span class="p">]</span>
+<span class="n">t_statistic</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_1samp</span><span class="p">(</span> <span class="n">sample</span><span class="p">,</span> <span class="n">μ</span> <span class="p">)</span>
+<span class="n">reject_H0</span> <span class="o">=</span> <span class="n">p_value</span> <span class="o">&lt;</span> <span class="n">α</span>
+<span class="n">α</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">reject_H0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(0.05, 0.35845634462296455, False)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output above says that the data does NOT give us enough information to reject the null hypothesis.  So we should continue to assume that the sample is like the population, and <span class="math notranslate nohighlight">\(\mu=\bar{x}\)</span>.</p>
+</div>
+<div class="section" id="two-sided-test-for-h-0-bar-x-1-bar-x-2">
+<h3>Two-sided test for <span class="math notranslate nohighlight">\(H_0: \bar{x}_1=\bar{x}_2\)</span><a class="headerlink" href="#two-sided-test-for-h-0-bar-x-1-bar-x-2" title="Permalink to this headline">¶</a></h3>
+<p>What if we had wanted to do a test for whether two independent samples had the same mean?  We can ask that question as follows.  (Here we assume they have equal variances, but you can turn that assumption off with a third parameter to <code class="docutils literal notranslate"><span class="pre">ttest_ind</span></code>.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">α</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">sample1</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span> <span class="p">]</span>
+<span class="n">sample2</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">9</span> <span class="p">]</span>
+<span class="n">t_statistics</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span> <span class="n">sample1</span><span class="p">,</span> <span class="n">sample2</span> <span class="p">)</span>
+<span class="n">reject_H0</span> <span class="o">=</span> <span class="n">p_value</span> <span class="o">&lt;</span> <span class="n">α</span>
+<span class="n">α</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">reject_H0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(0.05, 0.02815503832602318, True)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output above says that the two samples DO give us enough information to reject the null hypothesis.  So the data suggest that the two samples have different means.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="linear-regression">
+<h2>Linear Regression<a class="headerlink" href="#linear-regression" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creating-a-linear-model-of-data">
+<h3>Creating a linear model of data<a class="headerlink" href="#creating-a-linear-model-of-data" title="Permalink to this headline">¶</a></h3>
+<p>Normally you would have data that you wanted to model.  But in this example notebook, I have to make up some data first.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span>
+    <span class="s2">&quot;height&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">393</span><span class="p">,</span> <span class="mi">453</span><span class="p">,</span> <span class="mi">553</span><span class="p">,</span> <span class="mi">679</span><span class="p">,</span> <span class="mi">729</span><span class="p">,</span> <span class="mi">748</span><span class="p">,</span> <span class="mi">817</span> <span class="p">],</span>  <span class="c1"># completely made up</span>
+    <span class="s2">&quot;width&quot;</span>  <span class="p">:</span> <span class="p">[</span>  <span class="mi">24</span><span class="p">,</span>  <span class="mi">25</span><span class="p">,</span>  <span class="mi">27</span><span class="p">,</span>  <span class="mi">36</span><span class="p">,</span>  <span class="mi">55</span><span class="p">,</span>  <span class="mi">68</span><span class="p">,</span>  <span class="mi">84</span> <span class="p">]</span>   <span class="c1"># also totally pretend</span>
+<span class="p">}</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As with all the content of this document, the assumptions required to make the technique applicable are not covered in detail, but in this case we at least review them briefly.  To ensure that linear regression is applicable, one should verify:</p>
+<ol class="simple">
+<li><p>We have two columns of numerical data of the same length.</p></li>
+<li><p>We have made a scatter plot and observed a seeming linear relationship.</p></li>
+<li><p>We know that there is no autocorrelation.</p></li>
+<li><p>We will check later that the residuals are normally distributed.</p></li>
+<li><p>We will check later that the residuals are homoscedastic.</p></li>
+</ol>
+<p>To create a linear model, use <code class="docutils literal notranslate"><span class="pre">scipy</span></code> as follows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">width</span> <span class="p">)</span>
+<span class="n">model</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>LinregressResult(slope=0.1327195637885226, intercept=-37.32141898334582, rvalue=0.8949574425541466, pvalue=0.006486043236692156, stderr=0.029588975845594334)
+</pre></div>
+</div>
+</div>
+</div>
+<p>A linear model is usually written like so:</p>
+<div class="math notranslate nohighlight">
+\[ y = \beta_0 + \beta_1 x \]</div>
+<p>The slope is <span class="math notranslate nohighlight">\(\beta_1\)</span> and the intercept is <span class="math notranslate nohighlight">\(\beta_0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">β0</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">intercept</span>
+<span class="n">β1</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">slope</span>
+<span class="n">β0</span><span class="p">,</span> <span class="n">β1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(-37.32141898334582, 0.1327195637885226)
+</pre></div>
+</div>
+</div>
+</div>
+<p>From the output above, our model would therefore be the following (with some rounding for simplicity):</p>
+<div class="math notranslate nohighlight">
+\[ y = -37.32 + 0.132x \]</div>
+<p>To know how good it is, we often ask about the <span class="math notranslate nohighlight">\(R^2\)</span> value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">rvalue</span>
+<span class="n">R</span><span class="p">,</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(0.8949574425541466, 0.8009488239830586)
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this case, <span class="math notranslate nohighlight">\(R^2\)</span> would be approximately <span class="math notranslate nohighlight">\(0.895^2\)</span>, or about <span class="math notranslate nohighlight">\(0.801\)</span>.  Thus our model explains about 80.1% of the variability in the data.</p>
+</div>
+<div class="section" id="visualizing-the-model">
+<h3>Visualizing the model<a class="headerlink" href="#visualizing-the-model" title="Permalink to this headline">¶</a></h3>
+<p>The Seaborn visualization package provides a handy tool for making scatterplots with linear models overlaid.  The light blue shading is a confidence band we will not cover.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/GB213-review-in-Python_45_0.png" src="_images/GB213-review-in-Python_45_0.png" />
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="other-topics">
+<h2>Other Topics<a class="headerlink" href="#other-topics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="anova">
+<h3>ANOVA<a class="headerlink" href="#anova" title="Permalink to this headline">¶</a></h3>
+<p>Analysis of variance is an optional topic your GB213 class may or may not have covered, depending on scheduling and instructor choices.  If you covered it in GB213 and would like to see how to do it in Python, check out <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.f_oneway.html">the Scipy documentation for <code class="docutils literal notranslate"><span class="pre">f_oneway</span></code></a>.</p>
+</div>
+<div class="section" id="chi-2-tests">
+<h3><span class="math notranslate nohighlight">\(\chi^2\)</span> Tests<a class="headerlink" href="#chi-2-tests" title="Permalink to this headline">¶</a></h3>
+<p>Chi-squared (<span class="math notranslate nohighlight">\(\chi^2\)</span>) tests are another optional GB213 topic that your class may or may not have covered.  If you are familiar with it and would like to see how to do it in Python, check out <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chisquare.html">the Scipy documentation for <code class="docutils literal notranslate"><span class="pre">chisquare</span></code></a>.</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="vs-code-installation.html" title="previous page">VS Code for Python Installation</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Carter<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
