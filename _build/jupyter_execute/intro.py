@@ -28,8 +28,8 @@ Each topic below will become a link to what we will cover in class that day, onc
 |      |           | Chapter 8: Version control and GitHub ([notes](chapter-8-version-control), <a href='../../_slides/chapter-8-slides.html'>slides</a>) |
 |      |           | [DataCamp to review before Week 5](big-cheat-sheet.html#before-week-5) |
 |      |           | &nbsp;       |
-| 5    | 10/1/2020 | Chapter 9: Math and stats in Python (not yet ready) |
-|      |           | Chapter 10: New visualization tools (not yet ready) |
+| 5    | 10/1/2020 | Chapter 9: Math and stats in Python ([notes](chapter-9-math-and-stats), <a href='../../_slides/chapter-9-slides.html'>slides</a>) |
+|      |           | Chapter 10: New visualization tools ([notes](chapter-10-visualization), <a href='../../_slides/chapter-10-slides.html'>slides</a>) |
 |      |           | [DataCamp to review before Week 6](big-cheat-sheet.html#before-week-6) |
 |      |           | &nbsp;       |
 | 6    | 10/8/2020 | Chapter 11: Processing the rows of a `DataFrame` (not yet ready) |

@@ -153,7 +153,7 @@ We will also use the concept of binding function parameters when we come to curv
 
 ## GB213 in Python
 
-You can refer at any time to one of the appendices in these course notes, a [review of GB213, but in Python](GB213-review-in-Python.ipynb).
+You can refer at any time to one of the appendices in these course notes, a [review of GB213, but in Python](GB213-review-in-Python).
 
 Topics covered there:
 
@@ -256,5 +256,21 @@ fit_model = lambda x: my_model( x, β0, β1, β2 )
 plt.scatter( xs, ys )
 plt.plot( many_xs, fit_model( many_xs ) )
 plt.show()
+
+```{admonition} Big Picture
+---
+class: alert alert-primary
+---
+In mathematical modeling and machine learning, we sometimes distinguish between a *model* and a *fit model.*
+
+ * A *model* is a general purpose technique that you decide might suit the data.  Examples:
+    * A linear model, $y=\beta_0+\beta_1x$
+    * A quadratic model, $y=\beta_0+\beta_1x+\beta_2x^2$
+    * A logistic curve, $y=\frac{\beta_0}{1+e^{\beta_1(-x+\beta_2)}}$
+    * A neural network
+ * A *fit model* is the specific version of the general model that's been tailored to suit your data.  We create it from the general model by *binding* the values of the $\beta$s to specific numbers.
+ 
+For example, if your model were $y=\beta_0+\beta_1x$, then your fit model might be $y=-0.95+1.13x$.  In the general model, $y$ depends on three variables ($x,\beta_0,\beta_1$).  In the fit model, it depends on only one variable ($x$).  So model fitting is an example of binding the variables of a function.
+```
 
 In class, we will use this technique to fit a logistic growth model to COVID-19 data.  Be sure to have completed the preparatory work on writing a function that extracts the series of COVID-19 cases over time for a given state!  Recall that it appears on the final slide of <a href="../../_slides/chapter-8-slides.html">the Chapter 8 slides.</a>

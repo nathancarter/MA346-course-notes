@@ -44,7 +44,7 @@
 <meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/chapter-10-visualization.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Visualization" />
-<meta property="og:description" content="Visualization  <a href="../../_slides/chapter-10-slides.html">See also the slides that summarize a portion of this content.</a>  The purpose here is to extend t" />
+<meta property="og:description" content="Visualization  <a href="../../_slides/chapter-10-slides.html">See also the slides that summarize a portion of this content.</a>  In preparation for today, you l" />
 <meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
 
 <meta name="twitter:card" content="summary">
@@ -178,19 +178,61 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#classifying-the-tools-from-datacamp" class="nav-link">Classifying the tools from DataCamp</a>
+            <a href="#what-if-i-have-two-columns-of-numeric-data" class="nav-link">What if I have two columns of numeric data?</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#quick-plotting" class="nav-link">Quick plotting</a>
+            <a href="#but-can-my-two-columns-of-data-look-more-awesome" class="nav-link">But can my two columns of data look more awesome?</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#drawing-maps" class="nav-link">Drawing maps</a>
+            <a href="#what-if-my-two-columns-are-very-related" class="nav-link">What if my two columns are very related?</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#loyo-stuff" class="nav-link">LOYO stuff</a>
+            <a href="#what-if-i-have-only-one-column-of-data" class="nav-link">What if I have only one column of data?</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#can-t-i-test-a-single-column-for-normality" class="nav-link">Can’t I test a single column for normality?</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#what-if-i-have-lots-of-columns-of-data" class="nav-link">What if I have lots of columns of data?</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#what-if-i-need-to-know-if-the-colums-are-related" class="nav-link">What if I need to know if the colums are related?</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#summary-of-plotting-tools" class="nav-link">Summary of plotting tools</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#with-one-numeric-column-of-data" class="nav-link">With one numeric column of data:</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#with-two-numeric-columns-of-data" class="nav-link">With two numeric columns of data:</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#with-many-numeric-columns-of-data" class="nav-link">With many numeric columns of data:</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#techniques-not-to-use-and-why" class="nav-link">Techniques not to use (and why)</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#what-about-plot-styles" class="nav-link">What about plot styles?</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#there-s-so-much-more" class="nav-link">There’s so much more!</a>
         </li>
     
     </ul>
@@ -207,47 +249,826 @@
   <div class="section" id="visualization">
 <h1>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h1>
 <p><a href="../../_slides/chapter-10-slides.html">See also the slides that summarize a portion of this content.</a></p>
-<p>The purpose here is to extend the visualization skills they learned in CS230</p>
-<div class="section" id="classifying-the-tools-from-datacamp">
-<h2>Classifying the tools from DataCamp<a class="headerlink" href="#classifying-the-tools-from-datacamp" title="Permalink to this headline">¶</a></h2>
-<p>They already did this in the DC homework, so you’re reviewing that content here.  Explicitly state that they should do the DC before this reading.</p>
-<p>But our purpose now is to discuss the various merits of the viz tools, leveraging the mathematical vocabulary  offunctions and relations. :framed_picture:</p>
-<p>DC covered: seaborn, violin, bee swarm, heat map, pair plot, joint plot, lmplot</p>
+<p>In preparation for today, you learned many <a class="reference external" href="big-cheat-sheet.html#before-week-5">data visualization tools from DataCamp</a>.  In fact, if you’re doing this reading before you do the DataCamp homework, I strongly suggest that you stop here, do the DataCamp first, and then come back here.</p>
+<p>Rather than review those tools here, I will categorize them instead.  This page is therefore a reference in which you can look up the kind of data you <em>have</em> and see which visualizations make the most sense for it, and what each one accomplishes.</p>
+<p>We will use two datasets throughout the examples below.  The first is a set of sales data for the employees of an imaginary company (Dunder Mifflin, perhaps?).  The data has the following format, organized by employee ID numbers, and including year, quarter, sales quantity, and bonus earned for each ID in each relevant time frame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">sales_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;./_static/fictitious-sales-data.csv&#39;</span> <span class="p">)</span>
+<span class="n">sales_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
 </div>
-<div class="section" id="quick-plotting">
-<h2>Quick plotting<a class="headerlink" href="#quick-plotting" title="Permalink to this headline">¶</a></h2>
-<p>Bonus: <a class="reference external" href="https://towardsdatascience.com/the-simplest-way-to-create-complex-visualizations-in-python-isnt-with-matplotlib-a5802f2dba92">You can actually plot data in lots of ways without loading matplotlib.</a></p>
 </div>
-<div class="section" id="drawing-maps">
-<h2>Drawing maps<a class="headerlink" href="#drawing-maps" title="Permalink to this headline">¶</a></h2>
-<p>Consider adding maps, too—very commonly useful.  <a class="reference external" href="https://www.earthdatascience.org/tutorials/introduction-to-leaflet-animated-maps/">See this blog post about an easy way to do so in Python.</a>  If you have no time, turn that into a LOYO, but I think you can cover it here.</p>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>emp_id</th>
+      <th>year</th>
+      <th>quarter</th>
+      <th>sales</th>
+      <th>bonus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1275342</td>
+      <td>2010</td>
+      <td>2</td>
+      <td>8.000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1275342</td>
+      <td>2010</td>
+      <td>3</td>
+      <td>333.000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1275342</td>
+      <td>2010</td>
+      <td>4</td>
+      <td>594.000000</td>
+      <td>2000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1275342</td>
+      <td>2011</td>
+      <td>1</td>
+      <td>276.066177</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1275342</td>
+      <td>2011</td>
+      <td>2</td>
+      <td>340.000000</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
-<div class="section" id="loyo-stuff">
-<h2>LOYO stuff<a class="headerlink" href="#loyo-stuff" title="Permalink to this headline">¶</a></h2>
+<p>The second dataset is the basic NASDAQ data for Renewable Energy Group, Inc. (symbol REGI) for the first half of 2020.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">regi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;./_static/regi-prices-2020.csv&#39;</span> <span class="p">)</span>
+<span class="n">regi_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Open</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Close</th>
+      <th>Adj Close</th>
+      <th>Volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2-Jan-20</td>
+      <td>27.21</td>
+      <td>27.95</td>
+      <td>26.62</td>
+      <td>27.89</td>
+      <td>27.89</td>
+      <td>781100</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3-Jan-20</td>
+      <td>28.16</td>
+      <td>28.95</td>
+      <td>27.73</td>
+      <td>28.82</td>
+      <td>28.82</td>
+      <td>1405100</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>6-Jan-20</td>
+      <td>28.53</td>
+      <td>28.81</td>
+      <td>28.00</td>
+      <td>28.39</td>
+      <td>28.39</td>
+      <td>716800</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7-Jan-20</td>
+      <td>28.17</td>
+      <td>28.28</td>
+      <td>26.08</td>
+      <td>26.44</td>
+      <td>26.44</td>
+      <td>1378900</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>8-Jan-20</td>
+      <td>26.37</td>
+      <td>26.40</td>
+      <td>24.86</td>
+      <td>25.19</td>
+      <td>25.19</td>
+      <td>1195900</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="what-if-i-have-two-columns-of-numeric-data">
+<h2>What if I have two columns of numeric data?<a class="headerlink" href="#what-if-i-have-two-columns-of-numeric-data" title="Permalink to this headline">¶</a></h2>
+<p>This situation is <em>extremely common,</em> and that’s why we address it first.  If we consider the two datasets described above, we can find many ways to create two columns of numeric data, including the following examples.</p>
+<ol class="simple">
+<li><p>The year and sales columns from <code class="docutils literal notranslate"><span class="pre">sales_df</span></code></p></li>
+<li><p>The year and sales columns we would get by grouping <code class="docutils literal notranslate"><span class="pre">sales_df</span></code> by year</p></li>
+<li><p>The Volume and High columns from <code class="docutils literal notranslate"><span class="pre">regi_df</span></code></p></li>
+<li><p>The index and the Close column from <code class="docutils literal notranslate"><span class="pre">regi_df</span></code></p></li>
+</ol>
+<div class="alert alert-primary admonition">
+<p class="admonition-title">Big Picture</p>
+<p>Recall that two columns of data always form a binary relation, but may or may not be a function.  Noticing whether the data are a function is very important when deciding how to visualize them.</p>
 <ul class="simple">
-<li><p>Advanced visualization such as images, contour maps, 3D plotting, and animation</p></li>
-<li><p>Tableau (highly optional!) but since it’s so popular:</p>
-<ul>
-<li><p>They should know it exists and what it’s good at</p></li>
-<li><p>They should know about its data flow diagram software and the free alternative of Knime</p></li>
-<li><p>They should know its limitations (e.g., can’t do complex merge in Tableau)</p></li>
+<li><p>A <strong>function</strong> can be shown with a <strong>line plot</strong>, as in algebra classes.</p></li>
+<li><p>A <strong>relation</strong> that is not a function must be shown as a <strong>scatterplot.</strong></p></li>
 </ul>
-</li>
-<li><p>Visualization design principles, like those you find in these references: :framed_picture:</p>
-<ul>
-<li><p>See this free online textbook: https://serialmentor.com/dataviz/</p></li>
-<li><p>See this interesting blog post: https://flowingdata.com/2017/01/24/one-dataset-visualized-25-ways/</p></li>
-<li><p>See The Data Science Design Manual (free Springer ebook) Sections 6.2-4, which are a distilled Tufte</p></li>
-</ul>
-</li>
-<li><p>Styling matplotlib more nicely, either for following the visualization principles above or just for coolness/variety/eye-catchingness:</p>
-<ul>
-<li><p>https://towardsdatascience.com/the-last-matplotlib-tweaking-guide-youll-ever-need-dbd4374a1c1e</p></li>
-<li><p>https://towardsdatascience.com/cyberpunk-style-with-matplotlib-f47404c9d4c5</p></li>
-<li><p>more?</p></li>
-</ul>
-</li>
-</ul>
+</div>
+<p>Both scatterplots and line plots are drawn with <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> in Matplotlib.  There are many ways to specify the plot type, as you’ve seen in DataCamp.  Let’s look at the same four examples mentioned above.</p>
+<p><strong>Example 1:</strong> The year and sales columns from <code class="docutils literal notranslate"><span class="pre">sales_df</span></code> do not form a function, because each year has multiple sales figures.  We can see this if we visualize them with a scatterplot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">sales_df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">sales_df</span><span class="p">[</span><span class="s1">&#39;sales&#39;</span><span class="p">],</span> <span class="s1">&#39;bo&#39;</span> <span class="p">)</span> <span class="c1"># blue circles</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;This is a relation,</span><span class="se">\n</span><span class="s1">so we use a scatterplot.&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span> <span class="s2">&quot;fontsize&quot;</span><span class="p">:</span> <span class="mi">25</span> <span class="p">}</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="s1">&#39;Year&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s1">&#39;Sales&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_6_0.png" src="_images/chapter-10-visualization_6_0.png" />
+</div>
+</div>
+<p>The same example would have gone quite wrong if we had attempted to use a line plot instead, as you can see below.  Matplotlib tries to connect the dots in sequence to show a line, but it doesn’t make any sense, because the data is not a function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">sales_df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">sales_df</span><span class="p">[</span><span class="s1">&#39;sales&#39;</span><span class="p">],</span> <span class="s1">&#39;-o&#39;</span> <span class="p">)</span> <span class="c1"># dots and lines</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;This is a relation, so we</span><span class="se">\n</span><span class="s1">should have used a scatterplot!&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span> <span class="s2">&quot;fontsize&quot;</span><span class="p">:</span> <span class="mi">25</span> <span class="p">}</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_8_0.png" src="_images/chapter-10-visualization_8_0.png" />
+</div>
+</div>
+<p>It would have been even more hideous if the data hadn’t been sorted by year.  Let’s see what it would have been like if it had been sorted by employee instead, for instance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">temp_df</span> <span class="o">=</span> <span class="n">sales_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span> <span class="s1">&#39;emp_id&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">temp_df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">temp_df</span><span class="p">[</span><span class="s1">&#39;sales&#39;</span><span class="p">],</span> <span class="s1">&#39;-o&#39;</span> <span class="p">)</span> <span class="c1"># dots and lines</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;This is a relation, so we</span><span class="se">\n</span><span class="s1">should have used a scatterplot!&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span> <span class="s2">&quot;fontsize&quot;</span><span class="p">:</span> <span class="mi">25</span> <span class="p">}</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_10_0.png" src="_images/chapter-10-visualization_10_0.png" />
+</div>
+</div>
+<p>The bad graphs just shown illustrate the importance of knowing whether your data is a function or relation, and choosing the appropriate plotting technique.  Let’s see how line plots can look nice when the data <em>is</em> a function.</p>
+<p><strong>Example 2:</strong> If we group the sales data by year, then each year appears only once, and the relationship between year and sales becomes a function.  Let’s use <code class="docutils literal notranslate"><span class="pre">sum()</span></code> to do the grouping, so that we can see total sales by year.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grouped_df</span> <span class="o">=</span> <span class="n">sales_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span> <span class="s1">&#39;year&#39;</span> <span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">grouped_df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">grouped_df</span><span class="p">[</span><span class="s1">&#39;sales&#39;</span><span class="p">],</span> <span class="s1">&#39;-o&#39;</span> <span class="p">)</span> <span class="c1"># dots and lines</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;This is a function,</span><span class="se">\n</span><span class="s1">so we use a line plot.&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span> <span class="s2">&quot;fontsize&quot;</span><span class="p">:</span> <span class="mi">25</span> <span class="p">}</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="s1">&#39;Year&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s1">&#39;Total Sales&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_12_0.png" src="_images/chapter-10-visualization_12_0.png" />
+</div>
+</div>
+<p>That plot looks the way we expect.  It is especially sensible because the independent variable (<span class="math notranslate nohighlight">\(x\)</span> axis) is sequential, so it makes sense for us to think of the data as connected and flowing from left to right.</p>
+<p>Note that if your data aren’t already sorted by the independent variable, connecting the dots with lines will jump all over your plot as it plots points in the wrong order.  Use <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> to get the data in the right order, in such a case.</p>
+<p>Let’s consider one more example of a function and a non-function, but we’ll do them quickly.</p>
+<p><strong>Example 3:</strong> The Volume and High columns from <code class="docutils literal notranslate"><span class="pre">regi_df</span></code> may or may not be a function; it depends on the data we happened to get.  The <em>meanings</em> of the columns indicate that they probably are not a function, if given enough historical data.  So we’ll use a scatterplot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">regi_df</span><span class="p">[</span><span class="s1">&#39;Volume&#39;</span><span class="p">],</span> <span class="n">regi_df</span><span class="p">[</span><span class="s1">&#39;High&#39;</span><span class="p">],</span> <span class="s1">&#39;bo&#39;</span> <span class="p">)</span> <span class="c1"># blue circles</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;This is a relation,</span><span class="se">\n</span><span class="s1">so we use a scatterplot.&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span> <span class="s2">&quot;fontsize&quot;</span><span class="p">:</span> <span class="mi">25</span> <span class="p">}</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="s1">&#39;Volume Traded&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s1">&#39;High Price&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_14_0.png" src="_images/chapter-10-visualization_14_0.png" />
+</div>
+</div>
+<p>We can clearly see that there <em>might</em> be a collision in there of two <span class="math notranslate nohighlight">\(x\)</span> values having the same <span class="math notranslate nohighlight">\(y\)</span> value.  Even if they don’t, we certainly wouldn’t want to try connecting those dots with lines; it would be a meaningless mess.</p>
+<p><strong>Example 4:</strong> The index and the Close column from <code class="docutils literal notranslate"><span class="pre">regi_df</span></code> are a function, because each index represents a separate day, and thus only appears once in the data.  Let’s see.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">regi_df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">regi_df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">],</span> <span class="s1">&#39;-o&#39;</span> <span class="p">)</span> <span class="c1"># dots and lines</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;This is a function,</span><span class="se">\n</span><span class="s1">so we use a line plot.&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span> <span class="s2">&quot;fontsize&quot;</span><span class="p">:</span> <span class="mi">25</span> <span class="p">}</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="s1">&#39;Date&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s1">&#39;Closing Price&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_16_0.png" src="_images/chapter-10-visualization_16_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="but-can-my-two-columns-of-data-look-more-awesome">
+<h2>But can my two columns of data look more awesome?<a class="headerlink" href="#but-can-my-two-columns-of-data-look-more-awesome" title="Permalink to this headline">¶</a></h2>
+<p>Recall that the Seaborn library makes it easy to add histograms to both the horizontal and vertical axes of a standard ploot to get a better sense of the distribution.  This is possible with both line and scatter plots, but it is more commonly useful with scatterplots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Volume&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;High&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">regi_df</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_18_0.png" src="_images/chapter-10-visualization_18_0.png" />
+</div>
+</div>
+<p>If there were thousands of datapoints (or more), I suggest trying any of the following options.  I’ll illustrate some of them using the same data we just saw, even thought it doesn’t have thousands of points.</p>
+<ol class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">kind='kde'</span></code> in a joint plot to smooth the histograms, as shown in the first plot below.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">alpha=0.5</span></code> or an even smaller number, so that points in your scatterplot that stack up on top of one another show different levels of density throughout the graph.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">kind='hex'</span></code> to bin values within the scatterplot as well, again showing the varying density throughout the plot, as in the second plot below.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Volume&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;High&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">regi_df</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_20_0.png" src="_images/chapter-10-visualization_20_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Volume&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;High&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">regi_df</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hex&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_21_0.png" src="_images/chapter-10-visualization_21_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="what-if-my-two-columns-are-very-related">
+<h2>What if my two columns are very related?<a class="headerlink" href="#what-if-my-two-columns-are-very-related" title="Permalink to this headline">¶</a></h2>
+<p>Seaborn provides a few tools for showing how one variable depends on another.</p>
+<p>First, you can plot a line of best fit over a scatterplot, together with confidence bars for the predictions made by that linear model.  Recall from GB213 that it is not always sensible to fit a linear model to data.  But in cases where it makes sense, Seaborn makes it easy to visualize.</p>
+<p>Keep in mind that Seaborn is quite happy to show you a linear model even when it does not make any sense to do so!  Just because Python will plot it for you does not mean that you should ask it to!  Here’s an example of just such a situation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Volume&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;High&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">regi_df</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;This is a truly terrible idea!</span><span class="se">\n</span><span class="s1">&#39;</span>
+         <span class="o">+</span> <span class="s1">&#39;This data is not remotely linear!</span><span class="se">\n</span><span class="s1">&#39;</span>
+         <span class="o">+</span> <span class="s1">&#39;A linear model does not belong here!&#39;</span><span class="p">,</span>
+           <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span> <span class="s2">&quot;fontsize&quot;</span><span class="p">:</span> <span class="mi">15</span> <span class="p">}</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_23_0.png" src="_images/chapter-10-visualization_23_0.png" />
+</div>
+</div>
+<p>Seaborn won’t show you the coefficients of the model, nor measure its goodness of fit; see <a class="reference internal" href="GB213-review-in-Python.html"><span class="doc">the GB213 review</span></a> for how to do those things in Python.</p>
+<p>Of course, there are some situations where a linear model is reasonable, like the total sales over time plot from earlier.  Seaborn is fussy about using column names only in <code class="docutils literal notranslate"><span class="pre">lmplot</span></code>, so we have to move the index in as an actual column here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grouped_df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">grouped_df</span><span class="o">.</span><span class="n">index</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sales&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">grouped_df</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;A more reasonable time for a linear model&#39;</span><span class="p">,</span>
+           <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span> <span class="s2">&quot;fontsize&quot;</span><span class="p">:</span> <span class="mi">15</span> <span class="p">}</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_25_0.png" src="_images/chapter-10-visualization_25_0.png" />
+</div>
+</div>
+<p>As you know from GB213, part of assessing whether linear regression is appropriate involves inspecting the residuals (the difference between each data point and the linear model).  Seaborn makes this easy, too.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">residplot</span><span class="p">(</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sales&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">grouped_df</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Residuals&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_27_0.png" src="_images/chapter-10-visualization_27_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="what-if-i-have-only-one-column-of-data">
+<h2>What if I have only one column of data?<a class="headerlink" href="#what-if-i-have-only-one-column-of-data" title="Permalink to this headline">¶</a></h2>
+<p>The primary visualization tools appropriate for such a situation are variations on the idea of a histogram.  These include a standard histogram plus swarm plots, strip plots, and violin plots.  A secondary visualization in this situation is an ECDF, which we will return to below.</p>
+<p>We can plot a standard histogram with <code class="docutils literal notranslate"><span class="pre">plt.hist()</span></code>, but this doesn’t work very well for very small data sets.  It can also suffer from “binning bias,” which distorts the actual distribution through the approximation inherent in clustering points into bars.  But with many data points distributed smoothly along the horizontal axis, it often works well.</p>
+<p>When labeling a histogram, the <span class="math notranslate nohighlight">\(y\)</span> axis is almost always “frequency” and the title should typically mention the idea of a “distribution.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">sales_df</span><span class="p">[</span><span class="s1">&#39;sales&#39;</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="s1">&#39;Sales&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s1">&#39;Frequency&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Distribution of Quarterly Sales&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_29_0.png" src="_images/chapter-10-visualization_29_0.png" />
+</div>
+</div>
+<p>Matplotlib’s built-in <code class="docutils literal notranslate"><span class="pre">plt.hist()</span></code> works fine, but to upgrade your histogram game, consider checking out <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.distplot.html">Seaborn’s <code class="docutils literal notranslate"><span class="pre">sns.distplot()</span></code></a>, which also shows histograms, but with handy options for commonly-desired additional features.</p>
+<p>To remove the problem of binning bias, you can try a swarm plot.  This works well with a small-to-medium number of data points, but becomes unmanageable for large datasets, because it attempts to give each data point its own visual space.  Also, data points are just plotted <em>close</em> to where they actually belong, so the distortion of a histogram’s binning bias has been reduced, but not fully removed.  The picture is still an approximation of the actual data, but still much more accurate than a histogram.</p>
+<p>Note that in a one-column swarm plot, there is no horizontal variable, and thus we do not label that axis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">swarmplot</span><span class="p">(</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sales&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">sales_df</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Distribution of Quarterly Sales&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_31_0.png" src="_images/chapter-10-visualization_31_0.png" />
+</div>
+</div>
+<p>A swarm plot can get quite wide if there are many data points clustered in a small area.  If your data has this problem, try using a strip plot, which keeps a constant width everywhere.</p>
+<p>This comes at a price, however.  Some data points are stacked on top of one another, so you won’t really be able to see as much variation in density.  You can combat this problem by choosing <code class="docutils literal notranslate"><span class="pre">alpha=0.5</span></code> or some smaller number, so that overlapping data points show variations in color.</p>
+<p>Finally, a strip plot uses random jittering to place the points, so it won’t always look the same each time you render it!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sales&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">sales_df</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Distribution of Quarterly Sales&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_33_0.png" src="_images/chapter-10-visualization_33_0.png" />
+</div>
+</div>
+<p>Lastly, if you have enough data, you may want to simply smooth it out into curves instead.  This is not a faithful representation of sparse data, but it can be a faithful representation of a very large dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sales&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">sales_df</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Distribution of Quarterly Sales&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_35_0.png" src="_images/chapter-10-visualization_35_0.png" />
+</div>
+</div>
+<p>Finally, if you care only about the quartiles of the distribution (25%, 50%, 75%) and the outliers, you can use a box plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sales&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">sales_df</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Distribution of Quarterly Sales&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_37_0.png" src="_images/chapter-10-visualization_37_0.png" />
+</div>
+</div>
+<p>Every one of the options above can also be shown horizontally instead.  Just use <code class="docutils literal notranslate"><span class="pre">orient='h'</span></code> in the plotting command.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">swarmplot</span><span class="p">(</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sales&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">sales_df</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;h&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Distribution of Quarterly Sales&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_39_0.png" src="_images/chapter-10-visualization_39_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="can-t-i-test-a-single-column-for-normality">
+<h2>Can’t I test a single column for normality?<a class="headerlink" href="#can-t-i-test-a-single-column-for-normality" title="Permalink to this headline">¶</a></h2>
+<p>I’m so glad you asked!  One of the most common assumptions in statistics is that a dataset comes from an approximately normally distributed population.  We can get a sense of whether that holds true for some dataset we have by plotting the cumulative distribution function (CDF) of the data against that of a normal distribution, as you saw in DataCamp.  (A CDF from data is called an empirical CDF, or ECDF.)</p>
+<p>While DataCamp did it manually, there are libraries that can handle it for you.  <a class="reference internal" href="chapter-9-math-and-stats.html"><span class="doc">The notes for Chapter 9</span></a> suggested a Learning On Your Own activity about Pingouin, a new Python statistics module, which implements QQ plots (quartile-quartile plots), for comparing two cumulative distribution functions.</p>
+<p>Here, we’ll use what you saw in DataCamp.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># create an ECDF from the data</span>
+<span class="n">ecdf_xs</span> <span class="o">=</span> <span class="n">sales_df</span><span class="p">[</span><span class="s1">&#39;sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+<span class="n">ecdf_ys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ecdf_xs</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span> <span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ecdf_xs</span><span class="p">)</span>
+
+<span class="c1"># simulate a normal CDF with the same mean and std</span>
+<span class="n">sample_mean</span> <span class="o">=</span> <span class="n">ecdf_xs</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">sample_std</span> <span class="o">=</span> <span class="n">ecdf_xs</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span> <span class="n">sample_mean</span><span class="p">,</span> <span class="n">sample_std</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10000</span> <span class="p">)</span>
+<span class="n">normal_xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span> <span class="n">samples</span> <span class="p">)</span>
+<span class="n">normal_ys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">normal_xs</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span> <span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">normal_xs</span><span class="p">)</span>
+
+<span class="c1"># plot them on the same graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">normal_xs</span><span class="p">,</span> <span class="n">normal_ys</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">ecdf_xs</span><span class="p">,</span> <span class="n">ecdf_ys</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_41_0.png" src="_images/chapter-10-visualization_41_0.png" />
+</div>
+</div>
+<p>This case is hard to judge visually.  The graphs are quite different for the leftmost 30% of the graph, and somewhat different for the middle, only converging at the end.  If the project you’re working on is something quick and dirty that just needs to be approximate, you might call this distribution close enough to normal.  But if your project demands high accuracy, such as something in health care, you should resort to official statistical tests for normality of an empirical distribution.  We do not cover those in MA346.</p>
+</div>
+<div class="section" id="what-if-i-have-lots-of-columns-of-data">
+<h2>What if I have lots of columns of data?<a class="headerlink" href="#what-if-i-have-lots-of-columns-of-data" title="Permalink to this headline">¶</a></h2>
+<p>If you want to compare them as distributions, then all of the Seaborn plotting commands from the previous section still apply.  They will show multiple distributions side-by-side, horizontally or vertically.  Here are two examples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">swarmplot</span><span class="p">(</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;emp_id&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sales&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">sales_df</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Distribution of Quarterly Sales by Employee&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_44_0.png" src="_images/chapter-10-visualization_44_0.png" />
+</div>
+</div>
+<p>When showing only one variable (earlier), a box plot was quite boring.  But when showing many variables, the simplicity of a box plot helps reduce visual clutter and make the variables much easier to compare.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;emp_id&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sales&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">sales_df</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Distribution of Quarterly Sales by Employee&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_46_0.png" src="_images/chapter-10-visualization_46_0.png" />
+</div>
+</div>
+<p>What if we wanted to plot the four price distributions in the REGI dataset, the open, close, low, and high prices, side-by-side?  Right now, these are stored in three separate columns in the data.  But as you can see from the code above, Seaborn expects the data to be in a single column, and it will use a separate column to split the values into categories.</p>
+<p>Of course, we know how to combine four columns of related data into one based on our work in a previous week–it’s melting!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">melted_df</span> <span class="o">=</span> <span class="n">regi_df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span> <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">],</span> <span class="n">value_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Open&#39;</span><span class="p">,</span><span class="s1">&#39;Close&#39;</span><span class="p">,</span><span class="s1">&#39;Low&#39;</span><span class="p">,</span><span class="s1">&#39;High&#39;</span><span class="p">],</span>
+                          <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;Type of price&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;Price&#39;</span> <span class="p">)</span>
+<span class="n">melted_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Type of price</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2-Jan-20</td>
+      <td>Open</td>
+      <td>27.21</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3-Jan-20</td>
+      <td>Open</td>
+      <td>28.16</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>6-Jan-20</td>
+      <td>Open</td>
+      <td>28.53</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7-Jan-20</td>
+      <td>Open</td>
+      <td>28.17</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>8-Jan-20</td>
+      <td>Open</td>
+      <td>26.37</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">swarmplot</span><span class="p">(</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Type of price&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Price&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">melted_df</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Distribution of REGI Prices&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_49_0.png" src="_images/chapter-10-visualization_49_0.png" />
+</div>
+</div>
+<p>And you can use the old, trusty histogram to compare distributions as well.  Simply pass an array of Series instead of just one Series when calling <code class="docutils literal notranslate"><span class="pre">plt.hist()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="p">[</span> <span class="n">regi_df</span><span class="p">[</span><span class="s1">&#39;Open&#39;</span><span class="p">],</span> <span class="n">regi_df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span> <span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="p">[</span> <span class="s1">&#39;Open&#39;</span><span class="p">,</span> <span class="s1">&#39;Close&#39;</span> <span class="p">]</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_51_0.png" src="_images/chapter-10-visualization_51_0.png" />
+</div>
+</div>
+<p>The REGI dataset is already set up for us to do this, because each distribution is in its own column.  If it had not been so (but had been like the sales data, for instance), recall that the opposite of melting is pivoting, and that would get the data in the needed form.</p>
+<p>It’s also possible to do overlapping histograms with transparent bars, but to get it to look good, you need to create the bin boundaries in advance and tell each histogram to use the same boundaries.  Otherwise, <code class="docutils literal notranslate"><span class="pre">plt.hist()</span></code> will choose different bins for each Series of data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">21</span> <span class="p">)</span> <span class="c1"># 20 bins from x=15 to x=35</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">regi_df</span><span class="p">[</span><span class="s1">&#39;Open&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Open&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">regi_df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Close&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_53_0.png" src="_images/chapter-10-visualization_53_0.png" />
+</div>
+</div>
+<p>There’s a lot more that could be said about plotting distributions; for instance, <a class="reference external" href="https://towardsdatascience.com/sorry-but-sns-distplot-just-isnt-good-enough-this-is-though-ef2ddbf28078">here’s a cool blog post</a> about how to make an even more beautiful plot that compares several distributions.</p>
+</div>
+<div class="section" id="what-if-i-need-to-know-if-the-colums-are-related">
+<h2>What if I need to know if the colums are related?<a class="headerlink" href="#what-if-i-need-to-know-if-the-colums-are-related" title="Permalink to this headline">¶</a></h2>
+<p>DataCamp showed you two visualizations for this.  One focuses on giving you some visual intuition for whether the variables are related, by showing you the shape of all possible scatterplots of your data.  It’s called a pair plot because it pairs up the variables in every possible way.  Let’s try it on the REGI dataset; the explanation follows the picture.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span> <span class="n">regi_df</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_56_0.png" src="_images/chapter-10-visualization_56_0.png" />
+</div>
+</div>
+<p>The histograms shown along the diagonal of this graph are histograms of each variable, which are not the interesting part of the visualization.</p>
+<p>Next, take a look at the scatterplots that are <em>not</em> in the last row or last column.  Almost all of them show a very tight linear relationship, but this is unsurprising because of the meaning of the data.  For instance, the leftmost scatterplot in the second row relates the High price of a stock with the Open price of the stock on the same day.  Because the stock opens and closes at approximately the same price on most days (no enormous fluctuations in any one day), these numbers are always close together, and thus highly correlated.  The same goes for all the histograms except the final row and final column.</p>
+<p>The final row and final column include the Volume variable.  One might naturally wonder whether the volume of the stock traded on a day correlates to anything about the value of the stock on that day.  In the case of Renewable Energy Group, Inc., for the first half of 2020, the answer seems to be no.  There does not seem to be any discernable relationship in those histograms; they’re just fuzzy blobs of data points.</p>
+<p>Earlier I mentioned that <code class="docutils literal notranslate"><span class="pre">sns.pairplot()</span></code> was the technique that would give us some visual intuition for relationships, and it did.  But there is another visualiation technique that doesn’t show us as much visually, but gives us more easy-to-read measurements of the relationships among the variables.  It’s a heat map of the covariance matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numeric_columns_only</span> <span class="o">=</span> <span class="n">regi_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span> <span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+<span class="n">correlation_coefficients</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span> <span class="n">numeric_columns_only</span><span class="p">,</span> <span class="n">rowvar</span><span class="o">=</span><span class="kc">False</span> <span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span> <span class="n">correlation_coefficients</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">numeric_columns_only</span><span class="o">.</span><span class="n">columns</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">numeric_columns_only</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_58_0.png" src="_images/chapter-10-visualization_58_0.png" />
+</div>
+</div>
+<p>Of course, because we used the same data, we still find out that all the prices are highly correlated (because they’re organized by day) and the volume isn’t really correlated much with anything.  But it’s much easier to tell both the correlations and the lacks of correlation when we have hard numbers to look at, rather than having to estimate it ourselves from shapes.</p>
+</div>
+<div class="section" id="summary-of-plotting-tools">
+<h2>Summary of plotting tools<a class="headerlink" href="#summary-of-plotting-tools" title="Permalink to this headline">¶</a></h2>
+<p>I know that was a huge amount to take in!  So let’s make it simpler:</p>
+<div class="section" id="with-one-numeric-column-of-data">
+<h3>With one numeric column of data:<a class="headerlink" href="#with-one-numeric-column-of-data" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>If you want to see this</p></th>
+<th class="head"><p>Then use this</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Just the distribution’s quartiles and outliers</p></td>
+<td><p>Box plot</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simple approximation of the distribution</p></td>
+<td><p>Histogram</p></td>
+</tr>
+<tr class="row-even"><td><p>Very good approximation of the distribution, maybe very wide</p></td>
+<td><p>Swarm plot</p></td>
+</tr>
+<tr class="row-odd"><td><p>Good approximation of the distribution, not too wide</p></td>
+<td><p>Strip plot</p></td>
+</tr>
+<tr class="row-even"><td><p>Good approximation of a large distribution, smoothed</p></td>
+<td><p>Violin plot</p></td>
+</tr>
+<tr class="row-odd"><td><p>How similar is the distribution to normal?</p></td>
+<td><p>Overlapping ECDFs</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="with-two-numeric-columns-of-data">
+<h3>With two numeric columns of data:<a class="headerlink" href="#with-two-numeric-columns-of-data" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>If you want to see this</p></th>
+<th class="head"><p>Then use this</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A graph of my data, which is a function</p></td>
+<td><p>Line plot</p></td>
+</tr>
+<tr class="row-odd"><td><p>The shape of my data, which is a relation</p></td>
+<td><p>Scatter plot</p></td>
+</tr>
+<tr class="row-even"><td><p>The shape of my data, which is a relation, plus each variable’s distribution</p></td>
+<td><p>Joint plot</p></td>
+</tr>
+<tr class="row-odd"><td><p>The line of best fit through my data</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sns.lmplot</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="with-many-numeric-columns-of-data">
+<h3>With many numeric columns of data:<a class="headerlink" href="#with-many-numeric-columns-of-data" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>If you want to see this</p></th>
+<th class="head"><p>Then use this</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>The quartiles and outliers of each</p></td>
+<td><p>Side-by-side box plots</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simple approximation of the distributions</p></td>
+<td><p>Histograms with side-by-side bars</p></td>
+</tr>
+<tr class="row-even"><td><p>Very good approximation of each distribution (can’t fit too many)</p></td>
+<td><p>Side-by-side swarm plots</p></td>
+</tr>
+<tr class="row-odd"><td><p>Good approximation of each distribution (can fit more)</p></td>
+<td><p>Side-by-side strip plots</p></td>
+</tr>
+<tr class="row-even"><td><p>Good approximation if the distributions are large (will be smoothed)</p></td>
+<td><p>Side-by-side violin plots</p></td>
+</tr>
+<tr class="row-odd"><td><p>The shape of all possible two-column relationships</p></td>
+<td><p>Pair plot</p></td>
+</tr>
+<tr class="row-even"><td><p>A measurement of all possible correlations</p></td>
+<td><p>Heat map of correlation coefficients</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="techniques-not-to-use-and-why">
+<h2>Techniques <em>not</em> to use (and why)<a class="headerlink" href="#techniques-not-to-use-and-why" title="Permalink to this headline">¶</a></h2>
+<p>You may notice that we did not cover <strong>pie charts</strong> anywhere in this tutorial.  Matplotlib can certainly produce pie charts for you, but visualization experts recommend against them, because viewers tend to have trouble assessing the exact meanings of the shapes.  It’s much harder to compare how much bigger one pie slice is to another than it is to compare, say, two bars on a histogram, or to points on a graph.  So I suggest you avoid pie charts.</p>
+<p>We also did not cover <strong>bubble charts</strong> anywhere in this tutorial.  (A bubble chart is one in which each data point is plotted by a large circle, proportional to one of the variables in the data.)  These are very popular in modern data visualization because they are eye-catching and attractive.  But visualization experts recommend against these as well, because each person perceives the bubble sizes differently.  For example, some people perceive the magnitude of a bubble on a graph in proportion to its radius, some perceive it in proportion to its area, and others are somewhere in between.</p>
+<p>Visualization is a type of communication, and doing it well means focusing on the message you want to convey.  Using a visualization that gives each viewer a different message is a bad idea.  Unpredictability of viewer response is undesirable.  So I suggest you avoid bubble charts as well.</p>
+<p>We did not cover charts with <strong>3D elements,</strong> as Microsoft Excel often creates.  This is because those elements also tend to distort the viewer’s perception of the data and make it unclear exactly how extreme (or not) they’re perceiving what you’re showing.  Thus we avoid any 3D elements in charts for the same reason we avoid bubble charts.</p>
+<p>Finally, DataCamp showed you how to fit polynomial models to data using <code class="docutils literal notranslate"><span class="pre">sns.regplot()</span></code>.  But I did not cover it hear, because it is dangerous to dive into polynomial models without a solid grounding in mathematical modeling, which this course does not cover.  Before using a polynomial model, you would need a solid, domain-specific reason to believe that such a model is applicable, or <code class="docutils literal notranslate"><span class="pre">sns.regplot()</span></code> will (obediently) produce result that are unreliable if used for prediction.  Consequently, I won’t cover <code class="docutils literal notranslate"><span class="pre">sns.regplot()</span></code> in MA346.</p>
+</div>
+<div class="section" id="what-about-plot-styles">
+<h2>What about plot styles?<a class="headerlink" href="#what-about-plot-styles" title="Permalink to this headline">¶</a></h2>
+<p>I didn’t cover plot styles here, but there’s nothing wrong with them.  I simply left them out because most of them are only cosmetic; <a class="reference external" href="big-cheat-sheet#before-week-5">see this week’s section in the DataCamp cheat sheet</a> for details on items like <code class="docutils literal notranslate"><span class="pre">sns.set()</span></code>, <code class="docutils literal notranslate"><span class="pre">plt.subplot()</span></code>, and <code class="docutils literal notranslate"><span class="pre">plt.style</span></code>.</p>
+<p>There are also some good blog posts on Matplotlib styles you might want to check out, such as <a class="reference external" href="https://towardsdatascience.com/the-last-matplotlib-tweaking-guide-youll-ever-need-dbd4374a1c1e">this</a> or <a class="reference external" href="https://towardsdatascience.com/cyberpunk-style-with-matplotlib-f47404c9d4c5">this</a>.</p>
+<p>But there is one stylistic element I want to highlight:  DataCamp showed that <code class="docutils literal notranslate"><span class="pre">plt.annotate()</span></code> can be used to place text on a plot, which can be very useful for drawing a viewer’s attention to the part of the graph that you want them to focus on.  Consider the following graph, which we produced earlier, but now with a prominent annotation to explain why sales were so high one year.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">grouped_df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">grouped_df</span><span class="p">[</span><span class="s1">&#39;sales&#39;</span><span class="p">],</span> <span class="s1">&#39;-o&#39;</span> <span class="p">)</span> <span class="c1"># dots and lines</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Yearly Sales&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span> <span class="s2">&quot;fontsize&quot;</span><span class="p">:</span> <span class="mi">25</span> <span class="p">}</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="s1">&#39;Year&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s1">&#39;Total Sales&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10000</span> <span class="p">]</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span> <span class="s1">&#39;Competitor</span><span class="se">\n</span><span class="s1">flooded&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">2017.5</span><span class="p">,</span><span class="mi">8000</span><span class="p">),</span>
+              <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-10-visualization_63_0.png" src="_images/chapter-10-visualization_63_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="there-s-so-much-more">
+<h2>There’s so much more!<a class="headerlink" href="#there-s-so-much-more" title="Permalink to this headline">¶</a></h2>
+<p>Because visualization is a huge topic, I list several Learning On Your Own opportunities for extending your visualization knowledge and sharing it with the rest of the class.</p>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - Plot with Less Code</p>
+<p>In some cases, you can plot data directly from pandas without needing to use Matplotlib.  <a class="reference external" href="https://towardsdatascience.com/the-simplest-way-to-create-complex-visualizations-in-python-isnt-with-matplotlib-a5802f2dba92">Investigate this blog post for details</a> and decide on the best format by which to report that information to the class.</p>
+</div>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - Geographical Plots</p>
+<p>Drawing data on a map is extremely common and useful, but we don’t have time to cover it in today’s notes.  <a class="reference external" href="https://www.earthdatascience.org/tutorials/introduction-to-leaflet-animated-maps/">Here’s a blog post about an easy way to do so in Python,</a> but you don’t need to feel bound to that one.  There are many map toolkits for use in Python-based visualizations.  Feel free to choose the one you like best and decide on the best format by which to report on it to the class.  As an example, try showing how housing costs vary across the U.S. by plotting the property values in the mortgage dataset from Week 3 on a map.</p>
+</div>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - Tableau</p>
+<p>One of the most famous tools for data visualization in industry is Tableau.  Although coding in Python, R, etc., is always the most flexible option, tools like Tableau are far easier and faster when you don’t need maximal flexibility.  Take a Tableau tutorial and report to the class on its key features.  Ensure you cover how to get a copy of Tableau, how to get data into it, and what it’s best at.</p>
+</div>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - Visualization Design Principles</p>
+<p>I’ve suggested a few concepts <a class="reference external" href="#techniques-not-to-use-and-why">up above</a> that can guide you towards effective visualizations and away from ineffective ones.  But there is a lot to learn about visualization design principles that we can’t cover here.  Consider checking out <a class="reference external" href="https://flowingdata.com/2017/01/24/one-dataset-visualized-25-ways/">this blog post</a> or <a class="reference external" href="https://serialmentor.com/dataviz/">this free online book</a> and chooosing about five important concepts you learn that are relevant to our work in MA346.  Find a good way to report them to the rest of the class, and be sure to include plenty of visual examples in your work of what to do and what not to do.</p>
+</div>
 </div>
 </div>
 
