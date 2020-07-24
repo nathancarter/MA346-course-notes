@@ -9,6 +9,13 @@
 - file: chapter-8-version-control.ipynb
 - file: chapter-9-math-and-stats.ipynb
 - file: chapter-10-visualization.ipynb
+- file: chapter-11-processing-rows.ipynb
+- file: chapter-12-concat-and-merge.ipynb
+- file: chapter-13-etl.ipynb
+- file: chapter-14-dashboards.ipynb
+- file: chapter-15-networks.ipynb
+- file: chapter-16-matrices.ipynb
+- file: chapter-17-machine-learning.ipynb
 - file: big-cheat-sheet.ipynb
 - file: anaconda-installation.md
 - file: vs-code-installation.md
