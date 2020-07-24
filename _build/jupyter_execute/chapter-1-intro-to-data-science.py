@@ -14,7 +14,7 @@ This echoes a famous blog post by Drew Conway in 2013, called [The Data Science 
 
 Regardless of whether data science is just a part of statistics, and regardless of the domain to which we're applying data science, the goal is the same: **to turn data into actionable value.**  The professional society INFORMS defines the related field of analytics as "the scientific process of transforming data into insight for making better decisions."
 
-# What do data scientists do?
+## What do data scientists do?
 
 Turning data into actionable value usually involves answering questions using data.  Here's a typical workflow for how that plays out in practice.
 

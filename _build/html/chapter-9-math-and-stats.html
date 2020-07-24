@@ -109,16 +109,37 @@
     <a href="chapter-10-visualization.html">10. Visualization</a>
   </li>
   <li class="">
-    <a href="big-cheat-sheet.html">11. Big Cheat Sheet</a>
+    <a href="chapter-11-processing-rows.html">11. Processing the Rows of a DataFrame</a>
   </li>
   <li class="">
-    <a href="anaconda-installation.html">12. Anaconda Installation</a>
+    <a href="chapter-12-concat-and-merge.html">12. Concatenating and Merging DataFrames</a>
   </li>
   <li class="">
-    <a href="vs-code-installation.html">13. VS Code for Python Installation</a>
+    <a href="chapter-13-etl.html">13. Miscellaneous Munging Methods (ETL)</a>
   </li>
   <li class="">
-    <a href="GB213-review-in-Python.html">14. GB213 Review in Python</a>
+    <a href="chapter-14-dashboards.html">14. Dashboards</a>
+  </li>
+  <li class="">
+    <a href="chapter-15-networks.html">15. Relations as Graphs - Network Analysis</a>
+  </li>
+  <li class="">
+    <a href="chapter-16-matrices.html">16. Relations as Matrices</a>
+  </li>
+  <li class="">
+    <a href="chapter-17-machine-learning.html">17. Introduction to Machine Learning</a>
+  </li>
+  <li class="">
+    <a href="big-cheat-sheet.html">18. Big Cheat Sheet</a>
+  </li>
+  <li class="">
+    <a href="anaconda-installation.html">19. Anaconda Installation</a>
+  </li>
+  <li class="">
+    <a href="vs-code-installation.html">20. VS Code for Python Installation</a>
+  </li>
+  <li class="">
+    <a href="GB213-review-in-Python.html">21. GB213 Review in Python</a>
   </li>
 </ul>
 </nav>
@@ -358,12 +379,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.95226554, 0.4066233 , 0.72517536, 0.05696499, 0.70548845,
-       0.11036608, 0.42878267, 0.30192109, 0.03412247, 0.1453938 ,
-       0.10489042, 0.40007128, 0.00640717, 0.45232087, 0.50238973,
-       0.5941929 , 0.68869791, 0.92848373, 0.2348647 , 0.63097245,
-       0.72950935, 0.53284258, 0.66092015, 0.7179458 , 0.86271654,
-       0.64442999, 0.90135157, 0.37175552, 0.59786344, 0.01496227])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.37600337, 0.53888679, 0.44673178, 0.03869085, 0.1235196 ,
+       0.62611577, 0.29945789, 0.21173455, 0.78378133, 0.49786788,
+       0.33650492, 0.34153541, 0.52920055, 0.75262926, 0.59936326,
+       0.81826399, 0.54830293, 0.15692863, 0.4997704 , 0.33318206,
+       0.7107754 , 0.05270395, 0.41007974, 0.02968244, 0.39712816,
+       0.51555891, 0.84235798, 0.66452828, 0.90218482, 0.42051476])
 </pre></div>
 </div>
 </div>
@@ -375,9 +396,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.95, 0.41, 0.73, 0.06, 0.71, 0.11, 0.43, 0.3 , 0.03, 0.15, 0.1 ,
-       0.4 , 0.01, 0.45, 0.5 , 0.59, 0.69, 0.93, 0.23, 0.63, 0.73, 0.53,
-       0.66, 0.72, 0.86, 0.64, 0.9 , 0.37, 0.6 , 0.01])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.38, 0.54, 0.45, 0.04, 0.12, 0.63, 0.3 , 0.21, 0.78, 0.5 , 0.34,
+       0.34, 0.53, 0.75, 0.6 , 0.82, 0.55, 0.16, 0.5 , 0.33, 0.71, 0.05,
+       0.41, 0.03, 0.4 , 0.52, 0.84, 0.66, 0.9 , 0.42])
 </pre></div>
 </div>
 </div>
@@ -389,12 +410,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([2.59157433, 1.50173829, 2.0650932 , 1.05861875, 2.02483547,
-       1.11668679, 1.53538731, 1.3524545 , 1.03471132, 1.15649491,
-       1.1105889 , 1.49193104, 1.00642774, 1.57195626, 1.65266598,
-       1.81156824, 1.99112123, 2.53066909, 1.26473763, 1.87943735,
-       2.07406273, 1.70376852, 1.93657345, 2.05021732, 2.36958904,
-       1.9049009 , 2.46292969, 1.45027838, 1.8182299 , 1.01507476])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1.45645204, 1.71409765, 1.56319496, 1.03944909, 1.13147218,
+       1.87033165, 1.34912724, 1.2358198 , 2.18973675, 1.64520974,
+       1.40004576, 1.40710642, 1.69757463, 2.12257349, 1.82095896,
+       2.26656165, 1.73031405, 1.16991211, 1.64834276, 1.39540132,
+       2.03556903, 1.05411753, 1.50693794, 1.03012736, 1.48754656,
+       1.67457417, 2.32183536, 1.94357348, 2.46498278, 1.5227452 ])
 </pre></div>
 </div>
 </div>
@@ -406,14 +427,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([9.06809658e-01, 1.65342505e-01, 5.25879303e-01, 3.24500998e-03,
-       4.97713953e-01, 1.21806707e-02, 1.83854575e-01, 9.11563454e-02,
-       1.16434278e-03, 2.11393566e-02, 1.10019994e-02, 1.60057032e-01,
-       4.10518716e-05, 2.04594170e-01, 2.52395438e-01, 3.53065201e-01,
-       4.74304812e-01, 8.62082035e-01, 5.51614261e-02, 3.98126236e-01,
-       5.32183898e-01, 2.83921211e-01, 4.36815446e-01, 5.15446168e-01,
-       7.44279827e-01, 4.15290008e-01, 8.12434657e-01, 1.38202168e-01,
-       3.57440697e-01, 2.23869443e-04])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.14137854, 0.29039897, 0.19956928, 0.00149698, 0.01525709,
+       0.39202095, 0.08967503, 0.04483152, 0.61431317, 0.24787242,
+       0.11323556, 0.11664644, 0.28005322, 0.56645081, 0.35923632,
+       0.66955596, 0.3006361 , 0.02462659, 0.24977045, 0.11101028,
+       0.50520167, 0.00277771, 0.16816539, 0.00088105, 0.15771077,
+       0.26580099, 0.70956696, 0.44159783, 0.81393745, 0.17683266])
 </pre></div>
 </div>
 </div>
@@ -491,8 +510,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([46.47739573, 39.56419958, 11.12443478, 80.10517566, 64.53725335,
-       49.30558402, 60.15712461, 98.21273451, 97.60744006, 65.37379598])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([52.54521878, 87.49244886, 60.69311502, 43.32369827, 71.8687882 ,
+       13.0726038 , 13.30343695, 42.43011506, 19.29039516, 82.30459215])
 </pre></div>
 </div>
 </div>
@@ -506,8 +525,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([31.14053881, 80.75921667, 81.50995026, 57.60825596, 99.52151413,
-       30.2285407 , 73.57922813, 38.92015852, 87.03571785, 45.50953225])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([26.109284  , 56.34978148, 28.43104442, 71.94773648, 45.91456991,
+       17.7533833 , 20.35301123, 31.9134973 ,  7.33644644, 18.38484561])
 </pre></div>
 </div>
 </div>

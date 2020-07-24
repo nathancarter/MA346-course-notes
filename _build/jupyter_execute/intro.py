@@ -2,6 +2,8 @@
 
 These course notes are for [Bentley University](http://www.bentley.edu)'s Data Science course (MA346) that will be taught by [Nathan Carter](http://nathancarter.github.io) in Fall 2020.
 
+You can <a href="../../_static/MA346-course-notes.pdf">download a PDF of these course notes here</a>, in case you prefer to read it that way.
+
 ```{warning}
 This course notes website is still in development, so the content here is incomplete.  It will be ready by Fall 2020.
 ```
@@ -32,23 +34,22 @@ Each topic below will become a link to what we will cover in class that day, onc
 |      |           | Chapter 10: New visualization tools ([notes](chapter-10-visualization), <a href='../../_slides/chapter-10-slides.html'>slides</a>) |
 |      |           | [DataCamp to review before Week 6](big-cheat-sheet.html#before-week-6) |
 |      |           | &nbsp;       |
-| 6    | 10/8/2020 | Chapter 11: Processing the rows of a `DataFrame` (not yet ready) |
+| 6    | 10/8/2020 | Chapter 11: Processing the rows of a `DataFrame` ([notes](chapter-11-processing-rows), <a href='../../_slides/chapter-11-slides.html'>slides</a>) |
 |      |           | (No DataCamp for next week. Finish project instead.) |
 |      |           | &nbsp;       |
-| 7    | 10/15/2020 | Chapter 12: Concatenation and Merging (not yet ready) |
+| 7    | 10/15/2020 | Chapter 12: Concatenation and Merging ([notes](chapter-12-concat-and-merge), <a href='../../_slides/chapter-12-slides.html'>slides</a>) |
 |      |           | [DataCamp to review before Week 8](big-cheat-sheet.html#before-week-8) |
 |      |           | &nbsp;       |
-| 8    | 10/22/2020 | Chapter 13: Miscellaneous Munging Methods (ETL) (not yet ready) |
+| 8    | 10/22/2020 | Chapter 13: Miscellaneous Munging Methods (ETL) ([notes](chapter-13-etl), <a href='../../_slides/chapter-13-slides.html'>slides</a>) |
 |      |           | [DataCamp to review before Week 9](big-cheat-sheet.html#before-week-9) |
 |      |           | &nbsp;       |
-| 9    | 10/29/2020 | Chapter 14: Dashboards (not yet ready) |
+| 9    | 10/29/2020 | Chapter 14: Dashboards ([notes](chapter-14-dashboards), <a href='../../_slides/chapter-14-slides.html'>slides</a>) |
 |      |           | &nbsp;       |
-| 10   | 11/5/2020 | Chapter 15: Relations as graphs and network analysis (not yet ready) |
+| 10   | 11/5/2020 | Chapter 15: Relations as graphs and network analysis ([notes](chapter-15-networks), <a href='../../_slides/chapter-15-slides.html'>slides</a>) |
 |      |           | &nbsp;       |
-| 11   | 11/12/2020 | Chapter 16: Relations as matrices (not yet ready) |
-|      |           | Applications of matrix decompositions (not yet ready) |
+| 11   | 11/12/2020 | Chapter 16: Relations as matrices ([notes](chapter-16-matrices), <a href='../../_slides/chapter-16-slides.html'>slides</a>) |
 |      |           | &nbsp;       |
-| 12   | 11/19/2020 | Chapter 17: Introduction to machine learning (not yet ready) |
+| 12   | 11/19/2020 | Chapter 17: Introduction to machine learning ([notes](chapter-17-machine-learning), <a href='../../_slides/chapter-17-slides.html'>slides</a>) |
 |      |           | &nbsp;       |
 | 13   | 11/26/2020 | Thanksgiving break                           |
 |      |           | &nbsp;       |
@@ -72,6 +73,13 @@ chapter-7-abstraction.ipynb
 chapter-8-version-control.ipynb
 chapter-9-math-and-stats.ipynb
 chapter-10-visualization.ipynb
+chapter-11-processing-rows.ipynb
+chapter-12-concat-and-merge.ipynb
+chapter-13-etl.ipynb
+chapter-14-dashboards.ipynb
+chapter-15-networks.ipynb
+chapter-16-matrices.ipynb
+chapter-17-machine-learning.ipynb
 big-cheat-sheet.ipynb
 anaconda-installation.md
 vs-code-installation.md
