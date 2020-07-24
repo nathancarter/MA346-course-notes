@@ -8,10 +8,12 @@ exclude_patterns: ["README.md","_slides/*","experiments/*"]
 repository:
   url: https://github.com/nathancarter/ma346-course-notes
 
+latex:
+  latex_documents:
+    targetname: book.tex
+  latex_engine: xelatex
+
 html:
   baseurl: "https://nathancarter.github.io/ma346-course-notes"
   navbar_number_sections: true
 
-latex:
-  latex_documents:
-    targetname: book.tex
