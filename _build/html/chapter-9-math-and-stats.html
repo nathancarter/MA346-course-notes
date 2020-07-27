@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,6 +31,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/chapter-9-math-and-stats.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -76,72 +84,114 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
-  <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="chapter-1-intro-to-data-science.html">1. Introduction to Data Science</a>
-  </li>
-  <li class="">
-    <a href="chapter-2-mathematical-foundations.html">2. Mathematical Foundations</a>
-  </li>
-  <li class="">
-    <a href="chapter-3-jupyter.html">3. Jupyter</a>
-  </li>
-  <li class="">
-    <a href="chapter-4-review-of-python-and-pandas.html">4. Review of Python and pandas</a>
-  </li>
-  <li class="">
-    <a href="chapter-5-before-and-after.html">5. Before and After</a>
-  </li>
-  <li class="">
-    <a href="chapter-6-single-table-verbs.html">6. Single-Table Verbs</a>
-  </li>
-  <li class="">
-    <a href="chapter-7-abstraction.html">7. Abstraction</a>
-  </li>
-  <li class="">
-    <a href="chapter-8-version-control.html">8. Version Control</a>
-  </li>
-  <li class="active">
-    <a href="">9. Mathematics and Statistics in Python</a>
-  </li>
-  <li class="">
-    <a href="chapter-10-visualization.html">10. Visualization</a>
-  </li>
-  <li class="">
-    <a href="chapter-11-processing-rows.html">11. Processing the Rows of a DataFrame</a>
-  </li>
-  <li class="">
-    <a href="chapter-12-concat-and-merge.html">12. Concatenating and Merging DataFrames</a>
-  </li>
-  <li class="">
-    <a href="chapter-13-etl.html">13. Miscellaneous Munging Methods (ETL)</a>
-  </li>
-  <li class="">
-    <a href="chapter-14-dashboards.html">14. Dashboards</a>
-  </li>
-  <li class="">
-    <a href="chapter-15-networks.html">15. Relations as Graphs - Network Analysis</a>
-  </li>
-  <li class="">
-    <a href="chapter-16-matrices.html">16. Relations as Matrices</a>
-  </li>
-  <li class="">
-    <a href="chapter-17-machine-learning.html">17. Introduction to Machine Learning</a>
-  </li>
-  <li class="">
-    <a href="big-cheat-sheet.html">18. Big Cheat Sheet</a>
-  </li>
-  <li class="">
-    <a href="anaconda-installation.html">19. Anaconda Installation</a>
-  </li>
-  <li class="">
-    <a href="vs-code-installation.html">20. VS Code for Python Installation</a>
-  </li>
-  <li class="">
-    <a href="GB213-review-in-Python.html">21. GB213 Review in Python</a>
-  </li>
+  <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-1-intro-to-data-science.html">
+   Introduction to Data Science
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-2-mathematical-foundations.html">
+   Mathematical Foundations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-3-jupyter.html">
+   Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-4-review-of-python-and-pandas.html">
+   Review of Python and pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-5-before-and-after.html">
+   Before and After
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-6-single-table-verbs.html">
+   Single-Table Verbs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-7-abstraction.html">
+   Abstraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-8-version-control.html">
+   Version Control
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Mathematics and Statistics in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-10-visualization.html">
+   Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-11-processing-rows.html">
+   Processing the Rows of a DataFrame
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-12-concat-and-merge.html">
+   Concatenating and Merging DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-13-etl.html">
+   Miscellaneous Munging Methods (ETL)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-14-dashboards.html">
+   Dashboards
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-15-networks.html">
+   Relations as Graphs - Network Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-16-matrices.html">
+   Relations as Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-17-machine-learning.html">
+   Introduction to Machine Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="big-cheat-sheet.html">
+   Big Cheat Sheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="anaconda-installation.html">
+   Anaconda Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vs-code-installation.html">
+   VS Code for Python Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="GB213-review-in-Python.html">
+   GB213 Review in Python
+  </a>
+ </li>
 </ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -160,90 +210,111 @@
     </div>
     <div class="col pl-2 topbar-main">
         
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
             <i class="fas fa-bars"></i>
             <i class="fas fa-arrow-left"></i>
             <i class="fas fa-arrow-up"></i>
         </button>
         
         <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
 
-            
-            <div class="dropdown-buttons">
-                <!-- ipynb file if we had a myst markdown file -->
-                
-                <!-- Download raw file -->
-                <a class="dropdown-buttons" href="_sources/chapter-9-math-and-stats.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
-                <!-- Download PDF via print -->
-                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-            </div>
-            
-        </div>
-
-        <!-- Source interaction buttons -->
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/chapter-9-math-and-stats.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
-        
+
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#math-in-python">
+   Math in Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#naming-mathematical-variables">
+   Naming mathematical variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#but-what-about-numpy">
+   But what about NumPy?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binding-function-arguments">
+   Binding function arguments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gb213-in-python">
+   GB213 in Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#curve-fitting-in-general">
+   Curve fitting in general
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#say-we-have-some-data">
+     1. Say we have some data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choose-a-model">
+     2. Choose a model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#have-scipy-find-the-betas">
+     3. Have SciPy find the
+     <span class="math notranslate nohighlight">
+      \(\beta\)
+     </span>
+     s
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#describe-and-show-the-fit-model">
+     4. Describe and show the fit model
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#math-in-python" class="nav-link">Math in Python</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#naming-mathematical-variables" class="nav-link">Naming mathematical variables</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#but-what-about-numpy" class="nav-link">But what about NumPy?</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#binding-function-arguments" class="nav-link">Binding function arguments</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#gb213-in-python" class="nav-link">GB213 in Python</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#curve-fitting-in-general" class="nav-link">Curve fitting in general</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#say-we-have-some-data" class="nav-link">1. Say we have some data</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#choose-a-model" class="nav-link">2. Choose a model</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#have-scipy-find-the-betas" class="nav-link">3. Have SciPy find the \betas</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#describe-and-show-the-fit-model" class="nav-link">4. Describe and show the fit model</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -379,12 +450,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.37600337, 0.53888679, 0.44673178, 0.03869085, 0.1235196 ,
-       0.62611577, 0.29945789, 0.21173455, 0.78378133, 0.49786788,
-       0.33650492, 0.34153541, 0.52920055, 0.75262926, 0.59936326,
-       0.81826399, 0.54830293, 0.15692863, 0.4997704 , 0.33318206,
-       0.7107754 , 0.05270395, 0.41007974, 0.02968244, 0.39712816,
-       0.51555891, 0.84235798, 0.66452828, 0.90218482, 0.42051476])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.00210201, 0.1433012 , 0.72889034, 0.05502441, 0.26451572,
+       0.43691495, 0.366113  , 0.9651693 , 0.75086418, 0.65100788,
+       0.53480992, 0.4911561 , 0.48880651, 0.37186778, 0.88927119,
+       0.33992887, 0.43600995, 0.94404253, 0.2176242 , 0.66602609,
+       0.36031763, 0.45291016, 0.89159806, 0.68205396, 0.4972707 ,
+       0.76536462, 0.79460073, 0.04645869, 0.24173779, 0.55697275])
 </pre></div>
 </div>
 </div>
@@ -396,9 +467,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.38, 0.54, 0.45, 0.04, 0.12, 0.63, 0.3 , 0.21, 0.78, 0.5 , 0.34,
-       0.34, 0.53, 0.75, 0.6 , 0.82, 0.55, 0.16, 0.5 , 0.33, 0.71, 0.05,
-       0.41, 0.03, 0.4 , 0.52, 0.84, 0.66, 0.9 , 0.42])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.  , 0.14, 0.73, 0.06, 0.26, 0.44, 0.37, 0.97, 0.75, 0.65, 0.53,
+       0.49, 0.49, 0.37, 0.89, 0.34, 0.44, 0.94, 0.22, 0.67, 0.36, 0.45,
+       0.89, 0.68, 0.5 , 0.77, 0.79, 0.05, 0.24, 0.56])
 </pre></div>
 </div>
 </div>
@@ -410,12 +481,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1.45645204, 1.71409765, 1.56319496, 1.03944909, 1.13147218,
-       1.87033165, 1.34912724, 1.2358198 , 2.18973675, 1.64520974,
-       1.40004576, 1.40710642, 1.69757463, 2.12257349, 1.82095896,
-       2.26656165, 1.73031405, 1.16991211, 1.64834276, 1.39540132,
-       2.03556903, 1.05411753, 1.50693794, 1.03012736, 1.48754656,
-       1.67457417, 2.32183536, 1.94357348, 2.46498278, 1.5227452 ])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1.00210422, 1.15407736, 2.07277926, 1.05656641, 1.3027999 ,
+       1.54792443, 1.44211819, 2.62523207, 2.11883028, 1.91747243,
+       1.70712371, 1.63420443, 1.63036923, 1.45044119, 2.43335555,
+       1.40484766, 1.54652418, 2.57035116, 1.24311982, 1.94648676,
+       1.43378476, 1.57288288, 2.43902424, 1.97793617, 1.64422756,
+       2.14977808, 2.21355702, 1.0475548 , 1.27346023, 1.7453808 ])
 </pre></div>
 </div>
 </div>
@@ -427,12 +498,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.14137854, 0.29039897, 0.19956928, 0.00149698, 0.01525709,
-       0.39202095, 0.08967503, 0.04483152, 0.61431317, 0.24787242,
-       0.11323556, 0.11664644, 0.28005322, 0.56645081, 0.35923632,
-       0.66955596, 0.3006361 , 0.02462659, 0.24977045, 0.11101028,
-       0.50520167, 0.00277771, 0.16816539, 0.00088105, 0.15771077,
-       0.26580099, 0.70956696, 0.44159783, 0.81393745, 0.17683266])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([4.41843808e-06, 2.05352349e-02, 5.31281134e-01, 3.02768613e-03,
+       6.99685662e-02, 1.90894678e-01, 1.34038726e-01, 9.31551774e-01,
+       5.63797022e-01, 4.23811256e-01, 2.86021646e-01, 2.41234312e-01,
+       2.38931802e-01, 1.38285645e-01, 7.90803250e-01, 1.15551637e-01,
+       1.90104676e-01, 8.91216298e-01, 4.73602943e-02, 4.43590749e-01,
+       1.29828797e-01, 2.05127616e-01, 7.94947097e-01, 4.65197605e-01,
+       2.47278152e-01, 5.85783002e-01, 6.31390324e-01, 2.15840985e-03,
+       5.84371567e-02, 3.10218649e-01])
 </pre></div>
 </div>
 </div>
@@ -510,8 +583,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([52.54521878, 87.49244886, 60.69311502, 43.32369827, 71.8687882 ,
-       13.0726038 , 13.30343695, 42.43011506, 19.29039516, 82.30459215])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([48.57103183, 98.26842145, 55.58851316, 73.94366551,  3.83460037,
+       75.71282494, 22.93508032, 86.5985114 ,  3.90013674, 98.36457815])
 </pre></div>
 </div>
 </div>
@@ -525,8 +598,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([26.109284  , 56.34978148, 28.43104442, 71.94773648, 45.91456991,
-       17.7533833 , 20.35301123, 31.9134973 ,  7.33644644, 18.38484561])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([80.88400227, 59.9978174 , 47.9369339 , 97.21299604, 53.73272704,
+       87.30240982, 25.66302895, 64.47418396, 25.64360411, 83.42337879])
 </pre></div>
 </div>
 </div>
@@ -777,6 +850,25 @@
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

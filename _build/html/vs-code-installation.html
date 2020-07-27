@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,6 +31,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/vs-code-installation.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -76,72 +84,114 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
-  <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="chapter-1-intro-to-data-science.html">1. Introduction to Data Science</a>
-  </li>
-  <li class="">
-    <a href="chapter-2-mathematical-foundations.html">2. Mathematical Foundations</a>
-  </li>
-  <li class="">
-    <a href="chapter-3-jupyter.html">3. Jupyter</a>
-  </li>
-  <li class="">
-    <a href="chapter-4-review-of-python-and-pandas.html">4. Review of Python and pandas</a>
-  </li>
-  <li class="">
-    <a href="chapter-5-before-and-after.html">5. Before and After</a>
-  </li>
-  <li class="">
-    <a href="chapter-6-single-table-verbs.html">6. Single-Table Verbs</a>
-  </li>
-  <li class="">
-    <a href="chapter-7-abstraction.html">7. Abstraction</a>
-  </li>
-  <li class="">
-    <a href="chapter-8-version-control.html">8. Version Control</a>
-  </li>
-  <li class="">
-    <a href="chapter-9-math-and-stats.html">9. Mathematics and Statistics in Python</a>
-  </li>
-  <li class="">
-    <a href="chapter-10-visualization.html">10. Visualization</a>
-  </li>
-  <li class="">
-    <a href="chapter-11-processing-rows.html">11. Processing the Rows of a DataFrame</a>
-  </li>
-  <li class="">
-    <a href="chapter-12-concat-and-merge.html">12. Concatenating and Merging DataFrames</a>
-  </li>
-  <li class="">
-    <a href="chapter-13-etl.html">13. Miscellaneous Munging Methods (ETL)</a>
-  </li>
-  <li class="">
-    <a href="chapter-14-dashboards.html">14. Dashboards</a>
-  </li>
-  <li class="">
-    <a href="chapter-15-networks.html">15. Relations as Graphs - Network Analysis</a>
-  </li>
-  <li class="">
-    <a href="chapter-16-matrices.html">16. Relations as Matrices</a>
-  </li>
-  <li class="">
-    <a href="chapter-17-machine-learning.html">17. Introduction to Machine Learning</a>
-  </li>
-  <li class="">
-    <a href="big-cheat-sheet.html">18. Big Cheat Sheet</a>
-  </li>
-  <li class="">
-    <a href="anaconda-installation.html">19. Anaconda Installation</a>
-  </li>
-  <li class="active">
-    <a href="">20. VS Code for Python Installation</a>
-  </li>
-  <li class="">
-    <a href="GB213-review-in-Python.html">21. GB213 Review in Python</a>
-  </li>
+  <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-1-intro-to-data-science.html">
+   Introduction to Data Science
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-2-mathematical-foundations.html">
+   Mathematical Foundations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-3-jupyter.html">
+   Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-4-review-of-python-and-pandas.html">
+   Review of Python and pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-5-before-and-after.html">
+   Before and After
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-6-single-table-verbs.html">
+   Single-Table Verbs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-7-abstraction.html">
+   Abstraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-8-version-control.html">
+   Version Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-9-math-and-stats.html">
+   Mathematics and Statistics in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-10-visualization.html">
+   Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-11-processing-rows.html">
+   Processing the Rows of a DataFrame
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-12-concat-and-merge.html">
+   Concatenating and Merging DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-13-etl.html">
+   Miscellaneous Munging Methods (ETL)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-14-dashboards.html">
+   Dashboards
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-15-networks.html">
+   Relations as Graphs - Network Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-16-matrices.html">
+   Relations as Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-17-machine-learning.html">
+   Introduction to Machine Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="big-cheat-sheet.html">
+   Big Cheat Sheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="anaconda-installation.html">
+   Anaconda Installation
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   VS Code for Python Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="GB213-review-in-Python.html">
+   GB213 Review in Python
+  </a>
+ </li>
 </ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -160,64 +210,75 @@
     </div>
     <div class="col pl-2 topbar-main">
         
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
             <i class="fas fa-bars"></i>
             <i class="fas fa-arrow-left"></i>
             <i class="fas fa-arrow-up"></i>
         </button>
         
         <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
 
-            
-            <div class="dropdown-buttons">
-                <!-- ipynb file if we had a myst markdown file -->
-                
-                <!-- Download raw file -->
-                <a class="dropdown-buttons" href="_sources/vs-code-installation.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
-                <!-- Download PDF via print -->
-                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-            </div>
-            
-        </div>
-
-        <!-- Source interaction buttons -->
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/vs-code-installation.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
-        
+
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-the-anaconda-navigator">
+   Open the Anaconda Navigator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-and-install-the-vs-code-application">
+   Find and Install the VS Code application
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-and-configuring-code-runner">
+   Installing and Configuring Code Runner
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testing-your-installation">
+   Testing your Installation
+  </a>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#open-the-anaconda-navigator" class="nav-link">Open the Anaconda Navigator</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#find-and-install-the-vs-code-application" class="nav-link">Find and Install the VS Code application</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#installing-and-configuring-code-runner" class="nav-link">Installing and Configuring Code Runner</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#testing-your-installation" class="nav-link">Testing your Installation</a>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -311,6 +372,25 @@ Studio!</p>
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

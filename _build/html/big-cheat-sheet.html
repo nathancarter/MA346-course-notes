@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,6 +31,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/big-cheat-sheet.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -76,72 +84,114 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
-  <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="chapter-1-intro-to-data-science.html">1. Introduction to Data Science</a>
-  </li>
-  <li class="">
-    <a href="chapter-2-mathematical-foundations.html">2. Mathematical Foundations</a>
-  </li>
-  <li class="">
-    <a href="chapter-3-jupyter.html">3. Jupyter</a>
-  </li>
-  <li class="">
-    <a href="chapter-4-review-of-python-and-pandas.html">4. Review of Python and pandas</a>
-  </li>
-  <li class="">
-    <a href="chapter-5-before-and-after.html">5. Before and After</a>
-  </li>
-  <li class="">
-    <a href="chapter-6-single-table-verbs.html">6. Single-Table Verbs</a>
-  </li>
-  <li class="">
-    <a href="chapter-7-abstraction.html">7. Abstraction</a>
-  </li>
-  <li class="">
-    <a href="chapter-8-version-control.html">8. Version Control</a>
-  </li>
-  <li class="">
-    <a href="chapter-9-math-and-stats.html">9. Mathematics and Statistics in Python</a>
-  </li>
-  <li class="">
-    <a href="chapter-10-visualization.html">10. Visualization</a>
-  </li>
-  <li class="">
-    <a href="chapter-11-processing-rows.html">11. Processing the Rows of a DataFrame</a>
-  </li>
-  <li class="">
-    <a href="chapter-12-concat-and-merge.html">12. Concatenating and Merging DataFrames</a>
-  </li>
-  <li class="">
-    <a href="chapter-13-etl.html">13. Miscellaneous Munging Methods (ETL)</a>
-  </li>
-  <li class="">
-    <a href="chapter-14-dashboards.html">14. Dashboards</a>
-  </li>
-  <li class="">
-    <a href="chapter-15-networks.html">15. Relations as Graphs - Network Analysis</a>
-  </li>
-  <li class="">
-    <a href="chapter-16-matrices.html">16. Relations as Matrices</a>
-  </li>
-  <li class="">
-    <a href="chapter-17-machine-learning.html">17. Introduction to Machine Learning</a>
-  </li>
-  <li class="active">
-    <a href="">18. Big Cheat Sheet</a>
-  </li>
-  <li class="">
-    <a href="anaconda-installation.html">19. Anaconda Installation</a>
-  </li>
-  <li class="">
-    <a href="vs-code-installation.html">20. VS Code for Python Installation</a>
-  </li>
-  <li class="">
-    <a href="GB213-review-in-Python.html">21. GB213 Review in Python</a>
-  </li>
+  <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-1-intro-to-data-science.html">
+   Introduction to Data Science
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-2-mathematical-foundations.html">
+   Mathematical Foundations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-3-jupyter.html">
+   Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-4-review-of-python-and-pandas.html">
+   Review of Python and pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-5-before-and-after.html">
+   Before and After
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-6-single-table-verbs.html">
+   Single-Table Verbs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-7-abstraction.html">
+   Abstraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-8-version-control.html">
+   Version Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-9-math-and-stats.html">
+   Mathematics and Statistics in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-10-visualization.html">
+   Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-11-processing-rows.html">
+   Processing the Rows of a DataFrame
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-12-concat-and-merge.html">
+   Concatenating and Merging DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-13-etl.html">
+   Miscellaneous Munging Methods (ETL)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-14-dashboards.html">
+   Dashboards
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-15-networks.html">
+   Relations as Graphs - Network Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-16-matrices.html">
+   Relations as Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-17-machine-learning.html">
+   Introduction to Machine Learning
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Big Cheat Sheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="anaconda-installation.html">
+   Anaconda Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vs-code-installation.html">
+   VS Code for Python Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="GB213-review-in-Python.html">
+   GB213 Review in Python
+  </a>
+ </li>
 </ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -160,338 +210,406 @@
     </div>
     <div class="col pl-2 topbar-main">
         
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
             <i class="fas fa-bars"></i>
             <i class="fas fa-arrow-left"></i>
             <i class="fas fa-arrow-up"></i>
         </button>
         
         <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
 
-            
-            <div class="dropdown-buttons">
-                <!-- ipynb file if we had a myst markdown file -->
-                
-                <!-- Download raw file -->
-                <a class="dropdown-buttons" href="_sources/big-cheat-sheet.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
-                <!-- Download PDF via print -->
-                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-            </div>
-            
-        </div>
-
-        <!-- Source interaction buttons -->
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/big-cheat-sheet.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
-        
+
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
-
-<nav id="bd-toc-nav">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#before-week-2-review-of-cs230">
+   Before Week 2: Review of CS230
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction-to-python-optional-basic-review">
+     Introduction to Python (optional, basic review)
+    </a>
     <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#before-week-2-review-of-cs230" class="nav-link">Before Week 2: Review of CS230</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#introduction-to-python-optional-basic-review" class="nav-link">Introduction to Python (optional, basic review)</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-1-python-basics" class="nav-link">Chapter 1: Python Basics</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-2-python-lists" class="nav-link">Chapter 2: Python Lists</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-3-functions-and-packages" class="nav-link">Chapter 3: Functions and Packages</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-4-numpy" class="nav-link">Chapter 4: NumPy</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#python-data-science-toolbox-part-1-optional-basic-review" class="nav-link">Python Data Science Toolbox, Part 1 (optional, basic review)</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-1-writing-your-own-functions" class="nav-link">Chapter 1: Writing your own functions</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-2-default-arguments-variable-length-arguments-and-scope" class="nav-link">Chapter 2: Default arguments, variable-length arguments, and scope</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-3-lambda-functions-and-error-handling" class="nav-link">Chapter 3: Lambda functions and error handling</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#intermediate-python-required-review" class="nav-link">Intermediate Python (required review)</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-1-matplotlib" class="nav-link">Chapter 1: Matplotlib</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-2-dictionaries-pandas" class="nav-link">Chapter 2: Dictionaries & Pandas</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-3-logic-control-flow-and-filtering" class="nav-link">Chapter 3: Logic, Control Flow, and Filtering</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-4-loops" class="nav-link">Chapter 4: Loops</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#pandas-foundations-required-review" class="nav-link">pandas Foundations (required review)</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-1-data-ingestion-inspection" class="nav-link">Chapter 1: Data ingestion & inspection</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#manipulating-dataframes-with-pandas-required-review" class="nav-link">Manipulating DataFrames with pandas (required review)</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-1-extracting-and-transforming-data" class="nav-link">Chapter 1: Extracting and transforming data</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#before-week-3" class="nav-link">Before Week 3</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#manipulating-dataframes-with-pandas" class="nav-link">Manipulating DataFrames with pandas</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-2-advanced-indexing" class="nav-link">Chapter 2: Advanced indexing</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-3-rearranging-and-reshaping-data" class="nav-link">Chapter 3: Rearranging and reshaping data</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-4-grouping-data" class="nav-link">Chapter 4: Grouping data</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#before-week-4-review-of-visualization-in-cs230" class="nav-link">Before Week 4: Review of Visualization in CS230</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#pandas-foundations" class="nav-link">pandas Foundations</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-2-exploratory-data-analysis" class="nav-link">Chapter 2: Exploratory data analysis</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#before-week-5" class="nav-link">Before Week 5</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#intermediate-python" class="nav-link">Intermediate Python</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-5-case-study-hacker-statistics" class="nav-link">Chapter 5: Case Study: Hacker Statistics</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#statistical-thinking-in-python-part-1" class="nav-link">Statistical Thinking in Python, Part 1</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-1-graphical-exploratory-data-analysis" class="nav-link">Chapter 1: Graphical Exploratory Data Analysis</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-2-quantitative-exploratory-data-analysis" class="nav-link">Chapter 2: Quantitative Exploratory Data Analysis</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-3-thinking-probabalistically-discrete-variables" class="nav-link">Chapter 3: Thinking probabalistically–Discrete variables</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-4-thinking-probabalistically-continuous-variables" class="nav-link">Chapter 4: Thinking probabalistically–Continuous variables</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#introduction-to-data-visualization-with-python" class="nav-link">Introduction to Data Visualization with Python</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-1-customizing-plots" class="nav-link">Chapter 1: Customizing Plots</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-3-statistical-plots-with-seaborn" class="nav-link">Chapter 3: Statistical plots with Seaborn</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#before-week-6" class="nav-link">Before Week 6</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#merging-dataframes-with-pandas" class="nav-link">Merging DataFrames with pandas</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-1-preparing-data" class="nav-link">Chapter 1: Preparing data</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-2-concatenating-data" class="nav-link">Chapter 2: Concatenating data</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#chapter-3-merging-data" class="nav-link">Chapter 3: Merging data</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#before-week-8" class="nav-link">Before Week 8</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#streamlined-data-ingestion-with-pandas" class="nav-link">Streamlined Data Ingestion with pandas</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-1-importing-data-from-flat-files" class="nav-link">Chapter 1: Importing Data from Flat Files</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-2-importing-data-from-excel-files" class="nav-link">Chapter 2: Importing Data from Excel Files</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-3-importing-data-from-databases" class="nav-link">Chapter 3: Importing Data from Databases</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-4-importing-json-data-and-working-with-apis" class="nav-link">Chapter 4: Importing JSON Data and Working with APIs</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#before-week-9" class="nav-link">Before Week 9</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#introduction-to-sql" class="nav-link">Introduction to SQL</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-1-selecting-columns" class="nav-link">Chapter 1: Selecting columns</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-2-filtering-rows" class="nav-link">Chapter 2: Filtering rows</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-3-aggregate-functions" class="nav-link">Chapter 3: Aggregate Functions</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-4-sorting-and-grouping" class="nav-link">Chapter 4: Sorting and grouping</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#additional-useful-references" class="nav-link">Additional Useful References</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#python-data-science-toolbox-part-2" class="nav-link">Python Data Science Toolbox, Part 2</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-1-using-iterators-in-pythonland" class="nav-link">Chapter 1: Using iterators in PythonLand</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-2-list-comprehensions-and-generators" class="nav-link">Chapter 2: List comprehensions and generators</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id1" class="nav-link">Introduction to Data Visualization with Python</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#chapter-2-plotting-2d-arrays" class="nav-link">Chapter 2: Plotting 2D arrays</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-            </ul>
-        </li>
-    
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-1-python-basics">
+       Chapter 1: Python Basics
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-2-python-lists">
+       Chapter 2: Python Lists
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-3-functions-and-packages">
+       Chapter 3: Functions and Packages
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-4-numpy">
+       Chapter 4: NumPy
+      </a>
+     </li>
     </ul>
-</nav>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-data-science-toolbox-part-1-optional-basic-review">
+     Python Data Science Toolbox, Part 1 (optional, basic review)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-1-writing-your-own-functions">
+       Chapter 1: Writing your own functions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-2-default-arguments-variable-length-arguments-and-scope">
+       Chapter 2: Default arguments, variable-length arguments, and scope
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-3-lambda-functions-and-error-handling">
+       Chapter 3: Lambda functions and error handling
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#intermediate-python-required-review">
+     Intermediate Python (required review)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-1-matplotlib">
+       Chapter 1: Matplotlib
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-2-dictionaries-pandas">
+       Chapter 2: Dictionaries &amp; Pandas
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-3-logic-control-flow-and-filtering">
+       Chapter 3: Logic, Control Flow, and Filtering
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-4-loops">
+       Chapter 4: Loops
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pandas-foundations-required-review">
+     pandas Foundations (required review)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-1-data-ingestion-inspection">
+       Chapter 1: Data ingestion &amp; inspection
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#manipulating-dataframes-with-pandas-required-review">
+     Manipulating DataFrames with pandas (required review)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-1-extracting-and-transforming-data">
+       Chapter 1: Extracting and transforming data
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#before-week-3">
+   Before Week 3
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#manipulating-dataframes-with-pandas">
+     Manipulating DataFrames with pandas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-2-advanced-indexing">
+       Chapter 2: Advanced indexing
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-3-rearranging-and-reshaping-data">
+       Chapter 3: Rearranging and reshaping data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-4-grouping-data">
+       Chapter 4: Grouping data
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#before-week-4-review-of-visualization-in-cs230">
+   Before Week 4: Review of Visualization in CS230
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pandas-foundations">
+     pandas Foundations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-2-exploratory-data-analysis">
+       Chapter 2: Exploratory data analysis
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#before-week-5">
+   Before Week 5
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#intermediate-python">
+     Intermediate Python
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-5-case-study-hacker-statistics">
+       Chapter 5: Case Study: Hacker Statistics
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#statistical-thinking-in-python-part-1">
+     Statistical Thinking in Python, Part 1
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-1-graphical-exploratory-data-analysis">
+       Chapter 1: Graphical Exploratory Data Analysis
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-2-quantitative-exploratory-data-analysis">
+       Chapter 2: Quantitative Exploratory Data Analysis
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-3-thinking-probabalistically-discrete-variables">
+       Chapter 3: Thinking probabalistically–Discrete variables
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-4-thinking-probabalistically-continuous-variables">
+       Chapter 4: Thinking probabalistically–Continuous variables
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction-to-data-visualization-with-python">
+     Introduction to Data Visualization with Python
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-1-customizing-plots">
+       Chapter 1: Customizing Plots
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-3-statistical-plots-with-seaborn">
+       Chapter 3: Statistical plots with Seaborn
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#before-week-6">
+   Before Week 6
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#merging-dataframes-with-pandas">
+     Merging DataFrames with pandas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-1-preparing-data">
+       Chapter 1: Preparing data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-2-concatenating-data">
+       Chapter 2: Concatenating data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chapter-3-merging-data">
+     Chapter 3: Merging data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#before-week-8">
+   Before Week 8
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#streamlined-data-ingestion-with-pandas">
+     Streamlined Data Ingestion with pandas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-1-importing-data-from-flat-files">
+       Chapter 1: Importing Data from Flat Files
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-2-importing-data-from-excel-files">
+       Chapter 2: Importing Data from Excel Files
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-3-importing-data-from-databases">
+       Chapter 3: Importing Data from Databases
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-4-importing-json-data-and-working-with-apis">
+       Chapter 4: Importing JSON Data and Working with APIs
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#before-week-9">
+   Before Week 9
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction-to-sql">
+     Introduction to SQL
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-1-selecting-columns">
+       Chapter 1: Selecting columns
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-2-filtering-rows">
+       Chapter 2: Filtering rows
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-3-aggregate-functions">
+       Chapter 3: Aggregate Functions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-4-sorting-and-grouping">
+       Chapter 4: Sorting and grouping
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-useful-references">
+   Additional Useful References
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-data-science-toolbox-part-2">
+     Python Data Science Toolbox, Part 2
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-1-using-iterators-in-pythonland">
+       Chapter 1: Using iterators in PythonLand
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-2-list-comprehensions-and-generators">
+       Chapter 2: List comprehensions and generators
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Introduction to Data Visualization with Python
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chapter-2-plotting-2d-arrays">
+       Chapter 2: Plotting 2D arrays
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
 
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -2228,6 +2346,25 @@ The resulting column name is the function name (e.g., <code class="docutils lite
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

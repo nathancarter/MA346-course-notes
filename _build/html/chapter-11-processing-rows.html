@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,6 +31,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/chapter-11-processing-rows.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -44,7 +52,7 @@
 <meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/chapter-11-processing-rows.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Processing the Rows of a DataFrame" />
-<meta property="og:description" content="Processing the Rows of a DataFrame  <a href="../../_slides/chapter-11-slides.html">See also the slides that summarize a portion of this content.</a>  Warning  T" />
+<meta property="og:description" content="Processing the Rows of a DataFrame  <a href="../../_slides/chapter-11-slides.html">See also the slides that summarize a portion of this content.</a>  Goal  Back" />
 <meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
 
 <meta name="twitter:card" content="summary">
@@ -76,72 +84,114 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
-  <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="chapter-1-intro-to-data-science.html">1. Introduction to Data Science</a>
-  </li>
-  <li class="">
-    <a href="chapter-2-mathematical-foundations.html">2. Mathematical Foundations</a>
-  </li>
-  <li class="">
-    <a href="chapter-3-jupyter.html">3. Jupyter</a>
-  </li>
-  <li class="">
-    <a href="chapter-4-review-of-python-and-pandas.html">4. Review of Python and pandas</a>
-  </li>
-  <li class="">
-    <a href="chapter-5-before-and-after.html">5. Before and After</a>
-  </li>
-  <li class="">
-    <a href="chapter-6-single-table-verbs.html">6. Single-Table Verbs</a>
-  </li>
-  <li class="">
-    <a href="chapter-7-abstraction.html">7. Abstraction</a>
-  </li>
-  <li class="">
-    <a href="chapter-8-version-control.html">8. Version Control</a>
-  </li>
-  <li class="">
-    <a href="chapter-9-math-and-stats.html">9. Mathematics and Statistics in Python</a>
-  </li>
-  <li class="">
-    <a href="chapter-10-visualization.html">10. Visualization</a>
-  </li>
-  <li class="active">
-    <a href="">11. Processing the Rows of a DataFrame</a>
-  </li>
-  <li class="">
-    <a href="chapter-12-concat-and-merge.html">12. Concatenating and Merging DataFrames</a>
-  </li>
-  <li class="">
-    <a href="chapter-13-etl.html">13. Miscellaneous Munging Methods (ETL)</a>
-  </li>
-  <li class="">
-    <a href="chapter-14-dashboards.html">14. Dashboards</a>
-  </li>
-  <li class="">
-    <a href="chapter-15-networks.html">15. Relations as Graphs - Network Analysis</a>
-  </li>
-  <li class="">
-    <a href="chapter-16-matrices.html">16. Relations as Matrices</a>
-  </li>
-  <li class="">
-    <a href="chapter-17-machine-learning.html">17. Introduction to Machine Learning</a>
-  </li>
-  <li class="">
-    <a href="big-cheat-sheet.html">18. Big Cheat Sheet</a>
-  </li>
-  <li class="">
-    <a href="anaconda-installation.html">19. Anaconda Installation</a>
-  </li>
-  <li class="">
-    <a href="vs-code-installation.html">20. VS Code for Python Installation</a>
-  </li>
-  <li class="">
-    <a href="GB213-review-in-Python.html">21. GB213 Review in Python</a>
-  </li>
+  <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-1-intro-to-data-science.html">
+   Introduction to Data Science
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-2-mathematical-foundations.html">
+   Mathematical Foundations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-3-jupyter.html">
+   Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-4-review-of-python-and-pandas.html">
+   Review of Python and pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-5-before-and-after.html">
+   Before and After
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-6-single-table-verbs.html">
+   Single-Table Verbs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-7-abstraction.html">
+   Abstraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-8-version-control.html">
+   Version Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-9-math-and-stats.html">
+   Mathematics and Statistics in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-10-visualization.html">
+   Visualization
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Processing the Rows of a DataFrame
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-12-concat-and-merge.html">
+   Concatenating and Merging DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-13-etl.html">
+   Miscellaneous Munging Methods (ETL)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-14-dashboards.html">
+   Dashboards
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-15-networks.html">
+   Relations as Graphs - Network Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-16-matrices.html">
+   Relations as Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-17-machine-learning.html">
+   Introduction to Machine Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="big-cheat-sheet.html">
+   Big Cheat Sheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="anaconda-installation.html">
+   Anaconda Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vs-code-installation.html">
+   VS Code for Python Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="GB213-review-in-Python.html">
+   GB213 Review in Python
+  </a>
+ </li>
 </ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -160,45 +210,193 @@
     </div>
     <div class="col pl-2 topbar-main">
         
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
             <i class="fas fa-bars"></i>
             <i class="fas fa-arrow-left"></i>
             <i class="fas fa-arrow-up"></i>
         </button>
         
         <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
 
-            
-            <div class="dropdown-buttons">
-                <!-- ipynb file if we had a myst markdown file -->
-                
-                <!-- Download raw file -->
-                <a class="dropdown-buttons" href="_sources/chapter-11-processing-rows.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
-                <!-- Download PDF via print -->
-                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-            </div>
-            
-        </div>
-
-        <!-- Source interaction buttons -->
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/chapter-11-processing-rows.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
-        
+
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#goal">
+   Goal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-apply-function">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     apply()
+    </span>
+   </code>
+   function
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#baseball-example">
+     Baseball example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-a-loop">
+     Using a loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-apply">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       apply()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-map">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       map()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parallel-apply">
+     Parallel
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       apply()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#map-reduce">
+   Map-Reduce
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#argmin-and-argmax">
+     Argmin and argmax
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#map-reduce-example-sample-standard-deviation">
+     Map-reduce example: sample standard deviation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#split-apply-combine">
+   Split-Apply-Combine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-on-math-in-python">
+   More on math in Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arithmetic-in-formulas">
+     Arithmetic in formulas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conditionals-with-np-where">
+     Conditionals with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.where()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#speeding-up-mathematics">
+     Speeding up mathematics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#so-do-we-always-avoid-loops">
+   So do we
+   <em>
+    always
+   </em>
+   avoid loops?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#when-to-opt-for-a-loop">
+     When to opt for a loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#factoring-computations-out-of-the-loop">
+     Factoring computations out of the loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#knowing-how-long-you-ll-have-to-wait">
+     Knowing how long you’ll have to wait
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-the-bottleneck-is-the-dataset">
+   When the bottleneck is the dataset
+  </a>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -209,12 +407,1814 @@
   <div class="section" id="processing-the-rows-of-a-dataframe">
 <h1>Processing the Rows of a DataFrame<a class="headerlink" href="#processing-the-rows-of-a-dataframe" title="Permalink to this headline">¶</a></h1>
 <p><a href="../../_slides/chapter-11-slides.html">See also the slides that summarize a portion of this content.</a></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This chapter has not yet been written.  Check back later.</p>
+<div class="section" id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<p>Back in the early days of programming, when I was a kid, we wrote code with stone tools.</p>
+<p><img alt="Image of cave man chiseling" src="_images/cave-man-public-domain.jpg" /></p>
+<p>And when we wanted to work with all the elements of an array, we had no choice but to write a loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">shipments_received</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">13</span> <span class="p">]</span>
+
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">num_received</span> <span class="ow">in</span> <span class="n">shipments_received</span><span class="p">:</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">num_received</span>
+
+<span class="n">total</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>68
+</pre></div>
+</div>
+</div>
+</div>
+<p>Most introductory programming courses teach loops, and for good reason; they show up a lot in programming!  But there are a few reasons we’ll try to avoid loops in data work whenever we can.</p>
+<p>The lesser reason is <strong>readability.</strong>  Loops are always at least two lines of code in Python; the one above is three because it has to initialize the <code class="docutils literal notranslate"><span class="pre">total</span></code> variable to zero.  Many alternatives to loops can be done in just one line of code, which is more readable.</p>
+<p>The more important reason is <strong>speed.</strong>  Loops in Python are not very efficient, and this can be a serious problem.  In the final project for MA346 in Spring 2020, many students came to my office hours with a loop that had been running for hours, and they didn’t know if or when it would finish.  There are <em>many</em> ways to speed loops up, sometimes by just altering the loop, but usually by replacing the loop with something else entirely.</p>
+<p><strong>In fact, that’s the purpose of this chapter:  <em>What can I do to improve a slow loop?</em></strong></p>
+<p>The title of the chapter mentions DataFrames specifically, because in data work we’re almost always processing a DataFrame row-by-row.  But many of the techniques we’ll cover apply to many different kinds of loops, with or without DataFrames.</p>
+<p>An added benefit is that improving (or replacing) loops with something faster often means writing shorter or clearer code as well, achieving improvements in readability at the same time.</p>
+</div>
+<div class="section" id="the-apply-function">
+<h2>The <code class="docutils literal notranslate"><span class="pre">apply()</span></code> function<a class="headerlink" href="#the-apply-function" title="Permalink to this headline">¶</a></h2>
+<p>The most common use of a loop is when we need to do the same thing to each element of a sequence of values.  Let’s see an example.</p>
+<div class="section" id="baseball-example">
+<h3>Baseball example<a class="headerlink" href="#baseball-example" title="Permalink to this headline">¶</a></h3>
+<p>In an earlier homework assignment, I provided a cleaned dataset of baseball players’ salaries.  Let’s take a look at the original version of the dataset when I downloaded it <a class="reference external" href="https://data.world/natereed/baseball-salaries">from the web</a>, before it was cleaned.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;_static/baseball-salaries.csv&#39;</span> <span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>salary</th>
+      <th>name</th>
+      <th>total_value</th>
+      <th>pos</th>
+      <th>years</th>
+      <th>avg_annual</th>
+      <th>team</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>$ 3,800,000</td>
+      <td>Darryl Strawberry</td>
+      <td>$ 3,800,000</td>
+      <td>OF</td>
+      <td>1 (1991)</td>
+      <td>$ 3,800,000</td>
+      <td>LAD</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>$ 3,750,000</td>
+      <td>Kevin Mitchell</td>
+      <td>$ 3,750,000</td>
+      <td>OF</td>
+      <td>1 (1991)</td>
+      <td>$ 3,750,000</td>
+      <td>SF</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>$ 3,750,000</td>
+      <td>Will Clark</td>
+      <td>$ 3,750,000</td>
+      <td>1B</td>
+      <td>1 (1991)</td>
+      <td>$ 3,750,000</td>
+      <td>SF</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>$ 3,625,000</td>
+      <td>Mark Davis</td>
+      <td>$ 3,625,000</td>
+      <td>P</td>
+      <td>1 (1991)</td>
+      <td>$ 3,625,000</td>
+      <td>KC</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>$ 3,600,000</td>
+      <td>Eric Davis</td>
+      <td>$ 3,600,000</td>
+      <td>OF</td>
+      <td>1 (1991)</td>
+      <td>$ 3,600,000</td>
+      <td>CIN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The “years” column looks particularly annoying.  Why does it say “1 (1991)” instead of just 1991?  Let’s take a look at some other rows…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">14440</span><span class="p">:</span><span class="mi">14445</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>salary</th>
+      <th>name</th>
+      <th>total_value</th>
+      <th>pos</th>
+      <th>years</th>
+      <th>avg_annual</th>
+      <th>team</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>14440</th>
+      <td>$ 100,000</td>
+      <td>Steve Monson</td>
+      <td>$ 100,000</td>
+      <td>P</td>
+      <td>1 (1990)</td>
+      <td>$ 100,000</td>
+      <td>MIL</td>
+    </tr>
+    <tr>
+      <th>14441</th>
+      <td>$ 28,000,000</td>
+      <td>Alex Rodriguez</td>
+      <td>$ 275,000,000</td>
+      <td>DH</td>
+      <td>10 (2008-17)</td>
+      <td>$ 27,500,000</td>
+      <td>NYY</td>
+    </tr>
+    <tr>
+      <th>14442</th>
+      <td>$ 200,000</td>
+      <td>Mike Colangelo</td>
+      <td>$ 200,000</td>
+      <td>OF</td>
+      <td>1 (1999)</td>
+      <td>$ 200,000</td>
+      <td>LAA</td>
+    </tr>
+    <tr>
+      <th>14443</th>
+      <td>$ 200,000</td>
+      <td>Mike Jerzembeck</td>
+      <td>$ 200,000</td>
+      <td>P</td>
+      <td>1 (1999)</td>
+      <td>$ 200,000</td>
+      <td>NYY</td>
+    </tr>
+    <tr>
+      <th>14444</th>
+      <td>$ 21,680,727</td>
+      <td>Alex Rodriguez</td>
+      <td>$ 21,680,727</td>
+      <td>3B</td>
+      <td>1 (2006)</td>
+      <td>$ 21,680,727</td>
+      <td>NYY</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Aha, some entries in the “years” column represent multiple years.  We might naturally want to split that column up into three columns: number of years, first year, and last year.  Each is a little project all on its own, but we just want to look at one example, so let’s consider just the task of extracting the first year from the text.  If we wrote a loop, it might go something like this.</p>
+</div>
+<div class="section" id="using-a-loop">
+<h3>Using a loop<a class="headerlink" href="#using-a-loop" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">first_years</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
+<span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;years&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39; &#39;</span><span class="p">:</span> <span class="c1"># one-digit number of years</span>
+        <span class="n">first_years</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="nb">int</span><span class="p">(</span> <span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># two-digit number of years</span>
+        <span class="n">first_years</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="nb">int</span><span class="p">(</span> <span class="n">text</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;first_year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">first_years</span>
+        
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">14441</span><span class="p">],:]</span> <span class="c1"># quick spot check of our work</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>salary</th>
+      <th>name</th>
+      <th>total_value</th>
+      <th>pos</th>
+      <th>years</th>
+      <th>avg_annual</th>
+      <th>team</th>
+      <th>first_year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>$ 3,800,000</td>
+      <td>Darryl Strawberry</td>
+      <td>$ 3,800,000</td>
+      <td>OF</td>
+      <td>1 (1991)</td>
+      <td>$ 3,800,000</td>
+      <td>LAD</td>
+      <td>1991</td>
+    </tr>
+    <tr>
+      <th>14441</th>
+      <td>$ 28,000,000</td>
+      <td>Alex Rodriguez</td>
+      <td>$ 275,000,000</td>
+      <td>DH</td>
+      <td>10 (2008-17)</td>
+      <td>$ 27,500,000</td>
+      <td>NYY</td>
+      <td>2008</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>A loop over a list of values is what pandas’ <code class="docutils literal notranslate"><span class="pre">apply()</span></code> function was made for.  You write <code class="docutils literal notranslate"><span class="pre">df['column'].apply(f)</span></code> to apply the function <code class="docutils literal notranslate"><span class="pre">f</span></code> to every entry in the chosen column.  For example, we could simplify our work above as follows.  The differences are noted in the comments.</p>
+</div>
+<div class="section" id="using-apply">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">apply()</span></code><a class="headerlink" href="#using-apply" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                                 <span class="c1"># No need to start with an empty list.</span>
+<span class="k">def</span> <span class="nf">get_first_year</span> <span class="p">(</span> <span class="n">text</span> <span class="p">):</span>     <span class="c1"># Function name helps explain the code.</span>
+    <span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span> <span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span> <span class="p">)</span>  <span class="c1"># Clearer and shorter than append().</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span> <span class="n">text</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="p">)</span>  <span class="c1"># Clearer and shorter than append().</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;first_year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;years&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="n">get_first_year</span> <span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">14441</span><span class="p">],:]</span> <span class="c1"># same check as before</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>salary</th>
+      <th>name</th>
+      <th>total_value</th>
+      <th>pos</th>
+      <th>years</th>
+      <th>avg_annual</th>
+      <th>team</th>
+      <th>first_year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>$ 3,800,000</td>
+      <td>Darryl Strawberry</td>
+      <td>$ 3,800,000</td>
+      <td>OF</td>
+      <td>1 (1991)</td>
+      <td>$ 3,800,000</td>
+      <td>LAD</td>
+      <td>1991</td>
+    </tr>
+    <tr>
+      <th>14441</th>
+      <td>$ 28,000,000</td>
+      <td>Alex Rodriguez</td>
+      <td>$ 275,000,000</td>
+      <td>DH</td>
+      <td>10 (2008-17)</td>
+      <td>$ 27,500,000</td>
+      <td>NYY</td>
+      <td>2008</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>If we’re honest, the code didn’t get <em>that</em> much simpler.  But <code class="docutils literal notranslate"><span class="pre">apply()</span></code> is especially nice if the function we want to write is a function that already exists.  Here’s a silly example, but it illustrates the point.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;name_length&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="nb">len</span> <span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>salary</th>
+      <th>name</th>
+      <th>total_value</th>
+      <th>pos</th>
+      <th>years</th>
+      <th>avg_annual</th>
+      <th>team</th>
+      <th>first_year</th>
+      <th>name_length</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>$ 3,800,000</td>
+      <td>Darryl Strawberry</td>
+      <td>$ 3,800,000</td>
+      <td>OF</td>
+      <td>1 (1991)</td>
+      <td>$ 3,800,000</td>
+      <td>LAD</td>
+      <td>1991</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>$ 3,750,000</td>
+      <td>Kevin Mitchell</td>
+      <td>$ 3,750,000</td>
+      <td>OF</td>
+      <td>1 (1991)</td>
+      <td>$ 3,750,000</td>
+      <td>SF</td>
+      <td>1991</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>$ 3,750,000</td>
+      <td>Will Clark</td>
+      <td>$ 3,750,000</td>
+      <td>1B</td>
+      <td>1 (1991)</td>
+      <td>$ 3,750,000</td>
+      <td>SF</td>
+      <td>1991</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>$ 3,625,000</td>
+      <td>Mark Davis</td>
+      <td>$ 3,625,000</td>
+      <td>P</td>
+      <td>1 (1991)</td>
+      <td>$ 3,625,000</td>
+      <td>KC</td>
+      <td>1991</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>$ 3,600,000</td>
+      <td>Eric Davis</td>
+      <td>$ 3,600,000</td>
+      <td>OF</td>
+      <td>1 (1991)</td>
+      <td>$ 3,600,000</td>
+      <td>CIN</td>
+      <td>1991</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">apply()</span></code> will run a little faster than writing your own loop, but unless the DataFrame is really huge, you probably won’t notice the difference, so speed is not a significant concern here.  But switching to the <code class="docutils literal notranslate"><span class="pre">apply()</span></code> form sets us up nicely for a later speed improvement <a class="reference external" href="#parallel-apply">we’ll discuss further below</a>.</p>
+<p>Although it’s less often useful, you can use <code class="docutils literal notranslate"><span class="pre">df.apply(f)</span></code> to run <code class="docutils literal notranslate"><span class="pre">f</span></code> on each column of the DataFrame, or <code class="docutils literal notranslate"><span class="pre">df.apply(f,axis=1)</span></code> to run <code class="docutils literal notranslate"><span class="pre">f</span></code> on each row of the DataFrame.</p>
+<p>There is, unfortunately, a related function <code class="docutils literal notranslate"><span class="pre">map()</span></code>.  It behaves very similarly to <code class="docutils literal notranslate"><span class="pre">apply()</span></code>, with a few subtle differences.  This is unfortunate because in computer programming more broadly, the concepts of “map” and “apply” are often used synonymously/interchangeably.  So to have them behave almost the same (but slightly differently!) in pandas is unfortunate.  Oh well.  Here are the differences:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">apply()</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">map()</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>You can use it on DataFrames, as in <code class="docutils literal notranslate"><span class="pre">df.apply(f)</span></code></p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>You can provide extra <code class="docutils literal notranslate"><span class="pre">args</span></code> or <code class="docutils literal notranslate"><span class="pre">kwargs</span></code></p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>You can use a dictionary instead of <code class="docutils literal notranslate"><span class="pre">f</span></code></p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>You can ask it to skip NaNs</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+<div class="alert alert-primary admonition">
+<p class="admonition-title">Big Picture</p>
+<p>In most programming contexts, including data work, if someone speaks of “mapping” or “applying” a function, they mean the same thing:  Automatically running the function on each element of a list or series.  The function for this is often called <code class="docutils literal notranslate"><span class="pre">map()</span></code> or <code class="docutils literal notranslate"><span class="pre">apply()</span></code>, as in pandas, but not always.  In mathematics, it’s called using a function “elementwise,” meaning on each element of a structure separately.  In the popular language Julia, it’s called “broadcasting” a function over an array or table.</p>
+</div>
+<p>The function that you give to <code class="docutils literal notranslate"><span class="pre">apply()</span></code> can’t be just any function.  Its input type needs to match the data type of the individual elements in the Series or DataFrame you’re applying it to.  Its output type will determine what kind of output you get.  For example, the <code class="docutils literal notranslate"><span class="pre">get_first_year()</span></code> function defined above takes strings as input and gives integers as output.  So using <code class="docutils literal notranslate"><span class="pre">apply(get_first_year)</span></code> will need to be done on a Series containing strings, and will produce a Series containing integers.</p>
+<p>If you have a function that takes multiple inputs, you might want to bind some of the arguments so that it becomes a unary function and can be used in <code class="docutils literal notranslate"><span class="pre">apply()</span></code>.  Or you can use the <code class="docutils literal notranslate"><span class="pre">args</span></code> or <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> feature of <code class="docutils literal notranslate"><span class="pre">apply()</span></code>, but we won’t cover that in these course notes.  You can see a small example in <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.apply.html">the pandas documentation</a>.  We will, however, take a look at the possibility of using a dictionary with <code class="docutils literal notranslate"><span class="pre">map()</span></code>, because it is extremely useful.  We will consider a simple example application, but do a more sophisticated one in class.</p>
+</div>
+<div class="section" id="using-map">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">map()</span></code><a class="headerlink" href="#using-map" title="Permalink to this headline">¶</a></h3>
+<p>Let’s assume that the analysis we wanted to do cared only about whether the baseball player had an infield position (IF), outfield position (OF), was a pitcher (P), or a designated hitter (DH), and we didn’t care about any other details of the position (such as first base vs. second base, or starting pitcher vs. relief pitcher).  We’d therefore like to simplify the “pos” column and convert all infield positions to IF, and so on.  First, let’s see what all the positions are.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;pos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([&#39;OF&#39;, &#39;1B&#39;, &#39;P&#39;, &#39;DH&#39;, &#39;3B&#39;, &#39;2B&#39;, &#39;C&#39;, &#39;SS&#39;, &#39;RF&#39;, &#39;SP&#39;, &#39;LF&#39;,
+       &#39;CF&#39;, &#39;RP&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We could convert them with a big <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, like you see here, but this is tedious and repetitive code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simpler_position</span> <span class="p">(</span> <span class="n">pos</span> <span class="p">):</span>   <span class="c1"># BAD STYLE.  See better version below.</span>
+    <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="s1">&#39;P&#39;</span><span class="p">:</span>  <span class="k">return</span> <span class="s1">&#39;P&#39;</span>
+    <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="s1">&#39;SP&#39;</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;P&#39;</span>
+    <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="s1">&#39;RP&#39;</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;P&#39;</span>
+    <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span>  <span class="k">return</span> <span class="s1">&#39;IF&#39;</span>
+    <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="s1">&#39;1B&#39;</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;IF&#39;</span>
+    <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="s1">&#39;2B&#39;</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;IF&#39;</span>
+    <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="s1">&#39;3B&#39;</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;IF&#39;</span>
+    <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="s1">&#39;SS&#39;</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;IF&#39;</span>
+    <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="s1">&#39;OF&#39;</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;OF&#39;</span>
+    <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="s1">&#39;LF&#39;</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;OF&#39;</span>
+    <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="s1">&#39;CF&#39;</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;OF&#39;</span>
+    <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="s1">&#39;RF&#39;</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;OF&#39;</span>
+    <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="s1">&#39;DH&#39;</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;DH&#39;</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;simple_pos&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;pos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="n">simpler_position</span> <span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>salary</th>
+      <th>name</th>
+      <th>total_value</th>
+      <th>pos</th>
+      <th>years</th>
+      <th>avg_annual</th>
+      <th>team</th>
+      <th>first_year</th>
+      <th>name_length</th>
+      <th>simple_pos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>$ 3,800,000</td>
+      <td>Darryl Strawberry</td>
+      <td>$ 3,800,000</td>
+      <td>OF</td>
+      <td>1 (1991)</td>
+      <td>$ 3,800,000</td>
+      <td>LAD</td>
+      <td>1991</td>
+      <td>17</td>
+      <td>OF</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>$ 3,750,000</td>
+      <td>Kevin Mitchell</td>
+      <td>$ 3,750,000</td>
+      <td>OF</td>
+      <td>1 (1991)</td>
+      <td>$ 3,750,000</td>
+      <td>SF</td>
+      <td>1991</td>
+      <td>14</td>
+      <td>OF</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>$ 3,750,000</td>
+      <td>Will Clark</td>
+      <td>$ 3,750,000</td>
+      <td>1B</td>
+      <td>1 (1991)</td>
+      <td>$ 3,750,000</td>
+      <td>SF</td>
+      <td>1991</td>
+      <td>10</td>
+      <td>IF</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>$ 3,625,000</td>
+      <td>Mark Davis</td>
+      <td>$ 3,625,000</td>
+      <td>P</td>
+      <td>1 (1991)</td>
+      <td>$ 3,625,000</td>
+      <td>KC</td>
+      <td>1991</td>
+      <td>10</td>
+      <td>P</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>$ 3,600,000</td>
+      <td>Eric Davis</td>
+      <td>$ 3,600,000</td>
+      <td>OF</td>
+      <td>1 (1991)</td>
+      <td>$ 3,600,000</td>
+      <td>CIN</td>
+      <td>1991</td>
+      <td>10</td>
+      <td>OF</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>All the repetitive code is just establishing a simple relationship among some very short strings.  We could store that same relationship in a dictionary with many fewer lines of code.  Note that we must use <code class="docutils literal notranslate"><span class="pre">map()</span></code>, because <code class="docutils literal notranslate"><span class="pre">apply()</span></code> doesn’t accept dictionaries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;simple_pos&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;pos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span> <span class="p">{</span>
+    <span class="s1">&#39;P&#39;</span><span class="p">:</span>  <span class="s1">&#39;P&#39;</span><span class="p">,</span>    <span class="s1">&#39;SP&#39;</span><span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span>    <span class="s1">&#39;RP&#39;</span><span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span>    <span class="s1">&#39;C&#39;</span><span class="p">:</span>  <span class="s1">&#39;IF&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;1B&#39;</span><span class="p">:</span> <span class="s1">&#39;IF&#39;</span><span class="p">,</span>   <span class="s1">&#39;2B&#39;</span><span class="p">:</span> <span class="s1">&#39;IF&#39;</span><span class="p">,</span>   <span class="s1">&#39;3B&#39;</span><span class="p">:</span> <span class="s1">&#39;IF&#39;</span><span class="p">,</span>   <span class="s1">&#39;SS&#39;</span><span class="p">:</span> <span class="s1">&#39;IF&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;OF&#39;</span><span class="p">:</span> <span class="s1">&#39;OF&#39;</span><span class="p">,</span>   <span class="s1">&#39;LF&#39;</span><span class="p">:</span> <span class="s1">&#39;OF&#39;</span><span class="p">,</span>   <span class="s1">&#39;CF&#39;</span><span class="p">:</span> <span class="s1">&#39;OF&#39;</span><span class="p">,</span>   <span class="s1">&#39;RF&#39;</span><span class="p">:</span> <span class="s1">&#39;OF&#39;</span><span class="p">,</span>   <span class="s1">&#39;DH&#39;</span><span class="p">:</span> <span class="s1">&#39;DH&#39;</span>
+<span class="p">}</span> <span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>salary</th>
+      <th>name</th>
+      <th>total_value</th>
+      <th>pos</th>
+      <th>years</th>
+      <th>avg_annual</th>
+      <th>team</th>
+      <th>first_year</th>
+      <th>name_length</th>
+      <th>simple_pos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>$ 3,800,000</td>
+      <td>Darryl Strawberry</td>
+      <td>$ 3,800,000</td>
+      <td>OF</td>
+      <td>1 (1991)</td>
+      <td>$ 3,800,000</td>
+      <td>LAD</td>
+      <td>1991</td>
+      <td>17</td>
+      <td>OF</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>$ 3,750,000</td>
+      <td>Kevin Mitchell</td>
+      <td>$ 3,750,000</td>
+      <td>OF</td>
+      <td>1 (1991)</td>
+      <td>$ 3,750,000</td>
+      <td>SF</td>
+      <td>1991</td>
+      <td>14</td>
+      <td>OF</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>$ 3,750,000</td>
+      <td>Will Clark</td>
+      <td>$ 3,750,000</td>
+      <td>1B</td>
+      <td>1 (1991)</td>
+      <td>$ 3,750,000</td>
+      <td>SF</td>
+      <td>1991</td>
+      <td>10</td>
+      <td>IF</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>$ 3,625,000</td>
+      <td>Mark Davis</td>
+      <td>$ 3,625,000</td>
+      <td>P</td>
+      <td>1 (1991)</td>
+      <td>$ 3,625,000</td>
+      <td>KC</td>
+      <td>1991</td>
+      <td>10</td>
+      <td>P</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>$ 3,600,000</td>
+      <td>Eric Davis</td>
+      <td>$ 3,600,000</td>
+      <td>OF</td>
+      <td>1 (1991)</td>
+      <td>$ 3,600,000</td>
+      <td>CIN</td>
+      <td>1991</td>
+      <td>10</td>
+      <td>OF</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>In class, we will do a more complex example of applying a dictionary using <code class="docutils literal notranslate"><span class="pre">map()</span></code>.  Before class, you may want to glance back at Exercise 3 from <a class="reference internal" href="chapter-2-mathematical-foundations.html"><span class="doc">the Chapter 2 notes</span></a>, which shows you how to take two columns of a DataFrame representing a mathematical function and convert them into a dictionary for use in situations just like this one.  And be sure to complete the homework about the NPR dataset before class as well, because we will use that in our example!</p>
+</div>
+<div class="section" id="parallel-apply">
+<h3>Parallel <code class="docutils literal notranslate"><span class="pre">apply()</span></code><a class="headerlink" href="#parallel-apply" title="Permalink to this headline">¶</a></h3>
+<p>I mentioned earlier that converting a loop into an <code class="docutils literal notranslate"><span class="pre">apply()</span></code> or <code class="docutils literal notranslate"><span class="pre">map()</span></code> call doesn’t gain us much speed.  But it does make it easy for us to add a nice speed improvement.  There’s a Python package called <a class="reference external" href="https://github.com/jmcarpenter2/swifter">swifter</a> that you can install using the instructions on that page.  Once it’s installed, you can convert any code like <code class="docutils literal notranslate"><span class="pre">df['column'].apply(f)</span></code> easily into a faster version by replacing it with <code class="docutils literal notranslate"><span class="pre">df['column'].swifter.apply(f)</span></code>.  That’s all!</p>
+<p>Under the hood, swifter is trying a variety of speedup mechanisms (many of which we discuss in this chapter) and deciding which of them works best for your situation.  The most common one for large dataset is probably parallel processing.  This means that if your computer has more than one processor core (which most modern laptops do), then it can process more than one entry of the data at once, each on a separate core.</p>
+<p>Without swifter, you could accomplish the same thing with code like the following.  (In fact, if you have trouble installing swifter, you can use this code instead.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use Python&#39;s built-in multiprocessing module to find your number of cores.</span>
+<span class="kn">import</span> <span class="nn">multiprocessing</span> <span class="k">as</span> <span class="nn">mp</span>
+<span class="n">n_cores</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span>
+
+<span class="c1"># Create a &quot;pool&quot; of functions that can work at the same time and run them.</span>
+<span class="n">pool</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span> <span class="n">n_cores</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;simple_pos&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span> <span class="n">simpler_position</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;pos&#39;</span><span class="p">],</span> <span class="n">n_cores</span> <span class="p">)</span>
+
+<span class="c1"># Clean up afterwards.</span>
+<span class="n">pool</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">pool</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+
+<span class="c1"># See result.</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>salary</th>
+      <th>name</th>
+      <th>total_value</th>
+      <th>pos</th>
+      <th>years</th>
+      <th>avg_annual</th>
+      <th>team</th>
+      <th>first_year</th>
+      <th>name_length</th>
+      <th>simple_pos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>$ 3,800,000</td>
+      <td>Darryl Strawberry</td>
+      <td>$ 3,800,000</td>
+      <td>OF</td>
+      <td>1 (1991)</td>
+      <td>$ 3,800,000</td>
+      <td>LAD</td>
+      <td>1991</td>
+      <td>17</td>
+      <td>OF</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>$ 3,750,000</td>
+      <td>Kevin Mitchell</td>
+      <td>$ 3,750,000</td>
+      <td>OF</td>
+      <td>1 (1991)</td>
+      <td>$ 3,750,000</td>
+      <td>SF</td>
+      <td>1991</td>
+      <td>14</td>
+      <td>OF</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>$ 3,750,000</td>
+      <td>Will Clark</td>
+      <td>$ 3,750,000</td>
+      <td>1B</td>
+      <td>1 (1991)</td>
+      <td>$ 3,750,000</td>
+      <td>SF</td>
+      <td>1991</td>
+      <td>10</td>
+      <td>IF</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>$ 3,625,000</td>
+      <td>Mark Davis</td>
+      <td>$ 3,625,000</td>
+      <td>P</td>
+      <td>1 (1991)</td>
+      <td>$ 3,625,000</td>
+      <td>KC</td>
+      <td>1991</td>
+      <td>10</td>
+      <td>P</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>$ 3,600,000</td>
+      <td>Eric Davis</td>
+      <td>$ 3,600,000</td>
+      <td>OF</td>
+      <td>1 (1991)</td>
+      <td>$ 3,600,000</td>
+      <td>CIN</td>
+      <td>1991</td>
+      <td>10</td>
+      <td>OF</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="map-reduce">
+<h2>Map-Reduce<a class="headerlink" href="#map-reduce" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-primary admonition">
+<p class="admonition-title">Big Picture</p>
+<p>Both <em>map-reduce</em> and <em>split-apply-combine</em> are data manipulation buzzwords that you’ll want to be familiar with, for</p>
+<ul class="simple">
+<li><p>thinking about your own data manipulation work,</p></li>
+<li><p>discussing that work with coworkers, and</p></li>
+<li><p>knowing what people are saying in, e.g., interviews.</p></li>
+</ul>
+<p>This section covers map-reduce and the next section covers split-apply-combine.</p>
+</div>
+<p>A map-reduce process is one that takes any list, <em>maps</em> a specific function across all entries of the list, then <em>reduces</em> those outputs down to a single, smaller result.  Consider the following picture, which shows a very simple map-reduce operation that takes a DataFrame about historic revenue numbers and computes the lowest revenue across all quarters.</p>
+<p><img alt="Illustration of Python code for mapping a DataFrame to revenue, then computing the minimum" src="_images/map-reduce.png" /></p>
+<p>Let’s actually do the above computation on some small sample (fictional) data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># setup - example tiny dataset</span>
+<span class="n">rev_quarters</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span>
+    <span class="s1">&#39;Year&#39;</span>    <span class="p">:</span> <span class="p">[</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2012</span> <span class="p">],</span>
+    <span class="s1">&#39;Quarter&#39;</span> <span class="p">:</span> <span class="p">[</span>    <span class="mi">1</span><span class="p">,</span>    <span class="mi">2</span><span class="p">,</span>    <span class="mi">3</span><span class="p">,</span>    <span class="mi">4</span><span class="p">,</span>    <span class="mi">1</span><span class="p">,</span>    <span class="mi">2</span><span class="p">,</span>    <span class="mi">3</span><span class="p">,</span>    <span class="mi">4</span><span class="p">,</span>    <span class="mi">1</span><span class="p">,</span>    <span class="mi">2</span> <span class="p">],</span>
+    <span class="s1">&#39;Revenue&#39;</span> <span class="p">:</span> <span class="p">[</span>  <span class="mi">177</span><span class="p">,</span>  <span class="mi">186</span><span class="p">,</span>  <span class="mi">167</span><span class="p">,</span>  <span class="mi">263</span><span class="p">,</span>  <span class="mi">180</span><span class="p">,</span>  <span class="mi">193</span><span class="p">,</span>  <span class="mi">189</span><span class="p">,</span>  <span class="mi">281</span><span class="p">,</span>  <span class="mi">201</span><span class="p">,</span>  <span class="mi">210</span> <span class="p">]</span>
+<span class="p">}</span> <span class="p">)</span>
+<span class="n">rev_quarters</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Quarter</th>
+      <th>Revenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2010</td>
+      <td>1</td>
+      <td>177</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2010</td>
+      <td>2</td>
+      <td>186</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2010</td>
+      <td>3</td>
+      <td>167</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2010</td>
+      <td>4</td>
+      <td>263</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2011</td>
+      <td>1</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2011</td>
+      <td>2</td>
+      <td>193</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2011</td>
+      <td>3</td>
+      <td>189</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2011</td>
+      <td>4</td>
+      <td>281</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2012</td>
+      <td>1</td>
+      <td>201</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2012</td>
+      <td>2</td>
+      <td>210</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># map-reduce work, one line:</span>
+<span class="n">rev_quarters</span><span class="p">[</span><span class="s1">&#39;Revenue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>167
+</pre></div>
+</div>
+</div>
+</div>
+<p>As mentioned earlier, “map” is a synonym for “apply,” so the first step of the process applies the same operation to all rows of the DataFrame; in this case, that operation extracts the revenue from the row.  The “reduce” operation in this case is a simple <code class="docutils literal notranslate"><span class="pre">min()</span></code> operation, but it can be something more complex.</p>
+<p>So a map-reduce operation involves two functions, the first performing a <code class="docutils literal notranslate"><span class="pre">map()</span></code> operation (as discussed earlier), and the second doing something new.  The function used for the reducing step must be something that takes an entire list or series as input and produces a single value as output.  The <code class="docutils literal notranslate"><span class="pre">min()</span></code> operation was used in the example above, but other operations are common, such as <code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">sum()</span></code>, <code class="docutils literal notranslate"><span class="pre">len()</span></code>, <code class="docutils literal notranslate"><span class="pre">mean()</span></code>, <code class="docutils literal notranslate"><span class="pre">median()</span></code>, and more.</p>
+<div class="section" id="argmin-and-argmax">
+<h3>Argmin and argmax<a class="headerlink" href="#argmin-and-argmax" title="Permalink to this headline">¶</a></h3>
+<p>A very common function that shows up in statistics is called <code class="docutils literal notranslate"><span class="pre">argmin</span></code> (and its companion <code class="docutils literal notranslate"><span class="pre">argmax</span></code>).  These are also implemented in pandas and are very useful in map-reduce situations.  In the example above, let’s say we didn’t want to know the minimum revenue, but we wanted to know in which quarter the minimum revenue happened.  We can replace <code class="docutils literal notranslate"><span class="pre">min</span></code> in the above code with <code class="docutils literal notranslate"><span class="pre">argmin</span></code> to ask that question.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rev_quarters</span><span class="p">[</span><span class="s1">&#39;Revenue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">argmin</span></code> function is short for “the argument that yields the minimum,” or in other words, what value would I need to supply as <em>input</em> to the map function to get the minimum output?  In this case, the map function takes each row and extracts its revenue, so we’re asking pandas, “When you found the minimum revenue, which row was the input?”  The answer was row 2, and we can see that it’s the correct row as follows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rev_quarters</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Year       2010
+Quarter       3
+Revenue     167
+Name: 2, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>While the pandas documentation for <code class="docutils literal notranslate"><span class="pre">argmin</span></code> and <code class="docutils literal notranslate"><span class="pre">argmax</span></code> suggest that they return multiple values in the case of ties, this doesn’t seem to be true.  They seem to return the first index only.  You can therefore always rely on the result of <code class="docutils literal notranslate"><span class="pre">argmin</span></code>/<code class="docutils literal notranslate"><span class="pre">argmax</span></code> being a single value, never a list or series.  If you want the indices of all max/min entries, you will need to compute it another way.</p>
+</div>
+<div class="section" id="map-reduce-example-sample-standard-deviation">
+<h3>Map-reduce example: sample standard deviation<a class="headerlink" href="#map-reduce-example-sample-standard-deviation" title="Permalink to this headline">¶</a></h3>
+<p>The formula for the standard deviation of a sample of data should be familiar you to from GB213.</p>
+<div class="math notranslate nohighlight">
+\[ s=\sqrt{\frac{\sum_{i=1}^n (x_i-\bar x)^2}{n-1}} \]</div>
+<p>Let’s assume we’ve already computed the mean value <span class="math notranslate nohighlight">\(\bar x\)</span>.  Then computing the standard deviation is actually a map-reduce operation.  The map function takes each <span class="math notranslate nohighlight">\(x_i\)</span> as input and computes <span class="math notranslate nohighlight">\((x_i-\bar x)^2\)</span> as output.  The reduce operation then does a sum, divides by <span class="math notranslate nohighlight">\(n-1\)</span>, and takes a square root.  We could code it like so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">example_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;first_year&#39;</span><span class="p">]</span>
+<span class="n">x_bar</span> <span class="o">=</span> <span class="n">example_data</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">map_func</span> <span class="p">(</span> <span class="n">x</span> <span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span> <span class="n">x</span> <span class="o">-</span> <span class="n">x_bar</span> <span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="k">def</span> <span class="nf">reduce_func</span> <span class="p">(</span> <span class="n">data</span> <span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">data</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="n">reduce_func</span><span class="p">(</span> <span class="n">example_data</span><span class="o">.</span><span class="n">map</span><span class="p">(</span> <span class="n">map_func</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>7.926156939014573
+</pre></div>
+</div>
+</div>
+</div>
+<p>Of course, we didn’t have to code that.  There’s already an existing standard deviation function built into pandas, and it gives almost exactly the same answer.  (I suspect theirs does something more careful with tiny issues of accuracy than my simple example does.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example_data</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>7.926156939014146
+</pre></div>
+</div>
+</div>
+</div>
+<p>But it is still important to notice that the pattern in computing a sample standard deviation is a map-reduce pattern, because we cannot always rely on pandas to do computations for us.  For instance, if the data we were dealing with were many gigabytes spread over a database, we couldn’t load it all into a pandas DataFrame in memory and then call <code class="docutils literal notranslate"><span class="pre">data.std()</span></code> to get our answer.</p>
+<p>There are specialized tools in the industry for applying the map-reduce paradigm to databases (even if the database is enormous and spread over many different servers).  One famous example is <a class="reference external" href="https://spark.apache.org/">Apache Spark</a>, but there are many.</p>
+<p>Many more examples of map-reduce from math and statistics could have been shown instead of the one above.  Any time a list of values collapses to give a single result, map-reduce is behind it.  This happens for summations, approximations of integrals (e.g., trapezoidal rule), expected values, matrix multiplication, computing probabilities from trees of possible outcomes, any weighted averages (chemical concentrations, portfolio values, etc.), and many more.</p>
+</div>
+</div>
+<div class="section" id="split-apply-combine">
+<h2>Split-Apply-Combine<a class="headerlink" href="#split-apply-combine" title="Permalink to this headline">¶</a></h2>
+<p>Data scientist and R developer Hadley Wickham seems to coin lots of important phrases.  Recall from <a class="reference internal" href="chapter-5-before-and-after.html"><span class="doc">the Chapter 5 notes</span></a> that he introduced the phrase “tidy data.”  He also introduced the phrase “split, apply, combine,” in <a class="reference external" href="http://www.stat.wvu.edu/~jharner/courses/stat623/docs/plyrJSS.pdf">this paper</a>.</p>
+<p>It is another extremely common operation done on DataFrames, and it is closely related to map-reduce, as we will see below.</p>
+<p>Let’s say you were concerned about pay equity, and wanted to compute the median salary across your organization, by gender, to get a sense of whether there were any important discrepancies.  The computation would look something like the following.  (We assume that the gender column contains either M for male, F for female, or a missing value for those who do not wish to classify.)</p>
+<p><img alt="Illustration of Python code for grouping a DataFrame by gender, then mapping to salary, then computing the median within groups" src="_images/split-apply-combine.png" /></p>
+<p>As you can see from the picture, the first phase (called “split”) breaks the data into groups by the categorical variable we care about–in this case, gender.  After that, each smaller DataFrame undergoes a map-reduce process, and the results of each small map-reduce get aggregated into a result, indexed by the original categorical variable.</p>
+<p>Note that the output type of the split operation (which, in pandas, is a <code class="docutils literal notranslate"><span class="pre">df.groupby()</span></code> call) is <em>NOT</em> a DataFrame, but rather a collection of DataFrames.  It is essential to follow a <code class="docutils literal notranslate"><span class="pre">df.groupby()</span></code> call with the apply and combine steps of the process, so that the result is a familiar and usable type of object again–a pandas DataFrame.</p>
+<p>The easiest type of split-apply-combine is shown in the picture above and can be done with a single line of code.  We’ll compute minimum revenue by year with the DataFrame from our map-reduce example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rev_quarters</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)[</span><span class="s1">&#39;Revenue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Year
+2010    167
+2011    180
+2012    201
+Name: Revenue, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Split-apply-combine is actually a specific type of pivot table.  Thus split-apply-combine operations can be done on data in Excel as well, using its pivot table features.  We can even use <code class="docutils literal notranslate"><span class="pre">df.pivot_table()</span></code> to mimic the above procedure, as follows.  (Because we don’t need data separated into separate columns, we don’t provide a columns variable.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rev_quarters</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[],</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;Revenue&#39;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;min&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Revenue</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2010</th>
+      <td>167</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>201</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="more-on-math-in-python">
+<h2>More on math in Python<a class="headerlink" href="#more-on-math-in-python" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="arithmetic-in-formulas">
+<h3>Arithmetic in formulas<a class="headerlink" href="#arithmetic-in-formulas" title="Permalink to this headline">¶</a></h3>
+<p>Recall that pandas is built on NumPy, and in <a class="reference internal" href="chapter-9-math-and-stats.html"><span class="doc">Chapter 9 of the notes</span></a> we talked about NumPy’s support for vectorization.  If we have a Series <code class="docutils literal notranslate"><span class="pre">height</span></code> containing heights in inches and we need instead to have it in centimeters, we don’t need to do <code class="docutils literal notranslate"><span class="pre">height.apply()</span></code> and give it a conversion function, because we can just do <code class="docutils literal notranslate"><span class="pre">height</span> <span class="pre">*</span> <span class="pre">2.54</span></code>.  NumPy automatically <em>vectorizes</em> this operation, spreading the “times 2.54” over each entry in the <code class="docutils literal notranslate"><span class="pre">height</span></code> array.</p>
+<p>This is quite natural, because we have mathematical notation that does the same thing (in math, not Python).  If you’ve taken a class involving vectors, you know that vector addition <span class="math notranslate nohighlight">\(\vec x+\vec y\)</span> means to do exactly what NumPy does–add the corresponding entries in each vector.  Similarly, scalar multiplication <span class="math notranslate nohighlight">\(s\vec x\)</span> means to multiply <span class="math notranslate nohighlight">\(s\)</span> by each entry in the vector <span class="math notranslate nohighlight">\(\vec x\)</span>, just like <code class="docutils literal notranslate"><span class="pre">height</span> <span class="pre">*</span> <span class="pre">2.54</span></code> does in Python.  So NumPy is not inventing something strange here; it’s normal mathematical stuff.</p>
+<p>All the basic mathematical operations are built into NumPy.  For example, if we have created a linear model <span class="math notranslate nohighlight">\(\hat y=\beta_0+\beta_1 x\)</span> with parameters stored in Python variables <code class="docutils literal notranslate"><span class="pre">β0</span></code> and <code class="docutils literal notranslate"><span class="pre">β1</span></code>, we can apply it to an entire series of inputs <code class="docutils literal notranslate"><span class="pre">xs</span></code> at once with the following code, because NumPy knows how to spread both <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">*</span></code> across arrays.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y_hat</span> <span class="o">=</span> <span class="n">β0</span> <span class="o">+</span> <span class="n">β1</span> <span class="o">*</span> <span class="n">xs</span>
+</pre></div>
+</div>
+<p>In fact, if we had actual <code class="docutils literal notranslate"><span class="pre">ys</span></code> that went with the <code class="docutils literal notranslate"><span class="pre">xs</span></code>, we could then compute a list of residuals all at once with <code class="docutils literal notranslate"><span class="pre">y_hat</span> <span class="pre">-</span> <span class="pre">ys</span></code>, or even compute the RMSE (root mean squared error) with code like this.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="p">(</span> <span class="n">y_hat</span> <span class="o">-</span> <span class="n">ys</span> <span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span> <span class="n">ys</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>The subtraction with <code class="docutils literal notranslate"><span class="pre">-</span></code> and the squaring with <code class="docutils literal notranslate"><span class="pre">**</span> <span class="pre">2</span></code> would all be spread across arrays of inputs correctly, because NumPy comes with code to support doing so.</p>
+</div>
+<div class="section" id="conditionals-with-np-where">
+<h3>Conditionals with <code class="docutils literal notranslate"><span class="pre">np.where()</span></code><a class="headerlink" href="#conditionals-with-np-where" title="Permalink to this headline">¶</a></h3>
+<p>This removes a lot of the need for both loops and <code class="docutils literal notranslate"><span class="pre">apply()</span></code>/<code class="docutils literal notranslate"><span class="pre">map()</span></code> calls, but not all.  One of the first things that makes us think we might need a loop is when a conditional computation needs to be done.  For instance, let’s say we were given a dataset like the following (made up) example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">patients</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span>
+    <span class="s1">&#39;id&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">100615</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">100616</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">100607</span><span class="p">,</span> <span class="mi">100618</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">65</span> <span class="p">],</span>
+    <span class="s1">&#39;height&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">158</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">173</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">163</span><span class="p">,</span> <span class="mi">178</span> <span class="p">],</span>
+    <span class="s1">&#39;dose&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">0</span> <span class="p">]</span>
+<span class="p">}</span> <span class="p">)</span>
+<span class="n">patients</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>height</th>
+      <th>dose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>100615</td>
+      <td>72</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>51</td>
+      <td>158</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>100616</td>
+      <td>75</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>83</td>
+      <td>173</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>100607</td>
+      <td>68</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>100618</td>
+      <td>67</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>19</td>
+      <td>163</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>65</td>
+      <td>178</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s imagine that we then found out that it was the result of merging data from two different studies, one done in the U.S. and one done in France.  The data with IDs that begin with 100 are from the U.S. study, where heights were measured in inches.  The data with two-digit IDs are from the French study, where heights were measured in cm.  We need to standardize the units.</p>
+<p>We can’t simply convert to cm with <code class="docutils literal notranslate"><span class="pre">patients['height']</span> <span class="pre">*</span> <span class="pre">2.54</span></code> because that would apply the conversion to all data rather than just the measurements in inches.  We need some conditional logic, perhaps using an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, to be selective.  Our first inclination might be a loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># before changing the contents, make a backup, for use later.</span>
+<span class="n">backup</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># solving the problem with a loop:</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">row</span> <span class="ow">in</span> <span class="n">patients</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100000</span><span class="p">:</span>  <span class="c1"># US data</span>
+        <span class="n">patients</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s1">&#39;height&#39;</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">2.54</span>
+<span class="n">patients</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>height</th>
+      <th>dose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>100615</td>
+      <td>182.88</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>51</td>
+      <td>158.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>100616</td>
+      <td>190.50</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>83</td>
+      <td>173.00</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>100607</td>
+      <td>172.72</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>100618</td>
+      <td>170.18</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>19</td>
+      <td>163.00</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>65</td>
+      <td>178.00</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">row['height']</span> <span class="pre">*=</span> <span class="pre">2.54</span></code> actually wouldn’t alter the DataFrame, so we’re forced to use <code class="docutils literal notranslate"><span class="pre">patients.loc[]</span></code> instead.</p>
+<p>But if you were trying to follow the advice in this chapter of the notes, you might switch to an <code class="docutils literal notranslate"><span class="pre">apply()</span></code> function instead.  The trouble is, it’s a bit annoying to do, because we need the <code class="docutils literal notranslate"><span class="pre">if</span></code> to operate on the “id” column and the conversion to operate on the “height” column, so which one do we call <code class="docutils literal notranslate"><span class="pre">apply()</span></code> on?  We can call <code class="docutils literal notranslate"><span class="pre">apply()</span></code> on the whole DataFrame, but the loop is actually simpler in that case!</p>
+<p>The solution here is to use NumPy’s <code class="docutils literal notranslate"><span class="pre">np.where()</span></code> function.  It lets you select just which rows should get which type of computation, like so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># restore the original data:</span>
+<span class="n">patients</span> <span class="o">=</span> <span class="n">backup</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># solution with np.where():</span>
+<span class="n">patients</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span> <span class="n">patients</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100000</span><span class="p">,</span> <span class="n">patients</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">2.54</span><span class="p">,</span> <span class="n">patients</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">patients</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>height</th>
+      <th>dose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>100615</td>
+      <td>182.88</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>51</td>
+      <td>158.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>100616</td>
+      <td>190.50</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>83</td>
+      <td>173.00</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>100607</td>
+      <td>172.72</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>100618</td>
+      <td>170.18</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>19</td>
+      <td>163.00</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>65</td>
+      <td>178.00</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">np.where()</span></code> function works just like <code class="docutils literal notranslate"><span class="pre">=IF()</span></code> does in Excel, taking three inputs, a conditional, an “if” result, and an “else” result.  But the difference is that <code class="docutils literal notranslate"><span class="pre">np.where()</span></code> is vectorized, effectively doing an Excel <code class="docutils literal notranslate"><span class="pre">=IF()</span></code> on each entry in the Series separately.  You can read an <code class="docutils literal notranslate"><span class="pre">np.where()</span></code> function just like a sentence:</p>
+<p>Where patient id is over 100000, do patient height times 2.54, otherwise just keep the original height.</p>
+<p>In summary, thanks to <code class="docutils literal notranslate"><span class="pre">np.where()</span></code>, even many conditional computations don’t require a loop or an apply; they can be done with NumPy vectorization as well.</p>
+</div>
+<div class="section" id="speeding-up-mathematics">
+<h3>Speeding up mathematics<a class="headerlink" href="#speeding-up-mathematics" title="Permalink to this headline">¶</a></h3>
+<p>There are also some very impressive tools for speeding up mathematical operations in NumPy a <em>LOT.</em>  I will not cover them here, but will lest each of the following as an opportunity for Learning On Your Own.  Note that these are relevant only if you have a very large dataset over which you need to do complex mathematical computations, so that you notice pandas behaving slowly, and thus you need a speed boost.</p>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - CuPy (fastest option)</p>
+<p>Doing certain types of computations can be sped up significantly by using graphics cards (originally designed for gaming rather than data science) instead of the computer’s CPU (which does all the non-graphics computations).  See <a class="reference external" href="https://towardsdatascience.com/make-your-python-functions-10x-faster-142ab40b31a7">this blog post</a> for information on CuPy, a Python library for harnessing your GPU to do fast arithmetic.</p>
+<p>CuPy requires you to first describe to it the computation you’ll want to do quickly, and it will compile it into GPU-friendly code that you can then use.  This is an extra level of annoyance for the programmer, but often produces the fastest results.</p>
+</div>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - NumExpr (easiest option)</p>
+<p>If you’ve already got some code that does the arithmetic operation you want on NumPy arrays (or pandas Series, which are also NumPy arrays), then it’s pretty easy to convert that code to use NumExpr.  It doesn’t give as big a speedup as CuPy, but it’s easier to set up.  <a class="reference external" href="https://towardsdatascience.com/speed-up-your-numpy-and-pandas-with-numexpr-package-25bd1ab0836b">See this blog post</a> for details, and note the connection to <code class="docutils literal notranslate"><span class="pre">pd.eval()</span></code>.</p>
+</div>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - Cython (most flexible)</p>
+<p>The previous two options work only for speeding up arithmetic.  To speed up any operation (including string manipulation, working with dictionaries, sets, or any Python class), you’ll need Cython.  This is a tool for converting Python code into C code automatically, without your having to learn to program in C.  C code almost always runs significantly faster than Python code, but C is much less easy to use, especially for data work.  See <a class="reference external" href="https://ipython-books.github.io/55-accelerating-python-code-with-cython/">this tutorial</a> on using Cython in Jupyter, plus the example below.</p>
+</div>
+<p>Let’s say I have the following function that computes <span class="math notranslate nohighlight">\(n!\)</span>, the product of all positive integers up to <span class="math notranslate nohighlight">\(n\)</span>.  (This is not the best way to write this function, but it’s just an example.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span> <span class="p">(</span> <span class="n">n</span> <span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="p">):</span>
+        <span class="n">result</span> <span class="o">*=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">factorial</span><span class="p">(</span> <span class="mi">5</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>120
+</pre></div>
+</div>
+</div>
+</div>
+<p>I can ask Jupyter to compile this into C code for me, so that it runs faster, as follows.</p>
+<p>First, use one cell of the notebook to load the Cython extension.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">load_ext</span> <span class="n">cython</span>
+</pre></div>
+</div>
+<p>Then, ask Cython to convert your Python code into C.  This requires giving it some hints (highlighted in the comments below) about the data types of the variables.  In this simple case, they’re all integers.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">cython</span> <span class="o">-</span><span class="n">a</span>
+<span class="k">def</span> <span class="nf">factorial</span> <span class="p">(</span> <span class="nb">int</span> <span class="n">n</span> <span class="p">):</span>   <span class="c1"># n is an integer</span>
+    <span class="n">cdef</span> <span class="nb">int</span> <span class="n">result</span><span class="p">,</span> <span class="n">i</span>     <span class="c1"># so are result and i</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="p">):</span>
+        <span class="n">result</span> <span class="o">*=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p>If you run the above code in Jupyter, it will show you an interactive display of the code it created and how much speedup you can expect.  The function still generates the same outputs as before, but typically much faster.  How much faster?  Check out the tutorial linked to above for more information.</p>
+</div>
+</div>
+<div class="section" id="so-do-we-always-avoid-loops">
+<h2>So do we <em>always</em> avoid loops?<a class="headerlink" href="#so-do-we-always-avoid-loops" title="Permalink to this headline">¶</a></h2>
+<p>No, there are some times when you might still want to avoid loops.</p>
+<div class="section" id="when-to-opt-for-a-loop">
+<h3>When to opt for a loop<a class="headerlink" href="#when-to-opt-for-a-loop" title="Permalink to this headline">¶</a></h3>
+<p>The two most prominent times to choose loops are these.</p>
+<ol class="simple">
+<li><p>If the code you’re running is a search for one thing, and you want to stop once it’s found, a loop might be best.  Take the home mortgage database of 15 million records, for example.  Let’s say you were looking for an example of a Hispanic male in Nevada applying for a mortgage for a rental property.  If you ask pandas to filter the dataset, it will examine all 15M rows and give you <em>all</em> the ones fitting these criteria.  But you just needed one.  Maybe you’d find it in the first 50,000 rows and not need to search the other 14.95 million!  A loop definitely has the potential to be faster in such a case.</p></li>
+<li><p>Sometimes the computation you’re doing involves comparing one row to adjacent rows.  For example, you might want to find those days when the price of a stock was significantly more or less than it was on the two adjacent days (one before and one after).  Although it’s possible to do this without a loop, the code is a harder to write and to read, as you can see in the example below.  With a loop, it’s not as fast, but it’s clearer.  So if speed isn’t an issue, use the loop.</p></li>
+</ol>
+<p>Let’s see how we might write the code for the stock example just given, but instead of stock data, we’ll use the (made up) quarterly revenue data from earlier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># get just the column I care about:</span>
+<span class="n">revenues</span> <span class="o">=</span> <span class="n">rev_quarters</span><span class="p">[</span><span class="s1">&#39;Revenue&#39;</span><span class="p">]</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
+<span class="c1"># For each quarter execpt the first and last...</span>
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">revenues</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+    <span class="c1"># If it&#39;s bigger than the previous and the next...</span>
+    <span class="k">if</span> <span class="n">revenues</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">revenues</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> \
+       <span class="n">revenues</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">revenues</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">index</span> <span class="p">)</span>  <span class="c1"># Save it for later</span>
+
+<span class="c1"># Show me just the quarters I saved.</span>
+<span class="n">rev_quarters</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">results</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Quarter</th>
+      <th>Revenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2010</td>
+      <td>2</td>
+      <td>186</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2010</td>
+      <td>4</td>
+      <td>263</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2011</td>
+      <td>2</td>
+      <td>193</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2011</td>
+      <td>4</td>
+      <td>281</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Compare that to the same results computed using vectorization in NumPy rather than a loop.  If the data were large, this implementation would be faster, but it’s definitely not as clear to read.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get all but first and last, for searching.</span>
+<span class="n">to_search</span> <span class="o">=</span> <span class="n">rev_quarters</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Compute arrays of previous/next quarters, for comparison.</span>
+<span class="n">previous_rev</span> <span class="o">=</span> <span class="n">rev_quarters</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">next_rev</span> <span class="o">=</span> <span class="n">rev_quarters</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+
+<span class="c1"># Adjust indices so they match the to_search Series.</span>
+<span class="n">previous_rev</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">previous_rev</span><span class="o">.</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">next_rev</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">next_rev</span><span class="o">.</span><span class="n">index</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="c1"># Do the computation using NumPy vectorized comparisons.</span>
+<span class="n">to_search</span><span class="p">[(</span> <span class="n">to_search</span><span class="p">[</span><span class="s1">&#39;Revenue&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">previous_rev</span><span class="p">[</span><span class="s1">&#39;Revenue&#39;</span><span class="p">]</span> <span class="p">)</span> \
+        <span class="o">&amp;</span> <span class="p">(</span> <span class="n">to_search</span><span class="p">[</span><span class="s1">&#39;Revenue&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">next_rev</span><span class="p">[</span><span class="s1">&#39;Revenue&#39;</span><span class="p">]</span> <span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Quarter</th>
+      <th>Revenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2010</td>
+      <td>2</td>
+      <td>186</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2010</td>
+      <td>4</td>
+      <td>263</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2011</td>
+      <td>2</td>
+      <td>193</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2011</td>
+      <td>4</td>
+      <td>281</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Any time when speed isn’t an issue, and you think the clearest way to write the code is a loop, then go right ahead and write clear code!  Loops aren’t always bad.</p>
+</div>
+<div class="section" id="factoring-computations-out-of-the-loop">
+<h3>Factoring computations out of the loop<a class="headerlink" href="#factoring-computations-out-of-the-loop" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes what’s making a loop slow is a repeated computation that doesn’t need to happen inside the loop.  The <em>loop variable</em> is the variable that immediately follows the <code class="docutils literal notranslate"><span class="pre">for</span></code> statement in a loop.  In the loop example above, that’s the <code class="docutils literal notranslate"><span class="pre">index</span></code> variable.  If there were any computation inside the loop that didn’t use the <code class="docutils literal notranslate"><span class="pre">index</span></code> variable, we could bring that computation outside the loop, doing it once, before the loop, and saving time.</p>
+<p>For example, in the final project some students did for MA346 in Spring 2020, some teams had a loop that processed a large database of baseball players, and tried to look their names up in a different database.  It went something like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">baseball_df</span><span class="p">[</span><span class="s1">&#39;player name&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">other_df</span><span class="p">[</span><span class="s2">&quot;Player&#39;s Name&quot;</span><span class="p">]:</span>
+        <span class="c1"># then do stuff here</span>
+</pre></div>
+</div>
+<p>Because the two DataFrames were very large, this loop took literally hours to run on students’ laptops, and made it impossible for them to improve their code in time to finish the project.  The first thing I suggested was to change the code as follows.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">baseball_df</span><span class="p">[</span><span class="s1">&#39;player name&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">other_df</span><span class="p">[</span><span class="s2">&quot;Player&#39;s Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+        <span class="c1"># then do stuff here</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">.unique()</span></code> function computes a smaller list from <code class="docutils literal notranslate"><span class="pre">other_df['name']</span></code>, in which each name shows up only once.  This meant a smaller search to do, and sped up the loop, but even so, it wasn’t fast enough.  It still took about 30 minutes, which made it hard for students to iteratively improve their code.</p>
+<p>But notice that the loop variable, <code class="docutils literal notranslate"><span class="pre">name</span></code>, doesn’t appear anywhere in the computation of <code class="docutils literal notranslate"><span class="pre">other_df[&quot;Player's</span> <span class="pre">Name&quot;].unique()</span></code>.  So we’re asking Python to compute that list of unique names over and over, each time through the loop.  Let’s bring that outside the loop so we have to do it only once.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">unique_name_list</span> <span class="o">=</span> <span class="n">other_df</span><span class="p">[</span><span class="s2">&quot;Player&#39;s Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">baseball_df</span><span class="p">[</span><span class="s1">&#39;player name&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">unique_name_list</span><span class="p">:</span>
+        <span class="c1"># then do stuff here</span>
+</pre></div>
+</div>
+<p>This loop ran much faster, and most students were able to use it to do the work of their final project.</p>
+<p>Note that this advice, factoring out a computation that does not depend on the loop variable, is sort of the opposite of abstraction.  In abstraction, you make the list of all the variables that your computation <em>does</em> depend on, and move those up to the top, as input parameters.  Here we’re taking a look at which variables our computation <em>doesn’t</em> depend on, so that we can move the computation itself up to the top, so it is done outside the loop.</p>
+</div>
+<div class="section" id="knowing-how-long-you-ll-have-to-wait">
+<h3>Knowing how long you’ll have to wait<a class="headerlink" href="#knowing-how-long-you-ll-have-to-wait" title="Permalink to this headline">¶</a></h3>
+<p>Few things are more frustrating than running a code cell and seeing the computer just sit there doing nothing.  We start to wonder whether it will take 15 seconds to process the data, and we should just have a little patience, or 15 minutes and we should go get a coffee, or 15 hours and we should give up and rewrite the code.  Which is it?  How can we tell except just waiting?</p>
+<p>There are two easy ways to get some feedback as your loop is progressing.  The easiest one is to install the <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> module, whose purpose is to help you see a progress bar for a long-running loop.  After following <a class="reference external" href="https://github.com/tqdm/tqdm#installation">tqdm’s installation instructions</a> (using <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code>), just import the module, then take the Series or list over which you’re looping and wrap it in <code class="docutils literal notranslate"><span class="pre">tqdm(...)</span></code>, as in the example below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span> <span class="n">revenues</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">):</span>   <span class="c1"># &lt;---- Notice tqdm here.</span>
+    <span class="k">if</span> <span class="n">revenues</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">revenues</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> \
+       <span class="n">revenues</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">revenues</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">index</span> <span class="p">)</span>
+<span class="n">rev_quarters</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">results</span><span class="p">,:]</span>
+</pre></div>
+</div>
+<p>While the computation is running, a progress bar shows up in the notebook, filling as the computation progresses.  It looks like the following example.</p>
+<p><img alt="A screenshot of a tqdm progress bar" src="_images/tqdm-progress-bar.png" /></p>
+<p>The numbers indicate that over 300 of the 1000 steps in that large loop are complete, and they have taken 12 seconds (written 00:12) and there are about 27 seconds left (00:27).  The loop completes about 25.02 iterations per second.  With a progress bar like this, even for a computation that might run for hours, you can tell very quickly how long you will have to wait, and whether it’s worth it to wait or if you need to speed up your loop instead.</p>
+</div>
+</div>
+<div class="section" id="when-the-bottleneck-is-the-dataset">
+<h2>When the bottleneck is the dataset<a class="headerlink" href="#when-the-bottleneck-is-the-dataset" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes, you can’t get around the fact that you just have to process a lot of data, and that can be slow.  Unless you’re working for a company that will provide you with some powerful computing resources in the cloud on which to run your Jupyter notebook, so that it runs faster than it does on your laptop (or the free Colab/Deepnote machines), you’ll just have to run the slow code.  But there are still some ways to make this better.</p>
+<p><strong>Don’t run it more than you have to.</strong>  Often, the slow code is something that happens early your work, such as cleaning a huge dataset or searching through it for just the rows you need for your analysis.  Once you’ve written code that does this, save the result to a file with <code class="docutils literal notranslate"><span class="pre">pd.to_csv()</span></code> or <code class="docutils literal notranslate"><span class="pre">pd.to_pickle()</span></code> and don’t run that code again.</p>
+<p>Don’t fall into the trap of thinking that all your code needs to be in one Python script or one Jupyter notebook.  If that slow code that cleaned your data never needs to be run again, then once you’ve run it and saved the output, save the script/notebook, close it, and start a new script or notebook to contain your data analysis code.  Then when you re-run your analysis, you don’t have to sit around and wait for the data cleaning to happen all over again!</p>
+<p>This advice is especially important if the slow part of your work requires fetching data from the Internet.  Network downloads are the slowest and least predictable part of your work.  Once it’s been done correctly, don’t run it again.</p>
+<p><strong>Do your work on a small dataset.</strong>  If the dataset you have to analyze is still large enough that your analysis code itself runs slowly as well, try the following.  Near the top of your file, replace the actual data with a small sample of it, perhaps using code like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">patients</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span> <span class="mi">3</span> <span class="p">)</span>
+<span class="n">patients</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>height</th>
+      <th>dose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5</th>
+      <td>100618</td>
+      <td>170.18</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>83</td>
+      <td>173.00</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>100615</td>
+      <td>182.88</td>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now the entire rest of my script or noteboook will operate on only this tiny DataFrame.  (Obviously, you’d want to choose a number larger than three in your code!  I’m doing a tiny example here.  You might reduce 100,000 rows to just 1,000, for example.)</p>
+<p>Then as you create your data analysis code, which inevitably involves running it many times, you won’t have to wait for it to process all 100,000 rows of the data.  It can work on just 1,000 and run 100x faster.  When your analysis code works and you’re ready to write your report, delete the code that creates a small sample of the data and re-run your notebook from the start, now opearting on the whole dataset.  It will be slower, but you have to sit through that only once.</p>
+<p><em>Danger!</em>  Don’t forget to delete that cell when your code is polished and you want to do the real, final analysis!  I suggest adding a note in giant text at the end of your notebook saying something like, “Don’t forget, before you turn this in, USE THE WHOLE DATASET!”  Then you’ll remember to do that key step before you complete the project.</p>
+<p><strong>If the dataset is truly huge,</strong> so large that it can’t be stored in your computer’s memory all at once, then trying to load it will either generate out-of-memory errors or it will slow the process down enormously while the computer tries to use its hard drive as temporary extra memory storage.  In such cases, don’t forget the tip at the end of <a class="reference external" href="big-cheat-sheet#chapter-1-using-iterators-in-pythonland">this DataCamp chapter</a> about the <code class="docutils literal notranslate"><span class="pre">chunksize</span></code> parameter.  It lets you process large files in smaller chunks.</p>
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

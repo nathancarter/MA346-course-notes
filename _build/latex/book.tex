@@ -63,7 +63,7 @@
 
 
 \title{MA346 Course Notes}
-\date{Jul 24, 2020}
+\date{Jul 27, 2020}
 \release{}
 \author{Nathan Carter}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -3794,12 +3794,12 @@ We will return to vectorization and loops in Chapter 11 of these notes.  For now
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.37600337, 0.53888679, 0.44673178, 0.03869085, 0.1235196 ,
-       0.62611577, 0.29945789, 0.21173455, 0.78378133, 0.49786788,
-       0.33650492, 0.34153541, 0.52920055, 0.75262926, 0.59936326,
-       0.81826399, 0.54830293, 0.15692863, 0.4997704 , 0.33318206,
-       0.7107754 , 0.05270395, 0.41007974, 0.02968244, 0.39712816,
-       0.51555891, 0.84235798, 0.66452828, 0.90218482, 0.42051476])
+array([0.00210201, 0.1433012 , 0.72889034, 0.05502441, 0.26451572,
+       0.43691495, 0.366113  , 0.9651693 , 0.75086418, 0.65100788,
+       0.53480992, 0.4911561 , 0.48880651, 0.37186778, 0.88927119,
+       0.33992887, 0.43600995, 0.94404253, 0.2176242 , 0.66602609,
+       0.36031763, 0.45291016, 0.89159806, 0.68205396, 0.4972707 ,
+       0.76536462, 0.79460073, 0.04645869, 0.24173779, 0.55697275])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3807,9 +3807,9 @@ array([0.37600337, 0.53888679, 0.44673178, 0.03869085, 0.1235196 ,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.38, 0.54, 0.45, 0.04, 0.12, 0.63, 0.3 , 0.21, 0.78, 0.5 , 0.34,
-       0.34, 0.53, 0.75, 0.6 , 0.82, 0.55, 0.16, 0.5 , 0.33, 0.71, 0.05,
-       0.41, 0.03, 0.4 , 0.52, 0.84, 0.66, 0.9 , 0.42])
+array([0.  , 0.14, 0.73, 0.06, 0.26, 0.44, 0.37, 0.97, 0.75, 0.65, 0.53,
+       0.49, 0.49, 0.37, 0.89, 0.34, 0.44, 0.94, 0.22, 0.67, 0.36, 0.45,
+       0.89, 0.68, 0.5 , 0.77, 0.79, 0.05, 0.24, 0.56])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3817,12 +3817,12 @@ array([0.38, 0.54, 0.45, 0.04, 0.12, 0.63, 0.3 , 0.21, 0.78, 0.5 , 0.34,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([1.45645204, 1.71409765, 1.56319496, 1.03944909, 1.13147218,
-       1.87033165, 1.34912724, 1.2358198 , 2.18973675, 1.64520974,
-       1.40004576, 1.40710642, 1.69757463, 2.12257349, 1.82095896,
-       2.26656165, 1.73031405, 1.16991211, 1.64834276, 1.39540132,
-       2.03556903, 1.05411753, 1.50693794, 1.03012736, 1.48754656,
-       1.67457417, 2.32183536, 1.94357348, 2.46498278, 1.5227452 ])
+array([1.00210422, 1.15407736, 2.07277926, 1.05656641, 1.3027999 ,
+       1.54792443, 1.44211819, 2.62523207, 2.11883028, 1.91747243,
+       1.70712371, 1.63420443, 1.63036923, 1.45044119, 2.43335555,
+       1.40484766, 1.54652418, 2.57035116, 1.24311982, 1.94648676,
+       1.43378476, 1.57288288, 2.43902424, 1.97793617, 1.64422756,
+       2.14977808, 2.21355702, 1.0475548 , 1.27346023, 1.7453808 ])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3830,12 +3830,14 @@ array([1.45645204, 1.71409765, 1.56319496, 1.03944909, 1.13147218,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.14137854, 0.29039897, 0.19956928, 0.00149698, 0.01525709,
-       0.39202095, 0.08967503, 0.04483152, 0.61431317, 0.24787242,
-       0.11323556, 0.11664644, 0.28005322, 0.56645081, 0.35923632,
-       0.66955596, 0.3006361 , 0.02462659, 0.24977045, 0.11101028,
-       0.50520167, 0.00277771, 0.16816539, 0.00088105, 0.15771077,
-       0.26580099, 0.70956696, 0.44159783, 0.81393745, 0.17683266])
+array([4.41843808e\PYGZhy{}06, 2.05352349e\PYGZhy{}02, 5.31281134e\PYGZhy{}01, 3.02768613e\PYGZhy{}03,
+       6.99685662e\PYGZhy{}02, 1.90894678e\PYGZhy{}01, 1.34038726e\PYGZhy{}01, 9.31551774e\PYGZhy{}01,
+       5.63797022e\PYGZhy{}01, 4.23811256e\PYGZhy{}01, 2.86021646e\PYGZhy{}01, 2.41234312e\PYGZhy{}01,
+       2.38931802e\PYGZhy{}01, 1.38285645e\PYGZhy{}01, 7.90803250e\PYGZhy{}01, 1.15551637e\PYGZhy{}01,
+       1.90104676e\PYGZhy{}01, 8.91216298e\PYGZhy{}01, 4.73602943e\PYGZhy{}02, 4.43590749e\PYGZhy{}01,
+       1.29828797e\PYGZhy{}01, 2.05127616e\PYGZhy{}01, 7.94947097e\PYGZhy{}01, 4.65197605e\PYGZhy{}01,
+       2.47278152e\PYGZhy{}01, 5.85783002e\PYGZhy{}01, 6.31390324e\PYGZhy{}01, 2.15840985e\PYGZhy{}03,
+       5.84371567e\PYGZhy{}02, 3.10218649e\PYGZhy{}01])
 \end{sphinxVerbatim}
 
 Notice that this makes it very easy to compute certain mathematical formulas.  For example, when we want to measure the quality of a model, we might compute the RSSE, or Root Sum of Squared Errors, that is, the square root of the sum of the squared differences between each actual data value \(y_i\) and its predicted value \(\hat y_i\).  In math, we write it like this:
@@ -3906,8 +3908,8 @@ In fact, SciPy’s built\sphinxhyphen{}in random number generating procedures le
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([52.54521878, 87.49244886, 60.69311502, 43.32369827, 71.8687882 ,
-       13.0726038 , 13.30343695, 42.43011506, 19.29039516, 82.30459215])
+array([48.57103183, 98.26842145, 55.58851316, 73.94366551,  3.83460037,
+       75.71282494, 22.93508032, 86.5985114 ,  3.90013674, 98.36457815])
 \end{sphinxVerbatim}
 
 Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two arguments and create a specific random variable, then call \sphinxcode{\sphinxupquote{rvs}} on that.
@@ -3918,8 +3920,8 @@ Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two a
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([26.109284  , 56.34978148, 28.43104442, 71.94773648, 45.91456991,
-       17.7533833 , 20.35301123, 31.9134973 ,  7.33644644, 18.38484561])
+array([80.88400227, 59.9978174 , 47.9369339 , 97.21299604, 53.73272704,
+       87.30240982, 25.66302895, 64.47418396, 25.64360411, 83.42337879])
 \end{sphinxVerbatim}
 
 The same random variable can, of course, be used to create more values later.
@@ -4825,9 +4827,862 @@ I’ve suggested a few concepts {\hyperref[\detokenize{chapter-10-visualization:
 \label{\detokenize{chapter-11-processing-rows:processing-the-rows-of-a-dataframe}}\label{\detokenize{chapter-11-processing-rows::doc}}
 See also the slides that summarize a portion of this content.
 
-\begin{sphinxadmonition}{warning}{Warning:}
-This chapter has not yet been written.  Check back later.
+
+\subsection{Goal}
+\label{\detokenize{chapter-11-processing-rows:goal}}
+Back in the early days of programming, when I was a kid, we wrote code with stone tools.
+
+\sphinxincludegraphics{{cave-man-public-domain}.jpg}
+
+And when we wanted to work with all the elements of an array, we had no choice but to write a loop.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{shipments\PYGZus{}received} \PYG{o}{=} \PYG{p}{[} \PYG{l+m+mi}{6}\PYG{p}{,} \PYG{l+m+mi}{9}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{7}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{13} \PYG{p}{]}
+
+\PYG{n}{total} \PYG{o}{=} \PYG{l+m+mi}{0}
+\PYG{k}{for} \PYG{n}{num\PYGZus{}received} \PYG{o+ow}{in} \PYG{n}{shipments\PYGZus{}received}\PYG{p}{:}
+    \PYG{n}{total} \PYG{o}{+}\PYG{o}{=} \PYG{n}{num\PYGZus{}received}
+
+\PYG{n}{total}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+68
+\end{sphinxVerbatim}
+
+Most introductory programming courses teach loops, and for good reason; they show up a lot in programming!  But there are a few reasons we’ll try to avoid loops in data work whenever we can.
+
+The lesser reason is \sphinxstylestrong{readability.}  Loops are always at least two lines of code in Python; the one above is three because it has to initialize the \sphinxcode{\sphinxupquote{total}} variable to zero.  Many alternatives to loops can be done in just one line of code, which is more readable.
+
+The more important reason is \sphinxstylestrong{speed.}  Loops in Python are not very efficient, and this can be a serious problem.  In the final project for MA346 in Spring 2020, many students came to my office hours with a loop that had been running for hours, and they didn’t know if or when it would finish.  There are \sphinxstyleemphasis{many} ways to speed loops up, sometimes by just altering the loop, but usually by replacing the loop with something else entirely.
+
+\sphinxstylestrong{In fact, that’s the purpose of this chapter:  \sphinxstyleemphasis{What can I do to improve a slow loop?}}
+
+The title of the chapter mentions DataFrames specifically, because in data work we’re almost always processing a DataFrame row\sphinxhyphen{}by\sphinxhyphen{}row.  But many of the techniques we’ll cover apply to many different kinds of loops, with or without DataFrames.
+
+An added benefit is that improving (or replacing) loops with something faster often means writing shorter or clearer code as well, achieving improvements in readability at the same time.
+
+
+\subsection{The \sphinxstyleliteralintitle{\sphinxupquote{apply()}} function}
+\label{\detokenize{chapter-11-processing-rows:the-apply-function}}
+The most common use of a loop is when we need to do the same thing to each element of a sequence of values.  Let’s see an example.
+
+
+\subsubsection{Baseball example}
+\label{\detokenize{chapter-11-processing-rows:baseball-example}}
+In an earlier homework assignment, I provided a cleaned dataset of baseball players’ salaries.  Let’s take a look at the original version of the dataset when I downloaded it \sphinxhref{https://data.world/natereed/baseball-salaries}{from the web}, before it was cleaned.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{pandas} \PYG{k}{as} \PYG{n+nn}{pd}
+\PYG{n}{df} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{read\PYGZus{}csv}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZus{}static/baseball\PYGZhy{}salaries.csv}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\PYG{n}{df}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+        salary               name  total\PYGZus{}value pos     years   avg\PYGZus{}annual team
+0  \PYGZdl{} 3,800,000  Darryl Strawberry  \PYGZdl{} 3,800,000  OF  1 (1991)  \PYGZdl{} 3,800,000  LAD
+1  \PYGZdl{} 3,750,000     Kevin Mitchell  \PYGZdl{} 3,750,000  OF  1 (1991)  \PYGZdl{} 3,750,000   SF
+2  \PYGZdl{} 3,750,000         Will Clark  \PYGZdl{} 3,750,000  1B  1 (1991)  \PYGZdl{} 3,750,000   SF
+3  \PYGZdl{} 3,625,000         Mark Davis  \PYGZdl{} 3,625,000   P  1 (1991)  \PYGZdl{} 3,625,000   KC
+4  \PYGZdl{} 3,600,000         Eric Davis  \PYGZdl{} 3,600,000  OF  1 (1991)  \PYGZdl{} 3,600,000  CIN
+\end{sphinxVerbatim}
+
+The “years” column looks particularly annoying.  Why does it say “1 (1991)” instead of just 1991?  Let’s take a look at some other rows…
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{14440}\PYG{p}{:}\PYG{l+m+mi}{14445}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+             salary             name    total\PYGZus{}value pos         years  \PYGZbs{}
+14440     \PYGZdl{} 100,000     Steve Monson      \PYGZdl{} 100,000   P      1 (1990)   
+14441  \PYGZdl{} 28,000,000   Alex Rodriguez  \PYGZdl{} 275,000,000  DH  10 (2008\PYGZhy{}17)   
+14442     \PYGZdl{} 200,000   Mike Colangelo      \PYGZdl{} 200,000  OF      1 (1999)   
+14443     \PYGZdl{} 200,000  Mike Jerzembeck      \PYGZdl{} 200,000   P      1 (1999)   
+14444  \PYGZdl{} 21,680,727   Alex Rodriguez   \PYGZdl{} 21,680,727  3B      1 (2006)   
+
+         avg\PYGZus{}annual team  
+14440     \PYGZdl{} 100,000  MIL  
+14441  \PYGZdl{} 27,500,000  NYY  
+14442     \PYGZdl{} 200,000  LAA  
+14443     \PYGZdl{} 200,000  NYY  
+14444  \PYGZdl{} 21,680,727  NYY  
+\end{sphinxVerbatim}
+
+Aha, some entries in the “years” column represent multiple years.  We might naturally want to split that column up into three columns: number of years, first year, and last year.  Each is a little project all on its own, but we just want to look at one example, so let’s consider just the task of extracting the first year from the text.  If we wrote a loop, it might go something like this.
+
+
+\subsubsection{Using a loop}
+\label{\detokenize{chapter-11-processing-rows:using-a-loop}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{first\PYGZus{}years} \PYG{o}{=} \PYG{p}{[} \PYG{p}{]}
+\PYG{k}{for} \PYG{n}{text} \PYG{o+ow}{in} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{years}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{:}
+    \PYG{k}{if} \PYG{n}{text}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ }\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{c+c1}{\PYGZsh{} one\PYGZhy{}digit number of years}
+        \PYG{n}{first\PYGZus{}years}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(} \PYG{n+nb}{int}\PYG{p}{(} \PYG{n}{text}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{:}\PYG{l+m+mi}{7}\PYG{p}{]} \PYG{p}{)} \PYG{p}{)}
+    \PYG{k}{else}\PYG{p}{:} \PYG{c+c1}{\PYGZsh{} two\PYGZhy{}digit number of years}
+        \PYG{n}{first\PYGZus{}years}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(} \PYG{n+nb}{int}\PYG{p}{(} \PYG{n}{text}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{:}\PYG{l+m+mi}{8}\PYG{p}{]} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{first\PYGZus{}year}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{first\PYGZus{}years}
+        
+\PYG{n}{df}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{14441}\PYG{p}{]}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]} \PYG{c+c1}{\PYGZsh{} quick spot check of our work}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+             salary               name    total\PYGZus{}value pos         years  \PYGZbs{}
+0       \PYGZdl{} 3,800,000  Darryl Strawberry    \PYGZdl{} 3,800,000  OF      1 (1991)   
+14441  \PYGZdl{} 28,000,000     Alex Rodriguez  \PYGZdl{} 275,000,000  DH  10 (2008\PYGZhy{}17)   
+
+         avg\PYGZus{}annual team  first\PYGZus{}year  
+0       \PYGZdl{} 3,800,000  LAD        1991  
+14441  \PYGZdl{} 27,500,000  NYY        2008  
+\end{sphinxVerbatim}
+
+A loop over a list of values is what pandas’ \sphinxcode{\sphinxupquote{apply()}} function was made for.  You write \sphinxcode{\sphinxupquote{df{[}'column'{]}.apply(f)}} to apply the function \sphinxcode{\sphinxupquote{f}} to every entry in the chosen column.  For example, we could simplify our work above as follows.  The differences are noted in the comments.
+
+
+\subsubsection{Using \sphinxstyleliteralintitle{\sphinxupquote{apply()}}}
+\label{\detokenize{chapter-11-processing-rows:using-apply}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+                                 \PYG{c+c1}{\PYGZsh{} No need to start with an empty list.}
+\PYG{k}{def} \PYG{n+nf}{get\PYGZus{}first\PYGZus{}year} \PYG{p}{(} \PYG{n}{text} \PYG{p}{)}\PYG{p}{:}     \PYG{c+c1}{\PYGZsh{} Function name helps explain the code.}
+    \PYG{k}{if} \PYG{n}{text}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ }\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n+nb}{int}\PYG{p}{(} \PYG{n}{text}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{:}\PYG{l+m+mi}{7}\PYG{p}{]} \PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Clearer and shorter than append().}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n+nb}{int}\PYG{p}{(} \PYG{n}{text}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{:}\PYG{l+m+mi}{8}\PYG{p}{]} \PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Clearer and shorter than append().}
+\PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{first\PYGZus{}year}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{years}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(} \PYG{n}{get\PYGZus{}first\PYGZus{}year} \PYG{p}{)}
+
+\PYG{n}{df}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{14441}\PYG{p}{]}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]} \PYG{c+c1}{\PYGZsh{} same check as before}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+             salary               name    total\PYGZus{}value pos         years  \PYGZbs{}
+0       \PYGZdl{} 3,800,000  Darryl Strawberry    \PYGZdl{} 3,800,000  OF      1 (1991)   
+14441  \PYGZdl{} 28,000,000     Alex Rodriguez  \PYGZdl{} 275,000,000  DH  10 (2008\PYGZhy{}17)   
+
+         avg\PYGZus{}annual team  first\PYGZus{}year  
+0       \PYGZdl{} 3,800,000  LAD        1991  
+14441  \PYGZdl{} 27,500,000  NYY        2008  
+\end{sphinxVerbatim}
+
+If we’re honest, the code didn’t get \sphinxstyleemphasis{that} much simpler.  But \sphinxcode{\sphinxupquote{apply()}} is especially nice if the function we want to write is a function that already exists.  Here’s a silly example, but it illustrates the point.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{name\PYGZus{}length}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(} \PYG{n+nb}{len} \PYG{p}{)}
+\PYG{n}{df}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+        salary               name  total\PYGZus{}value pos     years   avg\PYGZus{}annual  \PYGZbs{}
+0  \PYGZdl{} 3,800,000  Darryl Strawberry  \PYGZdl{} 3,800,000  OF  1 (1991)  \PYGZdl{} 3,800,000   
+1  \PYGZdl{} 3,750,000     Kevin Mitchell  \PYGZdl{} 3,750,000  OF  1 (1991)  \PYGZdl{} 3,750,000   
+2  \PYGZdl{} 3,750,000         Will Clark  \PYGZdl{} 3,750,000  1B  1 (1991)  \PYGZdl{} 3,750,000   
+3  \PYGZdl{} 3,625,000         Mark Davis  \PYGZdl{} 3,625,000   P  1 (1991)  \PYGZdl{} 3,625,000   
+4  \PYGZdl{} 3,600,000         Eric Davis  \PYGZdl{} 3,600,000  OF  1 (1991)  \PYGZdl{} 3,600,000   
+
+  team  first\PYGZus{}year  name\PYGZus{}length  
+0  LAD        1991           17  
+1   SF        1991           14  
+2   SF        1991           10  
+3   KC        1991           10  
+4  CIN        1991           10  
+\end{sphinxVerbatim}
+
+Using \sphinxcode{\sphinxupquote{apply()}} will run a little faster than writing your own loop, but unless the DataFrame is really huge, you probably won’t notice the difference, so speed is not a significant concern here.  But switching to the \sphinxcode{\sphinxupquote{apply()}} form sets us up nicely for a later speed improvement {\hyperref[\detokenize{chapter-11-processing-rows:parallel-apply}]{\emph{we’ll discuss further below}}}.
+
+Although it’s less often useful, you can use \sphinxcode{\sphinxupquote{df.apply(f)}} to run \sphinxcode{\sphinxupquote{f}} on each column of the DataFrame, or \sphinxcode{\sphinxupquote{df.apply(f,axis=1)}} to run \sphinxcode{\sphinxupquote{f}} on each row of the DataFrame.
+
+There is, unfortunately, a related function \sphinxcode{\sphinxupquote{map()}}.  It behaves very similarly to \sphinxcode{\sphinxupquote{apply()}}, with a few subtle differences.  This is unfortunate because in computer programming more broadly, the concepts of “map” and “apply” are often used synonymously/interchangeably.  So to have them behave almost the same (but slightly differently!) in pandas is unfortunate.  Oh well.  Here are the differences:
+
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabulary}{\linewidth}[t]{|T|T|T|}
+\hline
+\sphinxstyletheadfamily 
+Feature
+&\sphinxstyletheadfamily 
+\sphinxcode{\sphinxupquote{apply()}}
+&\sphinxstyletheadfamily 
+\sphinxcode{\sphinxupquote{map()}}
+\\
+\hline
+You can use it on DataFrames, as in \sphinxcode{\sphinxupquote{df.apply(f)}}
+&
+Yes
+&
+No
+\\
+\hline
+You can provide extra \sphinxcode{\sphinxupquote{args}} or \sphinxcode{\sphinxupquote{kwargs}}
+&
+Yes
+&
+No
+\\
+\hline
+You can use a dictionary instead of \sphinxcode{\sphinxupquote{f}}
+&
+No
+&
+Yes
+\\
+\hline
+You can ask it to skip NaNs
+&
+No
+&
+Yes
+\\
+\hline
+\end{tabulary}
+\par
+\sphinxattableend\end{savenotes}
+
+\begin{sphinxadmonition}{note}{Big Picture}
+
+In most programming contexts, including data work, if someone speaks of “mapping” or “applying” a function, they mean the same thing:  Automatically running the function on each element of a list or series.  The function for this is often called \sphinxcode{\sphinxupquote{map()}} or \sphinxcode{\sphinxupquote{apply()}}, as in pandas, but not always.  In mathematics, it’s called using a function “elementwise,” meaning on each element of a structure separately.  In the popular language Julia, it’s called “broadcasting” a function over an array or table.
 \end{sphinxadmonition}
+
+The function that you give to \sphinxcode{\sphinxupquote{apply()}} can’t be just any function.  Its input type needs to match the data type of the individual elements in the Series or DataFrame you’re applying it to.  Its output type will determine what kind of output you get.  For example, the \sphinxcode{\sphinxupquote{get\_first\_year()}} function defined above takes strings as input and gives integers as output.  So using \sphinxcode{\sphinxupquote{apply(get\_first\_year)}} will need to be done on a Series containing strings, and will produce a Series containing integers.
+
+If you have a function that takes multiple inputs, you might want to bind some of the arguments so that it becomes a unary function and can be used in \sphinxcode{\sphinxupquote{apply()}}.  Or you can use the \sphinxcode{\sphinxupquote{args}} or \sphinxcode{\sphinxupquote{kwargs}} feature of \sphinxcode{\sphinxupquote{apply()}}, but we won’t cover that in these course notes.  You can see a small example in \sphinxhref{https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.apply.html}{the pandas documentation}.  We will, however, take a look at the possibility of using a dictionary with \sphinxcode{\sphinxupquote{map()}}, because it is extremely useful.  We will consider a simple example application, but do a more sophisticated one in class.
+
+
+\subsubsection{Using \sphinxstyleliteralintitle{\sphinxupquote{map()}}}
+\label{\detokenize{chapter-11-processing-rows:using-map}}
+Let’s assume that the analysis we wanted to do cared only about whether the baseball player had an infield position (IF), outfield position (OF), was a pitcher (P), or a designated hitter (DH), and we didn’t care about any other details of the position (such as first base vs. second base, or starting pitcher vs. relief pitcher).  We’d therefore like to simplify the “pos” column and convert all infield positions to IF, and so on.  First, let’s see what all the positions are.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{pos}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{unique}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+array([\PYGZsq{}OF\PYGZsq{}, \PYGZsq{}1B\PYGZsq{}, \PYGZsq{}P\PYGZsq{}, \PYGZsq{}DH\PYGZsq{}, \PYGZsq{}3B\PYGZsq{}, \PYGZsq{}2B\PYGZsq{}, \PYGZsq{}C\PYGZsq{}, \PYGZsq{}SS\PYGZsq{}, \PYGZsq{}RF\PYGZsq{}, \PYGZsq{}SP\PYGZsq{}, \PYGZsq{}LF\PYGZsq{},
+       \PYGZsq{}CF\PYGZsq{}, \PYGZsq{}RP\PYGZsq{}], dtype=object)
+\end{sphinxVerbatim}
+
+We could convert them with a big \sphinxcode{\sphinxupquote{if}} statement, like you see here, but this is tedious and repetitive code.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{simpler\PYGZus{}position} \PYG{p}{(} \PYG{n}{pos} \PYG{p}{)}\PYG{p}{:}   \PYG{c+c1}{\PYGZsh{} BAD STYLE.  See better version below.}
+    \PYG{k}{if} \PYG{n}{pos} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{P}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:}  \PYG{k}{return} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{P}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{if} \PYG{n}{pos} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{SP}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{k}{return} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{P}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{if} \PYG{n}{pos} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{RP}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{k}{return} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{P}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{if} \PYG{n}{pos} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{C}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:}  \PYG{k}{return} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{IF}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{if} \PYG{n}{pos} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{1B}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{k}{return} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{IF}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{if} \PYG{n}{pos} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{2B}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{k}{return} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{IF}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{if} \PYG{n}{pos} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{3B}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{k}{return} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{IF}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{if} \PYG{n}{pos} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{SS}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{k}{return} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{IF}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{if} \PYG{n}{pos} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{OF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{k}{return} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{OF}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{if} \PYG{n}{pos} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{LF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{k}{return} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{OF}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{if} \PYG{n}{pos} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{CF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{k}{return} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{OF}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{if} \PYG{n}{pos} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{RF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{k}{return} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{OF}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{if} \PYG{n}{pos} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{DH}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{k}{return} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{DH}\PYG{l+s+s1}{\PYGZsq{}}
+
+\PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{simple\PYGZus{}pos}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{pos}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(} \PYG{n}{simpler\PYGZus{}position} \PYG{p}{)}
+\PYG{n}{df}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+        salary               name  total\PYGZus{}value pos     years   avg\PYGZus{}annual  \PYGZbs{}
+0  \PYGZdl{} 3,800,000  Darryl Strawberry  \PYGZdl{} 3,800,000  OF  1 (1991)  \PYGZdl{} 3,800,000   
+1  \PYGZdl{} 3,750,000     Kevin Mitchell  \PYGZdl{} 3,750,000  OF  1 (1991)  \PYGZdl{} 3,750,000   
+2  \PYGZdl{} 3,750,000         Will Clark  \PYGZdl{} 3,750,000  1B  1 (1991)  \PYGZdl{} 3,750,000   
+3  \PYGZdl{} 3,625,000         Mark Davis  \PYGZdl{} 3,625,000   P  1 (1991)  \PYGZdl{} 3,625,000   
+4  \PYGZdl{} 3,600,000         Eric Davis  \PYGZdl{} 3,600,000  OF  1 (1991)  \PYGZdl{} 3,600,000   
+
+  team  first\PYGZus{}year  name\PYGZus{}length simple\PYGZus{}pos  
+0  LAD        1991           17         OF  
+1   SF        1991           14         OF  
+2   SF        1991           10         IF  
+3   KC        1991           10          P  
+4  CIN        1991           10         OF  
+\end{sphinxVerbatim}
+
+All the repetitive code is just establishing a simple relationship among some very short strings.  We could store that same relationship in a dictionary with many fewer lines of code.  Note that we must use \sphinxcode{\sphinxupquote{map()}}, because \sphinxcode{\sphinxupquote{apply()}} doesn’t accept dictionaries.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{simple\PYGZus{}pos}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{pos}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{map}\PYG{p}{(} \PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{P}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:}  \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{P}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{SP}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{P}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{RP}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{P}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{C}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:}  \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{IF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{1B}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{IF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}   \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{2B}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{IF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}   \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{3B}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{IF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}   \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{SS}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{IF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{OF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{OF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}   \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{LF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{OF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}   \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{CF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{OF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}   \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{RF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{OF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}   \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{DH}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{DH}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{p}{\PYGZcb{}} \PYG{p}{)}
+\PYG{n}{df}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+        salary               name  total\PYGZus{}value pos     years   avg\PYGZus{}annual  \PYGZbs{}
+0  \PYGZdl{} 3,800,000  Darryl Strawberry  \PYGZdl{} 3,800,000  OF  1 (1991)  \PYGZdl{} 3,800,000   
+1  \PYGZdl{} 3,750,000     Kevin Mitchell  \PYGZdl{} 3,750,000  OF  1 (1991)  \PYGZdl{} 3,750,000   
+2  \PYGZdl{} 3,750,000         Will Clark  \PYGZdl{} 3,750,000  1B  1 (1991)  \PYGZdl{} 3,750,000   
+3  \PYGZdl{} 3,625,000         Mark Davis  \PYGZdl{} 3,625,000   P  1 (1991)  \PYGZdl{} 3,625,000   
+4  \PYGZdl{} 3,600,000         Eric Davis  \PYGZdl{} 3,600,000  OF  1 (1991)  \PYGZdl{} 3,600,000   
+
+  team  first\PYGZus{}year  name\PYGZus{}length simple\PYGZus{}pos  
+0  LAD        1991           17         OF  
+1   SF        1991           14         OF  
+2   SF        1991           10         IF  
+3   KC        1991           10          P  
+4  CIN        1991           10         OF  
+\end{sphinxVerbatim}
+
+In class, we will do a more complex example of applying a dictionary using \sphinxcode{\sphinxupquote{map()}}.  Before class, you may want to glance back at Exercise 3 from {\hyperref[\detokenize{chapter-2-mathematical-foundations::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{the Chapter 2 notes}}}}, which shows you how to take two columns of a DataFrame representing a mathematical function and convert them into a dictionary for use in situations just like this one.  And be sure to complete the homework about the NPR dataset before class as well, because we will use that in our example!
+
+
+\subsubsection{Parallel \sphinxstyleliteralintitle{\sphinxupquote{apply()}}}
+\label{\detokenize{chapter-11-processing-rows:parallel-apply}}
+I mentioned earlier that converting a loop into an \sphinxcode{\sphinxupquote{apply()}} or \sphinxcode{\sphinxupquote{map()}} call doesn’t gain us much speed.  But it does make it easy for us to add a nice speed improvement.  There’s a Python package called \sphinxhref{https://github.com/jmcarpenter2/swifter}{swifter} that you can install using the instructions on that page.  Once it’s installed, you can convert any code like \sphinxcode{\sphinxupquote{df{[}'column'{]}.apply(f)}} easily into a faster version by replacing it with \sphinxcode{\sphinxupquote{df{[}'column'{]}.swifter.apply(f)}}.  That’s all!
+
+Under the hood, swifter is trying a variety of speedup mechanisms (many of which we discuss in this chapter) and deciding which of them works best for your situation.  The most common one for large dataset is probably parallel processing.  This means that if your computer has more than one processor core (which most modern laptops do), then it can process more than one entry of the data at once, each on a separate core.
+
+Without swifter, you could accomplish the same thing with code like the following.  (In fact, if you have trouble installing swifter, you can use this code instead.)
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Use Python\PYGZsq{}s built\PYGZhy{}in multiprocessing module to find your number of cores.}
+\PYG{k+kn}{import} \PYG{n+nn}{multiprocessing} \PYG{k}{as} \PYG{n+nn}{mp}
+\PYG{n}{n\PYGZus{}cores} \PYG{o}{=} \PYG{n}{mp}\PYG{o}{.}\PYG{n}{cpu\PYGZus{}count}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Create a \PYGZdq{}pool\PYGZdq{} of functions that can work at the same time and run them.}
+\PYG{n}{pool} \PYG{o}{=} \PYG{n}{mp}\PYG{o}{.}\PYG{n}{Pool}\PYG{p}{(} \PYG{n}{n\PYGZus{}cores} \PYG{p}{)}
+\PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{simple\PYGZus{}pos}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{pool}\PYG{o}{.}\PYG{n}{map}\PYG{p}{(} \PYG{n}{simpler\PYGZus{}position}\PYG{p}{,} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{pos}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{n}{n\PYGZus{}cores} \PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Clean up afterwards.}
+\PYG{n}{pool}\PYG{o}{.}\PYG{n}{close}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{pool}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} See result.}
+\PYG{n}{df}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+        salary               name  total\PYGZus{}value pos     years   avg\PYGZus{}annual  \PYGZbs{}
+0  \PYGZdl{} 3,800,000  Darryl Strawberry  \PYGZdl{} 3,800,000  OF  1 (1991)  \PYGZdl{} 3,800,000   
+1  \PYGZdl{} 3,750,000     Kevin Mitchell  \PYGZdl{} 3,750,000  OF  1 (1991)  \PYGZdl{} 3,750,000   
+2  \PYGZdl{} 3,750,000         Will Clark  \PYGZdl{} 3,750,000  1B  1 (1991)  \PYGZdl{} 3,750,000   
+3  \PYGZdl{} 3,625,000         Mark Davis  \PYGZdl{} 3,625,000   P  1 (1991)  \PYGZdl{} 3,625,000   
+4  \PYGZdl{} 3,600,000         Eric Davis  \PYGZdl{} 3,600,000  OF  1 (1991)  \PYGZdl{} 3,600,000   
+
+  team  first\PYGZus{}year  name\PYGZus{}length simple\PYGZus{}pos  
+0  LAD        1991           17         OF  
+1   SF        1991           14         OF  
+2   SF        1991           10         IF  
+3   KC        1991           10          P  
+4  CIN        1991           10         OF  
+\end{sphinxVerbatim}
+
+
+\subsection{Map\sphinxhyphen{}Reduce}
+\label{\detokenize{chapter-11-processing-rows:map-reduce}}
+\begin{sphinxadmonition}{note}{Big Picture}
+
+Both \sphinxstyleemphasis{map\sphinxhyphen{}reduce} and \sphinxstyleemphasis{split\sphinxhyphen{}apply\sphinxhyphen{}combine} are data manipulation buzzwords that you’ll want to be familiar with, for
+\begin{itemize}
+\item {} 
+thinking about your own data manipulation work,
+
+\item {} 
+discussing that work with coworkers, and
+
+\item {} 
+knowing what people are saying in, e.g., interviews.
+
+\end{itemize}
+
+This section covers map\sphinxhyphen{}reduce and the next section covers split\sphinxhyphen{}apply\sphinxhyphen{}combine.
+\end{sphinxadmonition}
+
+A map\sphinxhyphen{}reduce process is one that takes any list, \sphinxstyleemphasis{maps} a specific function across all entries of the list, then \sphinxstyleemphasis{reduces} those outputs down to a single, smaller result.  Consider the following picture, which shows a very simple map\sphinxhyphen{}reduce operation that takes a DataFrame about historic revenue numbers and computes the lowest revenue across all quarters.
+
+\sphinxincludegraphics{{map-reduce}.png}
+
+Let’s actually do the above computation on some small sample (fictional) data:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} setup \PYGZhy{} example tiny dataset}
+\PYG{n}{rev\PYGZus{}quarters} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{(} \PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Year}\PYG{l+s+s1}{\PYGZsq{}}    \PYG{p}{:} \PYG{p}{[} \PYG{l+m+mi}{2010}\PYG{p}{,} \PYG{l+m+mi}{2010}\PYG{p}{,} \PYG{l+m+mi}{2010}\PYG{p}{,} \PYG{l+m+mi}{2010}\PYG{p}{,} \PYG{l+m+mi}{2011}\PYG{p}{,} \PYG{l+m+mi}{2011}\PYG{p}{,} \PYG{l+m+mi}{2011}\PYG{p}{,} \PYG{l+m+mi}{2011}\PYG{p}{,} \PYG{l+m+mi}{2012}\PYG{p}{,} \PYG{l+m+mi}{2012} \PYG{p}{]}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Quarter}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{:} \PYG{p}{[}    \PYG{l+m+mi}{1}\PYG{p}{,}    \PYG{l+m+mi}{2}\PYG{p}{,}    \PYG{l+m+mi}{3}\PYG{p}{,}    \PYG{l+m+mi}{4}\PYG{p}{,}    \PYG{l+m+mi}{1}\PYG{p}{,}    \PYG{l+m+mi}{2}\PYG{p}{,}    \PYG{l+m+mi}{3}\PYG{p}{,}    \PYG{l+m+mi}{4}\PYG{p}{,}    \PYG{l+m+mi}{1}\PYG{p}{,}    \PYG{l+m+mi}{2} \PYG{p}{]}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{:} \PYG{p}{[}  \PYG{l+m+mi}{177}\PYG{p}{,}  \PYG{l+m+mi}{186}\PYG{p}{,}  \PYG{l+m+mi}{167}\PYG{p}{,}  \PYG{l+m+mi}{263}\PYG{p}{,}  \PYG{l+m+mi}{180}\PYG{p}{,}  \PYG{l+m+mi}{193}\PYG{p}{,}  \PYG{l+m+mi}{189}\PYG{p}{,}  \PYG{l+m+mi}{281}\PYG{p}{,}  \PYG{l+m+mi}{201}\PYG{p}{,}  \PYG{l+m+mi}{210} \PYG{p}{]}
+\PYG{p}{\PYGZcb{}} \PYG{p}{)}
+\PYG{n}{rev\PYGZus{}quarters}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+   Year  Quarter  Revenue
+0  2010        1      177
+1  2010        2      186
+2  2010        3      167
+3  2010        4      263
+4  2011        1      180
+5  2011        2      193
+6  2011        3      189
+7  2011        4      281
+8  2012        1      201
+9  2012        2      210
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} map\PYGZhy{}reduce work, one line:}
+\PYG{n}{rev\PYGZus{}quarters}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{min}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+167
+\end{sphinxVerbatim}
+
+As mentioned earlier, “map” is a synonym for “apply,” so the first step of the process applies the same operation to all rows of the DataFrame; in this case, that operation extracts the revenue from the row.  The “reduce” operation in this case is a simple \sphinxcode{\sphinxupquote{min()}} operation, but it can be something more complex.
+
+So a map\sphinxhyphen{}reduce operation involves two functions, the first performing a \sphinxcode{\sphinxupquote{map()}} operation (as discussed earlier), and the second doing something new.  The function used for the reducing step must be something that takes an entire list or series as input and produces a single value as output.  The \sphinxcode{\sphinxupquote{min()}} operation was used in the example above, but other operations are common, such as \sphinxcode{\sphinxupquote{max()}}, \sphinxcode{\sphinxupquote{sum()}}, \sphinxcode{\sphinxupquote{len()}}, \sphinxcode{\sphinxupquote{mean()}}, \sphinxcode{\sphinxupquote{median()}}, and more.
+
+
+\subsubsection{Argmin and argmax}
+\label{\detokenize{chapter-11-processing-rows:argmin-and-argmax}}
+A very common function that shows up in statistics is called \sphinxcode{\sphinxupquote{argmin}} (and its companion \sphinxcode{\sphinxupquote{argmax}}).  These are also implemented in pandas and are very useful in map\sphinxhyphen{}reduce situations.  In the example above, let’s say we didn’t want to know the minimum revenue, but we wanted to know in which quarter the minimum revenue happened.  We can replace \sphinxcode{\sphinxupquote{min}} in the above code with \sphinxcode{\sphinxupquote{argmin}} to ask that question.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{rev\PYGZus{}quarters}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{argmin}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+2
+\end{sphinxVerbatim}
+
+The \sphinxcode{\sphinxupquote{argmin}} function is short for “the argument that yields the minimum,” or in other words, what value would I need to supply as \sphinxstyleemphasis{input} to the map function to get the minimum output?  In this case, the map function takes each row and extracts its revenue, so we’re asking pandas, “When you found the minimum revenue, which row was the input?”  The answer was row 2, and we can see that it’s the correct row as follows.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{rev\PYGZus{}quarters}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+Year       2010
+Quarter       3
+Revenue     167
+Name: 2, dtype: int64
+\end{sphinxVerbatim}
+
+While the pandas documentation for \sphinxcode{\sphinxupquote{argmin}} and \sphinxcode{\sphinxupquote{argmax}} suggest that they return multiple values in the case of ties, this doesn’t seem to be true.  They seem to return the first index only.  You can therefore always rely on the result of \sphinxcode{\sphinxupquote{argmin}}/\sphinxcode{\sphinxupquote{argmax}} being a single value, never a list or series.  If you want the indices of all max/min entries, you will need to compute it another way.
+
+
+\subsubsection{Map\sphinxhyphen{}reduce example: sample standard deviation}
+\label{\detokenize{chapter-11-processing-rows:map-reduce-example-sample-standard-deviation}}
+The formula for the standard deviation of a sample of data should be familiar you to from GB213.
+\begin{equation*}
+\begin{split} s=\sqrt{\frac{\sum_{i=1}^n (x_i-\bar x)^2}{n-1}} \end{split}
+\end{equation*}
+Let’s assume we’ve already computed the mean value \(\bar x\).  Then computing the standard deviation is actually a map\sphinxhyphen{}reduce operation.  The map function takes each \(x_i\) as input and computes \((x_i-\bar x)^2\) as output.  The reduce operation then does a sum, divides by \(n-1\), and takes a square root.  We could code it like so:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+
+\PYG{n}{example\PYGZus{}data} \PYG{o}{=} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{first\PYGZus{}year}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
+\PYG{n}{x\PYGZus{}bar} \PYG{o}{=} \PYG{n}{example\PYGZus{}data}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{k}{def} \PYG{n+nf}{map\PYGZus{}func} \PYG{p}{(} \PYG{n}{x} \PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return} \PYG{p}{(} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{x\PYGZus{}bar} \PYG{p}{)} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2}
+\PYG{k}{def} \PYG{n+nf}{reduce\PYGZus{}func} \PYG{p}{(} \PYG{n}{data} \PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(} \PYG{n}{data}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{data}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{)}
+
+\PYG{n}{reduce\PYGZus{}func}\PYG{p}{(} \PYG{n}{example\PYGZus{}data}\PYG{o}{.}\PYG{n}{map}\PYG{p}{(} \PYG{n}{map\PYGZus{}func} \PYG{p}{)} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+7.926156939014573
+\end{sphinxVerbatim}
+
+Of course, we didn’t have to code that.  There’s already an existing standard deviation function built into pandas, and it gives almost exactly the same answer.  (I suspect theirs does something more careful with tiny issues of accuracy than my simple example does.)
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{example\PYGZus{}data}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+7.926156939014146
+\end{sphinxVerbatim}
+
+But it is still important to notice that the pattern in computing a sample standard deviation is a map\sphinxhyphen{}reduce pattern, because we cannot always rely on pandas to do computations for us.  For instance, if the data we were dealing with were many gigabytes spread over a database, we couldn’t load it all into a pandas DataFrame in memory and then call \sphinxcode{\sphinxupquote{data.std()}} to get our answer.
+
+There are specialized tools in the industry for applying the map\sphinxhyphen{}reduce paradigm to databases (even if the database is enormous and spread over many different servers).  One famous example is \sphinxhref{https://spark.apache.org/}{Apache Spark}, but there are many.
+
+Many more examples of map\sphinxhyphen{}reduce from math and statistics could have been shown instead of the one above.  Any time a list of values collapses to give a single result, map\sphinxhyphen{}reduce is behind it.  This happens for summations, approximations of integrals (e.g., trapezoidal rule), expected values, matrix multiplication, computing probabilities from trees of possible outcomes, any weighted averages (chemical concentrations, portfolio values, etc.), and many more.
+
+
+\subsection{Split\sphinxhyphen{}Apply\sphinxhyphen{}Combine}
+\label{\detokenize{chapter-11-processing-rows:split-apply-combine}}
+Data scientist and R developer Hadley Wickham seems to coin lots of important phrases.  Recall from {\hyperref[\detokenize{chapter-5-before-and-after::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{the Chapter 5 notes}}}} that he introduced the phrase “tidy data.”  He also introduced the phrase “split, apply, combine,” in \sphinxhref{http://www.stat.wvu.edu/~jharner/courses/stat623/docs/plyrJSS.pdf}{this paper}.
+
+It is another extremely common operation done on DataFrames, and it is closely related to map\sphinxhyphen{}reduce, as we will see below.
+
+Let’s say you were concerned about pay equity, and wanted to compute the median salary across your organization, by gender, to get a sense of whether there were any important discrepancies.  The computation would look something like the following.  (We assume that the gender column contains either M for male, F for female, or a missing value for those who do not wish to classify.)
+
+\sphinxincludegraphics{{split-apply-combine}.png}
+
+As you can see from the picture, the first phase (called “split”) breaks the data into groups by the categorical variable we care about–in this case, gender.  After that, each smaller DataFrame undergoes a map\sphinxhyphen{}reduce process, and the results of each small map\sphinxhyphen{}reduce get aggregated into a result, indexed by the original categorical variable.
+
+Note that the output type of the split operation (which, in pandas, is a \sphinxcode{\sphinxupquote{df.groupby()}} call) is \sphinxstyleemphasis{NOT} a DataFrame, but rather a collection of DataFrames.  It is essential to follow a \sphinxcode{\sphinxupquote{df.groupby()}} call with the apply and combine steps of the process, so that the result is a familiar and usable type of object again–a pandas DataFrame.
+
+The easiest type of split\sphinxhyphen{}apply\sphinxhyphen{}combine is shown in the picture above and can be done with a single line of code.  We’ll compute minimum revenue by year with the DataFrame from our map\sphinxhyphen{}reduce example.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{rev\PYGZus{}quarters}\PYG{o}{.}\PYG{n}{groupby}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Year}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{min}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+Year
+2010    167
+2011    180
+2012    201
+Name: Revenue, dtype: int64
+\end{sphinxVerbatim}
+
+Split\sphinxhyphen{}apply\sphinxhyphen{}combine is actually a specific type of pivot table.  Thus split\sphinxhyphen{}apply\sphinxhyphen{}combine operations can be done on data in Excel as well, using its pivot table features.  We can even use \sphinxcode{\sphinxupquote{df.pivot\_table()}} to mimic the above procedure, as follows.  (Because we don’t need data separated into separate columns, we don’t provide a columns variable.)
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{rev\PYGZus{}quarters}\PYG{o}{.}\PYG{n}{pivot\PYGZus{}table}\PYG{p}{(} \PYG{n}{index}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Year}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{n}{columns}\PYG{o}{=}\PYG{p}{[}\PYG{p}{]}\PYG{p}{,} \PYG{n}{values}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{aggfunc}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{min}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+      Revenue
+Year         
+2010      167
+2011      180
+2012      201
+\end{sphinxVerbatim}
+
+
+\subsection{More on math in Python}
+\label{\detokenize{chapter-11-processing-rows:more-on-math-in-python}}
+
+\subsubsection{Arithmetic in formulas}
+\label{\detokenize{chapter-11-processing-rows:arithmetic-in-formulas}}
+Recall that pandas is built on NumPy, and in {\hyperref[\detokenize{chapter-9-math-and-stats::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 9 of the notes}}}} we talked about NumPy’s support for vectorization.  If we have a Series \sphinxcode{\sphinxupquote{height}} containing heights in inches and we need instead to have it in centimeters, we don’t need to do \sphinxcode{\sphinxupquote{height.apply()}} and give it a conversion function, because we can just do \sphinxcode{\sphinxupquote{height * 2.54}}.  NumPy automatically \sphinxstyleemphasis{vectorizes} this operation, spreading the “times 2.54” over each entry in the \sphinxcode{\sphinxupquote{height}} array.
+
+This is quite natural, because we have mathematical notation that does the same thing (in math, not Python).  If you’ve taken a class involving vectors, you know that vector addition \(\vec x+\vec y\) means to do exactly what NumPy does–add the corresponding entries in each vector.  Similarly, scalar multiplication \(s\vec x\) means to multiply \(s\) by each entry in the vector \(\vec x\), just like \sphinxcode{\sphinxupquote{height * 2.54}} does in Python.  So NumPy is not inventing something strange here; it’s normal mathematical stuff.
+
+All the basic mathematical operations are built into NumPy.  For example, if we have created a linear model \(\hat y=\beta_0+\beta_1 x\) with parameters stored in Python variables \sphinxcode{\sphinxupquote{β0}} and \sphinxcode{\sphinxupquote{β1}}, we can apply it to an entire series of inputs \sphinxcode{\sphinxupquote{xs}} at once with the following code, because NumPy knows how to spread both \sphinxcode{\sphinxupquote{+}} and \sphinxcode{\sphinxupquote{*}} across arrays.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{y\PYGZus{}hat} \PYG{o}{=} \PYG{n}{β0} \PYG{o}{+} \PYG{n}{β1} \PYG{o}{*} \PYG{n}{xs}
+\end{sphinxVerbatim}
+
+In fact, if we had actual \sphinxcode{\sphinxupquote{ys}} that went with the \sphinxcode{\sphinxupquote{xs}}, we could then compute a list of residuals all at once with \sphinxcode{\sphinxupquote{y\_hat \sphinxhyphen{} ys}}, or even compute the RMSE (root mean squared error) with code like this.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(} \PYG{p}{(} \PYG{n}{y\PYGZus{}hat} \PYG{o}{\PYGZhy{}} \PYG{n}{ys} \PYG{p}{)} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2} \PYG{p}{)} \PYG{o}{/} \PYG{n+nb}{len}\PYG{p}{(} \PYG{n}{ys} \PYG{p}{)} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+The subtraction with \sphinxcode{\sphinxupquote{\sphinxhyphen{}}} and the squaring with \sphinxcode{\sphinxupquote{** 2}} would all be spread across arrays of inputs correctly, because NumPy comes with code to support doing so.
+
+
+\subsubsection{Conditionals with \sphinxstyleliteralintitle{\sphinxupquote{np.where()}}}
+\label{\detokenize{chapter-11-processing-rows:conditionals-with-np-where}}
+This removes a lot of the need for both loops and \sphinxcode{\sphinxupquote{apply()}}/\sphinxcode{\sphinxupquote{map()}} calls, but not all.  One of the first things that makes us think we might need a loop is when a conditional computation needs to be done.  For instance, let’s say we were given a dataset like the following (made up) example.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{patients} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{(} \PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{id}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{:} \PYG{p}{[} \PYG{l+m+mi}{100615}\PYG{p}{,} \PYG{l+m+mi}{51}\PYG{p}{,} \PYG{l+m+mi}{100616}\PYG{p}{,} \PYG{l+m+mi}{83}\PYG{p}{,} \PYG{l+m+mi}{100607}\PYG{p}{,} \PYG{l+m+mi}{100618}\PYG{p}{,} \PYG{l+m+mi}{19}\PYG{p}{,} \PYG{l+m+mi}{65} \PYG{p}{]}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{height}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{:} \PYG{p}{[} \PYG{l+m+mi}{72}\PYG{p}{,} \PYG{l+m+mi}{158}\PYG{p}{,} \PYG{l+m+mi}{75}\PYG{p}{,} \PYG{l+m+mi}{173}\PYG{p}{,} \PYG{l+m+mi}{68}\PYG{p}{,} \PYG{l+m+mi}{67}\PYG{p}{,} \PYG{l+m+mi}{163}\PYG{p}{,} \PYG{l+m+mi}{178} \PYG{p}{]}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{dose}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{:} \PYG{p}{[} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mf}{2.5}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mf}{2.5}\PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{]}
+\PYG{p}{\PYGZcb{}} \PYG{p}{)}
+\PYG{n}{patients}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+       id  height  dose
+0  100615      72   2.0
+1      51     158   0.0
+2  100616      75   2.5
+3      83     173   2.0
+4  100607      68   0.0
+5  100618      67   2.0
+6      19     163   2.5
+7      65     178   0.0
+\end{sphinxVerbatim}
+
+Let’s imagine that we then found out that it was the result of merging data from two different studies, one done in the U.S. and one done in France.  The data with IDs that begin with 100 are from the U.S. study, where heights were measured in inches.  The data with two\sphinxhyphen{}digit IDs are from the French study, where heights were measured in cm.  We need to standardize the units.
+
+We can’t simply convert to cm with \sphinxcode{\sphinxupquote{patients{[}'height'{]} * 2.54}} because that would apply the conversion to all data rather than just the measurements in inches.  We need some conditional logic, perhaps using an \sphinxcode{\sphinxupquote{if}} statement, to be selective.  Our first inclination might be a loop.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} before changing the contents, make a backup, for use later.}
+\PYG{n}{backup} \PYG{o}{=} \PYG{n}{patients}\PYG{o}{.}\PYG{n}{copy}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} solving the problem with a loop:}
+\PYG{k}{for} \PYG{n}{index}\PYG{p}{,}\PYG{n}{row} \PYG{o+ow}{in} \PYG{n}{patients}\PYG{o}{.}\PYG{n}{iterrows}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{if} \PYG{n}{row}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{id}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{100000}\PYG{p}{:}  \PYG{c+c1}{\PYGZsh{} US data}
+        \PYG{n}{patients}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{height}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{*}\PYG{o}{=} \PYG{l+m+mf}{2.54}
+\PYG{n}{patients}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+       id  height  dose
+0  100615  182.88   2.0
+1      51  158.00   0.0
+2  100616  190.50   2.5
+3      83  173.00   2.0
+4  100607  172.72   0.0
+5  100618  170.18   2.0
+6      19  163.00   2.5
+7      65  178.00   0.0
+\end{sphinxVerbatim}
+
+Note that \sphinxcode{\sphinxupquote{row{[}'height'{]} *= 2.54}} actually wouldn’t alter the DataFrame, so we’re forced to use \sphinxcode{\sphinxupquote{patients.loc{[}{]}}} instead.
+
+But if you were trying to follow the advice in this chapter of the notes, you might switch to an \sphinxcode{\sphinxupquote{apply()}} function instead.  The trouble is, it’s a bit annoying to do, because we need the \sphinxcode{\sphinxupquote{if}} to operate on the “id” column and the conversion to operate on the “height” column, so which one do we call \sphinxcode{\sphinxupquote{apply()}} on?  We can call \sphinxcode{\sphinxupquote{apply()}} on the whole DataFrame, but the loop is actually simpler in that case!
+
+The solution here is to use NumPy’s \sphinxcode{\sphinxupquote{np.where()}} function.  It lets you select just which rows should get which type of computation, like so:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} restore the original data:}
+\PYG{n}{patients} \PYG{o}{=} \PYG{n}{backup}\PYG{o}{.}\PYG{n}{copy}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} solution with np.where():}
+\PYG{n}{patients}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{height}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(} \PYG{n}{patients}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{id}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{100000}\PYG{p}{,} \PYG{n}{patients}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{height}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{*} \PYG{l+m+mf}{2.54}\PYG{p}{,} \PYG{n}{patients}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{height}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}
+\PYG{n}{patients}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+       id  height  dose
+0  100615  182.88   2.0
+1      51  158.00   0.0
+2  100616  190.50   2.5
+3      83  173.00   2.0
+4  100607  172.72   0.0
+5  100618  170.18   2.0
+6      19  163.00   2.5
+7      65  178.00   0.0
+\end{sphinxVerbatim}
+
+The \sphinxcode{\sphinxupquote{np.where()}} function works just like \sphinxcode{\sphinxupquote{=IF()}} does in Excel, taking three inputs, a conditional, an “if” result, and an “else” result.  But the difference is that \sphinxcode{\sphinxupquote{np.where()}} is vectorized, effectively doing an Excel \sphinxcode{\sphinxupquote{=IF()}} on each entry in the Series separately.  You can read an \sphinxcode{\sphinxupquote{np.where()}} function just like a sentence:
+
+Where patient id is over 100000, do patient height times 2.54, otherwise just keep the original height.
+
+In summary, thanks to \sphinxcode{\sphinxupquote{np.where()}}, even many conditional computations don’t require a loop or an apply; they can be done with NumPy vectorization as well.
+
+
+\subsubsection{Speeding up mathematics}
+\label{\detokenize{chapter-11-processing-rows:speeding-up-mathematics}}
+There are also some very impressive tools for speeding up mathematical operations in NumPy a \sphinxstyleemphasis{LOT.}  I will not cover them here, but will lest each of the following as an opportunity for Learning On Your Own.  Note that these are relevant only if you have a very large dataset over which you need to do complex mathematical computations, so that you notice pandas behaving slowly, and thus you need a speed boost.
+
+\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} CuPy (fastest option)}
+
+Doing certain types of computations can be sped up significantly by using graphics cards (originally designed for gaming rather than data science) instead of the computer’s CPU (which does all the non\sphinxhyphen{}graphics computations).  See \sphinxhref{https://towardsdatascience.com/make-your-python-functions-10x-faster-142ab40b31a7}{this blog post} for information on CuPy, a Python library for harnessing your GPU to do fast arithmetic.
+
+CuPy requires you to first describe to it the computation you’ll want to do quickly, and it will compile it into GPU\sphinxhyphen{}friendly code that you can then use.  This is an extra level of annoyance for the programmer, but often produces the fastest results.
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} NumExpr (easiest option)}
+
+If you’ve already got some code that does the arithmetic operation you want on NumPy arrays (or pandas Series, which are also NumPy arrays), then it’s pretty easy to convert that code to use NumExpr.  It doesn’t give as big a speedup as CuPy, but it’s easier to set up.  \sphinxhref{https://towardsdatascience.com/speed-up-your-numpy-and-pandas-with-numexpr-package-25bd1ab0836b}{See this blog post} for details, and note the connection to \sphinxcode{\sphinxupquote{pd.eval()}}.
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} Cython (most flexible)}
+
+The previous two options work only for speeding up arithmetic.  To speed up any operation (including string manipulation, working with dictionaries, sets, or any Python class), you’ll need Cython.  This is a tool for converting Python code into C code automatically, without your having to learn to program in C.  C code almost always runs significantly faster than Python code, but C is much less easy to use, especially for data work.  See \sphinxhref{https://ipython-books.github.io/55-accelerating-python-code-with-cython/}{this tutorial} on using Cython in Jupyter, plus the example below.
+\end{sphinxadmonition}
+
+Let’s say I have the following function that computes \(n!\), the product of all positive integers up to \(n\).  (This is not the best way to write this function, but it’s just an example.)
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{factorial} \PYG{p}{(} \PYG{n}{n} \PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{result} \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{n}\PYG{o}{+}\PYG{l+m+mi}{1} \PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{result} \PYG{o}{*}\PYG{o}{=} \PYG{n}{i}
+    \PYG{k}{return} \PYG{n}{result}
+
+\PYG{n}{factorial}\PYG{p}{(} \PYG{l+m+mi}{5} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+120
+\end{sphinxVerbatim}
+
+I can ask Jupyter to compile this into C code for me, so that it runs faster, as follows.
+
+First, use one cell of the notebook to load the Cython extension.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{o}{\PYGZpc{}}\PYG{n}{load\PYGZus{}ext} \PYG{n}{cython}
+\end{sphinxVerbatim}
+
+Then, ask Cython to convert your Python code into C.  This requires giving it some hints (highlighted in the comments below) about the data types of the variables.  In this simple case, they’re all integers.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{o}{\PYGZpc{}}\PYG{o}{\PYGZpc{}}\PYG{n}{cython} \PYG{o}{\PYGZhy{}}\PYG{n}{a}
+\PYG{k}{def} \PYG{n+nf}{factorial} \PYG{p}{(} \PYG{n+nb}{int} \PYG{n}{n} \PYG{p}{)}\PYG{p}{:}   \PYG{c+c1}{\PYGZsh{} n is an integer}
+    \PYG{n}{cdef} \PYG{n+nb}{int} \PYG{n}{result}\PYG{p}{,} \PYG{n}{i}     \PYG{c+c1}{\PYGZsh{} so are result and i}
+    \PYG{n}{result} \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{n}\PYG{o}{+}\PYG{l+m+mi}{1} \PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{result} \PYG{o}{*}\PYG{o}{=} \PYG{n}{i}
+    \PYG{k}{return} \PYG{n}{result}
+\end{sphinxVerbatim}
+
+If you run the above code in Jupyter, it will show you an interactive display of the code it created and how much speedup you can expect.  The function still generates the same outputs as before, but typically much faster.  How much faster?  Check out the tutorial linked to above for more information.
+
+
+\subsection{So do we \sphinxstyleemphasis{always} avoid loops?}
+\label{\detokenize{chapter-11-processing-rows:so-do-we-always-avoid-loops}}
+No, there are some times when you might still want to avoid loops.
+
+
+\subsubsection{When to opt for a loop}
+\label{\detokenize{chapter-11-processing-rows:when-to-opt-for-a-loop}}
+The two most prominent times to choose loops are these.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+If the code you’re running is a search for one thing, and you want to stop once it’s found, a loop might be best.  Take the home mortgage database of 15 million records, for example.  Let’s say you were looking for an example of a Hispanic male in Nevada applying for a mortgage for a rental property.  If you ask pandas to filter the dataset, it will examine all 15M rows and give you \sphinxstyleemphasis{all} the ones fitting these criteria.  But you just needed one.  Maybe you’d find it in the first 50,000 rows and not need to search the other 14.95 million!  A loop definitely has the potential to be faster in such a case.
+
+\item {} 
+Sometimes the computation you’re doing involves comparing one row to adjacent rows.  For example, you might want to find those days when the price of a stock was significantly more or less than it was on the two adjacent days (one before and one after).  Although it’s possible to do this without a loop, the code is a harder to write and to read, as you can see in the example below.  With a loop, it’s not as fast, but it’s clearer.  So if speed isn’t an issue, use the loop.
+
+\end{enumerate}
+
+Let’s see how we might write the code for the stock example just given, but instead of stock data, we’ll use the (made up) quarterly revenue data from earlier.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} get just the column I care about:}
+\PYG{n}{revenues} \PYG{o}{=} \PYG{n}{rev\PYGZus{}quarters}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
+
+\PYG{n}{results} \PYG{o}{=} \PYG{p}{[} \PYG{p}{]}
+\PYG{c+c1}{\PYGZsh{} For each quarter execpt the first and last...}
+\PYG{k}{for} \PYG{n}{index} \PYG{o+ow}{in} \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{index}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{:}
+    \PYG{c+c1}{\PYGZsh{} If it\PYGZsq{}s bigger than the previous and the next...}
+    \PYG{k}{if} \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o+ow}{and} \PYGZbs{}
+       \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{:}
+        \PYG{n}{results}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(} \PYG{n}{index} \PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Save it for later}
+
+\PYG{c+c1}{\PYGZsh{} Show me just the quarters I saved.}
+\PYG{n}{rev\PYGZus{}quarters}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{n}{results}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+   Year  Quarter  Revenue
+1  2010        2      186
+3  2010        4      263
+5  2011        2      193
+7  2011        4      281
+\end{sphinxVerbatim}
+
+Compare that to the same results computed using vectorization in NumPy rather than a loop.  If the data were large, this implementation would be faster, but it’s definitely not as clear to read.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Get all but first and last, for searching.}
+\PYG{n}{to\PYGZus{}search} \PYG{o}{=} \PYG{n}{rev\PYGZus{}quarters}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}
+
+\PYG{c+c1}{\PYGZsh{} Compute arrays of previous/next quarters, for comparison.}
+\PYG{n}{previous\PYGZus{}rev} \PYG{o}{=} \PYG{n}{rev\PYGZus{}quarters}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{]}
+\PYG{n}{next\PYGZus{}rev} \PYG{o}{=} \PYG{n}{rev\PYGZus{}quarters}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{:}\PYG{p}{]}
+
+\PYG{c+c1}{\PYGZsh{} Adjust indices so they match the to\PYGZus{}search Series.}
+\PYG{n}{previous\PYGZus{}rev}\PYG{o}{.}\PYG{n}{index} \PYG{o}{=} \PYG{n}{previous\PYGZus{}rev}\PYG{o}{.}\PYG{n}{index} \PYG{o}{+} \PYG{l+m+mi}{1}
+\PYG{n}{next\PYGZus{}rev}\PYG{o}{.}\PYG{n}{index} \PYG{o}{=} \PYG{n}{next\PYGZus{}rev}\PYG{o}{.}\PYG{n}{index} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}
+
+\PYG{c+c1}{\PYGZsh{} Do the computation using NumPy vectorized comparisons.}
+\PYG{n}{to\PYGZus{}search}\PYG{p}{[}\PYG{p}{(} \PYG{n}{to\PYGZus{}search}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{previous\PYGZus{}rev}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)} \PYGZbs{}
+        \PYG{o}{\PYGZam{}} \PYG{p}{(} \PYG{n}{to\PYGZus{}search}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{next\PYGZus{}rev}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}\PYG{p}{]}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+   Year  Quarter  Revenue
+1  2010        2      186
+3  2010        4      263
+5  2011        2      193
+7  2011        4      281
+\end{sphinxVerbatim}
+
+Any time when speed isn’t an issue, and you think the clearest way to write the code is a loop, then go right ahead and write clear code!  Loops aren’t always bad.
+
+
+\subsubsection{Factoring computations out of the loop}
+\label{\detokenize{chapter-11-processing-rows:factoring-computations-out-of-the-loop}}
+Sometimes what’s making a loop slow is a repeated computation that doesn’t need to happen inside the loop.  The \sphinxstyleemphasis{loop variable} is the variable that immediately follows the \sphinxcode{\sphinxupquote{for}} statement in a loop.  In the loop example above, that’s the \sphinxcode{\sphinxupquote{index}} variable.  If there were any computation inside the loop that didn’t use the \sphinxcode{\sphinxupquote{index}} variable, we could bring that computation outside the loop, doing it once, before the loop, and saving time.
+
+For example, in the final project some students did for MA346 in Spring 2020, some teams had a loop that processed a large database of baseball players, and tried to look their names up in a different database.  It went something like this:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{for} \PYG{n}{name} \PYG{o+ow}{in} \PYG{n}{baseball\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{player name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{:}
+    \PYG{k}{if} \PYG{n}{name} \PYG{o+ow}{in} \PYG{n}{other\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Player}\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{s Name}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} then do stuff here}
+\end{sphinxVerbatim}
+
+Because the two DataFrames were very large, this loop took literally hours to run on students’ laptops, and made it impossible for them to improve their code in time to finish the project.  The first thing I suggested was to change the code as follows.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{for} \PYG{n}{name} \PYG{o+ow}{in} \PYG{n}{baseball\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{player name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{:}
+    \PYG{k}{if} \PYG{n}{name} \PYG{o+ow}{in} \PYG{n}{other\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Player}\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{s Name}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{unique}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} then do stuff here}
+\end{sphinxVerbatim}
+
+The \sphinxcode{\sphinxupquote{.unique()}} function computes a smaller list from \sphinxcode{\sphinxupquote{other\_df{[}'name'{]}}}, in which each name shows up only once.  This meant a smaller search to do, and sped up the loop, but even so, it wasn’t fast enough.  It still took about 30 minutes, which made it hard for students to iteratively improve their code.
+
+But notice that the loop variable, \sphinxcode{\sphinxupquote{name}}, doesn’t appear anywhere in the computation of \sphinxcode{\sphinxupquote{other\_df{[}"Player's Name"{]}.unique()}}.  So we’re asking Python to compute that list of unique names over and over, each time through the loop.  Let’s bring that outside the loop so we have to do it only once.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{unique\PYGZus{}name\PYGZus{}list} \PYG{o}{=} \PYG{n}{other\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Player}\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{s Name}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{unique}\PYG{p}{(}\PYG{p}{)}
+\PYG{k}{for} \PYG{n}{name} \PYG{o+ow}{in} \PYG{n}{baseball\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{player name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{:}
+    \PYG{k}{if} \PYG{n}{name} \PYG{o+ow}{in} \PYG{n}{unique\PYGZus{}name\PYGZus{}list}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} then do stuff here}
+\end{sphinxVerbatim}
+
+This loop ran much faster, and most students were able to use it to do the work of their final project.
+
+Note that this advice, factoring out a computation that does not depend on the loop variable, is sort of the opposite of abstraction.  In abstraction, you make the list of all the variables that your computation \sphinxstyleemphasis{does} depend on, and move those up to the top, as input parameters.  Here we’re taking a look at which variables our computation \sphinxstyleemphasis{doesn’t} depend on, so that we can move the computation itself up to the top, so it is done outside the loop.
+
+
+\subsubsection{Knowing how long you’ll have to wait}
+\label{\detokenize{chapter-11-processing-rows:knowing-how-long-you-ll-have-to-wait}}
+Few things are more frustrating than running a code cell and seeing the computer just sit there doing nothing.  We start to wonder whether it will take 15 seconds to process the data, and we should just have a little patience, or 15 minutes and we should go get a coffee, or 15 hours and we should give up and rewrite the code.  Which is it?  How can we tell except just waiting?
+
+There are two easy ways to get some feedback as your loop is progressing.  The easiest one is to install the \sphinxcode{\sphinxupquote{tqdm}} module, whose purpose is to help you see a progress bar for a long\sphinxhyphen{}running loop.  After following \sphinxhref{https://github.com/tqdm/tqdm\#installation}{tqdm’s installation instructions} (using \sphinxcode{\sphinxupquote{pip}} or \sphinxcode{\sphinxupquote{conda}}), just import the module, then take the Series or list over which you’re looping and wrap it in \sphinxcode{\sphinxupquote{tqdm(...)}}, as in the example below.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{tqdm}\PYG{n+nn}{.}\PYG{n+nn}{notebook} \PYG{k+kn}{import} \PYG{n}{tqdm}
+
+\PYG{n}{results} \PYG{o}{=} \PYG{p}{[} \PYG{p}{]}
+\PYG{k}{for} \PYG{n}{index} \PYG{o+ow}{in} \PYG{n}{tqdm}\PYG{p}{(} \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{index}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{p}{)}\PYG{p}{:}   \PYG{c+c1}{\PYGZsh{} \PYGZlt{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} Notice tqdm here.}
+    \PYG{k}{if} \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o+ow}{and} \PYGZbs{}
+       \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{:}
+        \PYG{n}{results}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(} \PYG{n}{index} \PYG{p}{)}
+\PYG{n}{rev\PYGZus{}quarters}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{n}{results}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]}
+\end{sphinxVerbatim}
+
+While the computation is running, a progress bar shows up in the notebook, filling as the computation progresses.  It looks like the following example.
+
+\sphinxincludegraphics{{tqdm-progress-bar}.png}
+
+The numbers indicate that over 300 of the 1000 steps in that large loop are complete, and they have taken 12 seconds (written 00:12) and there are about 27 seconds left (00:27).  The loop completes about 25.02 iterations per second.  With a progress bar like this, even for a computation that might run for hours, you can tell very quickly how long you will have to wait, and whether it’s worth it to wait or if you need to speed up your loop instead.
+
+
+\subsection{When the bottleneck is the dataset}
+\label{\detokenize{chapter-11-processing-rows:when-the-bottleneck-is-the-dataset}}
+Sometimes, you can’t get around the fact that you just have to process a lot of data, and that can be slow.  Unless you’re working for a company that will provide you with some powerful computing resources in the cloud on which to run your Jupyter notebook, so that it runs faster than it does on your laptop (or the free Colab/Deepnote machines), you’ll just have to run the slow code.  But there are still some ways to make this better.
+
+\sphinxstylestrong{Don’t run it more than you have to.}  Often, the slow code is something that happens early your work, such as cleaning a huge dataset or searching through it for just the rows you need for your analysis.  Once you’ve written code that does this, save the result to a file with \sphinxcode{\sphinxupquote{pd.to\_csv()}} or \sphinxcode{\sphinxupquote{pd.to\_pickle()}} and don’t run that code again.
+
+Don’t fall into the trap of thinking that all your code needs to be in one Python script or one Jupyter notebook.  If that slow code that cleaned your data never needs to be run again, then once you’ve run it and saved the output, save the script/notebook, close it, and start a new script or notebook to contain your data analysis code.  Then when you re\sphinxhyphen{}run your analysis, you don’t have to sit around and wait for the data cleaning to happen all over again!
+
+This advice is especially important if the slow part of your work requires fetching data from the Internet.  Network downloads are the slowest and least predictable part of your work.  Once it’s been done correctly, don’t run it again.
+
+\sphinxstylestrong{Do your work on a small dataset.}  If the dataset you have to analyze is still large enough that your analysis code itself runs slowly as well, try the following.  Near the top of your file, replace the actual data with a small sample of it, perhaps using code like this.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{patients} \PYG{o}{=} \PYG{n}{patients}\PYG{o}{.}\PYG{n}{sample}\PYG{p}{(} \PYG{l+m+mi}{3} \PYG{p}{)}
+\PYG{n}{patients}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+       id  height  dose
+5  100618  170.18   2.0
+3      83  173.00   2.0
+0  100615  182.88   2.0
+\end{sphinxVerbatim}
+
+Now the entire rest of my script or noteboook will operate on only this tiny DataFrame.  (Obviously, you’d want to choose a number larger than three in your code!  I’m doing a tiny example here.  You might reduce 100,000 rows to just 1,000, for example.)
+
+Then as you create your data analysis code, which inevitably involves running it many times, you won’t have to wait for it to process all 100,000 rows of the data.  It can work on just 1,000 and run 100x faster.  When your analysis code works and you’re ready to write your report, delete the code that creates a small sample of the data and re\sphinxhyphen{}run your notebook from the start, now opearting on the whole dataset.  It will be slower, but you have to sit through that only once.
+
+\sphinxstyleemphasis{Danger!}  Don’t forget to delete that cell when your code is polished and you want to do the real, final analysis!  I suggest adding a note in giant text at the end of your notebook saying something like, “Don’t forget, before you turn this in, USE THE WHOLE DATASET!”  Then you’ll remember to do that key step before you complete the project.
+
+\sphinxstylestrong{If the dataset is truly huge,} so large that it can’t be stored in your computer’s memory all at once, then trying to load it will either generate out\sphinxhyphen{}of\sphinxhyphen{}memory errors or it will slow the process down enormously while the computer tries to use its hard drive as temporary extra memory storage.  In such cases, don’t forget the tip at the end of \sphinxhref{big-cheat-sheet\#chapter-1-using-iterators-in-pythonland}{this DataCamp chapter} about the \sphinxcode{\sphinxupquote{chunksize}} parameter.  It lets you process large files in smaller chunks.
 
 
 \section{Concatenating and Merging DataFrames}
@@ -7232,7 +8087,7 @@ The same code works for any random variable, not just \sphinxcode{\sphinxupquote
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0, 0, 0, 0, 0, 0, 0, 1, 1, 0])
+array([0, 1, 0, 0, 0, 0, 0, 0, 0, 1])
 \end{sphinxVerbatim}
 
 The same code works for any random variable, not just \sphinxcode{\sphinxupquote{b1}}.
@@ -7322,9 +8177,9 @@ The same code works for any continuous random variable, not just \sphinxcode{\sp
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([ 90.89595355,  97.31952372,  91.43187454, 103.45022861,
-       106.67196146, 100.18036076, 104.03151757,  89.23664949,
-       101.55167056,  98.99289958])
+array([ 96.48606036,  98.89357008, 107.40512514, 107.470938  ,
+        95.48669862, 105.15317683, 102.97463564,  93.45918609,
+       102.93516701,  98.94843917])
 \end{sphinxVerbatim}
 
 
@@ -7538,6 +8393,10 @@ Analysis of variance is an optional topic your GB213 class may or may not have c
 \subsubsection{\protect\(\chi^2\protect\) Tests}
 \label{\detokenize{GB213-review-in-Python:chi-2-tests}}
 Chi\sphinxhyphen{}squared (\(\chi^2\)) tests are another optional GB213 topic that your class may or may not have covered.  If you are familiar with it and would like to see how to do it in Python, check out \sphinxhref{https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chisquare.html}{the Scipy documentation for \sphinxcode{\sphinxupquote{chisquare}}}.
+
+
+
+
 
 
 
