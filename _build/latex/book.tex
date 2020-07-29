@@ -63,7 +63,7 @@
 
 
 \title{MA346 Course Notes}
-\date{Jul 27, 2020}
+\date{Jul 29, 2020}
 \release{}
 \author{Nathan Carter}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -3794,12 +3794,12 @@ We will return to vectorization and loops in Chapter 11 of these notes.  For now
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.00210201, 0.1433012 , 0.72889034, 0.05502441, 0.26451572,
-       0.43691495, 0.366113  , 0.9651693 , 0.75086418, 0.65100788,
-       0.53480992, 0.4911561 , 0.48880651, 0.37186778, 0.88927119,
-       0.33992887, 0.43600995, 0.94404253, 0.2176242 , 0.66602609,
-       0.36031763, 0.45291016, 0.89159806, 0.68205396, 0.4972707 ,
-       0.76536462, 0.79460073, 0.04645869, 0.24173779, 0.55697275])
+array([0.20850962, 0.31168728, 0.46599024, 0.16659761, 0.59516571,
+       0.92613125, 0.13906747, 0.14225855, 0.40086385, 0.12190931,
+       0.74776587, 0.27625783, 0.46294778, 0.50737946, 0.46406659,
+       0.0093127 , 0.1482293 , 0.90933297, 0.87896433, 0.47943593,
+       0.10416273, 0.46958161, 0.76569984, 0.09403733, 0.70498404,
+       0.12742527, 0.77028858, 0.66514029, 0.5969186 , 0.53189692])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3807,9 +3807,9 @@ array([0.00210201, 0.1433012 , 0.72889034, 0.05502441, 0.26451572,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.  , 0.14, 0.73, 0.06, 0.26, 0.44, 0.37, 0.97, 0.75, 0.65, 0.53,
-       0.49, 0.49, 0.37, 0.89, 0.34, 0.44, 0.94, 0.22, 0.67, 0.36, 0.45,
-       0.89, 0.68, 0.5 , 0.77, 0.79, 0.05, 0.24, 0.56])
+array([0.21, 0.31, 0.47, 0.17, 0.6 , 0.93, 0.14, 0.14, 0.4 , 0.12, 0.75,
+       0.28, 0.46, 0.51, 0.46, 0.01, 0.15, 0.91, 0.88, 0.48, 0.1 , 0.47,
+       0.77, 0.09, 0.7 , 0.13, 0.77, 0.67, 0.6 , 0.53])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3817,12 +3817,12 @@ array([0.  , 0.14, 0.73, 0.06, 0.26, 0.44, 0.37, 0.97, 0.75, 0.65, 0.53,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([1.00210422, 1.15407736, 2.07277926, 1.05656641, 1.3027999 ,
-       1.54792443, 1.44211819, 2.62523207, 2.11883028, 1.91747243,
-       1.70712371, 1.63420443, 1.63036923, 1.45044119, 2.43335555,
-       1.40484766, 1.54652418, 2.57035116, 1.24311982, 1.94648676,
-       1.43378476, 1.57288288, 2.43902424, 1.97793617, 1.64422756,
-       2.14977808, 2.21355702, 1.0475548 , 1.27346023, 1.7453808 ])
+array([1.23184079, 1.36572754, 1.59359145, 1.18127884, 1.81333141,
+       2.52472273, 1.14920164, 1.15287468, 1.49311396, 1.12965165,
+       2.11227563, 1.31818769, 1.58875037, 1.66093295, 1.59052888,
+       1.0093562 , 1.1597788 , 2.48266598, 2.4084041 , 1.61516308,
+       1.10978103, 1.59932491, 2.15049886, 1.09860075, 2.02381438,
+       1.13589997, 2.16038961, 1.94476334, 1.81651276, 1.70215811])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3830,14 +3830,14 @@ array([1.00210422, 1.15407736, 2.07277926, 1.05656641, 1.3027999 ,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([4.41843808e\PYGZhy{}06, 2.05352349e\PYGZhy{}02, 5.31281134e\PYGZhy{}01, 3.02768613e\PYGZhy{}03,
-       6.99685662e\PYGZhy{}02, 1.90894678e\PYGZhy{}01, 1.34038726e\PYGZhy{}01, 9.31551774e\PYGZhy{}01,
-       5.63797022e\PYGZhy{}01, 4.23811256e\PYGZhy{}01, 2.86021646e\PYGZhy{}01, 2.41234312e\PYGZhy{}01,
-       2.38931802e\PYGZhy{}01, 1.38285645e\PYGZhy{}01, 7.90803250e\PYGZhy{}01, 1.15551637e\PYGZhy{}01,
-       1.90104676e\PYGZhy{}01, 8.91216298e\PYGZhy{}01, 4.73602943e\PYGZhy{}02, 4.43590749e\PYGZhy{}01,
-       1.29828797e\PYGZhy{}01, 2.05127616e\PYGZhy{}01, 7.94947097e\PYGZhy{}01, 4.65197605e\PYGZhy{}01,
-       2.47278152e\PYGZhy{}01, 5.85783002e\PYGZhy{}01, 6.31390324e\PYGZhy{}01, 2.15840985e\PYGZhy{}03,
-       5.84371567e\PYGZhy{}02, 3.10218649e\PYGZhy{}01])
+array([4.34762632e\PYGZhy{}02, 9.71489629e\PYGZhy{}02, 2.17146905e\PYGZhy{}01, 2.77547639e\PYGZhy{}02,
+       3.54222222e\PYGZhy{}01, 8.57719089e\PYGZhy{}01, 1.93397615e\PYGZhy{}02, 2.02374937e\PYGZhy{}02,
+       1.60691824e\PYGZhy{}01, 1.48618808e\PYGZhy{}02, 5.59153790e\PYGZhy{}01, 7.63183880e\PYGZhy{}02,
+       2.14320646e\PYGZhy{}01, 2.57433918e\PYGZhy{}01, 2.15357799e\PYGZhy{}01, 8.67264725e\PYGZhy{}05,
+       2.19719240e\PYGZhy{}02, 8.26886456e\PYGZhy{}01, 7.72578292e\PYGZhy{}01, 2.29858811e\PYGZhy{}01,
+       1.08498733e\PYGZhy{}02, 2.20506887e\PYGZhy{}01, 5.86296247e\PYGZhy{}01, 8.84301924e\PYGZhy{}03,
+       4.97002492e\PYGZhy{}01, 1.62371984e\PYGZhy{}02, 5.93344498e\PYGZhy{}01, 4.42411608e\PYGZhy{}01,
+       3.56311814e\PYGZhy{}01, 2.82914335e\PYGZhy{}01])
 \end{sphinxVerbatim}
 
 Notice that this makes it very easy to compute certain mathematical formulas.  For example, when we want to measure the quality of a model, we might compute the RSSE, or Root Sum of Squared Errors, that is, the square root of the sum of the squared differences between each actual data value \(y_i\) and its predicted value \(\hat y_i\).  In math, we write it like this:
@@ -3908,8 +3908,8 @@ In fact, SciPy’s built\sphinxhyphen{}in random number generating procedures le
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([48.57103183, 98.26842145, 55.58851316, 73.94366551,  3.83460037,
-       75.71282494, 22.93508032, 86.5985114 ,  3.90013674, 98.36457815])
+array([76.85768748, 48.01593333, 92.85262834, 41.81845963, 26.91906569,
+       34.43715542, 22.2555    , 44.79309438, 20.67422863, 38.03269724])
 \end{sphinxVerbatim}
 
 Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two arguments and create a specific random variable, then call \sphinxcode{\sphinxupquote{rvs}} on that.
@@ -3920,8 +3920,8 @@ Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two a
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([80.88400227, 59.9978174 , 47.9369339 , 97.21299604, 53.73272704,
-       87.30240982, 25.66302895, 64.47418396, 25.64360411, 83.42337879])
+array([94.36173421, 37.41078276, 49.82941889, 31.62948686, 33.37754507,
+        5.79206238, 71.32878629, 48.11541087, 99.20472891, 40.9434339 ])
 \end{sphinxVerbatim}
 
 The same random variable can, of course, be used to create more values later.
@@ -8087,7 +8087,7 @@ The same code works for any random variable, not just \sphinxcode{\sphinxupquote
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0, 1, 0, 0, 0, 0, 0, 0, 0, 1])
+array([0, 1, 0, 1, 0, 0, 0, 0, 0, 0])
 \end{sphinxVerbatim}
 
 The same code works for any random variable, not just \sphinxcode{\sphinxupquote{b1}}.
@@ -8177,9 +8177,9 @@ The same code works for any continuous random variable, not just \sphinxcode{\sp
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([ 96.48606036,  98.89357008, 107.40512514, 107.470938  ,
-        95.48669862, 105.15317683, 102.97463564,  93.45918609,
-       102.93516701,  98.94843917])
+array([ 97.9895976 , 103.57790101, 102.14852225, 104.84689142,
+        99.02659809, 107.33275204,  95.22139243, 100.98510897,
+       105.20215099, 100.80143421])
 \end{sphinxVerbatim}
 
 

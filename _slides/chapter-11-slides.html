@@ -13206,6 +13206,119 @@ a.anchor-link {
 
 </div>
 </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Reasons-to-avoid-loops">Reasons to avoid loops<a class="anchor-link" href="#Reasons-to-avoid-loops">&#182;</a></h2><ul>
+<li>Readability<ul>
+<li>loops are typically <em>more code</em></li>
+<li>sometimes the meaning of the code is clearer with a loop, sometimes clearer other ways</li>
+</ul>
+</li>
+<li>Speed<ul>
+<li>loops are typically slower than other options</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Using-apply()-instead">Using <code>apply()</code> instead<a class="anchor-link" href="#Using-apply()-instead">&#182;</a></h2><ul>
+<li>Usually requires writing the function you want to apply, but not always<ul>
+<li>Sometimes the function is built in (like <code>math.sqrt</code>)</li>
+<li>Sometimes it's short enough for a <code>lambda</code>, as in <code>lambda name: 'Mr.' in name</code></li>
+</ul>
+</li>
+<li>Mostly the same as <code>map()</code><ul>
+<li>Some differences detailed in the course notes</li>
+<li>Most importantly, <code>map()</code> supports Python dictionaries</li>
+</ul>
+</li>
+<li>Prepares us for easy parallel processing with <code>swifter</code> or <code>multiprocessing</code></li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Map-reduce">Map-reduce<a class="anchor-link" href="#Map-reduce">&#182;</a></h2><h3 id="Exercise-1---Historic-precipitation">Exercise 1 - Historic precipitation<a class="anchor-link" href="#Exercise-1---Historic-precipitation">&#182;</a></h3><p>The file USW00094850.csv (<a href="../_static/USW00094850.csv">download here</a>) was a free download from the National Oceanic and Atmospheric Assocation (originally <a href="https://www.ncei.noaa.gov/data/coop-hourly-precipitation/v2/doc/readme.csv.txt">here</a>).</p>
+<p>Its full documentation appears <a href="https://www.ncei.noaa.gov/data/coop-hourly-precipitation/v2/doc/readme.csv.txt">here</a>, but the key points are:</p>
+<ul>
+<li>Each row is for a separate day between Feb 1, 1979 and June 7, 2020.</li>
+<li>Each row contains precipitation measurements taken in Marquette, MI, near Lake Superior.</li>
+<li>There are hourly rows in great detail, but the column "DlySum" is a sum for the entire day.</li>
+<li>Units are in hundredths of an inch.</li>
+</ul>
+<p>First, load the file into a Python script or Jupyter notebook.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-1-continued">Exercise 1 continued<a class="anchor-link" href="#Exercise-1-continued">&#182;</a></h3><p><strong>Question 1:</strong> What was the total number of inches of precipitation in 1990?</p>
+<p><strong>Question 2:</strong> What percentage of days in the 2000s had at least 1 inch of precipitation?</p>
+<p><strong>Question 3:</strong> On what date did the highest precipitation take place, as far as this data shows?</p>
+<p><strong>Question 4:</strong> Did any other date tie with that one for the highest?</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Split-apply-combine">Split-apply-combine<a class="anchor-link" href="#Split-apply-combine">&#182;</a></h2><h3 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h3><p>In this exercise, we will use two datasets.</p>
+<ol>
+<li>the sample of home mortgage applications we've used in several different weeks of the course, <code>practice-project-dataset-1.csv</code></li>
+<li>the file you prepared as homework for today, of 2016 election results by state, which we'll call <code>npr-2016-election-data.csv</code></li>
+</ol>
+<p><strong>Question 1:</strong> What is the median property value for mortgage applications by state?</p>
+<p><strong>Question 2:</strong> What is the median property value for mortgage applications by race of primary borrower, sorted in descending order?</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-2,-continued">Exercise 2, continued<a class="anchor-link" href="#Exercise-2,-continued">&#182;</a></h3><p>This final pieces of Exercise 2 do not require using the split-apply-combine pattern.</p>
+<p><strong>Question 3:</strong> Create a new column in the mortgage dataset that assigns to each mortgage the percentage of votes that went to Trump in that state in 2016.  Create a scatterplot of that column against property value.  To make it reasonable, you may need to ignore data points for houses costing over \$500,000.</p>
+<p><strong>Question 4:</strong> Consider just the most Republican states ($\ge60\%$ for Trump) vs. just the most Democratic states ($\ge40\%$ for Trump), and wonder whether the median property value is different for those two subsamples.  Run a hypothesis test at the 95% confidence level for this question.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-3-(no-coding-required)">Exercise 3 (no coding required)<a class="anchor-link" href="#Exercise-3-(no-coding-required)">&#182;</a></h3><p>Imagine a folder containing several files:</p>
+<ul>
+<li>One is a table of all the factories owned by a particular company, and the attributes of each.</li>
+<li>Another is a table of all the employees of that company, and their individual data, including which factory they work at.</li>
+<li>There are several other files, one for each factory, logging its production of each type of unit over the past several years.</li>
+</ul>
+<p>For each computation below, determine whether its form is map-reduce, split-apply-combine, or something else.  If it does fit one of those two common forms, explain what the "map" step would require, or the "split" step, and so on.</p>
+<p><strong>Question 1:</strong> We want to compute the average number of units produced across all factories in the past quarter.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-3-continued">Exercise 3 continued<a class="anchor-link" href="#Exercise-3-continued">&#182;</a></h3><p><strong>Question 2:</strong> We want to compute the median salary of employees by factory.</p>
+<p><strong>Question 3:</strong> We want to see a scatterplot of the relationship between number of employees at a factory and average daily units produced at that factory.</p>
+
+</div>
+</div>
 </div></section></section>
 </div>
 </div>
