@@ -15,5 +15,4 @@ latex:
 
 html:
   baseurl: "https://nathancarter.github.io/ma346-course-notes"
-  navbar_number_sections: true
 
