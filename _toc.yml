@@ -1,4 +1,5 @@
 - file: intro.ipynb
+  numbered: true
 - file: chapter-1-intro-to-data-science.ipynb
 - file: chapter-2-mathematical-foundations.ipynb
 - file: chapter-3-jupyter.ipynb
