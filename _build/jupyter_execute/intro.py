@@ -8,7 +8,7 @@ You can <a href="../../_static/MA346-course-notes.pdf">download a PDF of these c
 This course notes website is still in development, so the content here is incomplete.  It will be ready by Fall 2020.
 ```
 
-## Course schedule
+**Course schedule**
 
 Each topic below will become a link to what we will cover in class that day, once I've made more progress in completing these course notes.
 

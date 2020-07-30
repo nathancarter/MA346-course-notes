@@ -64,7 +64,7 @@
 
 
 \title{MA346 Course Notes}
-\date{Jul 29, 2020}
+\date{Jul 30, 2020}
 \release{}
 \author{Nathan Carter}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -88,9 +88,8 @@ You can download a PDF of these course notes here, in case you prefer to read it
 This course notes website is still in development, so the content here is incomplete.  It will be ready by Fall 2020.
 \end{sphinxadmonition}
 
+\sphinxstylestrong{Course schedule}
 
-\chapter{Course schedule}
-\label{\detokenize{intro:course-schedule}}
 Each topic below will become a link to what we will cover in class that day, once I’ve made more progress in completing these course notes.
 
 
@@ -415,12 +414,12 @@ Final Project Workshop
 \end{longtable}\sphinxatlongtableend\end{savenotes}
 
 
-\section{Introduction to Data Science}
+\chapter{Introduction to Data Science}
 \label{\detokenize{chapter-1-intro-to-data-science:introduction-to-data-science}}\label{\detokenize{chapter-1-intro-to-data-science::doc}}
 See also the slides that summarize a portion of this content.
 
 
-\subsection{What is data science?}
+\section{What is data science?}
 \label{\detokenize{chapter-1-intro-to-data-science:what-is-data-science}}
 The term “data science” was coined in 2001, attempting to describe a new field.  Some argue that it’s nothing more than the natural evolution of statistics, and shouldn’t be called a new field at all.  But others argue that it’s more interdisciplinary.  For example, in \sphinxstyleemphasis{The Data Science Design Manual} (2017), Steven Skiena says the following.
 \begin{quote}
@@ -435,7 +434,7 @@ This echoes a famous blog post by Drew Conway in 2013, called \sphinxhref{http:/
 Regardless of whether data science is just a part of statistics, and regardless of the domain to which we’re applying data science, the goal is the same: \sphinxstylestrong{to turn data into actionable value.}  The professional society INFORMS defines the related field of analytics as “the scientific process of transforming data into insight for making better decisions.”
 
 
-\subsection{What do data scientists do?}
+\section{What do data scientists do?}
 \label{\detokenize{chapter-1-intro-to-data-science:what-do-data-scientists-do}}
 Turning data into actionable value usually involves answering questions using data.  Here’s a typical workflow for how that plays out in practice.
 \begin{enumerate}
@@ -465,7 +464,7 @@ Report those conclusions to the relevant stakeholders.
 Our course focuses on all the steps \sphinxstyleemphasis{except for} the analysis.  You’ve learned some introductory statistical analysis in one of the course prerequisites (GB213), and we will leverage that.  (Later in our course we will review simple linear regression and hypothesis testing.)  If you have taken other relevant courses in statistics, mathematical modeling, econometrics, etc., and want to bring that knowledge in to use in this course, great, but it’s not a requirement.  Other advanced statistics and modeling courses you take later will essentially plug into step 4 in this data science workflow.
 
 
-\subsection{What’s in our course?}
+\section{What’s in our course?}
 \label{\detokenize{chapter-1-intro-to-data-science:what-s-in-our-course}}
 Our course covers the following four foundational aspects of data science.
 \begin{itemize}
@@ -486,14 +485,14 @@ Our course covers the following four foundational aspects of data science.
 Details about specific topics and their order appears in the course syllabus, and is summarized on {\hyperref[\detokenize{intro::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{the main page of these course notes}}}}.
 
 
-\subsection{Will this course make me a data scientist?}
+\section{Will this course make me a data scientist?}
 \label{\detokenize{chapter-1-intro-to-data-science:will-this-course-make-me-a-data-scientist}}
 This course is an introduction to data science.  Learning more math, stats, and technology will make you more qualified than just this one course can.  (Bentley University has both a \sphinxhref{https://www.bentley.edu/academics/undergraduate-programs/data-analytics}{Data Analytics major} and a \sphinxhref{https://catalog.bentley.edu/undergraduate/programs/minors-arts-sciences/minor-in-data-technologies/?\_ga=2.60446893.187969798.1590419787-1233038147.1564259120}{Data Technologies minor}, if you’re curious which courses are relevant.)
 
 But there are two focuses of our course that will make a big difference.
 
 
-\subsubsection{Learning on your own (LOYO)}
+\subsection{Learning on your own (LOYO)}
 \label{\detokenize{chapter-1-intro-to-data-science:learning-on-your-own-loyo}}
 \begin{sphinxadmonition}{note}{Big Picture}
 
@@ -505,7 +504,7 @@ Thus our course requires you to do so.  Twice during the course you must partner
 If you’re interested in a career in this space, I encourage you to follow data scientists on platforms like Twitter and Medium so that you’re kept abreast of the newest innovations and can learn those that are relevant to your work.
 
 
-\subsubsection{Excellent communication}
+\subsection{Excellent communication}
 \label{\detokenize{chapter-1-intro-to-data-science:excellent-communication}}
 This was already mentioned earlier, but I will re\sphinxhyphen{}emphasize it here, because of how important it is.  In a meeting between the Bentley University Career Services office and about a dozen employers of our graduates, the employers were asked whether they preferred technical knowledge or what some call “soft skills” and others call “power skills,” which include communication perhaps first and foremost.  Unanimously every employer chose the latter.
 
@@ -517,7 +516,7 @@ Data science is about turning data into actionable knowledge.  If a data scienti
 Consequently our course will contain several opportunities for you to exercise your communication skills and receive feedback from the instructor on doing so.  See the comments under the “communication” bullet above, and the course outline on {\hyperref[\detokenize{intro::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{the main page}}}}.  The first such opportunities appear immediately below.
 
 
-\subsection{Where should I start?}
+\section{Where should I start?}
 \label{\detokenize{chapter-1-intro-to-data-science:where-should-i-start}}
 There are several topics you can investigate on your own that will help you get a leg up in our course.  All of these topics are optional, and in our course are available for teams to investigate outside of class and report back, as described above.
 
@@ -618,7 +617,7 @@ at least one example of how to apply it to a set of data, when a smooth function
 \end{itemize}
 
 
-\section{Mathematical Foundations}
+\chapter{Mathematical Foundations}
 \label{\detokenize{chapter-2-mathematical-foundations:mathematical-foundations}}\label{\detokenize{chapter-2-mathematical-foundations::doc}}
 See also the slides that summarize a portion of this content.
 
@@ -628,12 +627,12 @@ The contents of this page are extremely foundational to the course.  We will be 
 \end{sphinxadmonition}
 
 
-\subsection{Functions}
+\section{Functions}
 \label{\detokenize{chapter-2-mathematical-foundations:functions}}
 \sphinxstylestrong{Definition:} A \sphinxstyleemphasis{function} is any method for taking a list of inputs and determining the corresponding output.
 
 
-\subsubsection{Examples of functions}
+\subsection{Examples of functions}
 \label{\detokenize{chapter-2-mathematical-foundations:examples-of-functions}}
 \sphinxstylestrong{Math:} We can write functions with the usual notation from an algebra or calculus course:
 \begin{itemize}
@@ -750,7 +749,7 @@ How is this a method for turning inputs into outputs?  We use the familiar and f
 \sphinxstylestrong{Others:} Later in the course we will see other ways to represent functions, but the ones above are the most common.
 
 
-\subsubsection{Which way is best?}
+\subsection{Which way is best?}
 \label{\detokenize{chapter-2-mathematical-foundations:which-way-is-best}}
 The examples above show that you can express functions using math, English, Python, tables, and more.  Although none of these ways is always better than the others, we will typically give functions names and refer to them by those names.  Examples:
 \begin{itemize}
@@ -763,7 +762,7 @@ In Python:  The \sphinxcode{\sphinxupquote{def}} keyword in Python is for giving
 \end{itemize}
 
 
-\subsubsection{Why care about functions?}
+\subsection{Why care about functions?}
 \label{\detokenize{chapter-2-mathematical-foundations:why-care-about-functions}}
 The concept of a function was invented because it represents an important component of how humans think about the processing of information.  As you’ve seen above, functions show up in ordinary language, in mathematics, in tables of data, and code that processes data.  Even people who don’t do data work use functions unknowingly all the time when they talk about information, as in:
 \begin{itemize}
@@ -785,7 +784,7 @@ Unsurprisingly, functions show up all over the place in data science.  In partic
 \end{sphinxVerbatim}
 
 
-\subsection{Writing functions in Python}
+\section{Writing functions in Python}
 \label{\detokenize{chapter-2-mathematical-foundations:writing-functions-in-python}}
 In MA346, we’ll almost always want the functions we use to be written in Python, so that we can run them on data.  Let’s practice writing some functions in Python.
 
@@ -851,7 +850,7 @@ Example: \sphinxcode{\sphinxupquote{country\_capitol('JORDAN')}} would yield \sp
 Why do you think the \sphinxcode{\sphinxupquote{dict(zip())}} trick given above works?  What exactly is it doing?
 
 
-\subsection{Terminology}
+\section{Terminology}
 \label{\detokenize{chapter-2-mathematical-foundations:terminology}}
 The following terminology is used throughout computing when discussing functions.
 
@@ -880,12 +879,12 @@ For instance, the \sphinxcode{\sphinxupquote{is\_a\_long\_word}} function maps s
 Although there are related words that go beyond three inputs (quaternary!) almost nobody uses them; instead, we would probably just say “a four\sphinxhyphen{}parameter function.”
 
 
-\subsection{Relations}
+\section{Relations}
 \label{\detokenize{chapter-2-mathematical-foundations:relations}}
 \sphinxstylestrong{Definition:} A \sphinxstyleemphasis{relation} is a function whose output type is \sphinxcode{\sphinxupquote{bool}}, that is, the outputs are always either true or false.
 
 
-\subsubsection{Examples of relations}
+\subsection{Examples of relations}
 \label{\detokenize{chapter-2-mathematical-foundations:examples-of-relations}}
 \sphinxstylestrong{Math:} Any equation or inequality in mathematics is a relation, such as \(x^2+y^2\ge z^2\) or \(x\ge 0\).
 
@@ -935,14 +934,14 @@ The above big picture concept is almost 100\% true.  Technically, a pandas DataF
 \sphinxstylestrong{Others:} Later in the class we’ll see even other ways to represent functions.
 
 
-\subsubsection{Which way is best?}
+\subsection{Which way is best?}
 \label{\detokenize{chapter-2-mathematical-foundations:id1}}
 Although we can express relations in all the ways just mentioned—in math, English, Python, or with lists—we typically \sphinxstyleemphasis{talk about} relations by using simple phrases.  For instance, it’s awkward to say “the ‘        is a fruit’ relation,” so I would probably instead say something like “being a fruit.”  And instead of \(x<y\), I might say something like “the usual less\sphinxhyphen{}than relation for numbers.”
 
 Sometimes we just use the central phrase to describe a binary relation.  So to discuss the “        has more employees than        ” relation, I might just use the phrase “has more employees than” when talking about it, or perhaps just “more employees.”  Usually it’s clear what we mean.
 
 
-\subsubsection{Why care about relations?}
+\subsection{Why care about relations?}
 \label{\detokenize{chapter-2-mathematical-foundations:why-care-about-relations}}
 The mathematical concept of a relation was invented because humans use it all the time when we think and speak, even though we don’t precisely define it in everyday life.  Every time we say a declarative sentence, this idea comes up.  Here are some examples:
 \begin{itemize}
@@ -967,7 +966,7 @@ A very important use of relations in data science is for \sphinxstyleemphasis{fi
 \end{sphinxVerbatim}
 
 
-\subsection{Relations and functions in data}
+\section{Relations and functions in data}
 \label{\detokenize{chapter-2-mathematical-foundations:relations-and-functions-in-data}}
 \begin{sphinxadmonition}{note}{Exercise 4 \sphinxhyphen{} food inspections}
 
@@ -1294,10 +1293,10 @@ ON
 \sphinxattableend\end{savenotes}
 
 
-\subsection{Some technical notes}
+\section{Some technical notes}
 \label{\detokenize{chapter-2-mathematical-foundations:some-technical-notes}}
 
-\subsubsection{Connections between functions and relations}
+\subsection{Connections between functions and relations}
 \label{\detokenize{chapter-2-mathematical-foundations:connections-between-functions-and-relations}}
 As you’ve probably noticed, there are some close relationships between relations and functions.  Let’s state them explicitly.
 \begin{itemize}
@@ -1310,7 +1309,7 @@ But in the last two exercises, we’ve been thinking about relations and functio
 \end{itemize}
 
 
-\subsubsection{Applying functions and relations}
+\subsection{Applying functions and relations}
 \label{\detokenize{chapter-2-mathematical-foundations:applying-functions-and-relations}}
 This idea of “input lookup” is called \sphinxstyleemphasis{applying} a function.  For example, we apply the \sphinxcode{\sphinxupquote{country\_capitol}} function by looking up the country in the table and giving the corresponding capitol as output.
 
@@ -1319,7 +1318,7 @@ But we can actually do lookup in a relation as well, as long as we don’t mind 
 In short, functions let you apply them and get a unique answer, while relations let you apply them and get any number of answers.
 
 
-\subsubsection{Inverses}
+\subsection{Inverses}
 \label{\detokenize{chapter-2-mathematical-foundations:inverses}}
 As mentioned above, a function is a relation in which \sphinxstyleemphasis{for each} input, \sphinxstyleemphasis{there is exactly one} output.  But for \sphinxstyleemphasis{some} functions, the reverse is also true:  For each \sphinxstyleemphasis{output}, there is exactly one \sphinxstyleemphasis{input.}
 
@@ -1340,7 +1339,7 @@ This concept is probably familiar from mathematics, where we speak of \sphinxsty
 In summary:  For a relation to be a function, it has to provide just one output for each input.  For it to be invertible, it has to have just one input for each output.
 
 
-\subsection{An extremely common data operation: Lookup}
+\section{An extremely common data operation: Lookup}
 \label{\detokenize{chapter-2-mathematical-foundations:an-extremely-common-data-operation-lookup}}
 When working with data and writing code, we “look up” values in many different ways.  We’ve already discussed above how applying a function expressed in a table is done by looking up the input and finding the corresponding output.
 
@@ -1374,12 +1373,12 @@ Some of the lookup operations shown above act like functions and some act like r
 Later in the course we will see that SQL joins (called by various names in pandas, including merge, concat, and join) are highly related to all the lookup concepts just discussed.  A SQL or pandas join is like doing many lookups all at once, which is why it is such a common operation.
 
 
-\section{Jupyter}
+\chapter{Jupyter}
 \label{\detokenize{chapter-3-jupyter:jupyter}}\label{\detokenize{chapter-3-jupyter::doc}}
 See also the slides that summarize a portion of this content.
 
 
-\subsection{What’s Jupyter?}
+\section{What’s Jupyter?}
 \label{\detokenize{chapter-3-jupyter:what-s-jupyter}}
 The Jupyter project makes it possible to use code to experiment with and process data in your web browser.  It lets you do all of these things in one page (or browser tab):
 \begin{itemize}
@@ -1425,7 +1424,7 @@ In fact, these course notes were written in Jupyter.  That’s why you’ll see 
 Okay, sounds great, so where do we point our browser to start using this thing?  Well, you’ve got lots of options, so let’s see what they are first.
 
 
-\subsection{How does Jupyter work?}
+\section{How does Jupyter work?}
 \label{\detokenize{chapter-3-jupyter:how-does-jupyter-work}}
 \begin{sphinxadmonition}{note}{Big Picture}
 
@@ -1444,7 +1443,7 @@ How you interact with each of these two pieces is important, and comes with some
 \end{sphinxadmonition}
 
 
-\subsubsection{Jupyter in the cloud}
+\subsection{Jupyter in the cloud}
 \label{\detokenize{chapter-3-jupyter:jupyter-in-the-cloud}}
 The easiest way to start using Jupyter is to just point your browser at a website that offers you access to Jupyter in the cloud.  In such a situation, Jupyter’s two pieces work like this:
 \begin{enumerate}
@@ -1513,7 +1512,7 @@ Perhaps the most limited in terms of how much computing you get for free, though
 Obviously, none of these is going to give you access to a supercomputer for free.  If you want to do any intense or lengthy computing in the cloud, you have to pay for them to let the kernel you’re using run on big hardware.
 
 
-\subsubsection{Jupyter on your machine}
+\subsection{Jupyter on your machine}
 \label{\detokenize{chapter-3-jupyter:jupyter-on-your-machine}}
 You can also choose to run Jupyter on your own machine.  In contrast to accessing Jupyter in the cloud, when you run it on your own machine, Jupyter’s two pieces work like this:
 \begin{enumerate}
@@ -1653,7 +1652,7 @@ When you quit nteract, it quits not only the user interface you see, but the inv
 The only disadvantage here is that some Jupyter notebook extensions don’t work in nteract.  But we won’t be using many of those in MA346 anyway.
 
 
-\subsection{Closing comments}
+\section{Closing comments}
 \label{\detokenize{chapter-3-jupyter:closing-comments}}
 There are many websites that make it easy to view Jupyter notebooks online.  This is very useful for sharing the results of your work when you’re done.  Examples include \sphinxhref{https://nbviewer.jupyter.org/}{NbViewer} and \sphinxhref{https://github.com/}{GitHub}, but there are others.  Notebooks are often shared in nerdy places on the Internet, with websites supporting viewing them with all their plots, tables, and math displayed nicely.  We will learn how to use GitHub in a future week.
 
@@ -1708,12 +1707,12 @@ Suggestions for where the student can go to learn more symbols or notation if th
 \end{itemize}
 
 
-\section{Review of Python and pandas}
+\chapter{Review of Python and pandas}
 \label{\detokenize{chapter-4-review-of-python-and-pandas:review-of-python-and-pandas}}\label{\detokenize{chapter-4-review-of-python-and-pandas::doc}}
 Unlike most chapters, there are no slides corresponding to this chapter, because they consist mostly of in\sphinxhyphen{}class exercises.  They aim to help you remember the Python and pandas you learned in CS230 and be sure they’re refreshed and at the front of your mind, so that we can build on them in future weeks.
 
 
-\subsection{Python review 1: Remembering pandas}
+\section{Python review 1: Remembering pandas}
 \label{\detokenize{chapter-4-review-of-python-and-pandas:python-review-1-remembering-pandas}}
 This first set of exercises works with a database from the U.S. Consumer Financial Protection Bureau.  The dataset recorded all mortgage applications in the U.S. in 2018, over 15 million of them.  Here we will work with a sample of about 0.1\% of that data, just over 15 thousand entries.  These 15 thousand entries are randomly sampled from just those applications that were for a conventional loan for a typical home purchase of a principal residence (i.e., not a rental property, not an office building, etc., just standard house or condo for an individual or family).
 
@@ -1785,7 +1784,7 @@ Which steps are more convenient in Excel and which are more convenient in Python
 \end{sphinxadmonition}
 
 
-\subsection{Adding a new column}
+\section{Adding a new column}
 \label{\detokenize{chapter-4-review-of-python-and-pandas:adding-a-new-column}}
 As you may recall from CS230, you can add new columns to a pandas DataFrame using code like the example below.  This example calculates how much interest the loan would accrue in the first year.  (This is not fully accurate, since of course the borrower would make some payments that year, but it’s just an example.)
 
@@ -1804,24 +1803,24 @@ The warning message you see when you attempt to run the code described above is 
 \end{sphinxadmonition}
 
 
-\subsection{What if you don’t remember CS230 very well?}
+\section{What if you don’t remember CS230 very well?}
 \label{\detokenize{chapter-4-review-of-python-and-pandas:what-if-you-don-t-remember-cs230-very-well}}
 I have several recommendations of resources you can use:
 
 
-\subsubsection{DataCamp}
+\subsection{DataCamp}
 \label{\detokenize{chapter-4-review-of-python-and-pandas:datacamp}}
 I will regularly be assigning you exercises from \sphinxhref{http://www.datacamp.com}{DataCamp}, some of which will review CS230 materials.  If you remember everything from CS230, the first few weeks of these exercises should be easy and quick for you.  If not, you will need to put in more time, but it will help you catch up.
 
 
-\subsubsection{Bentley faculty}
+\subsection{Bentley faculty}
 \label{\detokenize{chapter-4-review-of-python-and-pandas:bentley-faculty}}
 I’m glad to meet with students who need help catching up on material from CS230 they may not remember.  Please feel free to come to office hours!
 
 I know that Prof. Masloff, who teaches CS230, made an extensive set of course notes available to her students.  You may wish to review key portions of that document to help you stay caught up in MA346.  If you did not have Prof. Masloff, you might consider \sphinxhref{https://faculty.bentley.edu/details.asp?uname=jmasloff}{contacting her} and asking for her course notes anyway.
 
 
-\subsubsection{Stack Overflow}
+\subsection{Stack Overflow}
 \label{\detokenize{chapter-4-review-of-python-and-pandas:stack-overflow}}
 The premiere question and answer website for technical subjects is \sphinxhref{https://stackoverflow.com/}{Stack Overflow}.  You don’t need to visit the site, though; if you do a good Google search for any specific Python or pandas question, one of the top hits will almost alway be from Stack Overflow.  Here are a few tips to using it well:
 \begin{itemize}
@@ -1842,7 +1841,7 @@ When viewing questions and answers on Stack Overflow, don’t just accept the to
 \end{itemize}
 
 
-\subsubsection{O’Reilly books}
+\subsection{O’Reilly books}
 \label{\detokenize{chapter-4-review-of-python-and-pandas:o-reilly-books}}
 You have free access to O’Reilly Online Learning through the Bentley Library.  They are one of the top publishers of high\sphinxhyphen{}quality tutorial books on technical subjects.  To get started, \sphinxhref{https://www.oreilly.com/online-learning/try-now.html}{visit this page and at the bottom choose to download a mobile app for your phone or tablet.}
 
@@ -1857,7 +1856,7 @@ Python for Data Analysis by Wes McKinney, chapter 5 (or perhaps start earlier if
 \end{itemize}
 
 
-\subsubsection{Official documentation}
+\subsection{Official documentation}
 \label{\detokenize{chapter-4-review-of-python-and-pandas:official-documentation}}
 Official documentation is used mostly for reference.  It does not make a good tutorial or lesson.  But it is the definitive reference, so I mention it here.
 \begin{itemize}
@@ -1870,7 +1869,7 @@ Official documentation is used mostly for reference.  It does not make a good tu
 \end{itemize}
 
 
-\subsection{Python review 2: mathematical exercises}
+\section{Python review 2: mathematical exercises}
 \label{\detokenize{chapter-4-review-of-python-and-pandas:python-review-2-mathematical-exercises}}
 As before, do these exercises in a new notebook in Deepnote or Colab, and when you’re done, share the link to the published version into our class’s Teams chat.
 
@@ -1928,7 +1927,7 @@ Ensure the resulting DataFrame is sorted by its first column.
 \end{sphinxadmonition}
 
 
-\subsection{Functional\sphinxhyphen{}style code vs. imperative\sphinxhyphen{}style code}
+\section{Functional\sphinxhyphen{}style code vs. imperative\sphinxhyphen{}style code}
 \label{\detokenize{chapter-4-review-of-python-and-pandas:functional-style-code-vs-imperative-style-code}}
 As you wrote the functions above, you might have found yourself falling into one of two styles.  To see examples of each style, let’s consider the definition of the statistical concept of \sphinxstyleemphasis{variance.}  The variance of a list of data \(x_1,\ldots,x_n\) is defined to be
 \begin{equation*}
@@ -1984,7 +1983,7 @@ If you know the reader of your code is new to coding (such as a new teammate in 
 So consider using each style for those situations that it fits best.
 
 
-\section{Before and After}
+\chapter{Before and After}
 \label{\detokenize{chapter-5-before-and-after:before-and-after}}\label{\detokenize{chapter-5-before-and-after::doc}}
 See also the slides that summarize a portion of this content.
 
@@ -2001,10 +2000,10 @@ Second, it relates to communicating about code:  When we’re writing explanatio
 Let’s look at each of these meanings separately.
 
 
-\subsection{Requirements and Guarantees}
+\section{Requirements and Guarantees}
 \label{\detokenize{chapter-5-before-and-after:requirements-and-guarantees}}
 
-\subsubsection{Requirements}
+\subsection{Requirements}
 \label{\detokenize{chapter-5-before-and-after:requirements}}
 Almost nobody ever writes a piece of code with no clear purpose in mind.  You can’t write code the way you can doodle in the margins of a notebook, aimless, purposeless, spacing out.  Code almost always accomplishes something; that’s what it was built for and that’s why we use it.  So when we’re coding, it’s helpful to think about our code in a purposeful way.  It helps to do so in a “before and after” way.
 
@@ -2053,7 +2052,7 @@ I’m suspecting \sphinxcode{\sphinxupquote{total\_loan\_costs}} can be estimate
 Hmm…While some portions of that picture are linear (such as the top and bottom edges, as well as a thick strip at about \(y=4000\)), it’s pretty clear that the whole shape is not at all close to a straight line.  Any model that predicts total costs just based on property value is going to be an unreliable predictor.  I almost certainly don’t want to make a linear model for this after all (unless I’m in a situation in which I just need an \sphinxstyleemphasis{extremely} rough estimate).  Good thing I checked the requirements before making the model!
 
 
-\subsubsection{Guarantees}
+\subsection{Guarantees}
 \label{\detokenize{chapter-5-before-and-after:guarantees}}
 Each piece of code you run also provides certain guarantees that it will do for you (as long as you took care to ensure taht the assumptions it required held true).  Here are some examples:
 \begin{itemize}
@@ -2070,7 +2069,7 @@ These guarantees are, in fact, the reason we run the code in the first place.  W
 It’s important to be familiar with the guarantees provided by your math and stats software, for two reasons.  First, obviously, you can’t choose which code to run unless you know what it’s going to do when you run it!  But secondly, you’re going to want to be able to write good explanations to go along with your code, and you can’t do that unless you can articulate the guarantees your code makes.  Let’s talk about good explanations next.
 
 
-\subsection{Communication}
+\section{Communication}
 \label{\detokenize{chapter-5-before-and-after:communication}}
 \begin{sphinxadmonition}{note}{Big Picture}
 
@@ -2091,7 +2090,7 @@ After each piece of code, explain what the output means.
 This is so important that we should see some examples.
 
 
-\subsubsection{Example 1}
+\subsection{Example 1}
 \label{\detokenize{chapter-5-before-and-after:example-1}}
 Imagine that you just came across the following code, all by itself.
 
@@ -2152,7 +2151,7 @@ Even with just a small piece of code, notice how easy it is to understand when w
 We help the reader out (and ourselves later when we come back to thise code!) by following those two simple rules of explanation.
 
 
-\subsubsection{Example 2}
+\subsection{Example 2}
 \label{\detokenize{chapter-5-before-and-after:example-2}}
 Imagine encountering this code:
 
@@ -2205,7 +2204,7 @@ Poor or missing explanations decrease productivity.  When you work on a project 
 If one day you find yourself coding in a professional environment, you’ll definitely want to document your work with comments and explanations.  You’re sure to share your work with teammates at some point.  You may even use your work to show new people who join the team how to get started.  A pile of code without explanations is far less useful than code interspersed with careful explanations.
 
 
-\subsubsection{Knowing your target audience}
+\subsection{Knowing your target audience}
 \label{\detokenize{chapter-5-before-and-after:knowing-your-target-audience}}
 When you’re considering adding explanations to your code, imagine yourself explaining the code to a future reader.
 \begin{itemize}
@@ -2221,7 +2220,7 @@ If you know it’s a new coder who will read your code, be more thorough and don
 \end{itemize}
 
 
-\subsubsection{Professionalism}
+\subsection{Professionalism}
 \label{\detokenize{chapter-5-before-and-after:professionalism}}
 In a business context, taking the time required to make your writing as brief as possible has many benefits.  It enhances productivity because your writing is faster to read.  It reduces confusion because long writing makes people space out.  It shows respect because you’ve invested the time required to make sure your writing doesn’t waste your reader’s time.  Short, simple writing doesn’t make you look unintelligent; it makes you look like a clear writer.
 
@@ -2233,7 +2232,7 @@ Interview a professor in the English and Media Studies department.  Ask what the
 \end{sphinxadmonition}
 
 
-\subsubsection{Choosing a medium}
+\subsection{Choosing a medium}
 \label{\detokenize{chapter-5-before-and-after:choosing-a-medium}}
 Should I put my code explanations as comments in the code, or as Markdown cells, or what?  Here are some brief guidelines, but there are no set rules.
 \begin{itemize}
@@ -2296,14 +2295,14 @@ you know that your audience is comfortable accessing a code repository.
 \end{itemize}
 
 
-\section{Single\sphinxhyphen{}Table Verbs}
+\chapter{Single\sphinxhyphen{}Table Verbs}
 \label{\detokenize{chapter-6-single-table-verbs:single-table-verbs}}\label{\detokenize{chapter-6-single-table-verbs::doc}}
 See also the slides that summarize a portion of this content.
 
 The function we’ll discuss today got the name “verbs” because coders in the R community developed what they call \sphinxhref{https://beanumber.github.io/sds192/lab-single\_table.html}{a “grammar” for data transformation}, and the function we’ll look at today are some of that grammar’s “verbs.”  The origins in R are unimportant for our course; what matters is that verbs are things you can \sphinxstyleemphasis{do} with tables of data.
 
 
-\subsection{Tall and Wide Form}
+\section{Tall and Wide Form}
 \label{\detokenize{chapter-6-single-table-verbs:tall-and-wide-form}}
 The following two tables show the same data, but in different forms.  One is tall while the other is wide.
 
@@ -2443,12 +2442,12 @@ Although it’s not part of MA346, it’s worth mentioning that: In the famous p
 Let’s investigate them.
 
 
-\subsection{Pivot}
+\section{Pivot}
 \label{\detokenize{chapter-6-single-table-verbs:pivot}}
 As just stated, pivot is the verb for converting tall\sphinxhyphen{}form data to wide\sphinxhyphen{}form data.  We’ll give a precise definition later on.  Let’s first get some intuition for how it works.
 
 
-\subsubsection{The general idea}
+\subsection{The general idea}
 \label{\detokenize{chapter-6-single-table-verbs:the-general-idea}}
 The big picture idea of the pivot operation is illustrated here:
 
@@ -2518,7 +2517,7 @@ In pandas, we call them the \sphinxcode{\sphinxupquote{values}} of the pivot.
 \end{sphinxVerbatim}
 
 
-\subsubsection{The precise definition}
+\subsection{The precise definition}
 \label{\detokenize{chapter-6-single-table-verbs:the-precise-definition}}
 We can state precisely what \sphinxcode{\sphinxupquote{df.pivot()}} does by building on what we’ve learned in previous chapters.  We can describe both the \sphinxstyleemphasis{requirements} and \sphinxstyleemphasis{guarantees} of the pivot function, and can do so in terms of functions and relations.
 \begin{itemize}
@@ -2614,17 +2613,17 @@ Output: Wednesday sales
 \end{itemize}
 
 
-\subsubsection{Purpose of pivoting}
+\subsection{Purpose of pivoting}
 \label{\detokenize{chapter-6-single-table-verbs:purpose-of-pivoting}}
 Recall that pivoting just turns “tall” data into “wide” data.  And tall form is how you typically store data when doing an analysis, because of the ease of processing tall data using code, while wide form is often more attractive for a human reading data from a table.  \sphinxstylestrong{So the purpose of pivoting is typically when you’re generating reports for human consumption.}
 
 
-\subsection{Melt}
+\section{Melt}
 \label{\detokenize{chapter-6-single-table-verbs:melt}}
 The reverse operation to a pivot is called “melt.”  This comes from the fact that wide data “falls down” (like the drips of a melting icicle perhaps?) into tall form.  The idea is summarized in the following picture, but you can watch it happen in the animation further below.
 
 
-\subsubsection{The genreal idea}
+\subsection{The genreal idea}
 \label{\detokenize{chapter-6-single-table-verbs:the-genreal-idea}}
 The big picture idea of the pivot operation is illustrated here:
 
@@ -2692,7 +2691,7 @@ Because we’re collecting all scores into a single column, these will stack up 
 \end{sphinxVerbatim}
 
 
-\subsubsection{The precise definition}
+\subsection{The precise definition}
 \label{\detokenize{chapter-6-single-table-verbs:id1}}
 Unsurprisingly, the requirements and guarantees of the melt operation are the reverse of those from the pivot operation.
 \begin{itemize}
@@ -2724,14 +2723,14 @@ There are no other rows in the resulting table besides those just described.
 \end{itemize}
 
 
-\subsection{Pivot tables}
+\section{Pivot tables}
 \label{\detokenize{chapter-6-single-table-verbs:pivot-tables}}
 All this talk of pivoting should remind you of the very common Excel operation called “pivot table.”  It is very much like the pivot operation, with two differences.  First, it doesn’t require the table to represent a function.  Second, it does require you to explain how values will be summarized or combined.  Naturally, pandas suppoorts this operation as well, and it’s extremely useful.
 
 If \sphinxcode{\sphinxupquote{df.pivot()}} makes a tall table wide, then \sphinxcode{\sphinxupquote{df.pivot\_table()}} makes a tall table sort of wide.  We’ll see why below.
 
 
-\subsubsection{The general idea}
+\subsection{The general idea}
 \label{\detokenize{chapter-6-single-table-verbs:id2}}
 The big picture idea of the pivot operation is illustrated here:
 
@@ -2762,7 +2761,7 @@ This is why a \sphinxcode{\sphinxupquote{pivot\_table}} operation doesn’t make
 \end{sphinxVerbatim}
 
 
-\subsubsection{The precise definition}
+\subsection{The precise definition}
 \label{\detokenize{chapter-6-single-table-verbs:id3}}
 I will alter the precise definition of \sphinxcode{\sphinxupquote{df.pivot()}} as little as possible when creating this definition of \sphinxcode{\sphinxupquote{df.pivot\_table().}}
 \begin{itemize}
@@ -2800,7 +2799,7 @@ For each \sphinxcode{\sphinxupquote{index}} entry \(i\) in the original DataFram
 \end{itemize}
 
 
-\subsection{Stack and unstack}
+\section{Stack and unstack}
 \label{\detokenize{chapter-6-single-table-verbs:stack-and-unstack}}
 There are two other single\sphinxhyphen{}table verbs that you studied in the DataCamp review before today’s reading.  These are less common because they apply only in the context where there is a multi\sphinxhyphen{}index, either on rows or columns.  But we give animations of each below to help the reader visualize them.
 
@@ -2809,7 +2808,7 @@ The stack operation takes nested column indices (which are arranged horizontally
 When applying these operations, it is possible to choose which level of a multi\sphinxhyphen{}index gets stacked or unstacked.  The two animations below use two different levels, so that you can compare the differences.
 
 
-\subsubsection{Animation for unstack/stack at level 1}
+\subsection{Animation for unstack/stack at level 1}
 \label{\detokenize{chapter-6-single-table-verbs:animation-for-unstack-stack-at-level-1}}
 The level of a stack/unstack operation refers to which level of the multi\sphinxhyphen{}index will be moved.  The animation below shows \sphinxcode{\sphinxupquote{df.unstack( level=1 )}} when you move the slider from left to right, so level 1 of the row multi\sphinxhyphen{}index (the weeks) moves up to become part of the column index.  It is always placed as an inner index, but this can be changed afterwards with \sphinxcode{\sphinxupquote{df.swaplevel()}}.
 
@@ -2828,7 +2827,7 @@ The reverse operation is exactly \sphinxcode{\sphinxupquote{df.stack( level=1 )}
 \end{sphinxVerbatim}
 
 
-\subsubsection{Animation for unstack/stack at level 0}
+\subsection{Animation for unstack/stack at level 0}
 \label{\detokenize{chapter-6-single-table-verbs:animation-for-unstack-stack-at-level-0}}
 The level of a stack/unstack operation refers to which level of the multi\sphinxhyphen{}index will be moved.  The animation below shows \sphinxcode{\sphinxupquote{df.unstack( level=0 )}} when you move the slider from left to right, so level 0 of the row multi\sphinxhyphen{}index (the months) moves up to become part of the column index.  It is always placed as an inner index, but this can be changed afterwards with \sphinxcode{\sphinxupquote{df.swaplevel()}}.
 
@@ -2847,12 +2846,12 @@ The reverse operation is therefore actually a combination of \sphinxcode{\sphinx
 \end{sphinxVerbatim}
 
 
-\section{Abstraction}
+\chapter{Abstraction}
 \label{\detokenize{chapter-7-abstraction:abstraction}}\label{\detokenize{chapter-7-abstraction::doc}}
 See also the slides that summarize a portion of this content.
 
 
-\subsection{Abstract vs. concrete}
+\section{Abstract vs. concrete}
 \label{\detokenize{chapter-7-abstraction:abstract-vs-concrete}}
 Abstract/concrete are opposite ends of a spectrum:
 
@@ -2899,10 +2898,10 @@ Systematically disadvantaging any racial group is wrong.
 It’s very useful in all kinds of programming, including data\sphinxhyphen{}related work, so it’s our focus in this chapter.
 
 
-\subsection{Abstraction in mathematics}
+\section{Abstraction in mathematics}
 \label{\detokenize{chapter-7-abstraction:abstraction-in-mathematics}}
 
-\subsubsection{Example 1: Algebra class}
+\subsection{Example 1: Algebra class}
 \label{\detokenize{chapter-7-abstraction:example-1-algebra-class}}
 My kids are teenagers and have recently taken algebra classes where they learned to “complete the square.”  This procedure takes a quadratic equation like \(16x^2-9x+5=0\) and manipulates it into a form that’s easy to solve.
 \begin{itemize}
@@ -2917,7 +2916,7 @@ If you apply the technique to the equation \(ax^s+bx+c=0\), the result is the qu
 Abstraction from the specific to the general tends to create more powerful tools, because they can be applied to any specific instance of the problem.
 
 
-\subsubsection{Example 2: Excel formulas}
+\subsection{Example 2: Excel formulas}
 \label{\detokenize{chapter-7-abstraction:example-2-excel-formulas}}
 If you took the grading policy out of the syllabus for this class, you could compute your grade in the course based on your scores on each assignment.  You could do this by hand with pencil and paper, or with a calculator.  Doing so would give you one specific course grade, for the specific assignment grades you started with.
 
@@ -2926,7 +2925,7 @@ Alternately, you could fire up a spreadsheet like Excel, and create cells for ea
 Again, the general version is more useful.
 
 
-\subsubsection{Observations}
+\subsection{Observations}
 \label{\detokenize{chapter-7-abstraction:observations}}
 Both of these mathematical examples involved replacing numbers with variables.  In Example 1, the coefficients in the specific example \(16x^2-9x+5=0\) turned into \(a\), \(b\), and \(c\) in \(ax^2+bx+c=0\).  In Example 2, you didn’t write formulas that had specific scores in them (as you would have if computing the scores by hand), but wrote formulas that contained Excel\sphinxhyphen{}style variables, which have names like A5 and B14, that come from the relevant cells.  In math (and in programming as well), abstraction typically involves \sphinxstyleemphasis{replacing specific constants with variables.}
 
@@ -2971,7 +2970,7 @@ In Example 2, we might say that “It’s still possible for me to get a 4.0 in 
 The statement above from Example 1 is a \sphinxstyleemphasis{universal} statement, also called a “for all” statement.  You could rephrase it as:  For all inputs \(a,b,c\), the outputs of the quadratic formula are two complex numbers.  The statement from Example 2 is an \sphinxstyleemphasis{existence} statement, also called a “for some” statement.  You could rephrase it as:  For some final exam scores, my final course grade is still a 4.0.  For all/for some statements are central to mathematics and we will see them show up a lot.  “For all” and “for some” are called \sphinxstyleemphasis{quantifiers} and are sometimes written \(\forall\) (for all) and \(\exists\) (for some, or “there exists”).
 
 
-\subsection{Abstraction in programming}
+\section{Abstraction in programming}
 \label{\detokenize{chapter-7-abstraction:abstraction-in-programming}}
 \begin{sphinxadmonition}{note}{Big Picture}
 
@@ -2979,7 +2978,7 @@ This section covers the value of abstraction for every programmer.  It is a valu
 \end{sphinxadmonition}
 
 
-\subsubsection{Example 3: Copying and pasting code}
+\subsection{Example 3: Copying and pasting code}
 \label{\detokenize{chapter-7-abstraction:example-3-copying-and-pasting-code}}
 Best practices for coding include writing DRY code, where DRY stands for Don’t Repeat Yourself.  If you find yourself writing the same code (or extremely similar code) more than once, especially if you’re copying and pasting, this is a sure sign that you are not writing DRY code and should try to correct this style error.  The way to correct it is with abstraction, as shown below.  (The opposite of DRY code is WET code–Write Everything Twice.  Don’t do that.)
 
@@ -3036,7 +3035,7 @@ You could share this same function to other notebooks or with other coders if ne
 So the moment you find yourself copying and pasting code, remember to stay DRY instead–create a function and call it multiple times, so that you get all these benefits.
 
 
-\subsubsection{Alternatives}
+\subsection{Alternatives}
 \label{\detokenize{chapter-7-abstraction:alternatives}}
 Another method of abstraction would have been a loop instead of a function.  Since the original code does the same thing three times, we could have rewritten it as follows instead.
 
@@ -3060,7 +3059,7 @@ One could even combine the two methods together, as follows.
 \end{sphinxVerbatim}
 
 
-\subsubsection{Example 4: Testing a computation}
+\subsection{Example 4: Testing a computation}
 \label{\detokenize{chapter-7-abstraction:example-4-testing-a-computation}}
 Let’s imagine that the same student as above, who has COVID\sphinxhyphen{}19 data, wants to investigate its connection to the polarized political climate in the U.S., since COVID\sphinxhyphen{}19 response has become very politicized.  They want to ask whether there’s any correlation between the spread of the virus in a state and that state’s prevailing political leaning.  So the student gets another dataset, this one listing the percentage of registered Republicans and Democrats in each U.S. state.  They will want to look up each state in the COVID\sphinxhyphen{}19 dataset in this new dataset, to connect them.  They try this:
 
@@ -3134,7 +3133,7 @@ The benefits of this include all the benefits discussed after Example 3, plus th
 \end{sphinxVerbatim}
 
 
-\subsubsection{Little abstractions (\sphinxstyleliteralintitle{\sphinxupquote{lambda}})}
+\subsection{Little abstractions (\sphinxstyleliteralintitle{\sphinxupquote{lambda}})}
 \label{\detokenize{chapter-7-abstraction:little-abstractions-lambda}}
 When it would be handy to create a function, but the function is so small that it seems like giving it a name with \sphinxcode{\sphinxupquote{def}} is overkill, you can use Python’s \sphinxcode{\sphinxupquote{lambda}} syntax to create the function.
 
@@ -3159,7 +3158,7 @@ But this requires several lines of code to do this simple task.  We could compre
 The limitation to Python’s \sphinxcode{\sphinxupquote{lambda}} syntax is that you can put inside only a single expression, which the function will return.  A function that needs to do several preparatory computations before returning an answer cannot be converted into \sphinxcode{\sphinxupquote{lambda}} form.
 
 
-\subsection{How to do abstraction}
+\section{How to do abstraction}
 \label{\detokenize{chapter-7-abstraction:how-to-do-abstraction}}
 If you aren’t sure how to take specific code and turn it into a general function, I suggest following the steps given here.  Once you’ve done this a few times, it will come naturally, without thinking through the steps.
 
@@ -3172,12 +3171,12 @@ Let’s use with the following example code to illustrate the steps.  It’s use
 \end{sphinxVerbatim}
 
 
-\subsubsection{Step 1:  Decide which parts of the code are customizable.  That is, which parts of the code might change the next time you want to use it?}
+\subsection{Step 1:  Decide which parts of the code are customizable.  That is, which parts of the code might change the next time you want to use it?}
 \label{\detokenize{chapter-7-abstraction:step-1-decide-which-parts-of-the-code-are-customizable-that-is-which-parts-of-the-code-might-change-the-next-time-you-want-to-use-it}}
 In this code, we certainly want to be able to specify a different column, so \sphinxcode{\sphinxupquote{'Tuition'}} needs to be customizable.  Also, we’ve converted this column to type \sphinxcode{\sphinxupquote{float}}, but perhaps some other column of money might better be represented as \sphinxcode{\sphinxupquote{int}}, so we’ll let the type be customizable also.
 
 
-\subsubsection{Step 2:  Move each of the customizable pieces of code out into a variable with a helpful name, declared before the code is run.}
+\subsection{Step 2:  Move each of the customizable pieces of code out into a variable with a helpful name, declared before the code is run.}
 \label{\detokenize{chapter-7-abstraction:step-2-move-each-of-the-customizable-pieces-of-code-out-into-a-variable-with-a-helpful-name-declared-before-the-code-is-run}}
 This is probably clearest if it’s illustrated:
 
@@ -3192,12 +3191,12 @@ This is probably clearest if it’s illustrated:
 You can then re\sphinxhyphen{}run this code to be sure it still does what it’s supposed to do.
 
 
-\subsubsection{Step 3:  Decide on a succinct description for what your code does, to use as the name of a new function.}
+\subsection{Step 3:  Decide on a succinct description for what your code does, to use as the name of a new function.}
 \label{\detokenize{chapter-7-abstraction:step-3-decide-on-a-succinct-description-for-what-your-code-does-to-use-as-the-name-of-a-new-function}}
 In this case, we’re converting a column of currency to a new type, but I don’t want to call it “convert currency” because that sound like we’re using exchange rates between two currencies.  Let’s call it “simplify currency.”
 
 
-\subsubsection{Step 4:  Indent your original code and introduce a \sphinxstyleliteralintitle{\sphinxupquote{def}} line to define a new function with your chosen name.  Its inputs should be the names of the variables you created.}
+\subsection{Step 4:  Indent your original code and introduce a \sphinxstyleliteralintitle{\sphinxupquote{def}} line to define a new function with your chosen name.  Its inputs should be the names of the variables you created.}
 \label{\detokenize{chapter-7-abstraction:step-4-indent-your-original-code-and-introduce-a-def-line-to-define-a-new-function-with-your-chosen-name-its-inputs-should-be-the-names-of-the-variables-you-created}}
 In our example:
 
@@ -3211,7 +3210,7 @@ In our example:
 If you run it at this point, it doesn’t actually do anything to your DataFrame, because this just defines a function.  So we need one more step.
 
 
-\subsubsection{Step 5:  Call your new function to accomplish what your original code used to accomplish.}
+\subsection{Step 5:  Call your new function to accomplish what your original code used to accomplish.}
 \label{\detokenize{chapter-7-abstraction:step-5-call-your-new-function-to-accomplish-what-your-original-code-used-to-accomplish}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k}{def} \PYG{n+nf}{simplify\PYGZus{}currency} \PYG{p}{(} \PYG{n}{column}\PYG{p}{,} \PYG{n}{new\PYGZus{}type} \PYG{p}{)}\PYG{p}{:}
@@ -3233,7 +3232,7 @@ This should have the same effect as the original code.  Except now you can re\sp
 Sorry, that’s a depressing example.  Let’s move on…
 
 
-\subsection{How do I know when to use abstraction?}
+\section{How do I know when to use abstraction?}
 \label{\detokenize{chapter-7-abstraction:how-do-i-know-when-to-use-abstraction}}
 Whenever you find yourself copying and pasting code with minor changes, this is a sure sign that you should write a function instead.  The reasons why are essentially the six benefits listed at the end of {\hyperref[\detokenize{chapter-7-abstraction:example-3-copying-and-pasting-code}]{\emph{Example 3}}}, above.
 
@@ -3276,12 +3275,12 @@ Can I publish my module online in an official way?
 \end{itemize}
 
 
-\section{Version Control}
+\chapter{Version Control}
 \label{\detokenize{chapter-8-version-control:version-control}}\label{\detokenize{chapter-8-version-control::doc}}
 See also the slides that summarize a portion of this content.
 
 
-\subsection{What is version control and why should I care?}
+\section{What is version control and why should I care?}
 \label{\detokenize{chapter-8-version-control:what-is-version-control-and-why-should-i-care}}
 \begin{sphinxadmonition}{note}{Big Picture}
 
@@ -3302,17 +3301,17 @@ publishing your project online, for sharing or as a backup
 It’s called “version control” software because of the first of those bullet points.  The other two are also important, but aren’t the main purpose of \sphinxcode{\sphinxupquote{git}}.  Let’s dive a little deeper into each of those three points and learn some terminology.
 
 
-\subsection{Details and terminology}
+\section{Details and terminology}
 \label{\detokenize{chapter-8-version-control:details-and-terminology}}
 
-\subsubsection{Repositories}
+\subsection{Repositories}
 \label{\detokenize{chapter-8-version-control:repositories}}
 When you start a new project, you should make a folder to contain just the stuff for that project.  By default, a folder on your computer is \sphinxstyleemphasis{not} tracked by \sphinxcode{\sphinxupquote{git}}.  If you want \sphinxcode{\sphinxupquote{git}} to start tracking a folder and keeping snapshots, to enable the features listed above, you have to turn the folder into what is called a \sphinxstylestrong{\sphinxcode{\sphinxupquote{git}} repository}, or for short, a \sphinxstylestrong{repo.}  (You might also hear “source code repository” or “source repo” or similar terms.)
 
 Once you do so, \sphinxcode{\sphinxupquote{git}} is ready to track the changes in that folder.  But it need some direction from you.  Let’s see why.
 
 
-\subsubsection{Tracking changes}
+\subsection{Tracking changes}
 \label{\detokenize{chapter-8-version-control:tracking-changes}}
 As you work on the project, inevitably you have ups and downs.  Maybe it goes like this:
 \begin{enumerate}
@@ -3358,7 +3357,7 @@ Later, if you wanted to go back to some old snapshot, \sphinxcode{\sphinxupquote
 In fact, these course notes are stored in a \sphinxcode{\sphinxupquote{git}} repository, and you can \sphinxhref{https://github.com/nathancarter/MA346-course-notes/commits/master}{see its list of commits online, here}.
 
 
-\subsubsection{Sharing online}
+\subsection{Sharing online}
 \label{\detokenize{chapter-8-version-control:sharing-online}}
 When you want to back your work up on another computer (in case yours gets broken, or if you want to publish it for others to see) there are websites that specialize in \sphinxcode{\sphinxupquote{git}}.  The most popular is \sphinxhref{https://github.com/}{GitHub}, acquired by Microsoft in 2018.  In these notes, we’ll teach you how to use GitHub and assume that’s where you’re publishing your work.
 
@@ -3392,14 +3391,14 @@ Although technically it’s possible to pull and push to the same repository, we
 So how do we do all the things just described?  The next section gives the specifics.
 
 
-\subsection{How to use \sphinxstyleliteralintitle{\sphinxupquote{git}} and GitHub}
+\section{How to use \sphinxstyleliteralintitle{\sphinxupquote{git}} and GitHub}
 \label{\detokenize{chapter-8-version-control:how-to-use-git-and-github}}
 \begin{sphinxadmonition}{warning}{Warning:}
 When you’re reading this chapter to prepare for Week 4’s class, you do not need to follow all these instructions.  We will do them together in class.  Feel free to just skim this section for now, and begin reading again in {\hyperref[\detokenize{chapter-8-version-control:what-if-i-want-to-collaborate}]{\emph{the next section}}}.
 \end{sphinxadmonition}
 
 
-\subsubsection{Get a GitHub account}
+\subsection{Get a GitHub account}
 \label{\detokenize{chapter-8-version-control:get-a-github-account}}
 \sphinxhref{https://github.com/join}{Do so on this page of the GitHub website.}  Easy!
 
@@ -3410,7 +3409,7 @@ Please choose a GitHub username that lets me know who you are.  Grading will be 
 Just be sure to remember the username and password, because you’ll need them in the next step.
 
 
-\subsubsection{Download the GitHub app}
+\subsection{Download the GitHub app}
 \label{\detokenize{chapter-8-version-control:download-the-github-app}}
 If you ever hear horror stories of people dealing with \sphinxcode{\sphinxupquote{git}}, there are two main reasons for this.  First, they may have had a repo get screwed up because multiple people were trying to edit it in conflicting ways.  We will avoid such problems by focusing first on using \sphinxcode{\sphinxupquote{git}} by yourself before we consider how to use it on a team project.  Second, they may have been using \sphinxcode{\sphinxupquote{git}}’s command\sphinxhyphen{}line interface, meaning they interact with it through typing commands, rather than using an app.  We will avoid this hassle by getting the GitHub app.
 
@@ -3419,7 +3418,7 @@ If you ever hear horror stories of people dealing with \sphinxcode{\sphinxupquot
 When you set the app up, it will ask for the username and password of your GitHub account, so it can connect to the GitHub site.
 
 
-\subsubsection{Create a repository}
+\subsection{Create a repository}
 \label{\detokenize{chapter-8-version-control:create-a-repository}}
 Let’s create a repository for you to use when submitting Project 1 later in a little over two weeks.
 \begin{itemize}
@@ -3442,7 +3441,7 @@ From the File menu, choose “Add local repository…” and pick the folder you
 \end{itemize}
 
 
-\subsubsection{Publish the repository}
+\subsection{Publish the repository}
 \label{\detokenize{chapter-8-version-control:publish-the-repository}}
 It’s okay that your repository is still empty; you can add files later.
 \begin{itemize}
@@ -3459,7 +3458,7 @@ Ensure that you check the box to \sphinxstylestrong{keep the code private.}  Thi
 \end{sphinxadmonition}
 
 
-\subsubsection{View it online}
+\subsection{View it online}
 \label{\detokenize{chapter-8-version-control:view-it-online}}
 From the GitHub app, click the Repository menu, and “View on GitHub.”  Easy!  You’ve successfully found where the repository lives online.
 
@@ -3468,7 +3467,7 @@ Because you marked the repository private, anyone other than you who visits that
 Later you’ll share this repository with your instructor so that he can visit it to grade your Project 1, once it’s complete.
 
 
-\subsubsection{Make a commit}
+\subsection{Make a commit}
 \label{\detokenize{chapter-8-version-control:make-a-commit}}
 In order to commit some changes to our new Project 1 repo, we have to actually do something in that folder, so there \sphinxstyleemphasis{are} some changes to commit.  Let’s do some simple setup.
 \begin{itemize}
@@ -3500,12 +3499,12 @@ You probably won’t need to create any other branches in any repo in MA346.
 You should see your changes disappear from the left column.  This doesn’t mean that they’ve been removed!  It just means that the snapshot has been saved, so those changes aren’t “new” any more.  They’ve been committed (saved) to the repo’s history.
 
 
-\subsubsection{Publish your commit}
+\subsection{Publish your commit}
 \label{\detokenize{chapter-8-version-control:publish-your-commit}}
 Push your changes to the repo with the Push button in the center of the app, then reload the webpage that views the repo online.  You should see your new data files in the web interface.  That’s how easy it is to publish your work to GitHub!
 
 
-\subsubsection{Repeat as needed}
+\subsection{Repeat as needed}
 \label{\detokenize{chapter-8-version-control:repeat-as-needed}}
 Whenever you make changes to your work and want to save a snapshot, feel free to repeat the “commit” instructions you see above.  The best practice is to do this as often as possible, but to try to never commit a project that’s got errors or broken code.  So try to make small, successful changes and commit after each one.
 
@@ -3518,7 +3517,7 @@ The GitHub app and \sphinxcode{\sphinxupquote{git}} in general can see \sphinxst
 Whenever you want to publish your most recent commits to the GitHub site, repeat the “publish” instructions you see above.
 
 
-\subsection{What if I want to collaborate?}
+\section{What if I want to collaborate?}
 \label{\detokenize{chapter-8-version-control:what-if-i-want-to-collaborate}}
 Collaborating with \sphinxcode{\sphinxupquote{git}} is a very specific type of collaboration.
 
@@ -3529,7 +3528,7 @@ On the other hand, that’s actually a good thing.  If you and someone else are 
 Here’s how you do it.
 
 
-\subsubsection{How to let someone view your private repository}
+\subsection{How to let someone view your private repository}
 \label{\detokenize{chapter-8-version-control:how-to-let-someone-view-your-private-repository}}
 You will want to do this with your Project 1 repository in two different ways.
 \begin{itemize}
@@ -3557,7 +3556,7 @@ You’ll need the GitHub username of your intended collaborator.  My username on
 To share a public repository, you can just email the link.  Also, people doing a web search or viewing your GitHub profile can see all your public repositories (but not your private ones, of course).
 
 
-\subsubsection{How to have two contributors in a repository}
+\subsection{How to have two contributors in a repository}
 \label{\detokenize{chapter-8-version-control:how-to-have-two-contributors-in-a-repository}}
 Let’s say Teammate A creates the repository and shares it with Teammate B, using the procedure described above.  Then Teammate B needs to get their own local copy, like so:
 \begin{itemize}
@@ -3636,7 +3635,7 @@ At this point comes the danger:  Becky can push her latest changes to the web, \
 It’s always important, before pushing your code to the GitHub site, to check once more that it still runs correctly.  If it doesn’t, fix the problems and commit the fixes first, before you push to the web.
 
 
-\subsection{Complications we’re skipping}
+\section{Complications we’re skipping}
 \label{\detokenize{chapter-8-version-control:complications-we-re-skipping}}
 Everything you need to know for using \sphinxcode{\sphinxupquote{git}} in MA346 is described up above.  But there is much more to \sphinxcode{\sphinxupquote{git}} than this simple chapter has covered.  In particular:
 \begin{itemize}
@@ -3667,12 +3666,12 @@ the advantages and disadvatages to each of those two options
 \end{sphinxadmonition}
 
 
-\section{Mathematics and Statistics in Python}
+\chapter{Mathematics and Statistics in Python}
 \label{\detokenize{chapter-9-math-and-stats:mathematics-and-statistics-in-python}}\label{\detokenize{chapter-9-math-and-stats::doc}}
 See also the slides that summarize a portion of this content.
 
 
-\subsection{Math in Python}
+\section{Math in Python}
 \label{\detokenize{chapter-9-math-and-stats:math-in-python}}
 Having had CS230, you are surely familiar with Python’s built\sphinxhyphen{}in math operators \sphinxcode{\sphinxupquote{+}}, \sphinxcode{\sphinxupquote{\sphinxhyphen{}}}, \sphinxcode{\sphinxupquote{*}}, \sphinxcode{\sphinxupquote{/}}, and \sphinxcode{\sphinxupquote{**}}.  You’re probably also familiar with the fact that Python has a \sphinxcode{\sphinxupquote{math}} module that you can use for things like trigonometry.
 
@@ -3710,7 +3709,7 @@ Natural logarithms are written \(\ln x\) in mathematics, but just \sphinxcode{\s
 There are some other functions useful for data work (like \sphinxcode{\sphinxupquote{math.dist()}}, \sphinxcode{\sphinxupquote{math.comb()}}, and \sphinxcode{\sphinxupquote{math.perm()}}) coming in Python 3.8, but most Python tools (like pandas, NumPy, and SciPy) haven’t yet been udpated to work with Python 3.8.  So I do not cover those functions here, and I recommend that you stick with Python 3.7 for now.
 
 
-\subsection{Naming mathematical variables}
+\section{Naming mathematical variables}
 \label{\detokenize{chapter-9-math-and-stats:naming-mathematical-variables}}
 In programming, we almost never name variables with unhelpful names like \sphinxcode{\sphinxupquote{k}} and \sphinxcode{\sphinxupquote{x}}, because later readers of the code (or even ourselves reading it in two months) won’t know what \sphinxcode{\sphinxupquote{k}} and \sphinxcode{\sphinxupquote{x}} actually do.  The one exception to this is in mathematics, where it is normal to use single\sphinxhyphen{}letter variables, and indeed sometimes the letters matter.
 
@@ -3764,7 +3763,7 @@ Interestingly, you can actually type Greek letters into Python code and use them
 \end{sphinxVerbatim}
 
 
-\subsection{But what about NumPy?}
+\section{But what about NumPy?}
 \label{\detokenize{chapter-9-math-and-stats:but-what-about-numpy}}
 Most data science projects in Python import both pandas and NumPy.  Since NumPy implements tons of mathematical tools, why bother using the ones in Python’s built\sphinxhyphen{}in \sphinxcode{\sphinxupquote{math}} module?  Well, on the one hand, NumPy doesn’t have \sphinxstyleemphasis{everything}; for instance, the \sphinxcode{\sphinxupquote{math.comb()}} and \sphinxcode{\sphinxupquote{math.perm()}} functions mentioned above don’t exist in NumPy.  But when you \sphinxstyleemphasis{can} use NumPy, you \sphinxstyleemphasis{should,} for the following important reason.
 
@@ -3795,12 +3794,12 @@ We will return to vectorization and loops in Chapter 11 of these notes.  For now
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.18749897, 0.07316104, 0.75626655, 0.61111431, 0.09289181,
-       0.3180047 , 0.79238383, 0.72835593, 0.11764028, 0.3429926 ,
-       0.75055687, 0.92145617, 0.53068135, 0.40630813, 0.2895452 ,
-       0.07446345, 0.61029725, 0.36745468, 0.05034605, 0.68159722,
-       0.91673431, 0.75455441, 0.21342458, 0.21834192, 0.18463526,
-       0.10587757, 0.17686841, 0.20370967, 0.25734605, 0.69745677])
+array([0.48351046, 0.7931486 , 0.5715011 , 0.01173361, 0.35938916,
+       0.29211914, 0.9484339 , 0.04290683, 0.75465984, 0.5321916 ,
+       0.57074457, 0.19887913, 0.80067026, 0.51642961, 0.05557349,
+       0.95169282, 0.74548489, 0.70596757, 0.29795386, 0.86801343,
+       0.17192947, 0.41113289, 0.78027498, 0.33374065, 0.04170576,
+       0.88934712, 0.92488607, 0.17760825, 0.48320839, 0.61059111])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3808,9 +3807,9 @@ array([0.18749897, 0.07316104, 0.75626655, 0.61111431, 0.09289181,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.19, 0.07, 0.76, 0.61, 0.09, 0.32, 0.79, 0.73, 0.12, 0.34, 0.75,
-       0.92, 0.53, 0.41, 0.29, 0.07, 0.61, 0.37, 0.05, 0.68, 0.92, 0.75,
-       0.21, 0.22, 0.18, 0.11, 0.18, 0.2 , 0.26, 0.7 ])
+array([0.48, 0.79, 0.57, 0.01, 0.36, 0.29, 0.95, 0.04, 0.75, 0.53, 0.57,
+       0.2 , 0.8 , 0.52, 0.06, 0.95, 0.75, 0.71, 0.3 , 0.87, 0.17, 0.41,
+       0.78, 0.33, 0.04, 0.89, 0.92, 0.18, 0.48, 0.61])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3818,12 +3817,12 @@ array([0.19, 0.07, 0.76, 0.61, 0.09, 0.32, 0.79, 0.73, 0.12, 0.34, 0.75,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([1.20622901, 1.07590379, 2.13030796, 1.84248335, 1.09734301,
-       1.37438271, 2.2086552 , 2.07167183, 1.12483941, 1.40915834,
-       2.11817924, 2.51294701, 1.70009027, 1.50126507, 1.33581982,
-       1.07730597, 1.84097855, 1.44405436, 1.05163496, 1.97703298,
-       2.50110918, 2.12666368, 1.23791014, 1.24401234, 1.20277966,
-       1.11168577, 1.19347403, 1.22594217, 1.29349267, 2.00863778])
+array([1.62175753, 2.21034498, 1.7709234 , 1.01180272, 1.43245415,
+       1.33926256, 2.58166334, 1.04384063, 2.12688792, 1.70265977,
+       1.76958414, 1.22003449, 2.22703313, 1.67603287, 1.0571467 ,
+       2.59009052, 2.10746307, 2.02580584, 1.34709963, 2.3821738 ,
+       1.18759407, 1.5085258 , 2.18207221, 1.396181  , 1.04258766,
+       2.43354032, 2.52158097, 1.19435734, 1.62126773, 1.84151961])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3831,12 +3830,14 @@ array([1.20622901, 1.07590379, 2.13030796, 1.84248335, 1.09734301,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.03515587, 0.00535254, 0.57193909, 0.3734607 , 0.00862889,
-       0.10112699, 0.62787213, 0.53050236, 0.01383924, 0.11764392,
-       0.56333562, 0.84908148, 0.2816227 , 0.1650863 , 0.08383642,
-       0.00554481, 0.37246274, 0.13502294, 0.00253473, 0.46457478,
-       0.84040179, 0.56935235, 0.04555005, 0.04767319, 0.03409018,
-       0.01121006, 0.03128243, 0.04149763, 0.06622699, 0.48644595])
+array([2.33782360e\PYGZhy{}01, 6.29084703e\PYGZhy{}01, 3.26613511e\PYGZhy{}01, 1.37677636e\PYGZhy{}04,
+       1.29160569e\PYGZhy{}01, 8.53335907e\PYGZhy{}02, 8.99526860e\PYGZhy{}01, 1.84099593e\PYGZhy{}03,
+       5.69511472e\PYGZhy{}01, 2.83227897e\PYGZhy{}01, 3.25749366e\PYGZhy{}01, 3.95529087e\PYGZhy{}02,
+       6.41072872e\PYGZhy{}01, 2.66699544e\PYGZhy{}01, 3.08841278e\PYGZhy{}03, 9.05719230e\PYGZhy{}01,
+       5.55747715e\PYGZhy{}01, 4.98390207e\PYGZhy{}01, 8.87765039e\PYGZhy{}02, 7.53447321e\PYGZhy{}01,
+       2.95597436e\PYGZhy{}02, 1.69030249e\PYGZhy{}01, 6.08829044e\PYGZhy{}01, 1.11382821e\PYGZhy{}01,
+       1.73937030e\PYGZhy{}03, 7.90938294e\PYGZhy{}01, 8.55414248e\PYGZhy{}01, 3.15446919e\PYGZhy{}02,
+       2.33490348e\PYGZhy{}01, 3.72821500e\PYGZhy{}01])
 \end{sphinxVerbatim}
 
 Notice that this makes it very easy to compute certain mathematical formulas.  For example, when we want to measure the quality of a model, we might compute the RSSE, or Root Sum of Squared Errors, that is, the square root of the sum of the squared differences between each actual data value \(y_i\) and its predicted value \(\hat y_i\).  In math, we write it like this:
@@ -3870,7 +3871,7 @@ Notice how the NumPy code also reads just like the English:  It’s the square r
 A comprehensive list of NumPy’s math routines appear \sphinxhref{https://numpy.org/doc/stable/reference/routines.math.html}{in the NumPy documentation}.
 
 
-\subsection{Binding function arguments}
+\section{Binding function arguments}
 \label{\detokenize{chapter-9-math-and-stats:binding-function-arguments}}
 Many functions in statistics have two types of parameters.  Some of the parameters you change very rarely, and others you change all the time.
 
@@ -3907,8 +3908,8 @@ In fact, SciPy’s built\sphinxhyphen{}in random number generating procedures le
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([70.53359236, 70.70208825, 64.38653695, 97.53998752, 54.51977284,
-       12.43869692, 84.11073797, 52.91658355, 57.87811329,  9.39498666])
+array([60.63872648, 42.61479043, 86.96856053, 97.82514315, 43.54979222,
+       10.19792138,  5.26262712,  1.47742452, 85.2455934 , 34.64687125])
 \end{sphinxVerbatim}
 
 Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two arguments and create a specific random variable, then call \sphinxcode{\sphinxupquote{rvs}} on that.
@@ -3919,8 +3920,8 @@ Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two a
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([81.83819128, 52.37003328, 25.64223321, 53.01549829, 37.87673431,
-       61.76143048,  6.56946446, 66.09759891, 51.48709127, 78.97233618])
+array([19.84988349, 35.44816991, 10.61602335, 69.23594159, 32.97412198,
+       10.30645133,  9.07962977, 84.76495434, 97.46304953, 23.80557876])
 \end{sphinxVerbatim}
 
 The same random variable can, of course, be used to create more values later.
@@ -3943,7 +3944,7 @@ The \sphinxcode{\sphinxupquote{partial}} tool built into Python only works if yo
 We will also use the concept of binding function parameters when we come to curve fitting at the end of this chapter.
 
 
-\subsection{GB213 in Python}
+\section{GB213 in Python}
 \label{\detokenize{chapter-9-math-and-stats:gb213-in-python}}
 You can refer at any time to one of the appendices in these course notes, a {\hyperref[\detokenize{GB213-review-in-Python::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{review of GB213, but in Python}}}}.
 
@@ -4015,12 +4016,12 @@ The GB213 review appendix that I linked to above uses the very popular Python st
 \end{sphinxadmonition}
 
 
-\subsection{Curve fitting in general}
+\section{Curve fitting in general}
 \label{\detokenize{chapter-9-math-and-stats:curve-fitting-in-general}}
 The final topic covered in the GB213 review mentioned above is simple linear regression, which fits a line to a set of (two\sphinxhyphen{}dimensional) data points.  But Python’s scientific tools permit you to handle much more complex models.  We cannot cover mathematical modeling in detail in MA346, because it can take several courses on its own, but you can learn more about regression modeling in particular in \sphinxhref{https://catalog.bentley.edu/search/?P=MA\%20252}{MA252 at Bentley}.  But we will cover how to fit an arbitrary curve to data in Python.
 
 
-\subsubsection{1. Say we have some data}
+\subsection{1. Say we have some data}
 \label{\detokenize{chapter-9-math-and-stats:say-we-have-some-data}}
 We will assume you have data stored in a pandas DataFrame, and we will lift out just two columns of the DataFrame, one that will be used as our \(x\) values (independent variable), and the other as our \(y\) values (dependent variable).  I’ll make up some data here just for use in this example.
 
@@ -4055,7 +4056,7 @@ We will assume you have data stored in a pandas DataFrame, and we will lift out 
 \noindent\sphinxincludegraphics{{chapter-9-math-and-stats_36_0}.png}
 
 
-\subsubsection{2. Choose a model}
+\subsection{2. Choose a model}
 \label{\detokenize{chapter-9-math-and-stats:choose-a-model}}
 Curve\sphinxhyphen{}fitting is a powerful tool, and it’s easy to misuse it by fitting to your data a model that doesn’t make sense for that data.  A mathematical modeling course can help you learn how to assess the appropriateness of a given type of line, curve, or more complex model for a given situation.  But for this small example, let’s pretend that we know that the following model makes sense, perhaps because some earlier work with salt and ice had success with it.  (Again, keep in mind that this example is really, truly, totally made up.)
 \begin{equation*}
@@ -4069,7 +4070,7 @@ We will use this model.  Obviously, it’s not the equation of a line, so linear
 \end{sphinxVerbatim}
 
 
-\subsubsection{3. Have SciPy find the \protect\(\beta\protect\)s}
+\subsection{3. Have SciPy find the \protect\(\beta\protect\)s}
 \label{\detokenize{chapter-9-math-and-stats:have-scipy-find-the-betas}}
 This step is called “fitting the model to your data.”  It finds the values of \(\beta_0,\beta_1,\beta_2\) that make the most sense for the particular \(x\) and \(y\) adata values that you have.  Using the language from earlier in this chapter, SciPy will tell us how to \sphinxstyleemphasis{bind values to the parameters} \(\beta_0,\beta_1,\beta_2\) of \sphinxcode{\sphinxupquote{my\_model}} so that the resulting function, which just takes \sphinxcode{\sphinxupquote{x}} as input, is the one best fit to our data.
 
@@ -4105,7 +4106,7 @@ Yyyyyyeah…  Our model is nowhere near the data.  That’s why we need SciPy to
 So how does SciPy’s found model look?
 
 
-\subsubsection{4. Describe and show the fit model}
+\subsection{4. Describe and show the fit model}
 \label{\detokenize{chapter-9-math-and-stats:describe-and-show-the-fit-model}}
 Rounding to a few decimal places, our model is therefore the following:
 \begin{equation*}
@@ -4154,7 +4155,7 @@ For example, if your model were \(y=\beta_0+\beta_1x\), then your fit model migh
 In class, we will use this technique to fit a logistic growth model to COVID\sphinxhyphen{}19 data.  Be sure to have completed the preparatory work on writing a function that extracts the series of COVID\sphinxhyphen{}19 cases over time for a given state!  Recall that it appears on the final slide of the Chapter 8 slides.
 
 
-\section{Visualization}
+\chapter{Visualization}
 \label{\detokenize{chapter-10-visualization:visualization}}\label{\detokenize{chapter-10-visualization::doc}}
 See also the slides that summarize a portion of this content.
 
@@ -4196,7 +4197,7 @@ The second dataset is the basic NASDAQ data for Renewable Energy Group, Inc. (sy
 \end{sphinxVerbatim}
 
 
-\subsection{What if I have two columns of numeric data?}
+\section{What if I have two columns of numeric data?}
 \label{\detokenize{chapter-10-visualization:what-if-i-have-two-columns-of-numeric-data}}
 This situation is \sphinxstyleemphasis{extremely common,} and that’s why we address it first.  If we consider the two datasets described above, we can find many ways to create two columns of numeric data, including the following examples.
 \begin{enumerate}
@@ -4312,7 +4313,7 @@ We can clearly see that there \sphinxstyleemphasis{might} be a collision in ther
 \noindent\sphinxincludegraphics{{chapter-10-visualization_16_0}.png}
 
 
-\subsection{But can my two columns of data look more awesome?}
+\section{But can my two columns of data look more awesome?}
 \label{\detokenize{chapter-10-visualization:but-can-my-two-columns-of-data-look-more-awesome}}
 Recall that the Seaborn library makes it easy to add histograms to both the horizontal and vertical axes of a standard ploot to get a better sense of the distribution.  This is possible with both line and scatter plots, but it is more commonly useful with scatterplots.
 
@@ -4353,7 +4354,7 @@ Use \sphinxcode{\sphinxupquote{kind='hex'}} to bin values within the scatterplot
 \noindent\sphinxincludegraphics{{chapter-10-visualization_21_0}.png}
 
 
-\subsection{What if my two columns are very related?}
+\section{What if my two columns are very related?}
 \label{\detokenize{chapter-10-visualization:what-if-my-two-columns-are-very-related}}
 Seaborn provides a few tools for showing how one variable depends on another.
 
@@ -4397,7 +4398,7 @@ As you know from GB213, part of assessing whether linear regression is appropria
 \noindent\sphinxincludegraphics{{chapter-10-visualization_27_0}.png}
 
 
-\subsection{What if I have only one column of data?}
+\section{What if I have only one column of data?}
 \label{\detokenize{chapter-10-visualization:what-if-i-have-only-one-column-of-data}}
 The primary visualization tools appropriate for such a situation are variations on the idea of a histogram.  These include a standard histogram plus swarm plots, strip plots, and violin plots.  A secondary visualization in this situation is an ECDF, which we will return to below.
 
@@ -4474,7 +4475,7 @@ Every one of the options above can also be shown horizontally instead.  Just use
 \noindent\sphinxincludegraphics{{chapter-10-visualization_39_0}.png}
 
 
-\subsection{Can’t I test a single column for normality?}
+\section{Can’t I test a single column for normality?}
 \label{\detokenize{chapter-10-visualization:can-t-i-test-a-single-column-for-normality}}
 I’m so glad you asked!  One of the most common assumptions in statistics is that a dataset comes from an approximately normally distributed population.  We can get a sense of whether that holds true for some dataset we have by plotting the cumulative distribution function (CDF) of the data against that of a normal distribution, as you saw in DataCamp.  (A CDF from data is called an empirical CDF, or ECDF.)
 
@@ -4507,7 +4508,7 @@ Here, we’ll use what you saw in DataCamp.
 This case is hard to judge visually.  The graphs are quite different for the leftmost 30\% of the graph, and somewhat different for the middle, only converging at the end.  If the project you’re working on is something quick and dirty that just needs to be approximate, you might call this distribution close enough to normal.  But if your project demands high accuracy, such as something in health care, you should resort to official statistical tests for normality of an empirical distribution.  We do not cover those in MA346.
 
 
-\subsection{What if I have lots of columns of data?}
+\section{What if I have lots of columns of data?}
 \label{\detokenize{chapter-10-visualization:what-if-i-have-lots-of-columns-of-data}}
 If you want to compare them as distributions, then all of the Seaborn plotting commands from the previous section still apply.  They will show multiple distributions side\sphinxhyphen{}by\sphinxhyphen{}side, horizontally or vertically.  Here are two examples.
 
@@ -4585,7 +4586,7 @@ It’s also possible to do overlapping histograms with transparent bars, but to 
 There’s a lot more that could be said about plotting distributions; for instance, \sphinxhref{https://towardsdatascience.com/sorry-but-sns-distplot-just-isnt-good-enough-this-is-though-ef2ddbf28078}{here’s a cool blog post} about how to make an even more beautiful plot that compares several distributions.
 
 
-\subsection{What if I need to know if the colums are related?}
+\section{What if I need to know if the colums are related?}
 \label{\detokenize{chapter-10-visualization:what-if-i-need-to-know-if-the-colums-are-related}}
 DataCamp showed you two visualizations for this.  One focuses on giving you some visual intuition for whether the variables are related, by showing you the shape of all possible scatterplots of your data.  It’s called a pair plot because it pairs up the variables in every possible way.  Let’s try it on the REGI dataset; the explanation follows the picture.
 
@@ -4618,12 +4619,12 @@ Earlier I mentioned that \sphinxcode{\sphinxupquote{sns.pairplot()}} was the tec
 Of course, because we used the same data, we still find out that all the prices are highly correlated (because they’re organized by day) and the volume isn’t really correlated much with anything.  But it’s much easier to tell both the correlations and the lacks of correlation when we have hard numbers to look at, rather than having to estimate it ourselves from shapes.
 
 
-\subsection{Summary of plotting tools}
+\section{Summary of plotting tools}
 \label{\detokenize{chapter-10-visualization:summary-of-plotting-tools}}
 I know that was a huge amount to take in!  So let’s make it simpler:
 
 
-\subsubsection{With one numeric column of data:}
+\subsection{With one numeric column of data:}
 \label{\detokenize{chapter-10-visualization:with-one-numeric-column-of-data}}
 
 \begin{savenotes}\sphinxattablestart
@@ -4671,7 +4672,7 @@ Overlapping ECDFs
 \sphinxattableend\end{savenotes}
 
 
-\subsubsection{With two numeric columns of data:}
+\subsection{With two numeric columns of data:}
 \label{\detokenize{chapter-10-visualization:with-two-numeric-columns-of-data}}
 
 \begin{savenotes}\sphinxattablestart
@@ -4709,7 +4710,7 @@ The line of best fit through my data
 \sphinxattableend\end{savenotes}
 
 
-\subsubsection{With many numeric columns of data:}
+\subsection{With many numeric columns of data:}
 \label{\detokenize{chapter-10-visualization:with-many-numeric-columns-of-data}}
 
 \begin{savenotes}\sphinxattablestart
@@ -4762,7 +4763,7 @@ Heat map of correlation coefficients
 \sphinxattableend\end{savenotes}
 
 
-\subsection{Techniques \sphinxstyleemphasis{not} to use (and why)}
+\section{Techniques \sphinxstyleemphasis{not} to use (and why)}
 \label{\detokenize{chapter-10-visualization:techniques-not-to-use-and-why}}
 You may notice that we did not cover \sphinxstylestrong{pie charts} anywhere in this tutorial.  Matplotlib can certainly produce pie charts for you, but visualization experts recommend against them, because viewers tend to have trouble assessing the exact meanings of the shapes.  It’s much harder to compare how much bigger one pie slice is to another than it is to compare, say, two bars on a histogram, or to points on a graph.  So I suggest you avoid pie charts.
 
@@ -4775,7 +4776,7 @@ We did not cover charts with \sphinxstylestrong{3D elements,} as Microsoft Excel
 Finally, DataCamp showed you how to fit polynomial models to data using \sphinxcode{\sphinxupquote{sns.regplot()}}.  But I did not cover it hear, because it is dangerous to dive into polynomial models without a solid grounding in mathematical modeling, which this course does not cover.  Before using a polynomial model, you would need a solid, domain\sphinxhyphen{}specific reason to believe that such a model is applicable, or \sphinxcode{\sphinxupquote{sns.regplot()}} will (obediently) produce result that are unreliable if used for prediction.  Consequently, I won’t cover \sphinxcode{\sphinxupquote{sns.regplot()}} in MA346.
 
 
-\subsection{What about plot styles?}
+\section{What about plot styles?}
 \label{\detokenize{chapter-10-visualization:what-about-plot-styles}}
 I didn’t cover plot styles here, but there’s nothing wrong with them.  I simply left them out because most of them are only cosmetic; \sphinxhref{big-cheat-sheet\#before-week-5}{see this week’s section in the DataCamp cheat sheet} for details on items like \sphinxcode{\sphinxupquote{sns.set()}}, \sphinxcode{\sphinxupquote{plt.subplot()}}, and \sphinxcode{\sphinxupquote{plt.style}}.
 
@@ -4797,7 +4798,7 @@ But there is one stylistic element I want to highlight:  DataCamp showed that \s
 \noindent\sphinxincludegraphics{{chapter-10-visualization_63_0}.png}
 
 
-\subsection{There’s so much more!}
+\section{There’s so much more!}
 \label{\detokenize{chapter-10-visualization:there-s-so-much-more}}
 Because visualization is a huge topic, I list several Learning On Your Own opportunities for extending your visualization knowledge and sharing it with the rest of the class.
 
@@ -4822,12 +4823,12 @@ I’ve suggested a few concepts {\hyperref[\detokenize{chapter-10-visualization:
 \end{sphinxadmonition}
 
 
-\section{Processing the Rows of a DataFrame}
+\chapter{Processing the Rows of a DataFrame}
 \label{\detokenize{chapter-11-processing-rows:processing-the-rows-of-a-dataframe}}\label{\detokenize{chapter-11-processing-rows::doc}}
 See also the slides that summarize a portion of this content.
 
 
-\subsection{Goal}
+\section{Goal}
 \label{\detokenize{chapter-11-processing-rows:goal}}
 Back in the early days of programming, when I was a kid, we wrote code with stone tools.
 
@@ -4862,12 +4863,12 @@ The title of the chapter mentions DataFrames specifically, because in data work 
 An added benefit is that improving (or replacing) loops with something faster often means writing shorter or clearer code as well, achieving improvements in readability at the same time.
 
 
-\subsection{The \sphinxstyleliteralintitle{\sphinxupquote{apply()}} function}
+\section{The \sphinxstyleliteralintitle{\sphinxupquote{apply()}} function}
 \label{\detokenize{chapter-11-processing-rows:the-apply-function}}
 The most common use of a loop is when we need to do the same thing to each element of a sequence of values.  Let’s see an example.
 
 
-\subsubsection{Baseball example}
+\subsection{Baseball example}
 \label{\detokenize{chapter-11-processing-rows:baseball-example}}
 In an earlier homework assignment, I provided a cleaned dataset of baseball players’ salaries.  Let’s take a look at the original version of the dataset when I downloaded it \sphinxhref{https://data.world/natereed/baseball-salaries}{from the web}, before it was cleaned.
 
@@ -4911,7 +4912,7 @@ The “years” column looks particularly annoying.  Why does it say “1 (1991)
 Aha, some entries in the “years” column represent multiple years.  We might naturally want to split that column up into three columns: number of years, first year, and last year.  Each is a little project all on its own, but we just want to look at one example, so let’s consider just the task of extracting the first year from the text.  If we wrote a loop, it might go something like this.
 
 
-\subsubsection{Using a loop}
+\subsection{Using a loop}
 \label{\detokenize{chapter-11-processing-rows:using-a-loop}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{first\PYGZus{}years} \PYG{o}{=} \PYG{p}{[} \PYG{p}{]}
@@ -4938,7 +4939,7 @@ Aha, some entries in the “years” column represent multiple years.  We might 
 A loop over a list of values is what pandas’ \sphinxcode{\sphinxupquote{apply()}} function was made for.  You write \sphinxcode{\sphinxupquote{df{[}'column'{]}.apply(f)}} to apply the function \sphinxcode{\sphinxupquote{f}} to every entry in the chosen column.  For example, we could simplify our work above as follows.  The differences are noted in the comments.
 
 
-\subsubsection{Using \sphinxstyleliteralintitle{\sphinxupquote{apply()}}}
+\subsection{Using \sphinxstyleliteralintitle{\sphinxupquote{apply()}}}
 \label{\detokenize{chapter-11-processing-rows:using-apply}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
                                  \PYG{c+c1}{\PYGZsh{} No need to start with an empty list.}
@@ -5046,7 +5047,7 @@ The function that you give to \sphinxcode{\sphinxupquote{apply()}} can’t be ju
 If you have a function that takes multiple inputs, you might want to bind some of the arguments so that it becomes a unary function and can be used in \sphinxcode{\sphinxupquote{apply()}}.  Or you can use the \sphinxcode{\sphinxupquote{args}} or \sphinxcode{\sphinxupquote{kwargs}} feature of \sphinxcode{\sphinxupquote{apply()}}, but we won’t cover that in these course notes.  You can see a small example in \sphinxhref{https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.apply.html}{the pandas documentation}.  We will, however, take a look at the possibility of using a dictionary with \sphinxcode{\sphinxupquote{map()}}, because it is extremely useful.  We will consider a simple example application, but do a more sophisticated one in class.
 
 
-\subsubsection{Using \sphinxstyleliteralintitle{\sphinxupquote{map()}}}
+\subsection{Using \sphinxstyleliteralintitle{\sphinxupquote{map()}}}
 \label{\detokenize{chapter-11-processing-rows:using-map}}
 Let’s assume that the analysis we wanted to do cared only about whether the baseball player had an infield position (IF), outfield position (OF), was a pitcher (P), or a designated hitter (DH), and we didn’t care about any other details of the position (such as first base vs. second base, or starting pitcher vs. relief pitcher).  We’d therefore like to simplify the “pos” column and convert all infield positions to IF, and so on.  First, let’s see what all the positions are.
 
@@ -5127,7 +5128,7 @@ All the repetitive code is just establishing a simple relationship among some ve
 In class, we will do a more complex example of applying a dictionary using \sphinxcode{\sphinxupquote{map()}}.  Before class, you may want to glance back at Exercise 3 from {\hyperref[\detokenize{chapter-2-mathematical-foundations::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{the Chapter 2 notes}}}}, which shows you how to take two columns of a DataFrame representing a mathematical function and convert them into a dictionary for use in situations just like this one.  And be sure to complete the homework about the NPR dataset before class as well, because we will use that in our example!
 
 
-\subsubsection{Parallel \sphinxstyleliteralintitle{\sphinxupquote{apply()}}}
+\subsection{Parallel \sphinxstyleliteralintitle{\sphinxupquote{apply()}}}
 \label{\detokenize{chapter-11-processing-rows:parallel-apply}}
 I mentioned earlier that converting a loop into an \sphinxcode{\sphinxupquote{apply()}} or \sphinxcode{\sphinxupquote{map()}} call doesn’t gain us much speed.  But it does make it easy for us to add a nice speed improvement.  There’s a Python package called \sphinxhref{https://github.com/jmcarpenter2/swifter}{swifter} that you can install using the instructions on that page.  Once it’s installed, you can convert any code like \sphinxcode{\sphinxupquote{df{[}'column'{]}.apply(f)}} easily into a faster version by replacing it with \sphinxcode{\sphinxupquote{df{[}'column'{]}.swifter.apply(f)}}.  That’s all!
 
@@ -5169,7 +5170,7 @@ Without swifter, you could accomplish the same thing with code like the followin
 \end{sphinxVerbatim}
 
 
-\subsection{Map\sphinxhyphen{}Reduce}
+\section{Map\sphinxhyphen{}Reduce}
 \label{\detokenize{chapter-11-processing-rows:map-reduce}}
 \begin{sphinxadmonition}{note}{Big Picture}
 
@@ -5233,7 +5234,7 @@ As mentioned earlier, “map” is a synonym for “apply,” so the first step 
 So a map\sphinxhyphen{}reduce operation involves two functions, the first performing a \sphinxcode{\sphinxupquote{map()}} operation (as discussed earlier), and the second doing something new.  The function used for the reducing step must be something that takes an entire list or series as input and produces a single value as output.  The \sphinxcode{\sphinxupquote{min()}} operation was used in the example above, but other operations are common, such as \sphinxcode{\sphinxupquote{max()}}, \sphinxcode{\sphinxupquote{sum()}}, \sphinxcode{\sphinxupquote{len()}}, \sphinxcode{\sphinxupquote{mean()}}, \sphinxcode{\sphinxupquote{median()}}, and more.
 
 
-\subsubsection{Argmin and argmax}
+\subsection{Argmin and argmax}
 \label{\detokenize{chapter-11-processing-rows:argmin-and-argmax}}
 A very common function that shows up in statistics is called \sphinxcode{\sphinxupquote{argmin}} (and its companion \sphinxcode{\sphinxupquote{argmax}}).  These are also implemented in pandas and are very useful in map\sphinxhyphen{}reduce situations.  In the example above, let’s say we didn’t want to know the minimum revenue, but we wanted to know in which quarter the minimum revenue happened.  We can replace \sphinxcode{\sphinxupquote{min}} in the above code with \sphinxcode{\sphinxupquote{argmin}} to ask that question.
 
@@ -5261,7 +5262,7 @@ Name: 2, dtype: int64
 While the pandas documentation for \sphinxcode{\sphinxupquote{argmin}} and \sphinxcode{\sphinxupquote{argmax}} suggest that they return multiple values in the case of ties, this doesn’t seem to be true.  They seem to return the first index only.  You can therefore always rely on the result of \sphinxcode{\sphinxupquote{argmin}}/\sphinxcode{\sphinxupquote{argmax}} being a single value, never a list or series.  If you want the indices of all max/min entries, you will need to compute it another way.
 
 
-\subsubsection{Map\sphinxhyphen{}reduce example: sample standard deviation}
+\subsection{Map\sphinxhyphen{}reduce example: sample standard deviation}
 \label{\detokenize{chapter-11-processing-rows:map-reduce-example-sample-standard-deviation}}
 The formula for the standard deviation of a sample of data should be familiar you to from GB213.
 \begin{equation*}
@@ -5304,7 +5305,7 @@ There are specialized tools in the industry for applying the map\sphinxhyphen{}r
 Many more examples of map\sphinxhyphen{}reduce from math and statistics could have been shown instead of the one above.  Any time a list of values collapses to give a single result, map\sphinxhyphen{}reduce is behind it.  This happens for summations, approximations of integrals (e.g., trapezoidal rule), expected values, matrix multiplication, computing probabilities from trees of possible outcomes, any weighted averages (chemical concentrations, portfolio values, etc.), and many more.
 
 
-\subsection{Split\sphinxhyphen{}Apply\sphinxhyphen{}Combine}
+\section{Split\sphinxhyphen{}Apply\sphinxhyphen{}Combine}
 \label{\detokenize{chapter-11-processing-rows:split-apply-combine}}
 Data scientist and R developer Hadley Wickham seems to coin lots of important phrases.  Recall from {\hyperref[\detokenize{chapter-5-before-and-after::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{the Chapter 5 notes}}}} that he introduced the phrase “tidy data.”  He also introduced the phrase “split, apply, combine,” in \sphinxhref{http://www.stat.wvu.edu/~jharner/courses/stat623/docs/plyrJSS.pdf}{this paper}.
 
@@ -5347,10 +5348,10 @@ Year
 \end{sphinxVerbatim}
 
 
-\subsection{More on math in Python}
+\section{More on math in Python}
 \label{\detokenize{chapter-11-processing-rows:more-on-math-in-python}}
 
-\subsubsection{Arithmetic in formulas}
+\subsection{Arithmetic in formulas}
 \label{\detokenize{chapter-11-processing-rows:arithmetic-in-formulas}}
 Recall that pandas is built on NumPy, and in {\hyperref[\detokenize{chapter-9-math-and-stats::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 9 of the notes}}}} we talked about NumPy’s support for vectorization.  If we have a Series \sphinxcode{\sphinxupquote{height}} containing heights in inches and we need instead to have it in centimeters, we don’t need to do \sphinxcode{\sphinxupquote{height.apply()}} and give it a conversion function, because we can just do \sphinxcode{\sphinxupquote{height * 2.54}}.  NumPy automatically \sphinxstyleemphasis{vectorizes} this operation, spreading the “times 2.54” over each entry in the \sphinxcode{\sphinxupquote{height}} array.
 
@@ -5371,7 +5372,7 @@ In fact, if we had actual \sphinxcode{\sphinxupquote{ys}} that went with the \sp
 The subtraction with \sphinxcode{\sphinxupquote{\sphinxhyphen{}}} and the squaring with \sphinxcode{\sphinxupquote{** 2}} would all be spread across arrays of inputs correctly, because NumPy comes with code to support doing so.
 
 
-\subsubsection{Conditionals with \sphinxstyleliteralintitle{\sphinxupquote{np.where()}}}
+\subsection{Conditionals with \sphinxstyleliteralintitle{\sphinxupquote{np.where()}}}
 \label{\detokenize{chapter-11-processing-rows:conditionals-with-np-where}}
 This removes a lot of the need for both loops and \sphinxcode{\sphinxupquote{apply()}}/\sphinxcode{\sphinxupquote{map()}} calls, but not all.  One of the first things that makes us think we might need a loop is when a conditional computation needs to be done.  For instance, let’s say we were given a dataset like the following (made up) example.
 
@@ -5457,7 +5458,7 @@ Where patient id is over 100000, do patient height times 2.54, otherwise just ke
 In summary, thanks to \sphinxcode{\sphinxupquote{np.where()}}, even many conditional computations don’t require a loop or an apply; they can be done with NumPy vectorization as well.
 
 
-\subsubsection{Speeding up mathematics}
+\subsection{Speeding up mathematics}
 \label{\detokenize{chapter-11-processing-rows:speeding-up-mathematics}}
 There are also some very impressive tools for speeding up mathematical operations in NumPy a \sphinxstyleemphasis{LOT.}  I will not cover them here, but will lest each of the following as an opportunity for Learning On Your Own.  Note that these are relevant only if you have a very large dataset over which you need to do complex mathematical computations, so that you notice pandas behaving slowly, and thus you need a speed boost.
 
@@ -5517,12 +5518,12 @@ Then, ask Cython to convert your Python code into C.  This requires giving it so
 If you run the above code in Jupyter, it will show you an interactive display of the code it created and how much speedup you can expect.  The function still generates the same outputs as before, but typically much faster.  How much faster?  Check out the tutorial linked to above for more information.
 
 
-\subsection{So do we \sphinxstyleemphasis{always} avoid loops?}
+\section{So do we \sphinxstyleemphasis{always} avoid loops?}
 \label{\detokenize{chapter-11-processing-rows:so-do-we-always-avoid-loops}}
 No, there are some times when you might still want to avoid loops.
 
 
-\subsubsection{When to opt for a loop}
+\subsection{When to opt for a loop}
 \label{\detokenize{chapter-11-processing-rows:when-to-opt-for-a-loop}}
 The two most prominent times to choose loops are these.
 \begin{enumerate}
@@ -5591,7 +5592,7 @@ Compare that to the same results computed using vectorization in NumPy rather th
 Any time when speed isn’t an issue, and you think the clearest way to write the code is a loop, then go right ahead and write clear code!  Loops aren’t always bad.
 
 
-\subsubsection{Factoring computations out of the loop}
+\subsection{Factoring computations out of the loop}
 \label{\detokenize{chapter-11-processing-rows:factoring-computations-out-of-the-loop}}
 Sometimes what’s making a loop slow is a repeated computation that doesn’t need to happen inside the loop.  The \sphinxstyleemphasis{loop variable} is the variable that immediately follows the \sphinxcode{\sphinxupquote{for}} statement in a loop.  In the loop example above, that’s the \sphinxcode{\sphinxupquote{index}} variable.  If there were any computation inside the loop that didn’t use the \sphinxcode{\sphinxupquote{index}} variable, we could bring that computation outside the loop, doing it once, before the loop, and saving time.
 
@@ -5627,7 +5628,7 @@ This loop ran much faster, and most students were able to use it to do the work 
 Note that this advice, factoring out a computation that does not depend on the loop variable, is sort of the opposite of abstraction.  In abstraction, you make the list of all the variables that your computation \sphinxstyleemphasis{does} depend on, and move those up to the top, as input parameters.  Here we’re taking a look at which variables our computation \sphinxstyleemphasis{doesn’t} depend on, so that we can move the computation itself up to the top, so it is done outside the loop.
 
 
-\subsubsection{Knowing how long you’ll have to wait}
+\subsection{Knowing how long you’ll have to wait}
 \label{\detokenize{chapter-11-processing-rows:knowing-how-long-you-ll-have-to-wait}}
 Few things are more frustrating than running a code cell and seeing the computer just sit there doing nothing.  We start to wonder whether it will take 15 seconds to process the data, and we should just have a little patience, or 15 minutes and we should go get a coffee, or 15 hours and we should give up and rewrite the code.  Which is it?  How can we tell except just waiting?
 
@@ -5651,7 +5652,7 @@ While the computation is running, a progress bar shows up in the notebook, filli
 The numbers indicate that over 300 of the 1000 steps in that large loop are complete, and they have taken 12 seconds (written 00:12) and there are about 27 seconds left (00:27).  The loop completes about 25.02 iterations per second.  With a progress bar like this, even for a computation that might run for hours, you can tell very quickly how long you will have to wait, and whether it’s worth it to wait or if you need to speed up your loop instead.
 
 
-\subsection{When the bottleneck is the dataset}
+\section{When the bottleneck is the dataset}
 \label{\detokenize{chapter-11-processing-rows:when-the-bottleneck-is-the-dataset}}
 Sometimes, you can’t get around the fact that you just have to process a lot of data, and that can be slow.  Unless you’re working for a company that will provide you with some powerful computing resources in the cloud on which to run your Jupyter notebook, so that it runs faster than it does on your laptop (or the free Colab/Deepnote machines), you’ll just have to run the slow code.  But there are still some ways to make this better.
 
@@ -5684,12 +5685,12 @@ Then as you create your data analysis code, which inevitably involves running it
 \sphinxstylestrong{If the dataset is truly huge,} so large that it can’t be stored in your computer’s memory all at once, then trying to load it will either generate out\sphinxhyphen{}of\sphinxhyphen{}memory errors or it will slow the process down enormously while the computer tries to use its hard drive as temporary extra memory storage.  In such cases, don’t forget the tip at the end of \sphinxhref{big-cheat-sheet\#chapter-1-using-iterators-in-pythonland}{this DataCamp chapter} about the \sphinxcode{\sphinxupquote{chunksize}} parameter.  It lets you process large files in smaller chunks.
 
 
-\section{Concatenating and Merging DataFrames}
+\chapter{Concatenating and Merging DataFrames}
 \label{\detokenize{chapter-12-concat-and-merge:concatenating-and-merging-dataframes}}\label{\detokenize{chapter-12-concat-and-merge::doc}}
 See also the slides that summarize a portion of this content.
 
 
-\subsection{Why join two datasets?}
+\section{Why join two datasets?}
 \label{\detokenize{chapter-12-concat-and-merge:why-join-two-datasets}}
 This chapter is about two ways to combine DataFrames together.  The concepts we’ll be discussing (concatenation and merging) are not unique to pandas DataFrames; they show up wherever tabular data is used, including in SQL.
 
@@ -5704,7 +5705,7 @@ In this chapter, we’ll discuss how to combine just two DataFrames, but the ide
 Let’s start by dicsussing concatenation, which is definitely the easier of the two concepts, before we tackle merging.  The English verb “concatenate” means to attach two things together, one after the end of the other.
 
 
-\subsection{Concatenation is vertical}
+\section{Concatenation is vertical}
 \label{\detokenize{chapter-12-concat-and-merge:concatenation-is-vertical}}
 DataFrames are tables of data, so when combining, we’ll either be stacking them vertically or horizontally.  Concatenation is vertical stacking.
 
@@ -5772,7 +5773,7 @@ The code to do this is extremely easy; it is a single call to the \sphinxcode{\s
 The \sphinxcode{\sphinxupquote{pd.concat()}} function is actually much more powerful than just this one little use to which we’ve put it here.  But we will discuss that more after we’ve discussed the more complex of the operations in this chapter, merging.
 
 
-\subsection{Merging is horizontal}
+\section{Merging is horizontal}
 \label{\detokenize{chapter-12-concat-and-merge:merging-is-horizontal}}
 Concatenation was appropriate when we had new rows (that is, new observations) to add to our dataset.  But what if we had new columns instead?  Keep in mind that, under the standard way we organize tabular data, columns represent the \sphinxstyleemphasis{variables} in our dataset.  So getting new columns means learning more information about the rows we already had.
 
@@ -5791,7 +5792,7 @@ In fact, when we have only one column to add, the technique from last week’s c
 But what if the situation is more complicated?  This can happen in several ways.  In each way, \sphinxcode{\sphinxupquote{pd.merge()}} is there to solve the problem.  Let’s look at each way that tables might grow horizontally.
 
 
-\subsection{Adding many columns at once}
+\section{Adding many columns at once}
 \label{\detokenize{chapter-12-concat-and-merge:adding-many-columns-at-once}}
 The technique shown above, which we used last week in class, is easy if bringing in only one new column.  If we wanted to bring in many new columns, we’d need to apply that technique repeatedly, in a loop over those columns.  But \sphinxcode{\sphinxupquote{pd.merge()}} can do it all in one function call, and for the reasons we learned last week, that will probably be faster than a Python loop.
 
@@ -5830,7 +5831,7 @@ If the column name had been the same in both DataFrames, we could have done it m
 \end{sphinxVerbatim}
 
 
-\subsection{When there is no match for some rows}
+\section{When there is no match for some rows}
 \label{\detokenize{chapter-12-concat-and-merge:when-there-is-no-match-for-some-rows}}
 The first assumption mentioned above was that each row in the COVID dataset matched up with exactly one row in the health dataset.  The two datasets were the same size and had the same countries.  But what if this had not been the case?  Let’s consider two merging examples where the rows of the one dataset don’t match up perfectly with those of the other.  First, what if some rows in one dataset don’t match up with any rows from the other dataset?
 
@@ -5858,7 +5859,7 @@ Note that we’re still making the unrealistic assumption that the school names 
 This example showed what it was like if some of the rows in the left dataset match up with \sphinxstyleemphasis{zero} rows in the right dataset.  But what if they match up with \sphinxstyleemphasis{many} rows in the right dataset?
 
 
-\subsection{When there are many matches for some rows}
+\section{When there are many matches for some rows}
 \label{\detokenize{chapter-12-concat-and-merge:when-there-are-many-matches-for-some-rows}}
 Let’s consider another example, this one from sports.  We’ll use NFL football, but if you’re not familiar with the sport, the example will still make sense.  All you need to know is that each team has many players, and that each \sphinxstyleemphasis{play} is a small part of a football game that uses just some of the team’s players.  Some plays have a \sphinxstyleemphasis{receiver,} which is the player who catches the ball thrown to him (if any–sometimes the play does not involve throwing the ball).
 
@@ -5904,7 +5905,7 @@ Notice that we specifically say that we want the stats for the player who was th
 This kind of merge will not introduce any new missing values, because if a row didn’t exist in the left or right dataset, it was not included in the result.  That’s the definition of an inner join, and that’s why we chose to use that method in this case.
 
 
-\subsection{When I want to keep all the rows}
+\section{When I want to keep all the rows}
 \label{\detokenize{chapter-12-concat-and-merge:when-i-want-to-keep-all-the-rows}}
 An inner join is not appropriate for all merging situations.  Consider a different example.
 
@@ -5939,7 +5940,47 @@ The code is the same as all the code we’ve seen up to this point, but with \sp
 \end{sphinxVerbatim}
 
 
-\subsection{Ensuring a unique ID appears in both datasets}
+\section{Summary}
+\label{\detokenize{chapter-12-concat-and-merge:summary}}
+Before we tackle the challenging question of what happens if there is no unique ID to use for merging, let’s review where we’ve been and add some key details.
+
+\begin{sphinxadmonition}{note}{Big Picture}
+
+As I’ve introduced it here, \sphinxcode{\sphinxupquote{pd.concat()}} combines the rows of two DataFrames together and \sphinxcode{\sphinxupquote{pd.merge()}} combines the columns.  While \sphinxcode{\sphinxupquote{pd.concat()}} always adds rows, \sphinxcode{\sphinxupquote{pd.merge()}} may or may not, depending on whether you use left, right, inner, or outer joins.
+
+Although \sphinxcode{\sphinxupquote{pd.concat()}} and \sphinxcode{\sphinxupquote{pd.merge()}} have tons of options that let you do merges and concatenations in the opposite direction from what I taught here (e.g., concat horizontally or merge vertically), this is almost never what is called for in a data project, due to the way we typically arrange tabular data.
+\end{sphinxadmonition}
+
+The \sphinxcode{\sphinxupquote{pd.concat()}} function is the easy one, and simply unites two datasets vertically.  The \sphinxcode{\sphinxupquote{pd.merge()}} function is the more complicated of the two.  Let’s imagine that we’ve called \sphinxcode{\sphinxupquote{pd.merge(A,B)}} for two DataFrames \sphinxcode{\sphinxupquote{A}} and \sphinxcode{\sphinxupquote{B}}.
+\begin{itemize}
+\item {} 
+With \sphinxcode{\sphinxupquote{how='inner'}}, the default, it creates new rows for every pair of rows from \sphinxcode{\sphinxupquote{A}} and \sphinxcode{\sphinxupquote{B}} that match on the specified columns, and it discards everything else.
+
+\item {} 
+With \sphinxcode{\sphinxupquote{how='left'}}, it creates new rows for every pair of rows from \sphinxcode{\sphinxupquote{A}} and \sphinxcode{\sphinxupquote{B}} that match on the specified columns, plus it also keeps every row from \sphinxcode{\sphinxupquote{A}} that didn’t match anything from \sphinxcode{\sphinxupquote{B}}, and fills in their \sphinxcode{\sphinxupquote{B}} columns with missing values.  This sees \sphinxcode{\sphinxupquote{A}} as the important dataset, into which we’re bringing some information from \sphinxcode{\sphinxupquote{B}} where possible.
+
+\item {} 
+With \sphinxcode{\sphinxupquote{how='right'}}, the reverse happens.  But you don’t need this option if you prefer thinking of the left dataset as the important one, into which we’re bringing new columns on the right.  Instead of \sphinxcode{\sphinxupquote{pd.merge(A,B,how='right')}}, you can always just use \sphinxcode{\sphinxupquote{pd.merge(B,A,how='left')}} instead.
+
+\item {} 
+With \sphinxcode{\sphinxupquote{how='outer'}}, it creates new rows for every pair of rows from \sphinxcode{\sphinxupquote{A}} and \sphinxcode{\sphinxupquote{B}} that match on the specified columns, plus it also
+\begin{itemize}
+\item {} 
+keeps every row from \sphinxcode{\sphinxupquote{A}} that didn’t match anything from \sphinxcode{\sphinxupquote{B}}, and fills in their \sphinxcode{\sphinxupquote{B}} columns with missing values, and
+
+\item {} 
+keeps every row from \sphinxcode{\sphinxupquote{B}} that didn’t match anything from \sphinxcode{\sphinxupquote{A}}, and fills in their \sphinxcode{\sphinxupquote{A}} columns with missing values.  This throws no data away.
+
+\end{itemize}
+
+\end{itemize}
+
+And as a final reminder, we’re covering merging because it’s extremely common and useful to find that you have two related datasets or databases that you want to bring together, so that subsequent analyses can benefit from relating the data in the two sources.
+
+And yet it’s not common for those two datasets to have been planned carefully enough in advance that they share a unique ID system for their rows.  More than likely, the two datasets were created by different teams, organizations, or software systems, and have quite different contents and formats.  So we come to the final section of this chapter, figuring out how to do a merge even when there isn’t an obvious unique ID column to use for merging.
+
+
+\section{Ensuring a unique ID appears in both datasets}
 \label{\detokenize{chapter-12-concat-and-merge:ensuring-a-unique-id-appears-in-both-datasets}}
 Ensuring that the datasets you want to merge each have a column that will match perfectly with the other dataset is an essential step before merging.  Sometimes that step is extremely easy and sometimes it is very challenging.  In the examples above, we assumed that the datasets already had columns that would match up perfectly.
 
@@ -5948,7 +5989,7 @@ And that’s not always an unrealistic assumption.  For instance, when we merged
 But let’s consider some more complex cases, so you’re ready for them when you encounter them.
 
 
-\subsubsection{Merging on multiple columns}
+\subsection{Merging on multiple columns}
 \label{\detokenize{chapter-12-concat-and-merge:merging-on-multiple-columns}}
 If you don’t have a single column that works as a unique ID, but you have a set of columns that togther form a unique ID in the same way in each dataset, pandas supports merging on multiple columns.  For instance, if your datasets each have columns for first and last names of the people in an organization, and you’re confident that no names repeat (e.g., only one John Smith, only one Erin Jones, etc.), then you can tell pandas to use more than one column to identify rows when merging.  Just supply the list of column names when merging.
 
@@ -5959,21 +6000,28 @@ If you don’t have a single column that works as a unique ID, but you have a se
 \end{sphinxVerbatim}
 
 
-\subsubsection{Changing the format of a column}
+\subsection{Changing the format of a column}
 \label{\detokenize{chapter-12-concat-and-merge:changing-the-format-of-a-column}}
 When you plan to merge two datasets, but no column is appropriate for the match, sometimes a quick computation of a new column will do the trick.
 
 \sphinxstylestrong{Example:}  If you were merging a dataset of customers using their phone numbers, perhaps dataset A contains just the numeric values (e.g., 17818913171) and dataset B contains the phone numbers formatted for human readability (e.g., +1 (781) 891\sphinxhyphen{}3171).  You can create a new column in dataset B that removes all the spaces, plusses, minuses, and parentheses from the phone numbers, so that they’re ready to match with dataset A.
 
 
-\subsubsection{Joining multiple columns into one}
+\subsection{Joining multiple columns into one}
 \label{\detokenize{chapter-12-concat-and-merge:joining-multiple-columns-into-one}}
 It may also be possible to compute an appropriate column for merging by combining more than one column together.
 
 \sphinxstylestrong{Example:}  Let’s say you were merging two datasets about albums released by recording artists.  The artists have a unique ID in your datasets, but the albums don’t.  If you know that no artist released more than one album in the same month, you could combine together the artist’s unique ID with the month and year of the album’s release to form a unique ID for the album.  E.g., if The Beatles had ID 2789045 and you’re considering the Sgt. Pepper album (May 1967), then you would use the code 2789045\sphinxhyphen{}May\sphinxhyphen{}1967 for that album.  You could compute such a code for each row in each DataFrame.
 
 
-\subsubsection{What about unstandardized text?}
+\subsection{Sequences with different frequencies}
+\label{\detokenize{chapter-12-concat-and-merge:sequences-with-different-frequencies}}
+Another common problem is merging two types of time\sphinxhyphen{}based data that were reported on different time scales.  For instance, let’s say you are trying to study police activity and criminal activity in a city.  You have crime data in the form of daily records and police reports in terms of officers’ hourly shifts.  If you wanted to combine these two datasets based on time, the difference in reporting frequency means it’s not obvious how to do it.
+
+So pandas provides two functions for helping with such situations.  These notes do not cover them in detail, but suggest you check out the \sphinxhref{https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge\_ordered.html}{documentation for \sphinxcode{\sphinxupquote{pd.merge\_orered()}}} and the \sphinxhref{https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge\_asof.html\#pandas.merge\_asof}{documentation for \sphinxcode{\sphinxupquote{pd.merge\_asof()}}} for more sophisticated handling of time\sphinxhyphen{}based merge data.
+
+
+\subsection{What about unstandardized text?}
 \label{\detokenize{chapter-12-concat-and-merge:what-about-unstandardized-text}}
 This is more or less the hardest scenario.  For instance, in Fall 2019, when my students wanted to merge the government’s comprehensive database of universities with the climate commitments of the schools who were working with our nonprofit client, our best option was to merge on the institution’s name.  This is problematic due to variations in naming and spelling.  For instance, what if one dataset writes Bentley University and the other writes Bentley Univ.?  Or what if one dataset writes University of North Carolina at Chapel Hill and the other writes UNC Chapel Hill?  How is a computer to know how to match these up?  (That project actually involved merging several datasets about universities, and this same problem arose more than once!)
 
@@ -5983,13 +6031,13 @@ When you’re stuck trying to get two similar\sphinxhyphen{}but\sphinxhyphen{}no
 \begin{enumerate}
 \sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
-Figure out which dataset is to be the definitive one; this is typically the larger dataset.  (In the university example, this was the comprehensive government dataset.)
-
-\item {} 
 Figure out the column in each dataset that is \sphinxstyleemphasis{closest} to being useful as a unique ID.  (In the university example, this was the university name in each dataset, which was written the same in both datasets for many schools, but definitely not all.)
 
 \item {} 
-Add a new column to the smaller dataset that contains the correct unique ID \sphinxstyleemphasis{from the other, larger dataset} that it should match.  (In the university example, this means labeling each row in the nonprofit’s dataset with that school’s name as it appears in the government’s dataset.)
+Figure out which dataset is to be the definitive one; this is typically the larger dataset.  (In the university example, this was the comprehensive government dataset.)  We will use the merge column from this definitive dataset as the “official” ID for each row, and we must adjust the other dataset so that it uses these “official” IDs rather than its own versions/spellings.
+
+\item {} 
+Add a new column to the smaller dataset that contains the official unique ID \sphinxstyleemphasis{from the other, larger dataset} that it should match.  (In the university example, this means labeling each row in the nonprofit’s dataset with that school’s name as it appears in the government’s dataset.)  This is not always easy.
 
 \item {} 
 Run \sphinxcode{\sphinxupquote{pd.merge()}} and have it match the unique ID column in the larger dataset with this newly created column in the smaller dataset, which is now a perfect match.
@@ -5999,8 +6047,8 @@ Run \sphinxcode{\sphinxupquote{pd.merge()}} and have it match the unique ID colu
 Notice that steps 1, 2, and 4 are quick and easy, but step 3 is where problems may or may not arise.  Depending on how well the chosen columns match in the two datasets, step 3 might take a short time or a long time.
 
 
-\subsubsection{Example}
-\label{\detokenize{chapter-12-concat-and-merge:example}}
+\subsection{Extended Example}
+\label{\detokenize{chapter-12-concat-and-merge:extended-example}}
 Let’s actually try to merge two datasets of university data.  I will load here the comprehensive university dataset I mentioned, originally downloaded from \sphinxhref{https://data.world/kitedwards08/us-university-survey-2014}{here}, as well as a US News university rankings dataset, originally downloaded from \sphinxhref{https://data.world/education/university-rankings-2017}{here}.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -6083,17 +6131,19 @@ Let’s actually try to merge two datasets of university data.  I will load here
 (7735, 231)
 \end{sphinxVerbatim}
 
-\sphinxstylestrong{Step 1.} Figure out which dataset is to be the definitive one.  Clearly, the comprehensive dataset should be the definitive one, and the rankings merged into it.
+\sphinxstylestrong{Step 1.} Figure out the closest columns we have to making a match.  The only columns we could have a hope of using to uniquely identify these schools are their names.  No other column in the ranking dataset could possibly be a unique ID that would also be in the big dataset.
 
-\sphinxstylestrong{Step 2.} Figure out the closest columns we have to making a match.  The only columns we could have a hope of using to uniquely identify these schools are their names.  No other column in the ranking dataset could possibly be a unique ID that would also be in the other dataset.
+\sphinxstylestrong{Step 2.} Figure out which dataset is to be the definitive one.  Clearly, the comprehensive dataset should be the definitive one, and the rankings merged into it.  So the university names in the big dataset are what we’ll use as the schools’ official names.
 
-\sphinxstylestrong{Step 3.} Add a new column to the ranking dataset that contains which school name \sphinxstyleemphasis{from the big dataset} it should match with.  This is the tricky part.
+\sphinxstylestrong{Step 3.} Add a new column to the ranking dataset and, in it, store the correct official school name for each row.  (Remember that official names come from the big dataset.)  This is the tricky part.
 
-Let’s just get a sense of how many of the 231 rows in the ranking dataset have an exact match in the big dataset.
+Let’s just get a sense of how many of the 231 rows in the ranking dataset have an exact match in the big dataset, and thus their official names are already in the ranking dataset.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{names\PYGZus{}from\PYGZus{}df\PYGZus{}big} \PYG{o}{=} \PYG{n+nb}{list}\PYG{p}{(} \PYG{n}{df\PYGZus{}big}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}
+
 \PYG{k}{def} \PYG{n+nf}{has\PYGZus{}exact\PYGZus{}match} \PYG{p}{(} \PYG{n}{name\PYGZus{}from\PYGZus{}rank\PYGZus{}df} \PYG{p}{)}\PYG{p}{:}
-    \PYG{k}{return} \PYG{n}{name\PYGZus{}from\PYGZus{}rank\PYGZus{}df} \PYG{o+ow}{in} \PYG{n+nb}{list}\PYG{p}{(} \PYG{n}{df\PYGZus{}big}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{name\PYGZus{}from\PYGZus{}rank\PYGZus{}df} \PYG{o+ow}{in} \PYG{n}{names\PYGZus{}from\PYGZus{}df\PYGZus{}big}
 
 \PYG{n+nb}{sum}\PYG{p}{(} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(} \PYG{n}{has\PYGZus{}exact\PYGZus{}match} \PYG{p}{)} \PYG{p}{)}
 \end{sphinxVerbatim}
@@ -6128,14 +6178,10 @@ Note that it doesn’t always find a good guess, if there isn’t one.
 Let’s use \sphinxcode{\sphinxupquote{get\_close\_matches()}} to create a function that will match up university names across the two datasets if they’re just off by a small amount.  This could automate some of the matching we’d otherwise have to do by hand for those 90 schools that didn’t match exactly.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+c1}{\PYGZsh{} First, make a list of all names in the big dataset}
-\PYG{n}{names\PYGZus{}from\PYGZus{}df\PYGZus{}big} \PYG{o}{=} \PYG{n+nb}{list}\PYG{p}{(} \PYG{n}{df\PYGZus{}big}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}
-
-\PYG{c+c1}{\PYGZsh{} Now write a function that searches that list}
 \PYG{k}{def} \PYG{n+nf}{get\PYGZus{}closest\PYGZus{}name\PYGZus{}from\PYGZus{}df\PYGZus{}big} \PYG{p}{(} \PYG{n}{name\PYGZus{}from\PYGZus{}df\PYGZus{}rank} \PYG{p}{)}\PYG{p}{:}
 
     \PYG{c+c1}{\PYGZsh{} If there\PYGZsq{}s an exact match, we\PYGZsq{}re already done.}
-    \PYG{k}{if} \PYG{n}{name\PYGZus{}from\PYGZus{}df\PYGZus{}rank} \PYG{o+ow}{in} \PYG{n}{names\PYGZus{}from\PYGZus{}df\PYGZus{}big}\PYG{p}{:}
+    \PYG{k}{if} \PYG{n}{has\PYGZus{}exact\PYGZus{}match}\PYG{p}{(} \PYG{n}{name\PYGZus{}from\PYGZus{}df\PYGZus{}rank} \PYG{p}{)}\PYG{p}{:}
         \PYG{k}{return} \PYG{n}{name\PYGZus{}from\PYGZus{}df\PYGZus{}rank}
     
     \PYG{c+c1}{\PYGZsh{} Get the closest matches, if any.}
@@ -6191,8 +6237,8 @@ The results are correct for the first four schools, which were exact matches, bu
 We can check by taking a glance over the following output, and noting which rows are wrong.  I don’t include the full output here of all 90 discrepancies, just to save space, but you can use \sphinxcode{\sphinxupquote{pd.set\_option( 'display.max\_rows', None )}} to see them all.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{where\PYGZus{}it\PYGZus{}made\PYGZus{}guesses} \PYG{o}{=} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{!=} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{]}
-\PYG{n}{where\PYGZus{}it\PYGZus{}made\PYGZus{}guesses}\PYG{p}{[}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{]}
+\PYG{n}{rows\PYGZus{}with\PYGZus{}guesses} \PYG{o}{=} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{!=} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{]}
+\PYG{n}{rows\PYGZus{}with\PYGZus{}guesses}\PYG{p}{[}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{]}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -6319,9 +6365,10 @@ When I’m done manually investigating the 30 schools that had to be fixed by ha
 \PYG{c+c1}{\PYGZsh{} and so on, for a total of 30 changes}
 \end{sphinxVerbatim}
 
-But if we’re trying to follow DRY principles, we notice that there’s definitely a lot of repeated code here.  We’re copying and pasting the \sphinxcode{\sphinxupquote{df\_rank.loc{[}...,'Name in big\_df'{]} = '...'}} part each time.  We could simplify this by creating a Python dictionary with just our corrections.  Here I include all 30 correctsion as they would be if we had carefully investigated each.
+But if we’re trying to follow DRY principles, we notice that there’s definitely a lot of repeated code here.  We’re copying and pasting the \sphinxcode{\sphinxupquote{df\_rank.loc{[}...,'Name in big\_df'{]} = '...'}} part each time.  We could simplify this by creating a Python dictionary with just our corrections.  Here I include all 30 corrections as they would be if we had carefully investigated each.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Store corrections in a dictionary:}
 \PYG{n}{corrections} \PYG{o}{=} \PYG{p}{\PYGZob{}}
     \PYG{l+m+mi}{4}   \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Columbia University in the City of New York}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
     \PYG{l+m+mi}{34}  \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Georgia Institute of Technology\PYGZhy{}Main Campus}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
@@ -6348,9 +6395,12 @@ But if we’re trying to follow DRY principles, we notice that there’s definit
     \PYG{l+m+mi}{193} \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Bowling Green State University\PYGZhy{}Main Campus}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
     \PYG{l+m+mi}{222} \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{New Mexico State University\PYGZhy{}Main Campus}\PYG{l+s+s1}{\PYGZsq{}}
 \PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{\PYGZsh{} Apply all the corrections at once:}
 \PYG{k}{for} \PYG{n}{row\PYGZus{}index}\PYG{p}{,} \PYG{n}{fixed\PYGZus{}name} \PYG{o+ow}{in} \PYG{n}{corrections}\PYG{o}{.}\PYG{n}{items}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
     \PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{row\PYGZus{}index}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{fixed\PYGZus{}name}
-    
+
+\PYG{c+c1}{\PYGZsh{} See if at least the top 5 look right:}
 \PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
 \end{sphinxVerbatim}
 
@@ -6451,7 +6501,7 @@ Now we have one large dataset containing both the generic data and the ranking d
 This is one of the most challenging merges you might have to do, but it’s good to be prepared for the worst case scenario!
 
 
-\section{Miscellaneous Munging Methods (ETL)}
+\chapter{Miscellaneous Munging Methods (ETL)}
 \label{\detokenize{chapter-13-etl:miscellaneous-munging-methods-etl}}\label{\detokenize{chapter-13-etl::doc}}
 See also the slides that summarize a portion of this content.
 
@@ -6460,7 +6510,7 @@ This chapter has not yet been written.  Check back later.
 \end{sphinxadmonition}
 
 
-\section{Dashboards}
+\chapter{Dashboards}
 \label{\detokenize{chapter-14-dashboards:dashboards}}\label{\detokenize{chapter-14-dashboards::doc}}
 See also the slides that summarize a portion of this content.
 
@@ -6469,7 +6519,7 @@ This chapter has not yet been written.  Check back later.
 \end{sphinxadmonition}
 
 
-\section{Relations as Graphs \sphinxhyphen{} Network Analysis}
+\chapter{Relations as Graphs \sphinxhyphen{} Network Analysis}
 \label{\detokenize{chapter-15-networks:relations-as-graphs-network-analysis}}\label{\detokenize{chapter-15-networks::doc}}
 See also the slides that summarize a portion of this content.
 
@@ -6478,7 +6528,7 @@ This chapter has not yet been written.  Check back later.
 \end{sphinxadmonition}
 
 
-\section{Relations as Matrices}
+\chapter{Relations as Matrices}
 \label{\detokenize{chapter-16-matrices:relations-as-matrices}}\label{\detokenize{chapter-16-matrices::doc}}
 See also the slides that summarize a portion of this content.
 
@@ -6487,7 +6537,7 @@ This chapter has not yet been written.  Check back later.
 \end{sphinxadmonition}
 
 
-\section{Introduction to Machine Learning}
+\chapter{Introduction to Machine Learning}
 \label{\detokenize{chapter-17-machine-learning:introduction-to-machine-learning}}\label{\detokenize{chapter-17-machine-learning::doc}}
 See also the slides that summarize a portion of this content.
 
@@ -6496,7 +6546,7 @@ This chapter has not yet been written.  Check back later.
 \end{sphinxadmonition}
 
 
-\section{Big Cheat Sheet}
+\chapter{Big Cheat Sheet}
 \label{\detokenize{big-cheat-sheet:big-cheat-sheet}}\label{\detokenize{big-cheat-sheet::doc}}
 This file summarizes all the coding concepts learned from DataCamp in MA346, as well as those learned in CS230 that remain important in MA346.  It is broken into sections in the order in which we encounter the topics in the course, and the course schedule on {\hyperref[\detokenize{intro::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{the main page}}}} links to each section from the day on which it’s learned.
 
@@ -6505,13 +6555,13 @@ This file summarizes all the coding concepts learned from DataCamp in MA346, as 
 
 
 
-\subsection{Before Week 2: Review of CS230}
+\section{Before Week 2: Review of CS230}
 \label{\detokenize{big-cheat-sheet:before-week-2-review-of-cs230}}
 
-\subsubsection{Introduction to Python (optional, basic review)}
+\subsection{Introduction to Python (optional, basic review)}
 \label{\detokenize{big-cheat-sheet:introduction-to-python-optional-basic-review}}
 
-\paragraph{Chapter 1: Python Basics}
+\subsubsection{Chapter 1: Python Basics}
 \label{\detokenize{big-cheat-sheet:chapter-1-python-basics}}
 Comments, which are not executed:
 
@@ -6576,7 +6626,7 @@ Exponents, integer division, and remainders:
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 2: Python Lists}
+\subsubsection{Chapter 2: Python Lists}
 \label{\detokenize{big-cheat-sheet:chapter-2-python-lists}}
 Create a list with square brackets:
 
@@ -6649,7 +6699,7 @@ Copying or not copying lists:
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 3: Functions and Packages}
+\subsubsection{Chapter 3: Functions and Packages}
 \label{\detokenize{big-cheat-sheet:chapter-3-functions-and-packages}}
 Calling a function and saving the result:
 
@@ -6712,7 +6762,7 @@ Importing just some functions from a package:
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 4: NumPy}
+\subsubsection{Chapter 4: NumPy}
 \label{\detokenize{big-cheat-sheet:chapter-4-numpy}}
 Creating NumPy arrays from Python lists:
 
@@ -6769,10 +6819,10 @@ Fast NumPy versions of Python functions, and some new ones:
 \end{sphinxVerbatim}
 
 
-\subsubsection{Python Data Science Toolbox, Part 1 (optional, basic review)}
+\subsection{Python Data Science Toolbox, Part 1 (optional, basic review)}
 \label{\detokenize{big-cheat-sheet:python-data-science-toolbox-part-1-optional-basic-review}}
 
-\paragraph{Chapter 1: Writing your own functions}
+\subsubsection{Chapter 1: Writing your own functions}
 \label{\detokenize{big-cheat-sheet:chapter-1-writing-your-own-functions}}
 Tuples are like lists, but use parentheses, and are immutable.
 
@@ -6810,7 +6860,7 @@ Syntax for calling a function:
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 2: Default arguments, variable\sphinxhyphen{}length arguments, and scope}
+\subsubsection{Chapter 2: Default arguments, variable\sphinxhyphen{}length arguments, and scope}
 \label{\detokenize{big-cheat-sheet:chapter-2-default-arguments-variable-length-arguments-and-scope}}
 Defining nested functions:
 
@@ -6860,7 +6910,7 @@ Accepting a dictionary of arguments:
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 3: Lambda functions and error handling}
+\subsubsection{Chapter 3: Lambda functions and error handling}
 \label{\detokenize{big-cheat-sheet:chapter-3-lambda-functions-and-error-handling}}
 Anonymous functions:
 
@@ -6904,10 +6954,10 @@ Raising errors if users call your functions incorrectly:
 \end{sphinxVerbatim}
 
 
-\subsubsection{Intermediate Python (required review)}
+\subsection{Intermediate Python (required review)}
 \label{\detokenize{big-cheat-sheet:intermediate-python-required-review}}
 
-\paragraph{Chapter 1: Matplotlib}
+\subsubsection{Chapter 1: Matplotlib}
 \label{\detokenize{big-cheat-sheet:chapter-1-matplotlib}}
 Conventional way to import matplotlib:
 
@@ -6941,7 +6991,7 @@ Labeling axes and adding title:
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 2: Dictionaries \& Pandas}
+\subsubsection{Chapter 2: Dictionaries \& Pandas}
 \label{\detokenize{big-cheat-sheet:chapter-2-dictionaries-pandas}}
 Creating a dictionary directly:
 
@@ -7036,7 +7086,7 @@ Indexing and selecting data:
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 3: Logic, Control Flow, and Filtering}
+\subsubsection{Chapter 3: Logic, Control Flow, and Filtering}
 \label{\detokenize{big-cheat-sheet:chapter-3-logic-control-flow-and-filtering}}
 Python relations work on NumPy arrays and Pandas Series:
 
@@ -7089,7 +7139,7 @@ Conditional statements:
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 4: Loops}
+\subsubsection{Chapter 4: Loops}
 \label{\detokenize{big-cheat-sheet:chapter-4-loops}}
 Looping constructs:
 
@@ -7132,10 +7182,10 @@ Looping constructs:
 \end{sphinxVerbatim}
 
 
-\subsubsection{pandas Foundations (required review)}
+\subsection{pandas Foundations (required review)}
 \label{\detokenize{big-cheat-sheet:pandas-foundations-required-review}}
 
-\paragraph{Chapter 1: Data ingestion \& inspection}
+\subsubsection{Chapter 1: Data ingestion \& inspection}
 \label{\detokenize{big-cheat-sheet:chapter-1-data-ingestion-inspection}}
 Basic DataFrame/Series tools:
 
@@ -7234,10 +7284,10 @@ To save a plot to a file:
 \end{sphinxVerbatim}
 
 
-\subsubsection{Manipulating DataFrames with pandas (required review)}
+\subsection{Manipulating DataFrames with pandas (required review)}
 \label{\detokenize{big-cheat-sheet:manipulating-dataframes-with-pandas-required-review}}
 
-\paragraph{Chapter 1: Extracting and transforming data}
+\subsubsection{Chapter 1: Extracting and transforming data}
 \label{\detokenize{big-cheat-sheet:chapter-1-extracting-and-transforming-data}}
 (This builds on the DataCamp Intermediate Python section.)
 
@@ -7300,13 +7350,13 @@ You can also map columns through \sphinxcode{\sphinxupquote{dict}}s, not just fu
 
 
 
-\subsection{Before Week 3}
+\section{Before Week 3}
 \label{\detokenize{big-cheat-sheet:before-week-3}}
 
-\subsubsection{Manipulating DataFrames with pandas}
+\subsection{Manipulating DataFrames with pandas}
 \label{\detokenize{big-cheat-sheet:manipulating-dataframes-with-pandas}}
 
-\paragraph{Chapter 2: Advanced indexing}
+\subsubsection{Chapter 2: Advanced indexing}
 \label{\detokenize{big-cheat-sheet:chapter-2-advanced-indexing}}
 Creating a Series:
 
@@ -7357,7 +7407,7 @@ Making an index from multiple columns that, when taken together, uniquely identi
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 3: Rearranging and reshaping data}
+\subsubsection{Chapter 3: Rearranging and reshaping data}
 \label{\detokenize{big-cheat-sheet:chapter-3-rearranging-and-reshaping-data}}
 If columns A and B together uniquely identify entries in column C, you can create a new DataFrame showing this:
 
@@ -7419,7 +7469,7 @@ If the pivot column(s) aren’t a unique index, use \sphinxcode{\sphinxupquote{p
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 4: Grouping data}
+\subsubsection{Chapter 4: Grouping data}
 \label{\detokenize{big-cheat-sheet:chapter-4-grouping-data}}
 Group all columns except column A by the unique values in column A, then apply some aggregation method to each group:
 
@@ -7475,13 +7525,13 @@ The \sphinxcode{\sphinxupquote{agg}} method lets us do even more:
 
 
 
-\subsection{Before Week 4: Review of Visualization in CS230}
+\section{Before Week 4: Review of Visualization in CS230}
 \label{\detokenize{big-cheat-sheet:before-week-4-review-of-visualization-in-cs230}}
 
-\subsubsection{pandas Foundations}
+\subsection{pandas Foundations}
 \label{\detokenize{big-cheat-sheet:pandas-foundations}}
 
-\paragraph{Chapter 2: Exploratory data analysis}
+\subsubsection{Chapter 2: Exploratory data analysis}
 \label{\detokenize{big-cheat-sheet:chapter-2-exploratory-data-analysis}}
 Plots from DataFrames:
 
@@ -7508,13 +7558,13 @@ Histogram options: \sphinxcode{\sphinxupquote{bins}}, \sphinxcode{\sphinxupquote
 
 
 
-\subsection{Before Week 5}
+\section{Before Week 5}
 \label{\detokenize{big-cheat-sheet:before-week-5}}
 
-\subsubsection{Intermediate Python}
+\subsection{Intermediate Python}
 \label{\detokenize{big-cheat-sheet:intermediate-python}}
 
-\paragraph{Chapter 5: Case Study: Hacker Statistics}
+\subsubsection{Chapter 5: Case Study: Hacker Statistics}
 \label{\detokenize{big-cheat-sheet:chapter-5-case-study-hacker-statistics}}
 Uniform random numbers from NumPy:
 
@@ -7526,10 +7576,10 @@ Uniform random numbers from NumPy:
 \end{sphinxVerbatim}
 
 
-\subsubsection{Statistical Thinking in Python, Part 1}
+\subsection{Statistical Thinking in Python, Part 1}
 \label{\detokenize{big-cheat-sheet:statistical-thinking-in-python-part-1}}
 
-\paragraph{Chapter 1: Graphical Exploratory Data Analysis}
+\subsubsection{Chapter 1: Graphical Exploratory Data Analysis}
 \label{\detokenize{big-cheat-sheet:chapter-1-graphical-exploratory-data-analysis}}
 Plotting a histogram of your data:
 
@@ -7606,7 +7656,7 @@ Multiple ECDFs on one plot:
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 2: Quantitative Exploratory Data Analysis}
+\subsubsection{Chapter 2: Quantitative Exploratory Data Analysis}
 \label{\detokenize{big-cheat-sheet:chapter-2-quantitative-exploratory-data-analysis}}
 The mean is the center of mass of the data:
 
@@ -7663,7 +7713,7 @@ The Pearson correlation coefficient normalizes this to \([-1,1]\):
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 3: Thinking probabalistically–Discrete variables}
+\subsubsection{Chapter 3: Thinking probabalistically–Discrete variables}
 \label{\detokenize{big-cheat-sheet:chapter-3-thinking-probabalistically-discrete-variables}}
 Recall these random number generation basics:
 
@@ -7707,7 +7757,7 @@ Poisson distribution (size parameter optional):
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 4: Thinking probabalistically–Continuous variables}
+\subsubsection{Chapter 4: Thinking probabalistically–Continuous variables}
 \label{\detokenize{big-cheat-sheet:chapter-4-thinking-probabalistically-continuous-variables}}
 Normal (Gaussian) distribution (size parameter optional):
 
@@ -7725,12 +7775,12 @@ size parameter optional again):
 You can take an array of numbers generated by simulation and plot it as an ECDF, as covered in the Graphical EDA chapter, earlier in this week.
 
 
-\subsubsection{Introduction to Data Visualization with Python}
+\subsection{Introduction to Data Visualization with Python}
 \label{\detokenize{big-cheat-sheet:introduction-to-data-visualization-with-python}}
 \sphinxstyleemphasis{NOTE: Only Chapters 1 and 3 are required here.}
 
 
-\paragraph{Chapter 1: Customizing Plots}
+\subsubsection{Chapter 1: Customizing Plots}
 \label{\detokenize{big-cheat-sheet:chapter-1-customizing-plots}}
 Break a plot into an \(n\times m\) grid of subplots as follows:
 
@@ -7789,7 +7839,7 @@ Change plot styles globally:
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 3: Statistical plots with Seaborn}
+\subsubsection{Chapter 3: Statistical plots with Seaborn}
 \label{\detokenize{big-cheat-sheet:chapter-3-statistical-plots-with-seaborn}}
 Plotting a linear regression line:
 
@@ -7896,13 +7946,13 @@ Visualize a covariance matrix with a heatmap:
 
 
 
-\subsection{Before Week 6}
+\section{Before Week 6}
 \label{\detokenize{big-cheat-sheet:before-week-6}}
 
-\subsubsection{Merging DataFrames with pandas}
+\subsection{Merging DataFrames with pandas}
 \label{\detokenize{big-cheat-sheet:merging-dataframes-with-pandas}}
 
-\paragraph{Chapter 1: Preparing data}
+\subsubsection{Chapter 1: Preparing data}
 \label{\detokenize{big-cheat-sheet:chapter-1-preparing-data}}
 The \sphinxcode{\sphinxupquote{glob}} module is useful:
 
@@ -7945,7 +7995,7 @@ You can reorder a DataFrame in preparation for reindexing:
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 2: Concatenating data}
+\subsubsection{Chapter 2: Concatenating data}
 \label{\detokenize{big-cheat-sheet:chapter-2-concatenating-data}}
 To add one DataFrame onto the end of another:
 
@@ -7992,7 +8042,7 @@ By default, \sphinxcode{\sphinxupquote{concat}} performs an “outer join,” th
 \end{sphinxVerbatim}
 
 
-\subsubsection{Chapter 3: Merging data}
+\subsection{Chapter 3: Merging data}
 \label{\detokenize{big-cheat-sheet:chapter-3-merging-data}}
 Inner joins on non\sphinxhyphen{}index columns are done with \sphinxcode{\sphinxupquote{merge}}.
 
@@ -8040,13 +8090,13 @@ When dates don’t fully match, you can round dates in the right DataFrame up to
 
 
 
-\subsection{Before Week 8}
+\section{Before Week 8}
 \label{\detokenize{big-cheat-sheet:before-week-8}}
 
-\subsubsection{Streamlined Data Ingestion with pandas}
+\subsection{Streamlined Data Ingestion with pandas}
 \label{\detokenize{big-cheat-sheet:streamlined-data-ingestion-with-pandas}}
 
-\paragraph{Chapter 1: Importing Data from Flat Files}
+\subsubsection{Chapter 1: Importing Data from Flat Files}
 \label{\detokenize{big-cheat-sheet:chapter-1-importing-data-from-flat-files}}
 Any file whose rows are on separate lines and whose entries are separated by some delimiter can be read with the same \sphinxcode{\sphinxupquote{read\_csv}} function we’ve already seen.
 
@@ -8100,7 +8150,7 @@ If some lines in a file are corrupt, you can ask \sphinxcode{\sphinxupquote{read
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 2: Importing Data from Excel Files}
+\subsubsection{Chapter 2: Importing Data from Excel Files}
 \label{\detokenize{big-cheat-sheet:chapter-2-importing-data-from-excel-files}}
 If the spreadsheet is a single table of data without formatting:
 
@@ -8156,7 +8206,7 @@ Advanced methods of date/time parsing:
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 3: Importing Data from Databases}
+\subsubsection{Chapter 3: Importing Data from Databases}
 \label{\detokenize{big-cheat-sheet:chapter-3-importing-data-from-databases}}
 In SQLite, databases are \sphinxcode{\sphinxupquote{.db}} files:
 
@@ -8178,7 +8228,7 @@ In SQLite, databases are \sphinxcode{\sphinxupquote{.db}} files:
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 4: Importing JSON Data and Working with APIs}
+\subsubsection{Chapter 4: Importing JSON Data and Working with APIs}
 \label{\detokenize{big-cheat-sheet:chapter-4-importing-json-data-and-working-with-apis}}
 From a file or string:
 
@@ -8233,13 +8283,13 @@ If the JSON has nested objects, you can flatten:
 
 
 
-\subsection{Before Week 9}
+\section{Before Week 9}
 \label{\detokenize{big-cheat-sheet:before-week-9}}
 
-\subsubsection{Introduction to SQL}
+\subsection{Introduction to SQL}
 \label{\detokenize{big-cheat-sheet:introduction-to-sql}}
 
-\paragraph{Chapter 1: Selecting columns}
+\subsubsection{Chapter 1: Selecting columns}
 \label{\detokenize{big-cheat-sheet:chapter-1-selecting-columns}}
 SQL (“sequel”) means Structured Query Language.  A SQL database contains tables, each of which is like a DataFrame.
 
@@ -8291,7 +8341,7 @@ If a result is huge, you may want just the first few lines:
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 2: Filtering rows}
+\subsubsection{Chapter 2: Filtering rows}
 \label{\detokenize{big-cheat-sheet:chapter-2-filtering-rows}}
 (selecting a subset of the rows using the \sphinxcode{\sphinxupquote{WHERE}} keyword)
 
@@ -8348,7 +8398,7 @@ Using wildcards (\sphinxcode{\sphinxupquote{\%}} and \sphinxcode{\sphinxupquote{
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 3: Aggregate Functions}
+\subsubsection{Chapter 3: Aggregate Functions}
 \label{\detokenize{big-cheat-sheet:chapter-3-aggregate-functions}}
 We’ve seen this function before; it is an aggregator:
 
@@ -8382,7 +8432,7 @@ You can also do arithmetic on columns:
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 4: Sorting and grouping}
+\subsubsection{Chapter 4: Sorting and grouping}
 \label{\detokenize{big-cheat-sheet:chapter-4-sorting-and-grouping}}
 Sorting happens only after selecting:
 
@@ -8425,13 +8475,13 @@ To filter by a condition (like with \sphinxcode{\sphinxupquote{WHERE}} but now a
 
 
 
-\subsection{Additional Useful References}
+\section{Additional Useful References}
 \label{\detokenize{big-cheat-sheet:additional-useful-references}}
 
-\subsubsection{Python Data Science Toolbox, Part 2}
+\subsection{Python Data Science Toolbox, Part 2}
 \label{\detokenize{big-cheat-sheet:python-data-science-toolbox-part-2}}
 
-\paragraph{Chapter 1: Using iterators in PythonLand}
+\subsubsection{Chapter 1: Using iterators in PythonLand}
 \label{\detokenize{big-cheat-sheet:chapter-1-using-iterators-in-pythonland}}
 To convert an iterable to an iterator and use it:
 
@@ -8489,7 +8539,7 @@ Pandas can read CSV files into DataFrames in chunks, creating an iterable out of
 \end{sphinxVerbatim}
 
 
-\paragraph{Chapter 2: List comprehensions and generators}
+\subsubsection{Chapter 2: List comprehensions and generators}
 \label{\detokenize{big-cheat-sheet:chapter-2-list-comprehensions-and-generators}}
 List comprehensions build a list from an output expression and a \sphinxcode{\sphinxupquote{for}} clause:
 
@@ -8549,10 +8599,10 @@ You can build generators with functions and \sphinxcode{\sphinxupquote{yield}}:
 \end{sphinxVerbatim}
 
 
-\subsubsection{Introduction to Data Visualization with Python}
+\subsection{Introduction to Data Visualization with Python}
 \label{\detokenize{big-cheat-sheet:id1}}
 
-\paragraph{Chapter 2: Plotting 2D arrays}
+\subsubsection{Chapter 2: Plotting 2D arrays}
 \label{\detokenize{big-cheat-sheet:chapter-2-plotting-2d-arrays}}
 To plot a bivariate function using colors:
 
@@ -8616,7 +8666,7 @@ To display an image from a file:
 \end{sphinxVerbatim}
 
 
-\section{Anaconda Installation}
+\chapter{Anaconda Installation}
 \label{\detokenize{anaconda-installation:anaconda-installation}}\label{\detokenize{anaconda-installation::doc}}
 Anaconda is a tool that installs Python together with the \sphinxcode{\sphinxupquote{conda}} package
 manager and several related apps, tools, and packages.  It’s one of the
@@ -8627,7 +8677,7 @@ These instructions are written primarily for Windows, with Mac
 instructions in parentheses.
 
 
-\subsection{Visit the Anaconda website}
+\section{Visit the Anaconda website}
 \label{\detokenize{anaconda-installation:visit-the-anaconda-website}}
 It is at this URL:
 \sphinxhref{http://www.anaconda.com/distribution}{www.anaconda.com/distribution}
@@ -8637,7 +8687,7 @@ It looks like this:
 
 
 
-\subsection{Choose your OS}
+\section{Choose your OS}
 \label{\detokenize{anaconda-installation:choose-your-os}}
 Scroll down on that same website and click the Windows link to indicate
 that you want to download the installer for Windows.
@@ -8647,7 +8697,7 @@ that you want to download the installer for Windows.
 (Mac users obviously click the macOS link instead.)
 
 
-\subsection{Download the Installer}
+\section{Download the Installer}
 \label{\detokenize{anaconda-installation:download-the-installer}}
 Click the download button for the Python 3.7 distribution of Anaconda,
 as shown on the left below.
@@ -8655,7 +8705,7 @@ as shown on the left below.
 
 
 
-\subsection{Run the Installer}
+\section{Run the Installer}
 \label{\detokenize{anaconda-installation:run-the-installer}}
 Run the installer once it’s downloaded, probably by clicking the
 downloaded file in your browser’s list of downloaded files, usually at
@@ -8676,19 +8726,19 @@ above.)
 After this, you may wish to {\hyperref[\detokenize{vs-code-installation::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{install VS Code}}}} as well.
 
 
-\section{VS Code for Python Installation}
+\chapter{VS Code for Python Installation}
 \label{\detokenize{vs-code-installation:vs-code-for-python-installation}}\label{\detokenize{vs-code-installation::doc}}
 This assumes you have {\hyperref[\detokenize{anaconda-installation::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{installed Anaconda}}}} already.
 
 
-\subsection{Open the Anaconda Navigator}
+\section{Open the Anaconda Navigator}
 \label{\detokenize{vs-code-installation:open-the-anaconda-navigator}}
 Start Menu > Anaconda3 > Anaconda Navigator(On Mac: Finder > Applications > Anaconda Navigator.app.)
 
 
 
 
-\subsection{Find and Install the VS Code application}
+\section{Find and Install the VS Code application}
 \label{\detokenize{vs-code-installation:find-and-install-the-vs-code-application}}
 Scroll down in the list of applications until you find VS Code (Visual
 Studio Code, by Microsoft).
@@ -8705,7 +8755,7 @@ contain a “Launch” button.
 Click that button now to launch VS Code.
 
 
-\subsection{Installing and Configuring Code Runner}
+\section{Installing and Configuring Code Runner}
 \label{\detokenize{vs-code-installation:installing-and-configuring-code-runner}}
 VS Code is all ready to let you edit Python code, but there’s an
 Extension to VS Code, called Code Runner, that makes it more convenient
@@ -8744,7 +8794,7 @@ Your Code Runner Extension is correctly configured. Try it out as shown
 on the next page.
 
 
-\subsection{Testing your Installation}
+\section{Testing your Installation}
 \label{\detokenize{vs-code-installation:testing-your-installation}}
 Let’s verify now that you can successfully run Python code.
 
@@ -8786,10 +8836,10 @@ You have a successful Python installation that you can run from Visual
 Studio!
 
 
-\section{GB213 Review in Python}
+\chapter{GB213 Review in Python}
 \label{\detokenize{GB213-review-in-Python:gb213-review-in-python}}\label{\detokenize{GB213-review-in-Python::doc}}
 
-\subsection{We’re not covering everything}
+\section{We’re not covering everything}
 \label{\detokenize{GB213-review-in-Python:we-re-not-covering-everything}}
 We’re omitting basic probability issues like experiments, sample spaces, discrete probabilities, combinations, and permutations.  At the end we’ll provide links to example topics.  But everything else we’ll cover at least briefly.
 
@@ -8809,14 +8859,14 @@ We begin by importing the necessary modules.
 
 
 
-\subsection{Discrete Random Variables}
+\section{Discrete Random Variables}
 \label{\detokenize{GB213-review-in-Python:discrete-random-variables}}
 (For continuous random variables, {\hyperref[\detokenize{GB213-review-in-Python:continuous-random-variables}]{\emph{see further below}}}.
 
 Discrete random variables taken on a finite number of different values.  For example, a Bernoulli trial is either 0 or 1 (usually meaning failure and success, respectively).  You can create random variables using \sphinxcode{\sphinxupquote{scipy.stats}} as follows.
 
 
-\subsubsection{Creating them}
+\subsection{Creating them}
 \label{\detokenize{GB213-review-in-Python:creating-them}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{b1} \PYG{o}{=} \PYG{n}{stats}\PYG{o}{.}\PYG{n}{bernoulli}\PYG{p}{(} \PYG{l+m+mf}{0.25} \PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} probability of success}
@@ -8824,7 +8874,7 @@ Discrete random variables taken on a finite number of different values.  For exa
 \end{sphinxVerbatim}
 
 
-\subsubsection{Computing probabilities from a Discrete Random Variable}
+\subsection{Computing probabilities from a Discrete Random Variable}
 \label{\detokenize{GB213-review-in-Python:computing-probabilities-from-a-discrete-random-variable}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{b1}\PYG{o}{.}\PYG{n}{pmf}\PYG{p}{(} \PYG{l+m+mi}{0} \PYG{p}{)}\PYG{p}{,} \PYG{n}{b1}\PYG{o}{.}\PYG{n}{pmf}\PYG{p}{(} \PYG{l+m+mi}{1} \PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} stands for \PYGZdq{}probability mass function\PYGZdq{}}
@@ -8837,20 +8887,20 @@ Discrete random variables taken on a finite number of different values.  For exa
 The same code works for any random variable, not just \sphinxcode{\sphinxupquote{b1}}.
 
 
-\subsubsection{Generating values from a Discrete Random Variable}
+\subsection{Generating values from a Discrete Random Variable}
 \label{\detokenize{GB213-review-in-Python:generating-values-from-a-discrete-random-variable}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{b1}\PYG{o}{.}\PYG{n}{rvs}\PYG{p}{(} \PYG{l+m+mi}{10} \PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} asks for 10 random values (rvs)}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0, 0, 0, 0, 0, 0, 1, 0, 0, 0])
+array([0, 0, 1, 1, 0, 0, 1, 0, 0, 0])
 \end{sphinxVerbatim}
 
 The same code works for any random variable, not just \sphinxcode{\sphinxupquote{b1}}.
 
 
-\subsubsection{Computing statistics about a Discrete Random Variable}
+\subsection{Computing statistics about a Discrete Random Variable}
 \label{\detokenize{GB213-review-in-Python:computing-statistics-about-a-discrete-random-variable}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{b1}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{p}{)}\PYG{p}{,} \PYG{n}{b1}\PYG{o}{.}\PYG{n}{var}\PYG{p}{(}\PYG{p}{)}\PYG{p}{,} \PYG{n}{b1}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} mean, variance, standard deviation}
@@ -8863,7 +8913,7 @@ The same code works for any random variable, not just \sphinxcode{\sphinxupquote
 The same code works for any random variable, not just \sphinxcode{\sphinxupquote{b1}}.
 
 
-\subsubsection{Plotting the Distribution of a Discrete Random Variable}
+\subsection{Plotting the Distribution of a Discrete Random Variable}
 \label{\detokenize{GB213-review-in-Python:plotting-the-distribution-of-a-discrete-random-variable}}
 Here’s a function you can use to plot (almost) any discrete probability distribution.
 
@@ -8890,14 +8940,14 @@ Example use:
 
 
 
-\subsection{Continuous Random Variables}
+\section{Continuous Random Variables}
 \label{\detokenize{GB213-review-in-Python:continuous-random-variables}}
 (For discrete random variables, {\hyperref[\detokenize{GB213-review-in-Python:discrete-random-variables}]{\emph{see further above}}}.
 
 Continuous random variables take on an infinite number of different values, sometimes in a certain range (like the uniform distribution on \([0,1]\), for example) and sometimes over the whole real number line (like the normal distribution, for example).
 
 
-\subsubsection{Creating them}
+\subsection{Creating them}
 \label{\detokenize{GB213-review-in-Python:id1}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{\PYGZsh{} for uniform on the interval [a,b]: use loc=a, scale=b\PYGZhy{}a}
@@ -8909,7 +8959,7 @@ Continuous random variables take on an infinite number of different values, some
 \end{sphinxVerbatim}
 
 
-\subsubsection{Computing probabilities from a Continuous Random Variable}
+\subsection{Computing probabilities from a Continuous Random Variable}
 \label{\detokenize{GB213-review-in-Python:computing-probabilities-from-a-continuous-random-variable}}
 For a continuous random variable, you cannot compute the probability that it will equal a precise number, because such a probability is always zero.  But you can compute the probability that the value falls within a certain interval on the number line.
 
@@ -8927,20 +8977,20 @@ To do so for an interval \([a,b]\), compute the total probability accumulated up
 The same code works for any continuous random variable, not just \sphinxcode{\sphinxupquote{n}}.
 
 
-\subsubsection{Generating values from a Continuous Random Variable}
+\subsection{Generating values from a Continuous Random Variable}
 \label{\detokenize{GB213-review-in-Python:generating-values-from-a-continuous-random-variable}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{n}\PYG{o}{.}\PYG{n}{rvs}\PYG{p}{(} \PYG{l+m+mi}{10} \PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} same as for discrete random variables}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([ 98.03788691, 101.70140754,  93.88321357, 105.84206551,
-       106.45051781, 101.347993  ,  96.70407547,  93.56894671,
-        98.53091338, 104.68710024])
+array([ 99.51149251,  98.41891356,  90.63881166,  99.14398002,
+       102.01084226,  98.62951074, 102.91198749,  94.65917374,
+       102.19344429,  94.23238276])
 \end{sphinxVerbatim}
 
 
-\subsubsection{Plotting the Distribution of a Continuous Random Variable}
+\subsection{Plotting the Distribution of a Continuous Random Variable}
 \label{\detokenize{GB213-review-in-Python:plotting-the-distribution-of-a-continuous-random-variable}}
 Here’s a function you can use to plot the center 99.98\% of any continuous probability distribution.
 
@@ -8965,7 +9015,7 @@ Example use:
 
 
 
-\subsection{Confidence Intervals}
+\section{Confidence Intervals}
 \label{\detokenize{GB213-review-in-Python:confidence-intervals}}
 Recall from GB213 that certain assumptions about normality must hold in order for you to do statistical inference.  We do not cover those here; refer to your GB213 text or notes.
 
@@ -8991,7 +9041,7 @@ Here we cover a confidence interval for the sample mean using confidence level \
 
 
 
-\subsection{Hypothesis Testing}
+\section{Hypothesis Testing}
 \label{\detokenize{GB213-review-in-Python:hypothesis-testing}}
 Again, in GB213 you learned what assumptions must hold in order to do a hypothesis test, which I do not review here.
 
@@ -9000,7 +9050,7 @@ Let \(H_0\) be the null hypothesis, the currently held belief.  Let \(H_a\) be t
 We assume some chosen value \(0\leq\alpha\leq1\), which is the probability of a Type I error (false positive, finding we should reject \(H_0\) when it’s actually true).
 
 
-\subsubsection{Two\sphinxhyphen{}sided test for \protect\(H_0:\mu=\bar{x}\protect\)}
+\subsection{Two\sphinxhyphen{}sided test for \protect\(H_0:\mu=\bar{x}\protect\)}
 \label{\detokenize{GB213-review-in-Python:two-sided-test-for-h-0-mu-bar-x}}
 Say we have a population whose mean \(\mu\) is known to be 10.  We take a sample \(x_1,\ldots,x_n\) and compute its mean, \(\bar{x}\).  We then ask whether this sample is significantly different from the population at large, that is, is \(\mu=\bar{x}\)?  We can do a two\sphinxhyphen{}sided test of \(H_0:\mu=\bar{x}\) as follows.
 
@@ -9020,7 +9070,7 @@ Say we have a population whose mean \(\mu\) is known to be 10.  We take a sample
 The output above says that the data does NOT give us enough information to reject the null hypothesis.  So we should continue to assume that the sample is like the population, and \(\mu=\bar{x}\).
 
 
-\subsubsection{Two\sphinxhyphen{}sided test for \protect\(H_0: \bar{x}_1=\bar{x}_2\protect\)}
+\subsection{Two\sphinxhyphen{}sided test for \protect\(H_0: \bar{x}_1=\bar{x}_2\protect\)}
 \label{\detokenize{GB213-review-in-Python:two-sided-test-for-h-0-bar-x-1-bar-x-2}}
 What if we had wanted to do a test for whether two independent samples had the same mean?  We can ask that question as follows.  (Here we assume they have equal variances, but you can turn that assumption off with a third parameter to \sphinxcode{\sphinxupquote{ttest\_ind}}.)
 
@@ -9044,10 +9094,10 @@ The output above says that the two samples DO give us enough information to reje
 
 
 
-\subsection{Linear Regression}
+\section{Linear Regression}
 \label{\detokenize{GB213-review-in-Python:linear-regression}}
 
-\subsubsection{Creating a linear model of data}
+\subsection{Creating a linear model of data}
 \label{\detokenize{GB213-review-in-Python:creating-a-linear-model-of-data}}
 Normally you would have data that you wanted to model.  But in this example notebook, I have to make up some data first.
 
@@ -9123,7 +9173,7 @@ To know how good it is, we often ask about the \(R^2\) value.
 In this case, \(R^2\) would be approximately \(0.895^2\), or about \(0.801\).  Thus our model explains about 80.1\% of the variability in the data.
 
 
-\subsubsection{Visualizing the model}
+\subsection{Visualizing the model}
 \label{\detokenize{GB213-review-in-Python:visualizing-the-model}}
 The Seaborn visualization package provides a handy tool for making scatterplots with linear models overlaid.  The light blue shading is a confidence band we will not cover.
 
@@ -9139,15 +9189,15 @@ The Seaborn visualization package provides a handy tool for making scatterplots 
 
 
 
-\subsection{Other Topics}
+\section{Other Topics}
 \label{\detokenize{GB213-review-in-Python:other-topics}}
 
-\subsubsection{ANOVA}
+\subsection{ANOVA}
 \label{\detokenize{GB213-review-in-Python:anova}}
 Analysis of variance is an optional topic your GB213 class may or may not have covered, depending on scheduling and instructor choices.  If you covered it in GB213 and would like to see how to do it in Python, check out \sphinxhref{https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.f\_oneway.html}{the Scipy documentation for \sphinxcode{\sphinxupquote{f\_oneway}}}.
 
 
-\subsubsection{\protect\(\chi^2\protect\) Tests}
+\subsection{\protect\(\chi^2\protect\) Tests}
 \label{\detokenize{GB213-review-in-Python:chi-2-tests}}
 Chi\sphinxhyphen{}squared (\(\chi^2\)) tests are another optional GB213 topic that your class may or may not have covered.  If you are familiar with it and would like to see how to do it in Python, check out \sphinxhref{https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chisquare.html}{the Scipy documentation for \sphinxcode{\sphinxupquote{chisquare}}}.
 

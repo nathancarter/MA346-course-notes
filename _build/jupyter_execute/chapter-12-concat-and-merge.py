@@ -183,6 +183,31 @@ The code is the same as all the code we've seen up to this point, but with `how=
 df_merged = pd.merge( df_execs, df_marketing, on='Firm', how='outer' )
 ```
 
+## Summary
+
+Before we tackle the challenging question of what happens if there is no unique ID to use for merging, let's review where we've been and add some key details.
+
+```{admonition} Big Picture
+---
+class: alert alert-primary
+---
+As I've introduced it here, `pd.concat()` combines the rows of two DataFrames together and `pd.merge()` combines the columns.  While `pd.concat()` always adds rows, `pd.merge()` may or may not, depending on whether you use left, right, inner, or outer joins.
+
+Although `pd.concat()` and `pd.merge()` have tons of options that let you do merges and concatenations in the opposite direction from what I taught here (e.g., concat horizontally or merge vertically), this is almost never what is called for in a data project, due to the way we typically arrange tabular data.
+```
+
+The `pd.concat()` function is the easy one, and simply unites two datasets vertically.  The `pd.merge()` function is the more complicated of the two.  Let's imagine that we've called `pd.merge(A,B)` for two DataFrames `A` and `B`.
+ * With `how='inner'`, the default, it creates new rows for every pair of rows from `A` and `B` that match on the specified columns, and it discards everything else.
+ * With `how='left'`, it creates new rows for every pair of rows from `A` and `B` that match on the specified columns, plus it also keeps every row from `A` that didn't match anything from `B`, and fills in their `B` columns with missing values.  This sees `A` as the important dataset, into which we're bringing some information from `B` where possible.
+ * With `how='right'`, the reverse happens.  But you don't need this option if you prefer thinking of the left dataset as the important one, into which we're bringing new columns on the right.  Instead of `pd.merge(A,B,how='right')`, you can always just use `pd.merge(B,A,how='left')` instead.
+ * With `how='outer'`, it creates new rows for every pair of rows from `A` and `B` that match on the specified columns, plus it also
+    * keeps every row from `A` that didn't match anything from `B`, and fills in their `B` columns with missing values, and
+    * keeps every row from `B` that didn't match anything from `A`, and fills in their `A` columns with missing values.  This throws no data away.
+
+And as a final reminder, we're covering merging because it's extremely common and useful to find that you have two related datasets or databases that you want to bring together, so that subsequent analyses can benefit from relating the data in the two sources.
+
+And yet it's not common for those two datasets to have been planned carefully enough in advance that they share a unique ID system for their rows.  More than likely, the two datasets were created by different teams, organizations, or software systems, and have quite different contents and formats.  So we come to the final section of this chapter, figuring out how to do a merge even when there isn't an obvious unique ID column to use for merging.
+
 ## Ensuring a unique ID appears in both datasets
 
 Ensuring that the datasets you want to merge each have a column that will match perfectly with the other dataset is an essential step before merging.  Sometimes that step is extremely easy and sometimes it is very challenging.  In the examples above, we assumed that the datasets already had columns that would match up perfectly.
@@ -213,6 +238,12 @@ It may also be possible to compute an appropriate column for merging by combinin
 
 **Example:**  Let's say you were merging two datasets about albums released by recording artists.  The artists have a unique ID in your datasets, but the albums don't.  If you know that no artist released more than one album in the same month, you could combine together the artist's unique ID with the month and year of the album's release to form a unique ID for the album.  E.g., if The Beatles had ID 2789045 and you're considering the Sgt. Pepper album (May 1967), then you would use the code 2789045-May-1967 for that album.  You could compute such a code for each row in each DataFrame.
 
+### Sequences with different frequencies
+
+Another common problem is merging two types of time-based data that were reported on different time scales.  For instance, let's say you are trying to study police activity and criminal activity in a city.  You have crime data in the form of daily records and police reports in terms of officers' hourly shifts.  If you wanted to combine these two datasets based on time, the difference in reporting frequency means it's not obvious how to do it.
+
+So pandas provides two functions for helping with such situations.  These notes do not cover them in detail, but suggest you check out the [documentation for `pd.merge_orered()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge_ordered.html) and the [documentation for `pd.merge_asof()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge_asof.html#pandas.merge_asof) for more sophisticated handling of time-based merge data.
+
 ### What about unstandardized text?
 
 This is more or less the hardest scenario.  For instance, in Fall 2019, when my students wanted to merge the government's comprehensive database of universities with the climate commitments of the schools who were working with our nonprofit client, our best option was to merge on the institution's name.  This is problematic due to variations in naming and spelling.  For instance, what if one dataset writes Bentley University and the other writes Bentley Univ.?  Or what if one dataset writes University of North Carolina at Chapel Hill and the other writes UNC Chapel Hill?  How is a computer to know how to match these up?  (That project actually involved merging several datasets about universities, and this same problem arose more than once!)
@@ -221,14 +252,14 @@ The short answer is that the computer will not figure this out, because `pd.merg
 
 When you're stuck trying to get two similar-but-not-the-same columns of text to try to match perfectly, I suggest the following method.  Whether this method is quick and easy or long and difficult varies significantly from one problem to the next.  But the outline is the same.
 
- 1. Figure out which dataset is to be the definitive one; this is typically the larger dataset.  (In the university example, this was the comprehensive government dataset.)
- 2. Figure out the column in each dataset that is *closest* to being useful as a unique ID.  (In the university example, this was the university name in each dataset, which was written the same in both datasets for many schools, but definitely not all.)
- 3. Add a new column to the smaller dataset that contains the correct unique ID *from the other, larger dataset* that it should match.  (In the university example, this means labeling each row in the nonprofit's dataset with that school's name as it appears in the government's dataset.)
+ 1. Figure out the column in each dataset that is *closest* to being useful as a unique ID.  (In the university example, this was the university name in each dataset, which was written the same in both datasets for many schools, but definitely not all.)
+ 2. Figure out which dataset is to be the definitive one; this is typically the larger dataset.  (In the university example, this was the comprehensive government dataset.)  We will use the merge column from this definitive dataset as the "official" ID for each row, and we must adjust the other dataset so that it uses these "official" IDs rather than its own versions/spellings.
+ 3. Add a new column to the smaller dataset that contains the official unique ID *from the other, larger dataset* that it should match.  (In the university example, this means labeling each row in the nonprofit's dataset with that school's name as it appears in the government's dataset.)  This is not always easy.
  4. Run `pd.merge()` and have it match the unique ID column in the larger dataset with this newly created column in the smaller dataset, which is now a perfect match.
 
 Notice that steps 1, 2, and 4 are quick and easy, but step 3 is where problems may or may not arise.  Depending on how well the chosen columns match in the two datasets, step 3 might take a short time or a long time.
 
-### Example
+### Extended Example
 
 Let's actually try to merge two datasets of university data.  I will load here the comprehensive university dataset I mentioned, originally downloaded from [here](https://data.world/kitedwards08/us-university-survey-2014), as well as a US News university rankings dataset, originally downloaded from [here](https://data.world/education/university-rankings-2017).
 
@@ -240,16 +271,18 @@ df_rank.head()
 
 len( df_big ), len( df_rank )
 
-**Step 1.** Figure out which dataset is to be the definitive one.  Clearly, the comprehensive dataset should be the definitive one, and the rankings merged into it.
+**Step 1.** Figure out the closest columns we have to making a match.  The only columns we could have a hope of using to uniquely identify these schools are their names.  No other column in the ranking dataset could possibly be a unique ID that would also be in the big dataset.
 
-**Step 2.** Figure out the closest columns we have to making a match.  The only columns we could have a hope of using to uniquely identify these schools are their names.  No other column in the ranking dataset could possibly be a unique ID that would also be in the other dataset.
+**Step 2.** Figure out which dataset is to be the definitive one.  Clearly, the comprehensive dataset should be the definitive one, and the rankings merged into it.  So the university names in the big dataset are what we'll use as the schools' official names.
 
-**Step 3.** Add a new column to the ranking dataset that contains which school name *from the big dataset* it should match with.  This is the tricky part.
+**Step 3.** Add a new column to the ranking dataset and, in it, store the correct official school name for each row.  (Remember that official names come from the big dataset.)  This is the tricky part.
 
-Let's just get a sense of how many of the 231 rows in the ranking dataset have an exact match in the big dataset.
+Let's just get a sense of how many of the 231 rows in the ranking dataset have an exact match in the big dataset, and thus their official names are already in the ranking dataset.
+
+names_from_df_big = list( df_big['NAME'] )
 
 def has_exact_match ( name_from_rank_df ):
-    return name_from_rank_df in list( df_big['NAME'] )
+    return name_from_rank_df in names_from_df_big
 
 sum( df_rank['Name'].apply( has_exact_match ) )
 
@@ -266,14 +299,10 @@ get_close_matches( 'pork', [ 'salad', 'lollipops', 'soda' ] )
 
 Let's use `get_close_matches()` to create a function that will match up university names across the two datasets if they're just off by a small amount.  This could automate some of the matching we'd otherwise have to do by hand for those 90 schools that didn't match exactly.
 
-# First, make a list of all names in the big dataset
-names_from_df_big = list( df_big['NAME'] )
-
-# Now write a function that searches that list
 def get_closest_name_from_df_big ( name_from_df_rank ):
 
     # If there's an exact match, we're already done.
-    if name_from_df_rank in names_from_df_big:
+    if has_exact_match( name_from_df_rank ):
         return name_from_df_rank
     
     # Get the closest matches, if any.
@@ -298,8 +327,8 @@ The results are correct for the first four schools, which were exact matches, bu
 
 We can check by taking a glance over the following output, and noting which rows are wrong.  I don't include the full output here of all 90 discrepancies, just to save space, but you can use `pd.set_option( 'display.max_rows', None )` to see them all.
 
-where_it_made_guesses = df_rank[ df_rank['Name'] != df_rank['Name in df_big'] ]
-where_it_made_guesses[['Name','Name in df_big']]
+rows_with_guesses = df_rank[ df_rank['Name'] != df_rank['Name in df_big'] ]
+rows_with_guesses[['Name','Name in df_big']]
 
 We see that in many cases, it did a good job, such as in rows 18, 21, 24, and 225 through 228.  We know that rows 4 and 25 are wrong, but is row 222 wrong?  That all depends on whether Grants is the location of the main campus for New Mexico State University.  Now you see why my students and I ended up on Google!
 
@@ -328,8 +357,9 @@ df_rank.loc[41,'Name in df_big'] = 'Tulane University of Louisiana'
 df_rank.loc[52,'Name in df_big'] = 'Pennsylvania State University-Main Campus'
 # and so on, for a total of 30 changes
 
-But if we're trying to follow DRY principles, we notice that there's definitely a lot of repeated code here.  We're copying and pasting the `df_rank.loc[...,'Name in big_df'] = '...'` part each time.  We could simplify this by creating a Python dictionary with just our corrections.  Here I include all 30 correctsion as they would be if we had carefully investigated each.
+But if we're trying to follow DRY principles, we notice that there's definitely a lot of repeated code here.  We're copying and pasting the `df_rank.loc[...,'Name in big_df'] = '...'` part each time.  We could simplify this by creating a Python dictionary with just our corrections.  Here I include all 30 corrections as they would be if we had carefully investigated each.
 
+# Store corrections in a dictionary:
 corrections = {
     4   : 'Columbia University in the City of New York',
     34  : 'Georgia Institute of Technology-Main Campus',
@@ -356,9 +386,12 @@ corrections = {
     193 : 'Bowling Green State University-Main Campus',
     222 : 'New Mexico State University-Main Campus'
 }
+
+# Apply all the corrections at once:
 for row_index, fixed_name in corrections.items():
     df_rank.loc[row_index,'Name in df_big'] = fixed_name
-    
+
+# See if at least the top 5 look right:
 df_rank.head()
 
 **Step 4.** And now that all corrections have been made, we can do the merge with confidence.  We take care to merge the main dataset's `"NAME"` column with the smaller dataset's `"Name in df_big"` column.  This merge will be a left join, because we do not want to discard a school just because it wasn't in US News's rankings.
