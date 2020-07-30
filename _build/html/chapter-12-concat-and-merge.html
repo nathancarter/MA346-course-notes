@@ -52,7 +52,7 @@
 <meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/chapter-12-concat-and-merge.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Concatenating and Merging DataFrames" />
-<meta property="og:description" content="Concatenating and Merging DataFrames  <a href="../../_slides/chapter-12-slides.html">See also the slides that summarize a portion of this content.</a>  Warning " />
+<meta property="og:description" content="Concatenating and Merging DataFrames  <a href="../../_slides/chapter-12-slides.html">See also the slides that summarize a portion of this content.</a>  Why join" />
 <meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
 
 <meta name="twitter:card" content="summary">
@@ -84,7 +84,12 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="current nav sidenav_l1">
+  <p class="caption">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-1-intro-to-data-science.html">
    Introduction to Data Science
@@ -95,6 +100,13 @@
    Mathematical Foundations
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-3-jupyter.html">
    Jupyter
@@ -105,6 +117,13 @@
    Review of Python and pandas
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-5-before-and-after.html">
    Before and After
@@ -115,6 +134,13 @@
    Single-Table Verbs
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 4
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-7-abstraction.html">
    Abstraction
@@ -125,6 +151,13 @@
    Version Control
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 5
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-9-math-and-stats.html">
    Mathematics and Statistics in Python
@@ -135,41 +168,97 @@
    Visualization
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-11-processing-rows.html">
    Processing the Rows of a DataFrame
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 7
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Concatenating and Merging DataFrames
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 8
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-13-etl.html">
    Miscellaneous Munging Methods (ETL)
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 9
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-14-dashboards.html">
    Dashboards
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 10
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-15-networks.html">
    Relations as Graphs - Network Analysis
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 11
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-16-matrices.html">
    Relations as Matrices
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 12
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-17-machine-learning.html">
    Introduction to Machine Learning
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="big-cheat-sheet.html">
    Big Cheat Sheet
@@ -255,7 +344,76 @@
             <i class="fas fa-list"></i> On this page
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-join-two-datasets">
+   Why join two datasets?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concatenation-is-vertical">
+   Concatenation is vertical
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#merging-is-horizontal">
+   Merging is horizontal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-many-columns-at-once">
+   Adding many columns at once
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-there-is-no-match-for-some-rows">
+   When there is no match for some rows
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-there-are-many-matches-for-some-rows">
+   When there are many matches for some rows
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-i-want-to-keep-all-the-rows">
+   When I want to keep all the rows
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ensuring-a-unique-id-appears-in-both-datasets">
+   Ensuring a unique ID appears in both datasets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#merging-on-multiple-columns">
+     Merging on multiple columns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#changing-the-format-of-a-column">
+     Changing the format of a column
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#joining-multiple-columns-into-one">
+     Joining multiple columns into one
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-about-unstandardized-text">
+     What about unstandardized text?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -267,9 +425,1366 @@
   <div class="section" id="concatenating-and-merging-dataframes">
 <h1>Concatenating and Merging DataFrames<a class="headerlink" href="#concatenating-and-merging-dataframes" title="Permalink to this headline">¶</a></h1>
 <p><a href="../../_slides/chapter-12-slides.html">See also the slides that summarize a portion of this content.</a></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This chapter has not yet been written.  Check back later.</p>
+<div class="section" id="why-join-two-datasets">
+<h2>Why join two datasets?<a class="headerlink" href="#why-join-two-datasets" title="Permalink to this headline">¶</a></h2>
+<p>This chapter is about two ways to combine DataFrames together.  The concepts we’ll be discussing (concatenation and merging) are not unique to pandas DataFrames; they show up wherever tabular data is used, including in SQL.</p>
+<p>Combining more than one dataset together is a crucial aspect of data work.  Let’s see two examples.</p>
+<p><strong>Example 1.</strong>  One of my friends runs <a class="reference external" href="https://secondnature.org/">a nonprofit organization</a> that helps colleges and universities set climate action goals and track their progress toward keeping them.  He asked my graduate data science course in Fall 2019 to look at their database and come up with any insights.  Naturally, their database had records of all the climate goals and progress for schools they were working with, but it didn’t have much other information about those schools.  What if we wanted to analyze a variable they weren’t tracking, like endowment?  Or what if we wanted to look at schools that hadn’t get partnered with the nonprofit?  That information would need to be brought in from another dataset.  Until we do so, we can’t give interesting answers to the question the client posed.</p>
+<p><strong>Example 2.</strong>  One of my colleagues in the math department told me about a clever strategy one investment group used to predict the earnings of companies they were considering investing in.  They already had lots of data about each company, including the addresses of the company’s various offices and factories.  They could also purchase access to a large database of satellite images.  They used the addresses and some image-detection software to compute the number of cars in the parking lots of the company’s properties.  This turned out to be a very useful predictor of growth that they could access before their competing investors had the information.  It involved bringing together two datasets in a clever way.</p>
+<p>In this chapter, we’ll discuss how to combine just two DataFrames, but the ideas apply if you have more than two.  For instance, to concatenate five DataFrames <code class="docutils literal notranslate"><span class="pre">df1</span></code> through <code class="docutils literal notranslate"><span class="pre">df5</span></code>, we can proceed in pairs, combining <code class="docutils literal notranslate"><span class="pre">df1</span></code> and <code class="docutils literal notranslate"><span class="pre">df2</span></code>, then combining that result with <code class="docutils literal notranslate"><span class="pre">df3</span></code>, and so on until we have included <code class="docutils literal notranslate"><span class="pre">df5</span></code>.</p>
+<p>Let’s start by dicsussing concatenation, which is definitely the easier of the two concepts, before we tackle merging.  The English verb “concatenate” means to attach two things together, one after the end of the other.</p>
+</div>
+<div class="section" id="concatenation-is-vertical">
+<h2>Concatenation is vertical<a class="headerlink" href="#concatenation-is-vertical" title="Permalink to this headline">¶</a></h2>
+<p>DataFrames are tables of data, so when combining, we’ll either be stacking them vertically or horizontally.  Concatenation is vertical stacking.</p>
+<p>It is an extremely common operation.  Very often what happens after you get some data is that (not surprisingly) you later get more of the same type of data.</p>
+<ul class="simple">
+<li><p>For instance, if you’re taking scientific measurements in a lab, one week you get a set of measurements, and the next week you get more data in the same format.</p></li>
+<li><p>Or if you’re following a stock or other financial instrument, its prices one week form a dataset, then the next week, you see more data with the same format.</p></li>
+</ul>
+<p>Because the standard way to organize tabular data is to put observations in rows, then getting more observations means we just need to add more rows onto the bottom of our previous table of data.  This is what concatenation is for.  Here’s an illustration using the stock prices example, with data that comes from Renewable Energy Group, Inc., whose 2020 data we’ve seen before in this course.</p>
+<p><img alt="Illustration of stacking two tables of stock data vertically into one larger table" src="_images/concat-of-stock-data.png" /></p>
+<p>There are two important things to notice in the picture.</p>
+<ol class="simple">
+<li><p>All that’s happening is that we’re stacking data vertically.  It’s very straightforward!</p></li>
+<li><p>In order for us to stack two DataFrames, they must have the same columns.  The column headers are highlighted in blue to emphasize that they’re the same in every table.</p></li>
+</ol>
+<p>(There are ways to deal with the case where new data comes in with different column headers, we’re covering the most common case here.)</p>
+<p>The code to do this is extremely easy; it is a single call to the <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code> function.  You provide a Python list of all the DataFrames to concatenate; in this case, we have just two.  We tell it to ignore the old indexes and create a new one, so that we don’t have duplicate index entries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df_jan</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;_static/regi-prices-jan-2020.csv&#39;</span> <span class="p">)</span>
+<span class="n">df_feb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;_static/regi-prices-feb-2020.csv&#39;</span> <span class="p">)</span>
+
+<span class="n">df_2mo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span> <span class="p">[</span> <span class="n">df_jan</span><span class="p">,</span> <span class="n">df_feb</span> <span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
+<span class="n">df_2mo</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Open</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Close</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2-Jan-20</td>
+      <td>27.21</td>
+      <td>27.95</td>
+      <td>26.62</td>
+      <td>27.89</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3-Jan-20</td>
+      <td>28.16</td>
+      <td>28.95</td>
+      <td>27.73</td>
+      <td>28.82</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>6-Jan-20</td>
+      <td>28.53</td>
+      <td>28.81</td>
+      <td>28.00</td>
+      <td>28.39</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7-Jan-20</td>
+      <td>28.17</td>
+      <td>28.28</td>
+      <td>26.08</td>
+      <td>26.44</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>8-Jan-20</td>
+      <td>26.37</td>
+      <td>26.40</td>
+      <td>24.86</td>
+      <td>25.19</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_2mo</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Open</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Close</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>35</th>
+      <td>24-Feb-20</td>
+      <td>29.16</td>
+      <td>29.47</td>
+      <td>28.08</td>
+      <td>29.07</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>25-Feb-20</td>
+      <td>29.40</td>
+      <td>29.40</td>
+      <td>26.83</td>
+      <td>27.60</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>26-Feb-20</td>
+      <td>27.59</td>
+      <td>28.93</td>
+      <td>27.30</td>
+      <td>27.84</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>27-Feb-20</td>
+      <td>27.13</td>
+      <td>27.56</td>
+      <td>25.85</td>
+      <td>25.89</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>28-Feb-20</td>
+      <td>24.90</td>
+      <td>26.66</td>
+      <td>24.51</td>
+      <td>26.45</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code> function is actually much more powerful than just this one little use to which we’ve put it here.  But we will discuss that more after we’ve discussed the more complex of the operations in this chapter, merging.</p>
+</div>
+<div class="section" id="merging-is-horizontal">
+<h2>Merging is horizontal<a class="headerlink" href="#merging-is-horizontal" title="Permalink to this headline">¶</a></h2>
+<p>Concatenation was appropriate when we had new rows (that is, new observations) to add to our dataset.  But what if we had new columns instead?  Keep in mind that, under the standard way we organize tabular data, columns represent the <em>variables</em> in our dataset.  So getting new columns means learning more information about the rows we already had.</p>
+<p>We saw a simple example of this last week; it was simple enough that we didn’t need to learn the full power of merging to handle it.  Recall that we had a dataset of home mortgage applications, and we wanted to add into it a variable that measured political affiliation of the state in which the mortgage took place.  We thus got a table that provided a measure of political alignment for each state, and we used that to <em>add a new column</em> to our old home mortgage dataset.  Each row in the mortgage dataset got a new variable measuring political alignment.  The table grew <em>horizontally</em> with new information from another table.</p>
+<p>In fact, when we have only one column to add, the technique from last week’s class is easier than the full complexity of merging.  Recall how we did it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># make a dictionary that maps state abbreviations to voting measurements</span>
+<span class="n">repub_votes_in_state</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">df_election</span><span class="p">[</span><span class="s1">&#39;State&#39;</span><span class="p">],</span> <span class="n">df_election</span><span class="p">[</span><span class="s1">&#39;Trump&#39;</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># apply that dictionary to our home mortgage data to make a new column</span>
+<span class="n">df_mortgages</span><span class="p">[</span><span class="s1">&#39;Trump2016%&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_mortgages</span><span class="p">[</span><span class="s1">&#39;State&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="n">repub_votes_in_state</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>But what if the situation is more complicated?  This can happen in several ways.  In each way, <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code> is there to solve the problem.  Let’s look at each way that tables might grow horizontally.</p>
+</div>
+<div class="section" id="adding-many-columns-at-once">
+<h2>Adding many columns at once<a class="headerlink" href="#adding-many-columns-at-once" title="Permalink to this headline">¶</a></h2>
+<p>The technique shown above, which we used last week in class, is easy if bringing in only one new column.  If we wanted to bring in many new columns, we’d need to apply that technique repeatedly, in a loop over those columns.  But <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code> can do it all in one function call, and for the reasons we learned last week, that will probably be faster than a Python loop.</p>
+<p>Let’s consider a concrete example to understand the idea of importing several new columns at once.  Consider a dataset we’ve seen before, tracking the number of confirmed COVID-19 cases over time in various countries.  Let’s say we wanted to see if the growth patterns in such a dataset were in any way related to health care information about the country, such as how much they spend on health care, how many doctors per capita, and so on.  We’ll need to bring in another dataset with all that information about each country, and import it in as new columns.  See the illustration below.</p>
+<p>(All tables illustrated from here on will have “…” in the final rows and columns, to indicate that the table is really much bigger, and we’re showing only a portion in the illustration.)</p>
+<p><img alt="Merging COVID-19 time series data for each country with health care information for each country" src="_images/merge-of-health-data.png" /></p>
+<p>The resulting DataFrame, on the bottom of the illustrationo, has all the data we want about each country, the COVID case data followed by the health data.</p>
+<p>If the rows were not in exactly the same order in each DataFrame, the ones on the right will be reordered so that they match correctly with the rows on the left.  To do this, we need a unique ID for each row that is consistent across both datasets.  In this case, we would use the country name.</p>
+<p>We’re making two important assumptions here.</p>
+<ol class="simple">
+<li><p>The list of countries is exactly the same in both datasets, so we don’t have any leftover rows in either one.  This is rarely how actual data works; there’s usually some discrepancy, so we’ll discuss <a class="reference external" href="#when-there-is-no-match-for-some-rows">next</a> how to handle that.</p></li>
+<li><p>The country names are spelled and formatted exactly the same in both datasets.  This is also not always true, so <a class="reference external" href="#ensuring-a-unique-id-appears-in-both-datasets">at the end of this chapter</a>, we’ll talk about how to fix that problem if and when it arises in your own work.</p></li>
+</ol>
+<p>This operation is called a <em>merge</em> in pandas or a <em>join</em> in SQL.  We could do it with code like the following.  We say we “merge <em>on</em>” the column we’re using as the unique ID.  So the illustration above is a merge on country name (or a join on country name).  In the left dataset, the column is called “Country/Region” and in the right dataset, it’s called “Country.”  So the code for this merge looks like the following.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_cases</span><span class="p">,</span> <span class="n">df_health</span><span class="p">,</span>
+    <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;Country/Region&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>If the column name had been the same in both DataFrames, we could have done it more succinctly.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_cases</span><span class="p">,</span> <span class="n">df_health</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="when-there-is-no-match-for-some-rows">
+<h2>When there is no match for some rows<a class="headerlink" href="#when-there-is-no-match-for-some-rows" title="Permalink to this headline">¶</a></h2>
+<p>The first assumption mentioned above was that each row in the COVID dataset matched up with exactly one row in the health dataset.  The two datasets were the same size and had the same countries.  But what if this had not been the case?  Let’s consider two merging examples where the rows of the one dataset don’t match up perfectly with those of the other.  First, what if some rows in one dataset don’t match up with any rows from the other dataset?</p>
+<p>Recall the example from the start of this chapter about my friend’s nonprofit.  I gave my students a comprehensive database from the U.S. government detailing lots of information about every institution of higher education in the U.S., over 7000 of them.  We wanted to merge that with the list of schools who had partnered with the climate nonprofit, of which there were fewer than 500.  Of course, the nonprofit hadn’t partnered with <em>every</em> school in the U.S.; that would be impressive!  So clearly some of the rows in the big dataset were not going to match with any of the rows in the climate dataset.  What do we do in that case?</p>
+<p>Keeping in mind the goal of that project, we want to ensure that we keep in our dataset all the schools in the comprehensive dataset, because we will want to do analytics on those schools who <em>haven’t</em> signed up with the nonprofit.  There may be interesting patterns that help us see which schools tend not to sign up.  But the rows for those schools will not have any climate data to add, so there will be a lot of missing values in the merged dataset, as shown in the following illustration.</p>
+<p><img alt="Merging a comprehensive higher education dataset with climate data about a subset of its schools" src="_images/merge-of-school-data.png" /></p>
+<p>Because the comprehensive dataset has over 7000 rows and we add climate data for less than 500 schools, the vast majority of the rows (about 6500/7000, or 93%) of them have no climate data, only missing values.  Those missing values are shown as blank cells in the illustration, but pandas would show them as NaNs.</p>
+<p>But this is exactly how we wanted it, because then we can consider two subpopulations, the schools with climate data and the schools without.  We could investigate differences in their attributes and perhaps verify some such differences with hypothesis tests or other tools.</p>
+<p>Because we used the <em>left</em> DataFrame as the definitive one, which we did not want to alter, and we brought the <em>right</em> DataFrame into it, we call this a <em>left join.</em>  The code for doing this operation is exactly like the previous <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code> example, with one exception: we tell it that the left DataFrame is the definitive one, using the <code class="docutils literal notranslate"><span class="pre">how</span></code> keyword.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_big</span><span class="p">,</span> <span class="n">df_climate</span><span class="p">,</span>
+    <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;fullname&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>If we had chosen to do <code class="docutils literal notranslate"><span class="pre">how='right'</span></code> instead, the right DataFrame would be considered the definitive one.  Any school from the left DataFrame that didn’t appear in the right DataFrame would be discarded, and we would end up with under 500 rows, precisely one row for each school in the climate nonprofit’s dataset.</p>
+<p>Note that we’re still making the unrealistic assumption that the school names in the government dataset will match perfectly with those in the nonprofit’s dataset, and we’ll address that at the end of the chapter.</p>
+<p>This example showed what it was like if some of the rows in the left dataset match up with <em>zero</em> rows in the right dataset.  But what if they match up with <em>many</em> rows in the right dataset?</p>
+</div>
+<div class="section" id="when-there-are-many-matches-for-some-rows">
+<h2>When there are many matches for some rows<a class="headerlink" href="#when-there-are-many-matches-for-some-rows" title="Permalink to this headline">¶</a></h2>
+<p>Let’s consider another example, this one from sports.  We’ll use NFL football, but if you’re not familiar with the sport, the example will still make sense.  All you need to know is that each team has many players, and that each <em>play</em> is a small part of a football game that uses just some of the team’s players.  Some plays have a <em>receiver,</em> which is the player who catches the ball thrown to him (if any–sometimes the play does not involve throwing the ball).</p>
+<p>As always in this chapter, imagine two datasets.  The first is the set of all NFL players in a certain year and their stats for that year.  (You can get these datasets online for free; here I’ll use a small sample of the players from the 2009 season.)  The second is the set of all plays that happened in that same season, in any game.  (The NFL lets you fetch this data from their website for free; again, I’ll use a small sample of plays from the 2009 season.)</p>
+<p>Perhaps we have a theory we want to test about a team’s receivers.  We want to compare certain statistics about the receiver to how the receiver performs in certain plays.  (The details are unimportant.)  So we will need to combine the two datasets, one with player stats and one with the plays from the games.  We will want to match them up so that a row in the merged dataset contains the stats for the player who caught the ball, that is, the receiver for that play.</p>
+<p>Now let’s consider how we will handle the many possibilities for how rows might match across the datasets.  First let’s consider rows that match many other rows; this might happen in two ways.</p>
+<ul class="simple">
+<li><p><strong>What if a player is the receiver in more than one play?</strong>  (This happens all the time, of course.  Once a player is hired by a team, they often play in lots of games, and are involved in many plays.)  We will want the player’s stats to appear in <em>every</em> play for which the player was the receiver.  Good news!  This is how merges always work; if a row in one DataFrame matches many rows in the other, the row is always <em>copied.</em></p></li>
+<li><p><strong>What if a play has more than one receiver?</strong>  This actually cannot happen, according to the rules of the NFL.  Once a player has caught the ball, they are not eligible to pass it to another player.  (If you’re familiar with football, don’t start talking about laterals; that’s not a pass!)  So we don’t have to consider this possibility.</p></li>
+</ul>
+<p>So those two considerations don’t seems to change our merging code at all.  It seems like a standard merge will do what we want.</p>
+<p>But what about a row in one dataset matching zero rows in the other dataset?  This, too, might happen in two ways.</p>
+<ul class="simple">
+<li><p><strong>What if a player is the receiver in no play?</strong>  (This happens often also.  A player may be hired by a team, but is not as good as other players on the team, and thus does not yet get to play in real games.)  We will not want this player to appear at all in our merged dataset, because we care about receivers who showed up in actual plays.</p></li>
+<li><p><strong>What if a play has no receiver?</strong>  (This happens often also.  There are many types of plays and not all involve throwing.)  We will not want this play to appear in our merged dataset, because the analysis we want to do is about plays that have a receiver.</p></li>
+</ul>
+<p>Putting these two considerations together, it does not seem like we want either a left join or a right join.  Recall that a left join keeps all the rows of the left table and a right join keeps all the rows of the right table.  In this case, however, we want to keep only rows that appear in <em>both</em> tables.  This is called an <em>inner join,</em> and you can see it working in the illustration below.</p>
+<p><img alt="Merging NFL player statistics with records of NFL plays" src="_images/merge-of-nfl-data.png" /></p>
+<p>The code looks the same as before, but only the <code class="docutils literal notranslate"><span class="pre">how</span></code> parameter has changed, now using the value <code class="docutils literal notranslate"><span class="pre">&quot;inner&quot;</span></code> rather than <code class="docutils literal notranslate"><span class="pre">&quot;left&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;right&quot;</span></code>.  Actually, <code class="docutils literal notranslate"><span class="pre">&quot;inner&quot;</span></code> is the default value for <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code>, so you can omit it in this case, but I include it for emphasis.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_players</span><span class="p">,</span> <span class="n">df_plays</span><span class="p">,</span>
+    <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;Player&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;Receiver&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Notice that we specifically say that we want the stats for the player who was the receiver in the play, by asking the merge to happen using the Player column from the left dataset and the Receiver column from the right dataset.</p>
+<p>This kind of merge will not introduce any new missing values, because if a row didn’t exist in the left or right dataset, it was not included in the result.  That’s the definition of an inner join, and that’s why we chose to use that method in this case.</p>
+</div>
+<div class="section" id="when-i-want-to-keep-all-the-rows">
+<h2>When I want to keep all the rows<a class="headerlink" href="#when-i-want-to-keep-all-the-rows" title="Permalink to this headline">¶</a></h2>
+<p>An inner join is not appropriate for all merging situations.  Consider a different example.</p>
+<p>Let’s imagine that two Bentley professors found out they had done research on some of the same firms, and wanted to share data.  Let’s say Professor Adams had investigated the executives at a set of firms, and had information about those roles, while Professor Cordova had information about the marketing investments of a similar set of firms.</p>
+<p>When putting their data together, they don’t yet know what questions they’re going to ask; they’ll probably start with some exploratory data analysis.  So they don’t want to throw away any of their data yet.</p>
+<p>If they used an inner join, then they’d keep only the firms that appear in both datasets; that’s not what they want.  A left or right join would also discard some firms.  But they want to keep them all.  This is called an <em>outer join,</em> and it’s shown in the illustration below.</p>
+<p><img alt="Merging data about corporate executives with data about marketing spending for a fictitious set of firms" src="_images/merge-of-firm-data.png" /></p>
+<p>The “Firm” column in the merged dataset will contain each name only once, and the row will be of one of three types.</p>
+<ol class="simple">
+<li><p>If it was in both datasets, then the row contains data in every column (as long as the original datasets did).</p></li>
+<li><p>If it was in the left dataset, then the row contains data about executives, with missing values for marketing.</p></li>
+<li><p>If it was in the right dataset, then the row contains data about marketing, with missing values for executives.</p></li>
+</ol>
+<p>(Obviously, if the firm was in neither dataset, it doesn’t show up in the merge.)</p>
+<p>The code is the same as all the code we’ve seen up to this point, but with <code class="docutils literal notranslate"><span class="pre">how='outer'</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_execs</span><span class="p">,</span> <span class="n">df_marketing</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;Firm&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ensuring-a-unique-id-appears-in-both-datasets">
+<h2>Ensuring a unique ID appears in both datasets<a class="headerlink" href="#ensuring-a-unique-id-appears-in-both-datasets" title="Permalink to this headline">¶</a></h2>
+<p>Ensuring that the datasets you want to merge each have a column that will match perfectly with the other dataset is an essential step before merging.  Sometimes that step is extremely easy and sometimes it is very challenging.  In the examples above, we assumed that the datasets already had columns that would match up perfectly.</p>
+<p>And that’s not always an unrealistic assumption.  For instance, when we merged the NPR voting records from 2016 into the home mortgage dataset in class, we merged on the two-letter abbreviation for each state.  This standard set of abbreviations was established many years ago and is used consistently everywhere U.S. states are mentioned, so it was reliable and required no work on our part.</p>
+<p>But let’s consider some more complex cases, so you’re ready for them when you encounter them.</p>
+<div class="section" id="merging-on-multiple-columns">
+<h3>Merging on multiple columns<a class="headerlink" href="#merging-on-multiple-columns" title="Permalink to this headline">¶</a></h3>
+<p>If you don’t have a single column that works as a unique ID, but you have a set of columns that togther form a unique ID in the same way in each dataset, pandas supports merging on multiple columns.  For instance, if your datasets each have columns for first and last names of the people in an organization, and you’re confident that no names repeat (e.g., only one John Smith, only one Erin Jones, etc.), then you can tell pandas to use more than one column to identify rows when merging.  Just supply the list of column names when merging.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_members</span><span class="p">,</span> <span class="n">df_activities</span><span class="p">,</span>
+    <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;First Name&#39;</span><span class="p">,</span><span class="s1">&#39;Last Name&#39;</span><span class="p">],</span>
+    <span class="n">right_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Given name&#39;</span><span class="p">,</span><span class="s1">&#39;Surname&#39;</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="changing-the-format-of-a-column">
+<h3>Changing the format of a column<a class="headerlink" href="#changing-the-format-of-a-column" title="Permalink to this headline">¶</a></h3>
+<p>When you plan to merge two datasets, but no column is appropriate for the match, sometimes a quick computation of a new column will do the trick.</p>
+<p><strong>Example:</strong>  If you were merging a dataset of customers using their phone numbers, perhaps dataset A contains just the numeric values (e.g., 17818913171) and dataset B contains the phone numbers formatted for human readability (e.g., +1 (781) 891-3171).  You can create a new column in dataset B that removes all the spaces, plusses, minuses, and parentheses from the phone numbers, so that they’re ready to match with dataset A.</p>
+</div>
+<div class="section" id="joining-multiple-columns-into-one">
+<h3>Joining multiple columns into one<a class="headerlink" href="#joining-multiple-columns-into-one" title="Permalink to this headline">¶</a></h3>
+<p>It may also be possible to compute an appropriate column for merging by combining more than one column together.</p>
+<p><strong>Example:</strong>  Let’s say you were merging two datasets about albums released by recording artists.  The artists have a unique ID in your datasets, but the albums don’t.  If you know that no artist released more than one album in the same month, you could combine together the artist’s unique ID with the month and year of the album’s release to form a unique ID for the album.  E.g., if The Beatles had ID 2789045 and you’re considering the Sgt. Pepper album (May 1967), then you would use the code 2789045-May-1967 for that album.  You could compute such a code for each row in each DataFrame.</p>
+</div>
+<div class="section" id="what-about-unstandardized-text">
+<h3>What about unstandardized text?<a class="headerlink" href="#what-about-unstandardized-text" title="Permalink to this headline">¶</a></h3>
+<p>This is more or less the hardest scenario.  For instance, in Fall 2019, when my students wanted to merge the government’s comprehensive database of universities with the climate commitments of the schools who were working with our nonprofit client, our best option was to merge on the institution’s name.  This is problematic due to variations in naming and spelling.  For instance, what if one dataset writes Bentley University and the other writes Bentley Univ.?  Or what if one dataset writes University of North Carolina at Chapel Hill and the other writes UNC Chapel Hill?  How is a computer to know how to match these up?  (That project actually involved merging several datasets about universities, and this same problem arose more than once!)</p>
+<p>The short answer is that the computer will not figure this out, because <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code> only matches on exact equality of IDs, and so you as the data scientist are in charge of somehow creating columns of unique IDs in both datasets that will match up perfectly.  This may require learning something about that domain.  In Fall 2019, my students and I spent time googling various schools whose names didn’t seem to appear in the government’s dataset to figure out why!</p>
+<p>When you’re stuck trying to get two similar-but-not-the-same columns of text to try to match perfectly, I suggest the following method.  Whether this method is quick and easy or long and difficult varies significantly from one problem to the next.  But the outline is the same.</p>
+<ol class="simple">
+<li><p>Figure out which dataset is to be the definitive one; this is typically the larger dataset.  (In the university example, this was the comprehensive government dataset.)</p></li>
+<li><p>Figure out the column in each dataset that is <em>closest</em> to being useful as a unique ID.  (In the university example, this was the university name in each dataset, which was written the same in both datasets for many schools, but definitely not all.)</p></li>
+<li><p>Add a new column to the smaller dataset that contains the correct unique ID <em>from the other, larger dataset</em> that it should match.  (In the university example, this means labeling each row in the nonprofit’s dataset with that school’s name as it appears in the government’s dataset.)</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code> and have it match the unique ID column in the larger dataset with this newly created column in the smaller dataset, which is now a perfect match.</p></li>
+</ol>
+<p>Notice that steps 1, 2, and 4 are quick and easy, but step 3 is where problems may or may not arise.  Depending on how well the chosen columns match in the two datasets, step 3 might take a short time or a long time.</p>
+</div>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>Let’s actually try to merge two datasets of university data.  I will load here the comprehensive university dataset I mentioned, originally downloaded from <a class="reference external" href="https://data.world/kitedwards08/us-university-survey-2014">here</a>, as well as a US News university rankings dataset, originally downloaded from <a class="reference external" href="https://data.world/education/university-rankings-2017">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_big</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;_static/Colleges_and_Universities.csv&#39;</span> <span class="p">)</span>
+<span class="n">df_big</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+      <th>FID</th>
+      <th>IPEDSID</th>
+      <th>NAME</th>
+      <th>ADDRESS</th>
+      <th>ADDRESS2</th>
+      <th>CITY</th>
+      <th>STATE</th>
+      <th>ZIP</th>
+      <th>...</th>
+      <th>ALIAS</th>
+      <th>SIZE_SET</th>
+      <th>INST_SIZE</th>
+      <th>PT_ENROLL</th>
+      <th>FT_ENROLL</th>
+      <th>TOT_ENROLL</th>
+      <th>HOUSING</th>
+      <th>DORM_CAP</th>
+      <th>TOT_EMPLOY</th>
+      <th>SHELTER_ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-92.260490</td>
+      <td>34.759308</td>
+      <td>7001</td>
+      <td>107840</td>
+      <td>Shorter College</td>
+      <td>604 Locust St</td>
+      <td>NOT AVAILABLE</td>
+      <td>N Little Rock</td>
+      <td>AR</td>
+      <td>72114</td>
+      <td>...</td>
+      <td>NOT AVAILABLE</td>
+      <td>-3</td>
+      <td>1</td>
+      <td>24</td>
+      <td>28</td>
+      <td>52</td>
+      <td>2</td>
+      <td>0</td>
+      <td>18</td>
+      <td>NOT AVAILABLE</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-121.289431</td>
+      <td>38.713353</td>
+      <td>7002</td>
+      <td>112181</td>
+      <td>Citrus Heights Beauty College</td>
+      <td>7518 Baird Way</td>
+      <td>NOT AVAILABLE</td>
+      <td>Citris Heights</td>
+      <td>CA</td>
+      <td>95610</td>
+      <td>...</td>
+      <td>NOT AVAILABLE</td>
+      <td>-3</td>
+      <td>1</td>
+      <td>6</td>
+      <td>24</td>
+      <td>30</td>
+      <td>2</td>
+      <td>0</td>
+      <td>9</td>
+      <td>NOT AVAILABLE</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-118.287070</td>
+      <td>34.101481</td>
+      <td>7003</td>
+      <td>116660</td>
+      <td>Joe Blasco Makeup Artist Training Center</td>
+      <td>1670 Hillhurst Avenue</td>
+      <td>NOT AVAILABLE</td>
+      <td>Los Angeles</td>
+      <td>CA</td>
+      <td>90027</td>
+      <td>...</td>
+      <td>NOT AVAILABLE</td>
+      <td>-3</td>
+      <td>1</td>
+      <td>0</td>
+      <td>24</td>
+      <td>24</td>
+      <td>2</td>
+      <td>0</td>
+      <td>11</td>
+      <td>NOT AVAILABLE</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-121.652662</td>
+      <td>36.700631</td>
+      <td>7004</td>
+      <td>125310</td>
+      <td>Waynes College of Beauty</td>
+      <td>1271 North Main Street</td>
+      <td>NOT AVAILABLE</td>
+      <td>Salinas</td>
+      <td>CA</td>
+      <td>93906</td>
+      <td>...</td>
+      <td>NOT AVAILABLE</td>
+      <td>-3</td>
+      <td>1</td>
+      <td>18</td>
+      <td>16</td>
+      <td>34</td>
+      <td>2</td>
+      <td>0</td>
+      <td>9</td>
+      <td>NOT AVAILABLE</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-71.070737</td>
+      <td>42.369930</td>
+      <td>7005</td>
+      <td>164368</td>
+      <td>Hult International Business School</td>
+      <td>1 Education Street</td>
+      <td>NOT AVAILABLE</td>
+      <td>Cambridge</td>
+      <td>MA</td>
+      <td>02141</td>
+      <td>...</td>
+      <td>NOT AVAILABLE</td>
+      <td>-3</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2243</td>
+      <td>2243</td>
+      <td>2</td>
+      <td>0</td>
+      <td>143</td>
+      <td>NOT AVAILABLE</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 46 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_rank</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;_static/National Universities Rankings.csv&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin&#39;</span> <span class="p">)</span>
+<span class="n">df_rank</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Rank</th>
+      <th>Description</th>
+      <th>Tuition and fees</th>
+      <th>In-state</th>
+      <th>Undergrad Enrollment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Princeton University</td>
+      <td>Princeton, NJ</td>
+      <td>1</td>
+      <td>Princeton, the fourth-oldest college in the Un...</td>
+      <td>$45,320</td>
+      <td>NaN</td>
+      <td>5,402</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Harvard University</td>
+      <td>Cambridge, MA</td>
+      <td>2</td>
+      <td>Harvard is located in Cambridge, Massachusetts...</td>
+      <td>$47,074</td>
+      <td>NaN</td>
+      <td>6,699</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>University of Chicago</td>
+      <td>Chicago, IL</td>
+      <td>3</td>
+      <td>The University of Chicago, situated in Chicago...</td>
+      <td>$52,491</td>
+      <td>NaN</td>
+      <td>5,844</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Yale University</td>
+      <td>New Haven, CT</td>
+      <td>3</td>
+      <td>Yale University, located in New Haven, Connect...</td>
+      <td>$49,480</td>
+      <td>NaN</td>
+      <td>5,532</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Columbia University</td>
+      <td>New York, NY</td>
+      <td>5</td>
+      <td>Columbia University, located in Manhattan's Mo...</td>
+      <td>$55,056</td>
+      <td>NaN</td>
+      <td>6,102</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span> <span class="n">df_big</span> <span class="p">),</span> <span class="nb">len</span><span class="p">(</span> <span class="n">df_rank</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(7735, 231)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Step 1.</strong> Figure out which dataset is to be the definitive one.  Clearly, the comprehensive dataset should be the definitive one, and the rankings merged into it.</p>
+<p><strong>Step 2.</strong> Figure out the closest columns we have to making a match.  The only columns we could have a hope of using to uniquely identify these schools are their names.  No other column in the ranking dataset could possibly be a unique ID that would also be in the other dataset.</p>
+<p><strong>Step 3.</strong> Add a new column to the ranking dataset that contains which school name <em>from the big dataset</em> it should match with.  This is the tricky part.</p>
+<p>Let’s just get a sense of how many of the 231 rows in the ranking dataset have an exact match in the big dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">has_exact_match</span> <span class="p">(</span> <span class="n">name_from_rank_df</span> <span class="p">):</span>
+    <span class="k">return</span> <span class="n">name_from_rank_df</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span> <span class="n">df_big</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span> <span class="p">)</span>
+
+<span class="nb">sum</span><span class="p">(</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="n">has_exact_match</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>141
+</pre></div>
+</div>
+</div>
+</div>
+<p>Thus 90 schools do <em>not</em> have an exact match.  Those are the 90 we need to solve.  It would be tedious to match them up by hand, because there are 90.  So we will use a built-in Python text module to try to do some <em>approximate</em> string matching for us.  The Python module <code class="docutils literal notranslate"><span class="pre">difflib</span></code> has a function called <code class="docutils literal notranslate"><span class="pre">get_close_matches()</span></code> that will take a piece of text and a list of options, and give you the closest matches.  Here’s an example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">difflib</span> <span class="kn">import</span> <span class="n">get_close_matches</span>
+<span class="n">get_close_matches</span><span class="p">(</span> <span class="s1">&#39;Python is cool&#39;</span><span class="p">,</span>
+    <span class="p">[</span> <span class="s1">&#39;this is not close&#39;</span><span class="p">,</span> <span class="s1">&#39;also not close&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;Python is cruel&#39;</span><span class="p">,</span> <span class="s1">&#39;Nathan is cool&#39;</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;Python is cruel&#39;, &#39;Nathan is cool&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that it doesn’t always find a good guess, if there isn’t one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get_close_matches</span><span class="p">(</span> <span class="s1">&#39;pork&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="s1">&#39;salad&#39;</span><span class="p">,</span> <span class="s1">&#39;lollipops&#39;</span><span class="p">,</span> <span class="s1">&#39;soda&#39;</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s use <code class="docutils literal notranslate"><span class="pre">get_close_matches()</span></code> to create a function that will match up university names across the two datasets if they’re just off by a small amount.  This could automate some of the matching we’d otherwise have to do by hand for those 90 schools that didn’t match exactly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, make a list of all names in the big dataset</span>
+<span class="n">names_from_df_big</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="n">df_big</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span> <span class="p">)</span>
+
+<span class="c1"># Now write a function that searches that list</span>
+<span class="k">def</span> <span class="nf">get_closest_name_from_df_big</span> <span class="p">(</span> <span class="n">name_from_df_rank</span> <span class="p">):</span>
+
+    <span class="c1"># If there&#39;s an exact match, we&#39;re already done.</span>
+    <span class="k">if</span> <span class="n">name_from_df_rank</span> <span class="ow">in</span> <span class="n">names_from_df_big</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">name_from_df_rank</span>
+    
+    <span class="c1"># Get the closest matches, if any.</span>
+    <span class="n">close_matches</span> <span class="o">=</span> <span class="n">get_close_matches</span><span class="p">(</span> <span class="n">name_from_df_rank</span><span class="p">,</span> <span class="n">names_from_df_big</span> <span class="p">)</span>
+    
+    <span class="c1"># If there weren&#39;t any, return None</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span> <span class="n">close_matches</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    
+    <span class="c1"># Otherwise, return the first one</span>
+    <span class="k">return</span> <span class="n">close_matches</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Test it</span>
+<span class="n">get_closest_name_from_df_big</span><span class="p">(</span> <span class="s1">&#39;Bentley Universal&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Bentley University&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s apply that function to every row in the small dataset.  Note that <code class="docutils literal notranslate"><span class="pre">get_close_matches()</span></code> can be a bit slow, so the following code actually takes about 15 seconds to complete executing.  (It would be even slower if we didn’t have the first <code class="docutils literal notranslate"><span class="pre">if</span></code> statement in <code class="docutils literal notranslate"><span class="pre">get_closest_name_from_df_big()</span></code>, which skips <code class="docutils literal notranslate"><span class="pre">get_close_matches()</span></code> when it’s not needed.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="n">get_closest_name_from_df_big</span> <span class="p">)</span>
+<span class="n">df_rank</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Rank</th>
+      <th>Description</th>
+      <th>Tuition and fees</th>
+      <th>In-state</th>
+      <th>Undergrad Enrollment</th>
+      <th>Name in df_big</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Princeton University</td>
+      <td>Princeton, NJ</td>
+      <td>1</td>
+      <td>Princeton, the fourth-oldest college in the Un...</td>
+      <td>$45,320</td>
+      <td>NaN</td>
+      <td>5,402</td>
+      <td>Princeton University</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Harvard University</td>
+      <td>Cambridge, MA</td>
+      <td>2</td>
+      <td>Harvard is located in Cambridge, Massachusetts...</td>
+      <td>$47,074</td>
+      <td>NaN</td>
+      <td>6,699</td>
+      <td>Harvard University</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>University of Chicago</td>
+      <td>Chicago, IL</td>
+      <td>3</td>
+      <td>The University of Chicago, situated in Chicago...</td>
+      <td>$52,491</td>
+      <td>NaN</td>
+      <td>5,844</td>
+      <td>University of Chicago</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Yale University</td>
+      <td>New Haven, CT</td>
+      <td>3</td>
+      <td>Yale University, located in New Haven, Connect...</td>
+      <td>$49,480</td>
+      <td>NaN</td>
+      <td>5,532</td>
+      <td>Yale University</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Columbia University</td>
+      <td>New York, NY</td>
+      <td>5</td>
+      <td>Columbia University, located in Manhattan's Mo...</td>
+      <td>$55,056</td>
+      <td>NaN</td>
+      <td>6,102</td>
+      <td>Coleman University</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The results are correct for the first four schools, which were exact matches, but not so good for Columbia.  The only way to check to see if this worked out well is to do a manual check, because only a human is going to be able to assess whether Columbia University and Coleman University are the same; Python did its best.</p>
+<p>We can check by taking a glance over the following output, and noting which rows are wrong.  I don’t include the full output here of all 90 discrepancies, just to save space, but you can use <code class="docutils literal notranslate"><span class="pre">pd.set_option(</span> <span class="pre">'display.max_rows',</span> <span class="pre">None</span> <span class="pre">)</span></code> to see them all.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">where_it_made_guesses</span> <span class="o">=</span> <span class="n">df_rank</span><span class="p">[</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">]</span> <span class="p">]</span>
+<span class="n">where_it_made_guesses</span><span class="p">[[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Name in df_big</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>Columbia University</td>
+      <td>Coleman University</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Washington University in St. Louis</td>
+      <td>Washington University in St Louis</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>University of California--Berkeley</td>
+      <td>University of California-Berkeley</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>University of California--Los Angeles</td>
+      <td>University of California-Los Angeles</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>University of Virginia</td>
+      <td>University of Georgia</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>222</th>
+      <td>New Mexico State University</td>
+      <td>New Mexico State University-Grants</td>
+    </tr>
+    <tr>
+      <th>225</th>
+      <td>University of Massachusetts--Boston</td>
+      <td>University of Massachusetts-Boston</td>
+    </tr>
+    <tr>
+      <th>226</th>
+      <td>University of Massachusetts--Dartmouth</td>
+      <td>University of Massachusetts-Dartmouth</td>
+    </tr>
+    <tr>
+      <th>227</th>
+      <td>University of Missouri--St. Louis</td>
+      <td>University of Missouri-St Louis</td>
+    </tr>
+    <tr>
+      <th>228</th>
+      <td>University of North Carolina--Greensboro</td>
+      <td>University of North Carolina at Greensboro</td>
+    </tr>
+  </tbody>
+</table>
+<p>90 rows × 2 columns</p>
+</div></div></div>
+</div>
+<p>We see that in many cases, it did a good job, such as in rows 18, 21, 24, and 225 through 228.  We know that rows 4 and 25 are wrong, but is row 222 wrong?  That all depends on whether Grants is the location of the main campus for New Mexico State University.  Now you see why my students and I ended up on Google!</p>
+<p>After inspecting the full list of 90 discrepancies, I found 30 that I still needed to fix by hand.  So the computer had done two-thirds of its guessing job right, saving me some time.  But how do I manually correct the 30 mistakes I found?  For instance, how do I correct row 4, which clearly isn’t right?  I need to know the exact name of Columbia University in <code class="docutils literal notranslate"><span class="pre">df_big</span></code>.</p>
+<p>Let’s do a search.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show me all names containing Columbia...</span>
+<span class="n">df_big</span><span class="p">[</span><span class="n">df_big</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span> <span class="s1">&#39;Columbia&#39;</span> <span class="p">)][</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>60                      Paul Mitchell The School-Columbia
+439                    American Career Institute√Columbia
+619                                      Columbia College
+668                             Virginia College-Columbia
+750                          Columbia Southern University
+872                              Centura College-Columbia
+1366                University of Phoenix-Columbia Campus
+1438                     ITT Technical Institute-Columbia
+1610                      Southeastern Institute-Columbia
+1907        Kenneth Shuler School of Cosmetology-Columbia
+1975                        Columbia Theological Seminary
+2059                    Regency Beauty Institute-Columbia
+2099                    Remington College-Columbia Campus
+2295                                     Columbia College
+2583                                     Columbia College
+2704                          Columbia College of Nursing
+2958                    Columbia-Greene Community College
+3346                               Lower Columbia College
+3348                               Columbia Basin College
+3404                                     Columbia College
+3622                     Columbia Gorge Community College
+3936                     Columbia State Community College
+4042              Teachers College at Columbia University
+4356        Columbiana County Career and Technical Center
+4385                 Columbia Centro Universitario-Caguas
+4509                            South University-Columbia
+4666    University of the District of Columbia David A...
+4719                    Columbia International University
+4723    Kenneth Shuler School of Cosmetology and Nails...
+4728                University of South Carolina-Columbia
+4974               Lincoln College of Technology-Columbia
+5027                                     Columbia College
+5099                          Columbia Area Career Center
+5371                             Columbia College-Chicago
+5581               University of the District of Columbia
+5664                           Columbia College Hollywood
+5775              Strayer University-District of Columbia
+6369                      University of Missouri-Columbia
+6661          Columbia University in the City of New York
+7589                  Columbia Centro Universitario-Yauco
+Name: NAME, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Holy cow!  Let’s try to narrow our search a bit…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Just the rows with Columbia and University...</span>
+<span class="n">df_big</span><span class="p">[</span><span class="n">df_big</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span> <span class="s1">&#39;Columbia&#39;</span> <span class="p">)</span>
+     <span class="o">&amp;</span> <span class="n">df_big</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span> <span class="s1">&#39;University&#39;</span> <span class="p">)][</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>750                          Columbia Southern University
+1366                University of Phoenix-Columbia Campus
+4042              Teachers College at Columbia University
+4509                            South University-Columbia
+4666    University of the District of Columbia David A...
+4719                    Columbia International University
+4728                University of South Carolina-Columbia
+5581               University of the District of Columbia
+5775              Strayer University-District of Columbia
+6369                      University of Missouri-Columbia
+6661          Columbia University in the City of New York
+Name: NAME, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aha, Columbia University in the City of New York was so long of a phrase that <code class="docutils literal notranslate"><span class="pre">get_close_matches()</span></code> did not think it was “close” to Columbia University.  So now I’ve found that the entry for row 4 in <code class="docutils literal notranslate"><span class="pre">df_rank['Name</span> <span class="pre">in</span> <span class="pre">big_df']</span></code> should be Columbia University in the City of New York.  I can simply tell Python to change it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Columbia University in the City of New York&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When I’m done manually investigating the 30 schools that had to be fixed by hand, I will have 30 lines of code that look just like the one above, but for different schools.  Here’s a sample.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Columbia University in the City of New York&#39;</span>
+<span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">34</span><span class="p">,</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Georgia Institute of Technology-Main Campus&#39;</span>
+<span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">41</span><span class="p">,</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Tulane University of Louisiana&#39;</span>
+<span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">52</span><span class="p">,</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Pennsylvania State University-Main Campus&#39;</span>
+<span class="c1"># and so on, for a total of 30 changes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>But if we’re trying to follow DRY principles, we notice that there’s definitely a lot of repeated code here.  We’re copying and pasting the <code class="docutils literal notranslate"><span class="pre">df_rank.loc[...,'Name</span> <span class="pre">in</span> <span class="pre">big_df']</span> <span class="pre">=</span> <span class="pre">'...'</span></code> part each time.  We could simplify this by creating a Python dictionary with just our corrections.  Here I include all 30 correctsion as they would be if we had carefully investigated each.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">corrections</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">4</span>   <span class="p">:</span> <span class="s1">&#39;Columbia University in the City of New York&#39;</span><span class="p">,</span>
+    <span class="mi">34</span>  <span class="p">:</span> <span class="s1">&#39;Georgia Institute of Technology-Main Campus&#39;</span><span class="p">,</span>
+    <span class="mi">41</span>  <span class="p">:</span> <span class="s1">&#39;Tulane University of Louisiana&#39;</span><span class="p">,</span>
+    <span class="mi">52</span>  <span class="p">:</span> <span class="s1">&#39;Pennsylvania State University-Main Campus&#39;</span><span class="p">,</span>
+    <span class="mi">54</span>  <span class="p">:</span> <span class="s1">&#39;University of Washington-Seattle Campus&#39;</span><span class="p">,</span>
+    <span class="mi">60</span>  <span class="p">:</span> <span class="s1">&#39;Purdue University-Main Campus&#39;</span><span class="p">,</span>
+    <span class="mi">68</span>  <span class="p">:</span> <span class="s1">&#39;University of Pittsburgh-Pittsburgh Campus&#39;</span><span class="p">,</span>
+    <span class="mi">77</span>  <span class="p">:</span> <span class="s1">&#39;Virginia Polytechnic Institute and State University&#39;</span><span class="p">,</span>
+    <span class="mi">85</span>  <span class="p">:</span> <span class="s1">&#39;SUNY at Binghamton&#39;</span><span class="p">,</span>
+    <span class="mi">109</span> <span class="p">:</span> <span class="s1">&#39;University of South Carolina-Columbia&#39;</span><span class="p">,</span>
+    <span class="mi">112</span> <span class="p">:</span> <span class="s1">&#39;University of Missouri-System Office&#39;</span><span class="p">,</span>
+    <span class="mi">114</span> <span class="p">:</span> <span class="s1">&#39;University of Oklahoma Norman Campus&#39;</span><span class="p">,</span>
+    <span class="mi">130</span> <span class="p">:</span> <span class="s1">&#39;Colorado State University-Fort Collins&#39;</span><span class="p">,</span>
+    <span class="mi">135</span> <span class="p">:</span> <span class="s1">&#39;Louisiana State University-System Office&#39;</span><span class="p">,</span>
+    <span class="mi">146</span> <span class="p">:</span> <span class="s1">&#39;Ohio University-Main Campus&#39;</span><span class="p">,</span>
+    <span class="mi">149</span> <span class="p">:</span> <span class="s1">&#39;SUNY at Albany&#39;</span><span class="p">,</span>
+    <span class="mi">153</span> <span class="p">:</span> <span class="s1">&#39;Oklahoma State University-Oklahoma City&#39;</span><span class="p">,</span>
+    <span class="mi">162</span> <span class="p">:</span> <span class="s1">&#39;University of South Florida-Main Campus&#39;</span><span class="p">,</span>
+    <span class="mi">181</span> <span class="p">:</span> <span class="s1">&#39;University of New Mexico-Main Campus&#39;</span><span class="p">,</span>
+    <span class="mi">186</span> <span class="p">:</span> <span class="s1">&#39;Widener University-Main Campus&#39;</span><span class="p">,</span>
+    <span class="mi">187</span> <span class="p">:</span> <span class="s1">&#39;Kent State University at Kent&#39;</span><span class="p">,</span>
+    <span class="mi">189</span> <span class="p">:</span> <span class="s1">&#39;Pace University-New York&#39;</span><span class="p">,</span>
+    <span class="mi">193</span> <span class="p">:</span> <span class="s1">&#39;Bowling Green State University-Main Campus&#39;</span><span class="p">,</span>
+    <span class="mi">222</span> <span class="p">:</span> <span class="s1">&#39;New Mexico State University-Main Campus&#39;</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="n">row_index</span><span class="p">,</span> <span class="n">fixed_name</span> <span class="ow">in</span> <span class="n">corrections</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row_index</span><span class="p">,</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fixed_name</span>
+    
+<span class="n">df_rank</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Rank</th>
+      <th>Description</th>
+      <th>Tuition and fees</th>
+      <th>In-state</th>
+      <th>Undergrad Enrollment</th>
+      <th>Name in df_big</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Princeton University</td>
+      <td>Princeton, NJ</td>
+      <td>1</td>
+      <td>Princeton, the fourth-oldest college in the Un...</td>
+      <td>$45,320</td>
+      <td>NaN</td>
+      <td>5,402</td>
+      <td>Princeton University</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Harvard University</td>
+      <td>Cambridge, MA</td>
+      <td>2</td>
+      <td>Harvard is located in Cambridge, Massachusetts...</td>
+      <td>$47,074</td>
+      <td>NaN</td>
+      <td>6,699</td>
+      <td>Harvard University</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>University of Chicago</td>
+      <td>Chicago, IL</td>
+      <td>3</td>
+      <td>The University of Chicago, situated in Chicago...</td>
+      <td>$52,491</td>
+      <td>NaN</td>
+      <td>5,844</td>
+      <td>University of Chicago</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Yale University</td>
+      <td>New Haven, CT</td>
+      <td>3</td>
+      <td>Yale University, located in New Haven, Connect...</td>
+      <td>$49,480</td>
+      <td>NaN</td>
+      <td>5,532</td>
+      <td>Yale University</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Columbia University</td>
+      <td>New York, NY</td>
+      <td>5</td>
+      <td>Columbia University, located in Manhattan's Mo...</td>
+      <td>$55,056</td>
+      <td>NaN</td>
+      <td>6,102</td>
+      <td>Columbia University in the City of New York</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>Step 4.</strong> And now that all corrections have been made, we can do the merge with confidence.  We take care to merge the main dataset’s <code class="docutils literal notranslate"><span class="pre">&quot;NAME&quot;</span></code> column with the smaller dataset’s <code class="docutils literal notranslate"><span class="pre">&quot;Name</span> <span class="pre">in</span> <span class="pre">df_big&quot;</span></code> column.  This merge will be a left join, because we do not want to discard a school just because it wasn’t in US News’s rankings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_big</span><span class="p">,</span> <span class="n">df_rank</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span> <span class="p">)</span>
+<span class="n">df_merged</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+      <th>FID</th>
+      <th>IPEDSID</th>
+      <th>NAME</th>
+      <th>ADDRESS</th>
+      <th>ADDRESS2</th>
+      <th>CITY</th>
+      <th>STATE</th>
+      <th>ZIP</th>
+      <th>...</th>
+      <th>TOT_EMPLOY</th>
+      <th>SHELTER_ID</th>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Rank</th>
+      <th>Description</th>
+      <th>Tuition and fees</th>
+      <th>In-state</th>
+      <th>Undergrad Enrollment</th>
+      <th>Name in df_big</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-92.260490</td>
+      <td>34.759308</td>
+      <td>7001</td>
+      <td>107840</td>
+      <td>Shorter College</td>
+      <td>604 Locust St</td>
+      <td>NOT AVAILABLE</td>
+      <td>N Little Rock</td>
+      <td>AR</td>
+      <td>72114</td>
+      <td>...</td>
+      <td>18</td>
+      <td>NOT AVAILABLE</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-121.289431</td>
+      <td>38.713353</td>
+      <td>7002</td>
+      <td>112181</td>
+      <td>Citrus Heights Beauty College</td>
+      <td>7518 Baird Way</td>
+      <td>NOT AVAILABLE</td>
+      <td>Citris Heights</td>
+      <td>CA</td>
+      <td>95610</td>
+      <td>...</td>
+      <td>9</td>
+      <td>NOT AVAILABLE</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-118.287070</td>
+      <td>34.101481</td>
+      <td>7003</td>
+      <td>116660</td>
+      <td>Joe Blasco Makeup Artist Training Center</td>
+      <td>1670 Hillhurst Avenue</td>
+      <td>NOT AVAILABLE</td>
+      <td>Los Angeles</td>
+      <td>CA</td>
+      <td>90027</td>
+      <td>...</td>
+      <td>11</td>
+      <td>NOT AVAILABLE</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-121.652662</td>
+      <td>36.700631</td>
+      <td>7004</td>
+      <td>125310</td>
+      <td>Waynes College of Beauty</td>
+      <td>1271 North Main Street</td>
+      <td>NOT AVAILABLE</td>
+      <td>Salinas</td>
+      <td>CA</td>
+      <td>93906</td>
+      <td>...</td>
+      <td>9</td>
+      <td>NOT AVAILABLE</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-71.070737</td>
+      <td>42.369930</td>
+      <td>7005</td>
+      <td>164368</td>
+      <td>Hult International Business School</td>
+      <td>1 Education Street</td>
+      <td>NOT AVAILABLE</td>
+      <td>Cambridge</td>
+      <td>MA</td>
+      <td>02141</td>
+      <td>...</td>
+      <td>143</td>
+      <td>NOT AVAILABLE</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 54 columns</p>
+</div></div></div>
+</div>
+<p>Now we have one large dataset containing both the generic data and the ranking data.  Although we see all missing values for ranking columns above, this is just because the first five schools in the dataset didn’t happen to be ranked by US News.  This is not surprising; there were over 7700 schools in the dataset and only 231 were ranked by US News.  But we can see that the merge did go correctly if we inspect a row that had ranking data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span><span class="p">[</span><span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Harvard University&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+      <th>FID</th>
+      <th>IPEDSID</th>
+      <th>NAME</th>
+      <th>ADDRESS</th>
+      <th>ADDRESS2</th>
+      <th>CITY</th>
+      <th>STATE</th>
+      <th>ZIP</th>
+      <th>...</th>
+      <th>TOT_EMPLOY</th>
+      <th>SHELTER_ID</th>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Rank</th>
+      <th>Description</th>
+      <th>Tuition and fees</th>
+      <th>In-state</th>
+      <th>Undergrad Enrollment</th>
+      <th>Name in df_big</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5822</th>
+      <td>-71.118234</td>
+      <td>42.374172</td>
+      <td>87</td>
+      <td>166027</td>
+      <td>Harvard University</td>
+      <td>Massachusetts Hall</td>
+      <td>NOT AVAILABLE</td>
+      <td>Cambridge</td>
+      <td>MA</td>
+      <td>02138</td>
+      <td>...</td>
+      <td>17141</td>
+      <td>NOT AVAILABLE</td>
+      <td>Harvard University</td>
+      <td>Cambridge, MA</td>
+      <td>2.0</td>
+      <td>Harvard is located in Cambridge, Massachusetts...</td>
+      <td>$47,074</td>
+      <td>NaN</td>
+      <td>6,699</td>
+      <td>Harvard University</td>
+    </tr>
+  </tbody>
+</table>
+<p>1 rows × 54 columns</p>
+</div></div></div>
+</div>
+<p>This is one of the most challenging merges you might have to do, but it’s good to be prepared for the worst case scenario!</p>
+</div>
 </div>
 </div>
 

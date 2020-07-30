@@ -61,25 +61,121 @@ Each topic below will become a link to what we will cover in class that day, onc
 ```{toctree}
 :hidden:
 :titlesonly:
-
+:caption: Week 1
 
 chapter-1-intro-to-data-science.ipynb
 chapter-2-mathematical-foundations.ipynb
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:caption: Week 2
+
 chapter-3-jupyter.ipynb
 chapter-4-review-of-python-and-pandas.ipynb
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:caption: Week 3
+
 chapter-5-before-and-after.ipynb
 chapter-6-single-table-verbs.ipynb
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:caption: Week 4
+
 chapter-7-abstraction.ipynb
 chapter-8-version-control.ipynb
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:caption: Week 5
+
 chapter-9-math-and-stats.ipynb
 chapter-10-visualization.ipynb
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:caption: Week 6
+
 chapter-11-processing-rows.ipynb
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:caption: Week 7
+
 chapter-12-concat-and-merge.ipynb
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:caption: Week 8
+
 chapter-13-etl.ipynb
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:caption: Week 9
+
 chapter-14-dashboards.ipynb
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:caption: Week 10
+
 chapter-15-networks.ipynb
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:caption: Week 11
+
 chapter-16-matrices.ipynb
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:caption: Week 12
+
 chapter-17-machine-learning.ipynb
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:caption: Appendices
+
 big-cheat-sheet.ipynb
 anaconda-installation.md
 vs-code-installation.md

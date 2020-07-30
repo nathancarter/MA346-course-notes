@@ -152,103 +152,116 @@
 \contentsline {subsubsection}{Knowing how long you’ll have to wait}{104}{subsubsection*.81}% 
 \contentsline {subsection}{\numberline {1.11.7}When the bottleneck is the dataset}{105}{subsection.1.11.7}% 
 \contentsline {section}{\numberline {1.12}Concatenating and Merging DataFrames}{106}{section.1.12}% 
-\contentsline {section}{\numberline {1.13}Miscellaneous Munging Methods (ETL)}{106}{section.1.13}% 
-\contentsline {section}{\numberline {1.14}Dashboards}{106}{section.1.14}% 
-\contentsline {section}{\numberline {1.15}Relations as Graphs \sphinxhyphen {} Network Analysis}{106}{section.1.15}% 
-\contentsline {section}{\numberline {1.16}Relations as Matrices}{107}{section.1.16}% 
-\contentsline {section}{\numberline {1.17}Introduction to Machine Learning}{107}{section.1.17}% 
-\contentsline {section}{\numberline {1.18}Big Cheat Sheet}{107}{section.1.18}% 
-\contentsline {subsection}{\numberline {1.18.1}Before Week 2: Review of CS230}{107}{subsection.1.18.1}% 
-\contentsline {subsubsection}{Introduction to Python (optional, basic review)}{107}{subsubsection*.82}% 
-\contentsline {paragraph}{Chapter 1: Python Basics}{107}{paragraph*.83}% 
-\contentsline {paragraph}{Chapter 2: Python Lists}{108}{paragraph*.84}% 
-\contentsline {paragraph}{Chapter 3: Functions and Packages}{109}{paragraph*.85}% 
-\contentsline {paragraph}{Chapter 4: NumPy}{110}{paragraph*.86}% 
-\contentsline {subsubsection}{Python Data Science Toolbox, Part 1 (optional, basic review)}{111}{subsubsection*.87}% 
-\contentsline {paragraph}{Chapter 1: Writing your own functions}{111}{paragraph*.88}% 
-\contentsline {paragraph}{Chapter 2: Default arguments, variable\sphinxhyphen {}length arguments, and scope}{111}{paragraph*.89}% 
-\contentsline {paragraph}{Chapter 3: Lambda functions and error handling}{112}{paragraph*.90}% 
-\contentsline {subsubsection}{Intermediate Python (required review)}{113}{subsubsection*.91}% 
-\contentsline {paragraph}{Chapter 1: Matplotlib}{113}{paragraph*.92}% 
-\contentsline {paragraph}{Chapter 2: Dictionaries \& Pandas}{113}{paragraph*.93}% 
-\contentsline {paragraph}{Chapter 3: Logic, Control Flow, and Filtering}{115}{paragraph*.94}% 
-\contentsline {paragraph}{Chapter 4: Loops}{115}{paragraph*.95}% 
-\contentsline {subsubsection}{pandas Foundations (required review)}{116}{subsubsection*.96}% 
-\contentsline {paragraph}{Chapter 1: Data ingestion \& inspection}{116}{paragraph*.97}% 
-\contentsline {subsubsection}{Manipulating DataFrames with pandas (required review)}{118}{subsubsection*.98}% 
-\contentsline {paragraph}{Chapter 1: Extracting and transforming data}{118}{paragraph*.99}% 
-\contentsline {subsection}{\numberline {1.18.2}Before Week 3}{119}{subsection.1.18.2}% 
-\contentsline {subsubsection}{Manipulating DataFrames with pandas}{119}{subsubsection*.100}% 
-\contentsline {paragraph}{Chapter 2: Advanced indexing}{119}{paragraph*.101}% 
-\contentsline {paragraph}{Chapter 3: Rearranging and reshaping data}{120}{paragraph*.102}% 
-\contentsline {paragraph}{Chapter 4: Grouping data}{121}{paragraph*.103}% 
-\contentsline {subsection}{\numberline {1.18.3}Before Week 4: Review of Visualization in CS230}{122}{subsection.1.18.3}% 
-\contentsline {subsubsection}{pandas Foundations}{122}{subsubsection*.104}% 
-\contentsline {paragraph}{Chapter 2: Exploratory data analysis}{122}{paragraph*.105}% 
-\contentsline {subsection}{\numberline {1.18.4}Before Week 5}{122}{subsection.1.18.4}% 
-\contentsline {subsubsection}{Intermediate Python}{122}{subsubsection*.106}% 
-\contentsline {paragraph}{Chapter 5: Case Study: Hacker Statistics}{122}{paragraph*.107}% 
-\contentsline {subsubsection}{Statistical Thinking in Python, Part 1}{122}{subsubsection*.108}% 
-\contentsline {paragraph}{Chapter 1: Graphical Exploratory Data Analysis}{122}{paragraph*.109}% 
-\contentsline {paragraph}{Chapter 2: Quantitative Exploratory Data Analysis}{124}{paragraph*.110}% 
-\contentsline {paragraph}{Chapter 3: Thinking probabalistically–Discrete variables}{124}{paragraph*.111}% 
-\contentsline {paragraph}{Chapter 4: Thinking probabalistically–Continuous variables}{125}{paragraph*.112}% 
-\contentsline {subsubsection}{Introduction to Data Visualization with Python}{125}{subsubsection*.113}% 
-\contentsline {paragraph}{Chapter 1: Customizing Plots}{125}{paragraph*.114}% 
-\contentsline {paragraph}{Chapter 3: Statistical plots with Seaborn}{126}{paragraph*.115}% 
-\contentsline {subsection}{\numberline {1.18.5}Before Week 6}{128}{subsection.1.18.5}% 
-\contentsline {subsubsection}{Merging DataFrames with pandas}{128}{subsubsection*.116}% 
-\contentsline {paragraph}{Chapter 1: Preparing data}{128}{paragraph*.117}% 
-\contentsline {paragraph}{Chapter 2: Concatenating data}{129}{paragraph*.118}% 
-\contentsline {subsubsection}{Chapter 3: Merging data}{129}{subsubsection*.119}% 
-\contentsline {subsection}{\numberline {1.18.6}Before Week 8}{130}{subsection.1.18.6}% 
-\contentsline {subsubsection}{Streamlined Data Ingestion with pandas}{130}{subsubsection*.120}% 
-\contentsline {paragraph}{Chapter 1: Importing Data from Flat Files}{130}{paragraph*.121}% 
-\contentsline {paragraph}{Chapter 2: Importing Data from Excel Files}{131}{paragraph*.122}% 
-\contentsline {paragraph}{Chapter 3: Importing Data from Databases}{132}{paragraph*.123}% 
-\contentsline {paragraph}{Chapter 4: Importing JSON Data and Working with APIs}{132}{paragraph*.124}% 
-\contentsline {subsection}{\numberline {1.18.7}Before Week 9}{133}{subsection.1.18.7}% 
-\contentsline {subsubsection}{Introduction to SQL}{133}{subsubsection*.125}% 
-\contentsline {paragraph}{Chapter 1: Selecting columns}{133}{paragraph*.126}% 
-\contentsline {paragraph}{Chapter 2: Filtering rows}{134}{paragraph*.127}% 
-\contentsline {paragraph}{Chapter 3: Aggregate Functions}{135}{paragraph*.128}% 
-\contentsline {paragraph}{Chapter 4: Sorting and grouping}{135}{paragraph*.129}% 
-\contentsline {subsection}{\numberline {1.18.8}Additional Useful References}{136}{subsection.1.18.8}% 
-\contentsline {subsubsection}{Python Data Science Toolbox, Part 2}{136}{subsubsection*.130}% 
-\contentsline {paragraph}{Chapter 1: Using iterators in PythonLand}{136}{paragraph*.131}% 
-\contentsline {paragraph}{Chapter 2: List comprehensions and generators}{137}{paragraph*.132}% 
-\contentsline {subsubsection}{Introduction to Data Visualization with Python}{138}{subsubsection*.133}% 
-\contentsline {paragraph}{Chapter 2: Plotting 2D arrays}{138}{paragraph*.134}% 
-\contentsline {section}{\numberline {1.19}Anaconda Installation}{139}{section.1.19}% 
-\contentsline {subsection}{\numberline {1.19.1}Visit the Anaconda website}{139}{subsection.1.19.1}% 
-\contentsline {subsection}{\numberline {1.19.2}Choose your OS}{139}{subsection.1.19.2}% 
-\contentsline {subsection}{\numberline {1.19.3}Download the Installer}{139}{subsection.1.19.3}% 
-\contentsline {subsection}{\numberline {1.19.4}Run the Installer}{139}{subsection.1.19.4}% 
-\contentsline {section}{\numberline {1.20}VS Code for Python Installation}{139}{section.1.20}% 
-\contentsline {subsection}{\numberline {1.20.1}Open the Anaconda Navigator}{140}{subsection.1.20.1}% 
-\contentsline {subsection}{\numberline {1.20.2}Find and Install the VS Code application}{140}{subsection.1.20.2}% 
-\contentsline {subsection}{\numberline {1.20.3}Installing and Configuring Code Runner}{140}{subsection.1.20.3}% 
-\contentsline {subsection}{\numberline {1.20.4}Testing your Installation}{140}{subsection.1.20.4}% 
-\contentsline {section}{\numberline {1.21}GB213 Review in Python}{141}{section.1.21}% 
-\contentsline {subsection}{\numberline {1.21.1}We’re not covering everything}{141}{subsection.1.21.1}% 
-\contentsline {subsection}{\numberline {1.21.2}Discrete Random Variables}{141}{subsection.1.21.2}% 
-\contentsline {subsubsection}{Creating them}{141}{subsubsection*.135}% 
-\contentsline {subsubsection}{Computing probabilities from a Discrete Random Variable}{141}{subsubsection*.136}% 
-\contentsline {subsubsection}{Generating values from a Discrete Random Variable}{141}{subsubsection*.137}% 
-\contentsline {subsubsection}{Computing statistics about a Discrete Random Variable}{142}{subsubsection*.138}% 
-\contentsline {subsubsection}{Plotting the Distribution of a Discrete Random Variable}{142}{subsubsection*.139}% 
-\contentsline {subsection}{\numberline {1.21.3}Continuous Random Variables}{143}{subsection.1.21.3}% 
-\contentsline {subsubsection}{Creating them}{143}{subsubsection*.140}% 
-\contentsline {subsubsection}{Computing probabilities from a Continuous Random Variable}{143}{subsubsection*.141}% 
-\contentsline {subsubsection}{Generating values from a Continuous Random Variable}{143}{subsubsection*.142}% 
-\contentsline {subsubsection}{Plotting the Distribution of a Continuous Random Variable}{143}{subsubsection*.143}% 
-\contentsline {subsection}{\numberline {1.21.4}Confidence Intervals}{144}{subsection.1.21.4}% 
-\contentsline {subsection}{\numberline {1.21.5}Hypothesis Testing}{145}{subsection.1.21.5}% 
-\contentsline {subsubsection}{Two\sphinxhyphen {}sided test for \(H_0:\mu =\mathaccentV {bar}616{x}\)}{145}{subsubsection*.144}% 
-\contentsline {subsubsection}{Two\sphinxhyphen {}sided test for \(H_0: \mathaccentV {bar}616{x}_1=\mathaccentV {bar}616{x}_2\)}{145}{subsubsection*.145}% 
-\contentsline {subsection}{\numberline {1.21.6}Linear Regression}{146}{subsection.1.21.6}% 
-\contentsline {subsubsection}{Creating a linear model of data}{146}{subsubsection*.146}% 
-\contentsline {subsubsection}{Visualizing the model}{147}{subsubsection*.147}% 
-\contentsline {subsection}{\numberline {1.21.7}Other Topics}{147}{subsection.1.21.7}% 
-\contentsline {subsubsection}{ANOVA}{147}{subsubsection*.148}% 
-\contentsline {subsubsection}{\(\chi ^2\) Tests}{148}{subsubsection*.149}% 
+\contentsline {subsection}{\numberline {1.12.1}Why join two datasets?}{106}{subsection.1.12.1}% 
+\contentsline {subsection}{\numberline {1.12.2}Concatenation is vertical}{107}{subsection.1.12.2}% 
+\contentsline {subsection}{\numberline {1.12.3}Merging is horizontal}{108}{subsection.1.12.3}% 
+\contentsline {subsection}{\numberline {1.12.4}Adding many columns at once}{109}{subsection.1.12.4}% 
+\contentsline {subsection}{\numberline {1.12.5}When there is no match for some rows}{110}{subsection.1.12.5}% 
+\contentsline {subsection}{\numberline {1.12.6}When there are many matches for some rows}{111}{subsection.1.12.6}% 
+\contentsline {subsection}{\numberline {1.12.7}When I want to keep all the rows}{113}{subsection.1.12.7}% 
+\contentsline {subsection}{\numberline {1.12.8}Ensuring a unique ID appears in both datasets}{114}{subsection.1.12.8}% 
+\contentsline {subsubsection}{Merging on multiple columns}{114}{subsubsection*.82}% 
+\contentsline {subsubsection}{Changing the format of a column}{114}{subsubsection*.83}% 
+\contentsline {subsubsection}{Joining multiple columns into one}{114}{subsubsection*.84}% 
+\contentsline {subsubsection}{What about unstandardized text?}{115}{subsubsection*.85}% 
+\contentsline {subsubsection}{Example}{115}{subsubsection*.86}% 
+\contentsline {section}{\numberline {1.13}Miscellaneous Munging Methods (ETL)}{123}{section.1.13}% 
+\contentsline {section}{\numberline {1.14}Dashboards}{123}{section.1.14}% 
+\contentsline {section}{\numberline {1.15}Relations as Graphs \sphinxhyphen {} Network Analysis}{123}{section.1.15}% 
+\contentsline {section}{\numberline {1.16}Relations as Matrices}{123}{section.1.16}% 
+\contentsline {section}{\numberline {1.17}Introduction to Machine Learning}{124}{section.1.17}% 
+\contentsline {section}{\numberline {1.18}Big Cheat Sheet}{124}{section.1.18}% 
+\contentsline {subsection}{\numberline {1.18.1}Before Week 2: Review of CS230}{124}{subsection.1.18.1}% 
+\contentsline {subsubsection}{Introduction to Python (optional, basic review)}{124}{subsubsection*.87}% 
+\contentsline {paragraph}{Chapter 1: Python Basics}{124}{paragraph*.88}% 
+\contentsline {paragraph}{Chapter 2: Python Lists}{125}{paragraph*.89}% 
+\contentsline {paragraph}{Chapter 3: Functions and Packages}{126}{paragraph*.90}% 
+\contentsline {paragraph}{Chapter 4: NumPy}{127}{paragraph*.91}% 
+\contentsline {subsubsection}{Python Data Science Toolbox, Part 1 (optional, basic review)}{127}{subsubsection*.92}% 
+\contentsline {paragraph}{Chapter 1: Writing your own functions}{127}{paragraph*.93}% 
+\contentsline {paragraph}{Chapter 2: Default arguments, variable\sphinxhyphen {}length arguments, and scope}{128}{paragraph*.94}% 
+\contentsline {paragraph}{Chapter 3: Lambda functions and error handling}{129}{paragraph*.95}% 
+\contentsline {subsubsection}{Intermediate Python (required review)}{129}{subsubsection*.96}% 
+\contentsline {paragraph}{Chapter 1: Matplotlib}{129}{paragraph*.97}% 
+\contentsline {paragraph}{Chapter 2: Dictionaries \& Pandas}{130}{paragraph*.98}% 
+\contentsline {paragraph}{Chapter 3: Logic, Control Flow, and Filtering}{131}{paragraph*.99}% 
+\contentsline {paragraph}{Chapter 4: Loops}{132}{paragraph*.100}% 
+\contentsline {subsubsection}{pandas Foundations (required review)}{133}{subsubsection*.101}% 
+\contentsline {paragraph}{Chapter 1: Data ingestion \& inspection}{133}{paragraph*.102}% 
+\contentsline {subsubsection}{Manipulating DataFrames with pandas (required review)}{134}{subsubsection*.103}% 
+\contentsline {paragraph}{Chapter 1: Extracting and transforming data}{134}{paragraph*.104}% 
+\contentsline {subsection}{\numberline {1.18.2}Before Week 3}{135}{subsection.1.18.2}% 
+\contentsline {subsubsection}{Manipulating DataFrames with pandas}{135}{subsubsection*.105}% 
+\contentsline {paragraph}{Chapter 2: Advanced indexing}{135}{paragraph*.106}% 
+\contentsline {paragraph}{Chapter 3: Rearranging and reshaping data}{136}{paragraph*.107}% 
+\contentsline {paragraph}{Chapter 4: Grouping data}{137}{paragraph*.108}% 
+\contentsline {subsection}{\numberline {1.18.3}Before Week 4: Review of Visualization in CS230}{138}{subsection.1.18.3}% 
+\contentsline {subsubsection}{pandas Foundations}{138}{subsubsection*.109}% 
+\contentsline {paragraph}{Chapter 2: Exploratory data analysis}{138}{paragraph*.110}% 
+\contentsline {subsection}{\numberline {1.18.4}Before Week 5}{138}{subsection.1.18.4}% 
+\contentsline {subsubsection}{Intermediate Python}{138}{subsubsection*.111}% 
+\contentsline {paragraph}{Chapter 5: Case Study: Hacker Statistics}{138}{paragraph*.112}% 
+\contentsline {subsubsection}{Statistical Thinking in Python, Part 1}{139}{subsubsection*.113}% 
+\contentsline {paragraph}{Chapter 1: Graphical Exploratory Data Analysis}{139}{paragraph*.114}% 
+\contentsline {paragraph}{Chapter 2: Quantitative Exploratory Data Analysis}{140}{paragraph*.115}% 
+\contentsline {paragraph}{Chapter 3: Thinking probabalistically–Discrete variables}{141}{paragraph*.116}% 
+\contentsline {paragraph}{Chapter 4: Thinking probabalistically–Continuous variables}{141}{paragraph*.117}% 
+\contentsline {subsubsection}{Introduction to Data Visualization with Python}{142}{subsubsection*.118}% 
+\contentsline {paragraph}{Chapter 1: Customizing Plots}{142}{paragraph*.119}% 
+\contentsline {paragraph}{Chapter 3: Statistical plots with Seaborn}{143}{paragraph*.120}% 
+\contentsline {subsection}{\numberline {1.18.5}Before Week 6}{144}{subsection.1.18.5}% 
+\contentsline {subsubsection}{Merging DataFrames with pandas}{144}{subsubsection*.121}% 
+\contentsline {paragraph}{Chapter 1: Preparing data}{144}{paragraph*.122}% 
+\contentsline {paragraph}{Chapter 2: Concatenating data}{145}{paragraph*.123}% 
+\contentsline {subsubsection}{Chapter 3: Merging data}{146}{subsubsection*.124}% 
+\contentsline {subsection}{\numberline {1.18.6}Before Week 8}{146}{subsection.1.18.6}% 
+\contentsline {subsubsection}{Streamlined Data Ingestion with pandas}{146}{subsubsection*.125}% 
+\contentsline {paragraph}{Chapter 1: Importing Data from Flat Files}{146}{paragraph*.126}% 
+\contentsline {paragraph}{Chapter 2: Importing Data from Excel Files}{147}{paragraph*.127}% 
+\contentsline {paragraph}{Chapter 3: Importing Data from Databases}{148}{paragraph*.128}% 
+\contentsline {paragraph}{Chapter 4: Importing JSON Data and Working with APIs}{148}{paragraph*.129}% 
+\contentsline {subsection}{\numberline {1.18.7}Before Week 9}{149}{subsection.1.18.7}% 
+\contentsline {subsubsection}{Introduction to SQL}{149}{subsubsection*.130}% 
+\contentsline {paragraph}{Chapter 1: Selecting columns}{149}{paragraph*.131}% 
+\contentsline {paragraph}{Chapter 2: Filtering rows}{150}{paragraph*.132}% 
+\contentsline {paragraph}{Chapter 3: Aggregate Functions}{151}{paragraph*.133}% 
+\contentsline {paragraph}{Chapter 4: Sorting and grouping}{151}{paragraph*.134}% 
+\contentsline {subsection}{\numberline {1.18.8}Additional Useful References}{152}{subsection.1.18.8}% 
+\contentsline {subsubsection}{Python Data Science Toolbox, Part 2}{152}{subsubsection*.135}% 
+\contentsline {paragraph}{Chapter 1: Using iterators in PythonLand}{152}{paragraph*.136}% 
+\contentsline {paragraph}{Chapter 2: List comprehensions and generators}{153}{paragraph*.137}% 
+\contentsline {subsubsection}{Introduction to Data Visualization with Python}{154}{subsubsection*.138}% 
+\contentsline {paragraph}{Chapter 2: Plotting 2D arrays}{154}{paragraph*.139}% 
+\contentsline {section}{\numberline {1.19}Anaconda Installation}{155}{section.1.19}% 
+\contentsline {subsection}{\numberline {1.19.1}Visit the Anaconda website}{155}{subsection.1.19.1}% 
+\contentsline {subsection}{\numberline {1.19.2}Choose your OS}{155}{subsection.1.19.2}% 
+\contentsline {subsection}{\numberline {1.19.3}Download the Installer}{155}{subsection.1.19.3}% 
+\contentsline {subsection}{\numberline {1.19.4}Run the Installer}{155}{subsection.1.19.4}% 
+\contentsline {section}{\numberline {1.20}VS Code for Python Installation}{156}{section.1.20}% 
+\contentsline {subsection}{\numberline {1.20.1}Open the Anaconda Navigator}{156}{subsection.1.20.1}% 
+\contentsline {subsection}{\numberline {1.20.2}Find and Install the VS Code application}{156}{subsection.1.20.2}% 
+\contentsline {subsection}{\numberline {1.20.3}Installing and Configuring Code Runner}{156}{subsection.1.20.3}% 
+\contentsline {subsection}{\numberline {1.20.4}Testing your Installation}{156}{subsection.1.20.4}% 
+\contentsline {section}{\numberline {1.21}GB213 Review in Python}{157}{section.1.21}% 
+\contentsline {subsection}{\numberline {1.21.1}We’re not covering everything}{157}{subsection.1.21.1}% 
+\contentsline {subsection}{\numberline {1.21.2}Discrete Random Variables}{157}{subsection.1.21.2}% 
+\contentsline {subsubsection}{Creating them}{157}{subsubsection*.140}% 
+\contentsline {subsubsection}{Computing probabilities from a Discrete Random Variable}{157}{subsubsection*.141}% 
+\contentsline {subsubsection}{Generating values from a Discrete Random Variable}{158}{subsubsection*.142}% 
+\contentsline {subsubsection}{Computing statistics about a Discrete Random Variable}{158}{subsubsection*.143}% 
+\contentsline {subsubsection}{Plotting the Distribution of a Discrete Random Variable}{158}{subsubsection*.144}% 
+\contentsline {subsection}{\numberline {1.21.3}Continuous Random Variables}{159}{subsection.1.21.3}% 
+\contentsline {subsubsection}{Creating them}{159}{subsubsection*.145}% 
+\contentsline {subsubsection}{Computing probabilities from a Continuous Random Variable}{159}{subsubsection*.146}% 
+\contentsline {subsubsection}{Generating values from a Continuous Random Variable}{159}{subsubsection*.147}% 
+\contentsline {subsubsection}{Plotting the Distribution of a Continuous Random Variable}{160}{subsubsection*.148}% 
+\contentsline {subsection}{\numberline {1.21.4}Confidence Intervals}{160}{subsection.1.21.4}% 
+\contentsline {subsection}{\numberline {1.21.5}Hypothesis Testing}{161}{subsection.1.21.5}% 
+\contentsline {subsubsection}{Two\sphinxhyphen {}sided test for \(H_0:\mu =\mathaccentV {bar}616{x}\)}{161}{subsubsection*.149}% 
+\contentsline {subsubsection}{Two\sphinxhyphen {}sided test for \(H_0: \mathaccentV {bar}616{x}_1=\mathaccentV {bar}616{x}_2\)}{161}{subsubsection*.150}% 
+\contentsline {subsection}{\numberline {1.21.6}Linear Regression}{162}{subsection.1.21.6}% 
+\contentsline {subsubsection}{Creating a linear model of data}{162}{subsubsection*.151}% 
+\contentsline {subsubsection}{Visualizing the model}{163}{subsubsection*.152}% 
+\contentsline {subsection}{\numberline {1.21.7}Other Topics}{163}{subsection.1.21.7}% 
+\contentsline {subsubsection}{ANOVA}{163}{subsubsection*.153}% 
+\contentsline {subsubsection}{\(\chi ^2\) Tests}{164}{subsubsection*.154}% 

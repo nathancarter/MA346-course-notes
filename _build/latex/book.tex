@@ -56,6 +56,7 @@
 \usepackage{hypcap}% it must be loaded after hyperref.
 % Set up styles of URL: it should be placed after hyperref.
 \urlstyle{same}
+\addto\captionsenglish{\renewcommand{\contentsname}{Week 1}}
 
 \usepackage{sphinxmessages}
 
@@ -3794,12 +3795,12 @@ We will return to vectorization and loops in Chapter 11 of these notes.  For now
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.20850962, 0.31168728, 0.46599024, 0.16659761, 0.59516571,
-       0.92613125, 0.13906747, 0.14225855, 0.40086385, 0.12190931,
-       0.74776587, 0.27625783, 0.46294778, 0.50737946, 0.46406659,
-       0.0093127 , 0.1482293 , 0.90933297, 0.87896433, 0.47943593,
-       0.10416273, 0.46958161, 0.76569984, 0.09403733, 0.70498404,
-       0.12742527, 0.77028858, 0.66514029, 0.5969186 , 0.53189692])
+array([0.18749897, 0.07316104, 0.75626655, 0.61111431, 0.09289181,
+       0.3180047 , 0.79238383, 0.72835593, 0.11764028, 0.3429926 ,
+       0.75055687, 0.92145617, 0.53068135, 0.40630813, 0.2895452 ,
+       0.07446345, 0.61029725, 0.36745468, 0.05034605, 0.68159722,
+       0.91673431, 0.75455441, 0.21342458, 0.21834192, 0.18463526,
+       0.10587757, 0.17686841, 0.20370967, 0.25734605, 0.69745677])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3807,9 +3808,9 @@ array([0.20850962, 0.31168728, 0.46599024, 0.16659761, 0.59516571,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.21, 0.31, 0.47, 0.17, 0.6 , 0.93, 0.14, 0.14, 0.4 , 0.12, 0.75,
-       0.28, 0.46, 0.51, 0.46, 0.01, 0.15, 0.91, 0.88, 0.48, 0.1 , 0.47,
-       0.77, 0.09, 0.7 , 0.13, 0.77, 0.67, 0.6 , 0.53])
+array([0.19, 0.07, 0.76, 0.61, 0.09, 0.32, 0.79, 0.73, 0.12, 0.34, 0.75,
+       0.92, 0.53, 0.41, 0.29, 0.07, 0.61, 0.37, 0.05, 0.68, 0.92, 0.75,
+       0.21, 0.22, 0.18, 0.11, 0.18, 0.2 , 0.26, 0.7 ])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3817,12 +3818,12 @@ array([0.21, 0.31, 0.47, 0.17, 0.6 , 0.93, 0.14, 0.14, 0.4 , 0.12, 0.75,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([1.23184079, 1.36572754, 1.59359145, 1.18127884, 1.81333141,
-       2.52472273, 1.14920164, 1.15287468, 1.49311396, 1.12965165,
-       2.11227563, 1.31818769, 1.58875037, 1.66093295, 1.59052888,
-       1.0093562 , 1.1597788 , 2.48266598, 2.4084041 , 1.61516308,
-       1.10978103, 1.59932491, 2.15049886, 1.09860075, 2.02381438,
-       1.13589997, 2.16038961, 1.94476334, 1.81651276, 1.70215811])
+array([1.20622901, 1.07590379, 2.13030796, 1.84248335, 1.09734301,
+       1.37438271, 2.2086552 , 2.07167183, 1.12483941, 1.40915834,
+       2.11817924, 2.51294701, 1.70009027, 1.50126507, 1.33581982,
+       1.07730597, 1.84097855, 1.44405436, 1.05163496, 1.97703298,
+       2.50110918, 2.12666368, 1.23791014, 1.24401234, 1.20277966,
+       1.11168577, 1.19347403, 1.22594217, 1.29349267, 2.00863778])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3830,14 +3831,12 @@ array([1.23184079, 1.36572754, 1.59359145, 1.18127884, 1.81333141,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([4.34762632e\PYGZhy{}02, 9.71489629e\PYGZhy{}02, 2.17146905e\PYGZhy{}01, 2.77547639e\PYGZhy{}02,
-       3.54222222e\PYGZhy{}01, 8.57719089e\PYGZhy{}01, 1.93397615e\PYGZhy{}02, 2.02374937e\PYGZhy{}02,
-       1.60691824e\PYGZhy{}01, 1.48618808e\PYGZhy{}02, 5.59153790e\PYGZhy{}01, 7.63183880e\PYGZhy{}02,
-       2.14320646e\PYGZhy{}01, 2.57433918e\PYGZhy{}01, 2.15357799e\PYGZhy{}01, 8.67264725e\PYGZhy{}05,
-       2.19719240e\PYGZhy{}02, 8.26886456e\PYGZhy{}01, 7.72578292e\PYGZhy{}01, 2.29858811e\PYGZhy{}01,
-       1.08498733e\PYGZhy{}02, 2.20506887e\PYGZhy{}01, 5.86296247e\PYGZhy{}01, 8.84301924e\PYGZhy{}03,
-       4.97002492e\PYGZhy{}01, 1.62371984e\PYGZhy{}02, 5.93344498e\PYGZhy{}01, 4.42411608e\PYGZhy{}01,
-       3.56311814e\PYGZhy{}01, 2.82914335e\PYGZhy{}01])
+array([0.03515587, 0.00535254, 0.57193909, 0.3734607 , 0.00862889,
+       0.10112699, 0.62787213, 0.53050236, 0.01383924, 0.11764392,
+       0.56333562, 0.84908148, 0.2816227 , 0.1650863 , 0.08383642,
+       0.00554481, 0.37246274, 0.13502294, 0.00253473, 0.46457478,
+       0.84040179, 0.56935235, 0.04555005, 0.04767319, 0.03409018,
+       0.01121006, 0.03128243, 0.04149763, 0.06622699, 0.48644595])
 \end{sphinxVerbatim}
 
 Notice that this makes it very easy to compute certain mathematical formulas.  For example, when we want to measure the quality of a model, we might compute the RSSE, or Root Sum of Squared Errors, that is, the square root of the sum of the squared differences between each actual data value \(y_i\) and its predicted value \(\hat y_i\).  In math, we write it like this:
@@ -3908,8 +3907,8 @@ In fact, SciPy’s built\sphinxhyphen{}in random number generating procedures le
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([76.85768748, 48.01593333, 92.85262834, 41.81845963, 26.91906569,
-       34.43715542, 22.2555    , 44.79309438, 20.67422863, 38.03269724])
+array([70.53359236, 70.70208825, 64.38653695, 97.53998752, 54.51977284,
+       12.43869692, 84.11073797, 52.91658355, 57.87811329,  9.39498666])
 \end{sphinxVerbatim}
 
 Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two arguments and create a specific random variable, then call \sphinxcode{\sphinxupquote{rvs}} on that.
@@ -3920,8 +3919,8 @@ Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two a
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([94.36173421, 37.41078276, 49.82941889, 31.62948686, 33.37754507,
-        5.79206238, 71.32878629, 48.11541087, 99.20472891, 40.9434339 ])
+array([81.83819128, 52.37003328, 25.64223321, 53.01549829, 37.87673431,
+       61.76143048,  6.56946446, 66.09759891, 51.48709127, 78.97233618])
 \end{sphinxVerbatim}
 
 The same random variable can, of course, be used to create more values later.
@@ -5689,9 +5688,767 @@ Then as you create your data analysis code, which inevitably involves running it
 \label{\detokenize{chapter-12-concat-and-merge:concatenating-and-merging-dataframes}}\label{\detokenize{chapter-12-concat-and-merge::doc}}
 See also the slides that summarize a portion of this content.
 
-\begin{sphinxadmonition}{warning}{Warning:}
-This chapter has not yet been written.  Check back later.
-\end{sphinxadmonition}
+
+\subsection{Why join two datasets?}
+\label{\detokenize{chapter-12-concat-and-merge:why-join-two-datasets}}
+This chapter is about two ways to combine DataFrames together.  The concepts we’ll be discussing (concatenation and merging) are not unique to pandas DataFrames; they show up wherever tabular data is used, including in SQL.
+
+Combining more than one dataset together is a crucial aspect of data work.  Let’s see two examples.
+
+\sphinxstylestrong{Example 1.}  One of my friends runs \sphinxhref{https://secondnature.org/}{a nonprofit organization} that helps colleges and universities set climate action goals and track their progress toward keeping them.  He asked my graduate data science course in Fall 2019 to look at their database and come up with any insights.  Naturally, their database had records of all the climate goals and progress for schools they were working with, but it didn’t have much other information about those schools.  What if we wanted to analyze a variable they weren’t tracking, like endowment?  Or what if we wanted to look at schools that hadn’t get partnered with the nonprofit?  That information would need to be brought in from another dataset.  Until we do so, we can’t give interesting answers to the question the client posed.
+
+\sphinxstylestrong{Example 2.}  One of my colleagues in the math department told me about a clever strategy one investment group used to predict the earnings of companies they were considering investing in.  They already had lots of data about each company, including the addresses of the company’s various offices and factories.  They could also purchase access to a large database of satellite images.  They used the addresses and some image\sphinxhyphen{}detection software to compute the number of cars in the parking lots of the company’s properties.  This turned out to be a very useful predictor of growth that they could access before their competing investors had the information.  It involved bringing together two datasets in a clever way.
+
+In this chapter, we’ll discuss how to combine just two DataFrames, but the ideas apply if you have more than two.  For instance, to concatenate five DataFrames \sphinxcode{\sphinxupquote{df1}} through \sphinxcode{\sphinxupquote{df5}}, we can proceed in pairs, combining \sphinxcode{\sphinxupquote{df1}} and \sphinxcode{\sphinxupquote{df2}}, then combining that result with \sphinxcode{\sphinxupquote{df3}}, and so on until we have included \sphinxcode{\sphinxupquote{df5}}.
+
+Let’s start by dicsussing concatenation, which is definitely the easier of the two concepts, before we tackle merging.  The English verb “concatenate” means to attach two things together, one after the end of the other.
+
+
+\subsection{Concatenation is vertical}
+\label{\detokenize{chapter-12-concat-and-merge:concatenation-is-vertical}}
+DataFrames are tables of data, so when combining, we’ll either be stacking them vertically or horizontally.  Concatenation is vertical stacking.
+
+It is an extremely common operation.  Very often what happens after you get some data is that (not surprisingly) you later get more of the same type of data.
+\begin{itemize}
+\item {} 
+For instance, if you’re taking scientific measurements in a lab, one week you get a set of measurements, and the next week you get more data in the same format.
+
+\item {} 
+Or if you’re following a stock or other financial instrument, its prices one week form a dataset, then the next week, you see more data with the same format.
+
+\end{itemize}
+
+Because the standard way to organize tabular data is to put observations in rows, then getting more observations means we just need to add more rows onto the bottom of our previous table of data.  This is what concatenation is for.  Here’s an illustration using the stock prices example, with data that comes from Renewable Energy Group, Inc., whose 2020 data we’ve seen before in this course.
+
+\sphinxincludegraphics{{concat-of-stock-data}.png}
+
+There are two important things to notice in the picture.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+All that’s happening is that we’re stacking data vertically.  It’s very straightforward!
+
+\item {} 
+In order for us to stack two DataFrames, they must have the same columns.  The column headers are highlighted in blue to emphasize that they’re the same in every table.
+
+\end{enumerate}
+
+(There are ways to deal with the case where new data comes in with different column headers, we’re covering the most common case here.)
+
+The code to do this is extremely easy; it is a single call to the \sphinxcode{\sphinxupquote{pd.concat()}} function.  You provide a Python list of all the DataFrames to concatenate; in this case, we have just two.  We tell it to ignore the old indexes and create a new one, so that we don’t have duplicate index entries.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{pandas} \PYG{k}{as} \PYG{n+nn}{pd}
+
+\PYG{n}{df\PYGZus{}jan} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{read\PYGZus{}csv}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZus{}static/regi\PYGZhy{}prices\PYGZhy{}jan\PYGZhy{}2020.csv}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\PYG{n}{df\PYGZus{}feb} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{read\PYGZus{}csv}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZus{}static/regi\PYGZhy{}prices\PYGZhy{}feb\PYGZhy{}2020.csv}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+
+\PYG{n}{df\PYGZus{}2mo} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{concat}\PYG{p}{(} \PYG{p}{[} \PYG{n}{df\PYGZus{}jan}\PYG{p}{,} \PYG{n}{df\PYGZus{}feb} \PYG{p}{]}\PYG{p}{,} \PYG{n}{ignore\PYGZus{}index}\PYG{o}{=}\PYG{k+kc}{True} \PYG{p}{)}
+\PYG{n}{df\PYGZus{}2mo}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+       Date   Open   High    Low  Close
+0  2\PYGZhy{}Jan\PYGZhy{}20  27.21  27.95  26.62  27.89
+1  3\PYGZhy{}Jan\PYGZhy{}20  28.16  28.95  27.73  28.82
+2  6\PYGZhy{}Jan\PYGZhy{}20  28.53  28.81  28.00  28.39
+3  7\PYGZhy{}Jan\PYGZhy{}20  28.17  28.28  26.08  26.44
+4  8\PYGZhy{}Jan\PYGZhy{}20  26.37  26.40  24.86  25.19
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}2mo}\PYG{o}{.}\PYG{n}{tail}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+         Date   Open   High    Low  Close
+35  24\PYGZhy{}Feb\PYGZhy{}20  29.16  29.47  28.08  29.07
+36  25\PYGZhy{}Feb\PYGZhy{}20  29.40  29.40  26.83  27.60
+37  26\PYGZhy{}Feb\PYGZhy{}20  27.59  28.93  27.30  27.84
+38  27\PYGZhy{}Feb\PYGZhy{}20  27.13  27.56  25.85  25.89
+39  28\PYGZhy{}Feb\PYGZhy{}20  24.90  26.66  24.51  26.45
+\end{sphinxVerbatim}
+
+The \sphinxcode{\sphinxupquote{pd.concat()}} function is actually much more powerful than just this one little use to which we’ve put it here.  But we will discuss that more after we’ve discussed the more complex of the operations in this chapter, merging.
+
+
+\subsection{Merging is horizontal}
+\label{\detokenize{chapter-12-concat-and-merge:merging-is-horizontal}}
+Concatenation was appropriate when we had new rows (that is, new observations) to add to our dataset.  But what if we had new columns instead?  Keep in mind that, under the standard way we organize tabular data, columns represent the \sphinxstyleemphasis{variables} in our dataset.  So getting new columns means learning more information about the rows we already had.
+
+We saw a simple example of this last week; it was simple enough that we didn’t need to learn the full power of merging to handle it.  Recall that we had a dataset of home mortgage applications, and we wanted to add into it a variable that measured political affiliation of the state in which the mortgage took place.  We thus got a table that provided a measure of political alignment for each state, and we used that to \sphinxstyleemphasis{add a new column} to our old home mortgage dataset.  Each row in the mortgage dataset got a new variable measuring political alignment.  The table grew \sphinxstyleemphasis{horizontally} with new information from another table.
+
+In fact, when we have only one column to add, the technique from last week’s class is easier than the full complexity of merging.  Recall how we did it:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} make a dictionary that maps state abbreviations to voting measurements}
+\PYG{n}{repub\PYGZus{}votes\PYGZus{}in\PYGZus{}state} \PYG{o}{=} \PYG{n+nb}{dict}\PYG{p}{(} \PYG{n+nb}{zip}\PYG{p}{(} \PYG{n}{df\PYGZus{}election}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{State}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{n}{df\PYGZus{}election}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Trump}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)} \PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} apply that dictionary to our home mortgage data to make a new column}
+\PYG{n}{df\PYGZus{}mortgages}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Trump2016}\PYG{l+s+s1}{\PYGZpc{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df\PYGZus{}mortgages}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{State}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(} \PYG{n}{repub\PYGZus{}votes\PYGZus{}in\PYGZus{}state} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+But what if the situation is more complicated?  This can happen in several ways.  In each way, \sphinxcode{\sphinxupquote{pd.merge()}} is there to solve the problem.  Let’s look at each way that tables might grow horizontally.
+
+
+\subsection{Adding many columns at once}
+\label{\detokenize{chapter-12-concat-and-merge:adding-many-columns-at-once}}
+The technique shown above, which we used last week in class, is easy if bringing in only one new column.  If we wanted to bring in many new columns, we’d need to apply that technique repeatedly, in a loop over those columns.  But \sphinxcode{\sphinxupquote{pd.merge()}} can do it all in one function call, and for the reasons we learned last week, that will probably be faster than a Python loop.
+
+Let’s consider a concrete example to understand the idea of importing several new columns at once.  Consider a dataset we’ve seen before, tracking the number of confirmed COVID\sphinxhyphen{}19 cases over time in various countries.  Let’s say we wanted to see if the growth patterns in such a dataset were in any way related to health care information about the country, such as how much they spend on health care, how many doctors per capita, and so on.  We’ll need to bring in another dataset with all that information about each country, and import it in as new columns.  See the illustration below.
+
+(All tables illustrated from here on will have “…” in the final rows and columns, to indicate that the table is really much bigger, and we’re showing only a portion in the illustration.)
+
+\sphinxincludegraphics{{merge-of-health-data}.png}
+
+The resulting DataFrame, on the bottom of the illustrationo, has all the data we want about each country, the COVID case data followed by the health data.
+
+If the rows were not in exactly the same order in each DataFrame, the ones on the right will be reordered so that they match correctly with the rows on the left.  To do this, we need a unique ID for each row that is consistent across both datasets.  In this case, we would use the country name.
+
+We’re making two important assumptions here.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+The list of countries is exactly the same in both datasets, so we don’t have any leftover rows in either one.  This is rarely how actual data works; there’s usually some discrepancy, so we’ll discuss {\hyperref[\detokenize{chapter-12-concat-and-merge:when-there-is-no-match-for-some-rows}]{\emph{next}}} how to handle that.
+
+\item {} 
+The country names are spelled and formatted exactly the same in both datasets.  This is also not always true, so {\hyperref[\detokenize{chapter-12-concat-and-merge:ensuring-a-unique-id-appears-in-both-datasets}]{\emph{at the end of this chapter}}}, we’ll talk about how to fix that problem if and when it arises in your own work.
+
+\end{enumerate}
+
+This operation is called a \sphinxstyleemphasis{merge} in pandas or a \sphinxstyleemphasis{join} in SQL.  We could do it with code like the following.  We say we “merge \sphinxstyleemphasis{on}” the column we’re using as the unique ID.  So the illustration above is a merge on country name (or a join on country name).  In the left dataset, the column is called “Country/Region” and in the right dataset, it’s called “Country.”  So the code for this merge looks like the following.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}merged} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{merge}\PYG{p}{(} \PYG{n}{df\PYGZus{}cases}\PYG{p}{,} \PYG{n}{df\PYGZus{}health}\PYG{p}{,}
+    \PYG{n}{left\PYGZus{}on}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Country/Region}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{right\PYGZus{}on}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Country}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+If the column name had been the same in both DataFrames, we could have done it more succinctly.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}merged} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{merge}\PYG{p}{(} \PYG{n}{df\PYGZus{}cases}\PYG{p}{,} \PYG{n}{df\PYGZus{}health}\PYG{p}{,} \PYG{n}{on}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Country}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\subsection{When there is no match for some rows}
+\label{\detokenize{chapter-12-concat-and-merge:when-there-is-no-match-for-some-rows}}
+The first assumption mentioned above was that each row in the COVID dataset matched up with exactly one row in the health dataset.  The two datasets were the same size and had the same countries.  But what if this had not been the case?  Let’s consider two merging examples where the rows of the one dataset don’t match up perfectly with those of the other.  First, what if some rows in one dataset don’t match up with any rows from the other dataset?
+
+Recall the example from the start of this chapter about my friend’s nonprofit.  I gave my students a comprehensive database from the U.S. government detailing lots of information about every institution of higher education in the U.S., over 7000 of them.  We wanted to merge that with the list of schools who had partnered with the climate nonprofit, of which there were fewer than 500.  Of course, the nonprofit hadn’t partnered with \sphinxstyleemphasis{every} school in the U.S.; that would be impressive!  So clearly some of the rows in the big dataset were not going to match with any of the rows in the climate dataset.  What do we do in that case?
+
+Keeping in mind the goal of that project, we want to ensure that we keep in our dataset all the schools in the comprehensive dataset, because we will want to do analytics on those schools who \sphinxstyleemphasis{haven’t} signed up with the nonprofit.  There may be interesting patterns that help us see which schools tend not to sign up.  But the rows for those schools will not have any climate data to add, so there will be a lot of missing values in the merged dataset, as shown in the following illustration.
+
+\sphinxincludegraphics{{merge-of-school-data}.png}
+
+Because the comprehensive dataset has over 7000 rows and we add climate data for less than 500 schools, the vast majority of the rows (about 6500/7000, or 93\%) of them have no climate data, only missing values.  Those missing values are shown as blank cells in the illustration, but pandas would show them as NaNs.
+
+But this is exactly how we wanted it, because then we can consider two subpopulations, the schools with climate data and the schools without.  We could investigate differences in their attributes and perhaps verify some such differences with hypothesis tests or other tools.
+
+Because we used the \sphinxstyleemphasis{left} DataFrame as the definitive one, which we did not want to alter, and we brought the \sphinxstyleemphasis{right} DataFrame into it, we call this a \sphinxstyleemphasis{left join.}  The code for doing this operation is exactly like the previous \sphinxcode{\sphinxupquote{pd.merge()}} example, with one exception: we tell it that the left DataFrame is the definitive one, using the \sphinxcode{\sphinxupquote{how}} keyword.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}merged} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{merge}\PYG{p}{(} \PYG{n}{df\PYGZus{}big}\PYG{p}{,} \PYG{n}{df\PYGZus{}climate}\PYG{p}{,}
+    \PYG{n}{left\PYGZus{}on}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{right\PYGZus{}on}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{fullname}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{how}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{left}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+If we had chosen to do \sphinxcode{\sphinxupquote{how='right'}} instead, the right DataFrame would be considered the definitive one.  Any school from the left DataFrame that didn’t appear in the right DataFrame would be discarded, and we would end up with under 500 rows, precisely one row for each school in the climate nonprofit’s dataset.
+
+Note that we’re still making the unrealistic assumption that the school names in the government dataset will match perfectly with those in the nonprofit’s dataset, and we’ll address that at the end of the chapter.
+
+This example showed what it was like if some of the rows in the left dataset match up with \sphinxstyleemphasis{zero} rows in the right dataset.  But what if they match up with \sphinxstyleemphasis{many} rows in the right dataset?
+
+
+\subsection{When there are many matches for some rows}
+\label{\detokenize{chapter-12-concat-and-merge:when-there-are-many-matches-for-some-rows}}
+Let’s consider another example, this one from sports.  We’ll use NFL football, but if you’re not familiar with the sport, the example will still make sense.  All you need to know is that each team has many players, and that each \sphinxstyleemphasis{play} is a small part of a football game that uses just some of the team’s players.  Some plays have a \sphinxstyleemphasis{receiver,} which is the player who catches the ball thrown to him (if any–sometimes the play does not involve throwing the ball).
+
+As always in this chapter, imagine two datasets.  The first is the set of all NFL players in a certain year and their stats for that year.  (You can get these datasets online for free; here I’ll use a small sample of the players from the 2009 season.)  The second is the set of all plays that happened in that same season, in any game.  (The NFL lets you fetch this data from their website for free; again, I’ll use a small sample of plays from the 2009 season.)
+
+Perhaps we have a theory we want to test about a team’s receivers.  We want to compare certain statistics about the receiver to how the receiver performs in certain plays.  (The details are unimportant.)  So we will need to combine the two datasets, one with player stats and one with the plays from the games.  We will want to match them up so that a row in the merged dataset contains the stats for the player who caught the ball, that is, the receiver for that play.
+
+Now let’s consider how we will handle the many possibilities for how rows might match across the datasets.  First let’s consider rows that match many other rows; this might happen in two ways.
+\begin{itemize}
+\item {} 
+\sphinxstylestrong{What if a player is the receiver in more than one play?}  (This happens all the time, of course.  Once a player is hired by a team, they often play in lots of games, and are involved in many plays.)  We will want the player’s stats to appear in \sphinxstyleemphasis{every} play for which the player was the receiver.  Good news!  This is how merges always work; if a row in one DataFrame matches many rows in the other, the row is always \sphinxstyleemphasis{copied.}
+
+\item {} 
+\sphinxstylestrong{What if a play has more than one receiver?}  This actually cannot happen, according to the rules of the NFL.  Once a player has caught the ball, they are not eligible to pass it to another player.  (If you’re familiar with football, don’t start talking about laterals; that’s not a pass!)  So we don’t have to consider this possibility.
+
+\end{itemize}
+
+So those two considerations don’t seems to change our merging code at all.  It seems like a standard merge will do what we want.
+
+But what about a row in one dataset matching zero rows in the other dataset?  This, too, might happen in two ways.
+\begin{itemize}
+\item {} 
+\sphinxstylestrong{What if a player is the receiver in no play?}  (This happens often also.  A player may be hired by a team, but is not as good as other players on the team, and thus does not yet get to play in real games.)  We will not want this player to appear at all in our merged dataset, because we care about receivers who showed up in actual plays.
+
+\item {} 
+\sphinxstylestrong{What if a play has no receiver?}  (This happens often also.  There are many types of plays and not all involve throwing.)  We will not want this play to appear in our merged dataset, because the analysis we want to do is about plays that have a receiver.
+
+\end{itemize}
+
+Putting these two considerations together, it does not seem like we want either a left join or a right join.  Recall that a left join keeps all the rows of the left table and a right join keeps all the rows of the right table.  In this case, however, we want to keep only rows that appear in \sphinxstyleemphasis{both} tables.  This is called an \sphinxstyleemphasis{inner join,} and you can see it working in the illustration below.
+
+\sphinxincludegraphics{{merge-of-nfl-data}.png}
+
+The code looks the same as before, but only the \sphinxcode{\sphinxupquote{how}} parameter has changed, now using the value \sphinxcode{\sphinxupquote{"inner"}} rather than \sphinxcode{\sphinxupquote{"left"}} or \sphinxcode{\sphinxupquote{"right"}}.  Actually, \sphinxcode{\sphinxupquote{"inner"}} is the default value for \sphinxcode{\sphinxupquote{pd.merge()}}, so you can omit it in this case, but I include it for emphasis.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}merged} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{merge}\PYG{p}{(} \PYG{n}{df\PYGZus{}players}\PYG{p}{,} \PYG{n}{df\PYGZus{}plays}\PYG{p}{,}
+    \PYG{n}{left\PYGZus{}on}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Player}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{right\PYGZus{}on}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Receiver}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{how}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{inner}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+Notice that we specifically say that we want the stats for the player who was the receiver in the play, by asking the merge to happen using the Player column from the left dataset and the Receiver column from the right dataset.
+
+This kind of merge will not introduce any new missing values, because if a row didn’t exist in the left or right dataset, it was not included in the result.  That’s the definition of an inner join, and that’s why we chose to use that method in this case.
+
+
+\subsection{When I want to keep all the rows}
+\label{\detokenize{chapter-12-concat-and-merge:when-i-want-to-keep-all-the-rows}}
+An inner join is not appropriate for all merging situations.  Consider a different example.
+
+Let’s imagine that two Bentley professors found out they had done research on some of the same firms, and wanted to share data.  Let’s say Professor Adams had investigated the executives at a set of firms, and had information about those roles, while Professor Cordova had information about the marketing investments of a similar set of firms.
+
+When putting their data together, they don’t yet know what questions they’re going to ask; they’ll probably start with some exploratory data analysis.  So they don’t want to throw away any of their data yet.
+
+If they used an inner join, then they’d keep only the firms that appear in both datasets; that’s not what they want.  A left or right join would also discard some firms.  But they want to keep them all.  This is called an \sphinxstyleemphasis{outer join,} and it’s shown in the illustration below.
+
+\sphinxincludegraphics{{merge-of-firm-data}.png}
+
+The “Firm” column in the merged dataset will contain each name only once, and the row will be of one of three types.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+If it was in both datasets, then the row contains data in every column (as long as the original datasets did).
+
+\item {} 
+If it was in the left dataset, then the row contains data about executives, with missing values for marketing.
+
+\item {} 
+If it was in the right dataset, then the row contains data about marketing, with missing values for executives.
+
+\end{enumerate}
+
+(Obviously, if the firm was in neither dataset, it doesn’t show up in the merge.)
+
+The code is the same as all the code we’ve seen up to this point, but with \sphinxcode{\sphinxupquote{how='outer'}}.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}merged} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{merge}\PYG{p}{(} \PYG{n}{df\PYGZus{}execs}\PYG{p}{,} \PYG{n}{df\PYGZus{}marketing}\PYG{p}{,} \PYG{n}{on}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Firm}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{how}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{outer}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\subsection{Ensuring a unique ID appears in both datasets}
+\label{\detokenize{chapter-12-concat-and-merge:ensuring-a-unique-id-appears-in-both-datasets}}
+Ensuring that the datasets you want to merge each have a column that will match perfectly with the other dataset is an essential step before merging.  Sometimes that step is extremely easy and sometimes it is very challenging.  In the examples above, we assumed that the datasets already had columns that would match up perfectly.
+
+And that’s not always an unrealistic assumption.  For instance, when we merged the NPR voting records from 2016 into the home mortgage dataset in class, we merged on the two\sphinxhyphen{}letter abbreviation for each state.  This standard set of abbreviations was established many years ago and is used consistently everywhere U.S. states are mentioned, so it was reliable and required no work on our part.
+
+But let’s consider some more complex cases, so you’re ready for them when you encounter them.
+
+
+\subsubsection{Merging on multiple columns}
+\label{\detokenize{chapter-12-concat-and-merge:merging-on-multiple-columns}}
+If you don’t have a single column that works as a unique ID, but you have a set of columns that togther form a unique ID in the same way in each dataset, pandas supports merging on multiple columns.  For instance, if your datasets each have columns for first and last names of the people in an organization, and you’re confident that no names repeat (e.g., only one John Smith, only one Erin Jones, etc.), then you can tell pandas to use more than one column to identify rows when merging.  Just supply the list of column names when merging.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}merged} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{merge}\PYG{p}{(} \PYG{n}{df\PYGZus{}members}\PYG{p}{,} \PYG{n}{df\PYGZus{}activities}\PYG{p}{,}
+    \PYG{n}{left\PYGZus{}on}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{First Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Last Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,}
+    \PYG{n}{right\PYGZus{}on}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Given name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Surname}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\subsubsection{Changing the format of a column}
+\label{\detokenize{chapter-12-concat-and-merge:changing-the-format-of-a-column}}
+When you plan to merge two datasets, but no column is appropriate for the match, sometimes a quick computation of a new column will do the trick.
+
+\sphinxstylestrong{Example:}  If you were merging a dataset of customers using their phone numbers, perhaps dataset A contains just the numeric values (e.g., 17818913171) and dataset B contains the phone numbers formatted for human readability (e.g., +1 (781) 891\sphinxhyphen{}3171).  You can create a new column in dataset B that removes all the spaces, plusses, minuses, and parentheses from the phone numbers, so that they’re ready to match with dataset A.
+
+
+\subsubsection{Joining multiple columns into one}
+\label{\detokenize{chapter-12-concat-and-merge:joining-multiple-columns-into-one}}
+It may also be possible to compute an appropriate column for merging by combining more than one column together.
+
+\sphinxstylestrong{Example:}  Let’s say you were merging two datasets about albums released by recording artists.  The artists have a unique ID in your datasets, but the albums don’t.  If you know that no artist released more than one album in the same month, you could combine together the artist’s unique ID with the month and year of the album’s release to form a unique ID for the album.  E.g., if The Beatles had ID 2789045 and you’re considering the Sgt. Pepper album (May 1967), then you would use the code 2789045\sphinxhyphen{}May\sphinxhyphen{}1967 for that album.  You could compute such a code for each row in each DataFrame.
+
+
+\subsubsection{What about unstandardized text?}
+\label{\detokenize{chapter-12-concat-and-merge:what-about-unstandardized-text}}
+This is more or less the hardest scenario.  For instance, in Fall 2019, when my students wanted to merge the government’s comprehensive database of universities with the climate commitments of the schools who were working with our nonprofit client, our best option was to merge on the institution’s name.  This is problematic due to variations in naming and spelling.  For instance, what if one dataset writes Bentley University and the other writes Bentley Univ.?  Or what if one dataset writes University of North Carolina at Chapel Hill and the other writes UNC Chapel Hill?  How is a computer to know how to match these up?  (That project actually involved merging several datasets about universities, and this same problem arose more than once!)
+
+The short answer is that the computer will not figure this out, because \sphinxcode{\sphinxupquote{pd.merge()}} only matches on exact equality of IDs, and so you as the data scientist are in charge of somehow creating columns of unique IDs in both datasets that will match up perfectly.  This may require learning something about that domain.  In Fall 2019, my students and I spent time googling various schools whose names didn’t seem to appear in the government’s dataset to figure out why!
+
+When you’re stuck trying to get two similar\sphinxhyphen{}but\sphinxhyphen{}not\sphinxhyphen{}the\sphinxhyphen{}same columns of text to try to match perfectly, I suggest the following method.  Whether this method is quick and easy or long and difficult varies significantly from one problem to the next.  But the outline is the same.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Figure out which dataset is to be the definitive one; this is typically the larger dataset.  (In the university example, this was the comprehensive government dataset.)
+
+\item {} 
+Figure out the column in each dataset that is \sphinxstyleemphasis{closest} to being useful as a unique ID.  (In the university example, this was the university name in each dataset, which was written the same in both datasets for many schools, but definitely not all.)
+
+\item {} 
+Add a new column to the smaller dataset that contains the correct unique ID \sphinxstyleemphasis{from the other, larger dataset} that it should match.  (In the university example, this means labeling each row in the nonprofit’s dataset with that school’s name as it appears in the government’s dataset.)
+
+\item {} 
+Run \sphinxcode{\sphinxupquote{pd.merge()}} and have it match the unique ID column in the larger dataset with this newly created column in the smaller dataset, which is now a perfect match.
+
+\end{enumerate}
+
+Notice that steps 1, 2, and 4 are quick and easy, but step 3 is where problems may or may not arise.  Depending on how well the chosen columns match in the two datasets, step 3 might take a short time or a long time.
+
+
+\subsubsection{Example}
+\label{\detokenize{chapter-12-concat-and-merge:example}}
+Let’s actually try to merge two datasets of university data.  I will load here the comprehensive university dataset I mentioned, originally downloaded from \sphinxhref{https://data.world/kitedwards08/us-university-survey-2014}{here}, as well as a US News university rankings dataset, originally downloaded from \sphinxhref{https://data.world/education/university-rankings-2017}{here}.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}big} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{read\PYGZus{}csv}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZus{}static/Colleges\PYGZus{}and\PYGZus{}Universities.csv}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\PYG{n}{df\PYGZus{}big}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+            X          Y   FID  IPEDSID  \PYGZbs{}
+0  \PYGZhy{}92.260490  34.759308  7001   107840   
+1 \PYGZhy{}121.289431  38.713353  7002   112181   
+2 \PYGZhy{}118.287070  34.101481  7003   116660   
+3 \PYGZhy{}121.652662  36.700631  7004   125310   
+4  \PYGZhy{}71.070737  42.369930  7005   164368   
+
+                                       NAME                 ADDRESS  \PYGZbs{}
+0                           Shorter College           604 Locust St   
+1             Citrus Heights Beauty College          7518 Baird Way   
+2  Joe Blasco Makeup Artist Training Center   1670 Hillhurst Avenue   
+3                  Waynes College of Beauty  1271 North Main Street   
+4        Hult International Business School      1 Education Street   
+
+        ADDRESS2            CITY STATE    ZIP  ...          ALIAS SIZE\PYGZus{}SET  \PYGZbs{}
+0  NOT AVAILABLE   N Little Rock    AR  72114  ...  NOT AVAILABLE       \PYGZhy{}3   
+1  NOT AVAILABLE  Citris Heights    CA  95610  ...  NOT AVAILABLE       \PYGZhy{}3   
+2  NOT AVAILABLE     Los Angeles    CA  90027  ...  NOT AVAILABLE       \PYGZhy{}3   
+3  NOT AVAILABLE         Salinas    CA  93906  ...  NOT AVAILABLE       \PYGZhy{}3   
+4  NOT AVAILABLE       Cambridge    MA  02141  ...  NOT AVAILABLE       \PYGZhy{}3   
+
+   INST\PYGZus{}SIZE PT\PYGZus{}ENROLL  FT\PYGZus{}ENROLL TOT\PYGZus{}ENROLL  HOUSING DORM\PYGZus{}CAP  TOT\PYGZus{}EMPLOY  \PYGZbs{}
+0          1        24         28         52        2        0          18   
+1          1         6         24         30        2        0           9   
+2          1         0         24         24        2        0          11   
+3          1        18         16         34        2        0           9   
+4          2         0       2243       2243        2        0         143   
+
+      SHELTER\PYGZus{}ID  
+0  NOT AVAILABLE  
+1  NOT AVAILABLE  
+2  NOT AVAILABLE  
+3  NOT AVAILABLE  
+4  NOT AVAILABLE  
+
+[5 rows x 46 columns]
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}rank} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{read\PYGZus{}csv}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZus{}static/National Universities Rankings.csv}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{encoding}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{latin}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+                    Name       Location  Rank  \PYGZbs{}
+0   Princeton University  Princeton, NJ     1   
+1     Harvard University  Cambridge, MA     2   
+2  University of Chicago    Chicago, IL     3   
+3        Yale University  New Haven, CT     3   
+4    Columbia University   New York, NY     5   
+
+                                         Description Tuition and fees  \PYGZbs{}
+0  Princeton, the fourth\PYGZhy{}oldest college in the Un...         \PYGZdl{}45,320    
+1  Harvard is located in Cambridge, Massachusetts...         \PYGZdl{}47,074    
+2  The University of Chicago, situated in Chicago...         \PYGZdl{}52,491    
+3  Yale University, located in New Haven, Connect...         \PYGZdl{}49,480    
+4  Columbia University, located in Manhattan\PYGZsq{}s Mo...         \PYGZdl{}55,056    
+
+  In\PYGZhy{}state Undergrad Enrollment  
+0      NaN                5,402  
+1      NaN                6,699  
+2      NaN                5,844  
+3      NaN                5,532  
+4      NaN                6,102  
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{len}\PYG{p}{(} \PYG{n}{df\PYGZus{}big} \PYG{p}{)}\PYG{p}{,} \PYG{n+nb}{len}\PYG{p}{(} \PYG{n}{df\PYGZus{}rank} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+(7735, 231)
+\end{sphinxVerbatim}
+
+\sphinxstylestrong{Step 1.} Figure out which dataset is to be the definitive one.  Clearly, the comprehensive dataset should be the definitive one, and the rankings merged into it.
+
+\sphinxstylestrong{Step 2.} Figure out the closest columns we have to making a match.  The only columns we could have a hope of using to uniquely identify these schools are their names.  No other column in the ranking dataset could possibly be a unique ID that would also be in the other dataset.
+
+\sphinxstylestrong{Step 3.} Add a new column to the ranking dataset that contains which school name \sphinxstyleemphasis{from the big dataset} it should match with.  This is the tricky part.
+
+Let’s just get a sense of how many of the 231 rows in the ranking dataset have an exact match in the big dataset.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{has\PYGZus{}exact\PYGZus{}match} \PYG{p}{(} \PYG{n}{name\PYGZus{}from\PYGZus{}rank\PYGZus{}df} \PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return} \PYG{n}{name\PYGZus{}from\PYGZus{}rank\PYGZus{}df} \PYG{o+ow}{in} \PYG{n+nb}{list}\PYG{p}{(} \PYG{n}{df\PYGZus{}big}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}
+
+\PYG{n+nb}{sum}\PYG{p}{(} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(} \PYG{n}{has\PYGZus{}exact\PYGZus{}match} \PYG{p}{)} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+141
+\end{sphinxVerbatim}
+
+Thus 90 schools do \sphinxstyleemphasis{not} have an exact match.  Those are the 90 we need to solve.  It would be tedious to match them up by hand, because there are 90.  So we will use a built\sphinxhyphen{}in Python text module to try to do some \sphinxstyleemphasis{approximate} string matching for us.  The Python module \sphinxcode{\sphinxupquote{difflib}} has a function called \sphinxcode{\sphinxupquote{get\_close\_matches()}} that will take a piece of text and a list of options, and give you the closest matches.  Here’s an example.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{difflib} \PYG{k+kn}{import} \PYG{n}{get\PYGZus{}close\PYGZus{}matches}
+\PYG{n}{get\PYGZus{}close\PYGZus{}matches}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Python is cool}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{p}{[} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{this is not close}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{also not close}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+      \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Python is cruel}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Nathan is cool}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{]} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+[\PYGZsq{}Python is cruel\PYGZsq{}, \PYGZsq{}Nathan is cool\PYGZsq{}]
+\end{sphinxVerbatim}
+
+Note that it doesn’t always find a good guess, if there isn’t one.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{get\PYGZus{}close\PYGZus{}matches}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{pork}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{p}{[} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{salad}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{lollipops}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{soda}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{]} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+[]
+\end{sphinxVerbatim}
+
+Let’s use \sphinxcode{\sphinxupquote{get\_close\_matches()}} to create a function that will match up university names across the two datasets if they’re just off by a small amount.  This could automate some of the matching we’d otherwise have to do by hand for those 90 schools that didn’t match exactly.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} First, make a list of all names in the big dataset}
+\PYG{n}{names\PYGZus{}from\PYGZus{}df\PYGZus{}big} \PYG{o}{=} \PYG{n+nb}{list}\PYG{p}{(} \PYG{n}{df\PYGZus{}big}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Now write a function that searches that list}
+\PYG{k}{def} \PYG{n+nf}{get\PYGZus{}closest\PYGZus{}name\PYGZus{}from\PYGZus{}df\PYGZus{}big} \PYG{p}{(} \PYG{n}{name\PYGZus{}from\PYGZus{}df\PYGZus{}rank} \PYG{p}{)}\PYG{p}{:}
+
+    \PYG{c+c1}{\PYGZsh{} If there\PYGZsq{}s an exact match, we\PYGZsq{}re already done.}
+    \PYG{k}{if} \PYG{n}{name\PYGZus{}from\PYGZus{}df\PYGZus{}rank} \PYG{o+ow}{in} \PYG{n}{names\PYGZus{}from\PYGZus{}df\PYGZus{}big}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n}{name\PYGZus{}from\PYGZus{}df\PYGZus{}rank}
+    
+    \PYG{c+c1}{\PYGZsh{} Get the closest matches, if any.}
+    \PYG{n}{close\PYGZus{}matches} \PYG{o}{=} \PYG{n}{get\PYGZus{}close\PYGZus{}matches}\PYG{p}{(} \PYG{n}{name\PYGZus{}from\PYGZus{}df\PYGZus{}rank}\PYG{p}{,} \PYG{n}{names\PYGZus{}from\PYGZus{}df\PYGZus{}big} \PYG{p}{)}
+    
+    \PYG{c+c1}{\PYGZsh{} If there weren\PYGZsq{}t any, return None}
+    \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(} \PYG{n}{close\PYGZus{}matches} \PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{k}{return} \PYG{k+kc}{None}
+    
+    \PYG{c+c1}{\PYGZsh{} Otherwise, return the first one}
+    \PYG{k}{return} \PYG{n}{close\PYGZus{}matches}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+
+\PYG{c+c1}{\PYGZsh{} Test it}
+\PYG{n}{get\PYGZus{}closest\PYGZus{}name\PYGZus{}from\PYGZus{}df\PYGZus{}big}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Bentley Universal}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZsq{}Bentley University\PYGZsq{}
+\end{sphinxVerbatim}
+
+Let’s apply that function to every row in the small dataset.  Note that \sphinxcode{\sphinxupquote{get\_close\_matches()}} can be a bit slow, so the following code actually takes about 15 seconds to complete executing.  (It would be even slower if we didn’t have the first \sphinxcode{\sphinxupquote{if}} statement in \sphinxcode{\sphinxupquote{get\_closest\_name\_from\_df\_big()}}, which skips \sphinxcode{\sphinxupquote{get\_close\_matches()}} when it’s not needed.)
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(} \PYG{n}{get\PYGZus{}closest\PYGZus{}name\PYGZus{}from\PYGZus{}df\PYGZus{}big} \PYG{p}{)}
+\PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+                    Name       Location  Rank  \PYGZbs{}
+0   Princeton University  Princeton, NJ     1   
+1     Harvard University  Cambridge, MA     2   
+2  University of Chicago    Chicago, IL     3   
+3        Yale University  New Haven, CT     3   
+4    Columbia University   New York, NY     5   
+
+                                         Description Tuition and fees  \PYGZbs{}
+0  Princeton, the fourth\PYGZhy{}oldest college in the Un...         \PYGZdl{}45,320    
+1  Harvard is located in Cambridge, Massachusetts...         \PYGZdl{}47,074    
+2  The University of Chicago, situated in Chicago...         \PYGZdl{}52,491    
+3  Yale University, located in New Haven, Connect...         \PYGZdl{}49,480    
+4  Columbia University, located in Manhattan\PYGZsq{}s Mo...         \PYGZdl{}55,056    
+
+  In\PYGZhy{}state Undergrad Enrollment         Name in df\PYGZus{}big  
+0      NaN                5,402   Princeton University  
+1      NaN                6,699     Harvard University  
+2      NaN                5,844  University of Chicago  
+3      NaN                5,532        Yale University  
+4      NaN                6,102     Coleman University  
+\end{sphinxVerbatim}
+
+The results are correct for the first four schools, which were exact matches, but not so good for Columbia.  The only way to check to see if this worked out well is to do a manual check, because only a human is going to be able to assess whether Columbia University and Coleman University are the same; Python did its best.
+
+We can check by taking a glance over the following output, and noting which rows are wrong.  I don’t include the full output here of all 90 discrepancies, just to save space, but you can use \sphinxcode{\sphinxupquote{pd.set\_option( 'display.max\_rows', None )}} to see them all.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{where\PYGZus{}it\PYGZus{}made\PYGZus{}guesses} \PYG{o}{=} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{!=} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{]}
+\PYG{n}{where\PYGZus{}it\PYGZus{}made\PYGZus{}guesses}\PYG{p}{[}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{]}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+                                         Name  \PYGZbs{}
+4                         Columbia University   
+18         Washington University in St. Louis   
+21         University of California\PYGZhy{}\PYGZhy{}Berkeley   
+24      University of California\PYGZhy{}\PYGZhy{}Los Angeles   
+25                     University of Virginia   
+..                                        ...   
+222               New Mexico State University   
+225       University of Massachusetts\PYGZhy{}\PYGZhy{}Boston   
+226    University of Massachusetts\PYGZhy{}\PYGZhy{}Dartmouth   
+227         University of Missouri\PYGZhy{}\PYGZhy{}St. Louis   
+228  University of North Carolina\PYGZhy{}\PYGZhy{}Greensboro   
+
+                                 Name in df\PYGZus{}big  
+4                            Coleman University  
+18            Washington University in St Louis  
+21            University of California\PYGZhy{}Berkeley  
+24         University of California\PYGZhy{}Los Angeles  
+25                        University of Georgia  
+..                                          ...  
+222          New Mexico State University\PYGZhy{}Grants  
+225          University of Massachusetts\PYGZhy{}Boston  
+226       University of Massachusetts\PYGZhy{}Dartmouth  
+227             University of Missouri\PYGZhy{}St Louis  
+228  University of North Carolina at Greensboro  
+
+[90 rows x 2 columns]
+\end{sphinxVerbatim}
+
+We see that in many cases, it did a good job, such as in rows 18, 21, 24, and 225 through 228.  We know that rows 4 and 25 are wrong, but is row 222 wrong?  That all depends on whether Grants is the location of the main campus for New Mexico State University.  Now you see why my students and I ended up on Google!
+
+After inspecting the full list of 90 discrepancies, I found 30 that I still needed to fix by hand.  So the computer had done two\sphinxhyphen{}thirds of its guessing job right, saving me some time.  But how do I manually correct the 30 mistakes I found?  For instance, how do I correct row 4, which clearly isn’t right?  I need to know the exact name of Columbia University in \sphinxcode{\sphinxupquote{df\_big}}.
+
+Let’s do a search.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Show me all names containing Columbia...}
+\PYG{n}{df\PYGZus{}big}\PYG{p}{[}\PYG{n}{df\PYGZus{}big}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{str}\PYG{o}{.}\PYG{n}{contains}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Columbia}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}\PYG{p}{]}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+60                      Paul Mitchell The School\PYGZhy{}Columbia
+439                    American Career Institute√Columbia
+619                                      Columbia College
+668                             Virginia College\PYGZhy{}Columbia
+750                          Columbia Southern University
+872                              Centura College\PYGZhy{}Columbia
+1366                University of Phoenix\PYGZhy{}Columbia Campus
+1438                     ITT Technical Institute\PYGZhy{}Columbia
+1610                      Southeastern Institute\PYGZhy{}Columbia
+1907        Kenneth Shuler School of Cosmetology\PYGZhy{}Columbia
+1975                        Columbia Theological Seminary
+2059                    Regency Beauty Institute\PYGZhy{}Columbia
+2099                    Remington College\PYGZhy{}Columbia Campus
+2295                                     Columbia College
+2583                                     Columbia College
+2704                          Columbia College of Nursing
+2958                    Columbia\PYGZhy{}Greene Community College
+3346                               Lower Columbia College
+3348                               Columbia Basin College
+3404                                     Columbia College
+3622                     Columbia Gorge Community College
+3936                     Columbia State Community College
+4042              Teachers College at Columbia University
+4356        Columbiana County Career and Technical Center
+4385                 Columbia Centro Universitario\PYGZhy{}Caguas
+4509                            South University\PYGZhy{}Columbia
+4666    University of the District of Columbia David A...
+4719                    Columbia International University
+4723    Kenneth Shuler School of Cosmetology and Nails...
+4728                University of South Carolina\PYGZhy{}Columbia
+4974               Lincoln College of Technology\PYGZhy{}Columbia
+5027                                     Columbia College
+5099                          Columbia Area Career Center
+5371                             Columbia College\PYGZhy{}Chicago
+5581               University of the District of Columbia
+5664                           Columbia College Hollywood
+5775              Strayer University\PYGZhy{}District of Columbia
+6369                      University of Missouri\PYGZhy{}Columbia
+6661          Columbia University in the City of New York
+7589                  Columbia Centro Universitario\PYGZhy{}Yauco
+Name: NAME, dtype: object
+\end{sphinxVerbatim}
+
+Holy cow!  Let’s try to narrow our search a bit…
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Just the rows with Columbia and University...}
+\PYG{n}{df\PYGZus{}big}\PYG{p}{[}\PYG{n}{df\PYGZus{}big}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{str}\PYG{o}{.}\PYG{n}{contains}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Columbia}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+     \PYG{o}{\PYGZam{}} \PYG{n}{df\PYGZus{}big}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{str}\PYG{o}{.}\PYG{n}{contains}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{University}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}\PYG{p}{]}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+750                          Columbia Southern University
+1366                University of Phoenix\PYGZhy{}Columbia Campus
+4042              Teachers College at Columbia University
+4509                            South University\PYGZhy{}Columbia
+4666    University of the District of Columbia David A...
+4719                    Columbia International University
+4728                University of South Carolina\PYGZhy{}Columbia
+5581               University of the District of Columbia
+5775              Strayer University\PYGZhy{}District of Columbia
+6369                      University of Missouri\PYGZhy{}Columbia
+6661          Columbia University in the City of New York
+Name: NAME, dtype: object
+\end{sphinxVerbatim}
+
+Aha, Columbia University in the City of New York was so long of a phrase that \sphinxcode{\sphinxupquote{get\_close\_matches()}} did not think it was “close” to Columbia University.  So now I’ve found that the entry for row 4 in \sphinxcode{\sphinxupquote{df\_rank{[}'Name in big\_df'{]}}} should be Columbia University in the City of New York.  I can simply tell Python to change it.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Columbia University in the City of New York}\PYG{l+s+s1}{\PYGZsq{}}
+\end{sphinxVerbatim}
+
+When I’m done manually investigating the 30 schools that had to be fixed by hand, I will have 30 lines of code that look just like the one above, but for different schools.  Here’s a sample.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Columbia University in the City of New York}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+m+mi}{34}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Georgia Institute of Technology\PYGZhy{}Main Campus}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+m+mi}{41}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Tulane University of Louisiana}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+m+mi}{52}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Pennsylvania State University\PYGZhy{}Main Campus}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{c+c1}{\PYGZsh{} and so on, for a total of 30 changes}
+\end{sphinxVerbatim}
+
+But if we’re trying to follow DRY principles, we notice that there’s definitely a lot of repeated code here.  We’re copying and pasting the \sphinxcode{\sphinxupquote{df\_rank.loc{[}...,'Name in big\_df'{]} = '...'}} part each time.  We could simplify this by creating a Python dictionary with just our corrections.  Here I include all 30 correctsion as they would be if we had carefully investigated each.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{corrections} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+    \PYG{l+m+mi}{4}   \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Columbia University in the City of New York}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{34}  \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Georgia Institute of Technology\PYGZhy{}Main Campus}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{41}  \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Tulane University of Louisiana}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{52}  \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Pennsylvania State University\PYGZhy{}Main Campus}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{54}  \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{University of Washington\PYGZhy{}Seattle Campus}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{60}  \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Purdue University\PYGZhy{}Main Campus}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{68}  \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{University of Pittsburgh\PYGZhy{}Pittsburgh Campus}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{77}  \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Virginia Polytechnic Institute and State University}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{85}  \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{SUNY at Binghamton}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{109} \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{University of South Carolina\PYGZhy{}Columbia}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{112} \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{University of Missouri\PYGZhy{}System Office}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{114} \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{University of Oklahoma Norman Campus}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{130} \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Colorado State University\PYGZhy{}Fort Collins}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{135} \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Louisiana State University\PYGZhy{}System Office}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{146} \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Ohio University\PYGZhy{}Main Campus}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{149} \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{SUNY at Albany}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{153} \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Oklahoma State University\PYGZhy{}Oklahoma City}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{162} \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{University of South Florida\PYGZhy{}Main Campus}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{181} \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{University of New Mexico\PYGZhy{}Main Campus}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{186} \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Widener University\PYGZhy{}Main Campus}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{187} \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Kent State University at Kent}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{189} \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Pace University\PYGZhy{}New York}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{193} \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Bowling Green State University\PYGZhy{}Main Campus}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{222} \PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{New Mexico State University\PYGZhy{}Main Campus}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{for} \PYG{n}{row\PYGZus{}index}\PYG{p}{,} \PYG{n}{fixed\PYGZus{}name} \PYG{o+ow}{in} \PYG{n}{corrections}\PYG{o}{.}\PYG{n}{items}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{row\PYGZus{}index}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{fixed\PYGZus{}name}
+    
+\PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+                    Name       Location  Rank  \PYGZbs{}
+0   Princeton University  Princeton, NJ     1   
+1     Harvard University  Cambridge, MA     2   
+2  University of Chicago    Chicago, IL     3   
+3        Yale University  New Haven, CT     3   
+4    Columbia University   New York, NY     5   
+
+                                         Description Tuition and fees  \PYGZbs{}
+0  Princeton, the fourth\PYGZhy{}oldest college in the Un...         \PYGZdl{}45,320    
+1  Harvard is located in Cambridge, Massachusetts...         \PYGZdl{}47,074    
+2  The University of Chicago, situated in Chicago...         \PYGZdl{}52,491    
+3  Yale University, located in New Haven, Connect...         \PYGZdl{}49,480    
+4  Columbia University, located in Manhattan\PYGZsq{}s Mo...         \PYGZdl{}55,056    
+
+  In\PYGZhy{}state Undergrad Enrollment                               Name in df\PYGZus{}big  
+0      NaN                5,402                         Princeton University  
+1      NaN                6,699                           Harvard University  
+2      NaN                5,844                        University of Chicago  
+3      NaN                5,532                              Yale University  
+4      NaN                6,102  Columbia University in the City of New York  
+\end{sphinxVerbatim}
+
+\sphinxstylestrong{Step 4.} And now that all corrections have been made, we can do the merge with confidence.  We take care to merge the main dataset’s \sphinxcode{\sphinxupquote{"NAME"}} column with the smaller dataset’s \sphinxcode{\sphinxupquote{"Name in df\_big"}} column.  This merge will be a left join, because we do not want to discard a school just because it wasn’t in US News’s rankings.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}merged} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{merge}\PYG{p}{(} \PYG{n}{df\PYGZus{}big}\PYG{p}{,} \PYG{n}{df\PYGZus{}rank}\PYG{p}{,} \PYG{n}{left\PYGZus{}on}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{right\PYGZus{}on}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{how}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{left}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\PYG{n}{df\PYGZus{}merged}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+            X          Y   FID  IPEDSID  \PYGZbs{}
+0  \PYGZhy{}92.260490  34.759308  7001   107840   
+1 \PYGZhy{}121.289431  38.713353  7002   112181   
+2 \PYGZhy{}118.287070  34.101481  7003   116660   
+3 \PYGZhy{}121.652662  36.700631  7004   125310   
+4  \PYGZhy{}71.070737  42.369930  7005   164368   
+
+                                       NAME                 ADDRESS  \PYGZbs{}
+0                           Shorter College           604 Locust St   
+1             Citrus Heights Beauty College          7518 Baird Way   
+2  Joe Blasco Makeup Artist Training Center   1670 Hillhurst Avenue   
+3                  Waynes College of Beauty  1271 North Main Street   
+4        Hult International Business School      1 Education Street   
+
+        ADDRESS2            CITY STATE    ZIP  ... TOT\PYGZus{}EMPLOY     SHELTER\PYGZus{}ID  \PYGZbs{}
+0  NOT AVAILABLE   N Little Rock    AR  72114  ...         18  NOT AVAILABLE   
+1  NOT AVAILABLE  Citris Heights    CA  95610  ...          9  NOT AVAILABLE   
+2  NOT AVAILABLE     Los Angeles    CA  90027  ...         11  NOT AVAILABLE   
+3  NOT AVAILABLE         Salinas    CA  93906  ...          9  NOT AVAILABLE   
+4  NOT AVAILABLE       Cambridge    MA  02141  ...        143  NOT AVAILABLE   
+
+   Name Location  Rank Description  Tuition and fees In\PYGZhy{}state  \PYGZbs{}
+0   NaN      NaN   NaN         NaN               NaN      NaN   
+1   NaN      NaN   NaN         NaN               NaN      NaN   
+2   NaN      NaN   NaN         NaN               NaN      NaN   
+3   NaN      NaN   NaN         NaN               NaN      NaN   
+4   NaN      NaN   NaN         NaN               NaN      NaN   
+
+   Undergrad Enrollment  Name in df\PYGZus{}big  
+0                   NaN             NaN  
+1                   NaN             NaN  
+2                   NaN             NaN  
+3                   NaN             NaN  
+4                   NaN             NaN  
+
+[5 rows x 54 columns]
+\end{sphinxVerbatim}
+
+Now we have one large dataset containing both the generic data and the ranking data.  Although we see all missing values for ranking columns above, this is just because the first five schools in the dataset didn’t happen to be ranked by US News.  This is not surprising; there were over 7700 schools in the dataset and only 231 were ranked by US News.  But we can see that the merge did go correctly if we inspect a row that had ranking data.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}merged}\PYG{p}{[}\PYG{n}{df\PYGZus{}merged}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Harvard University}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+              X          Y  FID  IPEDSID                NAME  \PYGZbs{}
+5822 \PYGZhy{}71.118234  42.374172   87   166027  Harvard University   
+
+                 ADDRESS       ADDRESS2       CITY STATE    ZIP  ...  \PYGZbs{}
+5822  Massachusetts Hall  NOT AVAILABLE  Cambridge    MA  02138  ...   
+
+     TOT\PYGZus{}EMPLOY     SHELTER\PYGZus{}ID                Name       Location  Rank  \PYGZbs{}
+5822      17141  NOT AVAILABLE  Harvard University  Cambridge, MA   2.0   
+
+                                            Description  Tuition and fees  \PYGZbs{}
+5822  Harvard is located in Cambridge, Massachusetts...          \PYGZdl{}47,074    
+
+     In\PYGZhy{}state  Undergrad Enrollment      Name in df\PYGZus{}big  
+5822      NaN                 6,699  Harvard University  
+
+[1 rows x 54 columns]
+\end{sphinxVerbatim}
+
+This is one of the most challenging merges you might have to do, but it’s good to be prepared for the worst case scenario!
 
 
 \section{Miscellaneous Munging Methods (ETL)}
@@ -8087,7 +8844,7 @@ The same code works for any random variable, not just \sphinxcode{\sphinxupquote
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0, 1, 0, 1, 0, 0, 0, 0, 0, 0])
+array([0, 0, 0, 0, 0, 0, 1, 0, 0, 0])
 \end{sphinxVerbatim}
 
 The same code works for any random variable, not just \sphinxcode{\sphinxupquote{b1}}.
@@ -8177,9 +8934,9 @@ The same code works for any continuous random variable, not just \sphinxcode{\sp
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([ 97.9895976 , 103.57790101, 102.14852225, 104.84689142,
-        99.02659809, 107.33275204,  95.22139243, 100.98510897,
-       105.20215099, 100.80143421])
+array([ 98.03788691, 101.70140754,  93.88321357, 105.84206551,
+       106.45051781, 101.347993  ,  96.70407547,  93.56894671,
+        98.53091338, 104.68710024])
 \end{sphinxVerbatim}
 
 
