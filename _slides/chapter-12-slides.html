@@ -13206,6 +13206,173 @@ a.anchor-link {
 
 </div>
 </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Concatenation-of-two-datasets-is-vertical">Concatenation of two datasets is <em>vertical</em><a class="anchor-link" href="#Concatenation-of-two-datasets-is-vertical">&#182;</a></h2><p><img src="../_images/concat-of-stock-data.png" alt="Illustration of stacking two tables of stock data vertically into one larger table"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Code-for-concatenation">Code for concatenation<a class="anchor-link" href="#Code-for-concatenation">&#182;</a></h3><div class="highlight"><pre><span></span><span class="n">df_jan</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;_static/regi-prices-jan-2020.csv&#39;</span> <span class="p">)</span>
+<span class="n">df_feb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;_static/regi-prices-feb-2020.csv&#39;</span> <span class="p">)</span>
+
+<span class="n">df_2mo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span> <span class="p">[</span> <span class="n">df_jan</span><span class="p">,</span> <span class="n">df_feb</span> <span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
+<span class="n">df_2mo</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Merging-of-two-datasets-is-horizontal">Merging of two datasets is <em>horizontal</em><a class="anchor-link" href="#Merging-of-two-datasets-is-horizontal">&#182;</a></h2><h3 id="Example-1:-Same-IDs-in-both-datasets,-just-match-up-rows">Example 1: Same IDs in both datasets, just match up rows<a class="anchor-link" href="#Example-1:-Same-IDs-in-both-datasets,-just-match-up-rows">&#182;</a></h3><p><img src="../_images/merge-of-health-data.png" alt="Merging COVID-19 time series data for each country with health care information for each country"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Code-for-a-simple-merge">Code for a simple merge<a class="anchor-link" href="#Code-for-a-simple-merge">&#182;</a></h3><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_cases</span><span class="p">,</span> <span class="n">df_health</span><span class="p">,</span>
+    <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;Country/Region&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Merging-of-two-datasets-is-horizontal">Merging of two datasets is <em>horizontal</em><a class="anchor-link" href="#Merging-of-two-datasets-is-horizontal">&#182;</a></h2><h3 id="Example-2:-Some-rows-in-the-left-table-aren't-in-the-right-table">Example 2: Some rows in the left table aren't in the right table<a class="anchor-link" href="#Example-2:-Some-rows-in-the-left-table-aren't-in-the-right-table">&#182;</a></h3><p><img src="../_images/merge-of-school-data.png" alt="Merging a comprehensive higher education dataset with climate data about a subset of its schools"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Code-for-a-left-join-(merge)">Code for a left join (merge)<a class="anchor-link" href="#Code-for-a-left-join-(merge)">&#182;</a></h3><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_big</span><span class="p">,</span> <span class="n">df_climate</span><span class="p">,</span>
+    <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;fullname&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Merging-of-two-datasets-is-horizontal">Merging of two datasets is <em>horizontal</em><a class="anchor-link" href="#Merging-of-two-datasets-is-horizontal">&#182;</a></h2><h3 id="Example-3:-Keeping-only-observations-appearing-in-both-tables">Example 3: Keeping only observations appearing in both tables<a class="anchor-link" href="#Example-3:-Keeping-only-observations-appearing-in-both-tables">&#182;</a></h3><p><img src="../_images/merge-of-nfl-data.png" alt="Merging NFL player statistics with records of NFL plays"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Code-for-an-inner-join-(merge)">Code for an inner join (merge)<a class="anchor-link" href="#Code-for-an-inner-join-(merge)">&#182;</a></h3><p>An inner join is the default, so you can omit <code>how='inner'</code> in this case.</p>
+<div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_big</span><span class="p">,</span> <span class="n">df_climate</span><span class="p">,</span>
+    <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;fullname&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Merging-of-two-datasets-is-horizontal">Merging of two datasets is <em>horizontal</em><a class="anchor-link" href="#Merging-of-two-datasets-is-horizontal">&#182;</a></h2><h3 id="Example-3:-Keeping-all-observations-appearing-in-either-table">Example 3: Keeping all observations appearing in either table<a class="anchor-link" href="#Example-3:-Keeping-all-observations-appearing-in-either-table">&#182;</a></h3><p><img src="../_images/merge-of-firm-data.png" alt="Merging data about corporate executives with data about marketing spending for a fictitious set of firms"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="For-discussion">For discussion<a class="anchor-link" href="#For-discussion">&#182;</a></h2><p>We will look at four hypothetical situations for merging DataFrames.  In each case, you will answer:</p>
+<ol>
+<li>Should we apply <code>pd.concat()</code> or <code>pd.merge()</code>?</li>
+<li>If the answer to 1. is to apply <code>pd.merge()</code>, then:<ul>
+<li>How should we merge (inner/left/right/outer)?</li>
+<li>On what column(s) should we merge?</li>
+<li>Do we need to manipulate any column(s) first?</li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Concat/Merge-Example-1">Concat/Merge Example 1<a class="anchor-link" href="#Concat/Merge-Example-1">&#182;</a></h3><p>(Thanks to Steven Skiena in <em>The Data Science Design Manual</em> for this example, a real project he did with a graduate student.)</p>
+<p><strong>Dataset 1:</strong>  A large sample of news stories about various publicly traded companies from 2015 to 2020, with story release dates and measurements of the sentiments expressed in those news stories</p>
+<p><strong>Dataset 2:</strong>  Records of the the share prices of the publicly traded companies for the same time period</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Concat/Merge-Example-2">Concat/Merge Example 2<a class="anchor-link" href="#Concat/Merge-Example-2">&#182;</a></h3><p><strong>Dataset 1:</strong>  Records of all NCAA Division I hockey games for the 2018 season</p>
+<p><strong>Dataset 2:</strong>  Records of all NCAA Division III hockey games for the 2018 season</p>
+<p>For example, the record of a game might contain the home and away team names and scores, number of shots on goal and penalties, MVP name, and attendance number.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Concat/Merge-Example-3">Concat/Merge Example 3<a class="anchor-link" href="#Concat/Merge-Example-3">&#182;</a></h3><p><strong>Dataset 1:</strong>  Daily weather summaries for the counties in the state of Tennessee in summer 1995</p>
+<p><strong>Dataset 2:</strong>  Hourly electrical prices for each county in the state of Tennessee in summer 1995</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Concat/Merge-Example-4">Concat/Merge Example 4<a class="anchor-link" href="#Concat/Merge-Example-4">&#182;</a></h3><p><strong>Dataset 1:</strong>  The baseline health information gathered from each subject in a drug's clinical trial before the trial begins, together with the information about whether that subject has been randomly assigned the treatment or the placebo</p>
+<p><strong>Dataset 2:</strong>  The responses measured for each subject during and after the trial with respect to the specific problems the drug is trying to address</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="In-class-Exercise-1-(short)">In-class Exercise 1 (short)<a class="anchor-link" href="#In-class-Exercise-1-(short)">&#182;</a></h3><p>In a previous class, we took two datasets and did a simple merge that involved only one column.</p>
+<ul>
+<li>Dataset 1 was <a href="../_static/practice-project-dataset-1.csv">the sample of home mortgages from 2018</a>.</li>
+<li>Dataset 2 was created by you, extracting 2016 voting data from <a href="https://www.npr.org/2016/11/08/500927768/2016-presidential-election-results-for-each-state">this web page</a>.</li>
+</ul>
+<p>We extracted the percentage of each state who voted for Trump and added that data as a new column in the home mortgage dataset.  We used <code>dict(zip(...))</code> to convert the voting data into a dictionary and <code>df['column'].map()</code> to apply it to the mortgage dataset.</p>
+<p>Redo the same exercise now, but using <code>pd.merge()</code> instead of the tools we used last time.  (Last time, you also had to do some plotting and hypothesis testing.  There is no need to repeat that.  Just update the merging code.)</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="In-class-Exercise-2-(long)">In-class Exercise 2 (long)<a class="anchor-link" href="#In-class-Exercise-2-(long)">&#182;</a></h3><p>In a previous class, we examined a dataset of baseball player salaries.</p>
+<ul>
+<li>Dataset 1 will be a simplified version of that baseball salary dataset, <a href="../_static/baseball-salaries-simplified.csv">available here</a>.</li>
+<li>Dataset 2 will be the statistics for all batters in Major League Baseball from 1988 through 2016, <a href="../_static/player-batting-stats-1988-2016.csv">available here</a>.</li>
+</ul>
+<p>Merge the two datasets on player name, team, and year.  This will require some of the advanced techniques introduced at the end of <a href="../_build/html/chapter-12-concat-and-merge.html">the course notes on merging</a>.</p>
+<p><strong><em>NOTE:</em></strong> This will be complex and annoying.  We may not complete it before the end of class.  Make as much progress as you can, while doing logical/sensible work each step of the way.</p>
+
+</div>
+</div>
 </div></section></section>
 </div>
 </div>

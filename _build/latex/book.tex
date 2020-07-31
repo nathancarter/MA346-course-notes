@@ -64,7 +64,7 @@
 
 
 \title{MA346 Course Notes}
-\date{Jul 30, 2020}
+\date{Jul 31, 2020}
 \release{}
 \author{Nathan Carter}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -3794,12 +3794,12 @@ We will return to vectorization and loops in Chapter 11 of these notes.  For now
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.48351046, 0.7931486 , 0.5715011 , 0.01173361, 0.35938916,
-       0.29211914, 0.9484339 , 0.04290683, 0.75465984, 0.5321916 ,
-       0.57074457, 0.19887913, 0.80067026, 0.51642961, 0.05557349,
-       0.95169282, 0.74548489, 0.70596757, 0.29795386, 0.86801343,
-       0.17192947, 0.41113289, 0.78027498, 0.33374065, 0.04170576,
-       0.88934712, 0.92488607, 0.17760825, 0.48320839, 0.61059111])
+array([0.24355773, 0.55819269, 0.03196094, 0.25834874, 0.56417226,
+       0.47193205, 0.12433524, 0.07871269, 0.06224456, 0.32747152,
+       0.6204256 , 0.27218135, 0.03445631, 0.3649663 , 0.9064852 ,
+       0.16453187, 0.34784681, 0.8098566 , 0.58898225, 0.14514978,
+       0.66395745, 0.84556485, 0.43345791, 0.13545489, 0.95141998,
+       0.33216743, 0.96952007, 0.99104479, 0.88670581, 0.15132557])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3807,9 +3807,9 @@ array([0.48351046, 0.7931486 , 0.5715011 , 0.01173361, 0.35938916,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.48, 0.79, 0.57, 0.01, 0.36, 0.29, 0.95, 0.04, 0.75, 0.53, 0.57,
-       0.2 , 0.8 , 0.52, 0.06, 0.95, 0.75, 0.71, 0.3 , 0.87, 0.17, 0.41,
-       0.78, 0.33, 0.04, 0.89, 0.92, 0.18, 0.48, 0.61])
+array([0.24, 0.56, 0.03, 0.26, 0.56, 0.47, 0.12, 0.08, 0.06, 0.33, 0.62,
+       0.27, 0.03, 0.36, 0.91, 0.16, 0.35, 0.81, 0.59, 0.15, 0.66, 0.85,
+       0.43, 0.14, 0.95, 0.33, 0.97, 0.99, 0.89, 0.15])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3817,12 +3817,12 @@ array([0.48, 0.79, 0.57, 0.01, 0.36, 0.29, 0.95, 0.04, 0.75, 0.53, 0.57,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([1.62175753, 2.21034498, 1.7709234 , 1.01180272, 1.43245415,
-       1.33926256, 2.58166334, 1.04384063, 2.12688792, 1.70265977,
-       1.76958414, 1.22003449, 2.22703313, 1.67603287, 1.0571467 ,
-       2.59009052, 2.10746307, 2.02580584, 1.34709963, 2.3821738 ,
-       1.18759407, 1.5085258 , 2.18207221, 1.396181  , 1.04258766,
-       2.43354032, 2.52158097, 1.19435734, 1.62126773, 1.84151961])
+array([1.27577997, 1.74751135, 1.03247718, 1.29479029, 1.75799202,
+       1.60308845, 1.13239543, 1.08189344, 1.06422258, 1.38745553,
+       1.85971936, 1.31282506, 1.0350568 , 1.44046547, 2.47560596,
+       1.17884113, 1.41601532, 2.24758566, 1.80215334, 1.15621273,
+       1.94246436, 2.32929316, 1.54258243, 1.14505754, 2.58938392,
+       1.39398622, 2.63667873, 2.69404771, 2.42712107, 1.16337536])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3830,14 +3830,12 @@ array([1.62175753, 2.21034498, 1.7709234 , 1.01180272, 1.43245415,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([2.33782360e\PYGZhy{}01, 6.29084703e\PYGZhy{}01, 3.26613511e\PYGZhy{}01, 1.37677636e\PYGZhy{}04,
-       1.29160569e\PYGZhy{}01, 8.53335907e\PYGZhy{}02, 8.99526860e\PYGZhy{}01, 1.84099593e\PYGZhy{}03,
-       5.69511472e\PYGZhy{}01, 2.83227897e\PYGZhy{}01, 3.25749366e\PYGZhy{}01, 3.95529087e\PYGZhy{}02,
-       6.41072872e\PYGZhy{}01, 2.66699544e\PYGZhy{}01, 3.08841278e\PYGZhy{}03, 9.05719230e\PYGZhy{}01,
-       5.55747715e\PYGZhy{}01, 4.98390207e\PYGZhy{}01, 8.87765039e\PYGZhy{}02, 7.53447321e\PYGZhy{}01,
-       2.95597436e\PYGZhy{}02, 1.69030249e\PYGZhy{}01, 6.08829044e\PYGZhy{}01, 1.11382821e\PYGZhy{}01,
-       1.73937030e\PYGZhy{}03, 7.90938294e\PYGZhy{}01, 8.55414248e\PYGZhy{}01, 3.15446919e\PYGZhy{}02,
-       2.33490348e\PYGZhy{}01, 3.72821500e\PYGZhy{}01])
+array([0.05932037, 0.31157908, 0.0010215 , 0.06674407, 0.31829034,
+       0.22271986, 0.01545925, 0.00619569, 0.00387438, 0.1072376 ,
+       0.38492792, 0.07408269, 0.00118724, 0.1332004 , 0.82171541,
+       0.02707074, 0.12099741, 0.65586772, 0.34690009, 0.02106846,
+       0.4408395 , 0.71497992, 0.18788576, 0.01834803, 0.90519997,
+       0.1103352 , 0.93996916, 0.98216977, 0.78624719, 0.02289943])
 \end{sphinxVerbatim}
 
 Notice that this makes it very easy to compute certain mathematical formulas.  For example, when we want to measure the quality of a model, we might compute the RSSE, or Root Sum of Squared Errors, that is, the square root of the sum of the squared differences between each actual data value \(y_i\) and its predicted value \(\hat y_i\).  In math, we write it like this:
@@ -3908,8 +3906,8 @@ In fact, SciPy’s built\sphinxhyphen{}in random number generating procedures le
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([60.63872648, 42.61479043, 86.96856053, 97.82514315, 43.54979222,
-       10.19792138,  5.26262712,  1.47742452, 85.2455934 , 34.64687125])
+array([49.52014193, 86.97008421, 35.03998178, 78.75527891, 78.44551247,
+       84.53471493, 40.3249496 , 87.20026084, 59.39969057, 35.67719475])
 \end{sphinxVerbatim}
 
 Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two arguments and create a specific random variable, then call \sphinxcode{\sphinxupquote{rvs}} on that.
@@ -3920,8 +3918,8 @@ Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two a
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([19.84988349, 35.44816991, 10.61602335, 69.23594159, 32.97412198,
-       10.30645133,  9.07962977, 84.76495434, 97.46304953, 23.80557876])
+array([41.76976597, 59.93639485, 49.5145902 , 17.57837427, 69.42621546,
+       31.25926656, 63.40388507, 25.67505097, 62.93328029, 42.3250886 ])
 \end{sphinxVerbatim}
 
 The same random variable can, of course, be used to create more values later.
@@ -6140,10 +6138,10 @@ Let’s actually try to merge two datasets of university data.  I will load here
 Let’s just get a sense of how many of the 231 rows in the ranking dataset have an exact match in the big dataset, and thus their official names are already in the ranking dataset.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{names\PYGZus{}from\PYGZus{}df\PYGZus{}big} \PYG{o}{=} \PYG{n+nb}{list}\PYG{p}{(} \PYG{n}{df\PYGZus{}big}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}
+\PYG{n}{official\PYGZus{}names} \PYG{o}{=} \PYG{n+nb}{list}\PYG{p}{(} \PYG{n}{df\PYGZus{}big}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}
 
 \PYG{k}{def} \PYG{n+nf}{has\PYGZus{}exact\PYGZus{}match} \PYG{p}{(} \PYG{n}{name\PYGZus{}from\PYGZus{}rank\PYGZus{}df} \PYG{p}{)}\PYG{p}{:}
-    \PYG{k}{return} \PYG{n}{name\PYGZus{}from\PYGZus{}rank\PYGZus{}df} \PYG{o+ow}{in} \PYG{n}{names\PYGZus{}from\PYGZus{}df\PYGZus{}big}
+    \PYG{k}{return} \PYG{n}{name\PYGZus{}from\PYGZus{}rank\PYGZus{}df} \PYG{o+ow}{in} \PYG{n}{official\PYGZus{}names}
 
 \PYG{n+nb}{sum}\PYG{p}{(} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(} \PYG{n}{has\PYGZus{}exact\PYGZus{}match} \PYG{p}{)} \PYG{p}{)}
 \end{sphinxVerbatim}
@@ -6178,14 +6176,14 @@ Note that it doesn’t always find a good guess, if there isn’t one.
 Let’s use \sphinxcode{\sphinxupquote{get\_close\_matches()}} to create a function that will match up university names across the two datasets if they’re just off by a small amount.  This could automate some of the matching we’d otherwise have to do by hand for those 90 schools that didn’t match exactly.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{k}{def} \PYG{n+nf}{get\PYGZus{}closest\PYGZus{}name\PYGZus{}from\PYGZus{}df\PYGZus{}big} \PYG{p}{(} \PYG{n}{name\PYGZus{}from\PYGZus{}df\PYGZus{}rank} \PYG{p}{)}\PYG{p}{:}
+\PYG{k}{def} \PYG{n+nf}{get\PYGZus{}closest\PYGZus{}official\PYGZus{}name} \PYG{p}{(} \PYG{n}{name\PYGZus{}from\PYGZus{}df\PYGZus{}rank} \PYG{p}{)}\PYG{p}{:}
 
     \PYG{c+c1}{\PYGZsh{} If there\PYGZsq{}s an exact match, we\PYGZsq{}re already done.}
     \PYG{k}{if} \PYG{n}{has\PYGZus{}exact\PYGZus{}match}\PYG{p}{(} \PYG{n}{name\PYGZus{}from\PYGZus{}df\PYGZus{}rank} \PYG{p}{)}\PYG{p}{:}
         \PYG{k}{return} \PYG{n}{name\PYGZus{}from\PYGZus{}df\PYGZus{}rank}
     
     \PYG{c+c1}{\PYGZsh{} Get the closest matches, if any.}
-    \PYG{n}{close\PYGZus{}matches} \PYG{o}{=} \PYG{n}{get\PYGZus{}close\PYGZus{}matches}\PYG{p}{(} \PYG{n}{name\PYGZus{}from\PYGZus{}df\PYGZus{}rank}\PYG{p}{,} \PYG{n}{names\PYGZus{}from\PYGZus{}df\PYGZus{}big} \PYG{p}{)}
+    \PYG{n}{close\PYGZus{}matches} \PYG{o}{=} \PYG{n}{get\PYGZus{}close\PYGZus{}matches}\PYG{p}{(} \PYG{n}{name\PYGZus{}from\PYGZus{}df\PYGZus{}rank}\PYG{p}{,} \PYG{n}{official\PYGZus{}names} \PYG{p}{)}
     
     \PYG{c+c1}{\PYGZsh{} If there weren\PYGZsq{}t any, return None}
     \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(} \PYG{n}{close\PYGZus{}matches} \PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
@@ -6195,17 +6193,17 @@ Let’s use \sphinxcode{\sphinxupquote{get\_close\_matches()}} to create a funct
     \PYG{k}{return} \PYG{n}{close\PYGZus{}matches}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
 
 \PYG{c+c1}{\PYGZsh{} Test it}
-\PYG{n}{get\PYGZus{}closest\PYGZus{}name\PYGZus{}from\PYGZus{}df\PYGZus{}big}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Bentley Universal}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\PYG{n}{get\PYGZus{}closest\PYGZus{}official\PYGZus{}name}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Bentley Universal}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYGZsq{}Bentley University\PYGZsq{}
 \end{sphinxVerbatim}
 
-Let’s apply that function to every row in the small dataset.  Note that \sphinxcode{\sphinxupquote{get\_close\_matches()}} can be a bit slow, so the following code actually takes about 15 seconds to complete executing.  (It would be even slower if we didn’t have the first \sphinxcode{\sphinxupquote{if}} statement in \sphinxcode{\sphinxupquote{get\_closest\_name\_from\_df\_big()}}, which skips \sphinxcode{\sphinxupquote{get\_close\_matches()}} when it’s not needed.)
+Let’s apply that function to every row in the small dataset.  Note that \sphinxcode{\sphinxupquote{get\_close\_matches()}} can be a bit slow, so the following code actually takes about 15 seconds to complete executing.  (It would be even slower if we didn’t have the first \sphinxcode{\sphinxupquote{if}} statement in \sphinxcode{\sphinxupquote{get\_closest\_official\_name()}}, which skips \sphinxcode{\sphinxupquote{get\_close\_matches()}} when it’s not needed.)
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(} \PYG{n}{get\PYGZus{}closest\PYGZus{}name\PYGZus{}from\PYGZus{}df\PYGZus{}big} \PYG{p}{)}
+\PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Official Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(} \PYG{n}{get\PYGZus{}closest\PYGZus{}official\PYGZus{}name} \PYG{p}{)}
 \PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
 \end{sphinxVerbatim}
 
@@ -6224,7 +6222,7 @@ Let’s apply that function to every row in the small dataset.  Note that \sphin
 3  Yale University, located in New Haven, Connect...         \PYGZdl{}49,480    
 4  Columbia University, located in Manhattan\PYGZsq{}s Mo...         \PYGZdl{}55,056    
 
-  In\PYGZhy{}state Undergrad Enrollment         Name in df\PYGZus{}big  
+  In\PYGZhy{}state Undergrad Enrollment          Official Name  
 0      NaN                5,402   Princeton University  
 1      NaN                6,699     Harvard University  
 2      NaN                5,844  University of Chicago  
@@ -6237,8 +6235,8 @@ The results are correct for the first four schools, which were exact matches, bu
 We can check by taking a glance over the following output, and noting which rows are wrong.  I don’t include the full output here of all 90 discrepancies, just to save space, but you can use \sphinxcode{\sphinxupquote{pd.set\_option( 'display.max\_rows', None )}} to see them all.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{rows\PYGZus{}with\PYGZus{}guesses} \PYG{o}{=} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{!=} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{]}
-\PYG{n}{rows\PYGZus{}with\PYGZus{}guesses}\PYG{p}{[}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{]}
+\PYG{n}{rows\PYGZus{}with\PYGZus{}guesses} \PYG{o}{=} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{!=} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Official Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{]}
+\PYG{n}{rows\PYGZus{}with\PYGZus{}guesses}\PYG{p}{[}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Official Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{]}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -6255,7 +6253,7 @@ We can check by taking a glance over the following output, and noting which rows
 227         University of Missouri\PYGZhy{}\PYGZhy{}St. Louis   
 228  University of North Carolina\PYGZhy{}\PYGZhy{}Greensboro   
 
-                                 Name in df\PYGZus{}big  
+                                  Official Name  
 4                            Coleman University  
 18            Washington University in St Louis  
 21            University of California\PYGZhy{}Berkeley  
@@ -6349,23 +6347,23 @@ Holy cow!  Let’s try to narrow our search a bit…
 Name: NAME, dtype: object
 \end{sphinxVerbatim}
 
-Aha, Columbia University in the City of New York was so long of a phrase that \sphinxcode{\sphinxupquote{get\_close\_matches()}} did not think it was “close” to Columbia University.  So now I’ve found that the entry for row 4 in \sphinxcode{\sphinxupquote{df\_rank{[}'Name in big\_df'{]}}} should be Columbia University in the City of New York.  I can simply tell Python to change it.
+Aha, Columbia University in the City of New York was so long of a phrase that \sphinxcode{\sphinxupquote{get\_close\_matches()}} did not think it was “close” to Columbia University.  So now I’ve found that the entry for row 4 in \sphinxcode{\sphinxupquote{df\_rank{[}'Official Name'{]}}} should be Columbia University in the City of New York.  I can simply tell Python to change it.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Columbia University in the City of New York}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Official Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Columbia University in the City of New York}\PYG{l+s+s1}{\PYGZsq{}}
 \end{sphinxVerbatim}
 
 When I’m done manually investigating the 30 schools that had to be fixed by hand, I will have 30 lines of code that look just like the one above, but for different schools.  Here’s a sample.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Columbia University in the City of New York}\PYG{l+s+s1}{\PYGZsq{}}
-\PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+m+mi}{34}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Georgia Institute of Technology\PYGZhy{}Main Campus}\PYG{l+s+s1}{\PYGZsq{}}
-\PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+m+mi}{41}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Tulane University of Louisiana}\PYG{l+s+s1}{\PYGZsq{}}
-\PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+m+mi}{52}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Pennsylvania State University\PYGZhy{}Main Campus}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Official Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Columbia University in the City of New York}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+m+mi}{34}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Official Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Georgia Institute of Technology\PYGZhy{}Main Campus}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+m+mi}{41}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Official Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Tulane University of Louisiana}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+m+mi}{52}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Official Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Pennsylvania State University\PYGZhy{}Main Campus}\PYG{l+s+s1}{\PYGZsq{}}
 \PYG{c+c1}{\PYGZsh{} and so on, for a total of 30 changes}
 \end{sphinxVerbatim}
 
-But if we’re trying to follow DRY principles, we notice that there’s definitely a lot of repeated code here.  We’re copying and pasting the \sphinxcode{\sphinxupquote{df\_rank.loc{[}...,'Name in big\_df'{]} = '...'}} part each time.  We could simplify this by creating a Python dictionary with just our corrections.  Here I include all 30 corrections as they would be if we had carefully investigated each.
+But if we’re trying to follow DRY principles, we notice that there’s definitely a lot of repeated code here.  We’re copying and pasting the \sphinxcode{\sphinxupquote{df\_rank.loc{[}...,'Official Name'{]} = '...'}} part each time.  We could simplify this by creating a Python dictionary with just our corrections.  Here I include all 30 corrections as they would be if we had carefully investigated each.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{\PYGZsh{} Store corrections in a dictionary:}
@@ -6398,7 +6396,7 @@ But if we’re trying to follow DRY principles, we notice that there’s definit
 
 \PYG{c+c1}{\PYGZsh{} Apply all the corrections at once:}
 \PYG{k}{for} \PYG{n}{row\PYGZus{}index}\PYG{p}{,} \PYG{n}{fixed\PYGZus{}name} \PYG{o+ow}{in} \PYG{n}{corrections}\PYG{o}{.}\PYG{n}{items}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
-    \PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{row\PYGZus{}index}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{fixed\PYGZus{}name}
+    \PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{row\PYGZus{}index}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Official Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{fixed\PYGZus{}name}
 
 \PYG{c+c1}{\PYGZsh{} See if at least the top 5 look right:}
 \PYG{n}{df\PYGZus{}rank}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
@@ -6419,7 +6417,7 @@ But if we’re trying to follow DRY principles, we notice that there’s definit
 3  Yale University, located in New Haven, Connect...         \PYGZdl{}49,480    
 4  Columbia University, located in Manhattan\PYGZsq{}s Mo...         \PYGZdl{}55,056    
 
-  In\PYGZhy{}state Undergrad Enrollment                               Name in df\PYGZus{}big  
+  In\PYGZhy{}state Undergrad Enrollment                                Official Name  
 0      NaN                5,402                         Princeton University  
 1      NaN                6,699                           Harvard University  
 2      NaN                5,844                        University of Chicago  
@@ -6427,10 +6425,10 @@ But if we’re trying to follow DRY principles, we notice that there’s definit
 4      NaN                6,102  Columbia University in the City of New York  
 \end{sphinxVerbatim}
 
-\sphinxstylestrong{Step 4.} And now that all corrections have been made, we can do the merge with confidence.  We take care to merge the main dataset’s \sphinxcode{\sphinxupquote{"NAME"}} column with the smaller dataset’s \sphinxcode{\sphinxupquote{"Name in df\_big"}} column.  This merge will be a left join, because we do not want to discard a school just because it wasn’t in US News’s rankings.
+\sphinxstylestrong{Step 4.} And now that all corrections have been made, we can do the merge with confidence.  We take care to merge the main dataset’s \sphinxcode{\sphinxupquote{"NAME"}} column with the smaller dataset’s \sphinxcode{\sphinxupquote{"Official Name"}} column.  This merge will be a left join, because we do not want to discard a school just because it wasn’t in US News’s rankings.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{df\PYGZus{}merged} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{merge}\PYG{p}{(} \PYG{n}{df\PYGZus{}big}\PYG{p}{,} \PYG{n}{df\PYGZus{}rank}\PYG{p}{,} \PYG{n}{left\PYGZus{}on}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{right\PYGZus{}on}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name in df\PYGZus{}big}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{how}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{left}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\PYG{n}{df\PYGZus{}merged} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{merge}\PYG{p}{(} \PYG{n}{df\PYGZus{}big}\PYG{p}{,} \PYG{n}{df\PYGZus{}rank}\PYG{p}{,} \PYG{n}{left\PYGZus{}on}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{right\PYGZus{}on}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Official Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{how}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{left}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
 \PYG{n}{df\PYGZus{}merged}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
 \end{sphinxVerbatim}
 
@@ -6463,12 +6461,12 @@ But if we’re trying to follow DRY principles, we notice that there’s definit
 3   NaN      NaN   NaN         NaN               NaN      NaN   
 4   NaN      NaN   NaN         NaN               NaN      NaN   
 
-   Undergrad Enrollment  Name in df\PYGZus{}big  
-0                   NaN             NaN  
-1                   NaN             NaN  
-2                   NaN             NaN  
-3                   NaN             NaN  
-4                   NaN             NaN  
+   Undergrad Enrollment  Official Name  
+0                   NaN            NaN  
+1                   NaN            NaN  
+2                   NaN            NaN  
+3                   NaN            NaN  
+4                   NaN            NaN  
 
 [5 rows x 54 columns]
 \end{sphinxVerbatim}
@@ -6492,7 +6490,7 @@ Now we have one large dataset containing both the generic data and the ranking d
                                             Description  Tuition and fees  \PYGZbs{}
 5822  Harvard is located in Cambridge, Massachusetts...          \PYGZdl{}47,074    
 
-     In\PYGZhy{}state  Undergrad Enrollment      Name in df\PYGZus{}big  
+     In\PYGZhy{}state  Undergrad Enrollment       Official Name  
 5822      NaN                 6,699  Harvard University  
 
 [1 rows x 54 columns]
@@ -6505,8 +6503,534 @@ This is one of the most challenging merges you might have to do, but it’s good
 \label{\detokenize{chapter-13-etl:miscellaneous-munging-methods-etl}}\label{\detokenize{chapter-13-etl::doc}}
 See also the slides that summarize a portion of this content.
 
-\begin{sphinxadmonition}{warning}{Warning:}
-This chapter has not yet been written.  Check back later.
+
+\section{What do these words mean?}
+\label{\detokenize{chapter-13-etl:what-do-these-words-mean}}
+ETL stands for “Extract, Transform, and Load.”  This is the standard term for all the work you may need to do with data to get it ready for actual analysis.  Before we get to make attractive visualizations or do useful analyses and produce insights, we have to get the data into a form that makes those things possible.  Think of the terms as having roughly these meanings:
+\begin{itemize}
+\item {} 
+Extract = get data from the web, a database, or wherever it’s originally located (and maybe save it into a CSV file on our computer, for example)
+
+\item {} 
+Transform = manipulate the content of the data to make it more suitable for our needs (such as converting column data types, handling missing values, etc.)
+
+\item {} 
+Load = get the data into our Python script, notebook, or other analysis software (which can be an easy one\sphinxhyphen{}liner for small data, but is harder for big data)
+
+\end{itemize}
+
+While ETL is an official term, the slang term is “munging.”  The word is well\sphinxhyphen{}chosen, in that it sounds a little bit awkward and a little bit gross.  Like data manipulation often is.  When most people say “data munging,” they’re probably referring more to the “transform” part of ETL.
+
+I suspect people say ETL when they’re speaking professionally and they say munging when they’re complaining to a friend.
+
+
+\section{Why are we focusing on this?}
+\label{\detokenize{chapter-13-etl:why-are-we-focusing-on-this}}
+\begin{sphinxadmonition}{note}{Big Picture}
+
+Many well\sphinxhyphen{}respected people in the data science community estimate that 70\% to 80\% of a data scientist’s time can be spent on ETL rather than on the more interesting work of modeling, analysis, visualization, and communication.
+\end{sphinxadmonition}
+
+While many people hear those high percentages and can’t believe it, I suspect that by this point in our course, that doesn’t sound at all unreasonable to you.  Just last week, our in\sphinxhyphen{}class exercise was to merge two datasets, which takes only two or three lines of Python code.  But the amount of work necessary to prepare the datasets for a useful merge was far greater.
+
+In \sphinxstyleemphasis{The Data Science Design Manual,} Steven Skeina has a useful chapter on ETL.  He has a humorous way of expressing the idea that ETL is a huge part of data work:
+\begin{quote}
+
+Most data scientists spend much of their time cleaning and formatting data. The rest spend most of their time complaining that there is no data available to do what they want to do.
+\end{quote}
+
+In other words, you can buckle down and do the munging you need to get the data you want, or you can sit around and get nowhere.  Those are the options.
+
+Well, okay, there is a more pleasant option.  You can advance far enough in an organization that you have data workers under you in the org chart, and you make them do the ETL and hand you the results so that you can do the interesting stuff.  But you have to put in your time as a new hire before you can rise to directing others, and even then, you’ll still have to work closely with those you supervise to be sure that their munging gives you the kind of result you can use.
+
+Now, the variety of things that fall under the ETL category is truly enormous.  The reason for this is that the purpose of munging is to take ugliness and clean it up, and there are so many different types of ugliness in the world.  \sphinxhref{https://vita.had.co.nz/papers/tidy-data.pdf}{When discussing tidy data}, Hadley Wickham quotes Tolstoy:
+\begin{quote}
+
+Happy families are all alike; every unhappy family is unhappy in its own way.
+\end{quote}
+
+Because every dataset is unhappy in its own way, your munging toolbelt can never be too big.  And so we can’t possibly cover it all in this chapter.  Experience with datasets is the best teacher, and I intend this course to give you many experiences with new datasets.  But we will cover some key topics.
+
+
+\section{Data provenance}
+\label{\detokenize{chapter-13-etl:data-provenance}}
+
+\subsection{What is provenance?}
+\label{\detokenize{chapter-13-etl:what-is-provenance}}
+If you’ve ever watched \sphinxhref{https://www.pbs.org/wgbh/roadshow/}{Antiques Roadshow} (or walked in while one of your grandparents was watching it), you’ll know that the value of an item can be significantly impacted by its \sphinxstyleemphasis{provenance,} which means its history and origins.  If the appraiser can verify that a particular antique item was part of an important event or story in the past, or that the item is officially documented as being genuine, then this increases the item’s value.
+
+The value of data is also significantly impacted by its history and origins.  If we know how the data was collected and can read about the details of that process, that will probably significantly increase its usefulness to us.
+
+For instance, imagine you get a dataset in which some numeric columns are entitled \sphinxcode{\sphinxupquote{EQ50}}, \sphinxcode{\sphinxupquote{EQ51}}, \sphinxcode{\sphinxupquote{EQ52}}, and so on.  You would probably not be able to use the numbers in those columns for any purpose, because you don’t know what they mean.  But what if you find out that the data came from an economic survey that happened every quarter, and measured the GDP of various U.S. states during that quarter, in units of millions of dollars.  The organization that did the work referred to such measurements as “Economic Quarters” or EQs for short, and started with EQ1 in January 1987, counting upwards from there.  We can therefore figure out that EQ50 must refer to the second quarter of 2000, and so on.  Formerly useless data now has meaning and could be used.
+
+
+\subsection{Data vs. information}
+\label{\detokenize{chapter-13-etl:data-vs-information}}
+\begin{sphinxadmonition}{note}{Big Picture}
+
+The difference between \sphinxstyleemphasis{data} and \sphinxstyleemphasis{information} is context.  Data is raw numbers, while information is having those numbers in a context we understand, so that the numbers have meaning.  Data provenance can be the context that turns data into information.
+\end{sphinxadmonition}
+
+To make sense of data, that is, to have information, not just data, requires knowing something about the domain in which the data lives.  \sphinxhref{chapter-12-concat-and-merge\#when-there-are-many-matches-for-some-rows}{One of the examples in the previous chapter} was about data from American football.  If you’re not familiar with that sport, it’s harder to understand the example, so I was careful to explain in the chapter the few necessary football concepts you’d need.  If your dataset comes from finance, you’ll be better equipped to turn that data into information if you know something about finance.  If you’re working with economic data, you’ll do better if you know economics.
+
+This is where Bentley students have an advantage in data science over students from other universities.  While some schools have excellent technical educations and may cover more programming or machine learning skills than a data degree from Bentley does, every Bentley graduate has undergone an extensive training in business.  If you’re planning on applying your data skills in the business world, you’ll have a broader knowledge of that domain than most students from, say, an engineering school or a computer science degree.
+
+
+\subsection{Data dictionaries}
+\label{\detokenize{chapter-13-etl:data-dictionaries}}
+Anyone producing a dataset should take care to distribute with it a data dictionary, which is a human\sphinxhyphen{}readable explanation in clear language of the meaning of each column in the dataset.  We’ve referred very often to the home mortgage dataset in these notes; it comes with an extensive data dictionary provided by the Consumer Financial Protecion Bureau, and you can \sphinxhref{https://ffiec.cfpb.gov/documentation/2018/lar-data-fields/}{see it online here}.  Since the average person doesn’t know what column names like “lei” or “hoepa\_status” or “aus\sphinxhyphen{}4” might mean, it’s essential to be able to look them up in a data dictionary.
+
+If your employer puts you in charge of creating a dataset to be used by others, be sure that you always couple it with a document explaining the meaning of each column.  If you find a dataset you’d like to use in your own work (whether it comes from the web for your use in MA346 or it comes from your company’s intranet when you have an internship or job), one of the first questions you should ask is where the data dictionary is.  Otherwise, how will you know what the data means?
+
+If a dataset doesn’t come from a data dictionary, but you have personal access to the source of the data (such as another team within your company), you can organize a meeting to ask them where the data comes from and what its columns mean.  Documenting the results of such a meeting and storing it with the data in a data dictionary make that dataset more useful to everyone thereafter (and save everyone from repeating the same meeting later).  I had a meeting of exactly this type with the nonprofit organization that partnered with my graduate data science class in Fall 2019 to discuss their datasets.
+
+
+\section{Missing values}
+\label{\detokenize{chapter-13-etl:missing-values}}
+This can be one of the most confusing aspects of data work for new students of data science, so let me begin by emphasizing four key points about missing values that you should always keep in mind.
+
+\begin{sphinxadmonition}{note}{Big Picture}
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Missing values are extremely common, and are sometimes inevitable.
+
+\item {} 
+Sometimes missing values indicate a mistake or a problem, and sometimes they don’t.
+
+\item {} 
+Replacing missing values with actual values is called \sphinxstyleemphasis{imputation,} and there are \sphinxstyleemphasis{many} different ways to do it.
+
+\item {} 
+Sometimes imputation is the right thing to do with missing values, but sometimes it is the wrong thing to do.
+
+\end{enumerate}
+\end{sphinxadmonition}
+
+Let’s think through the details of these important points.
+
+
+\subsection{Why missing values are everywhere}
+\label{\detokenize{chapter-13-etl:why-missing-values-are-everywhere}}
+Missing values can and do appear in almost every type of dataset.  In the home mortgage dataset, for instance, anyone who didn’t fully complete the application will have some parts of their record in the database missing.  When compiling a comprehensive record of millions of mortgage applications, we simply can’t expect that everyone filled out the application completely!  Missing values are inevitable.
+
+Even if you imagine a much more reliable source of data than human beings, such as a robotic sensor that’s programmed to take weather readings every hour on the hour, things can still go wrong.  The sensor can fail and not collect data for a few hours until someone replaces it and reconnects it.  The people in charge of the experiment can accidentally delete or lose some data files.  The hard drive on which the data is stored can malfunction so that not all data can be recovered.  Missing values can happen anywhere.
+
+
+\subsection{Are missing values bad?}
+\label{\detokenize{chapter-13-etl:are-missing-values-bad}}
+Sometimes missing values occur in a dataset because of a problem.  Consider the examples given in the previous paragraph.  A broken sensor that fails to report data for a few hours means that something went wrong, something we wish hadn’t happened, but now our data is incomplete because of that problem.  The missing values reflect that problem.
+
+But sometimes missing values are inserted into a dataset intentionally, because the creator of the dataset wants to communicate that a certain piece of data is unavailable.  For instance, in my football dataset, if the Receiver column in the Plays table has some missing entries, that means that there was no receiver involved in the play.  The missing values are communicating something intentional, sensible, and correct.  \sphinxstyleemphasis{Missing values don’t always indicate a problem.}
+
+Even in the example of the failed sensor, where the missing values indicate a problem, that doesn’t mean that they should be removed or filled in with actual values.  Those missing values are truthfully stating what data was collected and what data was not collected.  Altering them would mean that our dataset would no longer be telling the truth about its origins.  If you’re sworn in on the witness stand, and you’re asked who committed the robbery, and you honestly don’t know the answer, the truthful thing to do is to say that you don’t know!  Making up an answer is clearly a deceptive thing to do in that situation, and it is often a deceptive thing to do with data as well.  \sphinxstyleemphasis{Resist the urge to “solve” missing values by always filling them in.}  Sometimes they’re telling an important truth.
+
+In fact, this is why NumPy has the built\sphinxhyphen{}in value \sphinxcode{\sphinxupquote{np.nan}}, Python has \sphinxcode{\sphinxupquote{None}}, R has \sphinxcode{\sphinxupquote{NA}}, and Julia has \sphinxcode{\sphinxupquote{missing}}.  These languages all recognize the legitimacy of missing values, and give you a way to express them when you need to.
+
+Notice the connection between these issues and data provenance.  If we know where the data came from and how it was obtained, we might be able to make sense of the missing values, and they can have important meaning for us, even though they’re missing.
+
+
+\subsection{Should I ever remove missing values?}
+\label{\detokenize{chapter-13-etl:should-i-ever-remove-missing-values}}
+\sphinxstylestrong{Example 1: Removing missing values}
+
+Some circumstances demand that we remove missing values.  Consider the following (real) dataset of the number of home runs hit per game in each Major League Baseball World Series in the 1990s.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{pandas} \PYG{k}{as} \PYG{n+nn}{pd}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{n}{df} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{(} \PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{\PYGZsh{} This data was collected by hand from pages on baseball\PYGZhy{}reference.com.}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Year}\PYG{l+s+s2}{\PYGZdq{}} \PYG{p}{:} \PYG{p}{[} \PYG{l+m+mi}{1990}\PYG{p}{,} \PYG{l+m+mi}{1991}\PYG{p}{,} \PYG{l+m+mi}{1992}\PYG{p}{,} \PYG{l+m+mi}{1993}\PYG{p}{,} \PYG{l+m+mi}{1994}\PYG{p}{,} \PYG{l+m+mi}{1995}\PYG{p}{,} \PYG{l+m+mi}{1996}\PYG{p}{,} \PYG{l+m+mi}{1997}\PYG{p}{,} \PYG{l+m+mi}{1998}\PYG{p}{,} \PYG{l+m+mi}{1999} \PYG{p}{]}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{HR}\PYG{l+s+s2}{\PYGZdq{}} \PYG{p}{:} \PYG{p}{[} \PYG{l+m+mi}{6}\PYG{p}{,} \PYG{l+m+mi}{16}\PYG{p}{,} \PYG{l+m+mi}{9}\PYG{p}{,} \PYG{l+m+mi}{13}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{nan}\PYG{p}{,} \PYG{l+m+mi}{13}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{,} \PYG{l+m+mi}{15}\PYG{p}{,} \PYG{l+m+mi}{9}\PYG{p}{,} \PYG{l+m+mi}{6} \PYG{p}{]}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZsh{}Games}\PYG{l+s+s2}{\PYGZdq{}} \PYG{p}{:} \PYG{p}{[} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{7}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{nan}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{,} \PYG{l+m+mi}{7}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{4} \PYG{p}{]}
+\PYG{p}{\PYGZcb{}} \PYG{p}{)}
+\PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{HR/Game}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{HR}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{/} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZsh{}Games}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
+\PYG{n}{df}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+   Year    HR  \PYGZsh{}Games   HR/Game
+0  1990   6.0     4.0  1.500000
+1  1991  16.0     7.0  2.285714
+2  1992   9.0     6.0  1.500000
+3  1993  13.0     6.0  2.166667
+4  1994   NaN     NaN       NaN
+5  1995  13.0     6.0  2.166667
+6  1996   6.0     6.0  1.000000
+7  1997  15.0     7.0  2.142857
+8  1998   9.0     4.0  2.250000
+9  1999   6.0     4.0  1.500000
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Year}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{HR/Game}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{title}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Home Runs per Games in World Series}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{xticks}\PYG{p}{(} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Year}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{xlabel}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Year}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylabel}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{HR/Game}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylim}\PYG{p}{(} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mf}{2.5} \PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\noindent\sphinxincludegraphics{{chapter-13-etl_5_0}.png}
+
+Assume you were trying to show that this number was not going convincingly up or down throughout the 1990s (a made\sphinxhyphen{}up research question just as an example).  You’re considering fitting a linear model to the data and showing that its slope is close to zero (perhaps even not statistically significantly different from zero).  Let’s try.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{scipy}\PYG{n+nn}{.}\PYG{n+nn}{stats} \PYG{k}{as} \PYG{n+nn}{stats}
+\PYG{n}{stats}\PYG{o}{.}\PYG{n}{linregress}\PYG{p}{(} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Year}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{HR/Game}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+LinregressResult(slope=nan, intercept=nan, rvalue=nan, pvalue=nan, stderr=nan)
+\end{sphinxVerbatim}
+
+This has clearly failed, giving us all missing values in our linear model.  The reason, no doubt, is the missing value in our data.  (There was no World Series in 1994 due to a players’ strike.)
+
+So in this case, the missing values are clearly causing a problem with what we want to do with the data.  And since we can fit a linear model to the data that remains, it would be perfectly acceptable to drop the one row that has missing values and proceed with the nine rows that remain.  \sphinxstyleemphasis{This is a case in which removing the missing values makes sense.}
+
+But we do not remove them from the original dataset; we simply don’t include them in the data used to create the linear model.  The original dataset stays intact.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}without\PYGZus{}94} \PYG{o}{=} \PYG{n}{df}\PYG{o}{.}\PYG{n}{dropna}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{stats}\PYG{o}{.}\PYG{n}{linregress}\PYG{p}{(} \PYG{n}{df\PYGZus{}without\PYGZus{}94}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Year}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{n}{df\PYGZus{}without\PYGZus{}94}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{HR/Game}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+LinregressResult(slope=\PYGZhy{}0.0012387387387387322, intercept=4.305389317889305, rvalue=\PYGZhy{}0.0085545966495754, pvalue=0.9825737815654227, stderr=0.054728717410681665)
+\end{sphinxVerbatim}
+
+Now we have an actual linear model.  (We’re not going to analyze it here; that wasn’t the point of this example.)
+
+\sphinxstylestrong{Example 2:  Not removing missing values}
+
+Let’s say you’re working for a small\sphinxhyphen{}but\sphinxhyphen{}growing automobile sales organization.  They’ve just opened their second location and they’ve realized that their growth has far outpaced their record\sphinxhyphen{}keeping.  They’ve got some spreadsheets about sales and commissions for their various employees, but it’s not comprehensive because they haven’t been organized about record\sphinxhyphen{}keeping in the past.  They’ve asked you to organize it into a database.
+
+Let’s say you realize the data isn’t that huge, so you can probably fit it in one spreadsheet.  You begin by creating a private Google Sheet and sharing the link with all the sales managers, asking them to paste in all the historic data on which they have records, to create a shared dataset that’s as comprehensive as possible.  You start with columns for month, employee, manager, number of sales, commission, and others.  When the task is done, you notice that many rows have missing values for the number of sales and commission columns.  The managers knew the employees were working there that month, but they’d lost the relevant historical data in the intervening years.
+
+If you were to remove those rows from the dataset, it could make it seem as if the employee was not a part of the company or team at the time.  Thus even though those rows contain missing values, they are still communicating other important information.  In this case, you would decide not to remove the rows, even though they won’t contribute much to any later analysis.
+
+Any decision like this made when constructing a dataset should be documented in its data dictionary.
+
+\sphinxstylestrong{Example 3: Actually adding missing values}
+
+In the home mortgage dataset with which we’re very familiar, some columns (such as interest rate) contain mostly numerical data, but occasionally the word Exempt in place of a number.  This makes it impossible to do any computations on such columns, such as \sphinxcode{\sphinxupquote{df{[}'interest\_rate'{]}.mean()}}, because the column is text, not numeric.
+
+In this case, it can be valuable to replace the word Exempt with the actual missing value \sphinxcode{\sphinxupquote{np.nan}} throughout the column, so that it can then be converted to type \sphinxcode{\sphinxupquote{float}}.  In doing so, you should carefully document that all Exempt entries have become missing values, in order to facilitate analysis.  \sphinxstyleemphasis{This is a situation in which missing values are actually intentionally added!}
+
+If you needed to track which rows had originally been Exempt, you could retain the original interest rate column for reference, creating a new one as you do the replacement.  Alternately, you could create a new column that records simply a single boolean value for “interest rate exempt” so that you can tell missing values from Exempt values.
+
+Elsewhere in the same mortgage dataset, we find cases in which numbers like 999 were used for applicants’ ages.  Clearly these are not correct values, and should be treated as a lack of data, rather than legitimate data.  Consider the alternatives for how to handle them:
+
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabulary}{\linewidth}[t]{|T|T|}
+\hline
+\sphinxstyletheadfamily 
+If we leave numbers like 999 in the data
+&\sphinxstyletheadfamily 
+If we replace them with missing values
+\\
+\hline
+Statistics about age, like mean, median, etc., will be very wrong
+&
+Statistics about age will be much more accurate
+\\
+\hline
+The number of missing values in the dataset will be very small
+&
+The number of missing values in the data will be much more accurate
+\\
+\hline
+\end{tabulary}
+\par
+\sphinxattableend\end{savenotes}
+
+
+\subsection{When I need to remove missing values, how do I?}
+\label{\detokenize{chapter-13-etl:when-i-need-to-remove-missing-values-how-do-i}}
+Removing missing values is called \sphinxstyleemphasis{data imputation,} which is simply the technical word for filling in values where there were none.  Imputation is an enormous area of statistics to which we cannot do justice in this chapter, but let’s see why sometimes imputing values is essential.
+
+In the baseball example above, we saw that some model\sphinxhyphen{}fitting procedures can’t work with missing values, and we need to remove them from consideration.  Now let’s assume we were fitting some (more complex) model to the property values in the mortgage dataset.  If we need to drop any row in which the property value is missing, how might that cause problems?
+
+The question takes us right back to data provenance:  \sphinxstyleemphasis{Why} is the property value missing on the mortgage application?  Let’s say we investigate and find that this is usually because the application was not completed by the potential borrower.  The question then arises: Are all borrowers equally likely to quit an application half way through?  If they are, then perhaps dropping such rows from the data is an acceptable move.
+
+But the government publishes the data to help combat discrimination in lending.  What if we were to look at the proportion of incomplete applications and find that it’s much higher for certain ethnic groups, especially in certain locations?  Perhaps they’re not completing the application because they’re facing discrimination in the process and don’t have the energy or ability to fight it.  If that’s the case, then dropping rows with missing property values will \sphinxstyleemphasis{significantly reduce the representation of those ethnic groups in our data.}  Our model will unintentionally favor the other ethnic groups.  Not only will it make bad predictions (so we’ve done our data work wrong) but it will help to further the discrimination the dataset was trying to prevent (so we’ve made an ethical mistake as well)!
+
+So if we find that the missing values are not spread evenly across groups within our data, we can’t in good conscience drop those rows.  Instead, we have to find some way to insert realistic or feasible values in place of the missing values.  Here are a few common ways to do so:
+\begin{itemize}
+\item {} 
+\sphinxstylestrong{Mean substitution} \sphinxhyphen{} Replace each missing property value with the mean property value across all rows.
+
+\item {} 
+\sphinxstylestrong{Model\sphinxhyphen{}based substitution} \sphinxhyphen{} Create a simple model that predicts property values based on other things, such as zip code, and use it to fill in each missing value.
+
+\item {} 
+\sphinxstylestrong{Random imputation} \sphinxhyphen{} Replace each missing property value with a randomly chosen property value from elsewhere in the dataset, or randomly chosen from other similar records (e.g., in the same state, or the same race, or the same income bracket, etc.).
+
+\end{itemize}
+
+Again, many statistical concerns arise when doing imputation that we cannot cover in this short chapter of notes.  This is merely an introduction to the fact that this practice is an important one.
+
+
+\section{All the other munging things}
+\label{\detokenize{chapter-13-etl:all-the-other-munging-things}}
+As I said at the outset, it’s not possible to cover everything you might need to do with data.  But here are a few essentials to keep in mind.
+
+When using data, keep in mind the units on every number, in terms as precise as you possibly can.  You can insert these units as comments in your code.  There are famous stories of \sphinxhref{https://en.wikipedia.org/wiki/Mars\_Climate\_Orbiter\#Cause\_of\_failure}{tens of millions of dollars lost in spacecraft} when units were not checked correctly in computer code, so these tiny details are not unimportant!
+
+In \sphinxstyleemphasis{The Data Science Design Manual} quoted earlier, the author suggests several types of unit discrepencies to pay attention to.
+\begin{itemize}
+\item {} 
+differing standards of measurement, such as pounds vs. kilograms, or USD vs. GBP
+
+\item {} 
+the time value of money, such as USD in January 2017 vs. USD in February 2017
+
+\item {} 
+fluctuations in value, such as the price of gold at noon today vs. at 1pm today
+
+\item {} 
+discrepencies in time zones, such as the price of gold at noon today in London vs. noon today in New York
+
+\item {} 
+discrepencies in the units themselves, such as “shares of stock” before and after a stock split
+
+\end{itemize}
+
+Another common units error to be aware of is the difference between percentages and proportions.  For instance, 15\% is equal to the proportion 0.15.  When reporting such a value to a human reader, such as in a table of results, the percent is typically the more user\sphinxhyphen{}friendly choice.  When using such a value in a computation, such as multiplying to apply a percentage or proportion to a total quantity, the only correct choice is the proportion.  That is, 15\% of 200 people is not \(15\times200=3000\), but \(0.15\times200=30\).
+
+Comments in code to track units can help with discrepencies like these.  See the code below that takes care with units as we adjust movie revenues for inflation in the following dataset.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}films} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{(} \PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Title}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{:} \PYG{p}{[} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Avengers: Endgame}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{The Lion King}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{The Hunger Games}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Finding Dory}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{]}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Year}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{:} \PYG{p}{[} \PYG{l+m+mi}{2019}\PYG{p}{,} \PYG{l+m+mi}{2019}\PYG{p}{,} \PYG{l+m+mi}{2012}\PYG{p}{,} \PYG{l+m+mi}{2016} \PYG{p}{]}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Opening Weekend (M\PYGZdl{})}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{:} \PYG{p}{[} \PYG{l+m+mf}{357.115}\PYG{p}{,} \PYG{l+m+mf}{191.771}\PYG{p}{,} \PYG{l+m+mf}{152.536}\PYG{p}{,} \PYG{l+m+mf}{135.060} \PYG{p}{]}
+\PYG{p}{\PYGZcb{}} \PYG{p}{)}
+\PYG{n}{df\PYGZus{}films}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+               Title  Year  Opening Weekend (M\PYGZdl{})
+0  Avengers: Endgame  2019               357.115
+1      The Lion King  2019               191.771
+2   The Hunger Games  2012               152.536
+3       Finding Dory  2016               135.060
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{avg\PYGZus{}annual\PYGZus{}inflation} \PYG{o}{=} \PYG{l+m+mi}{3}                                \PYG{c+c1}{\PYGZsh{} An approximate percentage}
+\PYG{n}{inflation\PYGZus{}factor} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{o}{+} \PYG{n}{avg\PYGZus{}annual\PYGZus{}inflation}\PYG{o}{/}\PYG{l+m+mi}{100}         \PYG{c+c1}{\PYGZsh{} Useful as an annual multiplier}
+\PYG{n}{df\PYGZus{}films}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Years since film}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{2020} \PYG{o}{\PYGZhy{}} \PYG{n}{df\PYGZus{}films}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Year}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}  \PYG{c+c1}{\PYGZsh{} Number of years elapsed}
+\PYG{n}{df\PYGZus{}films}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Inflation factor}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{inflation\PYGZus{}factor} \PYG{o}{*}\PYG{o}{*} \PYG{n}{df\PYGZus{}films}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Years since film}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
+                                                        \PYG{c+c1}{\PYGZsh{} Multiplier to apply inflation}
+\PYG{n}{df\PYGZus{}films}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Opening Weekend (M\PYGZdl{}2020)}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df\PYGZus{}films}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Opening Weekend (M\PYGZdl{})}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYGZbs{}
+    \PYG{o}{*} \PYG{n}{df\PYGZus{}films}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Inflation factor}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}                      \PYG{c+c1}{\PYGZsh{} Converted to today\PYGZsq{}s dollars}
+\PYG{n}{df\PYGZus{}films}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+               Title  Year  Opening Weekend (M\PYGZdl{})  Years since film  \PYGZbs{}
+0  Avengers: Endgame  2019               357.115                 1   
+1      The Lion King  2019               191.771                 1   
+2   The Hunger Games  2012               152.536                 8   
+3       Finding Dory  2016               135.060                 4   
+
+   Inflation factor  Opening Weekend (M\PYGZdl{}2020)  
+0          1.030000                367.828450  
+1          1.030000                197.524130  
+2          1.266770                193.228041  
+3          1.125509                152.011220  
+\end{sphinxVerbatim}
+
+Before we finish discussing ETL, we should talk about file formats, which are a crucial part of the whole process.
+
+
+\section{Reading data files}
+\label{\detokenize{chapter-13-etl:reading-data-files}}
+As you know from \sphinxhref{big-cheat-sheet\#before-week-8}{the DataCamp assignment that corresponds to this chapter}, there are many ways to read data into pandas.  Since you’ve learned some of the technical details from DataCamp, let’s look at the relative pros and cons of each file format here, and add a few pieces of advice that didn’t appear in the DataCamp lessons.  We start with the easiest file formats and work our way up.
+
+
+\subsection{Easy formats to read: CSV and TSV}
+\label{\detokenize{chapter-13-etl:easy-formats-to-read-csv-and-tsv}}
+We’ve been using \sphinxcode{\sphinxupquote{pd.read\_csv()}} for ages, so there is no surprise here, and you’ve had to deal with its \sphinxcode{\sphinxupquote{encoding}} parameter in the past as well.  It has tons of optional parameters, but the one introduced in the latest DataCamp lessons was \sphinxcode{\sphinxupquote{sep}}, useful for reading TSV (tab\sphinxhyphen{}separated values) files, by choosing \sphinxcode{\sphinxupquote{sep="\textbackslash{}t"}}.
+
+One piece of advice to add to DataCamp:  If you find the URL of a CSV file on the web, you can include that URL as the input parameter to \sphinxcode{\sphinxupquote{pd.read\_csv()}}, and it will download and read the file for you in one shot, without your having to manually download the file.
+\begin{itemize}
+\item {} 
+Pro: It automatically gets the latest version of the file every time you run your code.
+
+\item {} 
+Con: It accesses the Internet (which can sometimes be slow) every time you run your code.
+
+\item {} 
+Con: If the file is removed from the web, your code no longer functions.
+
+\end{itemize}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Providing a URL directly to pd.read\PYGZus{}csv():}
+\PYG{n}{pd}\PYG{o}{.}\PYG{n}{read\PYGZus{}csv}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{https://www1.ncdc.noaa.gov/pub/data/cdo/samples/PRECIP\PYGZus{}HLY\PYGZus{}sample\PYGZus{}csv.csv}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+       STATION     STATION\PYGZus{}NAME  ELEVATION  LATITUDE  LONGITUDE  \PYGZbs{}
+0  COOP:310301  ASHEVILLE NC US      682.1   35.5954   \PYGZhy{}82.5568   
+1  COOP:310301  ASHEVILLE NC US      682.1   35.5954   \PYGZhy{}82.5568   
+2  COOP:310301  ASHEVILLE NC US      682.1   35.5954   \PYGZhy{}82.5568   
+
+             DATE   HPCP Measurement Flag Quality Flag  
+0  20100101 00:00  99999                ]               
+1  20100101 01:00      0                g               
+2  20100102 06:00      1                                
+\end{sphinxVerbatim}
+
+
+\subsection{Pretty easy format to read: XLSX}
+\label{\detokenize{chapter-13-etl:pretty-easy-format-to-read-xlsx}}
+The \sphinxcode{\sphinxupquote{pd.read\_excel()}} function is nearly as easy to use as \sphinxcode{\sphinxupquote{pd.read\_csv()}}, with a few exceptions documented below.  You can give this function a URL also, if there’s a publicly accessible Excel file on the web you want to download.  The same pros and cons apply when providing a URL to \sphinxcode{\sphinxupquote{pd.read\_excel()}} as they do for \sphinxcode{\sphinxupquote{pd.read\_csv()}}, as discussed above.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+If you’re running Python on a cloud service, you’ll need the \sphinxcode{\sphinxupquote{xlrd}} module to be installed to add Excel support to pandas.  (You can tell if it’s not when a \sphinxcode{\sphinxupquote{pd.read\_excel()}} call fails with an error about the missing module.)  If you’re on your local computer with an Anaconda installation, you already have this module.  Otherwise, you need to run \sphinxcode{\sphinxupquote{pip install xlrd}} to add it.
+
+\item {} 
+You need to remember that this function returns a Python list of DataFrames, unless you choose one specific sheet, with \sphinxcode{\sphinxupquote{sheet\_name='Name'}} or choose one by index, with \sphinxcode{\sphinxupquote{sheet\_name=0}}, for example.
+
+\item {} 
+Excel spreadsheets may not have the data in the top left, so parameters like \sphinxcode{\sphinxupquote{usecols}} and \sphinxcode{\sphinxupquote{skiprows}} are often needed.
+
+\end{enumerate}
+
+
+\subsection{Easy format to read with occasional problems: HTML}
+\label{\detokenize{chapter-13-etl:easy-format-to-read-with-occasional-problems-html}}
+Pandas can often automatically extract tables from web pages.  Simply call \sphinxcode{\sphinxupquote{pd.read\_html()}} and give it the URL of the page containing the table or tables.  It has the same output type as \sphinxcode{\sphinxupquote{pd.read\_excel()}} does: a Python list of pandas DataFrames.  See the pros and cons listed under \sphinxcode{\sphinxupquote{pd.read\_csv()}} for providing live web URLs when reading data.
+
+Furthermore, depending on the quality of the web site, this function may or may not do its job.  If the HTML page is not structured particularly cleanly, I’ve had \sphinxcode{\sphinxupquote{pd.read\_html()}} fail to find one or more of the tables.  I’ve had to instead write code that downloads the HTML code, splits it wherever a \sphinxcode{\sphinxupquote{<table...>}} tag begins, and extract the tables from those pieces with \sphinxcode{\sphinxupquote{pd.read\_html()}}.  This is annoying, but occasionally necessary.
+
+Note that if you don’t need to get live data from the web, but are content with downloading the data once at the start of your project, there are many ways to extract tables from web pages.  You can often select the table and copy\sphinxhyphen{}paste into Excel, although that sometimes brings along undesired formatting that can cause problems.  There are Google Chrome extensions that specialize in extracting tables from web pages to make them easier to paste cleanly into Excel.
+
+
+\subsection{Not an easy format to read: JSON}
+\label{\detokenize{chapter-13-etl:not-an-easy-format-to-read-json}}
+Although this format is not easy, it is powerful, and this is why it’s very prevalent on the web.  It can represent a huge variety of different types of data, not just tabular data.  It is flexible enough to represent tabular data in a variety of ways, but also hierarchical data of any kind.  Due to its complexity, we will not fully review this here; refer to \sphinxhref{big-cheat-sheet\#chapter-4-importing-json-data-and-working-with-apis}{the appropriate section of our course’s coding cheat sheet} for some information, or \sphinxhref{https://learn.datacamp.com/courses/streamlined-data-ingestion-with-pandas}{the corresponding DataCamp course}.
+
+
+\subsection{Not an easy source to read: SQL}
+\label{\detokenize{chapter-13-etl:not-an-easy-source-to-read-sql}}
+Rather than dive into the enormous topic of SQL databases here, I will suggest two ways that you can learn more:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Your next (and final) DataCamp assignment, for next week, will do some introductory coverage of this content.
+
+\item {} 
+Bentley has an entire course on SQL databases, CS350, which I recommend.
+
+\end{enumerate}
+
+Now let’s consider which file format to use when you need to create a file rather than read one.
+
+
+\section{Writing data files}
+\label{\detokenize{chapter-13-etl:writing-data-files}}
+As with all types of communication, it’s essential to consider your audience when choosing a file type.  Who will use your file?
+
+
+\subsection{For a nontechnical audience, create an Excel file.}
+\label{\detokenize{chapter-13-etl:for-a-nontechnical-audience-create-an-excel-file}}
+If sharing your data with non\sphinxhyphen{}technical people, they will want to simply double\sphinxhyphen{}click the file and see its contents.  The easiest way to ensure this happens is to create an Excel file.  (To make it even easier, you can upload the file to SharePoint or Google Sheets and send only the link.  This is especially valuable if you suspect the recipient doesn’t have Excel installed.)
+
+Just as when reading Excel files, you must have the \sphinxcode{\sphinxupquote{xlrd}} module installed; {\hyperref[\detokenize{chapter-13-etl:pretty-easy-format-to-read-xlsx}]{\emph{see above for details}}}.  If you want to create an Excel file with just one sheet in it, you can make a single call to \sphinxcode{\sphinxupquote{df.to\_excel()}}.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}films}\PYG{o}{.}\PYG{n}{to\PYGZus{}excel}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Opening Weekends.xlsx}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+If you want to put several DataFrames into one Excel file, as different sheets in the workbook, then you need to get a little more fancy.  The indentation in the following code is essential (as always with Python).
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{with} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{ExcelWriter}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Two Things.xlsx}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)} \PYG{k}{as} \PYG{n}{writer}\PYG{p}{:}        \PYG{c+c1}{\PYGZsh{} Open the file.}
+    \PYG{n}{df}\PYG{o}{.}\PYG{n}{to\PYGZus{}excel}\PYG{p}{(} \PYG{n}{writer}\PYG{p}{,} \PYG{n}{sheet\PYGZus{}name}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{World Series Data}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Write one sheet.}
+    \PYG{n}{df\PYGZus{}films}\PYG{o}{.}\PYG{n}{to\PYGZus{}excel}\PYG{p}{(} \PYG{n}{writer}\PYG{p}{,} \PYG{n}{sheet\PYGZus{}name}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Film Data}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}    \PYG{c+c1}{\PYGZsh{} Write the other.}
+\end{sphinxVerbatim}
+
+Python’s \sphinxcode{\sphinxupquote{with}} statement lets you create a resource (in this case a new, open file) and Python will automatically close it up for you when you’re done using it.  At the end of the two indented lines, Python will close the file, so that other applications can open it.
+
+For more details, see \sphinxhref{https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to\_excel.html}{the documentation for \sphinxcode{\sphinxupquote{df.to\_excel()}}}.
+
+
+\subsection{For a technical audience, usually use a CSV file.}
+\label{\detokenize{chapter-13-etl:for-a-technical-audience-usually-use-a-csv-file}}
+If sharing data with other data workers, who are likely to use Python, R, or some similarly nerdy tool, you probably want to create a CSV file.  The reason is simple: You know that this is one of the easiest file types to import in your code, so make life easy for your coworkers, too.  Just call \sphinxcode{\sphinxupquote{pd.to\_csv( 'my\sphinxhyphen{}filename.csv' )}} to save your DataFrame.  Although you can use the \sphinxcode{\sphinxupquote{sep="\textbackslash{}t"}} parameter to create a TSV file, this is rarely what your coworkers want, so it’s to be generally avoided.
+
+But note that you can lose a lot of important information this way!  You may be familiar with how Excel complains if you try to save an Excel workbook in CSV format, letting you know that you’re losing information, such as formatting and formulas.  Any information in your DataFrame other than the text contents of the cells will be lost when saving as CSV.  For instance, if you’ve converted a column to a categorial variable, that won’t be obvious when the data is saved to CSV, and it will be re\sphinxhyphen{}imported as plain text.
+
+For that reason, we have the following option.
+
+
+\subsection{For archiving your own work, use a Pickle file.}
+\label{\detokenize{chapter-13-etl:for-archiving-your-own-work-use-a-pickle-file}}
+Python has always had a way to store any Python object in a file, perfectly intact for later loading, using the Pickle format.  The standard extension for this is \sphinxcode{\sphinxupquote{.pkl}}.  (That’s P\sphinxhyphen{}K\sphinxhyphen{}L, not P\sphinxhyphen{}K\sphinxhyphen{}one, because it’s short for PicKLe.)  The name comes, of course, from the fact that pickling vegetables stores them on the shelf long\sphinxhyphen{}term, and yet when you eventually open them later, they’re fine.  Similarly, you can store Python objects in a file long\sphinxhyphen{}term, open them later, and they’re fine.
+
+Because Python guarantees that any object you pickle to a file will come back from that file in exactly the same form, you can pickle entire DataFrames and know that every little detail will be preserved, even things that won’t get saved correctly to CSV or Excel files, like categorical data types.
+
+This is a great way to obey the advice \sphinxhref{chapter-11-processing-rows\#when-the-bottleneck-is-the-dataset}{at the end of the Chapter 11 notes}.  If you load a big dataset and do a bunch of data cleaning work, and your code is a little slow to run, just save your work to a file right then.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df}\PYG{o}{.}\PYG{n}{to\PYGZus{}pickle}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{cleaned\PYGZhy{}dataset.pkl}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+Then start a new Python script or Jupyter notebook and load the DataFrame you just saved.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{read\PYGZus{}pickle}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{saved\PYGZhy{}for\PYGZhy{}later.pkl}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+Now do all your analysis work in that second script or notebook, and whenever you have to re\sphinxhyphen{}run your analysis from the beginning, you won’t have to wait for all the data cleaning code to get run again.
+
+We won’t discuss in these notes the creation of HTML or JSON files from Python.  Although there is occasional value in it, it’s much less commonly useful than reading those formats, which we covered above.  We also won’t discuss the creation of SQL databases, but here are three ways you can learn more about that.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+SQL queries can be used to create or modify tables, and we’ll see a bit about running SQL queries through Python in the upcoming DataCamp homework.
+
+\item {} 
+Those interested in learning SQL deeply can take Bentley’s CS350 course.
+
+\item {} 
+Consider forming a team for one of the Learning On Your Own activities shown below.
+
+\end{enumerate}
+
+\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} SQL in Jupyter}
+
+Look up the \sphinxcode{\sphinxupquote{ipython\sphinxhyphen{}sql}} extension to Jupyter and research the following essential parts, then reporting on them in some sensible medium for your classmates.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+How to install it and load it.
+
+\item {} 
+How to connect to a database.
+
+\item {} 
+How to use both \sphinxcode{\sphinxupquote{\%sql}} and \sphinxcode{\sphinxupquote{\%\%sql}} commands.
+
+\item {} 
+How to store the results of database queries in pandas DataFrames.
+
+\end{enumerate}
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} SQLite in Python}
+
+Python actually comes with a built\sphinxhyphen{}in SQLite database module, which you can use by doing \sphinxcode{\sphinxupquote{import sqlite3 as sl}}, without even any installation step.  Check out \sphinxhref{https://towardsdatascience.com/do-you-know-python-has-a-built-in-database-d553989c87bd}{this blog post} for more information, and report on its key features to the class.
 \end{sphinxadmonition}
 
 
@@ -8894,7 +9418,7 @@ The same code works for any random variable, not just \sphinxcode{\sphinxupquote
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0, 0, 1, 1, 0, 0, 1, 0, 0, 0])
+array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 \end{sphinxVerbatim}
 
 The same code works for any random variable, not just \sphinxcode{\sphinxupquote{b1}}.
@@ -8984,9 +9508,9 @@ The same code works for any continuous random variable, not just \sphinxcode{\sp
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([ 99.51149251,  98.41891356,  90.63881166,  99.14398002,
-       102.01084226,  98.62951074, 102.91198749,  94.65917374,
-       102.19344429,  94.23238276])
+array([ 97.05990235, 110.56644807,  97.67195286, 104.53449756,
+       103.17548422,  98.87309427,  98.43261043, 106.18133537,
+        98.7061587 , 100.11782046])
 \end{sphinxVerbatim}
 
 

@@ -279,10 +279,10 @@ len( df_big ), len( df_rank )
 
 Let's just get a sense of how many of the 231 rows in the ranking dataset have an exact match in the big dataset, and thus their official names are already in the ranking dataset.
 
-names_from_df_big = list( df_big['NAME'] )
+official_names = list( df_big['NAME'] )
 
 def has_exact_match ( name_from_rank_df ):
-    return name_from_rank_df in names_from_df_big
+    return name_from_rank_df in official_names
 
 sum( df_rank['Name'].apply( has_exact_match ) )
 
@@ -299,14 +299,14 @@ get_close_matches( 'pork', [ 'salad', 'lollipops', 'soda' ] )
 
 Let's use `get_close_matches()` to create a function that will match up university names across the two datasets if they're just off by a small amount.  This could automate some of the matching we'd otherwise have to do by hand for those 90 schools that didn't match exactly.
 
-def get_closest_name_from_df_big ( name_from_df_rank ):
+def get_closest_official_name ( name_from_df_rank ):
 
     # If there's an exact match, we're already done.
     if has_exact_match( name_from_df_rank ):
         return name_from_df_rank
     
     # Get the closest matches, if any.
-    close_matches = get_close_matches( name_from_df_rank, names_from_df_big )
+    close_matches = get_close_matches( name_from_df_rank, official_names )
     
     # If there weren't any, return None
     if len( close_matches ) == 0:
@@ -316,19 +316,19 @@ def get_closest_name_from_df_big ( name_from_df_rank ):
     return close_matches[0]
 
 # Test it
-get_closest_name_from_df_big( 'Bentley Universal' )
+get_closest_official_name( 'Bentley Universal' )
 
-Let's apply that function to every row in the small dataset.  Note that `get_close_matches()` can be a bit slow, so the following code actually takes about 15 seconds to complete executing.  (It would be even slower if we didn't have the first `if` statement in `get_closest_name_from_df_big()`, which skips `get_close_matches()` when it's not needed.)
+Let's apply that function to every row in the small dataset.  Note that `get_close_matches()` can be a bit slow, so the following code actually takes about 15 seconds to complete executing.  (It would be even slower if we didn't have the first `if` statement in `get_closest_official_name()`, which skips `get_close_matches()` when it's not needed.)
 
-df_rank['Name in df_big'] = df_rank['Name'].apply( get_closest_name_from_df_big )
+df_rank['Official Name'] = df_rank['Name'].apply( get_closest_official_name )
 df_rank.head()
 
 The results are correct for the first four schools, which were exact matches, but not so good for Columbia.  The only way to check to see if this worked out well is to do a manual check, because only a human is going to be able to assess whether Columbia University and Coleman University are the same; Python did its best.
 
 We can check by taking a glance over the following output, and noting which rows are wrong.  I don't include the full output here of all 90 discrepancies, just to save space, but you can use `pd.set_option( 'display.max_rows', None )` to see them all.
 
-rows_with_guesses = df_rank[ df_rank['Name'] != df_rank['Name in df_big'] ]
-rows_with_guesses[['Name','Name in df_big']]
+rows_with_guesses = df_rank[ df_rank['Name'] != df_rank['Official Name'] ]
+rows_with_guesses[['Name','Official Name']]
 
 We see that in many cases, it did a good job, such as in rows 18, 21, 24, and 225 through 228.  We know that rows 4 and 25 are wrong, but is row 222 wrong?  That all depends on whether Grants is the location of the main campus for New Mexico State University.  Now you see why my students and I ended up on Google!
 
@@ -345,19 +345,19 @@ Holy cow!  Let's try to narrow our search a bit...
 df_big[df_big['NAME'].str.contains( 'Columbia' )
      & df_big['NAME'].str.contains( 'University' )]['NAME']
 
-Aha, Columbia University in the City of New York was so long of a phrase that `get_close_matches()` did not think it was "close" to Columbia University.  So now I've found that the entry for row 4 in `df_rank['Name in big_df']` should be Columbia University in the City of New York.  I can simply tell Python to change it.
+Aha, Columbia University in the City of New York was so long of a phrase that `get_close_matches()` did not think it was "close" to Columbia University.  So now I've found that the entry for row 4 in `df_rank['Official Name']` should be Columbia University in the City of New York.  I can simply tell Python to change it.
 
-df_rank.loc[4,'Name in df_big'] = 'Columbia University in the City of New York'
+df_rank.loc[4,'Official Name'] = 'Columbia University in the City of New York'
 
 When I'm done manually investigating the 30 schools that had to be fixed by hand, I will have 30 lines of code that look just like the one above, but for different schools.  Here's a sample.
 
-df_rank.loc[4,'Name in df_big'] = 'Columbia University in the City of New York'
-df_rank.loc[34,'Name in df_big'] = 'Georgia Institute of Technology-Main Campus'
-df_rank.loc[41,'Name in df_big'] = 'Tulane University of Louisiana'
-df_rank.loc[52,'Name in df_big'] = 'Pennsylvania State University-Main Campus'
+df_rank.loc[4,'Official Name'] = 'Columbia University in the City of New York'
+df_rank.loc[34,'Official Name'] = 'Georgia Institute of Technology-Main Campus'
+df_rank.loc[41,'Official Name'] = 'Tulane University of Louisiana'
+df_rank.loc[52,'Official Name'] = 'Pennsylvania State University-Main Campus'
 # and so on, for a total of 30 changes
 
-But if we're trying to follow DRY principles, we notice that there's definitely a lot of repeated code here.  We're copying and pasting the `df_rank.loc[...,'Name in big_df'] = '...'` part each time.  We could simplify this by creating a Python dictionary with just our corrections.  Here I include all 30 corrections as they would be if we had carefully investigated each.
+But if we're trying to follow DRY principles, we notice that there's definitely a lot of repeated code here.  We're copying and pasting the `df_rank.loc[...,'Official Name'] = '...'` part each time.  We could simplify this by creating a Python dictionary with just our corrections.  Here I include all 30 corrections as they would be if we had carefully investigated each.
 
 # Store corrections in a dictionary:
 corrections = {
@@ -389,14 +389,14 @@ corrections = {
 
 # Apply all the corrections at once:
 for row_index, fixed_name in corrections.items():
-    df_rank.loc[row_index,'Name in df_big'] = fixed_name
+    df_rank.loc[row_index,'Official Name'] = fixed_name
 
 # See if at least the top 5 look right:
 df_rank.head()
 
-**Step 4.** And now that all corrections have been made, we can do the merge with confidence.  We take care to merge the main dataset's `"NAME"` column with the smaller dataset's `"Name in df_big"` column.  This merge will be a left join, because we do not want to discard a school just because it wasn't in US News's rankings.
+**Step 4.** And now that all corrections have been made, we can do the merge with confidence.  We take care to merge the main dataset's `"NAME"` column with the smaller dataset's `"Official Name"` column.  This merge will be a left join, because we do not want to discard a school just because it wasn't in US News's rankings.
 
-df_merged = pd.merge( df_big, df_rank, left_on='NAME', right_on='Name in df_big', how='left' )
+df_merged = pd.merge( df_big, df_rank, left_on='NAME', right_on='Official Name', how='left' )
 df_merged.head()
 
 Now we have one large dataset containing both the generic data and the ranking data.  Although we see all missing values for ranking columns above, this is just because the first five schools in the dataset didn't happen to be ranked by US News.  This is not surprising; there were over 7700 schools in the dataset and only 231 were ranked by US News.  But we can see that the merge did go correctly if we inspect a row that had ranking data.

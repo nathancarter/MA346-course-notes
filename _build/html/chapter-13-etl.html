@@ -52,7 +52,7 @@
 <meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/chapter-13-etl.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Miscellaneous Munging Methods (ETL)" />
-<meta property="og:description" content="Miscellaneous Munging Methods (ETL)  <a href="../../_slides/chapter-13-slides.html">See also the slides that summarize a portion of this content.</a>  Warning  " />
+<meta property="og:description" content="Miscellaneous Munging Methods (ETL)  <a href="../../_slides/chapter-13-slides.html">See also the slides that summarize a portion of this content.</a>  What do t" />
 <meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
 
 <meta name="twitter:card" content="summary">
@@ -344,7 +344,127 @@
             <i class="fas fa-list"></i> On this page
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-do-these-words-mean">
+   What do these words mean?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-are-we-focusing-on-this">
+   Why are we focusing on this?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-provenance">
+   Data provenance
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-provenance">
+     What is provenance?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-vs-information">
+     Data vs. information
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-dictionaries">
+     Data dictionaries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#missing-values">
+   Missing values
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-missing-values-are-everywhere">
+     Why missing values are everywhere
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#are-missing-values-bad">
+     Are missing values bad?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#should-i-ever-remove-missing-values">
+     Should I ever remove missing values?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#when-i-need-to-remove-missing-values-how-do-i">
+     When I need to remove missing values, how do I?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#all-the-other-munging-things">
+   All the other munging things
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-data-files">
+   Reading data files
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#easy-formats-to-read-csv-and-tsv">
+     Easy formats to read: CSV and TSV
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pretty-easy-format-to-read-xlsx">
+     Pretty easy format to read: XLSX
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#easy-format-to-read-with-occasional-problems-html">
+     Easy format to read with occasional problems: HTML
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#not-an-easy-format-to-read-json">
+     Not an easy format to read: JSON
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#not-an-easy-source-to-read-sql">
+     Not an easy source to read: SQL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-data-files">
+   Writing data files
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-a-nontechnical-audience-create-an-excel-file">
+     For a nontechnical audience, create an Excel file.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-a-technical-audience-usually-use-a-csv-file">
+     For a technical audience, usually use a CSV file.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-archiving-your-own-work-use-a-pickle-file">
+     For archiving your own work, use a Pickle file.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -356,9 +476,634 @@
   <div class="section" id="miscellaneous-munging-methods-etl">
 <h1>Miscellaneous Munging Methods (ETL)<a class="headerlink" href="#miscellaneous-munging-methods-etl" title="Permalink to this headline">¶</a></h1>
 <p><a href="../../_slides/chapter-13-slides.html">See also the slides that summarize a portion of this content.</a></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This chapter has not yet been written.  Check back later.</p>
+<div class="section" id="what-do-these-words-mean">
+<h2>What do these words mean?<a class="headerlink" href="#what-do-these-words-mean" title="Permalink to this headline">¶</a></h2>
+<p>ETL stands for “Extract, Transform, and Load.”  This is the standard term for all the work you may need to do with data to get it ready for actual analysis.  Before we get to make attractive visualizations or do useful analyses and produce insights, we have to get the data into a form that makes those things possible.  Think of the terms as having roughly these meanings:</p>
+<ul class="simple">
+<li><p>Extract = get data from the web, a database, or wherever it’s originally located (and maybe save it into a CSV file on our computer, for example)</p></li>
+<li><p>Transform = manipulate the content of the data to make it more suitable for our needs (such as converting column data types, handling missing values, etc.)</p></li>
+<li><p>Load = get the data into our Python script, notebook, or other analysis software (which can be an easy one-liner for small data, but is harder for big data)</p></li>
+</ul>
+<p>While ETL is an official term, the slang term is “munging.”  The word is well-chosen, in that it sounds a little bit awkward and a little bit gross.  Like data manipulation often is.  When most people say “data munging,” they’re probably referring more to the “transform” part of ETL.</p>
+<p>I suspect people say ETL when they’re speaking professionally and they say munging when they’re complaining to a friend.</p>
+</div>
+<div class="section" id="why-are-we-focusing-on-this">
+<h2>Why are we focusing on this?<a class="headerlink" href="#why-are-we-focusing-on-this" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-primary admonition">
+<p class="admonition-title">Big Picture</p>
+<p>Many well-respected people in the data science community estimate that 70% to 80% of a data scientist’s time can be spent on ETL rather than on the more interesting work of modeling, analysis, visualization, and communication.</p>
+</div>
+<p>While many people hear those high percentages and can’t believe it, I suspect that by this point in our course, that doesn’t sound at all unreasonable to you.  Just last week, our in-class exercise was to merge two datasets, which takes only two or three lines of Python code.  But the amount of work necessary to prepare the datasets for a useful merge was far greater.</p>
+<p>In <em>The Data Science Design Manual,</em> Steven Skeina has a useful chapter on ETL.  He has a humorous way of expressing the idea that ETL is a huge part of data work:</p>
+<blockquote>
+<div><p>Most data scientists spend much of their time cleaning and formatting data. The rest spend most of their time complaining that there is no data available to do what they want to do.</p>
+</div></blockquote>
+<p>In other words, you can buckle down and do the munging you need to get the data you want, or you can sit around and get nowhere.  Those are the options.</p>
+<p>Well, okay, there is a more pleasant option.  You can advance far enough in an organization that you have data workers under you in the org chart, and you make them do the ETL and hand you the results so that you can do the interesting stuff.  But you have to put in your time as a new hire before you can rise to directing others, and even then, you’ll still have to work closely with those you supervise to be sure that their munging gives you the kind of result you can use.</p>
+<p>Now, the variety of things that fall under the ETL category is truly enormous.  The reason for this is that the purpose of munging is to take ugliness and clean it up, and there are so many different types of ugliness in the world.  <a class="reference external" href="https://vita.had.co.nz/papers/tidy-data.pdf">When discussing tidy data</a>, Hadley Wickham quotes Tolstoy:</p>
+<blockquote>
+<div><p>Happy families are all alike; every unhappy family is unhappy in its own way.</p>
+</div></blockquote>
+<p>Because every dataset is unhappy in its own way, your munging toolbelt can never be too big.  And so we can’t possibly cover it all in this chapter.  Experience with datasets is the best teacher, and I intend this course to give you many experiences with new datasets.  But we will cover some key topics.</p>
+</div>
+<div class="section" id="data-provenance">
+<h2>Data provenance<a class="headerlink" href="#data-provenance" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-provenance">
+<h3>What is provenance?<a class="headerlink" href="#what-is-provenance" title="Permalink to this headline">¶</a></h3>
+<p>If you’ve ever watched <a class="reference external" href="https://www.pbs.org/wgbh/roadshow/">Antiques Roadshow</a> (or walked in while one of your grandparents was watching it), you’ll know that the value of an item can be significantly impacted by its <em>provenance,</em> which means its history and origins.  If the appraiser can verify that a particular antique item was part of an important event or story in the past, or that the item is officially documented as being genuine, then this increases the item’s value.</p>
+<p>The value of data is also significantly impacted by its history and origins.  If we know how the data was collected and can read about the details of that process, that will probably significantly increase its usefulness to us.</p>
+<p>For instance, imagine you get a dataset in which some numeric columns are entitled <code class="docutils literal notranslate"><span class="pre">EQ50</span></code>, <code class="docutils literal notranslate"><span class="pre">EQ51</span></code>, <code class="docutils literal notranslate"><span class="pre">EQ52</span></code>, and so on.  You would probably not be able to use the numbers in those columns for any purpose, because you don’t know what they mean.  But what if you find out that the data came from an economic survey that happened every quarter, and measured the GDP of various U.S. states during that quarter, in units of millions of dollars.  The organization that did the work referred to such measurements as “Economic Quarters” or EQs for short, and started with EQ1 in January 1987, counting upwards from there.  We can therefore figure out that EQ50 must refer to the second quarter of 2000, and so on.  Formerly useless data now has meaning and could be used.</p>
+</div>
+<div class="section" id="data-vs-information">
+<h3>Data vs. information<a class="headerlink" href="#data-vs-information" title="Permalink to this headline">¶</a></h3>
+<div class="alert alert-primary admonition">
+<p class="admonition-title">Big Picture</p>
+<p>The difference between <em>data</em> and <em>information</em> is context.  Data is raw numbers, while information is having those numbers in a context we understand, so that the numbers have meaning.  Data provenance can be the context that turns data into information.</p>
+</div>
+<p>To make sense of data, that is, to have information, not just data, requires knowing something about the domain in which the data lives.  <a class="reference external" href="chapter-12-concat-and-merge#when-there-are-many-matches-for-some-rows">One of the examples in the previous chapter</a> was about data from American football.  If you’re not familiar with that sport, it’s harder to understand the example, so I was careful to explain in the chapter the few necessary football concepts you’d need.  If your dataset comes from finance, you’ll be better equipped to turn that data into information if you know something about finance.  If you’re working with economic data, you’ll do better if you know economics.</p>
+<p>This is where Bentley students have an advantage in data science over students from other universities.  While some schools have excellent technical educations and may cover more programming or machine learning skills than a data degree from Bentley does, every Bentley graduate has undergone an extensive training in business.  If you’re planning on applying your data skills in the business world, you’ll have a broader knowledge of that domain than most students from, say, an engineering school or a computer science degree.</p>
+</div>
+<div class="section" id="data-dictionaries">
+<h3>Data dictionaries<a class="headerlink" href="#data-dictionaries" title="Permalink to this headline">¶</a></h3>
+<p>Anyone producing a dataset should take care to distribute with it a data dictionary, which is a human-readable explanation in clear language of the meaning of each column in the dataset.  We’ve referred very often to the home mortgage dataset in these notes; it comes with an extensive data dictionary provided by the Consumer Financial Protecion Bureau, and you can <a class="reference external" href="https://ffiec.cfpb.gov/documentation/2018/lar-data-fields/">see it online here</a>.  Since the average person doesn’t know what column names like “lei” or “hoepa_status” or “aus-4” might mean, it’s essential to be able to look them up in a data dictionary.</p>
+<p>If your employer puts you in charge of creating a dataset to be used by others, be sure that you always couple it with a document explaining the meaning of each column.  If you find a dataset you’d like to use in your own work (whether it comes from the web for your use in MA346 or it comes from your company’s intranet when you have an internship or job), one of the first questions you should ask is where the data dictionary is.  Otherwise, how will you know what the data means?</p>
+<p>If a dataset doesn’t come from a data dictionary, but you have personal access to the source of the data (such as another team within your company), you can organize a meeting to ask them where the data comes from and what its columns mean.  Documenting the results of such a meeting and storing it with the data in a data dictionary make that dataset more useful to everyone thereafter (and save everyone from repeating the same meeting later).  I had a meeting of exactly this type with the nonprofit organization that partnered with my graduate data science class in Fall 2019 to discuss their datasets.</p>
+</div>
+</div>
+<div class="section" id="missing-values">
+<h2>Missing values<a class="headerlink" href="#missing-values" title="Permalink to this headline">¶</a></h2>
+<p>This can be one of the most confusing aspects of data work for new students of data science, so let me begin by emphasizing four key points about missing values that you should always keep in mind.</p>
+<div class="alert alert-primary admonition">
+<p class="admonition-title">Big Picture</p>
+<ol class="simple">
+<li><p>Missing values are extremely common, and are sometimes inevitable.</p></li>
+<li><p>Sometimes missing values indicate a mistake or a problem, and sometimes they don’t.</p></li>
+<li><p>Replacing missing values with actual values is called <em>imputation,</em> and there are <em>many</em> different ways to do it.</p></li>
+<li><p>Sometimes imputation is the right thing to do with missing values, but sometimes it is the wrong thing to do.</p></li>
+</ol>
+</div>
+<p>Let’s think through the details of these important points.</p>
+<div class="section" id="why-missing-values-are-everywhere">
+<h3>Why missing values are everywhere<a class="headerlink" href="#why-missing-values-are-everywhere" title="Permalink to this headline">¶</a></h3>
+<p>Missing values can and do appear in almost every type of dataset.  In the home mortgage dataset, for instance, anyone who didn’t fully complete the application will have some parts of their record in the database missing.  When compiling a comprehensive record of millions of mortgage applications, we simply can’t expect that everyone filled out the application completely!  Missing values are inevitable.</p>
+<p>Even if you imagine a much more reliable source of data than human beings, such as a robotic sensor that’s programmed to take weather readings every hour on the hour, things can still go wrong.  The sensor can fail and not collect data for a few hours until someone replaces it and reconnects it.  The people in charge of the experiment can accidentally delete or lose some data files.  The hard drive on which the data is stored can malfunction so that not all data can be recovered.  Missing values can happen anywhere.</p>
+</div>
+<div class="section" id="are-missing-values-bad">
+<h3>Are missing values bad?<a class="headerlink" href="#are-missing-values-bad" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes missing values occur in a dataset because of a problem.  Consider the examples given in the previous paragraph.  A broken sensor that fails to report data for a few hours means that something went wrong, something we wish hadn’t happened, but now our data is incomplete because of that problem.  The missing values reflect that problem.</p>
+<p>But sometimes missing values are inserted into a dataset intentionally, because the creator of the dataset wants to communicate that a certain piece of data is unavailable.  For instance, in my football dataset, if the Receiver column in the Plays table has some missing entries, that means that there was no receiver involved in the play.  The missing values are communicating something intentional, sensible, and correct.  <em>Missing values don’t always indicate a problem.</em></p>
+<p>Even in the example of the failed sensor, where the missing values indicate a problem, that doesn’t mean that they should be removed or filled in with actual values.  Those missing values are truthfully stating what data was collected and what data was not collected.  Altering them would mean that our dataset would no longer be telling the truth about its origins.  If you’re sworn in on the witness stand, and you’re asked who committed the robbery, and you honestly don’t know the answer, the truthful thing to do is to say that you don’t know!  Making up an answer is clearly a deceptive thing to do in that situation, and it is often a deceptive thing to do with data as well.  <em>Resist the urge to “solve” missing values by always filling them in.</em>  Sometimes they’re telling an important truth.</p>
+<p>In fact, this is why NumPy has the built-in value <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>, Python has <code class="docutils literal notranslate"><span class="pre">None</span></code>, R has <code class="docutils literal notranslate"><span class="pre">NA</span></code>, and Julia has <code class="docutils literal notranslate"><span class="pre">missing</span></code>.  These languages all recognize the legitimacy of missing values, and give you a way to express them when you need to.</p>
+<p>Notice the connection between these issues and data provenance.  If we know where the data came from and how it was obtained, we might be able to make sense of the missing values, and they can have important meaning for us, even though they’re missing.</p>
+</div>
+<div class="section" id="should-i-ever-remove-missing-values">
+<h3>Should I ever remove missing values?<a class="headerlink" href="#should-i-ever-remove-missing-values" title="Permalink to this headline">¶</a></h3>
+<p><strong>Example 1: Removing missing values</strong></p>
+<p>Some circumstances demand that we remove missing values.  Consider the following (real) dataset of the number of home runs hit per game in each Major League Baseball World Series in the 1990s.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span>
+    <span class="c1"># This data was collected by hand from pages on baseball-reference.com.</span>
+    <span class="s2">&quot;Year&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">1990</span><span class="p">,</span> <span class="mi">1991</span><span class="p">,</span> <span class="mi">1992</span><span class="p">,</span> <span class="mi">1993</span><span class="p">,</span> <span class="mi">1994</span><span class="p">,</span> <span class="mi">1995</span><span class="p">,</span> <span class="mi">1996</span><span class="p">,</span> <span class="mi">1997</span><span class="p">,</span> <span class="mi">1998</span><span class="p">,</span> <span class="mi">1999</span> <span class="p">],</span>
+    <span class="s2">&quot;HR&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span> <span class="p">],</span>
+    <span class="s2">&quot;#Games&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span> <span class="p">]</span>
+<span class="p">}</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;HR/Game&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;HR&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;#Games&#39;</span><span class="p">]</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>HR</th>
+      <th>#Games</th>
+      <th>HR/Game</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1990</td>
+      <td>6.0</td>
+      <td>4.0</td>
+      <td>1.500000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1991</td>
+      <td>16.0</td>
+      <td>7.0</td>
+      <td>2.285714</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1992</td>
+      <td>9.0</td>
+      <td>6.0</td>
+      <td>1.500000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1993</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>2.166667</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1994</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1995</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>2.166667</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1996</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1997</td>
+      <td>15.0</td>
+      <td>7.0</td>
+      <td>2.142857</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1998</td>
+      <td>9.0</td>
+      <td>4.0</td>
+      <td>2.250000</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1999</td>
+      <td>6.0</td>
+      <td>4.0</td>
+      <td>1.500000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;HR/Game&#39;</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Home Runs per Games in World Series&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="s1">&#39;Year&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s1">&#39;HR/Game&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">2.5</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-13-etl_5_0.png" src="_images/chapter-13-etl_5_0.png" />
+</div>
+</div>
+<p>Assume you were trying to show that this number was not going convincingly up or down throughout the 1990s (a made-up research question just as an example).  You’re considering fitting a linear model to the data and showing that its slope is close to zero (perhaps even not statistically significantly different from zero).  Let’s try.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;HR/Game&#39;</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>LinregressResult(slope=nan, intercept=nan, rvalue=nan, pvalue=nan, stderr=nan)
+</pre></div>
+</div>
+</div>
+</div>
+<p>This has clearly failed, giving us all missing values in our linear model.  The reason, no doubt, is the missing value in our data.  (There was no World Series in 1994 due to a players’ strike.)</p>
+<p>So in this case, the missing values are clearly causing a problem with what we want to do with the data.  And since we can fit a linear model to the data that remains, it would be perfectly acceptable to drop the one row that has missing values and proceed with the nine rows that remain.  <em>This is a case in which removing the missing values makes sense.</em></p>
+<p>But we do not remove them from the original dataset; we simply don’t include them in the data used to create the linear model.  The original dataset stays intact.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_without_94</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span> <span class="n">df_without_94</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">df_without_94</span><span class="p">[</span><span class="s1">&#39;HR/Game&#39;</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>LinregressResult(slope=-0.0012387387387387322, intercept=4.305389317889305, rvalue=-0.0085545966495754, pvalue=0.9825737815654227, stderr=0.054728717410681665)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we have an actual linear model.  (We’re not going to analyze it here; that wasn’t the point of this example.)</p>
+<p><strong>Example 2:  Not removing missing values</strong></p>
+<p>Let’s say you’re working for a small-but-growing automobile sales organization.  They’ve just opened their second location and they’ve realized that their growth has far outpaced their record-keeping.  They’ve got some spreadsheets about sales and commissions for their various employees, but it’s not comprehensive because they haven’t been organized about record-keeping in the past.  They’ve asked you to organize it into a database.</p>
+<p>Let’s say you realize the data isn’t that huge, so you can probably fit it in one spreadsheet.  You begin by creating a private Google Sheet and sharing the link with all the sales managers, asking them to paste in all the historic data on which they have records, to create a shared dataset that’s as comprehensive as possible.  You start with columns for month, employee, manager, number of sales, commission, and others.  When the task is done, you notice that many rows have missing values for the number of sales and commission columns.  The managers knew the employees were working there that month, but they’d lost the relevant historical data in the intervening years.</p>
+<p>If you were to remove those rows from the dataset, it could make it seem as if the employee was not a part of the company or team at the time.  Thus even though those rows contain missing values, they are still communicating other important information.  In this case, you would decide not to remove the rows, even though they won’t contribute much to any later analysis.</p>
+<p>Any decision like this made when constructing a dataset should be documented in its data dictionary.</p>
+<p><strong>Example 3: Actually adding missing values</strong></p>
+<p>In the home mortgage dataset with which we’re very familiar, some columns (such as interest rate) contain mostly numerical data, but occasionally the word Exempt in place of a number.  This makes it impossible to do any computations on such columns, such as <code class="docutils literal notranslate"><span class="pre">df['interest_rate'].mean()</span></code>, because the column is text, not numeric.</p>
+<p>In this case, it can be valuable to replace the word Exempt with the actual missing value <code class="docutils literal notranslate"><span class="pre">np.nan</span></code> throughout the column, so that it can then be converted to type <code class="docutils literal notranslate"><span class="pre">float</span></code>.  In doing so, you should carefully document that all Exempt entries have become missing values, in order to facilitate analysis.  <em>This is a situation in which missing values are actually intentionally added!</em></p>
+<p>If you needed to track which rows had originally been Exempt, you could retain the original interest rate column for reference, creating a new one as you do the replacement.  Alternately, you could create a new column that records simply a single boolean value for “interest rate exempt” so that you can tell missing values from Exempt values.</p>
+<p>Elsewhere in the same mortgage dataset, we find cases in which numbers like 999 were used for applicants’ ages.  Clearly these are not correct values, and should be treated as a lack of data, rather than legitimate data.  Consider the alternatives for how to handle them:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>If we leave numbers like 999 in the data</p></th>
+<th class="head"><p>If we replace them with missing values</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Statistics about age, like mean, median, etc., will be very wrong</p></td>
+<td><p>Statistics about age will be much more accurate</p></td>
+</tr>
+<tr class="row-odd"><td><p>The number of missing values in the dataset will be very small</p></td>
+<td><p>The number of missing values in the data will be much more accurate</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="when-i-need-to-remove-missing-values-how-do-i">
+<h3>When I need to remove missing values, how do I?<a class="headerlink" href="#when-i-need-to-remove-missing-values-how-do-i" title="Permalink to this headline">¶</a></h3>
+<p>Removing missing values is called <em>data imputation,</em> which is simply the technical word for filling in values where there were none.  Imputation is an enormous area of statistics to which we cannot do justice in this chapter, but let’s see why sometimes imputing values is essential.</p>
+<p>In the baseball example above, we saw that some model-fitting procedures can’t work with missing values, and we need to remove them from consideration.  Now let’s assume we were fitting some (more complex) model to the property values in the mortgage dataset.  If we need to drop any row in which the property value is missing, how might that cause problems?</p>
+<p>The question takes us right back to data provenance:  <em>Why</em> is the property value missing on the mortgage application?  Let’s say we investigate and find that this is usually because the application was not completed by the potential borrower.  The question then arises: Are all borrowers equally likely to quit an application half way through?  If they are, then perhaps dropping such rows from the data is an acceptable move.</p>
+<p>But the government publishes the data to help combat discrimination in lending.  What if we were to look at the proportion of incomplete applications and find that it’s much higher for certain ethnic groups, especially in certain locations?  Perhaps they’re not completing the application because they’re facing discrimination in the process and don’t have the energy or ability to fight it.  If that’s the case, then dropping rows with missing property values will <em>significantly reduce the representation of those ethnic groups in our data.</em>  Our model will unintentionally favor the other ethnic groups.  Not only will it make bad predictions (so we’ve done our data work wrong) but it will help to further the discrimination the dataset was trying to prevent (so we’ve made an ethical mistake as well)!</p>
+<p>So if we find that the missing values are not spread evenly across groups within our data, we can’t in good conscience drop those rows.  Instead, we have to find some way to insert realistic or feasible values in place of the missing values.  Here are a few common ways to do so:</p>
+<ul class="simple">
+<li><p><strong>Mean substitution</strong> - Replace each missing property value with the mean property value across all rows.</p></li>
+<li><p><strong>Model-based substitution</strong> - Create a simple model that predicts property values based on other things, such as zip code, and use it to fill in each missing value.</p></li>
+<li><p><strong>Random imputation</strong> - Replace each missing property value with a randomly chosen property value from elsewhere in the dataset, or randomly chosen from other similar records (e.g., in the same state, or the same race, or the same income bracket, etc.).</p></li>
+</ul>
+<p>Again, many statistical concerns arise when doing imputation that we cannot cover in this short chapter of notes.  This is merely an introduction to the fact that this practice is an important one.</p>
+</div>
+</div>
+<div class="section" id="all-the-other-munging-things">
+<h2>All the other munging things<a class="headerlink" href="#all-the-other-munging-things" title="Permalink to this headline">¶</a></h2>
+<p>As I said at the outset, it’s not possible to cover everything you might need to do with data.  But here are a few essentials to keep in mind.</p>
+<p>When using data, keep in mind the units on every number, in terms as precise as you possibly can.  You can insert these units as comments in your code.  There are famous stories of <a class="reference external" href="https://en.wikipedia.org/wiki/Mars_Climate_Orbiter#Cause_of_failure">tens of millions of dollars lost in spacecraft</a> when units were not checked correctly in computer code, so these tiny details are not unimportant!</p>
+<p>In <em>The Data Science Design Manual</em> quoted earlier, the author suggests several types of unit discrepencies to pay attention to.</p>
+<ul class="simple">
+<li><p>differing standards of measurement, such as pounds vs. kilograms, or USD vs. GBP</p></li>
+<li><p>the time value of money, such as USD in January 2017 vs. USD in February 2017</p></li>
+<li><p>fluctuations in value, such as the price of gold at noon today vs. at 1pm today</p></li>
+<li><p>discrepencies in time zones, such as the price of gold at noon today in London vs. noon today in New York</p></li>
+<li><p>discrepencies in the units themselves, such as “shares of stock” before and after a stock split</p></li>
+</ul>
+<p>Another common units error to be aware of is the difference between percentages and proportions.  For instance, 15% is equal to the proportion 0.15.  When reporting such a value to a human reader, such as in a table of results, the percent is typically the more user-friendly choice.  When using such a value in a computation, such as multiplying to apply a percentage or proportion to a total quantity, the only correct choice is the proportion.  That is, 15% of 200 people is not <span class="math notranslate nohighlight">\(15\times200=3000\)</span>, but <span class="math notranslate nohighlight">\(0.15\times200=30\)</span>.</p>
+<p>Comments in code to track units can help with discrepencies like these.  See the code below that takes care with units as we adjust movie revenues for inflation in the following dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_films</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span>
+    <span class="s1">&#39;Title&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="s1">&#39;Avengers: Endgame&#39;</span><span class="p">,</span> <span class="s1">&#39;The Lion King&#39;</span><span class="p">,</span> <span class="s1">&#39;The Hunger Games&#39;</span><span class="p">,</span> <span class="s1">&#39;Finding Dory&#39;</span> <span class="p">],</span>
+    <span class="s1">&#39;Year&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2016</span> <span class="p">],</span>
+    <span class="s1">&#39;Opening Weekend (M$)&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="mf">357.115</span><span class="p">,</span> <span class="mf">191.771</span><span class="p">,</span> <span class="mf">152.536</span><span class="p">,</span> <span class="mf">135.060</span> <span class="p">]</span>
+<span class="p">}</span> <span class="p">)</span>
+<span class="n">df_films</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Opening Weekend (M$)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Avengers: Endgame</td>
+      <td>2019</td>
+      <td>357.115</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>The Lion King</td>
+      <td>2019</td>
+      <td>191.771</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>The Hunger Games</td>
+      <td>2012</td>
+      <td>152.536</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Finding Dory</td>
+      <td>2016</td>
+      <td>135.060</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">avg_annual_inflation</span> <span class="o">=</span> <span class="mi">3</span>                                <span class="c1"># An approximate percentage</span>
+<span class="n">inflation_factor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">avg_annual_inflation</span><span class="o">/</span><span class="mi">100</span>         <span class="c1"># Useful as an annual multiplier</span>
+<span class="n">df_films</span><span class="p">[</span><span class="s1">&#39;Years since film&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2020</span> <span class="o">-</span> <span class="n">df_films</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span>  <span class="c1"># Number of years elapsed</span>
+<span class="n">df_films</span><span class="p">[</span><span class="s1">&#39;Inflation factor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">inflation_factor</span> <span class="o">**</span> <span class="n">df_films</span><span class="p">[</span><span class="s1">&#39;Years since film&#39;</span><span class="p">]</span>
+                                                        <span class="c1"># Multiplier to apply inflation</span>
+<span class="n">df_films</span><span class="p">[</span><span class="s1">&#39;Opening Weekend (M$2020)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_films</span><span class="p">[</span><span class="s1">&#39;Opening Weekend (M$)&#39;</span><span class="p">]</span> \
+    <span class="o">*</span> <span class="n">df_films</span><span class="p">[</span><span class="s1">&#39;Inflation factor&#39;</span><span class="p">]</span>                      <span class="c1"># Converted to today&#39;s dollars</span>
+<span class="n">df_films</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Opening Weekend (M$)</th>
+      <th>Years since film</th>
+      <th>Inflation factor</th>
+      <th>Opening Weekend (M$2020)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Avengers: Endgame</td>
+      <td>2019</td>
+      <td>357.115</td>
+      <td>1</td>
+      <td>1.030000</td>
+      <td>367.828450</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>The Lion King</td>
+      <td>2019</td>
+      <td>191.771</td>
+      <td>1</td>
+      <td>1.030000</td>
+      <td>197.524130</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>The Hunger Games</td>
+      <td>2012</td>
+      <td>152.536</td>
+      <td>8</td>
+      <td>1.266770</td>
+      <td>193.228041</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Finding Dory</td>
+      <td>2016</td>
+      <td>135.060</td>
+      <td>4</td>
+      <td>1.125509</td>
+      <td>152.011220</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Before we finish discussing ETL, we should talk about file formats, which are a crucial part of the whole process.</p>
+</div>
+<div class="section" id="reading-data-files">
+<h2>Reading data files<a class="headerlink" href="#reading-data-files" title="Permalink to this headline">¶</a></h2>
+<p>As you know from <a class="reference external" href="big-cheat-sheet#before-week-8">the DataCamp assignment that corresponds to this chapter</a>, there are many ways to read data into pandas.  Since you’ve learned some of the technical details from DataCamp, let’s look at the relative pros and cons of each file format here, and add a few pieces of advice that didn’t appear in the DataCamp lessons.  We start with the easiest file formats and work our way up.</p>
+<div class="section" id="easy-formats-to-read-csv-and-tsv">
+<h3>Easy formats to read: CSV and TSV<a class="headerlink" href="#easy-formats-to-read-csv-and-tsv" title="Permalink to this headline">¶</a></h3>
+<p>We’ve been using <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code> for ages, so there is no surprise here, and you’ve had to deal with its <code class="docutils literal notranslate"><span class="pre">encoding</span></code> parameter in the past as well.  It has tons of optional parameters, but the one introduced in the latest DataCamp lessons was <code class="docutils literal notranslate"><span class="pre">sep</span></code>, useful for reading TSV (tab-separated values) files, by choosing <code class="docutils literal notranslate"><span class="pre">sep=&quot;\t&quot;</span></code>.</p>
+<p>One piece of advice to add to DataCamp:  If you find the URL of a CSV file on the web, you can include that URL as the input parameter to <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code>, and it will download and read the file for you in one shot, without your having to manually download the file.</p>
+<ul class="simple">
+<li><p>Pro: It automatically gets the latest version of the file every time you run your code.</p></li>
+<li><p>Con: It accesses the Internet (which can sometimes be slow) every time you run your code.</p></li>
+<li><p>Con: If the file is removed from the web, your code no longer functions.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Providing a URL directly to pd.read_csv():</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;https://www1.ncdc.noaa.gov/pub/data/cdo/samples/PRECIP_HLY_sample_csv.csv&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>STATION</th>
+      <th>STATION_NAME</th>
+      <th>ELEVATION</th>
+      <th>LATITUDE</th>
+      <th>LONGITUDE</th>
+      <th>DATE</th>
+      <th>HPCP</th>
+      <th>Measurement Flag</th>
+      <th>Quality Flag</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>COOP:310301</td>
+      <td>ASHEVILLE NC US</td>
+      <td>682.1</td>
+      <td>35.5954</td>
+      <td>-82.5568</td>
+      <td>20100101 00:00</td>
+      <td>99999</td>
+      <td>]</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>COOP:310301</td>
+      <td>ASHEVILLE NC US</td>
+      <td>682.1</td>
+      <td>35.5954</td>
+      <td>-82.5568</td>
+      <td>20100101 01:00</td>
+      <td>0</td>
+      <td>g</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>COOP:310301</td>
+      <td>ASHEVILLE NC US</td>
+      <td>682.1</td>
+      <td>35.5954</td>
+      <td>-82.5568</td>
+      <td>20100102 06:00</td>
+      <td>1</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="pretty-easy-format-to-read-xlsx">
+<h3>Pretty easy format to read: XLSX<a class="headerlink" href="#pretty-easy-format-to-read-xlsx" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">pd.read_excel()</span></code> function is nearly as easy to use as <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code>, with a few exceptions documented below.  You can give this function a URL also, if there’s a publicly accessible Excel file on the web you want to download.  The same pros and cons apply when providing a URL to <code class="docutils literal notranslate"><span class="pre">pd.read_excel()</span></code> as they do for <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code>, as discussed above.</p>
+<ol class="simple">
+<li><p>If you’re running Python on a cloud service, you’ll need the <code class="docutils literal notranslate"><span class="pre">xlrd</span></code> module to be installed to add Excel support to pandas.  (You can tell if it’s not when a <code class="docutils literal notranslate"><span class="pre">pd.read_excel()</span></code> call fails with an error about the missing module.)  If you’re on your local computer with an Anaconda installation, you already have this module.  Otherwise, you need to run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">xlrd</span></code> to add it.</p></li>
+<li><p>You need to remember that this function returns a Python list of DataFrames, unless you choose one specific sheet, with <code class="docutils literal notranslate"><span class="pre">sheet_name='Name'</span></code> or choose one by index, with <code class="docutils literal notranslate"><span class="pre">sheet_name=0</span></code>, for example.</p></li>
+<li><p>Excel spreadsheets may not have the data in the top left, so parameters like <code class="docutils literal notranslate"><span class="pre">usecols</span></code> and <code class="docutils literal notranslate"><span class="pre">skiprows</span></code> are often needed.</p></li>
+</ol>
+</div>
+<div class="section" id="easy-format-to-read-with-occasional-problems-html">
+<h3>Easy format to read with occasional problems: HTML<a class="headerlink" href="#easy-format-to-read-with-occasional-problems-html" title="Permalink to this headline">¶</a></h3>
+<p>Pandas can often automatically extract tables from web pages.  Simply call <code class="docutils literal notranslate"><span class="pre">pd.read_html()</span></code> and give it the URL of the page containing the table or tables.  It has the same output type as <code class="docutils literal notranslate"><span class="pre">pd.read_excel()</span></code> does: a Python list of pandas DataFrames.  See the pros and cons listed under <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code> for providing live web URLs when reading data.</p>
+<p>Furthermore, depending on the quality of the web site, this function may or may not do its job.  If the HTML page is not structured particularly cleanly, I’ve had <code class="docutils literal notranslate"><span class="pre">pd.read_html()</span></code> fail to find one or more of the tables.  I’ve had to instead write code that downloads the HTML code, splits it wherever a <code class="docutils literal notranslate"><span class="pre">&lt;table...&gt;</span></code> tag begins, and extract the tables from those pieces with <code class="docutils literal notranslate"><span class="pre">pd.read_html()</span></code>.  This is annoying, but occasionally necessary.</p>
+<p>Note that if you don’t need to get live data from the web, but are content with downloading the data once at the start of your project, there are many ways to extract tables from web pages.  You can often select the table and copy-paste into Excel, although that sometimes brings along undesired formatting that can cause problems.  There are Google Chrome extensions that specialize in extracting tables from web pages to make them easier to paste cleanly into Excel.</p>
+</div>
+<div class="section" id="not-an-easy-format-to-read-json">
+<h3>Not an easy format to read: JSON<a class="headerlink" href="#not-an-easy-format-to-read-json" title="Permalink to this headline">¶</a></h3>
+<p>Although this format is not easy, it is powerful, and this is why it’s very prevalent on the web.  It can represent a huge variety of different types of data, not just tabular data.  It is flexible enough to represent tabular data in a variety of ways, but also hierarchical data of any kind.  Due to its complexity, we will not fully review this here; refer to <a class="reference external" href="big-cheat-sheet#chapter-4-importing-json-data-and-working-with-apis">the appropriate section of our course’s coding cheat sheet</a> for some information, or <a class="reference external" href="https://learn.datacamp.com/courses/streamlined-data-ingestion-with-pandas">the corresponding DataCamp course</a>.</p>
+</div>
+<div class="section" id="not-an-easy-source-to-read-sql">
+<h3>Not an easy source to read: SQL<a class="headerlink" href="#not-an-easy-source-to-read-sql" title="Permalink to this headline">¶</a></h3>
+<p>Rather than dive into the enormous topic of SQL databases here, I will suggest two ways that you can learn more:</p>
+<ol class="simple">
+<li><p>Your next (and final) DataCamp assignment, for next week, will do some introductory coverage of this content.</p></li>
+<li><p>Bentley has an entire course on SQL databases, CS350, which I recommend.</p></li>
+</ol>
+<p>Now let’s consider which file format to use when you need to create a file rather than read one.</p>
+</div>
+</div>
+<div class="section" id="writing-data-files">
+<h2>Writing data files<a class="headerlink" href="#writing-data-files" title="Permalink to this headline">¶</a></h2>
+<p>As with all types of communication, it’s essential to consider your audience when choosing a file type.  Who will use your file?</p>
+<div class="section" id="for-a-nontechnical-audience-create-an-excel-file">
+<h3>For a nontechnical audience, create an Excel file.<a class="headerlink" href="#for-a-nontechnical-audience-create-an-excel-file" title="Permalink to this headline">¶</a></h3>
+<p>If sharing your data with non-technical people, they will want to simply double-click the file and see its contents.  The easiest way to ensure this happens is to create an Excel file.  (To make it even easier, you can upload the file to SharePoint or Google Sheets and send only the link.  This is especially valuable if you suspect the recipient doesn’t have Excel installed.)</p>
+<p>Just as when reading Excel files, you must have the <code class="docutils literal notranslate"><span class="pre">xlrd</span></code> module installed; <a class="reference external" href="#pretty-easy-format-to-read-xlsx">see above for details</a>.  If you want to create an Excel file with just one sheet in it, you can make a single call to <code class="docutils literal notranslate"><span class="pre">df.to_excel()</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_films</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span> <span class="s1">&#39;Opening Weekends.xlsx&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>If you want to put several DataFrames into one Excel file, as different sheets in the workbook, then you need to get a little more fancy.  The indentation in the following code is essential (as always with Python).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">ExcelWriter</span><span class="p">(</span> <span class="s1">&#39;Two Things.xlsx&#39;</span> <span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>        <span class="c1"># Open the file.</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span> <span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;World Series Data&#39;</span> <span class="p">)</span>  <span class="c1"># Write one sheet.</span>
+    <span class="n">df_films</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span> <span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Film Data&#39;</span> <span class="p">)</span>    <span class="c1"># Write the other.</span>
+</pre></div>
+</div>
+<p>Python’s <code class="docutils literal notranslate"><span class="pre">with</span></code> statement lets you create a resource (in this case a new, open file) and Python will automatically close it up for you when you’re done using it.  At the end of the two indented lines, Python will close the file, so that other applications can open it.</p>
+<p>For more details, see <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_excel.html">the documentation for <code class="docutils literal notranslate"><span class="pre">df.to_excel()</span></code></a>.</p>
+</div>
+<div class="section" id="for-a-technical-audience-usually-use-a-csv-file">
+<h3>For a technical audience, usually use a CSV file.<a class="headerlink" href="#for-a-technical-audience-usually-use-a-csv-file" title="Permalink to this headline">¶</a></h3>
+<p>If sharing data with other data workers, who are likely to use Python, R, or some similarly nerdy tool, you probably want to create a CSV file.  The reason is simple: You know that this is one of the easiest file types to import in your code, so make life easy for your coworkers, too.  Just call <code class="docutils literal notranslate"><span class="pre">pd.to_csv(</span> <span class="pre">'my-filename.csv'</span> <span class="pre">)</span></code> to save your DataFrame.  Although you can use the <code class="docutils literal notranslate"><span class="pre">sep=&quot;\t&quot;</span></code> parameter to create a TSV file, this is rarely what your coworkers want, so it’s to be generally avoided.</p>
+<p>But note that you can lose a lot of important information this way!  You may be familiar with how Excel complains if you try to save an Excel workbook in CSV format, letting you know that you’re losing information, such as formatting and formulas.  Any information in your DataFrame other than the text contents of the cells will be lost when saving as CSV.  For instance, if you’ve converted a column to a categorial variable, that won’t be obvious when the data is saved to CSV, and it will be re-imported as plain text.</p>
+<p>For that reason, we have the following option.</p>
+</div>
+<div class="section" id="for-archiving-your-own-work-use-a-pickle-file">
+<h3>For archiving your own work, use a Pickle file.<a class="headerlink" href="#for-archiving-your-own-work-use-a-pickle-file" title="Permalink to this headline">¶</a></h3>
+<p>Python has always had a way to store any Python object in a file, perfectly intact for later loading, using the Pickle format.  The standard extension for this is <code class="docutils literal notranslate"><span class="pre">.pkl</span></code>.  (That’s P-K-L, not P-K-one, because it’s short for PicKLe.)  The name comes, of course, from the fact that pickling vegetables stores them on the shelf long-term, and yet when you eventually open them later, they’re fine.  Similarly, you can store Python objects in a file long-term, open them later, and they’re fine.</p>
+<p>Because Python guarantees that any object you pickle to a file will come back from that file in exactly the same form, you can pickle entire DataFrames and know that every little detail will be preserved, even things that won’t get saved correctly to CSV or Excel files, like categorical data types.</p>
+<p>This is a great way to obey the advice <a class="reference external" href="chapter-11-processing-rows#when-the-bottleneck-is-the-dataset">at the end of the Chapter 11 notes</a>.  If you load a big dataset and do a bunch of data cleaning work, and your code is a little slow to run, just save your work to a file right then.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span> <span class="s1">&#39;cleaned-dataset.pkl&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Then start a new Python script or Jupyter notebook and load the DataFrame you just saved.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span> <span class="s1">&#39;saved-for-later.pkl&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Now do all your analysis work in that second script or notebook, and whenever you have to re-run your analysis from the beginning, you won’t have to wait for all the data cleaning code to get run again.</p>
+<p>We won’t discuss in these notes the creation of HTML or JSON files from Python.  Although there is occasional value in it, it’s much less commonly useful than reading those formats, which we covered above.  We also won’t discuss the creation of SQL databases, but here are three ways you can learn more about that.</p>
+<ol class="simple">
+<li><p>SQL queries can be used to create or modify tables, and we’ll see a bit about running SQL queries through Python in the upcoming DataCamp homework.</p></li>
+<li><p>Those interested in learning SQL deeply can take Bentley’s CS350 course.</p></li>
+<li><p>Consider forming a team for one of the Learning On Your Own activities shown below.</p></li>
+</ol>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - SQL in Jupyter</p>
+<p>Look up the <code class="docutils literal notranslate"><span class="pre">ipython-sql</span></code> extension to Jupyter and research the following essential parts, then reporting on them in some sensible medium for your classmates.</p>
+<ol class="simple">
+<li><p>How to install it and load it.</p></li>
+<li><p>How to connect to a database.</p></li>
+<li><p>How to use both <code class="docutils literal notranslate"><span class="pre">%sql</span></code> and <code class="docutils literal notranslate"><span class="pre">%%sql</span></code> commands.</p></li>
+<li><p>How to store the results of database queries in pandas DataFrames.</p></li>
+</ol>
+</div>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - SQLite in Python</p>
+<p>Python actually comes with a built-in SQLite database module, which you can use by doing <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sqlite3</span> <span class="pre">as</span> <span class="pre">sl</span></code>, without even any installation step.  Check out <a class="reference external" href="https://towardsdatascience.com/do-you-know-python-has-a-built-in-database-d553989c87bd">this blog post</a> for more information, and report on its key features to the class.</p>
+</div>
+</div>
 </div>
 </div>
 

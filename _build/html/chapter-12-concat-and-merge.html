@@ -1073,10 +1073,10 @@
 <p>Let’s just get a sense of how many of the 231 rows in the ranking dataset have an exact match in the big dataset, and thus their official names are already in the ranking dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names_from_df_big</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="n">df_big</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span> <span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">official_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="n">df_big</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span> <span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">has_exact_match</span> <span class="p">(</span> <span class="n">name_from_rank_df</span> <span class="p">):</span>
-    <span class="k">return</span> <span class="n">name_from_rank_df</span> <span class="ow">in</span> <span class="n">names_from_df_big</span>
+    <span class="k">return</span> <span class="n">name_from_rank_df</span> <span class="ow">in</span> <span class="n">official_names</span>
 
 <span class="nb">sum</span><span class="p">(</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="n">has_exact_match</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
@@ -1120,14 +1120,14 @@
 <p>Let’s use <code class="docutils literal notranslate"><span class="pre">get_close_matches()</span></code> to create a function that will match up university names across the two datasets if they’re just off by a small amount.  This could automate some of the matching we’d otherwise have to do by hand for those 90 schools that didn’t match exactly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_closest_name_from_df_big</span> <span class="p">(</span> <span class="n">name_from_df_rank</span> <span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_closest_official_name</span> <span class="p">(</span> <span class="n">name_from_df_rank</span> <span class="p">):</span>
 
     <span class="c1"># If there&#39;s an exact match, we&#39;re already done.</span>
     <span class="k">if</span> <span class="n">has_exact_match</span><span class="p">(</span> <span class="n">name_from_df_rank</span> <span class="p">):</span>
         <span class="k">return</span> <span class="n">name_from_df_rank</span>
     
     <span class="c1"># Get the closest matches, if any.</span>
-    <span class="n">close_matches</span> <span class="o">=</span> <span class="n">get_close_matches</span><span class="p">(</span> <span class="n">name_from_df_rank</span><span class="p">,</span> <span class="n">names_from_df_big</span> <span class="p">)</span>
+    <span class="n">close_matches</span> <span class="o">=</span> <span class="n">get_close_matches</span><span class="p">(</span> <span class="n">name_from_df_rank</span><span class="p">,</span> <span class="n">official_names</span> <span class="p">)</span>
     
     <span class="c1"># If there weren&#39;t any, return None</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span> <span class="n">close_matches</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -1137,7 +1137,7 @@
     <span class="k">return</span> <span class="n">close_matches</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="c1"># Test it</span>
-<span class="n">get_closest_name_from_df_big</span><span class="p">(</span> <span class="s1">&#39;Bentley Universal&#39;</span> <span class="p">)</span>
+<span class="n">get_closest_official_name</span><span class="p">(</span> <span class="s1">&#39;Bentley Universal&#39;</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1147,10 +1147,10 @@
 </div>
 </div>
 </div>
-<p>Let’s apply that function to every row in the small dataset.  Note that <code class="docutils literal notranslate"><span class="pre">get_close_matches()</span></code> can be a bit slow, so the following code actually takes about 15 seconds to complete executing.  (It would be even slower if we didn’t have the first <code class="docutils literal notranslate"><span class="pre">if</span></code> statement in <code class="docutils literal notranslate"><span class="pre">get_closest_name_from_df_big()</span></code>, which skips <code class="docutils literal notranslate"><span class="pre">get_close_matches()</span></code> when it’s not needed.)</p>
+<p>Let’s apply that function to every row in the small dataset.  Note that <code class="docutils literal notranslate"><span class="pre">get_close_matches()</span></code> can be a bit slow, so the following code actually takes about 15 seconds to complete executing.  (It would be even slower if we didn’t have the first <code class="docutils literal notranslate"><span class="pre">if</span></code> statement in <code class="docutils literal notranslate"><span class="pre">get_closest_official_name()</span></code>, which skips <code class="docutils literal notranslate"><span class="pre">get_close_matches()</span></code> when it’s not needed.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="n">get_closest_name_from_df_big</span> <span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="n">get_closest_official_name</span> <span class="p">)</span>
 <span class="n">df_rank</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1181,7 +1181,7 @@
       <th>Tuition and fees</th>
       <th>In-state</th>
       <th>Undergrad Enrollment</th>
-      <th>Name in df_big</th>
+      <th>Official Name</th>
     </tr>
   </thead>
   <tbody>
@@ -1248,8 +1248,8 @@
 <p>We can check by taking a glance over the following output, and noting which rows are wrong.  I don’t include the full output here of all 90 discrepancies, just to save space, but you can use <code class="docutils literal notranslate"><span class="pre">pd.set_option(</span> <span class="pre">'display.max_rows',</span> <span class="pre">None</span> <span class="pre">)</span></code> to see them all.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rows_with_guesses</span> <span class="o">=</span> <span class="n">df_rank</span><span class="p">[</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">]</span> <span class="p">]</span>
-<span class="n">rows_with_guesses</span><span class="p">[[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rows_with_guesses</span> <span class="o">=</span> <span class="n">df_rank</span><span class="p">[</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="p">]</span>
+<span class="n">rows_with_guesses</span><span class="p">[[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -1273,7 +1273,7 @@
     <tr style="text-align: right;">
       <th></th>
       <th>Name</th>
-      <th>Name in df_big</th>
+      <th>Official Name</th>
     </tr>
   </thead>
   <tbody>
@@ -1419,10 +1419,10 @@ Name: NAME, dtype: object
 </div>
 </div>
 </div>
-<p>Aha, Columbia University in the City of New York was so long of a phrase that <code class="docutils literal notranslate"><span class="pre">get_close_matches()</span></code> did not think it was “close” to Columbia University.  So now I’ve found that the entry for row 4 in <code class="docutils literal notranslate"><span class="pre">df_rank['Name</span> <span class="pre">in</span> <span class="pre">big_df']</span></code> should be Columbia University in the City of New York.  I can simply tell Python to change it.</p>
+<p>Aha, Columbia University in the City of New York was so long of a phrase that <code class="docutils literal notranslate"><span class="pre">get_close_matches()</span></code> did not think it was “close” to Columbia University.  So now I’ve found that the entry for row 4 in <code class="docutils literal notranslate"><span class="pre">df_rank['Official</span> <span class="pre">Name']</span></code> should be Columbia University in the City of New York.  I can simply tell Python to change it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Columbia University in the City of New York&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Columbia University in the City of New York&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1430,16 +1430,16 @@ Name: NAME, dtype: object
 <p>When I’m done manually investigating the 30 schools that had to be fixed by hand, I will have 30 lines of code that look just like the one above, but for different schools.  Here’s a sample.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Columbia University in the City of New York&#39;</span>
-<span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">34</span><span class="p">,</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Georgia Institute of Technology-Main Campus&#39;</span>
-<span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">41</span><span class="p">,</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Tulane University of Louisiana&#39;</span>
-<span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">52</span><span class="p">,</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Pennsylvania State University-Main Campus&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Columbia University in the City of New York&#39;</span>
+<span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">34</span><span class="p">,</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Georgia Institute of Technology-Main Campus&#39;</span>
+<span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">41</span><span class="p">,</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Tulane University of Louisiana&#39;</span>
+<span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">52</span><span class="p">,</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Pennsylvania State University-Main Campus&#39;</span>
 <span class="c1"># and so on, for a total of 30 changes</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>But if we’re trying to follow DRY principles, we notice that there’s definitely a lot of repeated code here.  We’re copying and pasting the <code class="docutils literal notranslate"><span class="pre">df_rank.loc[...,'Name</span> <span class="pre">in</span> <span class="pre">big_df']</span> <span class="pre">=</span> <span class="pre">'...'</span></code> part each time.  We could simplify this by creating a Python dictionary with just our corrections.  Here I include all 30 corrections as they would be if we had carefully investigated each.</p>
+<p>But if we’re trying to follow DRY principles, we notice that there’s definitely a lot of repeated code here.  We’re copying and pasting the <code class="docutils literal notranslate"><span class="pre">df_rank.loc[...,'Official</span> <span class="pre">Name']</span> <span class="pre">=</span> <span class="pre">'...'</span></code> part each time.  We could simplify this by creating a Python dictionary with just our corrections.  Here I include all 30 corrections as they would be if we had carefully investigated each.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Store corrections in a dictionary:</span>
@@ -1472,7 +1472,7 @@ Name: NAME, dtype: object
 
 <span class="c1"># Apply all the corrections at once:</span>
 <span class="k">for</span> <span class="n">row_index</span><span class="p">,</span> <span class="n">fixed_name</span> <span class="ow">in</span> <span class="n">corrections</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row_index</span><span class="p">,</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fixed_name</span>
+    <span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row_index</span><span class="p">,</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fixed_name</span>
 
 <span class="c1"># See if at least the top 5 look right:</span>
 <span class="n">df_rank</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -1505,7 +1505,7 @@ Name: NAME, dtype: object
       <th>Tuition and fees</th>
       <th>In-state</th>
       <th>Undergrad Enrollment</th>
-      <th>Name in df_big</th>
+      <th>Official Name</th>
     </tr>
   </thead>
   <tbody>
@@ -1568,10 +1568,10 @@ Name: NAME, dtype: object
 </table>
 </div></div></div>
 </div>
-<p><strong>Step 4.</strong> And now that all corrections have been made, we can do the merge with confidence.  We take care to merge the main dataset’s <code class="docutils literal notranslate"><span class="pre">&quot;NAME&quot;</span></code> column with the smaller dataset’s <code class="docutils literal notranslate"><span class="pre">&quot;Name</span> <span class="pre">in</span> <span class="pre">df_big&quot;</span></code> column.  This merge will be a left join, because we do not want to discard a school just because it wasn’t in US News’s rankings.</p>
+<p><strong>Step 4.</strong> And now that all corrections have been made, we can do the merge with confidence.  We take care to merge the main dataset’s <code class="docutils literal notranslate"><span class="pre">&quot;NAME&quot;</span></code> column with the smaller dataset’s <code class="docutils literal notranslate"><span class="pre">&quot;Official</span> <span class="pre">Name&quot;</span></code> column.  This merge will be a left join, because we do not want to discard a school just because it wasn’t in US News’s rankings.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_big</span><span class="p">,</span> <span class="n">df_rank</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;Name in df_big&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span> <span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_big</span><span class="p">,</span> <span class="n">df_rank</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;Official Name&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span> <span class="p">)</span>
 <span class="n">df_merged</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1615,7 +1615,7 @@ Name: NAME, dtype: object
       <th>Tuition and fees</th>
       <th>In-state</th>
       <th>Undergrad Enrollment</th>
-      <th>Name in df_big</th>
+      <th>Official Name</th>
     </tr>
   </thead>
   <tbody>
@@ -1790,7 +1790,7 @@ Name: NAME, dtype: object
       <th>Tuition and fees</th>
       <th>In-state</th>
       <th>Undergrad Enrollment</th>
-      <th>Name in df_big</th>
+      <th>Official Name</th>
     </tr>
   </thead>
   <tbody>
