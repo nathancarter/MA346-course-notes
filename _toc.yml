@@ -1,4 +1,5 @@
 - file: intro.ipynb
+  numbered: true
 - chapter: Week 1
   sections:
   - file: chapter-1-intro-to-data-science.ipynb
