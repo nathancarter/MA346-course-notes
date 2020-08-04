@@ -64,7 +64,7 @@
 
 
 \title{MA346 Course Notes}
-\date{Jul 31, 2020}
+\date{Aug 04, 2020}
 \release{}
 \author{Nathan Carter}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -3794,12 +3794,12 @@ We will return to vectorization and loops in Chapter 11 of these notes.  For now
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.24355773, 0.55819269, 0.03196094, 0.25834874, 0.56417226,
-       0.47193205, 0.12433524, 0.07871269, 0.06224456, 0.32747152,
-       0.6204256 , 0.27218135, 0.03445631, 0.3649663 , 0.9064852 ,
-       0.16453187, 0.34784681, 0.8098566 , 0.58898225, 0.14514978,
-       0.66395745, 0.84556485, 0.43345791, 0.13545489, 0.95141998,
-       0.33216743, 0.96952007, 0.99104479, 0.88670581, 0.15132557])
+array([0.17700037, 0.71189884, 0.27101072, 0.89809528, 0.96437205,
+       0.25340811, 0.82311743, 0.49177188, 0.39757121, 0.27083345,
+       0.76085277, 0.0814872 , 0.26467142, 0.79432709, 0.83240569,
+       0.52241313, 0.41432301, 0.61569726, 0.7816843 , 0.60047045,
+       0.91207205, 0.55635058, 0.28813386, 0.63014434, 0.51926644,
+       0.66327235, 0.66157436, 0.96222833, 0.76906723, 0.71576878])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3807,9 +3807,9 @@ array([0.24355773, 0.55819269, 0.03196094, 0.25834874, 0.56417226,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.24, 0.56, 0.03, 0.26, 0.56, 0.47, 0.12, 0.08, 0.06, 0.33, 0.62,
-       0.27, 0.03, 0.36, 0.91, 0.16, 0.35, 0.81, 0.59, 0.15, 0.66, 0.85,
-       0.43, 0.14, 0.95, 0.33, 0.97, 0.99, 0.89, 0.15])
+array([0.18, 0.71, 0.27, 0.9 , 0.96, 0.25, 0.82, 0.49, 0.4 , 0.27, 0.76,
+       0.08, 0.26, 0.79, 0.83, 0.52, 0.41, 0.62, 0.78, 0.6 , 0.91, 0.56,
+       0.29, 0.63, 0.52, 0.66, 0.66, 0.96, 0.77, 0.72])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3817,12 +3817,12 @@ array([0.24, 0.56, 0.03, 0.26, 0.56, 0.47, 0.12, 0.08, 0.06, 0.33, 0.62,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([1.27577997, 1.74751135, 1.03247718, 1.29479029, 1.75799202,
-       1.60308845, 1.13239543, 1.08189344, 1.06422258, 1.38745553,
-       1.85971936, 1.31282506, 1.0350568 , 1.44046547, 2.47560596,
-       1.17884113, 1.41601532, 2.24758566, 1.80215334, 1.15621273,
-       1.94246436, 2.32929316, 1.54258243, 1.14505754, 2.58938392,
-       1.39398622, 2.63667873, 2.69404771, 2.42712107, 1.16337536])
+array([1.19363154, 2.03785716, 1.31128912, 2.45492271, 2.62313995,
+       1.28840898, 2.27758901, 1.63521105, 1.48820577, 1.3110567 ,
+       2.14010045, 1.08489933, 1.30300277, 2.21295138, 2.2988424 ,
+       1.6860915 , 1.51334587, 1.85094674, 2.18514962, 1.82297623,
+       2.4894755 , 1.7442952 , 1.33393585, 1.87788161, 1.68079423,
+       1.94113403, 1.93784079, 2.6175227 , 2.15775262, 2.04575882])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3830,12 +3830,12 @@ array([1.27577997, 1.74751135, 1.03247718, 1.29479029, 1.75799202,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.05932037, 0.31157908, 0.0010215 , 0.06674407, 0.31829034,
-       0.22271986, 0.01545925, 0.00619569, 0.00387438, 0.1072376 ,
-       0.38492792, 0.07408269, 0.00118724, 0.1332004 , 0.82171541,
-       0.02707074, 0.12099741, 0.65586772, 0.34690009, 0.02106846,
-       0.4408395 , 0.71497992, 0.18788576, 0.01834803, 0.90519997,
-       0.1103352 , 0.93996916, 0.98216977, 0.78624719, 0.02289943])
+array([0.03132913, 0.50679997, 0.07344681, 0.80657513, 0.93001346,
+       0.06421567, 0.6775223 , 0.24183958, 0.15806287, 0.07335076,
+       0.57889694, 0.00664016, 0.07005096, 0.63095553, 0.69289924,
+       0.27291548, 0.17166355, 0.37908311, 0.61103035, 0.36056477,
+       0.83187542, 0.30952597, 0.08302112, 0.39708189, 0.26963763,
+       0.43993021, 0.43768063, 0.92588337, 0.5914644 , 0.51232495])
 \end{sphinxVerbatim}
 
 Notice that this makes it very easy to compute certain mathematical formulas.  For example, when we want to measure the quality of a model, we might compute the RSSE, or Root Sum of Squared Errors, that is, the square root of the sum of the squared differences between each actual data value \(y_i\) and its predicted value \(\hat y_i\).  In math, we write it like this:
@@ -3906,8 +3906,8 @@ In fact, SciPy’s built\sphinxhyphen{}in random number generating procedures le
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([49.52014193, 86.97008421, 35.03998178, 78.75527891, 78.44551247,
-       84.53471493, 40.3249496 , 87.20026084, 59.39969057, 35.67719475])
+array([40.52844119, 88.27787766, 37.09453304, 12.75595148, 18.38940071,
+       99.83590941, 38.11791075, 67.11792913, 68.4387475 ,  1.49965431])
 \end{sphinxVerbatim}
 
 Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two arguments and create a specific random variable, then call \sphinxcode{\sphinxupquote{rvs}} on that.
@@ -3918,8 +3918,8 @@ Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two a
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([41.76976597, 59.93639485, 49.5145902 , 17.57837427, 69.42621546,
-       31.25926656, 63.40388507, 25.67505097, 62.93328029, 42.3250886 ])
+array([35.35036339, 40.95383708, 27.61234516, 23.09458848, 46.22023761,
+       25.46116499, 45.36834631, 28.47696815, 53.83792421,  4.70085134])
 \end{sphinxVerbatim}
 
 The same random variable can, of course, be used to create more values later.
@@ -7038,8 +7038,622 @@ Python actually comes with a built\sphinxhyphen{}in SQLite database module, whic
 \label{\detokenize{chapter-14-dashboards:dashboards}}\label{\detokenize{chapter-14-dashboards::doc}}
 See also the slides that summarize a portion of this content.
 
-\begin{sphinxadmonition}{warning}{Warning:}
-This chapter has not yet been written.  Check back later.
+
+\section{What’s a dashboard and why do we have them?}
+\label{\detokenize{chapter-14-dashboards:what-s-a-dashboard-and-why-do-we-have-them}}
+You’ve been learning a lot of data manipulation and analysis in Python.  But Python is an environment that only data professionals and scientists tend to dive into.  What happens when you want to let non\sphinxhyphen{}technical people browse your work?
+
+Most of the time, we write reports or create slide decks to share our results.  But sometimes the experience of exploring the data is more powerful than a static report or pre\sphinxhyphen{}packaged slide deck can ever be.  Sometimes the manager who asked for the analysis wants to experiment with various parameter values themself, especially if they were a data analyst once, too.
+
+This is where \sphinxstyleemphasis{dashboards} come in.  A quick \sphinxhref{https://www.google.com/search?q=data+dashboard\&tbm=isch}{Google image search for “data dashboards”} will show you dozens of examples of what dashboards look like.  Their purpose is to let the user explore the data using inputs like buttons and sliders, and seeing outputs that are typically data visualizations and summaries.  Dashboards don’t give the user anywhere near as much flexibility as you have in Python, but they’re much easier and faster.
+
+There are many reasons why you might prepare a data dashboard.  Here are a few.
+\begin{itemize}
+\item {} 
+\sphinxstylestrong{There are many different inputs to which you could apply an analysis, and you want to let the user explore each.}  For instance, you recently built a visualization for comparing property values in home mortgage applications across two races.  But it could be more powerful if we let the user choose two races, and the analysis would automatically be repeated for those two.  The user could choose values that matter to them personally or professionally.
+
+\item {} 
+\sphinxstylestrong{An analysis has a tuning parameter that might benefit from exploration by an expert.}  For instance, let’s say you have a model that takes as input a price for a new insurance product, and forecasts adoption rates and various probabilities associated with profits and losses under various conditions.  The person ultimately in charge of making the decision on product price might like to move a slider that controls the price input, and take their time to consider each of the possible scenarios in your model’s output.
+
+\item {} 
+\sphinxstylestrong{Some projects are not a data analysis, but just a data showcase.}  I mentioned in a previous class that a friend of mine runs a nonprofit that helps universities make, track, and keep climate commitments.  \sphinxhref{https://reporting.secondnature.org/}{Their data dashboard is here.}  It doesn’t do any analysis, but makes their data transparent and interactive, for anyone to explore for their own purposes.
+
+\item {} 
+\sphinxstylestrong{Another team wants to see what you’re doing, but they don’t want to read your code.}  To quickly share what you’ve been working on without forcing the recipient to dive into all of your Python code, you can wrap your work in a dashboard and share it on the web.  This lets you get feedback from other teams in your organization about your team’s work.
+
+\end{itemize}
+
+There are many tools for creating dashboards.  One of the most popular is \sphinxhref{https://www.tableau.com/trial/dashboards}{Tableau}, but we are not studying it in this course for two reasons.  First, it is proprietary software, which makes it less transferable knowledge than free tools.  Second, it is much easier to learn Tableau later on your own than it is to learn Python.  There are many Tableau training opportunities available online and in the corporate world should you need them.
+
+There are also Python\sphinxhyphen{}specific frameworks for creating dashboards.  The easiest one I’ve found to get started with is what we will learn today, \sphinxhref{https://www.streamlit.io/}{Streamlit}.  But a few others are mentioned at the end of this chapter for you to explore on your own if you desire.  These course notes assume that you have already done the following three things.  They’re necessary in order to follow along with the content here.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Installed Streamlit (\sphinxcode{\sphinxupquote{pip install streamlit}})
+
+\item {} 
+\sphinxhref{https://signup.heroku.com/}{Registered} for a Heroku account
+
+\item {} 
+Installed the Heroku \sphinxhref{https://devcenter.heroku.com/articles/getting-started-with-python?singlepage=true\#set-up}{command\sphinxhyphen{}line interface}
+
+\end{enumerate}
+
+
+\section{Our running example}
+\label{\detokenize{chapter-14-dashboards:our-running-example}}
+In this section, I will do a small data visualization that we will turn into a dashboard throughout the rest of these course notes, so that you can see an example of how to convert existing code into a dashboard.  The small amount of code (and explanation of that code) that we will convert into a dashboard appears between the two horizontal lines below.
+
+
+\bigskip\hrule\bigskip
+
+
+
+\subsection{Example begins here}
+\label{\detokenize{chapter-14-dashboards:example-begins-here}}
+In statistics, the Central Limit Theorem (CLT) says that if have several random variables, and we define a new random variable to be their sum, then that new random variable has a shape vaguely like a normal distribution.  Furthermore, if you increase the number of random variables in the sum, then that sum becomes even more precisely like a normal distribution.  Let’s see this in action with some Python simulations.
+
+First, we’ll need NumPy to generate random numbers for us, and we’ll use the generic uniform distribution for this simulation.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(} \PYG{l+m+mi}{10} \PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Make sure we can generate 10 random values in [0,1]}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+array([0.02842214, 0.81119674, 0.53157605, 0.86342282, 0.93218777,
+       0.42328714, 0.34510009, 0.08866329, 0.23075973, 0.34200095])
+\end{sphinxVerbatim}
+
+The CLT says that we can make a new random variable by summing those numbers.  Let’s do so.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{my\PYGZus{}random\PYGZus{}variable} \PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(} \PYG{l+m+mi}{10} \PYG{p}{)}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{n}{my\PYGZus{}random\PYGZus{}variable}\PYG{p}{(}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Test it}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+4.86366937905601
+\end{sphinxVerbatim}
+
+That random variable is supposed to look sort of like a bell\sphinxhyphen{}shaped curve.  Let’s sample 1000 values from it and make a histogram to see if that’s true.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{n}{sample} \PYG{o}{=} \PYG{p}{[} \PYG{n}{my\PYGZus{}random\PYGZus{}variable}\PYG{p}{(}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{)} \PYG{p}{]}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{hist}\PYG{p}{(} \PYG{n}{sample}\PYG{p}{,} \PYG{n}{bins}\PYG{o}{=}\PYG{l+m+mi}{30} \PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\noindent\sphinxincludegraphics{{chapter-14-dashboards_7_0}.png}
+
+Yes, that looks like a bell curve!  Its mean and standard deviation are as follows.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+(4.989276203690257, 0.9204788579003654)
+\end{sphinxVerbatim}
+
+
+\bigskip\hrule\bigskip
+
+
+That’s it.  Between those two horizontal lines is a little statistics experiment that we will want to turn into a dashboard.  In doing so, we’ll make it much more interactive than it is when it’s sitting, pre\sphinxhyphen{}computed, on a web page or PDF of these course notes.
+
+
+\section{Step 1: We need a Python script}
+\label{\detokenize{chapter-14-dashboards:step-1-we-need-a-python-script}}
+In this course, I don’t make any restrictions on whether you program in Python scripts (\sphinxcode{\sphinxupquote{.py}}) or Jupyter notebooks (\sphinxcode{\sphinxupquote{.ipynb}}).  But Streamlit is an exception; it forces us to use Python scripts.  If you’re already in the habit of doing all your data work in Python scripts, then you can skim the rest of this section and pick up in Step 2.  But if you’re usually a Jupyter user, the good news is that you can convert a notebook into a Python script in just a few clicks, using Jupyter itself.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+From the File menu, choose Export Notebook As…, and choose Export Notebook to Executable Script.
+
+\item {} 
+This will download the result as a Python script to your computer.  The browser may warn you that it’s dangerous to download and run Python scripts.  Although that’s true in general, if you wrote the script, it should be safe for you to download!
+
+\item {} 
+The file will probably end up in your downloads folder, and you’ll want to move it from there to wherever you keep your course work.
+
+\end{enumerate}
+
+If you’re a Jupyter user, you can still edit the Python script using Jupyter.  In addition to letting you edit notebooks, Jupyter supports editing of Python files and many other file types.
+
+If I take the example shown above and run this process on it, I get the following Python script.  Notice how Jupyter turns all the Markdown content of my notebook into Python comments and marks each cell as a numbered input (\sphinxcode{\sphinxupquote{In{[}1{]}}}, \sphinxcode{\sphinxupquote{In{[}2{]}}}, etc.).
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} \PYGZsh{}\PYGZsh{}\PYGZsh{} Example begins here}
+\PYG{c+c1}{\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{} In statistics, the Central Limit Theorem (CLT) says that if have several random variables, and we define a new random variable to be their sum, then that new random variable has a shape vaguely like a normal distribution.  Furthermore, if you increase the number of random variables in the sum, then that sum becomes even more precisely like a normal distribution.  Let\PYGZsq{}s see this in action with some Python simulations.}
+\PYG{c+c1}{\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{} First, we\PYGZsq{}ll need NumPy to generate random numbers for us, and we\PYGZsq{}ll use the generic uniform distribution for this simulation.}
+
+\PYG{c+c1}{\PYGZsh{} In[1]:}
+
+
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(} \PYG{l+m+mi}{10} \PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Make sure we can generate 10 random values in [0,1]}
+
+
+\PYG{c+c1}{\PYGZsh{} The CLT says that we can make a new random variable by summing those numbers.  Let\PYGZsq{}s do so.}
+
+\PYG{c+c1}{\PYGZsh{} In[2]:}
+
+
+\PYG{k}{def} \PYG{n+nf}{my\PYGZus{}random\PYGZus{}variable} \PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(} \PYG{l+m+mi}{10} \PYG{p}{)}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{n}{my\PYGZus{}random\PYGZus{}variable}\PYG{p}{(}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Test it}
+
+
+\PYG{c+c1}{\PYGZsh{} That random variable is supposed to look sort of like a bell\PYGZhy{}shaped curve.  Let\PYGZsq{}s sample 1000 values from it and make a histogram to see if that\PYGZsq{}s true.}
+
+\PYG{c+c1}{\PYGZsh{} In[4]:}
+
+
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{n}{sample} \PYG{o}{=} \PYG{p}{[} \PYG{n}{my\PYGZus{}random\PYGZus{}variable}\PYG{p}{(}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{)} \PYG{p}{]}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{hist}\PYG{p}{(} \PYG{n}{sample}\PYG{p}{,} \PYG{n}{bins}\PYG{o}{=}\PYG{l+m+mi}{30} \PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+
+
+\PYG{c+c1}{\PYGZsh{} Yes, that looks like a bell curve!  Its mean and standard deviation are as follows.}
+
+\PYG{c+c1}{\PYGZsh{} In[5]:}
+
+
+\PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+Running that Python script will produce the same plot that’s shown in this Jupyter notebook.  If you’re using a Python IDE, it will typically appear in that IDE.  If you’re running it from the terminal, it will probably pop up a separate Python window showing the plot, and your script will terminate once you’ve closed the window.
+
+Although comments in code are great, the comments above look like they belong in an interactive notebook that someone would read, with the output and pictures included.  So they’re not the kind of comments we need in a Python script.  To make things more succinct, I’m going to delete them.  That produces the following Python code.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(} \PYG{l+m+mi}{10} \PYG{p}{)}
+
+\PYG{k}{def} \PYG{n+nf}{my\PYGZus{}random\PYGZus{}variable} \PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(} \PYG{l+m+mi}{10} \PYG{p}{)}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{n}{my\PYGZus{}random\PYGZus{}variable}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{n}{sample} \PYG{o}{=} \PYG{p}{[} \PYG{n}{my\PYGZus{}random\PYGZus{}variable}\PYG{p}{(}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{)} \PYG{p}{]}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{hist}\PYG{p}{(} \PYG{n}{sample}\PYG{p}{,} \PYG{n}{bins}\PYG{o}{=}\PYG{l+m+mi}{30} \PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+Notice also that three lines in the code don’t actually do anything.  In Jupyter, a line of code like \sphinxcode{\sphinxupquote{np.random.rand( 10 )}} (the second line of the above code), when placed at the end of a cell, will show its output to us in the notebook.  But in a Python script, without a \sphinxcode{\sphinxupquote{print()}} function call, it won’t show us anything.  But that line of code, together with the \sphinxcode{\sphinxupquote{my\_random\_variable()}} line later, were both done as little tests to see if our code was working correctly.  We don’t need to see their output in our Python script, so I’ll delete those lines.
+
+However, the final line of code may be interesting to us, because the CLT actually speaks about the mean and standard deviation of the resulting random variable.  So we might like to see that value.  I’ll add some \sphinxcode{\sphinxupquote{print()}} function calls so that our script displays those values in a readable way.  I’ll also clean it up by moving all the imports the top.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+
+\PYG{k}{def} \PYG{n+nf}{my\PYGZus{}random\PYGZus{}variable} \PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(} \PYG{l+m+mi}{10} \PYG{p}{)}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{n}{sample} \PYG{o}{=} \PYG{p}{[} \PYG{n}{my\PYGZus{}random\PYGZus{}variable}\PYG{p}{(}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{)} \PYG{p}{]}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{hist}\PYG{p}{(} \PYG{n}{sample}\PYG{p}{,} \PYG{n}{bins}\PYG{o}{=}\PYG{l+m+mi}{30} \PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Mean:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)} \PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Standard deviation:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+Before proceeding to Step 2, be sure that you can successfully run your newly created Python script and verify that it generates the output you want.  Once you’ve done so, you have a Python script that we’re ready to bring into Streamlit.
+
+
+\section{Step 2. Converting your script to use Streamlit}
+\label{\detokenize{chapter-14-dashboards:step-2-converting-your-script-to-use-streamlit}}
+This step is very easy, but the results are not very spectacular (yet).  You simply take your existing Python script and make the following easy changes.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Add \sphinxcode{\sphinxupquote{import streamlit as st}} to the top of the file, before anything else.  (This imports all the Streamlit tools into your script.)
+
+\item {} 
+Change any \sphinxcode{\sphinxupquote{print()}} function call in your script to \sphinxcode{\sphinxupquote{st.write()}} instead.  (This replaces ordinary Python printing, which goes to the terminal, with Streamlit printing, which will go to the dashboard you’re creating.)
+
+\item {} 
+Change any \sphinxcode{\sphinxupquote{plt.show()}} function call in your script to \sphinxcode{\sphinxupquote{st.pyplot()}} instead.  (This replaces ordinary Python plotting, which appears in its own window or in your IDE, with Streamlit plotting, which will go to the dashboard you’re creating.)
+
+\end{enumerate}
+
+If we make these changes to the script above, we get the following result.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{streamlit} \PYG{k}{as} \PYG{n+nn}{st}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+
+\PYG{k}{def} \PYG{n+nf}{my\PYGZus{}random\PYGZus{}variable} \PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(} \PYG{l+m+mi}{10} \PYG{p}{)}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{n}{sample} \PYG{o}{=} \PYG{p}{[} \PYG{n}{my\PYGZus{}random\PYGZus{}variable}\PYG{p}{(}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{)} \PYG{p}{]}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{hist}\PYG{p}{(} \PYG{n}{sample}\PYG{p}{,} \PYG{n}{bins}\PYG{o}{=}\PYG{l+m+mi}{30} \PYG{p}{)}
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{pyplot}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Mean:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Standard deviation:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+But now this script cannot be run with Python alone; now it must be run using Streamlit, which provides the entire context of a web page and automatic reloading of your script as needed, etc.  Thus you need to run the following command from your computer’s terminal, in the same folder as your script.  My script is called \sphinxcode{\sphinxupquote{central\sphinxhyphen{}limit\sphinxhyphen{}theorem.py}}, but yours will have a different name.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{streamlit} \PYG{n}{run} \PYG{n}{central}\PYG{o}{\PYGZhy{}}\PYG{n}{limit}\PYG{o}{\PYGZhy{}}\PYG{n}{theorem}\PYG{o}{.}\PYG{n}{py}
+\end{sphinxVerbatim}
+
+If you’re using Jupyter to edit your Python script, you can start a new terminal from the Launcher in Jupyter, and type the above command in it.  You may need to use \sphinxcode{\sphinxupquote{cd}} to switch into the appropriate folder.  If you’re not familiar with changing folders using \sphinxcode{\sphinxupquote{cd}}, you may benefit from a tutorial on basic command line use.  Here is \sphinxhref{https://swcarpentry.github.io/shell-novice/02-filedir/index.html}{one for Unix and Mac} and here is \sphinxhref{https://www.computerhope.com/issues/chusedos.htm}{one for Windows}.
+
+When I do so, it opens a page in my browser showing me a tiny little dashboard app!  Here is a screenshot.
+
+\sphinxincludegraphics{{streamlit-screenshot-1}.png}
+
+You may notice that the terminal in which you ran \sphinxcode{\sphinxupquote{streamlit run ...}} did not return you immediately to your prompt.  The Streamlit environment is still running, and will let you refresh your app if you update the Python script on which it’s built.  If you want to stop the Streamlit environment (say, when you’re done working) you can go to the terminal and press Ctrl+C.
+
+In fact, let’s try updating the Python script now.  Make a small change, such as changing the text “Mean:” to “Sample mean:” and then saving the Python script.  The web page should pop up a small information indicator in the top right, like the one shown below.
+
+\sphinxincludegraphics{{streamlit-menu}.png}
+
+It’s asking if you want to rebuild your app since it changed.  I click “Always rerun” so that, in the future, every time I update my Python script \sphinxstyleemphasis{and save it,} the dashboard app I’m building will automatically be reloaded without any effort on my part.
+
+
+\section{Step 3. Abstraction}
+\label{\detokenize{chapter-14-dashboards:step-3-abstraction}}
+Recall from {\hyperref[\detokenize{chapter-7-abstraction::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 7 of these notes}}}} the techniques we have for making code more general.  These include noting when a specific computation may need to be done more than once with varying inputs, and turning that code into a function.
+
+When using Streamlit to build a dashboard, the power it provides is that it will run our \sphinxstyleemphasis{entire Python script} as many times as needed, with inputs chosen by the user.  To make this happen, we first need to choose which parts of our script are going to become parameters that the user can change.  The first step in this process is to give each of those values names and turn them into variables that we declare at the top of our script.
+
+In the small example we’re using in this chapter, I have just two places where I will turn constants into parameters.  One constant is how many uniform random variables we will include in our sum (formerly fixed at 10) and the other is how large will be the sample we use to create our histogram (formerly fixed at 1000).  Here is a new version of the code in which those two parameters are declared up front.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{streamlit} \PYG{k}{as} \PYG{n+nn}{st}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+
+\PYG{n}{num\PYGZus{}random\PYGZus{}variables\PYGZus{}to\PYGZus{}sum} \PYG{o}{=} \PYG{l+m+mi}{10}    \PYG{c+c1}{\PYGZsh{} These two lines of code are new.}
+\PYG{n}{sample\PYGZus{}size} \PYG{o}{=} \PYG{l+m+mi}{1000}                  \PYG{c+c1}{\PYGZsh{} Notice where they\PYGZsq{}re used, below.}
+
+\PYG{k}{def} \PYG{n+nf}{my\PYGZus{}random\PYGZus{}variable} \PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(} \PYG{n}{num\PYGZus{}random\PYGZus{}variables\PYGZus{}to\PYGZus{}sum} \PYG{p}{)}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{n}{sample} \PYG{o}{=} \PYG{p}{[} \PYG{n}{my\PYGZus{}random\PYGZus{}variable}\PYG{p}{(}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{sample\PYGZus{}size}\PYG{p}{)} \PYG{p}{]}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{hist}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)}
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{pyplot}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Sample Mean:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Sample Standard Deviation:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+If you save this Python script and revisit your dashboard app page, nothing should have changed, because the code produces the same results (except, of course, for small random variation inherent in the simulation).
+
+
+\section{Step 4. Creating input controls}
+\label{\detokenize{chapter-14-dashboards:step-4-creating-input-controls}}
+Streamlit makes it extremely easy to turn code like \sphinxcode{\sphinxupquote{sample\_size = 1000}} into code that lets the user of your dashboard choose the value of \sphinxcode{\sphinxupquote{sample\_size}}.  The most common way to let the user choose a number is with a slider input, which you can create in Streamlit with \sphinxcode{\sphinxupquote{st.slider()}}.  You simply replace the constant 1000 with a call to the \sphinxcode{\sphinxupquote{st.slider()}} function, and Streamlit automatically builds the user interface for you!
+
+The function call looks like \sphinxcode{\sphinxupquote{st.slider("Prompt",min,max,default,step)}}, where the parameters have the following meanings.
+\begin{itemize}
+\item {} 
+The prompt is a string that will appear in the dashboard, explaining to the user what the slider does.
+
+\item {} 
+The min and max values are required, and they determine the leftmost and rightmost values on the slider.
+
+\item {} 
+The default value is optional, but it can be used to specify where the slider begins when the dashboard is first loaded.
+
+\item {} 
+The step value is optional, but it says how far the slider moves in a single step.  For instance, if you want the user to only be able to choose whole numbers, set step to 1, so that they cannot move the slider in between whole numbers.
+
+\end{itemize}
+
+I add two \sphinxcode{\sphinxupquote{st.slider()}} calls to our code as follows.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{streamlit} \PYG{k}{as} \PYG{n+nn}{st}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+
+\PYG{n}{num\PYGZus{}random\PYGZus{}variables\PYGZus{}to\PYGZus{}sum} \PYG{o}{=} \PYG{n}{st}\PYG{o}{.}\PYG{n}{slider}\PYG{p}{(}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Include this many uniform random variables in the sum:}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)}
+\PYG{n}{sample\PYGZus{}size} \PYG{o}{=} \PYG{n}{st}\PYG{o}{.}\PYG{n}{slider}\PYG{p}{(}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Create a histogram from a sample of this size:}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{100}\PYG{p}{,} \PYG{l+m+mi}{10000}\PYG{p}{,} \PYG{l+m+mi}{1000}\PYG{p}{,} \PYG{l+m+mi}{100} \PYG{p}{)}
+
+\PYG{k}{def} \PYG{n+nf}{my\PYGZus{}random\PYGZus{}variable} \PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(} \PYG{n}{num\PYGZus{}random\PYGZus{}variables\PYGZus{}to\PYGZus{}sum} \PYG{p}{)}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{n}{sample} \PYG{o}{=} \PYG{p}{[} \PYG{n}{my\PYGZus{}random\PYGZus{}variable}\PYG{p}{(}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{sample\PYGZus{}size}\PYG{p}{)} \PYG{p}{]}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{hist}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)}
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{pyplot}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Sample Mean:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Sample Standard Deviation:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+This adds the following user interface to the top of my dashboard app.  It’s finally interactive!
+
+\sphinxincludegraphics{{streamlit-sliders}.png}
+
+If you drag the sliders, you see the output update immediately.  \sphinxstyleemphasis{When you change an input slider, Streamlit automatically re\sphinxhyphen{}runs your entire Python script and updates the output in the page, typically very quickly.}  This happens every time you move one of the sliders.
+
+
+\section{Step 5. Increasing Awesomeness}
+\label{\detokenize{chapter-14-dashboards:step-5-increasing-awesomeness}}
+The above example was simple, but there are many ways you could make the application better.  Here are a few examples.
+
+
+\subsection{New kinds of controls}
+\label{\detokenize{chapter-14-dashboards:new-kinds-of-controls}}
+A slider is not the only type of input.  Two other common ones you might want to have are detailed here, but a \sphinxhref{https://docs.streamlit.io/en/stable/api.html\#display-interactive-widgets}{comprehensive list} appears on the Streamlit website.
+
+To create a text box that accepts only numerical inputs, use \sphinxcode{\sphinxupquote{value = st.number\_input("Prompt",min,max,default)}}.  The only required paramater is the text prompt, and the other three are optional.
+
+\sphinxincludegraphics{{streamlit-number-input}.png}
+
+To create a drop\sphinxhyphen{}down list from which you can pick a value, use \sphinxcode{\sphinxupquote{choice = st.selectbox("Prompt",("List","of","options"))}}.  By default, the first one is selected, but you can change it with an optional third parameter, the index of the default option.
+
+\sphinxincludegraphics{{streamlit-selectbox}.png}
+
+
+\subsection{Improve output clarity}
+\label{\detokenize{chapter-14-dashboards:improve-output-clarity}}
+The very simple app we’ve built so far would not make a lot of sense to anyone visiting it for the first time.  The explanation of the CLT from our notebook is gone, and the output shown in the dashboard is not explained.  We can add explanations back to our app with the \sphinxcode{\sphinxupquote{st.write()}} command.  Provide it a string of Markdown content, just as you would put into a Jupyter notebook cell, and it will include it in your app.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}\PYGZsq{}}
+
+\PYG{l+s+s1}{\PYGZsh{} This would be a heading}
+
+\PYG{l+s+s1}{Don}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{t forget that you can use Python triple quotes to make a string}
+\PYG{l+s+s1}{last over several lines, so that you can write as much as you want.}
+
+\PYG{l+s+s1}{![A hilarious photo](http://www.imgur.com/your\PYGZhy{}hilarious\PYGZhy{}photo\PYGZhy{}url\PYGZhy{}here)}
+
+\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}\PYGZsq{}} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+You can also improve output clarity by moving some things into the app’s sidebar, which sits on the left by default, like on many websites.  You do this by replacing the relevant instances of \sphinxcode{\sphinxupquote{st}} in your code with \sphinxcode{\sphinxupquote{st.sidebar}}.  For example, while \sphinxcode{\sphinxupquote{st.slider("Choose a value:",1,100)}} places a slider in the main part of the app, \sphinxcode{\sphinxupquote{st.sidebar.slider("Choose a value:",1,100)}} puts it in the sidebar.
+
+The one exception to this is that \sphinxcode{\sphinxupquote{st.write()}} does not have a sidebar version; there is no \sphinxcode{\sphinxupquote{st.sidebar.write()}}.  You can, however, still use \sphinxcode{\sphinxupquote{st.sidebar.markdown()}} to display any kind of Markdown content in the sidebar.
+
+If you don’t want to have to deal with Markdown syntax, you can always call specific Streamlit functions like \sphinxcode{\sphinxupquote{st.title()}}, \sphinxcode{\sphinxupquote{st.header()}}, \sphinxcode{\sphinxupquote{st.subheader()}}, and \sphinxcode{\sphinxupquote{st.text()}}.
+
+Applying these techniques to my dashboard can make it look much more clean and understandable.  Here are the results, in code and in a screenshot.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{streamlit} \PYG{k}{as} \PYG{n+nn}{st}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{title}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Central Limit Theorem Example}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{sidebar}\PYG{o}{.}\PYG{n}{markdown}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}\PYGZsq{}}
+\PYG{l+s+s1}{The Central Limit Theorem assumes you have a collection \PYGZdl{}X\PYGZus{}1,}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{ldots,X\PYGZus{}n\PYGZdl{}}
+\PYG{l+s+s1}{of random variables that you will sum to create a new random variable}
+\PYG{l+s+s1}{\PYGZdl{}X=}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{sum\PYGZus{}}\PYG{l+s+s1}{\PYGZob{}}\PYG{l+s+s1}{i=1\PYGZcb{}\PYGZca{}n X\PYGZus{}i\PYGZdl{}.  Here we will sum several}
+\PYG{l+s+s1}{uniform random variables on the interval \PYGZdl{}[0,1]\PYGZdl{}.}
+\PYG{l+s+s1}{You may choose the value of \PYGZdl{}n\PYGZdl{} here.}
+\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}\PYGZsq{}} \PYG{p}{)}
+
+\PYG{n}{num\PYGZus{}random\PYGZus{}variables\PYGZus{}to\PYGZus{}sum} \PYG{o}{=} \PYG{n}{st}\PYG{o}{.}\PYG{n}{sidebar}\PYG{o}{.}\PYG{n}{slider}\PYG{p}{(}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{How many uniform random variables should we include in the sum?}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)}
+
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{sidebar}\PYG{o}{.}\PYG{n}{markdown}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}\PYGZsq{}}
+\PYG{l+s+s1}{The Central Limit Theorem says that the new random variable \PYGZdl{}X\PYGZdl{} will}
+\PYG{l+s+s1}{be approximately normally distributed.  To visualize this, we will sample}
+\PYG{l+s+s1}{many values from \PYGZdl{}X\PYGZdl{} and create a histogram.  It should look more and more}
+\PYG{l+s+s1}{like a bell curve as we increase \PYGZdl{}n\PYGZdl{}.}
+\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}\PYGZsq{}} \PYG{p}{)}
+
+\PYG{n}{sample\PYGZus{}size} \PYG{o}{=} \PYG{n}{st}\PYG{o}{.}\PYG{n}{sidebar}\PYG{o}{.}\PYG{n}{slider}\PYG{p}{(}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{How large of a sample should we use to create the histogram?}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+m+mi}{100}\PYG{p}{,} \PYG{l+m+mi}{10000}\PYG{p}{,} \PYG{l+m+mi}{1000}\PYG{p}{,} \PYG{l+m+mi}{100} \PYG{p}{)}
+
+\PYG{k}{def} \PYG{n+nf}{my\PYGZus{}random\PYGZus{}variable} \PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(} \PYG{n}{num\PYGZus{}random\PYGZus{}variables\PYGZus{}to\PYGZus{}sum} \PYG{p}{)}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{n}{sample} \PYG{o}{=} \PYG{p}{[} \PYG{n}{my\PYGZus{}random\PYGZus{}variable}\PYG{p}{(}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{sample\PYGZus{}size}\PYG{p}{)} \PYG{p}{]}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{hist}\PYG{p}{(} \PYG{n}{sample}\PYG{p}{,} \PYG{n}{bins}\PYG{o}{=}\PYG{l+m+mi}{30} \PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{title}\PYG{p}{(} \PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Histogram of a sample of size }\PYG{l+s+si}{\PYGZob{}sample\PYGZus{}size\PYGZcb{}}\PYG{l+s+s1}{ from X}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{xlabel}\PYG{p}{(} \PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{X = the sum of }\PYG{l+s+si}{\PYGZob{}num\PYGZus{}random\PYGZus{}variables\PYGZus{}to\PYGZus{}sum\PYGZcb{}}\PYG{l+s+s1}{ uniform random variables on [0,1]}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylabel}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Frequency}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{pyplot}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(} \PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}\PYGZsq{}}
+\PYG{l+s+s1}{Because each \PYGZdl{}}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s+s1}{mu\PYGZus{}}\PYG{l+s+s1}{\PYGZob{}\PYGZob{}}\PYG{l+s+s1}{X\PYGZus{}i\PYGZcb{}\PYGZcb{}=0.5\PYGZdl{} and \PYGZdl{}n=}\PYG{l+s+si}{\PYGZob{}num\PYGZus{}random\PYGZus{}variables\PYGZus{}to\PYGZus{}sum\PYGZcb{}}\PYG{l+s+s1}{\PYGZdl{},}
+\PYG{l+s+s1}{we conclude \PYGZdl{}}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s+s1}{mu\PYGZus{}X=0.5}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s+s1}{times}\PYG{l+s+si}{\PYGZob{}num\PYGZus{}random\PYGZus{}variables\PYGZus{}to\PYGZus{}sum\PYGZcb{}}\PYG{l+s+s1}{=}\PYG{l+s+s1}{\PYGZob{}}\PYG{l+s+s1}{num\PYGZus{}random\PYGZus{}variables\PYGZus{}to\PYGZus{}sum*0.5\PYGZcb{}\PYGZdl{}.}
+
+\PYG{l+s+s1}{Mean of our sample is \PYGZdl{}}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s+s1}{bar}\PYG{l+s+s1}{\PYGZob{}\PYGZob{}}\PYG{l+s+s1}{x\PYGZcb{}\PYGZcb{}=}\PYG{l+s+s1}{\PYGZob{}}\PYG{l+s+s1}{np.mean( sample )\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s+s1}{approx}\PYG{l+s+s1}{\PYGZob{}}\PYG{l+s+s1}{num\PYGZus{}random\PYGZus{}variables\PYGZus{}to\PYGZus{}sum*0.5\PYGZcb{}\PYGZdl{}.}
+\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}\PYGZsq{}} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+\sphinxincludegraphics{{streamlit-screenshot-2}.png}
+
+
+\subsection{Improve speed}
+\label{\detokenize{chapter-14-dashboards:improve-speed}}
+If your dashboard loads a large dataset, or takes any other action that may consume a lot of time, then whenever a user adjusts any of the input controls, the dashboard will take a long time to respond, because it must load the entire dataset again, or whatever the long computation is.  You can improve this behavior by telling Streamlit to cache (remember) the value of the lengthy computation so that it doesn’t unnecessarily redo it.
+
+For instance, recall the many times we’ve loaded the (somewhat large) sample of mortgage applications with code like the following.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{read\PYGZus{}csv}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{practice\PYGZhy{}project\PYGZhy{}dataset\PYGZhy{}1.csv}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+We can tell Streamlit to cache the results of this by taking the slow or complex code and moving into its own function, one that takes no parameters and returns the result of the lengthy computation.  We then call the function to get the result.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{load\PYGZus{}mortgage\PYGZus{}data} \PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{read\PYGZus{}csv}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{practice\PYGZhy{}project\PYGZhy{}dataset\PYGZhy{}1.csv}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+
+\PYG{n}{df} \PYG{o}{=} \PYG{n}{load\PYGZus{}mortgage\PYGZus{}data}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+Of course, this behaves exactly like it did before, but now we can add a special Streamlit flag that enables caching for the function we’ve written.  The code looks like the following; the only new part is the first line.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nd}{@st}\PYG{o}{.}\PYG{n}{cache}
+\PYG{k}{def} \PYG{n+nf}{load\PYGZus{}mortgage\PYGZus{}data} \PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{read\PYGZus{}csv}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{practice\PYGZhy{}project\PYGZhy{}dataset\PYGZhy{}1.csv}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+
+\PYG{n}{df} \PYG{o}{=} \PYG{n}{load\PYGZus{}mortgage\PYGZus{}data}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+The \sphinxcode{\sphinxupquote{@st.cache}} code tells Streamlit that the function immediately after it should be run only once, the first time the dashboard is launched, and any later attempt to call to the same function can just use the previously\sphinxhyphen{}loaded value, without actually re\sphinxhyphen{}running the function at all.
+
+More information on Streamlit caching is available \sphinxhref{https://docs.streamlit.io/en/stable/api.html\#optimize-performance}{here}.
+
+You now know how to create dashboard apps with a good bit of flexibility and sophistication!  The next question is how to deploy them to the web.  The second half of today’s notes answer that question.
+
+
+\section{Making your dashboard into a Heroku app}
+\label{\detokenize{chapter-14-dashboards:making-your-dashboard-into-a-heroku-app}}
+You can deploy a Streamlit dashboard to a website in many different ways.  Here, we will cover a tool used by many developers to deploy websites to a free cloud hosting platorm, Heroku.  While Heroku has paid plans for websites and web apps that get a lot of traffic, the free plan is far more than we need for our purposes.  As mentioned {\hyperref[\detokenize{chapter-14-dashboards:whats-a-dashboard-and-why-do-we-have-them}]{\emph{above}}}, I expect that you’ve already registered for a Heroku account and installed their command line interface tools.  (The lessons I give below are inspired by a very helpful blog post I read on this technology; thanks to \sphinxhref{https://gilberttanner.com/blog/deploying-your-streamlit-dashboard-with-heroku}{Gilbert Tanner} for the original information.)
+
+
+\subsection{Step 1. Make your project a git repository}
+\label{\detokenize{chapter-14-dashboards:step-1-make-your-project-a-git-repository}}
+This step has several parts.  Parts 1\sphinxhyphen{}3 need to be done only once.  Part 4 must be done any time you change your app and want to prepare to deploy a new version to Heroku.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxstylestrong{Make sure your files are in a folder by themselves, dedicated to this dashboard project.}  In the case of the example dashboard I’ve been using in this chapter, that’s just one file, my Python script.  If you had data files, images, or Python modules to go with your Python script, you’d move them into that folder, too.
+
+\item {} 
+\sphinxstylestrong{Change the name of your main Python script to \sphinxcode{\sphinxupquote{app.py}}.}  Although this is not required, it will make the instructions simpler from here on.
+
+\item {} 
+\sphinxstylestrong{Turn that folder into a git repository.}  How to do this was covered in \sphinxhref{chapter-8-version-control\#create-a-repository}{this section of the Chapter 8 notes}.
+
+\item {} 
+\sphinxstylestrong{Commit all the files to the git repository.}  How to do a commit was covered in \sphinxhref{chapter-8-version-control\#make-a-commit}{this section of that same chapter}.
+
+\end{enumerate}
+
+
+\subsection{Step 2. Connect your repository to Heroku}
+\label{\detokenize{chapter-14-dashboards:step-2-connect-your-repository-to-heroku}}
+This step has two parts, and it needs to be done only once.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxstylestrong{Log in to Heroku on the command line.}  Go to any terminal and run the command \sphinxcode{\sphinxupquote{heroku login}}.  For instance, if you’re using Jupyter, you can open a new Launcher, run a terminal, and then execute that command.  It should launch your default browser and prompt you to log in there.
+
+\item {} 
+\sphinxstylestrong{Tell your git repository about Heroku.}  While still in the terminal, change into the directory where your dashboard project is located and run \sphinxcode{\sphinxupquote{heroku create}}.  This will create an online virtual machine in which you can deploy and run your Heroku app.  If you’re unsure about how to change directories in the terminal, see the tutorials linked to {\hyperref[\detokenize{chapter-14-dashboards:Step-2.-Converting-your-script-to-use-Streamlit}]{\emph{above}}}.
+
+\end{enumerate}
+
+Your online virtual machine will have a funny name, like \sphinxcode{\sphinxupquote{careful\sphinxhyphen{}muskrat\sphinxhyphen{}17.herokuapp.com}}.  This is fine for the little test we’re running here, but if you make a nice dashboard and want it to have a better name, you can always \sphinxhref{https://devcenter.heroku.com/articles/renaming-apps}{change the name later}.
+
+
+\subsection{Step 3. Add files Heroku will need}
+\label{\detokenize{chapter-14-dashboards:step-3-add-files-heroku-will-need}}
+Soon, we will push your git repository to Heroku, and expect Heroku to run your app.  But Heroku is a very generic tool; it’s not for Streamlit apps only, nor even for just Python apps.  So we cannot expect Heroku to know what to do with our Python script.  We will need to tell it how to set itself up with the necessary Python modules and how to run our dashboard once it has done so.  This requires putting three configuration files into our git repository.  This step needs to be done only once.
+
+\sphinxstylestrong{Requirements:} Create a new text file in your project folder and call it \sphinxcode{\sphinxupquote{requirements.txt}}.  (You can create text files in Jupyter from the launcher; just choose Text File.)  Requirements files are a Python standard, and list all the Python modules a project will need.  Your \sphinxcode{\sphinxupquote{requirements.txt}} file will need to list any Python module your dashboard uses.  Since mine uses pandas, matplotlib, and Streamlit, I will list those, with their current versions at the time of this writing.  The versions may be newer when you read this.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+pandas==1.0.1
+matplotlib==3.1.3
+streamlit==0.57.2
+\end{sphinxVerbatim}
+
+\sphinxstylestrong{Setup:} The following file will seem quite cryptic to most readers.  Its contents are mostly unimportant for our purposes here.  The short explanation is that Heroku virtual machines run Linux, and the following command is written in the language of the Linux command line, and tells Heroku how to set up your app.  Note that the only change you’ll want to make is to replace the text \sphinxcode{\sphinxupquote{your\sphinxhyphen{}email@bentley.edu}} with your actual email address.
+
+Save this in a new text file called \sphinxcode{\sphinxupquote{setup.sh}} (where the “sh” is short for “shell,” the word for the Linux command line).  It is crucial that the file end in \sphinxcode{\sphinxupquote{.sh}}, not \sphinxcode{\sphinxupquote{.txt}}, even though it is a plain text file.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+mkdir \PYGZhy{}p \PYGZti{}/.streamlit/
+
+\PYG{n+nb}{echo} \PYG{l+s+s2}{\PYGZdq{}\PYGZbs{}}
+\PYG{l+s+s2}{[general]\PYGZbs{}n\PYGZbs{}}
+\PYG{l+s+s2}{email = \PYGZbs{}\PYGZdq{}your\PYGZhy{}email@bentley.edu\PYGZbs{}\PYGZdq{}\PYGZbs{}n\PYGZbs{}}
+\PYG{l+s+s2}{\PYGZdq{}} \PYGZgt{} \PYGZti{}/.streamlit/credentials.toml
+
+\PYG{n+nb}{echo} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZbs{}}
+\PYG{l+s+s2}{[server]\PYGZbs{}n\PYGZbs{}}
+\PYG{l+s+s2}{headless = true\PYGZbs{}n\PYGZbs{}}
+\PYG{l+s+s2}{enableCORS=false\PYGZbs{}n\PYGZbs{}}
+\PYG{l+s+s2}{port = }\PYG{n+nv}{\PYGZdl{}PORT}\PYG{l+s+s2}{\PYGZbs{}n\PYGZbs{}}
+\PYG{l+s+s2}{\PYGZdq{}} \PYGZgt{} \PYGZti{}/.streamlit/config.toml
+
+**Procfile:** Heroku needs to know what commands to run to get a web app started, and it expects to find them in a file called \PYG{l+s+sb}{`}Procfile\PYG{l+s+sb}{`} \PYG{o}{(}with no extension and a capital P\PYG{o}{)}.  It is also a plain text file.  Notice that it tells Heroku to run the \PYG{l+s+sb}{`}setup.sh\PYG{l+s+sb}{`} file we provided, \PYG{k}{then} run our Streamlit app.
+
+\PYG{l+s+sb}{`}\PYG{l+s+sb}{`}\PYG{l+s+sb}{`}sh
+web: sh setup.sh \PYG{o}{\PYGZam{}\PYGZam{}} streamlit run app.py
+\end{sphinxVerbatim}
+
+Once you’ve placed all three of these files into your dashboard project folder, commit all of them to your git repository.
+
+
+\subsection{Step 4. Deploy your app to the web}
+\label{\detokenize{chapter-14-dashboards:step-4-deploy-your-app-to-the-web}}
+You deploy an app to the web with a simple git push.  (Recall that git pushes and pulls were explained in \sphinxhref{chapter-8-version-control\#what-if-i-want-to-collaborate}{the chapter on version control}.)  You can do this in one of two ways.
+
+In the version control chapter, I suggested using the GitHub Desktop app to push changes to the web, by just clicking the “Publish branch” button.  But when you publish to Heroku, it prints a lot of useful information about whether your app deployed successfully or not and why.  If you use the GitHub Desktop app, you won’t see that information; it will all be hidden from you.  So instead, I recommend using the terminal for this task as well.
+
+Assuming your terminal is still in your project folder, issue the command \sphinxcode{\sphinxupquote{git push heroku master}}.  You will need to wait while Heroku does all the setup for your app, but it will print a lot of messages explaining what it’s doing.  If all goes well, the final line of your output will look like the following.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+remote: \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} Launching...
+remote:        Released v1
+remote:        https://careful\PYGZhy{}muskrat\PYGZhy{}17.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/careful\PYGZhy{}muskrat\PYGZhy{}17.git
+ * [new branch]      master \PYGZhy{}\PYGZgt{} master
+\end{sphinxVerbatim}
+
+You can copy and paste the \sphinxcode{\sphinxupquote{https://...}} URL into your browser to visit the dashboard.  To skip the copy\sphinxhyphen{}and\sphinxhyphen{}paste step, you can just run \sphinxcode{\sphinxupquote{heroku open}} in the terminal and it will launch the app in your browser for you.  You can share its URL with anyone in the world and they can see the dashboard online as well.
+
+To see the dashboard I’ve been building throughout this tutorial, visit \sphinxurl{https://clt-example.herokuapp.com/}.
+
+
+\subsection{Updating your app later}
+\label{\detokenize{chapter-14-dashboards:updating-your-app-later}}
+If you later make changes to the dashboard on your computer and want to update the web version to reflect those changes, you’ll just need to repeat two of the instructions from above.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Commit all your changes to your git repository.
+
+\item {} 
+Run \sphinxcode{\sphinxupquote{git push heroku master}} again.
+
+\end{enumerate}
+
+This will re\sphinxhyphen{}deploy an updated version of the app, and if you then refresh your browser, you should see the new version.
+
+
+\section{Closing remarks}
+\label{\detokenize{chapter-14-dashboards:closing-remarks}}
+One of the requirements for your final project in MA346 is to include an online dashboard as part of your work.  Early in your project work it would be helpful to think through two strategic questions to help make that possible.  First, be sure to choose a project that lends itself well to having some part of its work showcased in a dashboard.  Second, ensure that at least one person on the project team is familiar enough with the content of this chapter to do it well for the final project.  I realize that this chapter’s content is rather technical, but not everyone in the class must master it fully.  But at least one person from each team must do so!
+
+Finally, there are several opportunities for Learning On Your Own projects you can do based on this chapter’s content.  Here are a few.
+
+\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} Alternative to Streamlit: Dash}
+
+A more flexible and powerful dashboard module for Python is called \sphinxhref{https://pypi.org/project/dash/}{Dash}.  However, Dash requires deeper programming knowledge than Streamlit does, so we chose to use Streamlit.  Take a few Dash tutorials, such as \sphinxhref{https://www.datacamp.com/community/tutorials/learn-build-dash-python}{this one on DataCamp}, build an app or two, and report back to the class on its strengths and weaknesses, plus where the reader could go to learn more.
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} Alternative to Streamlit: Voila}
+
+\sphinxhref{https://github.com/voila-dashboards/voila}{Voilà} is a different type of dashboard toolkit; it converts your Jupyter notebook directly into a dashboard.  However, it seems more complex to use than Streamlit, so it wasn’t my choice for this course.  As in the previous LOYO, try a Voilà tutorial, build an app using it, and report back to the class on its strengths and weaknesses, plus where the reader could go to learn more.
 \end{sphinxadmonition}
 
 
@@ -9418,7 +10032,7 @@ The same code works for any random variable, not just \sphinxcode{\sphinxupquote
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+array([1, 0, 0, 1, 1, 0, 0, 0, 0, 0])
 \end{sphinxVerbatim}
 
 The same code works for any random variable, not just \sphinxcode{\sphinxupquote{b1}}.
@@ -9508,9 +10122,9 @@ The same code works for any continuous random variable, not just \sphinxcode{\sp
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([ 97.05990235, 110.56644807,  97.67195286, 104.53449756,
-       103.17548422,  98.87309427,  98.43261043, 106.18133537,
-        98.7061587 , 100.11782046])
+array([ 91.50576438,  99.86154359,  94.75411308,  98.85559716,
+        98.50861192,  99.93694   ,  95.02151105,  94.53352632,
+       107.62531688,  98.39891228])
 \end{sphinxVerbatim}
 
 

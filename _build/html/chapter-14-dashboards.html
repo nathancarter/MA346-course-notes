@@ -52,10 +52,10 @@
 <meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/chapter-14-dashboards.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Dashboards" />
-<meta property="og:description" content="Dashboards  <a href="../../_slides/chapter-14-slides.html">See also the slides that summarize a portion of this content.</a>  Warning  This chapter has not yet " />
+<meta property="og:description" content="Dashboards  &lt;a href=&#34;../../_slides/chapter-14-slides.html&#34;&gt;See also the slides that summarize a portion of this content.&lt;/a&gt;  What’s a dashboard and why do we h" />
 <meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -344,7 +344,105 @@
             <i class="fas fa-list"></i> On this page
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-s-a-dashboard-and-why-do-we-have-them">
+   What’s a dashboard and why do we have them?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#our-running-example">
+   Our running example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-begins-here">
+     Example begins here
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-we-need-a-python-script">
+   Step 1: We need a Python script
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-converting-your-script-to-use-streamlit">
+   Step 2. Converting your script to use Streamlit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-abstraction">
+   Step 3. Abstraction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-creating-input-controls">
+   Step 4. Creating input controls
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-increasing-awesomeness">
+   Step 5. Increasing Awesomeness
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#new-kinds-of-controls">
+     New kinds of controls
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#improve-output-clarity">
+     Improve output clarity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#improve-speed">
+     Improve speed
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#making-your-dashboard-into-a-heroku-app">
+   Making your dashboard into a Heroku app
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-make-your-project-a-git-repository">
+     Step 1. Make your project a git repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-connect-your-repository-to-heroku">
+     Step 2. Connect your repository to Heroku
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-add-files-heroku-will-need">
+     Step 3. Add files Heroku will need
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-4-deploy-your-app-to-the-web">
+     Step 4. Deploy your app to the web
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#updating-your-app-later">
+     Updating your app later
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#closing-remarks">
+   Closing remarks
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -356,9 +454,482 @@
   <div class="section" id="dashboards">
 <h1>Dashboards<a class="headerlink" href="#dashboards" title="Permalink to this headline">¶</a></h1>
 <p><a href="../../_slides/chapter-14-slides.html">See also the slides that summarize a portion of this content.</a></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This chapter has not yet been written.  Check back later.</p>
+<div class="section" id="what-s-a-dashboard-and-why-do-we-have-them">
+<h2>What’s a dashboard and why do we have them?<a class="headerlink" href="#what-s-a-dashboard-and-why-do-we-have-them" title="Permalink to this headline">¶</a></h2>
+<p>You’ve been learning a lot of data manipulation and analysis in Python.  But Python is an environment that only data professionals and scientists tend to dive into.  What happens when you want to let non-technical people browse your work?</p>
+<p>Most of the time, we write reports or create slide decks to share our results.  But sometimes the experience of exploring the data is more powerful than a static report or pre-packaged slide deck can ever be.  Sometimes the manager who asked for the analysis wants to experiment with various parameter values themself, especially if they were a data analyst once, too.</p>
+<p>This is where <em>dashboards</em> come in.  A quick <a class="reference external" href="https://www.google.com/search?q=data+dashboard&amp;tbm=isch">Google image search for “data dashboards”</a> will show you dozens of examples of what dashboards look like.  Their purpose is to let the user explore the data using inputs like buttons and sliders, and seeing outputs that are typically data visualizations and summaries.  Dashboards don’t give the user anywhere near as much flexibility as you have in Python, but they’re much easier and faster.</p>
+<p>There are many reasons why you might prepare a data dashboard.  Here are a few.</p>
+<ul class="simple">
+<li><p><strong>There are many different inputs to which you could apply an analysis, and you want to let the user explore each.</strong>  For instance, you recently built a visualization for comparing property values in home mortgage applications across two races.  But it could be more powerful if we let the user choose two races, and the analysis would automatically be repeated for those two.  The user could choose values that matter to them personally or professionally.</p></li>
+<li><p><strong>An analysis has a tuning parameter that might benefit from exploration by an expert.</strong>  For instance, let’s say you have a model that takes as input a price for a new insurance product, and forecasts adoption rates and various probabilities associated with profits and losses under various conditions.  The person ultimately in charge of making the decision on product price might like to move a slider that controls the price input, and take their time to consider each of the possible scenarios in your model’s output.</p></li>
+<li><p><strong>Some projects are not a data analysis, but just a data showcase.</strong>  I mentioned in a previous class that a friend of mine runs a nonprofit that helps universities make, track, and keep climate commitments.  <a class="reference external" href="https://reporting.secondnature.org/">Their data dashboard is here.</a>  It doesn’t do any analysis, but makes their data transparent and interactive, for anyone to explore for their own purposes.</p></li>
+<li><p><strong>Another team wants to see what you’re doing, but they don’t want to read your code.</strong>  To quickly share what you’ve been working on without forcing the recipient to dive into all of your Python code, you can wrap your work in a dashboard and share it on the web.  This lets you get feedback from other teams in your organization about your team’s work.</p></li>
+</ul>
+<p>There are many tools for creating dashboards.  One of the most popular is <a class="reference external" href="https://www.tableau.com/trial/dashboards">Tableau</a>, but we are not studying it in this course for two reasons.  First, it is proprietary software, which makes it less transferable knowledge than free tools.  Second, it is much easier to learn Tableau later on your own than it is to learn Python.  There are many Tableau training opportunities available online and in the corporate world should you need them.</p>
+<p>There are also Python-specific frameworks for creating dashboards.  The easiest one I’ve found to get started with is what we will learn today, <a class="reference external" href="https://www.streamlit.io/">Streamlit</a>.  But a few others are mentioned at the end of this chapter for you to explore on your own if you desire.  These course notes assume that you have already done the following three things.  They’re necessary in order to follow along with the content here.</p>
+<ol class="simple">
+<li><p>Installed Streamlit (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">streamlit</span></code>)</p></li>
+<li><p><a class="reference external" href="https://signup.heroku.com/">Registered</a> for a Heroku account</p></li>
+<li><p>Installed the Heroku <a class="reference external" href="https://devcenter.heroku.com/articles/getting-started-with-python?singlepage=true#set-up">command-line interface</a></p></li>
+</ol>
+</div>
+<div class="section" id="our-running-example">
+<h2>Our running example<a class="headerlink" href="#our-running-example" title="Permalink to this headline">¶</a></h2>
+<p>In this section, I will do a small data visualization that we will turn into a dashboard throughout the rest of these course notes, so that you can see an example of how to convert existing code into a dashboard.  The small amount of code (and explanation of that code) that we will convert into a dashboard appears between the two horizontal lines below.</p>
+<hr class="docutils" />
+<div class="section" id="example-begins-here">
+<h3>Example begins here<a class="headerlink" href="#example-begins-here" title="Permalink to this headline">¶</a></h3>
+<p>In statistics, the Central Limit Theorem (CLT) says that if have several random variables, and we define a new random variable to be their sum, then that new random variable has a shape vaguely like a normal distribution.  Furthermore, if you increase the number of random variables in the sum, then that sum becomes even more precisely like a normal distribution.  Let’s see this in action with some Python simulations.</p>
+<p>First, we’ll need NumPy to generate random numbers for us, and we’ll use the generic uniform distribution for this simulation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span> <span class="mi">10</span> <span class="p">)</span>  <span class="c1"># Make sure we can generate 10 random values in [0,1]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.02842214, 0.81119674, 0.53157605, 0.86342282, 0.93218777,
+       0.42328714, 0.34510009, 0.08866329, 0.23075973, 0.34200095])
+</pre></div>
+</div>
+</div>
+</div>
+<p>The CLT says that we can make a new random variable by summing those numbers.  Let’s do so.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_random_variable</span> <span class="p">():</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span> <span class="mi">10</span> <span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">my_random_variable</span><span class="p">()</span>  <span class="c1"># Test it</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>4.86366937905601
+</pre></div>
+</div>
+</div>
+</div>
+<p>That random variable is supposed to look sort of like a bell-shaped curve.  Let’s sample 1000 values from it and make a histogram to see if that’s true.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="p">[</span> <span class="n">my_random_variable</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">sample</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-14-dashboards_7_0.png" src="_images/chapter-14-dashboards_7_0.png" />
+</div>
+</div>
+<p>Yes, that looks like a bell curve!  Its mean and standard deviation are as follows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">sample</span> <span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(4.989276203690257, 0.9204788579003654)
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p>That’s it.  Between those two horizontal lines is a little statistics experiment that we will want to turn into a dashboard.  In doing so, we’ll make it much more interactive than it is when it’s sitting, pre-computed, on a web page or PDF of these course notes.</p>
+</div>
+</div>
+<div class="section" id="step-1-we-need-a-python-script">
+<h2>Step 1: We need a Python script<a class="headerlink" href="#step-1-we-need-a-python-script" title="Permalink to this headline">¶</a></h2>
+<p>In this course, I don’t make any restrictions on whether you program in Python scripts (<code class="docutils literal notranslate"><span class="pre">.py</span></code>) or Jupyter notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>).  But Streamlit is an exception; it forces us to use Python scripts.  If you’re already in the habit of doing all your data work in Python scripts, then you can skim the rest of this section and pick up in Step 2.  But if you’re usually a Jupyter user, the good news is that you can convert a notebook into a Python script in just a few clicks, using Jupyter itself.</p>
+<ol class="simple">
+<li><p>From the File menu, choose Export Notebook As…, and choose Export Notebook to Executable Script.</p></li>
+<li><p>This will download the result as a Python script to your computer.  The browser may warn you that it’s dangerous to download and run Python scripts.  Although that’s true in general, if you wrote the script, it should be safe for you to download!</p></li>
+<li><p>The file will probably end up in your downloads folder, and you’ll want to move it from there to wherever you keep your course work.</p></li>
+</ol>
+<p>If you’re a Jupyter user, you can still edit the Python script using Jupyter.  In addition to letting you edit notebooks, Jupyter supports editing of Python files and many other file types.</p>
+<p>If I take the example shown above and run this process on it, I get the following Python script.  Notice how Jupyter turns all the Markdown content of my notebook into Python comments and marks each cell as a numbered input (<code class="docutils literal notranslate"><span class="pre">In[1]</span></code>, <code class="docutils literal notranslate"><span class="pre">In[2]</span></code>, etc.).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ### Example begins here</span>
+<span class="c1">#</span>
+<span class="c1"># In statistics, the Central Limit Theorem (CLT) says that if have several random variables, and we define a new random variable to be their sum, then that new random variable has a shape vaguely like a normal distribution.  Furthermore, if you increase the number of random variables in the sum, then that sum becomes even more precisely like a normal distribution.  Let&#39;s see this in action with some Python simulations.</span>
+<span class="c1">#</span>
+<span class="c1"># First, we&#39;ll need NumPy to generate random numbers for us, and we&#39;ll use the generic uniform distribution for this simulation.</span>
+
+<span class="c1"># In[1]:</span>
+
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span> <span class="mi">10</span> <span class="p">)</span>  <span class="c1"># Make sure we can generate 10 random values in [0,1]</span>
+
+
+<span class="c1"># The CLT says that we can make a new random variable by summing those numbers.  Let&#39;s do so.</span>
+
+<span class="c1"># In[2]:</span>
+
+
+<span class="k">def</span> <span class="nf">my_random_variable</span> <span class="p">():</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span> <span class="mi">10</span> <span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">my_random_variable</span><span class="p">()</span>  <span class="c1"># Test it</span>
+
+
+<span class="c1"># That random variable is supposed to look sort of like a bell-shaped curve.  Let&#39;s sample 1000 values from it and make a histogram to see if that&#39;s true.</span>
+
+<span class="c1"># In[4]:</span>
+
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="p">[</span> <span class="n">my_random_variable</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">sample</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="c1"># Yes, that looks like a bell curve!  Its mean and standard deviation are as follows.</span>
+
+<span class="c1"># In[5]:</span>
+
+
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">sample</span> <span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Running that Python script will produce the same plot that’s shown in this Jupyter notebook.  If you’re using a Python IDE, it will typically appear in that IDE.  If you’re running it from the terminal, it will probably pop up a separate Python window showing the plot, and your script will terminate once you’ve closed the window.</p>
+<p>Although comments in code are great, the comments above look like they belong in an interactive notebook that someone would read, with the output and pictures included.  So they’re not the kind of comments we need in a Python script.  To make things more succinct, I’m going to delete them.  That produces the following Python code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span> <span class="mi">10</span> <span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">my_random_variable</span> <span class="p">():</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span> <span class="mi">10</span> <span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">my_random_variable</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="p">[</span> <span class="n">my_random_variable</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">sample</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">sample</span> <span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Notice also that three lines in the code don’t actually do anything.  In Jupyter, a line of code like <code class="docutils literal notranslate"><span class="pre">np.random.rand(</span> <span class="pre">10</span> <span class="pre">)</span></code> (the second line of the above code), when placed at the end of a cell, will show its output to us in the notebook.  But in a Python script, without a <code class="docutils literal notranslate"><span class="pre">print()</span></code> function call, it won’t show us anything.  But that line of code, together with the <code class="docutils literal notranslate"><span class="pre">my_random_variable()</span></code> line later, were both done as little tests to see if our code was working correctly.  We don’t need to see their output in our Python script, so I’ll delete those lines.</p>
+<p>However, the final line of code may be interesting to us, because the CLT actually speaks about the mean and standard deviation of the resulting random variable.  So we might like to see that value.  I’ll add some <code class="docutils literal notranslate"><span class="pre">print()</span></code> function calls so that our script displays those values in a readable way.  I’ll also clean it up by moving all the imports the top.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">my_random_variable</span> <span class="p">():</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span> <span class="mi">10</span> <span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">sample</span> <span class="o">=</span> <span class="p">[</span> <span class="n">my_random_variable</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">sample</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Mean:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Standard deviation:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Before proceeding to Step 2, be sure that you can successfully run your newly created Python script and verify that it generates the output you want.  Once you’ve done so, you have a Python script that we’re ready to bring into Streamlit.</p>
+</div>
+<div class="section" id="step-2-converting-your-script-to-use-streamlit">
+<h2>Step 2. Converting your script to use Streamlit<a class="headerlink" href="#step-2-converting-your-script-to-use-streamlit" title="Permalink to this headline">¶</a></h2>
+<p>This step is very easy, but the results are not very spectacular (yet).  You simply take your existing Python script and make the following easy changes.</p>
+<ol class="simple">
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">streamlit</span> <span class="pre">as</span> <span class="pre">st</span></code> to the top of the file, before anything else.  (This imports all the Streamlit tools into your script.)</p></li>
+<li><p>Change any <code class="docutils literal notranslate"><span class="pre">print()</span></code> function call in your script to <code class="docutils literal notranslate"><span class="pre">st.write()</span></code> instead.  (This replaces ordinary Python printing, which goes to the terminal, with Streamlit printing, which will go to the dashboard you’re creating.)</p></li>
+<li><p>Change any <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> function call in your script to <code class="docutils literal notranslate"><span class="pre">st.pyplot()</span></code> instead.  (This replaces ordinary Python plotting, which appears in its own window or in your IDE, with Streamlit plotting, which will go to the dashboard you’re creating.)</p></li>
+</ol>
+<p>If we make these changes to the script above, we get the following result.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">my_random_variable</span> <span class="p">():</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span> <span class="mi">10</span> <span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="p">[</span> <span class="n">my_random_variable</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">sample</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span> <span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">pyplot</span><span class="p">()</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="s1">&#39;Mean:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="s1">&#39;Standard deviation:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>But now this script cannot be run with Python alone; now it must be run using Streamlit, which provides the entire context of a web page and automatic reloading of your script as needed, etc.  Thus you need to run the following command from your computer’s terminal, in the same folder as your script.  My script is called <code class="docutils literal notranslate"><span class="pre">central-limit-theorem.py</span></code>, but yours will have a different name.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlit</span> <span class="n">run</span> <span class="n">central</span><span class="o">-</span><span class="n">limit</span><span class="o">-</span><span class="n">theorem</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>If you’re using Jupyter to edit your Python script, you can start a new terminal from the Launcher in Jupyter, and type the above command in it.  You may need to use <code class="docutils literal notranslate"><span class="pre">cd</span></code> to switch into the appropriate folder.  If you’re not familiar with changing folders using <code class="docutils literal notranslate"><span class="pre">cd</span></code>, you may benefit from a tutorial on basic command line use.  Here is <a class="reference external" href="https://swcarpentry.github.io/shell-novice/02-filedir/index.html">one for Unix and Mac</a> and here is <a class="reference external" href="https://www.computerhope.com/issues/chusedos.htm">one for Windows</a>.</p>
+<p>When I do so, it opens a page in my browser showing me a tiny little dashboard app!  Here is a screenshot.</p>
+<p><img alt="Screenshot of a small Streamlit dashboard app" src="_images/streamlit-screenshot-1.png" /></p>
+<p>You may notice that the terminal in which you ran <code class="docutils literal notranslate"><span class="pre">streamlit</span> <span class="pre">run</span> <span class="pre">...</span></code> did not return you immediately to your prompt.  The Streamlit environment is still running, and will let you refresh your app if you update the Python script on which it’s built.  If you want to stop the Streamlit environment (say, when you’re done working) you can go to the terminal and press Ctrl+C.</p>
+<p>In fact, let’s try updating the Python script now.  Make a small change, such as changing the text “Mean:” to “Sample mean:” and then saving the Python script.  The web page should pop up a small information indicator in the top right, like the one shown below.</p>
+<p><img alt="Streamit menu, reading &quot;Source file changed; Rerun/Always Rerun&quot;" src="_images/streamlit-menu.png" /></p>
+<p>It’s asking if you want to rebuild your app since it changed.  I click “Always rerun” so that, in the future, every time I update my Python script <em>and save it,</em> the dashboard app I’m building will automatically be reloaded without any effort on my part.</p>
+</div>
+<div class="section" id="step-3-abstraction">
+<h2>Step 3. Abstraction<a class="headerlink" href="#step-3-abstraction" title="Permalink to this headline">¶</a></h2>
+<p>Recall from <a class="reference internal" href="chapter-7-abstraction.html"><span class="doc">Chapter 7 of these notes</span></a> the techniques we have for making code more general.  These include noting when a specific computation may need to be done more than once with varying inputs, and turning that code into a function.</p>
+<p>When using Streamlit to build a dashboard, the power it provides is that it will run our <em>entire Python script</em> as many times as needed, with inputs chosen by the user.  To make this happen, we first need to choose which parts of our script are going to become parameters that the user can change.  The first step in this process is to give each of those values names and turn them into variables that we declare at the top of our script.</p>
+<p>In the small example we’re using in this chapter, I have just two places where I will turn constants into parameters.  One constant is how many uniform random variables we will include in our sum (formerly fixed at 10) and the other is how large will be the sample we use to create our histogram (formerly fixed at 1000).  Here is a new version of the code in which those two parameters are declared up front.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">num_random_variables_to_sum</span> <span class="o">=</span> <span class="mi">10</span>    <span class="c1"># These two lines of code are new.</span>
+<span class="n">sample_size</span> <span class="o">=</span> <span class="mi">1000</span>                  <span class="c1"># Notice where they&#39;re used, below.</span>
+
+<span class="k">def</span> <span class="nf">my_random_variable</span> <span class="p">():</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span> <span class="n">num_random_variables_to_sum</span> <span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="p">[</span> <span class="n">my_random_variable</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sample_size</span><span class="p">)</span> <span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">pyplot</span><span class="p">()</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="s1">&#39;Sample Mean:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="s1">&#39;Sample Standard Deviation:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>If you save this Python script and revisit your dashboard app page, nothing should have changed, because the code produces the same results (except, of course, for small random variation inherent in the simulation).</p>
+</div>
+<div class="section" id="step-4-creating-input-controls">
+<h2>Step 4. Creating input controls<a class="headerlink" href="#step-4-creating-input-controls" title="Permalink to this headline">¶</a></h2>
+<p>Streamlit makes it extremely easy to turn code like <code class="docutils literal notranslate"><span class="pre">sample_size</span> <span class="pre">=</span> <span class="pre">1000</span></code> into code that lets the user of your dashboard choose the value of <code class="docutils literal notranslate"><span class="pre">sample_size</span></code>.  The most common way to let the user choose a number is with a slider input, which you can create in Streamlit with <code class="docutils literal notranslate"><span class="pre">st.slider()</span></code>.  You simply replace the constant 1000 with a call to the <code class="docutils literal notranslate"><span class="pre">st.slider()</span></code> function, and Streamlit automatically builds the user interface for you!</p>
+<p>The function call looks like <code class="docutils literal notranslate"><span class="pre">st.slider(&quot;Prompt&quot;,min,max,default,step)</span></code>, where the parameters have the following meanings.</p>
+<ul class="simple">
+<li><p>The prompt is a string that will appear in the dashboard, explaining to the user what the slider does.</p></li>
+<li><p>The min and max values are required, and they determine the leftmost and rightmost values on the slider.</p></li>
+<li><p>The default value is optional, but it can be used to specify where the slider begins when the dashboard is first loaded.</p></li>
+<li><p>The step value is optional, but it says how far the slider moves in a single step.  For instance, if you want the user to only be able to choose whole numbers, set step to 1, so that they cannot move the slider in between whole numbers.</p></li>
+</ul>
+<p>I add two <code class="docutils literal notranslate"><span class="pre">st.slider()</span></code> calls to our code as follows.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">num_random_variables_to_sum</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
+    <span class="s2">&quot;Include this many uniform random variables in the sum:&quot;</span><span class="p">,</span>
+    <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+<span class="n">sample_size</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
+    <span class="s2">&quot;Create a histogram from a sample of this size:&quot;</span><span class="p">,</span>
+    <span class="mi">100</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span> <span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">my_random_variable</span> <span class="p">():</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span> <span class="n">num_random_variables_to_sum</span> <span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="p">[</span> <span class="n">my_random_variable</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sample_size</span><span class="p">)</span> <span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">pyplot</span><span class="p">()</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="s1">&#39;Sample Mean:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="s1">&#39;Sample Standard Deviation:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>This adds the following user interface to the top of my dashboard app.  It’s finally interactive!</p>
+<p><img alt="Screenshot of two sliders, one for the number of random variables and the other for the sample size" src="_images/streamlit-sliders.png" /></p>
+<p>If you drag the sliders, you see the output update immediately.  <em>When you change an input slider, Streamlit automatically re-runs your entire Python script and updates the output in the page, typically very quickly.</em>  This happens every time you move one of the sliders.</p>
+</div>
+<div class="section" id="step-5-increasing-awesomeness">
+<h2>Step 5. Increasing Awesomeness<a class="headerlink" href="#step-5-increasing-awesomeness" title="Permalink to this headline">¶</a></h2>
+<p>The above example was simple, but there are many ways you could make the application better.  Here are a few examples.</p>
+<div class="section" id="new-kinds-of-controls">
+<h3>New kinds of controls<a class="headerlink" href="#new-kinds-of-controls" title="Permalink to this headline">¶</a></h3>
+<p>A slider is not the only type of input.  Two other common ones you might want to have are detailed here, but a <a class="reference external" href="https://docs.streamlit.io/en/stable/api.html#display-interactive-widgets">comprehensive list</a> appears on the Streamlit website.</p>
+<p>To create a text box that accepts only numerical inputs, use <code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">=</span> <span class="pre">st.number_input(&quot;Prompt&quot;,min,max,default)</span></code>.  The only required paramater is the text prompt, and the other three are optional.</p>
+<p><img alt="Screenshot of a Streamlit number input control" src="_images/streamlit-number-input.png" /></p>
+<p>To create a drop-down list from which you can pick a value, use <code class="docutils literal notranslate"><span class="pre">choice</span> <span class="pre">=</span> <span class="pre">st.selectbox(&quot;Prompt&quot;,(&quot;List&quot;,&quot;of&quot;,&quot;options&quot;))</span></code>.  By default, the first one is selected, but you can change it with an optional third parameter, the index of the default option.</p>
+<p><img alt="Screenshot of a Streamlit selectbox control" src="_images/streamlit-selectbox.png" /></p>
+</div>
+<div class="section" id="improve-output-clarity">
+<h3>Improve output clarity<a class="headerlink" href="#improve-output-clarity" title="Permalink to this headline">¶</a></h3>
+<p>The very simple app we’ve built so far would not make a lot of sense to anyone visiting it for the first time.  The explanation of the CLT from our notebook is gone, and the output shown in the dashboard is not explained.  We can add explanations back to our app with the <code class="docutils literal notranslate"><span class="pre">st.write()</span></code> command.  Provide it a string of Markdown content, just as you would put into a Jupyter notebook cell, and it will include it in your app.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="s1">&#39;&#39;&#39;</span>
+
+<span class="s1"># This would be a heading</span>
+
+<span class="s1">Don&#39;t forget that you can use Python triple quotes to make a string</span>
+<span class="s1">last over several lines, so that you can write as much as you want.</span>
+
+<span class="s1">![A hilarious photo](http://www.imgur.com/your-hilarious-photo-url-here)</span>
+
+<span class="s1">&#39;&#39;&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also improve output clarity by moving some things into the app’s sidebar, which sits on the left by default, like on many websites.  You do this by replacing the relevant instances of <code class="docutils literal notranslate"><span class="pre">st</span></code> in your code with <code class="docutils literal notranslate"><span class="pre">st.sidebar</span></code>.  For example, while <code class="docutils literal notranslate"><span class="pre">st.slider(&quot;Choose</span> <span class="pre">a</span> <span class="pre">value:&quot;,1,100)</span></code> places a slider in the main part of the app, <code class="docutils literal notranslate"><span class="pre">st.sidebar.slider(&quot;Choose</span> <span class="pre">a</span> <span class="pre">value:&quot;,1,100)</span></code> puts it in the sidebar.</p>
+<p>The one exception to this is that <code class="docutils literal notranslate"><span class="pre">st.write()</span></code> does not have a sidebar version; there is no <code class="docutils literal notranslate"><span class="pre">st.sidebar.write()</span></code>.  You can, however, still use <code class="docutils literal notranslate"><span class="pre">st.sidebar.markdown()</span></code> to display any kind of Markdown content in the sidebar.</p>
+<p>If you don’t want to have to deal with Markdown syntax, you can always call specific Streamlit functions like <code class="docutils literal notranslate"><span class="pre">st.title()</span></code>, <code class="docutils literal notranslate"><span class="pre">st.header()</span></code>, <code class="docutils literal notranslate"><span class="pre">st.subheader()</span></code>, and <code class="docutils literal notranslate"><span class="pre">st.text()</span></code>.</p>
+<p>Applying these techniques to my dashboard can make it look much more clean and understandable.  Here are the results, in code and in a screenshot.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Central Limit Theorem Example&#39;</span> <span class="p">)</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">The Central Limit Theorem assumes you have a collection $X_1,\ldots,X_n$</span>
+<span class="s1">of random variables that you will sum to create a new random variable</span>
+<span class="s1">$X=\sum_{i=1}^n X_i$.  Here we will sum several</span>
+<span class="s1">uniform random variables on the interval $[0,1]$.</span>
+<span class="s1">You may choose the value of $n$ here.</span>
+<span class="s1">&#39;&#39;&#39;</span> <span class="p">)</span>
+
+<span class="n">num_random_variables_to_sum</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
+    <span class="s2">&quot;How many uniform random variables should we include in the sum?&quot;</span><span class="p">,</span>
+    <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">The Central Limit Theorem says that the new random variable $X$ will</span>
+<span class="s1">be approximately normally distributed.  To visualize this, we will sample</span>
+<span class="s1">many values from $X$ and create a histogram.  It should look more and more</span>
+<span class="s1">like a bell curve as we increase $n$.</span>
+<span class="s1">&#39;&#39;&#39;</span> <span class="p">)</span>
+
+<span class="n">sample_size</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
+    <span class="s2">&quot;How large of a sample should we use to create the histogram?&quot;</span><span class="p">,</span>
+    <span class="mi">100</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span> <span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">my_random_variable</span> <span class="p">():</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span> <span class="n">num_random_variables_to_sum</span> <span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="p">[</span> <span class="n">my_random_variable</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sample_size</span><span class="p">)</span> <span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">sample</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;Histogram of a sample of size </span><span class="si">{sample_size}</span><span class="s1"> from X&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;X = the sum of </span><span class="si">{num_random_variables_to_sum}</span><span class="s1"> uniform random variables on [0,1]&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s1">&#39;Frequency&#39;</span> <span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">pyplot</span><span class="p">()</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">Because each $</span><span class="se">\\</span><span class="s1">mu_{{X_i}}=0.5$ and $n=</span><span class="si">{num_random_variables_to_sum}</span><span class="s1">$,</span>
+<span class="s1">we conclude $</span><span class="se">\\</span><span class="s1">mu_X=0.5</span><span class="se">\\</span><span class="s1">times</span><span class="si">{num_random_variables_to_sum}</span><span class="s1">={num_random_variables_to_sum*0.5}$.</span>
+
+<span class="s1">Mean of our sample is $</span><span class="se">\\</span><span class="s1">bar{{x}}={np.mean( sample )}</span><span class="se">\\</span><span class="s1">approx{num_random_variables_to_sum*0.5}$.</span>
+<span class="s1">&#39;&#39;&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="Screenshot of a complete Streamlit dashboard about the Central Limit Theorem" src="_images/streamlit-screenshot-2.png" /></p>
+</div>
+<div class="section" id="improve-speed">
+<h3>Improve speed<a class="headerlink" href="#improve-speed" title="Permalink to this headline">¶</a></h3>
+<p>If your dashboard loads a large dataset, or takes any other action that may consume a lot of time, then whenever a user adjusts any of the input controls, the dashboard will take a long time to respond, because it must load the entire dataset again, or whatever the long computation is.  You can improve this behavior by telling Streamlit to cache (remember) the value of the lengthy computation so that it doesn’t unnecessarily redo it.</p>
+<p>For instance, recall the many times we’ve loaded the (somewhat large) sample of mortgage applications with code like the following.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;practice-project-dataset-1.csv&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>We can tell Streamlit to cache the results of this by taking the slow or complex code and moving into its own function, one that takes no parameters and returns the result of the lengthy computation.  We then call the function to get the result.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_mortgage_data</span> <span class="p">():</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;practice-project-dataset-1.csv&#39;</span> <span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">load_mortgage_data</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Of course, this behaves exactly like it did before, but now we can add a special Streamlit flag that enables caching for the function we’ve written.  The code looks like the following; the only new part is the first line.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@st</span><span class="o">.</span><span class="n">cache</span>
+<span class="k">def</span> <span class="nf">load_mortgage_data</span> <span class="p">():</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;practice-project-dataset-1.csv&#39;</span> <span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">load_mortgage_data</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">&#64;st.cache</span></code> code tells Streamlit that the function immediately after it should be run only once, the first time the dashboard is launched, and any later attempt to call to the same function can just use the previously-loaded value, without actually re-running the function at all.</p>
+<p>More information on Streamlit caching is available <a class="reference external" href="https://docs.streamlit.io/en/stable/api.html#optimize-performance">here</a>.</p>
+<p>You now know how to create dashboard apps with a good bit of flexibility and sophistication!  The next question is how to deploy them to the web.  The second half of today’s notes answer that question.</p>
+</div>
+</div>
+<div class="section" id="making-your-dashboard-into-a-heroku-app">
+<h2>Making your dashboard into a Heroku app<a class="headerlink" href="#making-your-dashboard-into-a-heroku-app" title="Permalink to this headline">¶</a></h2>
+<p>You can deploy a Streamlit dashboard to a website in many different ways.  Here, we will cover a tool used by many developers to deploy websites to a free cloud hosting platorm, Heroku.  While Heroku has paid plans for websites and web apps that get a lot of traffic, the free plan is far more than we need for our purposes.  As mentioned <a class="reference external" href="#whats-a-dashboard-and-why-do-we-have-them">above</a>, I expect that you’ve already registered for a Heroku account and installed their command line interface tools.  (The lessons I give below are inspired by a very helpful blog post I read on this technology; thanks to <a class="reference external" href="https://gilberttanner.com/blog/deploying-your-streamlit-dashboard-with-heroku">Gilbert Tanner</a> for the original information.)</p>
+<div class="section" id="step-1-make-your-project-a-git-repository">
+<h3>Step 1. Make your project a git repository<a class="headerlink" href="#step-1-make-your-project-a-git-repository" title="Permalink to this headline">¶</a></h3>
+<p>This step has several parts.  Parts 1-3 need to be done only once.  Part 4 must be done any time you change your app and want to prepare to deploy a new version to Heroku.</p>
+<ol class="simple">
+<li><p><strong>Make sure your files are in a folder by themselves, dedicated to this dashboard project.</strong>  In the case of the example dashboard I’ve been using in this chapter, that’s just one file, my Python script.  If you had data files, images, or Python modules to go with your Python script, you’d move them into that folder, too.</p></li>
+<li><p><strong>Change the name of your main Python script to <code class="docutils literal notranslate"><span class="pre">app.py</span></code>.</strong>  Although this is not required, it will make the instructions simpler from here on.</p></li>
+<li><p><strong>Turn that folder into a git repository.</strong>  How to do this was covered in <a class="reference external" href="chapter-8-version-control#create-a-repository">this section of the Chapter 8 notes</a>.</p></li>
+<li><p><strong>Commit all the files to the git repository.</strong>  How to do a commit was covered in <a class="reference external" href="chapter-8-version-control#make-a-commit">this section of that same chapter</a>.</p></li>
+</ol>
+</div>
+<div class="section" id="step-2-connect-your-repository-to-heroku">
+<h3>Step 2. Connect your repository to Heroku<a class="headerlink" href="#step-2-connect-your-repository-to-heroku" title="Permalink to this headline">¶</a></h3>
+<p>This step has two parts, and it needs to be done only once.</p>
+<ol class="simple">
+<li><p><strong>Log in to Heroku on the command line.</strong>  Go to any terminal and run the command <code class="docutils literal notranslate"><span class="pre">heroku</span> <span class="pre">login</span></code>.  For instance, if you’re using Jupyter, you can open a new Launcher, run a terminal, and then execute that command.  It should launch your default browser and prompt you to log in there.</p></li>
+<li><p><strong>Tell your git repository about Heroku.</strong>  While still in the terminal, change into the directory where your dashboard project is located and run <code class="docutils literal notranslate"><span class="pre">heroku</span> <span class="pre">create</span></code>.  This will create an online virtual machine in which you can deploy and run your Heroku app.  If you’re unsure about how to change directories in the terminal, see the tutorials linked to <a class="reference external" href="#Step-2.-Converting-your-script-to-use-Streamlit">above</a>.</p></li>
+</ol>
+<p>Your online virtual machine will have a funny name, like <code class="docutils literal notranslate"><span class="pre">careful-muskrat-17.herokuapp.com</span></code>.  This is fine for the little test we’re running here, but if you make a nice dashboard and want it to have a better name, you can always <a class="reference external" href="https://devcenter.heroku.com/articles/renaming-apps">change the name later</a>.</p>
+</div>
+<div class="section" id="step-3-add-files-heroku-will-need">
+<h3>Step 3. Add files Heroku will need<a class="headerlink" href="#step-3-add-files-heroku-will-need" title="Permalink to this headline">¶</a></h3>
+<p>Soon, we will push your git repository to Heroku, and expect Heroku to run your app.  But Heroku is a very generic tool; it’s not for Streamlit apps only, nor even for just Python apps.  So we cannot expect Heroku to know what to do with our Python script.  We will need to tell it how to set itself up with the necessary Python modules and how to run our dashboard once it has done so.  This requires putting three configuration files into our git repository.  This step needs to be done only once.</p>
+<p><strong>Requirements:</strong> Create a new text file in your project folder and call it <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>.  (You can create text files in Jupyter from the launcher; just choose Text File.)  Requirements files are a Python standard, and list all the Python modules a project will need.  Your <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file will need to list any Python module your dashboard uses.  Since mine uses pandas, matplotlib, and Streamlit, I will list those, with their current versions at the time of this writing.  The versions may be newer when you read this.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pandas==1.0.1
+matplotlib==3.1.3
+streamlit==0.57.2
+</pre></div>
+</div>
+<p><strong>Setup:</strong> The following file will seem quite cryptic to most readers.  Its contents are mostly unimportant for our purposes here.  The short explanation is that Heroku virtual machines run Linux, and the following command is written in the language of the Linux command line, and tells Heroku how to set up your app.  Note that the only change you’ll want to make is to replace the text <code class="docutils literal notranslate"><span class="pre">your-email&#64;bentley.edu</span></code> with your actual email address.</p>
+<p>Save this in a new text file called <code class="docutils literal notranslate"><span class="pre">setup.sh</span></code> (where the “sh” is short for “shell,” the word for the Linux command line).  It is crucial that the file end in <code class="docutils literal notranslate"><span class="pre">.sh</span></code>, not <code class="docutils literal notranslate"><span class="pre">.txt</span></code>, even though it is a plain text file.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir -p ~/.streamlit/
+
+<span class="nb">echo</span> <span class="s2">&quot;\</span>
+<span class="s2">[general]\n\</span>
+<span class="s2">email = \&quot;your-email@bentley.edu\&quot;\n\</span>
+<span class="s2">&quot;</span> &gt; ~/.streamlit/credentials.toml
+
+<span class="nb">echo</span> <span class="s2">&quot;\</span>
+<span class="s2">[server]\n\</span>
+<span class="s2">headless = true\n\</span>
+<span class="s2">enableCORS=false\n\</span>
+<span class="s2">port = </span><span class="nv">$PORT</span><span class="s2">\n\</span>
+<span class="s2">&quot;</span> &gt; ~/.streamlit/config.toml
+
+**Procfile:** Heroku needs to know what commands to run to get a web app started, and it expects to find them in a file called <span class="sb">`</span>Procfile<span class="sb">`</span> <span class="o">(</span>with no extension and a capital P<span class="o">)</span>.  It is also a plain text file.  Notice that it tells Heroku to run the <span class="sb">`</span>setup.sh<span class="sb">`</span> file we provided, <span class="k">then</span> run our Streamlit app.
+
+<span class="sb">```</span>sh
+web: sh setup.sh <span class="o">&amp;&amp;</span> streamlit run app.py
+</pre></div>
+</div>
+<p>Once you’ve placed all three of these files into your dashboard project folder, commit all of them to your git repository.</p>
+</div>
+<div class="section" id="step-4-deploy-your-app-to-the-web">
+<h3>Step 4. Deploy your app to the web<a class="headerlink" href="#step-4-deploy-your-app-to-the-web" title="Permalink to this headline">¶</a></h3>
+<p>You deploy an app to the web with a simple git push.  (Recall that git pushes and pulls were explained in <a class="reference external" href="chapter-8-version-control#what-if-i-want-to-collaborate">the chapter on version control</a>.)  You can do this in one of two ways.</p>
+<p>In the version control chapter, I suggested using the GitHub Desktop app to push changes to the web, by just clicking the “Publish branch” button.  But when you publish to Heroku, it prints a lot of useful information about whether your app deployed successfully or not and why.  If you use the GitHub Desktop app, you won’t see that information; it will all be hidden from you.  So instead, I recommend using the terminal for this task as well.</p>
+<p>Assuming your terminal is still in your project folder, issue the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">heroku</span> <span class="pre">master</span></code>.  You will need to wait while Heroku does all the setup for your app, but it will print a lot of messages explaining what it’s doing.  If all goes well, the final line of your output will look like the following.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>remote: -----&gt; Launching...
+remote:        Released v1
+remote:        https://careful-muskrat-17.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/careful-muskrat-17.git
+ * [new branch]      master -&gt; master
+</pre></div>
+</div>
+<p>You can copy and paste the <code class="docutils literal notranslate"><span class="pre">https://...</span></code> URL into your browser to visit the dashboard.  To skip the copy-and-paste step, you can just run <code class="docutils literal notranslate"><span class="pre">heroku</span> <span class="pre">open</span></code> in the terminal and it will launch the app in your browser for you.  You can share its URL with anyone in the world and they can see the dashboard online as well.</p>
+<p>To see the dashboard I’ve been building throughout this tutorial, visit <a class="reference external" href="https://clt-example.herokuapp.com/">https://clt-example.herokuapp.com/</a>.</p>
+</div>
+<div class="section" id="updating-your-app-later">
+<h3>Updating your app later<a class="headerlink" href="#updating-your-app-later" title="Permalink to this headline">¶</a></h3>
+<p>If you later make changes to the dashboard on your computer and want to update the web version to reflect those changes, you’ll just need to repeat two of the instructions from above.</p>
+<ol class="simple">
+<li><p>Commit all your changes to your git repository.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">heroku</span> <span class="pre">master</span></code> again.</p></li>
+</ol>
+<p>This will re-deploy an updated version of the app, and if you then refresh your browser, you should see the new version.</p>
+</div>
+</div>
+<div class="section" id="closing-remarks">
+<h2>Closing remarks<a class="headerlink" href="#closing-remarks" title="Permalink to this headline">¶</a></h2>
+<p>One of the requirements for your final project in MA346 is to include an online dashboard as part of your work.  Early in your project work it would be helpful to think through two strategic questions to help make that possible.  First, be sure to choose a project that lends itself well to having some part of its work showcased in a dashboard.  Second, ensure that at least one person on the project team is familiar enough with the content of this chapter to do it well for the final project.  I realize that this chapter’s content is rather technical, but not everyone in the class must master it fully.  But at least one person from each team must do so!</p>
+<p>Finally, there are several opportunities for Learning On Your Own projects you can do based on this chapter’s content.  Here are a few.</p>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - Alternative to Streamlit: Dash</p>
+<p>A more flexible and powerful dashboard module for Python is called <a class="reference external" href="https://pypi.org/project/dash/">Dash</a>.  However, Dash requires deeper programming knowledge than Streamlit does, so we chose to use Streamlit.  Take a few Dash tutorials, such as <a class="reference external" href="https://www.datacamp.com/community/tutorials/learn-build-dash-python">this one on DataCamp</a>, build an app or two, and report back to the class on its strengths and weaknesses, plus where the reader could go to learn more.</p>
+</div>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - Alternative to Streamlit: Voila</p>
+<p><a class="reference external" href="https://github.com/voila-dashboards/voila">Voilà</a> is a different type of dashboard toolkit; it converts your Jupyter notebook directly into a dashboard.  However, it seems more complex to use than Streamlit, so it wasn’t my choice for this course.  As in the previous LOYO, try a Voilà tutorial, build an app using it, and report back to the class on its strengths and weaknesses, plus where the reader could go to learn more.</p>
+</div>
 </div>
 </div>
 
