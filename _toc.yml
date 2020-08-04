@@ -1,48 +1,48 @@
 - file: intro.ipynb
   numbered: true
-- chapter: Week 1
-  sections:
+- part: Week 1
+  chapters:
   - file: chapter-1-intro-to-data-science.ipynb
   - file: chapter-2-mathematical-foundations.ipynb
-- chapter: Week 2
-  sections:
+- part: Week 2
+  chapters:
   - file: chapter-3-jupyter.ipynb
   - file: chapter-4-review-of-python-and-pandas.ipynb
-- chapter: Week 3
-  sections:
+- part: Week 3
+  chapters:
   - file: chapter-5-before-and-after.ipynb
   - file: chapter-6-single-table-verbs.ipynb
-- chapter: Week 4
-  sections:
+- part: Week 4
+  chapters:
   - file: chapter-7-abstraction.ipynb
   - file: chapter-8-version-control.ipynb
-- chapter: Week 5
-  sections:
+- part: Week 5
+  chapters:
   - file: chapter-9-math-and-stats.ipynb
   - file: chapter-10-visualization.ipynb
-- chapter: Week 6
-  sections:
+- part: Week 6
+  chapters:
   - file: chapter-11-processing-rows.ipynb
-- chapter: Week 7
-  sections:
+- part: Week 7
+  chapters:
   - file: chapter-12-concat-and-merge.ipynb
-- chapter: Week 8
-  sections:
+- part: Week 8
+  chapters:
   - file: chapter-13-etl.ipynb
-- chapter: Week 9
-  sections:
+- part: Week 9
+  chapters:
   - file: chapter-14-dashboards.ipynb
-- chapter: Week 10
-  sections:
+- part: Week 10
+  chapters:
   - file: chapter-15-networks.ipynb
-- chapter: Week 11
-  sections:
+- part: Week 11
+  chapters:
   - file: chapter-16-matrices.ipynb
-- chapter: Week 12
-  sections:
+- part: Week 12
+  chapters:
   - file: chapter-17-machine-learning.ipynb
-- chapter: Appendices
-  sections:
+- part: Appendices
+  chapters:
   - file: big-cheat-sheet.ipynb
   - file: anaconda-installation.md
   - file: vs-code-installation.md
