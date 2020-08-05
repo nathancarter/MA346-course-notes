@@ -11,11 +11,16 @@ Most of the time, we write reports or create slide decks to share our results.  
 
 This is where *dashboards* come in.  A quick [Google image search for "data dashboards"](https://www.google.com/search?q=data+dashboard&tbm=isch) will show you dozens of examples of what dashboards look like.  Their purpose is to let the user explore the data using inputs like buttons and sliders, and seeing outputs that are typically data visualizations and summaries.  Dashboards don't give the user anywhere near as much flexibility as you have in Python, but they're much easier and faster.
 
+```{admonition} Big Picture
+---
+class: alert alert-primary
+---
 There are many reasons why you might prepare a data dashboard.  Here are a few.
  * **There are many different inputs to which you could apply an analysis, and you want to let the user explore each.**  For instance, you recently built a visualization for comparing property values in home mortgage applications across two races.  But it could be more powerful if we let the user choose two races, and the analysis would automatically be repeated for those two.  The user could choose values that matter to them personally or professionally.
  * **An analysis has a tuning parameter that might benefit from exploration by an expert.**  For instance, let's say you have a model that takes as input a price for a new insurance product, and forecasts adoption rates and various probabilities associated with profits and losses under various conditions.  The person ultimately in charge of making the decision on product price might like to move a slider that controls the price input, and take their time to consider each of the possible scenarios in your model's output.
  * **Some projects are not a data analysis, but just a data showcase.**  I mentioned in a previous class that a friend of mine runs a nonprofit that helps universities make, track, and keep climate commitments.  [Their data dashboard is here.](https://reporting.secondnature.org/)  It doesn't do any analysis, but makes their data transparent and interactive, for anyone to explore for their own purposes.
  * **Another team wants to see what you're doing, but they don't want to read your code.**  To quickly share what you've been working on without forcing the recipient to dive into all of your Python code, you can wrap your work in a dashboard and share it on the web.  This lets you get feedback from other teams in your organization about your team's work.
+```
 
 There are many tools for creating dashboards.  One of the most popular is [Tableau](https://www.tableau.com/trial/dashboards), but we are not studying it in this course for two reasons.  First, it is proprietary software, which makes it less transferable knowledge than free tools.  Second, it is much easier to learn Tableau later on your own than it is to learn Python.  There are many Tableau training opportunities available online and in the corporate world should you need them.
 

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Processing the Rows of a DataFrame &#8212; MA346 Course Notes</title>
+    <title>11. Processing the Rows of a DataFrame &#8212; MA346 Course Notes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -41,8 +41,8 @@
     <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/chapter-11-processing-rows.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Concatenating and Merging DataFrames" href="chapter-12-concat-and-merge.html" />
-    <link rel="prev" title="Visualization" href="chapter-10-visualization.html" />
+    <link rel="next" title="12. Concatenating and Merging DataFrames" href="chapter-12-concat-and-merge.html" />
+    <link rel="prev" title="10. Visualization" href="chapter-10-visualization.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -84,199 +84,115 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <p class="caption">
- <span class="caption-text">
-  Week 1
- </span>
-</p>
-<ul class="nav sidenav_l1">
+  <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-1-intro-to-data-science.html">
-   Introduction to Data Science
+   1. Introduction to Data Science
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-2-mathematical-foundations.html">
-   Mathematical Foundations
+   2. Mathematical Foundations
   </a>
  </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Week 2
- </span>
-</p>
-<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-3-jupyter.html">
-   Jupyter
+   3. Jupyter
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-4-review-of-python-and-pandas.html">
-   Review of Python and pandas
+   4. Review of Python and pandas
   </a>
  </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Week 3
- </span>
-</p>
-<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-5-before-and-after.html">
-   Before and After
+   5. Before and After
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-6-single-table-verbs.html">
-   Single-Table Verbs
+   6. Single-Table Verbs
   </a>
  </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Week 4
- </span>
-</p>
-<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-7-abstraction.html">
-   Abstraction
+   7. Abstraction
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-8-version-control.html">
-   Version Control
+   8. Version Control
   </a>
  </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Week 5
- </span>
-</p>
-<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-9-math-and-stats.html">
-   Mathematics and Statistics in Python
+   9. Mathematics and Statistics in Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-10-visualization.html">
-   Visualization
+   10. Visualization
   </a>
  </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Week 6
- </span>
-</p>
-<ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Processing the Rows of a DataFrame
+   11. Processing the Rows of a DataFrame
   </a>
  </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Week 7
- </span>
-</p>
-<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-12-concat-and-merge.html">
-   Concatenating and Merging DataFrames
+   12. Concatenating and Merging DataFrames
   </a>
  </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Week 8
- </span>
-</p>
-<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-13-etl.html">
-   Miscellaneous Munging Methods (ETL)
+   13. Miscellaneous Munging Methods (ETL)
   </a>
  </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Week 9
- </span>
-</p>
-<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-14-dashboards.html">
-   Dashboards
+   14. Dashboards
   </a>
  </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Week 10
- </span>
-</p>
-<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-15-networks.html">
-   Relations as Graphs - Network Analysis
+   15. Relations as Graphs - Network Analysis
   </a>
  </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Week 11
- </span>
-</p>
-<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-16-matrices.html">
-   Relations as Matrices
+   16. Relations as Matrices
   </a>
  </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Week 12
- </span>
-</p>
-<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-17-machine-learning.html">
-   Introduction to Machine Learning
+   17. Introduction to Machine Learning
   </a>
  </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Appendices
- </span>
-</p>
-<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="course-schedule.html">
+   18. Detailed Course Schedule
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="big-cheat-sheet.html">
-   Big Cheat Sheet
+   19. Big Cheat Sheet
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="anaconda-installation.html">
-   Anaconda Installation
+   20. Anaconda Installation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vs-code-installation.html">
-   VS Code for Python Installation
+   21. VS Code for Python Installation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="GB213-review-in-Python.html">
-   GB213 Review in Python
+   22. GB213 Review in Python
   </a>
  </li>
 </ul>
@@ -347,12 +263,12 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#goal">
-   Goal
+   11.1. Goal
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-apply-function">
-   The
+   11.2. The
    <code class="docutils literal notranslate">
     <span class="pre">
      apply()
@@ -363,17 +279,17 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#baseball-example">
-     Baseball example
+     11.2.1. Baseball example
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-a-loop">
-     Using a loop
+     11.2.2. Using a loop
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-apply">
-     Using
+     11.2.3. Using
      <code class="docutils literal notranslate">
       <span class="pre">
        apply()
@@ -383,7 +299,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-map">
-     Using
+     11.2.4. Using
      <code class="docutils literal notranslate">
       <span class="pre">
        map()
@@ -393,7 +309,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#parallel-apply">
-     Parallel
+     11.2.5. Parallel
      <code class="docutils literal notranslate">
       <span class="pre">
        apply()
@@ -405,39 +321,39 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#map-reduce">
-   Map-Reduce
+   11.3. Map-Reduce
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#argmin-and-argmax">
-     Argmin and argmax
+     11.3.1. Argmin and argmax
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#map-reduce-example-sample-standard-deviation">
-     Map-reduce example: sample standard deviation
+     11.3.2. Map-reduce example: sample standard deviation
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#split-apply-combine">
-   Split-Apply-Combine
+   11.4. Split-Apply-Combine
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#more-on-math-in-python">
-   More on math in Python
+   11.5. More on math in Python
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#arithmetic-in-formulas">
-     Arithmetic in formulas
+     11.5.1. Arithmetic in formulas
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#conditionals-with-np-where">
-     Conditionals with
+     11.5.2. Conditionals with
      <code class="docutils literal notranslate">
       <span class="pre">
        np.where()
@@ -447,14 +363,14 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#speeding-up-mathematics">
-     Speeding up mathematics
+     11.5.3. Speeding up mathematics
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#so-do-we-always-avoid-loops">
-   So do we
+   11.6. So do we
    <em>
     always
    </em>
@@ -463,24 +379,24 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#when-to-opt-for-a-loop">
-     When to opt for a loop
+     11.6.1. When to opt for a loop
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#factoring-computations-out-of-the-loop">
-     Factoring computations out of the loop
+     11.6.2. Factoring computations out of the loop
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#knowing-how-long-you-ll-have-to-wait">
-     Knowing how long you’ll have to wait
+     11.6.3. Knowing how long you’ll have to wait
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#when-the-bottleneck-is-the-dataset">
-   When the bottleneck is the dataset
+   11.7. When the bottleneck is the dataset
   </a>
  </li>
 </ul>
@@ -494,10 +410,10 @@
               <div>
                 
   <div class="section" id="processing-the-rows-of-a-dataframe">
-<h1>Processing the Rows of a DataFrame<a class="headerlink" href="#processing-the-rows-of-a-dataframe" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">11. </span>Processing the Rows of a DataFrame<a class="headerlink" href="#processing-the-rows-of-a-dataframe" title="Permalink to this headline">¶</a></h1>
 <p><a href="../../_slides/chapter-11-slides.html">See also the slides that summarize a portion of this content.</a></p>
 <div class="section" id="goal">
-<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.1. </span>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
 <p>Back in the early days of programming, when I was a kid, we wrote code with stone tools.</p>
 <p><img alt="Image of cave man chiseling" src="_images/cave-man-public-domain.jpg" /></p>
 <p>And when we wanted to work with all the elements of an array, we had no choice but to write a loop.</p>
@@ -527,10 +443,10 @@
 <p>An added benefit is that improving (or replacing) loops with something faster often means writing shorter or clearer code as well, achieving improvements in readability at the same time.</p>
 </div>
 <div class="section" id="the-apply-function">
-<h2>The <code class="docutils literal notranslate"><span class="pre">apply()</span></code> function<a class="headerlink" href="#the-apply-function" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.2. </span>The <code class="docutils literal notranslate"><span class="pre">apply()</span></code> function<a class="headerlink" href="#the-apply-function" title="Permalink to this headline">¶</a></h2>
 <p>The most common use of a loop is when we need to do the same thing to each element of a sequence of values.  Let’s see an example.</p>
 <div class="section" id="baseball-example">
-<h3>Baseball example<a class="headerlink" href="#baseball-example" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.2.1. </span>Baseball example<a class="headerlink" href="#baseball-example" title="Permalink to this headline">¶</a></h3>
 <p>In an earlier homework assignment, I provided a cleaned dataset of baseball players’ salaries.  Let’s take a look at the original version of the dataset when I downloaded it <a class="reference external" href="https://data.world/natereed/baseball-salaries">from the web</a>, before it was cleaned.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -716,7 +632,7 @@
 <p>Aha, some entries in the “years” column represent multiple years.  We might naturally want to split that column up into three columns: number of years, first year, and last year.  Each is a little project all on its own, but we just want to look at one example, so let’s consider just the task of extracting the first year from the text.  If we wrote a loop, it might go something like this.</p>
 </div>
 <div class="section" id="using-a-loop">
-<h3>Using a loop<a class="headerlink" href="#using-a-loop" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.2.2. </span>Using a loop<a class="headerlink" href="#using-a-loop" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">first_years</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
@@ -790,7 +706,7 @@
 <p>A loop over a list of values is what pandas’ <code class="docutils literal notranslate"><span class="pre">apply()</span></code> function was made for.  You write <code class="docutils literal notranslate"><span class="pre">df['column'].apply(f)</span></code> to apply the function <code class="docutils literal notranslate"><span class="pre">f</span></code> to every entry in the chosen column.  For example, we could simplify our work above as follows.  The differences are noted in the comments.</p>
 </div>
 <div class="section" id="using-apply">
-<h3>Using <code class="docutils literal notranslate"><span class="pre">apply()</span></code><a class="headerlink" href="#using-apply" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.2.3. </span>Using <code class="docutils literal notranslate"><span class="pre">apply()</span></code><a class="headerlink" href="#using-apply" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                                 <span class="c1"># No need to start with an empty list.</span>
@@ -1001,7 +917,7 @@
 <p>If you have a function that takes multiple inputs, you might want to bind some of the arguments so that it becomes a unary function and can be used in <code class="docutils literal notranslate"><span class="pre">apply()</span></code>.  Or you can use the <code class="docutils literal notranslate"><span class="pre">args</span></code> or <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> feature of <code class="docutils literal notranslate"><span class="pre">apply()</span></code>, but we won’t cover that in these course notes.  You can see a small example in <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.apply.html">the pandas documentation</a>.  We will, however, take a look at the possibility of using a dictionary with <code class="docutils literal notranslate"><span class="pre">map()</span></code>, because it is extremely useful.  We will consider a simple example application, but do a more sophisticated one in class.</p>
 </div>
 <div class="section" id="using-map">
-<h3>Using <code class="docutils literal notranslate"><span class="pre">map()</span></code><a class="headerlink" href="#using-map" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.2.4. </span>Using <code class="docutils literal notranslate"><span class="pre">map()</span></code><a class="headerlink" href="#using-map" title="Permalink to this headline">¶</a></h3>
 <p>Let’s assume that the analysis we wanted to do cared only about whether the baseball player had an infield position (IF), outfield position (OF), was a pitcher (P), or a designated hitter (DH), and we didn’t care about any other details of the position (such as first base vs. second base, or starting pitcher vs. relief pitcher).  We’d therefore like to simplify the “pos” column and convert all infield positions to IF, and so on.  First, let’s see what all the positions are.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1256,7 +1172,7 @@
 <p>In class, we will do a more complex example of applying a dictionary using <code class="docutils literal notranslate"><span class="pre">map()</span></code>.  Before class, you may want to glance back at Exercise 3 from <a class="reference internal" href="chapter-2-mathematical-foundations.html"><span class="doc">the Chapter 2 notes</span></a>, which shows you how to take two columns of a DataFrame representing a mathematical function and convert them into a dictionary for use in situations just like this one.  And be sure to complete the homework about the NPR dataset before class as well, because we will use that in our example!</p>
 </div>
 <div class="section" id="parallel-apply">
-<h3>Parallel <code class="docutils literal notranslate"><span class="pre">apply()</span></code><a class="headerlink" href="#parallel-apply" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.2.5. </span>Parallel <code class="docutils literal notranslate"><span class="pre">apply()</span></code><a class="headerlink" href="#parallel-apply" title="Permalink to this headline">¶</a></h3>
 <p>I mentioned earlier that converting a loop into an <code class="docutils literal notranslate"><span class="pre">apply()</span></code> or <code class="docutils literal notranslate"><span class="pre">map()</span></code> call doesn’t gain us much speed.  But it does make it easy for us to add a nice speed improvement.  There’s a Python package called <a class="reference external" href="https://github.com/jmcarpenter2/swifter">swifter</a> that you can install using the instructions on that page.  Once it’s installed, you can convert any code like <code class="docutils literal notranslate"><span class="pre">df['column'].apply(f)</span></code> easily into a faster version by replacing it with <code class="docutils literal notranslate"><span class="pre">df['column'].swifter.apply(f)</span></code>.  That’s all!</p>
 <p>Under the hood, swifter is trying a variety of speedup mechanisms (many of which we discuss in this chapter) and deciding which of them works best for your situation.  The most common one for large dataset is probably parallel processing.  This means that if your computer has more than one processor core (which most modern laptops do), then it can process more than one entry of the data at once, each on a separate core.</p>
 <p>Without swifter, you could accomplish the same thing with code like the following.  (In fact, if you have trouble installing swifter, you can use this code instead.)</p>
@@ -1383,7 +1299,7 @@
 </div>
 </div>
 <div class="section" id="map-reduce">
-<h2>Map-Reduce<a class="headerlink" href="#map-reduce" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.3. </span>Map-Reduce<a class="headerlink" href="#map-reduce" title="Permalink to this headline">¶</a></h2>
 <div class="alert alert-primary admonition">
 <p class="admonition-title">Big Picture</p>
 <p>Both <em>map-reduce</em> and <em>split-apply-combine</em> are data manipulation buzzwords that you’ll want to be familiar with, for</p>
@@ -1514,7 +1430,7 @@
 <p>As mentioned earlier, “map” is a synonym for “apply,” so the first step of the process applies the same operation to all rows of the DataFrame; in this case, that operation extracts the revenue from the row.  The “reduce” operation in this case is a simple <code class="docutils literal notranslate"><span class="pre">min()</span></code> operation, but it can be something more complex.</p>
 <p>So a map-reduce operation involves two functions, the first performing a <code class="docutils literal notranslate"><span class="pre">map()</span></code> operation (as discussed earlier), and the second doing something new.  The function used for the reducing step must be something that takes an entire list or series as input and produces a single value as output.  The <code class="docutils literal notranslate"><span class="pre">min()</span></code> operation was used in the example above, but other operations are common, such as <code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">sum()</span></code>, <code class="docutils literal notranslate"><span class="pre">len()</span></code>, <code class="docutils literal notranslate"><span class="pre">mean()</span></code>, <code class="docutils literal notranslate"><span class="pre">median()</span></code>, and more.</p>
 <div class="section" id="argmin-and-argmax">
-<h3>Argmin and argmax<a class="headerlink" href="#argmin-and-argmax" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.3.1. </span>Argmin and argmax<a class="headerlink" href="#argmin-and-argmax" title="Permalink to this headline">¶</a></h3>
 <p>A very common function that shows up in statistics is called <code class="docutils literal notranslate"><span class="pre">argmin</span></code> (and its companion <code class="docutils literal notranslate"><span class="pre">argmax</span></code>).  These are also implemented in pandas and are very useful in map-reduce situations.  In the example above, let’s say we didn’t want to know the minimum revenue, but we wanted to know in which quarter the minimum revenue happened.  We can replace <code class="docutils literal notranslate"><span class="pre">min</span></code> in the above code with <code class="docutils literal notranslate"><span class="pre">argmin</span></code> to ask that question.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1547,7 +1463,7 @@ Name: 2, dtype: int64
 <p>While the pandas documentation for <code class="docutils literal notranslate"><span class="pre">argmin</span></code> and <code class="docutils literal notranslate"><span class="pre">argmax</span></code> suggest that they return multiple values in the case of ties, this doesn’t seem to be true.  They seem to return the first index only.  You can therefore always rely on the result of <code class="docutils literal notranslate"><span class="pre">argmin</span></code>/<code class="docutils literal notranslate"><span class="pre">argmax</span></code> being a single value, never a list or series.  If you want the indices of all max/min entries, you will need to compute it another way.</p>
 </div>
 <div class="section" id="map-reduce-example-sample-standard-deviation">
-<h3>Map-reduce example: sample standard deviation<a class="headerlink" href="#map-reduce-example-sample-standard-deviation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.3.2. </span>Map-reduce example: sample standard deviation<a class="headerlink" href="#map-reduce-example-sample-standard-deviation" title="Permalink to this headline">¶</a></h3>
 <p>The formula for the standard deviation of a sample of data should be familiar you to from GB213.</p>
 <div class="math notranslate nohighlight">
 \[ s=\sqrt{\frac{\sum_{i=1}^n (x_i-\bar x)^2}{n-1}} \]</div>
@@ -1593,7 +1509,7 @@ Name: 2, dtype: int64
 </div>
 </div>
 <div class="section" id="split-apply-combine">
-<h2>Split-Apply-Combine<a class="headerlink" href="#split-apply-combine" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.4. </span>Split-Apply-Combine<a class="headerlink" href="#split-apply-combine" title="Permalink to this headline">¶</a></h2>
 <p>Data scientist and R developer Hadley Wickham seems to coin lots of important phrases.  Recall from <a class="reference internal" href="chapter-5-before-and-after.html"><span class="doc">the Chapter 5 notes</span></a> that he introduced the phrase “tidy data.”  He also introduced the phrase “split, apply, combine,” in <a class="reference external" href="http://www.stat.wvu.edu/~jharner/courses/stat623/docs/plyrJSS.pdf">this paper</a>.</p>
 <p>It is another extremely common operation done on DataFrames, and it is closely related to map-reduce, as we will see below.</p>
 <p>Let’s say you were concerned about pay equity, and wanted to compute the median salary across your organization, by gender, to get a sense of whether there were any important discrepancies.  The computation would look something like the following.  (We assume that the gender column contains either M for male, F for female, or a missing value for those who do not wish to classify.)</p>
@@ -1669,9 +1585,9 @@ Name: Revenue, dtype: int64
 </div>
 </div>
 <div class="section" id="more-on-math-in-python">
-<h2>More on math in Python<a class="headerlink" href="#more-on-math-in-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.5. </span>More on math in Python<a class="headerlink" href="#more-on-math-in-python" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="arithmetic-in-formulas">
-<h3>Arithmetic in formulas<a class="headerlink" href="#arithmetic-in-formulas" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.5.1. </span>Arithmetic in formulas<a class="headerlink" href="#arithmetic-in-formulas" title="Permalink to this headline">¶</a></h3>
 <p>Recall that pandas is built on NumPy, and in <a class="reference internal" href="chapter-9-math-and-stats.html"><span class="doc">Chapter 9 of the notes</span></a> we talked about NumPy’s support for vectorization.  If we have a Series <code class="docutils literal notranslate"><span class="pre">height</span></code> containing heights in inches and we need instead to have it in centimeters, we don’t need to do <code class="docutils literal notranslate"><span class="pre">height.apply()</span></code> and give it a conversion function, because we can just do <code class="docutils literal notranslate"><span class="pre">height</span> <span class="pre">*</span> <span class="pre">2.54</span></code>.  NumPy automatically <em>vectorizes</em> this operation, spreading the “times 2.54” over each entry in the <code class="docutils literal notranslate"><span class="pre">height</span></code> array.</p>
 <p>This is quite natural, because we have mathematical notation that does the same thing (in math, not Python).  If you’ve taken a class involving vectors, you know that vector addition <span class="math notranslate nohighlight">\(\vec x+\vec y\)</span> means to do exactly what NumPy does–add the corresponding entries in each vector.  Similarly, scalar multiplication <span class="math notranslate nohighlight">\(s\vec x\)</span> means to multiply <span class="math notranslate nohighlight">\(s\)</span> by each entry in the vector <span class="math notranslate nohighlight">\(\vec x\)</span>, just like <code class="docutils literal notranslate"><span class="pre">height</span> <span class="pre">*</span> <span class="pre">2.54</span></code> does in Python.  So NumPy is not inventing something strange here; it’s normal mathematical stuff.</p>
 <p>All the basic mathematical operations are built into NumPy.  For example, if we have created a linear model <span class="math notranslate nohighlight">\(\hat y=\beta_0+\beta_1 x\)</span> with parameters stored in Python variables <code class="docutils literal notranslate"><span class="pre">β0</span></code> and <code class="docutils literal notranslate"><span class="pre">β1</span></code>, we can apply it to an entire series of inputs <code class="docutils literal notranslate"><span class="pre">xs</span></code> at once with the following code, because NumPy knows how to spread both <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">*</span></code> across arrays.</p>
@@ -1685,7 +1601,7 @@ Name: Revenue, dtype: int64
 <p>The subtraction with <code class="docutils literal notranslate"><span class="pre">-</span></code> and the squaring with <code class="docutils literal notranslate"><span class="pre">**</span> <span class="pre">2</span></code> would all be spread across arrays of inputs correctly, because NumPy comes with code to support doing so.</p>
 </div>
 <div class="section" id="conditionals-with-np-where">
-<h3>Conditionals with <code class="docutils literal notranslate"><span class="pre">np.where()</span></code><a class="headerlink" href="#conditionals-with-np-where" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.5.2. </span>Conditionals with <code class="docutils literal notranslate"><span class="pre">np.where()</span></code><a class="headerlink" href="#conditionals-with-np-where" title="Permalink to this headline">¶</a></h3>
 <p>This removes a lot of the need for both loops and <code class="docutils literal notranslate"><span class="pre">apply()</span></code>/<code class="docutils literal notranslate"><span class="pre">map()</span></code> calls, but not all.  One of the first things that makes us think we might need a loop is when a conditional computation needs to be done.  For instance, let’s say we were given a dataset like the following (made up) example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1963,7 +1879,7 @@ Name: Revenue, dtype: int64
 <p>In summary, thanks to <code class="docutils literal notranslate"><span class="pre">np.where()</span></code>, even many conditional computations don’t require a loop or an apply; they can be done with NumPy vectorization as well.</p>
 </div>
 <div class="section" id="speeding-up-mathematics">
-<h3>Speeding up mathematics<a class="headerlink" href="#speeding-up-mathematics" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.5.3. </span>Speeding up mathematics<a class="headerlink" href="#speeding-up-mathematics" title="Permalink to this headline">¶</a></h3>
 <p>There are also some very impressive tools for speeding up mathematical operations in NumPy a <em>LOT.</em>  I will not cover them here, but will lest each of the following as an opportunity for Learning On Your Own.  Note that these are relevant only if you have a very large dataset over which you need to do complex mathematical computations, so that you notice pandas behaving slowly, and thus you need a speed boost.</p>
 <div class="alert alert-danger admonition">
 <p class="admonition-title">Learning on Your Own - CuPy (fastest option)</p>
@@ -2016,10 +1932,10 @@ Name: Revenue, dtype: int64
 </div>
 </div>
 <div class="section" id="so-do-we-always-avoid-loops">
-<h2>So do we <em>always</em> avoid loops?<a class="headerlink" href="#so-do-we-always-avoid-loops" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.6. </span>So do we <em>always</em> avoid loops?<a class="headerlink" href="#so-do-we-always-avoid-loops" title="Permalink to this headline">¶</a></h2>
 <p>No, there are some times when you might still want to avoid loops.</p>
 <div class="section" id="when-to-opt-for-a-loop">
-<h3>When to opt for a loop<a class="headerlink" href="#when-to-opt-for-a-loop" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.6.1. </span>When to opt for a loop<a class="headerlink" href="#when-to-opt-for-a-loop" title="Permalink to this headline">¶</a></h3>
 <p>The two most prominent times to choose loops are these.</p>
 <ol class="simple">
 <li><p>If the code you’re running is a search for one thing, and you want to stop once it’s found, a loop might be best.  Take the home mortgage database of 15 million records, for example.  Let’s say you were looking for an example of a Hispanic male in Nevada applying for a mortgage for a rental property.  If you ask pandas to filter the dataset, it will examine all 15M rows and give you <em>all</em> the ones fitting these criteria.  But you just needed one.  Maybe you’d find it in the first 50,000 rows and not need to search the other 14.95 million!  A loop definitely has the potential to be faster in such a case.</p></li>
@@ -2173,7 +2089,7 @@ Name: Revenue, dtype: int64
 <p>Any time when speed isn’t an issue, and you think the clearest way to write the code is a loop, then go right ahead and write clear code!  Loops aren’t always bad.</p>
 </div>
 <div class="section" id="factoring-computations-out-of-the-loop">
-<h3>Factoring computations out of the loop<a class="headerlink" href="#factoring-computations-out-of-the-loop" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.6.2. </span>Factoring computations out of the loop<a class="headerlink" href="#factoring-computations-out-of-the-loop" title="Permalink to this headline">¶</a></h3>
 <p>Sometimes what’s making a loop slow is a repeated computation that doesn’t need to happen inside the loop.  The <em>loop variable</em> is the variable that immediately follows the <code class="docutils literal notranslate"><span class="pre">for</span></code> statement in a loop.  In the loop example above, that’s the <code class="docutils literal notranslate"><span class="pre">index</span></code> variable.  If there were any computation inside the loop that didn’t use the <code class="docutils literal notranslate"><span class="pre">index</span></code> variable, we could bring that computation outside the loop, doing it once, before the loop, and saving time.</p>
 <p>For example, in the final project some students did for MA346 in Spring 2020, some teams had a loop that processed a large database of baseball players, and tried to look their names up in a different database.  It went something like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">baseball_df</span><span class="p">[</span><span class="s1">&#39;player name&#39;</span><span class="p">]:</span>
@@ -2199,7 +2115,7 @@ Name: Revenue, dtype: int64
 <p>Note that this advice, factoring out a computation that does not depend on the loop variable, is sort of the opposite of abstraction.  In abstraction, you make the list of all the variables that your computation <em>does</em> depend on, and move those up to the top, as input parameters.  Here we’re taking a look at which variables our computation <em>doesn’t</em> depend on, so that we can move the computation itself up to the top, so it is done outside the loop.</p>
 </div>
 <div class="section" id="knowing-how-long-you-ll-have-to-wait">
-<h3>Knowing how long you’ll have to wait<a class="headerlink" href="#knowing-how-long-you-ll-have-to-wait" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.6.3. </span>Knowing how long you’ll have to wait<a class="headerlink" href="#knowing-how-long-you-ll-have-to-wait" title="Permalink to this headline">¶</a></h3>
 <p>Few things are more frustrating than running a code cell and seeing the computer just sit there doing nothing.  We start to wonder whether it will take 15 seconds to process the data, and we should just have a little patience, or 15 minutes and we should go get a coffee, or 15 hours and we should give up and rewrite the code.  Which is it?  How can we tell except just waiting?</p>
 <p>There are two easy ways to get some feedback as your loop is progressing.  The easiest one is to install the <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> module, whose purpose is to help you see a progress bar for a long-running loop.  After following <a class="reference external" href="https://github.com/tqdm/tqdm#installation">tqdm’s installation instructions</a> (using <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code>), just import the module, then take the Series or list over which you’re looping and wrap it in <code class="docutils literal notranslate"><span class="pre">tqdm(...)</span></code>, as in the example below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
@@ -2218,7 +2134,7 @@ Name: Revenue, dtype: int64
 </div>
 </div>
 <div class="section" id="when-the-bottleneck-is-the-dataset">
-<h2>When the bottleneck is the dataset<a class="headerlink" href="#when-the-bottleneck-is-the-dataset" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.7. </span>When the bottleneck is the dataset<a class="headerlink" href="#when-the-bottleneck-is-the-dataset" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes, you can’t get around the fact that you just have to process a lot of data, and that can be slow.  Unless you’re working for a company that will provide you with some powerful computing resources in the cloud on which to run your Jupyter notebook, so that it runs faster than it does on your laptop (or the free Colab/Deepnote machines), you’ll just have to run the slow code.  But there are still some ways to make this better.</p>
 <p><strong>Don’t run it more than you have to.</strong>  Often, the slow code is something that happens early your work, such as cleaning a huge dataset or searching through it for just the rows you need for your analysis.  Once you’ve written code that does this, save the result to a file with <code class="docutils literal notranslate"><span class="pre">pd.to_csv()</span></code> or <code class="docutils literal notranslate"><span class="pre">pd.to_pickle()</span></code> and don’t run that code again.</p>
 <p>Don’t fall into the trap of thinking that all your code needs to be in one Python script or one Jupyter notebook.  If that slow code that cleaned your data never needs to be run again, then once you’ve run it and saved the output, save the script/notebook, close it, and start a new script or notebook to contain your data analysis code.  Then when you re-run your analysis, you don’t have to sit around and wait for the data cleaning to happen all over again!</p>
@@ -2313,8 +2229,8 @@ Name: Revenue, dtype: int64
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="chapter-10-visualization.html" title="previous page">Visualization</a>
-    <a class='right-next' id="next-link" href="chapter-12-concat-and-merge.html" title="next page">Concatenating and Merging DataFrames</a>
+    <a class='left-prev' id="prev-link" href="chapter-10-visualization.html" title="previous page"><span class="section-number">10. </span>Visualization</a>
+    <a class='right-next' id="next-link" href="chapter-12-concat-and-merge.html" title="next page"><span class="section-number">12. </span>Concatenating and Merging DataFrames</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -56,7 +56,6 @@
 \usepackage{hypcap}% it must be loaded after hyperref.
 % Set up styles of URL: it should be placed after hyperref.
 \urlstyle{same}
-\addto\captionsenglish{\renewcommand{\contentsname}{Week 1}}
 
 \usepackage{sphinxmessages}
 
@@ -64,7 +63,7 @@
 
 
 \title{MA346 Course Notes}
-\date{Aug 04, 2020}
+\date{Aug 05, 2020}
 \release{}
 \author{Nathan Carter}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -84,16 +83,12 @@ These course notes are for \sphinxhref{http://www.bentley.edu}{Bentley Universit
 
 You can download a PDF of these course notes here, in case you prefer to read it that way.
 
-\begin{sphinxadmonition}{warning}{Warning:}
-This course notes website is still in development, so the content here is incomplete.  It will be ready by Fall 2020.
-\end{sphinxadmonition}
-
-\sphinxstylestrong{Course schedule}
-
-Each topic below will become a link to what we will cover in class that day, once I’ve made more progress in completing these course notes.
+This page summarizes the course schedule.  Each day is a link to the appropriate section in the {\hyperref[\detokenize{course-schedule::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{detailed course schedule with course notes, slides, and all assignments}}}}.
 
 
-\begin{savenotes}\sphinxatlongtablestart\begin{longtable}[c]{|l|l|l|}
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabulary}{\linewidth}[t]{|T|T|T|}
 \hline
 \sphinxstyletheadfamily 
 Week
@@ -103,315 +98,107 @@ Date
 Content for the day
 \\
 \hline
-\endfirsthead
-
-\multicolumn{3}{c}%
-{\makebox[0pt]{\sphinxtablecontinued{\tablename\ \thetable{} \textendash{} continued from previous page}}}\\
-\hline
-\sphinxstyletheadfamily 
-Week
-&\sphinxstyletheadfamily 
-Date
-&\sphinxstyletheadfamily 
-Content for the day
-\\
-\hline
-\endhead
-
-\hline
-\multicolumn{3}{r}{\makebox[0pt][r]{\sphinxtablecontinued{Continued on next page}}}\\
-\endfoot
-
-\endlastfoot
-
 1
 &
 9/3/2020
 &
-Chapter 1: Introduction to data science ({\hyperref[\detokenize{chapter-1-intro-to-data-science::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{notes}}}}, slides)
-\\
-\hline
-
-&
-
-&
-Chapter 2: Mathematical foundations ({\hyperref[\detokenize{chapter-2-mathematical-foundations::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{notes}}}}, slides)
-\\
-\hline
-
-&
-
-&
-\sphinxhref{big-cheat-sheet.html\#before-week-2-review-of-cs230}{DataCamp to review before Week 2}
-\\
-\hline
-
-&
-
-&
- 
+\sphinxhref{course-schedule.html\#week-1-9-3-2020-introduction-and-mathematical-foundations}{Introduction and mathematical foundations}
 \\
 \hline
 2
 &
 9/10/2020
 &
-Chapter 3: Computational notebooks (Jupyter) ({\hyperref[\detokenize{chapter-3-jupyter::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{notes}}}}, slides)
-\\
-\hline
-
-&
-
-&
-Chapter 4: Python review focusing on pandas and mathematical foundations ({\hyperref[\detokenize{chapter-4-review-of-python-and-pandas::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{notes}}}}, no slides)
-\\
-\hline
-
-&
-
-&
-\sphinxhref{big-cheat-sheet.html\#before-week-3}{DataCamp to review before Week 3}
-\\
-\hline
-
-&
-
-&
- 
+\sphinxhref{course-schedule.html\#week-2-9-10-2020-jupyter-and-a-review-of-python-and-pandas}{Jupyter and a review of Python and pandas}
 \\
 \hline
 3
 &
 9/17/2020
 &
-Chapter 5: Before and after, in mathematics and communication ({\hyperref[\detokenize{chapter-5-before-and-after::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{notes}}}}, slides)
-\\
-\hline
-
-&
-
-&
-Chapter 6: Pandas single\sphinxhyphen{}table verbs ({\hyperref[\detokenize{chapter-6-single-table-verbs::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{notes}}}}, slides)
-\\
-\hline
-
-&
-
-&
-\sphinxhref{big-cheat-sheet.html\#before-week-4-review-of-visualization-in-cs230}{DataCamp to review before Week 4}
-\\
-\hline
-
-&
-
-&
- 
+\sphinxhref{course-schedule.html\#week-3-9-17-2020-before-and-after-single-table-verbs}{Before and after, single\sphinxhyphen{}table verbs}
 \\
 \hline
 4
 &
 9/24/2020
 &
-Chapter 7: Abstraction in mathematics and computing ({\hyperref[\detokenize{chapter-7-abstraction::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{notes}}}}, slides)
-\\
-\hline
-
-&
-
-&
-Chapter 8: Version control and GitHub ({\hyperref[\detokenize{chapter-8-version-control::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{notes}}}}, slides)
-\\
-\hline
-
-&
-
-&
-\sphinxhref{big-cheat-sheet.html\#before-week-5}{DataCamp to review before Week 5}
-\\
-\hline
-
-&
-
-&
- 
+\sphinxhref{course-schedule.html\#week-4-9-24-2020-abstraction-and-version-control}{Abstraction and version control}
 \\
 \hline
 5
 &
 10/1/2020
 &
-Chapter 9: Math and stats in Python ({\hyperref[\detokenize{chapter-9-math-and-stats::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{notes}}}}, slides)
-\\
-\hline
-
-&
-
-&
-Chapter 10: New visualization tools ({\hyperref[\detokenize{chapter-10-visualization::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{notes}}}}, slides)
-\\
-\hline
-
-&
-
-&
-\sphinxhref{big-cheat-sheet.html\#before-week-6}{DataCamp to review before Week 6}
-\\
-\hline
-
-&
-
-&
- 
+\sphinxhref{course-schedule.html\#week-5-10-1-2020-math-and-stats-in-python-plus-visualization}{Math and stats in Python, plus Visualization}
 \\
 \hline
 6
 &
 10/8/2020
 &
-Chapter 11: Processing the rows of a \sphinxcode{\sphinxupquote{DataFrame}} ({\hyperref[\detokenize{chapter-11-processing-rows::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{notes}}}}, slides)
-\\
-\hline
-
-&
-
-&
-(No DataCamp for next week. Finish project instead.)
-\\
-\hline
-
-&
-
-&
- 
+\sphinxhref{course-schedule.html\#week-6-10-8-2020-processing-the-rows-of-a-dataframe}{Processing the Rows of a \sphinxcode{\sphinxupquote{DataFrame}}}
 \\
 \hline
 7
 &
 10/15/2020
 &
-Chapter 12: Concatenation and Merging ({\hyperref[\detokenize{chapter-12-concat-and-merge::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{notes}}}}, slides)
-\\
-\hline
-
-&
-
-&
-\sphinxhref{big-cheat-sheet.html\#before-week-8}{DataCamp to review before Week 8}
-\\
-\hline
-
-&
-
-&
- 
+\sphinxhref{course-schedule.html\#week-7-10-15-2020-concatenation-and-merging}{Concatenation and Merging}
 \\
 \hline
 8
 &
 10/22/2020
 &
-Chapter 13: Miscellaneous Munging Methods (ETL) ({\hyperref[\detokenize{chapter-13-etl::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{notes}}}}, slides)
-\\
-\hline
-
-&
-
-&
-\sphinxhref{big-cheat-sheet.html\#before-week-9}{DataCamp to review before Week 9}
-\\
-\hline
-
-&
-
-&
- 
+\sphinxhref{course-schedule.html\#week-8-10-22-2020-miscellaneous-munging-methods-etl}{Miscellaneous Munging Methods (ETL)}
 \\
 \hline
 9
 &
 10/29/2020
 &
-Chapter 14: Dashboards ({\hyperref[\detokenize{chapter-14-dashboards::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{notes}}}}, slides)
-\\
-\hline
-
-&
-
-&
- 
+\sphinxhref{course-schedule.html\#week-9-10-29-2020-dashboards}{Dashboards}
 \\
 \hline
 10
 &
 11/5/2020
 &
-Chapter 15: Relations as graphs and network analysis ({\hyperref[\detokenize{chapter-15-networks::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{notes}}}}, slides)
-\\
-\hline
-
-&
-
-&
- 
+\sphinxhref{course-schedule.html\#week-10-11-5-2020-relations-graphs-and-networks}{Relations, graphs, and networks}
 \\
 \hline
 11
 &
 11/12/2020
 &
-Chapter 16: Relations as matrices ({\hyperref[\detokenize{chapter-16-matrices::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{notes}}}}, slides)
-\\
-\hline
-
-&
-
-&
- 
+\sphinxhref{course-schedule.html\#week-11-11-12-2020-relations-as-matrices}{Relations as matrices}
 \\
 \hline
 12
 &
 11/19/2020
 &
-Chapter 17: Introduction to machine learning ({\hyperref[\detokenize{chapter-17-machine-learning::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{notes}}}}, slides)
-\\
-\hline
-
-&
-
-&
- 
+\sphinxhref{course-schedule.html\#week-12-11-19-2020-introduction-to-machine-learning}{Introduction to machine learning}
 \\
 \hline
 13
 &
 11/26/2020
 &
-Thanksgiving break
-\\
-\hline
-
-&
-
-&
- 
+Thanksgiving break, no class
 \\
 \hline
 14
 &
 12/3/2020
 &
-Final Exam Review
+Final Exam Review and Final Project Workshop
 \\
 \hline
-
-&
-
-&
-Final Project Workshop
-\\
-\hline
-\end{longtable}\sphinxatlongtableend\end{savenotes}
+\end{tabulary}
+\par
+\sphinxattableend\end{savenotes}
 
 
 \chapter{Introduction to Data Science}
@@ -3794,12 +3581,12 @@ We will return to vectorization and loops in Chapter 11 of these notes.  For now
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.17700037, 0.71189884, 0.27101072, 0.89809528, 0.96437205,
-       0.25340811, 0.82311743, 0.49177188, 0.39757121, 0.27083345,
-       0.76085277, 0.0814872 , 0.26467142, 0.79432709, 0.83240569,
-       0.52241313, 0.41432301, 0.61569726, 0.7816843 , 0.60047045,
-       0.91207205, 0.55635058, 0.28813386, 0.63014434, 0.51926644,
-       0.66327235, 0.66157436, 0.96222833, 0.76906723, 0.71576878])
+array([0.13357701, 0.3890798 , 0.99408203, 0.79444074, 0.74498198,
+       0.88772501, 0.68545851, 0.60050064, 0.29784012, 0.69540591,
+       0.59297124, 0.04855854, 0.02889468, 0.87347868, 0.75843782,
+       0.60745941, 0.48110596, 0.87144234, 0.57633283, 0.23537685,
+       0.93272212, 0.31268243, 0.14649538, 0.29537618, 0.63773067,
+       0.94904881, 0.56923208, 0.11248817, 0.73729022, 0.69958347])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3807,9 +3594,9 @@ array([0.17700037, 0.71189884, 0.27101072, 0.89809528, 0.96437205,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.18, 0.71, 0.27, 0.9 , 0.96, 0.25, 0.82, 0.49, 0.4 , 0.27, 0.76,
-       0.08, 0.26, 0.79, 0.83, 0.52, 0.41, 0.62, 0.78, 0.6 , 0.91, 0.56,
-       0.29, 0.63, 0.52, 0.66, 0.66, 0.96, 0.77, 0.72])
+array([0.13, 0.39, 0.99, 0.79, 0.74, 0.89, 0.69, 0.6 , 0.3 , 0.7 , 0.59,
+       0.05, 0.03, 0.87, 0.76, 0.61, 0.48, 0.87, 0.58, 0.24, 0.93, 0.31,
+       0.15, 0.3 , 0.64, 0.95, 0.57, 0.11, 0.74, 0.7 ])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3817,12 +3604,12 @@ array([0.18, 0.71, 0.27, 0.9 , 0.96, 0.25, 0.82, 0.49, 0.4 , 0.27, 0.76,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([1.19363154, 2.03785716, 1.31128912, 2.45492271, 2.62313995,
-       1.28840898, 2.27758901, 1.63521105, 1.48820577, 1.3110567 ,
-       2.14010045, 1.08489933, 1.30300277, 2.21295138, 2.2988424 ,
-       1.6860915 , 1.51334587, 1.85094674, 2.18514962, 1.82297623,
-       2.4894755 , 1.7442952 , 1.33393585, 1.87788161, 1.68079423,
-       1.94113403, 1.93784079, 2.6175227 , 2.15775262, 2.04575882])
+array([1.14290928, 1.4756223 , 2.70224263, 2.2132029 , 2.10640349,
+       2.42959605, 1.98468162, 1.82303126, 1.34694642, 2.00452257,
+       1.80935648, 1.04975682, 1.02931618, 2.3952286 , 2.13493845,
+       1.83576155, 1.61786271, 2.39035606, 1.77950071, 1.26538554,
+       2.54141783, 1.36708732, 1.15776958, 1.34363172, 1.89218202,
+       2.58325133, 1.76690968, 1.11905902, 2.09026368, 2.0129141 ])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3830,12 +3617,14 @@ array([1.19363154, 2.03785716, 1.31128912, 2.45492271, 2.62313995,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.03132913, 0.50679997, 0.07344681, 0.80657513, 0.93001346,
-       0.06421567, 0.6775223 , 0.24183958, 0.15806287, 0.07335076,
-       0.57889694, 0.00664016, 0.07005096, 0.63095553, 0.69289924,
-       0.27291548, 0.17166355, 0.37908311, 0.61103035, 0.36056477,
-       0.83187542, 0.30952597, 0.08302112, 0.39708189, 0.26963763,
-       0.43993021, 0.43768063, 0.92588337, 0.5914644 , 0.51232495])
+array([1.78428181e\PYGZhy{}02, 1.51383089e\PYGZhy{}01, 9.88199090e\PYGZhy{}01, 6.31136092e\PYGZhy{}01,
+       5.54998158e\PYGZhy{}01, 7.88055694e\PYGZhy{}01, 4.69853366e\PYGZhy{}01, 3.60601020e\PYGZhy{}01,
+       8.87087358e\PYGZhy{}02, 4.83589381e\PYGZhy{}01, 3.51614895e\PYGZhy{}01, 2.35793178e\PYGZhy{}03,
+       8.34902494e\PYGZhy{}04, 7.62964998e\PYGZhy{}01, 5.75227923e\PYGZhy{}01, 3.69006932e\PYGZhy{}01,
+       2.31462949e\PYGZhy{}01, 7.59411745e\PYGZhy{}01, 3.32159526e\PYGZhy{}01, 5.54022603e\PYGZhy{}02,
+       8.69970561e\PYGZhy{}01, 9.77703025e\PYGZhy{}02, 2.14608953e\PYGZhy{}02, 8.72470903e\PYGZhy{}02,
+       4.06700411e\PYGZhy{}01, 9.00693643e\PYGZhy{}01, 3.24025156e\PYGZhy{}01, 1.26535877e\PYGZhy{}02,
+       5.43596871e\PYGZhy{}01, 4.89417034e\PYGZhy{}01])
 \end{sphinxVerbatim}
 
 Notice that this makes it very easy to compute certain mathematical formulas.  For example, when we want to measure the quality of a model, we might compute the RSSE, or Root Sum of Squared Errors, that is, the square root of the sum of the squared differences between each actual data value \(y_i\) and its predicted value \(\hat y_i\).  In math, we write it like this:
@@ -3906,8 +3695,8 @@ In fact, SciPy’s built\sphinxhyphen{}in random number generating procedures le
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([40.52844119, 88.27787766, 37.09453304, 12.75595148, 18.38940071,
-       99.83590941, 38.11791075, 67.11792913, 68.4387475 ,  1.49965431])
+array([ 7.54310033, 17.32976273, 70.34117419, 59.86102229, 10.94870359,
+       25.58717388, 27.01528819, 28.12996672, 37.92857177, 71.73230538])
 \end{sphinxVerbatim}
 
 Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two arguments and create a specific random variable, then call \sphinxcode{\sphinxupquote{rvs}} on that.
@@ -3918,8 +3707,9 @@ Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two a
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([35.35036339, 40.95383708, 27.61234516, 23.09458848, 46.22023761,
-       25.46116499, 45.36834631, 28.47696815, 53.83792421,  4.70085134])
+array([4.85609174e+01, 1.28544573e+01, 2.13797558e+01, 7.57132393e+01,
+       1.42018826e+01, 1.80385257e+01, 4.28740730e\PYGZhy{}02, 2.44621689e+01,
+       1.27588969e+01, 5.32780989e+01])
 \end{sphinxVerbatim}
 
 The same random variable can, of course, be used to create more values later.
@@ -7047,6 +6837,8 @@ Most of the time, we write reports or create slide decks to share our results.  
 
 This is where \sphinxstyleemphasis{dashboards} come in.  A quick \sphinxhref{https://www.google.com/search?q=data+dashboard\&tbm=isch}{Google image search for “data dashboards”} will show you dozens of examples of what dashboards look like.  Their purpose is to let the user explore the data using inputs like buttons and sliders, and seeing outputs that are typically data visualizations and summaries.  Dashboards don’t give the user anywhere near as much flexibility as you have in Python, but they’re much easier and faster.
 
+\begin{sphinxadmonition}{note}{Big Picture}
+
 There are many reasons why you might prepare a data dashboard.  Here are a few.
 \begin{itemize}
 \item {} 
@@ -7062,6 +6854,7 @@ There are many reasons why you might prepare a data dashboard.  Here are a few.
 \sphinxstylestrong{Another team wants to see what you’re doing, but they don’t want to read your code.}  To quickly share what you’ve been working on without forcing the recipient to dive into all of your Python code, you can wrap your work in a dashboard and share it on the web.  This lets you get feedback from other teams in your organization about your team’s work.
 
 \end{itemize}
+\end{sphinxadmonition}
 
 There are many tools for creating dashboards.  One of the most popular is \sphinxhref{https://www.tableau.com/trial/dashboards}{Tableau}, but we are not studying it in this course for two reasons.  First, it is proprietary software, which makes it less transferable knowledge than free tools.  Second, it is much easier to learn Tableau later on your own than it is to learn Python.  There are many Tableau training opportunities available online and in the corporate world should you need them.
 
@@ -7682,6 +7475,638 @@ See also the slides that summarize a portion of this content.
 \begin{sphinxadmonition}{warning}{Warning:}
 This chapter has not yet been written.  Check back later.
 \end{sphinxadmonition}
+
+
+\chapter{Detailed Course Schedule}
+\label{\detokenize{course-schedule:detailed-course-schedule}}\label{\detokenize{course-schedule::doc}}
+This include all topics covered and all assignments given and when they are due.
+
+
+\section{Week 1 \sphinxhyphen{} 9/3/2020 \sphinxhyphen{} Introduction and mathematical foundations}
+\label{\detokenize{course-schedule:week-1-9-3-2020-introduction-and-mathematical-foundations}}
+
+\subsection{Slides for today}
+\label{\detokenize{course-schedule:slides-for-today}}\begin{itemize}
+\item {} 
+Chapter 1: Introduction to data science
+
+\item {} 
+Chapter 2: Mathematical foundations
+
+\end{itemize}
+
+
+\subsection{Due before next class}
+\label{\detokenize{course-schedule:due-before-next-class}}\begin{itemize}
+\item {} 
+\sphinxstylestrong{DataCamp}
+\begin{itemize}
+\item {} 
+Optional, basic review:
+\begin{itemize}
+\item {} 
+\sphinxhref{https://www.datacamp.com/courses/intro-to-python-for-data-science}{Introduction to Python}
+
+\item {} 
+\sphinxhref{https://www.datacamp.com/courses/python-data-science-toolbox-part-1}{Python Data Science Toolbox, Part 1}
+
+\end{itemize}
+
+\item {} 
+Required (though it may still be review):
+\begin{itemize}
+\item {} 
+\sphinxhref{https://www.datacamp.com/courses/intermediate-python-for-data-science}{Intermediate Python}, chapters 1\sphinxhyphen{}4
+
+\item {} 
+\sphinxhref{https://www.datacamp.com/courses/pandas-foundations}{pandas Foundations}, just chapter 1
+
+\item {} 
+\sphinxhref{https://www.datacamp.com/courses/manipulating-dataframes-with-pandas}{Manipulating DataFrames with pandas}, just chapter 1
+
+\end{itemize}
+
+\item {} 
+\sphinxhref{big-cheat-sheet.html\#before-week-2-review-of-cs230}{See here for a cheat sheet} of all the content of the above DataCamp lessons.
+
+\end{itemize}
+
+\item {} 
+\sphinxstylestrong{Reading}
+\begin{itemize}
+\item {} 
+Each week, you are expected to read the appropriate chapters from the course notes \sphinxstyleemphasis{before} class.  Since this is the first day for the course, I did not expect you to have read Chapters 1\sphinxhyphen{}2 in advance.  But that means that you must now read them together with Chapters 3\sphinxhyphen{}4 before next week.
+
+\item {} 
+{\hyperref[\detokenize{chapter-1-intro-to-data-science::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 1: Introduction to data science}}}} (adds details to today’s class content)
+
+\item {} 
+{\hyperref[\detokenize{chapter-2-mathematical-foundations::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 2: Mathematical foundations}}}} (adds details to today’s class content)
+
+\item {} 
+{\hyperref[\detokenize{chapter-3-jupyter::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 3: Computational notebooks (Jupyter)}}}} (prepares for next week)
+
+\item {} 
+{\hyperref[\detokenize{chapter-4-review-of-python-and-pandas::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 4: Python review focusing on pandas and mathematical foundations}}}} (prepares for next week)
+
+\end{itemize}
+
+\item {} 
+\sphinxstylestrong{Other}
+\begin{itemize}
+\item {} 
+If you don’t already have a Python environment installed on your computer, {\hyperref[\detokenize{anaconda-installation::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{see these instructions for installing one}}}}.  As part of that process, ensure that you can open both Jupyter Lab and VS Code.
+
+\item {} 
+Optional: There are many LOYO opportunities from this week’s course notes (chapters 1 and 2).  See the syllabus for a definition of LOYO and consider forming a team and siezing one of the opportunities.
+
+\end{itemize}
+
+\end{itemize}
+
+
+\bigskip\hrule\bigskip
+
+
+
+\section{Week 2 \sphinxhyphen{} 9/10/2020 \sphinxhyphen{} Jupyter and a review of Python and pandas}
+\label{\detokenize{course-schedule:week-2-9-10-2020-jupyter-and-a-review-of-python-and-pandas}}
+
+\subsection{Slides for today}
+\label{\detokenize{course-schedule:id1}}\begin{itemize}
+\item {} 
+Chapter 3: Computational notebooks (Jupyter)
+
+\end{itemize}
+
+(There are no slides for Chapter 4, because it was just a review of CS230.)
+
+
+\subsection{Due before next class}
+\label{\detokenize{course-schedule:id2}}\begin{itemize}
+\item {} 
+\sphinxstylestrong{DataCamp}
+\begin{itemize}
+\item {} 
+\sphinxhref{https://www.datacamp.com/courses/manipulating-dataframes-with-pandas}{Manipulating DataFrames with pandas}, chapters 2\sphinxhyphen{}4
+
+\item {} 
+\sphinxhref{big-cheat-sheet.html\#before-week-3}{See here for a cheat sheet} of all the content of the above DataCamp lessons.
+
+\end{itemize}
+
+\item {} 
+\sphinxstylestrong{Reading}
+\begin{itemize}
+\item {} 
+{\hyperref[\detokenize{chapter-5-before-and-after::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 5: Before and after, in mathematics and communication}}}}
+
+\item {} 
+{\hyperref[\detokenize{chapter-6-single-table-verbs::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 6: Pandas single\sphinxhyphen{}table verbs}}}}
+
+\end{itemize}
+
+\end{itemize}
+
+
+\bigskip\hrule\bigskip
+
+
+
+\section{Week 3 \sphinxhyphen{} 9/17/2020 \sphinxhyphen{} Before and after, single\sphinxhyphen{}table verbs}
+\label{\detokenize{course-schedule:week-3-9-17-2020-before-and-after-single-table-verbs}}
+
+\subsection{Slides for today}
+\label{\detokenize{course-schedule:id3}}\begin{itemize}
+\item {} 
+Chapter 5: Before and after, in mathematics and communication
+
+\item {} 
+Chapter 6: Pandas single\sphinxhyphen{}table verbs
+
+\end{itemize}
+
+
+\subsection{Due before next class}
+\label{\detokenize{course-schedule:id4}}\begin{itemize}
+\item {} 
+\sphinxstylestrong{Communication exercise}
+\begin{itemize}
+\item {} 
+Download this Jupyter notebook.
+
+\item {} 
+Download this CSV file into the same folder.
+
+\item {} 
+The first half of the notebook has plenty of comments and explanations, but the second half does not.  Use the principles discussed in class today (and covered in {\hyperref[\detokenize{chapter-5-before-and-after::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 5 of the course notes}}}}) to comment/document/explain the second half of that file.
+
+\item {} 
+Upload your work to a new Deepnote project.  (Don’t forget the data file!)
+
+\item {} 
+Email the URL for that project to your instructor.
+
+\end{itemize}
+
+\item {} 
+\sphinxstylestrong{DataCamp}
+\begin{itemize}
+\item {} 
+\sphinxhref{https://www.datacamp.com/courses/pandas-foundations}{pandas Foundations}, just chapter 2
+
+\item {} 
+\sphinxhref{big-cheat-sheet.html\#before-week-4-review-of-visualization-in-cs230}{See here for a cheat sheet} of all the content of the above DataCamp lessons.
+
+\end{itemize}
+
+\item {} 
+\sphinxstylestrong{Reading}
+\begin{itemize}
+\item {} 
+{\hyperref[\detokenize{chapter-7-abstraction::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 7: Abstraction in mathematics and computing}}}}
+
+\item {} 
+{\hyperref[\detokenize{chapter-8-version-control::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 8: Version control and GitHub}}}}
+
+\end{itemize}
+
+\end{itemize}
+
+
+\bigskip\hrule\bigskip
+
+
+
+\section{Week 4 \sphinxhyphen{} 9/24/2020 \sphinxhyphen{} Abstraction and version control}
+\label{\detokenize{course-schedule:week-4-9-24-2020-abstraction-and-version-control}}
+
+\subsection{Slides for today}
+\label{\detokenize{course-schedule:id5}}\begin{itemize}
+\item {} 
+Chapter 7: Abstraction in mathematics and computing
+
+\item {} 
+Chapter 8: Version control and GitHub
+
+\end{itemize}
+
+
+\subsection{Due before next class}
+\label{\detokenize{course-schedule:id6}}\begin{itemize}
+\item {} 
+\sphinxstylestrong{Version control exercise}
+\begin{itemize}
+\item {} 
+This assignment is described in the final slide for Chapter 8, linked to above.
+
+\end{itemize}
+
+\item {} 
+\sphinxstylestrong{DataCamp}
+\begin{itemize}
+\item {} 
+\sphinxhref{https://www.datacamp.com/courses/intermediate-python-for-data-science}{Intermediate Python}, chapter 5
+
+\item {} 
+\sphinxhref{https://www.datacamp.com/courses/statistical-thinking-in-python-part-1}{Statistical Thinking in Python, Part 1}, all chapters
+
+\item {} 
+\sphinxhref{https://www.datacamp.com/courses/introduction-to-data-visualization-in-python}{Introduction to Data Visualization with Python}, chapters 1 and 3 only
+
+\item {} 
+\sphinxhref{big-cheat-sheet.html\#before-week-5}{See here for a cheat sheet} of all the content of the above DataCamp lessons.
+
+\end{itemize}
+
+\item {} 
+\sphinxstylestrong{Reading}
+\begin{itemize}
+\item {} 
+{\hyperref[\detokenize{chapter-9-math-and-stats::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 9: Math and stats in Python}}}}
+
+\item {} 
+{\hyperref[\detokenize{chapter-10-visualization::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 10: New visualization tools}}}}
+
+\end{itemize}
+
+\end{itemize}
+
+
+\bigskip\hrule\bigskip
+
+
+
+\section{Week 5 \sphinxhyphen{} 10/1/2020 \sphinxhyphen{} Math and stats in Python, plus Visualization}
+\label{\detokenize{course-schedule:week-5-10-1-2020-math-and-stats-in-python-plus-visualization}}
+
+\subsection{Slides for today}
+\label{\detokenize{course-schedule:id7}}\begin{itemize}
+\item {} 
+Chapter 9: Math and stats in Python
+
+\item {} 
+Chapter 10: New visualization tools
+
+\end{itemize}
+
+
+\subsection{Due before next class}
+\label{\detokenize{course-schedule:id8}}\begin{itemize}
+\item {} 
+\sphinxstylestrong{Data preparation exercise}
+\begin{itemize}
+\item {} 
+Look at the 2016 election data \sphinxhref{https://www.npr.org/2016/11/08/500927768/2016-presidential-election-results-for-each-state}{on this page of NPR’s website}.
+
+\item {} 
+Extract the table from that page into a CSV file (for example, by copying and pasting into Excel, then touching it up as needed).
+
+\item {} 
+Write a Jupyter notebook that imports the CSV file.
+
+\item {} 
+Ensure that you remove all rows that are not for entire states (which you can do in Excel or Jupyter, whichever you prefer).
+
+\item {} 
+Publish the notebook and the dataset together to a Deepnote or Colab project.
+
+\item {} 
+Share the project URL with your instructor by email.
+
+\item {} 
+We will use this dataset in class next week.
+
+\end{itemize}
+
+\item {} 
+\sphinxstylestrong{DataCamp}
+\begin{itemize}
+\item {} 
+\sphinxhref{https://learn.datacamp.com/courses/merging-dataframes-with-pandas}{Merging DataFrames with pandas}, chapters 1\sphinxhyphen{}3
+\begin{itemize}
+\item {} 
+\sphinxstylestrong{NOTE:} We will not cover this content in class next week.  We will cover it the subsequent week instead.  But I’m assigning you to do it this week because then you won’t have any homework next week, when the project is due, and you’ll be able to focus on that instead.
+
+\end{itemize}
+
+\item {} 
+\sphinxhref{big-cheat-sheet.html\#before-week-6}{See here for a cheat sheet} of all the content of the above DataCamp lessons.
+
+\end{itemize}
+
+\item {} 
+\sphinxstylestrong{Reading}
+\begin{itemize}
+\item {} 
+{\hyperref[\detokenize{chapter-11-processing-rows::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 11: Processing the rows of a DataFrame}}}}
+
+\end{itemize}
+
+\item {} 
+\sphinxstylestrong{Other}
+\begin{itemize}
+\item {} 
+Optional: There are several LOYO opportunities from this week’s course notes (chapters 9 and 10).  Consider forming a team and siezing one of the opportunities.
+
+\end{itemize}
+
+\end{itemize}
+
+
+\bigskip\hrule\bigskip
+
+
+
+\section{Week 6 \sphinxhyphen{} 10/8/2020 \sphinxhyphen{} Processing the Rows of a \sphinxstyleliteralintitle{\sphinxupquote{DataFrame}}}
+\label{\detokenize{course-schedule:week-6-10-8-2020-processing-the-rows-of-a-dataframe}}
+
+\subsection{Slides for today}
+\label{\detokenize{course-schedule:id9}}\begin{itemize}
+\item {} 
+Chapter 11: Processing the rows of a \sphinxcode{\sphinxupquote{DataFrame}}
+
+\end{itemize}
+
+
+\subsection{Due before next class}
+\label{\detokenize{course-schedule:id10}}\begin{itemize}
+\item {} 
+\sphinxstylestrong{No DataCamp this week, so that you can focus on the project.}
+
+\item {} 
+\sphinxstylestrong{Reading}
+\begin{itemize}
+\item {} 
+{\hyperref[\detokenize{chapter-12-concat-and-merge::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 12: Concatenation and Merging}}}}
+
+\end{itemize}
+
+\item {} 
+\sphinxstylestrong{Other}
+\begin{itemize}
+\item {} 
+Optional: There are a few LOYO opportunities from this week’s course notes (chapter 11).  Consider forming a team and siezing one of the opportunities.
+
+\end{itemize}
+
+\end{itemize}
+
+
+\bigskip\hrule\bigskip
+
+
+
+\section{Week 7 \sphinxhyphen{} 10/15/2020 \sphinxhyphen{} Concatenation and Merging}
+\label{\detokenize{course-schedule:week-7-10-15-2020-concatenation-and-merging}}
+
+\subsection{Slides for today}
+\label{\detokenize{course-schedule:id11}}\begin{itemize}
+\item {} 
+Chapter 12: Concatenation and Merging
+
+\end{itemize}
+
+
+\subsection{Due before next class}
+\label{\detokenize{course-schedule:id12}}
+It’s a light week, because you just did Project 1 and deserve a little time to rest.
+\begin{itemize}
+\item {} 
+\sphinxstylestrong{DataCamp}
+\begin{itemize}
+\item {} 
+\sphinxhref{https://learn.datacamp.com/courses/streamlined-data-ingestion-with-pandas}{Streamlined Data Ingestion with pandas}
+
+\item {} 
+\sphinxhref{big-cheat-sheet.html\#before-week-8}{See here for a cheat sheet} of all the content of the above DataCamp lessons.
+
+\end{itemize}
+
+\item {} 
+\sphinxstylestrong{Reading}
+\begin{itemize}
+\item {} 
+{\hyperref[\detokenize{chapter-13-etl::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 13: Miscellaneous Munging Methods (ETL)}}}}
+
+\end{itemize}
+
+\end{itemize}
+
+
+\bigskip\hrule\bigskip
+
+
+
+\section{Week 8 \sphinxhyphen{} 10/22/2020 \sphinxhyphen{} Miscellaneous Munging Methods (ETL)}
+\label{\detokenize{course-schedule:week-8-10-22-2020-miscellaneous-munging-methods-etl}}
+
+\subsection{Slides for today}
+\label{\detokenize{course-schedule:id13}}\begin{itemize}
+\item {} 
+Chapter 13: Miscellaneous Munging Methods (ETL)
+
+\end{itemize}
+
+
+\subsection{Due before next class}
+\label{\detokenize{course-schedule:id14}}\begin{itemize}
+\item {} 
+\sphinxstylestrong{DataCamp} (last one for the whole semester!)
+\begin{itemize}
+\item {} 
+\sphinxhref{https://learn.datacamp.com/courses/introduction-to-sql}{Introduction to SQL for Data Science}
+\begin{itemize}
+\item {} 
+\sphinxstylestrong{NOTE:} Bentley’s CS350 course goes into this content in far greater detail.  You can see this lesson as a small preview or taste of that course.
+
+\end{itemize}
+
+\item {} 
+\sphinxhref{big-cheat-sheet.html\#before-week-9}{See here for a cheat sheet} of all the content of the above DataCamp lessons.
+
+\end{itemize}
+
+\item {} 
+\sphinxstylestrong{Reading}
+\begin{itemize}
+\item {} 
+{\hyperref[\detokenize{chapter-14-dashboards::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 14: Dashboards}}}}
+
+\end{itemize}
+
+\item {} 
+\sphinxstylestrong{Other}
+\begin{itemize}
+\item {} 
+Install \sphinxhref{https://www.streamlit.io/}{Streamlit} (\sphinxcode{\sphinxupquote{pip install streamlit}}).  Take a screenshot to prove you did so.
+
+\item {} 
+\sphinxhref{https://signup.heroku.com/}{Create a Heroku account}.  Then \sphinxhref{https://devcenter.heroku.com/articles/getting-started-with-python\#set-up}{install the Heroku command\sphinxhyphen{}line tools}.  Ensure that after doing so, you can get to a terminal and run \sphinxcode{\sphinxupquote{heroku login}} successfully.  Take a screenshot to prove you did so.
+
+\item {} 
+Email both screenshots in one email to your instructor.
+
+\end{itemize}
+
+\item {} 
+\sphinxstylestrong{Project Planning}
+\begin{itemize}
+\item {} 
+Optional: If you want to get ahead on the final project in a way that’s rather easy and fun, start hunting for datasets that cover a topic you’re interested in and might want to analyze.  Try to find a dataset that’s pretty comprehensive, so that there are plenty of options for ways to analyze, visualize, and manipulate it.
+
+\end{itemize}
+
+\end{itemize}
+
+
+\bigskip\hrule\bigskip
+
+
+
+\section{Week 9 \sphinxhyphen{} 10/29/2020 \sphinxhyphen{} Dashboards}
+\label{\detokenize{course-schedule:week-9-10-29-2020-dashboards}}
+
+\subsection{Slides for today}
+\label{\detokenize{course-schedule:id15}}\begin{itemize}
+\item {} 
+Chapter 14: Dashboards
+
+\end{itemize}
+
+
+\subsection{Due before next class}
+\label{\detokenize{course-schedule:id16}}\begin{itemize}
+\item {} 
+\sphinxstylestrong{Reading}
+\begin{itemize}
+\item {} 
+{\hyperref[\detokenize{chapter-15-networks::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 15: Relations as graphs and network analysis}}}}
+
+\end{itemize}
+
+\end{itemize}
+
+(Perhaps more assignments are coming; this section is still incomplete.)
+
+
+\bigskip\hrule\bigskip
+
+
+
+\section{Week 10 \sphinxhyphen{} 11/5/2020 \sphinxhyphen{} Relations, graphs, and networks}
+\label{\detokenize{course-schedule:week-10-11-5-2020-relations-graphs-and-networks}}
+
+\subsection{Slides for today}
+\label{\detokenize{course-schedule:id17}}\begin{itemize}
+\item {} 
+Chapter 15: Relations as graphs and network analysis
+
+\end{itemize}
+
+
+\subsection{Due before next class}
+\label{\detokenize{course-schedule:id18}}\begin{itemize}
+\item {} 
+\sphinxstylestrong{Reading}
+\begin{itemize}
+\item {} 
+{\hyperref[\detokenize{chapter-16-matrices::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 16: Relations as matrices}}}}
+
+\end{itemize}
+
+\end{itemize}
+
+(Perhaps more assignments are coming; this section is still incomplete.)
+
+
+\bigskip\hrule\bigskip
+
+
+
+\section{Week 11 \sphinxhyphen{} 11/12/2020 \sphinxhyphen{} Relations as matrices}
+\label{\detokenize{course-schedule:week-11-11-12-2020-relations-as-matrices}}
+
+\subsection{Slides for today}
+\label{\detokenize{course-schedule:id19}}\begin{itemize}
+\item {} 
+Chapter 15: Relations as matrices
+
+\end{itemize}
+
+
+\subsection{Due before next class}
+\label{\detokenize{course-schedule:id20}}\begin{itemize}
+\item {} 
+\sphinxstylestrong{Reading}
+\begin{itemize}
+\item {} 
+{\hyperref[\detokenize{chapter-17-machine-learning::doc}]{\sphinxcrossref{\DUrole{doc,doc,doc}{Chapter 17: Introduction to machine learning}}}}
+
+\end{itemize}
+
+\end{itemize}
+
+(Perhaps more assignments are coming; this section is still incomplete.)
+
+
+\bigskip\hrule\bigskip
+
+
+
+\section{Week 12 \sphinxhyphen{} 11/19/2020 \sphinxhyphen{} Introduction to machine learning}
+\label{\detokenize{course-schedule:week-12-11-19-2020-introduction-to-machine-learning}}
+
+\subsection{Slides for today}
+\label{\detokenize{course-schedule:id21}}\begin{itemize}
+\item {} 
+Chapter 17: Introduction to machine learning
+
+\end{itemize}
+
+
+\subsection{Due before next class}
+\label{\detokenize{course-schedule:id22}}\begin{itemize}
+\item {} 
+None yet
+
+\end{itemize}
+
+(Perhaps more assignments are coming; this section is still incomplete.)
+
+
+\bigskip\hrule\bigskip
+
+
+
+\section{Week 13 \sphinxhyphen{} 11/26/2020 \sphinxhyphen{} Thanksgiving break, no class}
+\label{\detokenize{course-schedule:week-13-11-26-2020-thanksgiving-break-no-class}}
+No assignments over break, but it would be wise to continue to make progress on the Final Project.
+
+
+\bigskip\hrule\bigskip
+
+
+
+\section{Week 14 \sphinxhyphen{} 12/3/2020 \sphinxhyphen{} Final Exam Review and Final Project Workshop}
+\label{\detokenize{course-schedule:week-14-12-3-2020-final-exam-review-and-final-project-workshop}}\begin{itemize}
+\item {} 
+\sphinxstylestrong{Final Exam}
+\begin{itemize}
+\item {} 
+Based on the review we do in class today, study for the Final Exam.
+
+\end{itemize}
+
+\item {} 
+\sphinxstylestrong{Final Project}
+\begin{itemize}
+\item {} 
+Come to class today ready to use half of class to work on your final project in class, and ask questions of the instructor if/when you get stuck on anything.
+
+\end{itemize}
+
+\end{itemize}
 
 
 \chapter{Big Cheat Sheet}
@@ -10032,7 +10457,7 @@ The same code works for any random variable, not just \sphinxcode{\sphinxupquote
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([1, 0, 0, 1, 1, 0, 0, 0, 0, 0])
+array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 \end{sphinxVerbatim}
 
 The same code works for any random variable, not just \sphinxcode{\sphinxupquote{b1}}.
@@ -10122,9 +10547,9 @@ The same code works for any continuous random variable, not just \sphinxcode{\sp
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([ 91.50576438,  99.86154359,  94.75411308,  98.85559716,
-        98.50861192,  99.93694   ,  95.02151105,  94.53352632,
-       107.62531688,  98.39891228])
+array([102.32699106,  94.81780422,  91.97159539,  97.85827002,
+        95.68276381, 106.53901027, 100.5389472 , 100.37862195,
+        99.29510102, 102.26897018])
 \end{sphinxVerbatim}
 
 
