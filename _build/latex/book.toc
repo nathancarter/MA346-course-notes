@@ -241,15 +241,15 @@
 \contentsline {subsection}{\numberline {18.9.2}Due before next class}{176}{subsection.18.9.2}% 
 \contentsline {section}{\numberline {18.10}Week 10 \sphinxhyphen {} 11/5/2020 \sphinxhyphen {} Relations, graphs, and networks}{176}{section.18.10}% 
 \contentsline {subsection}{\numberline {18.10.1}Slides for today}{176}{subsection.18.10.1}% 
-\contentsline {subsection}{\numberline {18.10.2}Due before next class}{176}{subsection.18.10.2}% 
-\contentsline {section}{\numberline {18.11}Week 11 \sphinxhyphen {} 11/12/2020 \sphinxhyphen {} Relations as matrices}{176}{section.18.11}% 
-\contentsline {subsection}{\numberline {18.11.1}Slides for today}{176}{subsection.18.11.1}% 
+\contentsline {subsection}{\numberline {18.10.2}Due before next class}{177}{subsection.18.10.2}% 
+\contentsline {section}{\numberline {18.11}Week 11 \sphinxhyphen {} 11/12/2020 \sphinxhyphen {} Relations as matrices}{177}{section.18.11}% 
+\contentsline {subsection}{\numberline {18.11.1}Slides for today}{177}{subsection.18.11.1}% 
 \contentsline {subsection}{\numberline {18.11.2}Due before next class}{177}{subsection.18.11.2}% 
 \contentsline {section}{\numberline {18.12}Week 12 \sphinxhyphen {} 11/19/2020 \sphinxhyphen {} Introduction to machine learning}{177}{section.18.12}% 
 \contentsline {subsection}{\numberline {18.12.1}Slides for today}{177}{subsection.18.12.1}% 
 \contentsline {subsection}{\numberline {18.12.2}Due before next class}{177}{subsection.18.12.2}% 
 \contentsline {section}{\numberline {18.13}Week 13 \sphinxhyphen {} 11/26/2020 \sphinxhyphen {} Thanksgiving break, no class}{177}{section.18.13}% 
-\contentsline {section}{\numberline {18.14}Week 14 \sphinxhyphen {} 12/3/2020 \sphinxhyphen {} Final Exam Review and Final Project Workshop}{177}{section.18.14}% 
+\contentsline {section}{\numberline {18.14}Week 14 \sphinxhyphen {} 12/3/2020 \sphinxhyphen {} Final Exam Review and Final Project Workshop}{178}{section.18.14}% 
 \contentsline {chapter}{\numberline {19}Big Cheat Sheet}{179}{chapter.19}% 
 \contentsline {section}{\numberline {19.1}Before Week 2: Review of CS230}{179}{section.19.1}% 
 \contentsline {subsection}{\numberline {19.1.1}Introduction to Python (optional, basic review)}{179}{subsection.19.1.1}% 

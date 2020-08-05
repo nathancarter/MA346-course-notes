@@ -13206,6 +13206,182 @@ a.anchor-link {
 
 </div>
 </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Value-of-dashboards-in-data-reporting">Value of dashboards in data reporting<a class="anchor-link" href="#Value-of-dashboards-in-data-reporting">&#182;</a></h2><p>Examples:</p>
+<ul>
+<li>Let the viewer explore the many different inputs to an analysis.</li>
+<li>Let an expert viewer experiment with the tuning parameter of an analysis.</li>
+<li>Some projects are not a data analysis, but just a data showcase.</li>
+<li>Quickly and easily show another team what you're doing, for faster feedback.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="In-class-today:-We-will-build-and-deploy-a-dashboard">In class today: We will build and deploy a dashboard<a class="anchor-link" href="#In-class-today:-We-will-build-and-deploy-a-dashboard">&#182;</a></h2><p>To prepare:</p>
+<ol>
+<li>Download these two files:<ul>
+<li><a href="../_static/baseball-salaries-simplified.csv">The simplified baseball salaries dataset from a previous week (CSV)</a></li>
+<li><a href="../_static/baseball-example.ipynb">A Jupyter notebook that does a simple visualization of that data (ipynb)</a></li>
+</ul>
+</li>
+<li>Put them in a folder together and ensure that you can run the notebook.</li>
+<li>Look it over to understand what it does.</li>
+</ol>
+<p>We will convert that notebook into a dashboard in the first half of today's class, then deploy it online in the second half.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="If-this-is-easy-for-you...">If this is easy for you...<a class="anchor-link" href="#If-this-is-easy-for-you...">&#182;</a></h2><p>...and so you finish creating a Streamlit dashboard before we get to the class break, then you should do the following things, in this order:</p>
+<ol>
+<li>See if anyone on your team would like help with something they're stuck on.  (Although I will be helping out as the instructor, there's only one of me, and I'd love your help sharing your knowledge!)</li>
+<li>There is a slide about optional additional features you could add to your Streamlit app.  Once you're sure no one on your team could use your help with anything, try those.</li>
+<li>If you've done all that stuff and it's still not break time, go ahead and start your break early.</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="If-this-is-hard-for-you...">If this is hard for you...<a class="anchor-link" href="#If-this-is-hard-for-you...">&#182;</a></h2><p>...don't worry!  It's a very technical set of content for today.  I suggest these ways to get help:</p>
+<ol>
+<li>Be sure you've carefully followed the course notes.  They should tell you almost every little step you need.</li>
+<li>Request that the instructor visits your breakout group, so that I can help you get un-stuck.</li>
+<li>If someone in your group is ahead of you and seems to know what's going on, ask for their advice.</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Step-1.-Convert-the-notebook-to-a-Python-script">Step 1. Convert the notebook to a Python script<a class="anchor-link" href="#Step-1.-Convert-the-notebook-to-a-Python-script">&#182;</a></h2><p>If needed, review the technique for this in <a href="../_build/html/chapter-14-dashboards.html#step-1-we-need-a-python-script">this section of the course notes</a>.</p>
+<p>The final result should be that you can run your Python script in either of the following ways, and see the resulting plot.</p>
+<ul>
+<li>from the command line, <code>python baseball-example.py</code></li>
+<li>from within your favorite IDE, such as VS Code, with a Run command</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Step-2.-Bring-in-Streamlit">Step 2. Bring in Streamlit<a class="anchor-link" href="#Step-2.-Bring-in-Streamlit">&#182;</a></h2><p>If needed, review the technique for this in <a href="../_build/html/chapter-14-dashboards.html#step-2-converting-your-script-to-use-streamlit">this section of the course notes</a>.</p>
+<p>You know this is working if you can run <code>streamlit run baseball-example.py</code> from the command line and view the result in your browser.</p>
+<p>Recall that any changes you make to your Python script after that can be automatically updated in the browser if you click the "Always rerun" button when prompted.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Step-3.-Factor-out-parameters">Step 3. Factor out parameters<a class="anchor-link" href="#Step-3.-Factor-out-parameters">&#182;</a></h2><p>If needed, review the technique for this in <a href="../_build/html/chapter-14-dashboards.html#step-3-abstraction">this section of the course notes</a>.</p>
+<p>This should not change the way that your dashboard behaves at all.</p>
+<p>But in the end, your dashboard should begin with the declaration of a few constants, perhaps like these:</p>
+<ul>
+<li><code>first_year</code></li>
+<li><code>last_year</code></li>
+<li><code>position</code></li>
+</ul>
+<p>(But exactly which parameters you choose to factor out is up to you.)</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Step-4.-Create-input-controls">Step 4. Create input controls<a class="anchor-link" href="#Step-4.-Create-input-controls">&#182;</a></h2><p>If needed, review the technique for this in <a href="../_build/html/chapter-14-dashboards.html#step-4-creating-input-controls">this section of the course notes</a>.</p>
+<p>When this is complete, each of the parameters you created in the previous step should have an input control visible on your dashboard.</p>
+<p>If you chose the parameters I suggested in the previous slide, you might do something like this:</p>
+<ul>
+<li>Let the user pick the first year with a slider.</li>
+<li>Let the user pick the last year with another slider.</li>
+<li>Let the user pick the position from a drop-down "select" box (though that wasn't introduced until <a href="../_build/html/chapter-14-dashboards.html#step-5-increasing-awesomeness">the subsequent section of the notes</a>).</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Step-5.-Improvements">Step 5. Improvements<a class="anchor-link" href="#Step-5.-Improvements">&#182;</a></h2><p>If needed, review the options for improvements listed in <a href="../_build/html/chapter-14-dashboards.html#step-5-increasing-awesomeness">this section of the course notes</a>.</p>
+<p>In particular, ensure that:</p>
+<ul>
+<li>the layout of the inputs and chart in your app is visually attractive, and</li>
+<li>each input and chart is explained with appropriate prompts or titles, so that the first-time visitor will understand them.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="If-you-have-time">If you have time<a class="anchor-link" href="#If-you-have-time">&#182;</a></h2><p>If you finish the previous steps early, check out <a href="https://baseball-example.herokuapp.com/">my version of this project online</a>.</p>
+<p>What do you notice that's different?  Can you add those features to yours as well?</p>
+<p>To help you figure out what to try, here's a list.</p>
+<ul>
+<li>Combine the first and last year into a single "double slider."  Try Googling it to see how.</li>
+<li>Speed up the data loading with <code>@st.cache</code>, as described in <a href="../_build/html/chapter-14-dashboards.html#improve-speed">this section of the course notes</a>.</li>
+<li>Instead of position abbreviations (P, C, etc.), use readable words (Pitcher, Catcher, etc.).</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Break">Break<a class="anchor-link" href="#Break">&#182;</a></h2><p>We'll take a break at this point.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Deploying-your-app-to-Heroku">Deploying your app to Heroku<a class="anchor-link" href="#Deploying-your-app-to-Heroku">&#182;</a></h2><p>The second half of class will consist entirely of deploying your app to Heroku.  <em>This can be challenging!</em>  I'll offer as much help as I can.</p>
+<p><a href="../_build/html/chapter-14-dashboards.html#making-your-dashboard-into-a-heroku-app">Follow the procedure outlined in the second half of today's course notes.</a></p>
+<p><strong><em>If you finish before class is done:</em></strong></p>
+<ol>
+<li>Paste into our Microsoft Teams chat a link to your working app, so everyone can see (including me).</li>
+<li>Help at least one of your teammates complete the task as well.</li>
+<li>Then feel free to leave early!</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Thinking-ahead:-your-Final-Project">Thinking ahead: your Final Project<a class="anchor-link" href="#Thinking-ahead:-your-Final-Project">&#182;</a></h2><p>Recall that <em>some</em> part of your final project must be a dashboard running live on the web.</p>
+<p>This has two consequences as you think ahead about that project:</p>
+<ol>
+<li>Ensure that you choose a dataset and analysis that could benefit from a dashboard.</li>
+<li>Ensure that at least one of the people on your team is comfortable using today's content to deploy a dashboard.</li>
+</ol>
+
+</div>
+</div>
 </div></section></section>
 </div>
 </div>

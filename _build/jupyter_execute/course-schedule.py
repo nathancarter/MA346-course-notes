@@ -195,10 +195,18 @@ It's a light week, because you just did Project 1 and deserve a little time to r
 
 ### Due before next class
 
+ * **Network data exercise**
+    * The purpose of this exercise is to familiarize you with some network data, since next week we will be studying just that.  It also gives you another chance to practice `pd.merge()`.
+    * <a href='../../_static/shipping1997.xlsx'>Download this Excel workbook</a> of shipping data among U.S. states in 1997.
+    * Look over all the sheets in the workbook to familiarize yourself with their meaning.
+    * Create a Jupyter notebook that reads all the sheets from the workbook.
+    * Add code that creates a DataFrame just like the shipping sheet, but with each state abbreviation replaced by its full name.
+    * The "adjacent" column in the distances DataFrame should be boolean type; convert it.
+    * Add two columns to the shipping table, one containing the distance between the two states, and the other containing the boolean of whether the two states are adjacent, both taken from the distance table.
+    * Publish the dataset and your notebook with either Deepnote or Colab, your choice.  **Note:** Reading Excel files requires installing the `xlrd` module, which is not present by default in some cloud computing environments.  You may need to run `pip install xlrd` in the terminal, or at the top of the notebook, or place it in a `requirements.txt` file.
+    * Send the link to your project to your instructor.
  * **Reading**
     * [Chapter 15: Relations as graphs and network analysis](chapter-15-networks)
-
-(Perhaps more assignments are coming; this section is still incomplete.)
 
 
 ---

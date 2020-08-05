@@ -464,6 +464,8 @@ web: sh setup.sh && streamlit run app.py
 
 Once you've placed all three of these files into your dashboard project folder, commit all of them to your git repository.
 
+Although this step is a bit of a hassle, the good news is that once you've done it for one Streamlit project, you can easily just copy these three files to any other Streamlit project you work on, potentially unchanged, so that you don't have to recreate them afresh each time.  The only thing that might change is adding new modules to the `requirements.txt` file, if needed, based on your projects.
+
 ### Step 4. Deploy your app to the web
 
 You deploy an app to the web with a simple git push.  (Recall that git pushes and pulls were explained in [the chapter on version control](chapter-8-version-control#what-if-i-want-to-collaborate).)  You can do this in one of two ways.

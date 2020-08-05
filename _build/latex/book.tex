@@ -7393,6 +7393,8 @@ web: sh setup.sh \PYG{o}{\PYGZam{}\PYGZam{}} streamlit run app.py
 
 Once you’ve placed all three of these files into your dashboard project folder, commit all of them to your git repository.
 
+Although this step is a bit of a hassle, the good news is that once you’ve done it for one Streamlit project, you can easily just copy these three files to any other Streamlit project you work on, potentially unchanged, so that you don’t have to recreate them afresh each time.  The only thing that might change is adding new modules to the \sphinxcode{\sphinxupquote{requirements.txt}} file, if needed, based on your projects.
+
 
 \subsection{Step 4. Deploy your app to the web}
 \label{\detokenize{chapter-14-dashboards:step-4-deploy-your-app-to-the-web}}
@@ -7978,6 +7980,38 @@ Chapter 14: Dashboards
 \subsection{Due before next class}
 \label{\detokenize{course-schedule:id16}}\begin{itemize}
 \item {} 
+\sphinxstylestrong{Network data exercise}
+\begin{itemize}
+\item {} 
+The purpose of this exercise is to familiarize you with some network data, since next week we will be studying just that.  It also gives you another chance to practice \sphinxcode{\sphinxupquote{pd.merge()}}.
+
+\item {} 
+Download this Excel workbook of shipping data among U.S. states in 1997.
+
+\item {} 
+Look over all the sheets in the workbook to familiarize yourself with their meaning.
+
+\item {} 
+Create a Jupyter notebook that reads all the sheets from the workbook.
+
+\item {} 
+Add code that creates a DataFrame just like the shipping sheet, but with each state abbreviation replaced by its full name.
+
+\item {} 
+The “adjacent” column in the distances DataFrame should be boolean type; convert it.
+
+\item {} 
+Add two columns to the shipping table, one containing the distance between the two states, and the other containing the boolean of whether the two states are adjacent, both taken from the distance table.
+
+\item {} 
+Publish the dataset and your notebook with either Deepnote or Colab, your choice.  \sphinxstylestrong{Note:} Reading Excel files requires installing the \sphinxcode{\sphinxupquote{xlrd}} module, which is not present by default in some cloud computing environments.  You may need to run \sphinxcode{\sphinxupquote{pip install xlrd}} in the terminal, or at the top of the notebook, or place it in a \sphinxcode{\sphinxupquote{requirements.txt}} file.
+
+\item {} 
+Send the link to your project to your instructor.
+
+\end{itemize}
+
+\item {} 
 \sphinxstylestrong{Reading}
 \begin{itemize}
 \item {} 
@@ -7986,8 +8020,6 @@ Chapter 14: Dashboards
 \end{itemize}
 
 \end{itemize}
-
-(Perhaps more assignments are coming; this section is still incomplete.)
 
 
 \bigskip\hrule\bigskip
