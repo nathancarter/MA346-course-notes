@@ -3,7 +3,7 @@ title: MA346 Course Notes
 author: Nathan Carter
 logo: logo.png
 
-exclude_patterns: ["README.md","_slides/*","experiments/*"]
+exclude_patterns: ["_static/*","README.md","_slides/*","experiments/*"]
 
 repository:
   url: https://github.com/nathancarter/ma346-course-notes
