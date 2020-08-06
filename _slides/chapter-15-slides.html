@@ -13206,6 +13206,306 @@ a.anchor-link {
 
 </div>
 </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Graph-examples-from-the-course-notes">Graph examples from the course notes<a class="anchor-link" href="#Graph-examples-from-the-course-notes">&#182;</a></h2><ul>
+<li>Shipping records among U.S. states (to be analyzed in class today)</li>
+<li>Dolphin socialization records</li>
+<li>Google's model of all web links</li>
+<li>Small network of friends and advice</li>
+</ul>
+<p><img src="../_images/friends-graph.png" alt="Image of five ovals, labeled Augustus, Beatriz, Cyrano, Dauphine, Englebert, some connected in pairs by arrows"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Review-of-terminology">Review of terminology<a class="anchor-link" href="#Review-of-terminology">&#182;</a></h2><p>What do the following terms mean?</p>
+<ul>
+<li>graph</li>
+<li>vertex and edge</li>
+<li>directed and undirected</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Another-graph-example:-Data-Flow-Diagrams">Another graph example: Data Flow Diagrams<a class="anchor-link" href="#Another-graph-example:-Data-Flow-Diagrams">&#182;</a></h2><p>Example using the free software <a href="https://www.knime.com/">Knime</a> (which is similar to the commercial software <a href="https://www.tableau.com/trial/tableau-prep">Tableau Prep</a>):</p>
+<p><img src="../_images/knime-screenshot-1.png" alt="Screenshot of a data flow diagram in the software Knime"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Another-graph-example:-Data-Flow-Diagrams">Another graph example: Data Flow Diagrams<a class="anchor-link" href="#Another-graph-example:-Data-Flow-Diagrams">&#182;</a></h2><p>This shows how to use Knime for one of the projects in MA346 in Spring 2020.</p>
+<p><img src="../_images/knime-screenshot-2.png" alt="Screenshot of a data flow diagram in the software Knime"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Another-graph-example:-Git-commits-and-merges">Another graph example: Git commits and merges<a class="anchor-link" href="#Another-graph-example:-Git-commits-and-merges">&#182;</a></h2><p><img src="../_images/git-graph.jpg" alt="Screenshot of the graph of git commits and merges in a small repository"></p>
+<p>Source: <a href="https://medium.com/@mena.meseha/git-merge-vs-rebase-556563b26431">a blog post about git</a></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Review-of-data-storage">Review of data storage<a class="anchor-link" href="#Review-of-data-storage">&#182;</a></h2><p>Explain each of the following ways to store graph data in a table, based on the friends-and-advice example from the course notes.</p>
+<table>
+<thead><tr>
+<th></th>
+<th>Augustus</th>
+<th>Beatriz</th>
+<th>Cyrano</th>
+<th>Dauphine</th>
+<th>Englebert</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Augustus</strong></td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Beatriz</strong></td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Cyrano</strong></td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td><strong>Dauphine</strong></td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Englebert</strong></td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead><tr>
+<th>From</th>
+<th>To</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Augustus</td>
+<td>Cyrano</td>
+</tr>
+<tr>
+<td>Beatriz</td>
+<td>Cyrano</td>
+</tr>
+<tr>
+<td>Cyrano</td>
+<td>Beatriz</td>
+</tr>
+<tr>
+<td>Cyrano</td>
+<td>Englebert</td>
+</tr>
+<tr>
+<td>Dauphine</td>
+<td>Cyrano</td>
+</tr>
+<tr>
+<td>Englebert</td>
+<td>Augustus</td>
+</tr>
+<tr>
+<td>Englebert</td>
+<td>Beatriz</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Practice-with-NetworkX">Practice with NetworkX<a class="anchor-link" href="#Practice-with-NetworkX">&#182;</a></h2><p>Most of today will be spent on an extended exercise in loading and visualizing the 1997 shipping dataset you prepare for today in homework.</p>
+<h3 id="Step-1">Step 1<a class="anchor-link" href="#Step-1">&#182;</a></h3><p>Open the notebook or script you created for homework, which loads and manipulates the shipping data.</p>
+<p>Add the code to <code>import networkx as nx</code> and ensure that it succeeds.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-2">Step 2<a class="anchor-link" href="#Step-2">&#182;</a></h3><p>Some of the shipping data that should be numeric is expressed as text, using either "S", "-", or an empty string instead of a measurement for value, tons, or ton-miles.  Clean up the data so that all of these symbols become missing values instead.</p>
+<p>The dataset uses 0 as the code to mean "all commodities combined."  We will focus exclusively on these measurements, rather than on individual commodities.  Filter the shipping table so that it keeps only those records and discards the rest.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-3">Step 3<a class="anchor-link" href="#Step-3">&#182;</a></h3><p>Merge the shipping data and the information about distance and adjacency between states, so that you create a table with the following format.</p>
+<table>
+<thead><tr>
+<th style="text-align:right"></th>
+<th style="text-align:left">origin</th>
+<th style="text-align:left">dest</th>
+<th style="text-align:right">Value($ mil)</th>
+<th style="text-align:right">Tons(000)</th>
+<th style="text-align:right">Ton-miles(mil)</th>
+<th style="text-align:right">Distance(km)</th>
+<th style="text-align:right">adjacent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">0</td>
+<td style="text-align:left">AK</td>
+<td style="text-align:left">AK</td>
+<td style="text-align:right">5376</td>
+<td style="text-align:right">17448</td>
+<td style="text-align:right">2624</td>
+<td style="text-align:right">64.0919</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">1</td>
+<td style="text-align:left">AK</td>
+<td style="text-align:left">AL</td>
+<td style="text-align:right">nan</td>
+<td style="text-align:right">nan</td>
+<td style="text-align:right">nan</td>
+<td style="text-align:right">4581.72</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td style="text-align:left">AK</td>
+<td style="text-align:left">AR</td>
+<td style="text-align:right">nan</td>
+<td style="text-align:right">nan</td>
+<td style="text-align:right">nan</td>
+<td style="text-align:right">4036.35</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td style="text-align:left">AK</td>
+<td style="text-align:left">AZ</td>
+<td style="text-align:right">nan</td>
+<td style="text-align:right">nan</td>
+<td style="text-align:right">nan</td>
+<td style="text-align:right">3217.3</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td style="text-align:left">AK</td>
+<td style="text-align:left">CA</td>
+<td style="text-align:right">nan</td>
+<td style="text-align:right">nan</td>
+<td style="text-align:right">nan</td>
+<td style="text-align:right">2387.07</td>
+<td style="text-align:right">0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-4">Step 4<a class="anchor-link" href="#Step-4">&#182;</a></h3><p>Convert the above shipping data into a format suitable for use in creating a directed graph among the states.</p>
+<ul>
+<li>Recall that you create a new, empty, directed graph in NetworkX using <code>nx.DiGraph()</code>.</li>
+<li>See <a href="../_build/html/chapter-15-networks.html#loading-network-data">this section of the course notes</a> for a review of how to add nodes and edges to a NetworkX graph.</li>
+</ul>
+<p>Verify that your work succeeded by calling <code>len()</code> on your graph object and ensuring that it contains 50 states.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-5">Step 5<a class="anchor-link" href="#Step-5">&#182;</a></h3><p>Draw your graph with <code>nx.draw()</code>.</p>
+<p>What's wrong with this approach?</p>
+<p>Brainstorm some ideas for how to improve the resulting visualization.</p>
+<p>We will discuss them in class, and then implement them.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Discussion">Discussion<a class="anchor-link" href="#Discussion">&#182;</a></h2><p>Given a DataFrame <code>df</code> that contains an edge list, how would we do each of the following things?</p>
+<ul>
+<li>Add an edge to the list</li>
+<li>Remove an edge from the list</li>
+<li>Compute the collection of vertices that you can get to in just one step from a given starting vertex</li>
+<li>Compute the collection of vertices that can get, in just one step, to a given destination vertex</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-6">Step 6<a class="anchor-link" href="#Step-6">&#182;</a></h3><p>The <em>degree centrality</em> of a graph ranks vertices in the graph just by counting the number of connections they have.</p>
+<p>Show the top 10 states in terms of number of trading partners, in decreasing order.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-7">Step 7<a class="anchor-link" href="#Step-7">&#182;</a></h3><p>Use same shipping data to create a DataFrame that is an edge list for just those states that are adjacent to one another.</p>
+<p>Visualize this network using <code>nx.draw()</code>.  Does it look anything like the United States?</p>
+
+</div>
+</div>
 </div></section></section>
 </div>
 </div>
