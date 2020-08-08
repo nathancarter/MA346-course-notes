@@ -63,7 +63,7 @@
 
 
 \title{MA346 Course Notes}
-\date{Aug 06, 2020}
+\date{Aug 08, 2020}
 \release{}
 \author{Nathan Carter}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -8521,6 +8521,44 @@ Chapter 15: Relations as graphs and network analysis
 \subsection{Due before next class}
 \label{\detokenize{course-schedule:id18}}\begin{itemize}
 \item {} 
+\sphinxstylestrong{Data prep exercise for a music recommendation system}
+\begin{itemize}
+\item {} 
+In class next time we will build a recommender system for songs (that is, given your preferences and a big database of other people’s preferences, it will try to match you with new songs you might like).
+
+\item {} 
+Visit \sphinxhref{https://archive.org/details/thisismyjam-datadump}{this page} and read about the data archive, then download it from there in ZIP format.  It is almost 1GB in size, so leave some time for this download!
+
+\item {} 
+Unzip the download and find within it three files; we care only about \sphinxcode{\sphinxupquote{jams.tsv}}.  Place this file in a folder where you can access it with Python and pandas.  It contains every user’s “jams” from 2011\sphinxhyphen{}2015.
+
+\item {} 
+Write some code to load into a pandas Series the full set of \sphinxstyleemphasis{unique} user IDs in that file.  That is, do not include any user more than once in the series.  (This code may be slow to run, because the file is large.)  This step is asking for \sphinxstyleemphasis{just the user IDs,} not any jam or song data.
+
+\item {} 
+Use the \sphinxcode{\sphinxupquote{sample()}} method in pandas Series objects to select a random subset of the users to work with, so that we don’t have to deal with the entire jams file, which would take a long time to do computations with.  Include at least 1000 in your sample, to get a sufficient representation of the full dataset.  I chose 2000 in my own work, but later computations will get much slower if you go beyond about 2000.
+
+\item {} 
+Write some code to load from the \sphinxcode{\sphinxupquote{jams.tsv}} DataFrame every jam by all the users in your sample.  There are roughly 15 jams per user on average, so you should end up with 15 times as many results as the number of users you chose (about 15,000 to 30,000).
+
+\item {} 
+We need only three columns of the result: user ID, artist, and song title.  Discard all other columns.
+
+\item {} 
+To give a song a unique name string, let’s combine the artist and song title into a single column.  That is, rather than a column with “Don’t Stop Believin’” for song title and “Journey” as artist, create a new column called “song” that contains text like “Don’t Stop Believin’, by Journey”.
+
+\item {} 
+Drop the original title and artist columns so that your final jams DataFrame contains just two columns, user and song.
+
+\item {} 
+Export that DataFrame to a new CSV file that we will analyze in class.
+
+\item {} 
+It should be less than 3MB, so you can email it to your instructor to demonstrate that you have done this prep work.
+
+\end{itemize}
+
+\item {} 
 \sphinxstylestrong{Reading}
 \begin{itemize}
 \item {} 
@@ -8529,8 +8567,6 @@ Chapter 15: Relations as graphs and network analysis
 \end{itemize}
 
 \end{itemize}
-
-(Perhaps more assignments are coming; this section is still incomplete.)
 
 
 \bigskip\hrule\bigskip

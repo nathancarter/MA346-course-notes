@@ -255,11 +255,11 @@
 \contentsline {subsection}{\numberline {18.10.2}Due before next class}{187}{subsection.18.10.2}% 
 \contentsline {section}{\numberline {18.11}Week 11 \sphinxhyphen {} 11/12/2020 \sphinxhyphen {} Relations as matrices}{187}{section.18.11}% 
 \contentsline {subsection}{\numberline {18.11.1}Slides for today}{187}{subsection.18.11.1}% 
-\contentsline {subsection}{\numberline {18.11.2}Due before next class}{187}{subsection.18.11.2}% 
-\contentsline {section}{\numberline {18.12}Week 12 \sphinxhyphen {} 11/19/2020 \sphinxhyphen {} Introduction to machine learning}{187}{section.18.12}% 
-\contentsline {subsection}{\numberline {18.12.1}Slides for today}{187}{subsection.18.12.1}% 
-\contentsline {subsection}{\numberline {18.12.2}Due before next class}{187}{subsection.18.12.2}% 
-\contentsline {section}{\numberline {18.13}Week 13 \sphinxhyphen {} 11/26/2020 \sphinxhyphen {} Thanksgiving break, no class}{187}{section.18.13}% 
+\contentsline {subsection}{\numberline {18.11.2}Due before next class}{188}{subsection.18.11.2}% 
+\contentsline {section}{\numberline {18.12}Week 12 \sphinxhyphen {} 11/19/2020 \sphinxhyphen {} Introduction to machine learning}{188}{section.18.12}% 
+\contentsline {subsection}{\numberline {18.12.1}Slides for today}{188}{subsection.18.12.1}% 
+\contentsline {subsection}{\numberline {18.12.2}Due before next class}{188}{subsection.18.12.2}% 
+\contentsline {section}{\numberline {18.13}Week 13 \sphinxhyphen {} 11/26/2020 \sphinxhyphen {} Thanksgiving break, no class}{188}{section.18.13}% 
 \contentsline {section}{\numberline {18.14}Week 14 \sphinxhyphen {} 12/3/2020 \sphinxhyphen {} Final Exam Review and Final Project Workshop}{188}{section.18.14}% 
 \contentsline {chapter}{\numberline {19}Big Cheat Sheet}{189}{chapter.19}% 
 \contentsline {section}{\numberline {19.1}Before Week 2: Review of CS230}{189}{section.19.1}% 
