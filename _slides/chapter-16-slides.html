@@ -13206,6 +13206,271 @@ a.anchor-link {
 
 </div>
 </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Reviewing-the-chapter">Reviewing the chapter<a class="anchor-link" href="#Reviewing-the-chapter">&#182;</a></h2><p>In the course notes, we discussed a recommender system, which takes as input a user's preferences about past products (movies, in the chapter) and recommends new products based on those preferences.</p>
+<p><em>Question 1.</em> We stored previous users' preferences in a matrix for reference in helping make recommendations.  <strong>What were the row and column headings in our preferences matrix?</strong>  (Not the specific entries, of course, but what real-world groups did they represent?)</p>
+<table>
+<thead><tr>
+<th></th>
+<th>?</th>
+<th>?</th>
+<th>?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>?</strong></td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>?</strong></td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>?</strong></td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Reviewing-the-chapter">Reviewing the chapter<a class="anchor-link" href="#Reviewing-the-chapter">&#182;</a></h2><p>When a new user arrived, we needed their preferences as an input to our recommendation algorithm.</p>
+<p><em>Question 2.</em> <strong>In what format did we expect/store those preferences?</strong></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Reviewing-the-chapter">Reviewing the chapter<a class="anchor-link" href="#Reviewing-the-chapter">&#182;</a></h2><p>We used matrix multiplication (written in Python with the <code>@</code> symbol) to "combine" the preferences matrix with the new user's preferences, as in <code>prefs_matrix @ new_user_prefs</code>.</p>
+<p><em>Question 3.</em>  <strong>What type of result did this create?</strong>  (The specific values are not important, but what kind of object is it, what shape, etc.?)</p>
+$$ \text{prefs_matrix @ new_user_prefs}=\left[\begin{array}{ccc}1&amp;0&amp;0\\0&amp;1&amp;1\\1&amp;0&amp;1\end{array}\right]\left[\begin{array}{c}1\\0\\0\end{array}\right]=\text{?} $$
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Reviewing-the-chapter">Reviewing the chapter<a class="anchor-link" href="#Reviewing-the-chapter">&#182;</a></h2><p><em>Question 4.</em>  <strong>Why did we normalize the rows of the preferences matrix?</strong></p>
+<p><em>Question 5.</em>  <strong>What does it mean to normalize the row of a matrix?</strong></p>
+<p><em>Question 6.</em>  <strong>When we had a perfectly good user preferences matrix, with precise data from each user, why did we choose to replace it with an approximation?</strong></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="About-the-preparatory-homework">About the preparatory homework<a class="anchor-link" href="#About-the-preparatory-homework">&#182;</a></h2><p>Recall that you did your work in two phases:</p>
+<ol>
+<li>Sample a subset of all users of the This Is My Jam archive.</li>
+<li>Get all "jams" associated with any user in your subset.</li>
+</ol>
+<p>Why do you think the instructions were explicitly split into those two steps?  Why couldn't we just randomly sample jams from the overall data set in just one step instead?</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Today's-exercise">Today's exercise<a class="anchor-link" href="#Today's-exercise">&#182;</a></h2><p>In class today we'll be repeating the example from <a href="../_build/html/chapter-16-matrices.html">the Chapter 16 notes</a>, but with a real dataset (the songs data you prepared for class today).</p>
+<p>Our schedule will be like this, working in groups:</p>
+<ol>
+<li>Create and approximate a normalized preferences matrix from the data you prepared</li>
+<li>Take the middle-of-class break</li>
+<li>Apply our approximation to our own individual musical tastes</li>
+<li>Sample the resulting song recommendations and assess whether they're any good!</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Before-we-begin">Before we begin<a class="anchor-link" href="#Before-we-begin">&#182;</a></h2><p>You will probably want to do today's work in a new Jupyter notebook or Python script, beginning by importing the CSV file you prepared for class today, <code>jam-sample.csv</code>.</p>
+<h2 id="Step-1:-Create-an-adjacency-matrix">Step 1: Create an adjacency matrix<a class="anchor-link" href="#Step-1:-Create-an-adjacency-matrix">&#182;</a></h2><p>Convert the edge list you created for today into an adjacency matrix, as described in <a href="../_build/html/chapter-16-matrices.html#pivoting-an-edge-list">this section of the chapter notes</a>.</p>
+<p>As a quick check, you can compute <code>your_matrix.shape</code> and verify that</p>
+<ol>
+<li>the number of rows is between 1000 and 2000, however many users you chose to sample, and</li>
+<li>the number of columns is between 15000 and 30000, however many songs those users happened to like.</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Step-2:-Normalize-the-rows">Step 2: Normalize the rows<a class="anchor-link" href="#Step-2:-Normalize-the-rows">&#182;</a></h2><p>Normalize the rows of your adjacency matrix, as described in <a href="../_build/html/chapter-16-matrices.html#normalizing-rows">this section of the chapter notes</a>.</p>
+<p>You can verify that this worked by computing the norms of the rows again after you've done the work, and all should be almost exactly 1.0.  (If our computers were perfect, they'd all be exactly 1.0, but there is some slight imprecision in using any finite computing device.)</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Step-3:-Compute-the-SVD">Step 3: Compute the SVD<a class="anchor-link" href="#Step-3:-Compute-the-SVD">&#182;</a></h2><p>The way we've chosen to create an approximation of our adjacency matrix is using the Singular Value Decomposition (SVD) introduced in the course notes.</p>
+<p>Create the SVD for your matrix, using the technique from <a href="../_build/html/chapter-16-matrices.html#the-svd">this section of the chapter notes</a>.</p>
+<p>Once you've done so, you can check to see if your results make sense by computing the shapes of your $U$, $\Sigma$, and $V$ matrices.</p>
+<ol>
+<li><code>U.shape</code> should be $n\times n$ for some value of $n$ in the range 1000-2000, the number of rows in your original preferences matrix.</li>
+<li><code>V.shape</code> should be $m\times m$ for some value of $m$ in the range 15000-30000, the number of columns in your original preferences matrix.</li>
+<li><code>Σ.shape</code> should be a single number, the same $n$ value from <code>U.shape</code>.</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Step-4:-Prepare-the-$\rho$-function">Step 4: Prepare the $\rho$ function<a class="anchor-link" href="#Step-4:-Prepare-the-$\rho$-function">&#182;</a></h2><p>In <a href="../_build/html/chapter-16-matrices.html#measuring-the-quality-of-the-approximation">this section of the chapter notes</a>, we learned how to write a function $\rho$ that takes as input the number of singular values we plan to remove, and it lets us know the error level of the resulting approximation.</p>
+<p>Bring that function into your work and verify that you can run it and it produces sensible results.  Examples:</p>
+<ul>
+<li><code>ρ(0)</code> should give 0 (no error if we remove nothing)</li>
+<li><code>ρ(1)</code> should give a very small number</li>
+<li><code>ρ(1000)</code> (or whatever your $n$ value is) should give a value close to 1.0</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Step-5:-Evaluate-$\rho$-on-many-possible-inputs">Step 5: Evaluate $\rho$ on many possible inputs<a class="anchor-link" href="#Step-5:-Evaluate-$\rho$-on-many-possible-inputs">&#182;</a></h2><p>Create a table of $\rho$ values, showing $\rho(i)$ for various $i$ between 1 and $n$.  Python's <code>range()</code> function can be useful here, especially since its third parameter can create ranges with large jumps.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1001</span><span class="p">,</span> <span class="mi">100</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 101, 201, 301, 401, 501, 601, 701, 801, 901]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Choose a value for $i$ that you will use going forward; choose one that keeps the error level below 0.5.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Step-6:-Approximate-the-preferences-matrix">Step 6: Approximate the preferences matrix<a class="anchor-link" href="#Step-6:-Approximate-the-preferences-matrix">&#182;</a></h2><p>In <a href="../_build/html/chapter-16-matrices.html#choosing-which-approximation-to-use">this section of the chapter notes</a>, we saw code for creating an approximate version of the preferences matrix, by dropping the $i$ lowest singular values.</p>
+<p>As a quick check, if you compute the shape of the resulting matrix, it should be the same as the shape of the original preferences matrix.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Break">Break<a class="anchor-link" href="#Break">&#182;</a></h2><p>We'll take our 10-minute break at this point.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Step-7:-Creating-a-preferences-vector">Step 7: Creating a preferences vector<a class="anchor-link" href="#Step-7:-Creating-a-preferences-vector">&#182;</a></h2><p>We'll want to be able to create realistic preferences vectors about the songs in our dataset.  Recall that a preferences vector is mostly zeros, but has a few ones to indicate which songs the user liked.</p>
+<ol>
+<li>Create a function that takes some text as input and searches all song names in our matrix, returning the songs that contain the given text, and their corresponding column indices.</li>
+<li>Try your function out: Search for some song or artist names that you like until you have found 5 of them in our data set.  Write down the column index for each.</li>
+<li>Create a function that takes a list of column indices and creates a song preferences vector from it.  Recall that such a vector is a pandas Series whose index is all the song names and that contains mostly zeros, but ones in the indices you specify.</li>
+<li>Create the song preferences vector from your chosen five songs.</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Step-8:-Finding-users-like-you">Step 8: Finding users like you<a class="anchor-link" href="#Step-8:-Finding-users-like-you">&#182;</a></h2><p>Recall that we can compute how similar your preferences are to those of the users in our dataset with a single matrix multiplication.</p>
+<ol>
+<li>If your approximated preferences matrix is called <code>A</code> and your preferences vector is called <code>pv</code>, then compute <code>A @ pv</code>.<ul>
+<li>If you encounter an error, it is probably because the size or index of your preferences vector is incorrect; check the previous slide to be sure you have constructed it correctly.</li>
+<li>You may also want to check to verify that the result of this computation is a pandas Series associating each user from your <code>jam-sample.csv</code> file with a number that represents their similarity to your preferences.</li>
+</ul>
+</li>
+<li>Compute just the top 1% or 0.5% of those users based on the similarity scores.</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Step-9:-Finding-songs-you-might-like">Step 9: Finding songs you might like<a class="anchor-link" href="#Step-9:-Finding-songs-you-might-like">&#182;</a></h2><p>Now that we know users that have your preferences, let's see what songs they like.  These will be your recommendations.</p>
+<ol>
+<li>Sum the preference vectors of all the users you selected in the previous step.  This will give a single pandas Series associating each song with a relevance score.</li>
+<li>Sort the result and take the top 25 values.  These are your song recommendations!</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Step-10:-The-fun-part">Step 10: The fun part<a class="anchor-link" href="#Step-10:-The-fun-part">&#182;</a></h2><p>Create a playlist (e.g., with Spotify, Apple Music, etc.) from your 25 song recommendations.</p>
+<p>Shuffle play.</p>
+<p>How did the recommender system do?</p>
+<p>Be ready to tell us at the end of class!</p>
+
+</div>
+</div>
 </div></section></section>
 </div>
 </div>
