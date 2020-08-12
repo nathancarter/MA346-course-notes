@@ -1,24 +1,28 @@
 - file: intro.ipynb
   numbered: true
-- file: chapter-1-intro-to-data-science.ipynb
-- file: chapter-2-mathematical-foundations.ipynb
-- file: chapter-3-jupyter.ipynb
-- file: chapter-4-review-of-python-and-pandas.ipynb
-- file: chapter-5-before-and-after.ipynb
-- file: chapter-6-single-table-verbs.ipynb
-- file: chapter-7-abstraction.ipynb
-- file: chapter-8-version-control.ipynb
-- file: chapter-9-math-and-stats.ipynb
-- file: chapter-10-visualization.ipynb
-- file: chapter-11-processing-rows.ipynb
-- file: chapter-12-concat-and-merge.ipynb
-- file: chapter-13-etl.ipynb
-- file: chapter-14-dashboards.ipynb
-- file: chapter-15-networks.ipynb
-- file: chapter-16-matrices.ipynb
-- file: chapter-17-machine-learning.ipynb
-- file: course-schedule.ipynb
-- file: big-cheat-sheet.ipynb
-- file: anaconda-installation.md
-- file: vs-code-installation.md
-- file: GB213-review-in-Python.ipynb
+- part: Notes
+  chapters:
+  - file: chapter-1-intro-to-data-science.ipynb
+  - file: chapter-2-mathematical-foundations.ipynb
+  - file: chapter-3-jupyter.ipynb
+  - file: chapter-4-review-of-python-and-pandas.ipynb
+  - file: chapter-5-before-and-after.ipynb
+  - file: chapter-6-single-table-verbs.ipynb
+  - file: chapter-7-abstraction.ipynb
+  - file: chapter-8-version-control.ipynb
+  - file: chapter-9-math-and-stats.ipynb
+  - file: chapter-10-visualization.ipynb
+  - file: chapter-11-processing-rows.ipynb
+  - file: chapter-12-concat-and-merge.ipynb
+  - file: chapter-13-etl.ipynb
+  - file: chapter-14-dashboards.ipynb
+  - file: chapter-15-networks.ipynb
+  - file: chapter-16-matrices.ipynb
+  - file: chapter-17-machine-learning.ipynb
+- part: Appendices
+  chapters:
+  - file: course-schedule.ipynb
+  - file: big-cheat-sheet.ipynb
+  - file: anaconda-installation.md
+  - file: vs-code-installation.md
+  - file: GB213-review-in-Python.ipynb
