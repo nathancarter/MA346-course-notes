@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.5.8)  12 AUG 2020 13:22
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.5.8)  12 AUG 2020 13:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1406,12 +1406,10 @@ File: chapter-15-networks_43_0.png Graphic file (type bmp)
 
 ]
 Chapter 16.
-[177] [178] [179] [180] [181]
-File: blurring.png Graphic file (type bmp)
-<blurring.png>
- [182] [183] [184] [185]
+[177] [178] [179] [180] [181] [182] [183] [184]
 File: svd-step-0.png Graphic file (type bmp)
 <svd-step-0.png>
+ [185]
 File: svd-10-steps.png Graphic file (type bmp)
 <svd-10-steps.png>
  [186] [187] [188]
@@ -1451,12 +1449,12 @@ File: GB213-review-in-Python_26_0.png Graphic file (type bmp)
 File: GB213-review-in-Python_45_0.png Graphic file (type bmp)
 <GB213-review-in-Python_45_0.png>
  [243] (./book.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 12104.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 12098.
  [244]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 12104.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 12098.
  (./book.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 12104.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 12104
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 12098.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 12098
 .
 Package rerunfilecheck Info: File `book.out' has not changed.
 (rerunfilecheck)             Checksum: 998153500625ED08C7624C3139559999.
@@ -1466,10 +1464,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 25163 strings out of 492916
- 480830 string characters out of 6133346
+ 25159 strings out of 492916
+ 480769 string characters out of 6133346
  779696 words of memory out of 5000000
- 28843 multiletter control sequences out of 15000+600000
+ 28840 multiletter control sequences out of 15000+600000
  540988 words of font info for 107 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  41i,20n,79p,913b,506s stack positions out of 5000i,500n,10000p,200000b,80000s

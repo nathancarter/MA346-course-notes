@@ -229,8 +229,8 @@
 \contentsline {section}{\numberline {16.6}Are we done?}{181}{section.16.6}% 
 \contentsline {subsection}{\numberline {16.6.1}We could be done now!}{181}{subsection.16.6.1}% 
 \contentsline {subsection}{\numberline {16.6.2}Why we approximate}{182}{subsection.16.6.2}% 
-\contentsline {section}{\numberline {16.7}The Singular Value Decomposition}{183}{section.16.7}% 
-\contentsline {subsection}{\numberline {16.7.1}Matrices as actions}{183}{subsection.16.7.1}% 
+\contentsline {section}{\numberline {16.7}The Singular Value Decomposition}{182}{section.16.7}% 
+\contentsline {subsection}{\numberline {16.7.1}Matrices as actions}{182}{subsection.16.7.1}% 
 \contentsline {subsection}{\numberline {16.7.2}The SVD}{183}{subsection.16.7.2}% 
 \contentsline {subsection}{\numberline {16.7.3}Creating an approximation}{184}{subsection.16.7.3}% 
 \contentsline {subsection}{\numberline {16.7.4}Measuring the quality of the approximation}{185}{subsection.16.7.4}% 
