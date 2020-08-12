@@ -84,7 +84,12 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="current nav sidenav_l1">
+  <p class="caption">
+ <span class="caption-text">
+  Notes
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-1-intro-to-data-science.html">
    1. Introduction to Data Science
@@ -170,29 +175,36 @@
    17. Introduction to Machine Learning
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="course-schedule.html">
-   18. Detailed Course Schedule
+   1. Detailed Course Schedule
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="big-cheat-sheet.html">
-   19. Big Cheat Sheet
+   2. Big Cheat Sheet
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="anaconda-installation.html">
-   20. Anaconda Installation
+   3. Anaconda Installation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vs-code-installation.html">
-   21. VS Code for Python Installation
+   4. VS Code for Python Installation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="GB213-review-in-Python.html">
-   22. GB213 Review in Python
+   5. GB213 Review in Python
   </a>
  </li>
 </ul>
@@ -257,7 +269,7 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -700,7 +712,7 @@
 <img alt="_images/chapter-10-visualization_23_0.png" src="_images/chapter-10-visualization_23_0.png" />
 </div>
 </div>
-<p>Seaborn won’t show you the coefficients of the model, nor measure its goodness of fit; see <a class="reference internal" href="GB213-review-in-Python.html"><span class="doc">the GB213 review</span></a> for how to do those things in Python.</p>
+<p>Seaborn won’t show you the coefficients of the model, nor measure its goodness of fit; see <a class="reference internal" href="GB213-review-in-Python.html"><span class="doc std std-doc">the GB213 review</span></a> for how to do those things in Python.</p>
 <p>Of course, there are some situations where a linear model is reasonable, like the total sales over time plot from earlier.  Seaborn is fussy about using column names only in <code class="docutils literal notranslate"><span class="pre">lmplot</span></code>, so we have to move the index in as an actual column here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -822,7 +834,7 @@
 <div class="section" id="can-t-i-test-a-single-column-for-normality">
 <h2><span class="section-number">10.5. </span>Can’t I test a single column for normality?<a class="headerlink" href="#can-t-i-test-a-single-column-for-normality" title="Permalink to this headline">¶</a></h2>
 <p>I’m so glad you asked!  One of the most common assumptions in statistics is that a dataset comes from an approximately normally distributed population.  We can get a sense of whether that holds true for some dataset we have by plotting the cumulative distribution function (CDF) of the data against that of a normal distribution, as you saw in DataCamp.  (A CDF from data is called an empirical CDF, or ECDF.)</p>
-<p>While DataCamp did it manually, there are libraries that can handle it for you.  <a class="reference internal" href="chapter-9-math-and-stats.html"><span class="doc">The notes for Chapter 9</span></a> suggested a Learning On Your Own activity about Pingouin, a new Python statistics module, which implements QQ plots (quartile-quartile plots), for comparing two cumulative distribution functions.</p>
+<p>While DataCamp did it manually, there are libraries that can handle it for you.  <a class="reference internal" href="chapter-9-math-and-stats.html"><span class="doc std std-doc">The notes for Chapter 9</span></a> suggested a Learning On Your Own activity about Pingouin, a new Python statistics module, which implements QQ plots (quartile-quartile plots), for comparing two cumulative distribution functions.</p>
 <p>Here, we’ll use what you saw in DataCamp.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

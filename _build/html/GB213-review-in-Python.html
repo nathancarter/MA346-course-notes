@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>22. GB213 Review in Python &#8212; MA346 Course Notes</title>
+    <title>5. GB213 Review in Python &#8212; MA346 Course Notes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -41,7 +41,7 @@
     <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/GB213-review-in-Python.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="21. VS Code for Python Installation" href="vs-code-installation.html" />
+    <link rel="prev" title="4. VS Code for Python Installation" href="vs-code-installation.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -83,7 +83,12 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="current nav sidenav_l1">
+  <p class="caption">
+ <span class="caption-text">
+  Notes
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-1-intro-to-data-science.html">
    1. Introduction to Data Science
@@ -169,29 +174,36 @@
    17. Introduction to Machine Learning
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="course-schedule.html">
-   18. Detailed Course Schedule
+   1. Detailed Course Schedule
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="big-cheat-sheet.html">
-   19. Big Cheat Sheet
+   2. Big Cheat Sheet
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="anaconda-installation.html">
-   20. Anaconda Installation
+   3. Anaconda Installation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vs-code-installation.html">
-   21. VS Code for Python Installation
+   4. VS Code for Python Installation
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   22. GB213 Review in Python
+   5. GB213 Review in Python
   </a>
  </li>
 </ul>
@@ -256,87 +268,87 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#we-re-not-covering-everything">
-   22.1. We’re not covering everything
+   5.1. We’re not covering everything
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#discrete-random-variables">
-   22.2. Discrete Random Variables
+   5.2. Discrete Random Variables
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#creating-them">
-     22.2.1. Creating them
+     5.2.1. Creating them
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#computing-probabilities-from-a-discrete-random-variable">
-     22.2.2. Computing probabilities from a Discrete Random Variable
+     5.2.2. Computing probabilities from a Discrete Random Variable
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#generating-values-from-a-discrete-random-variable">
-     22.2.3. Generating values from a Discrete Random Variable
+     5.2.3. Generating values from a Discrete Random Variable
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#computing-statistics-about-a-discrete-random-variable">
-     22.2.4. Computing statistics about a Discrete Random Variable
+     5.2.4. Computing statistics about a Discrete Random Variable
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#plotting-the-distribution-of-a-discrete-random-variable">
-     22.2.5. Plotting the Distribution of a Discrete Random Variable
+     5.2.5. Plotting the Distribution of a Discrete Random Variable
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#continuous-random-variables">
-   22.3. Continuous Random Variables
+   5.3. Continuous Random Variables
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     22.3.1. Creating them
+     5.3.1. Creating them
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#computing-probabilities-from-a-continuous-random-variable">
-     22.3.2. Computing probabilities from a Continuous Random Variable
+     5.3.2. Computing probabilities from a Continuous Random Variable
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#generating-values-from-a-continuous-random-variable">
-     22.3.3. Generating values from a Continuous Random Variable
+     5.3.3. Generating values from a Continuous Random Variable
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#plotting-the-distribution-of-a-continuous-random-variable">
-     22.3.4. Plotting the Distribution of a Continuous Random Variable
+     5.3.4. Plotting the Distribution of a Continuous Random Variable
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#confidence-intervals">
-   22.4. Confidence Intervals
+   5.4. Confidence Intervals
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hypothesis-testing">
-   22.5. Hypothesis Testing
+   5.5. Hypothesis Testing
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#two-sided-test-for-h-0-mu-bar-x">
-     22.5.1. Two-sided test for
+     5.5.1. Two-sided test for
      <span class="math notranslate nohighlight">
       \(H_0:\mu=\bar{x}\)
      </span>
@@ -344,7 +356,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#two-sided-test-for-h-0-bar-x-1-bar-x-2">
-     22.5.2. Two-sided test for
+     5.5.2. Two-sided test for
      <span class="math notranslate nohighlight">
       \(H_0: \bar{x}_1=\bar{x}_2\)
      </span>
@@ -354,34 +366,34 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#linear-regression">
-   22.6. Linear Regression
+   5.6. Linear Regression
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#creating-a-linear-model-of-data">
-     22.6.1. Creating a linear model of data
+     5.6.1. Creating a linear model of data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#visualizing-the-model">
-     22.6.2. Visualizing the model
+     5.6.2. Visualizing the model
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#other-topics">
-   22.7. Other Topics
+   5.7. Other Topics
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#anova">
-     22.7.1. ANOVA
+     5.7.1. ANOVA
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#chi-2-tests">
-     22.7.2.
+     5.7.2.
      <span class="math notranslate nohighlight">
       \(\chi^2\)
      </span>
@@ -401,9 +413,9 @@
               <div>
                 
   <div class="section" id="gb213-review-in-python">
-<h1><span class="section-number">22. </span>GB213 Review in Python<a class="headerlink" href="#gb213-review-in-python" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5. </span>GB213 Review in Python<a class="headerlink" href="#gb213-review-in-python" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="we-re-not-covering-everything">
-<h2><span class="section-number">22.1. </span>We’re not covering everything<a class="headerlink" href="#we-re-not-covering-everything" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1. </span>We’re not covering everything<a class="headerlink" href="#we-re-not-covering-everything" title="Permalink to this headline">¶</a></h2>
 <p>We’re omitting basic probability issues like experiments, sample spaces, discrete probabilities, combinations, and permutations.  At the end we’ll provide links to example topics.  But everything else we’ll cover at least briefly.</p>
 <p>We begin by importing the necessary modules.</p>
 <div class="cell docutils container">
@@ -421,11 +433,11 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="discrete-random-variables">
-<h2><span class="section-number">22.2. </span>Discrete Random Variables<a class="headerlink" href="#discrete-random-variables" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.2. </span>Discrete Random Variables<a class="headerlink" href="#discrete-random-variables" title="Permalink to this headline">¶</a></h2>
 <p>(For continuous random variables, <a class="reference external" href="#continuous-random-variables">see further below</a>.</p>
 <p>Discrete random variables taken on a finite number of different values.  For example, a Bernoulli trial is either 0 or 1 (usually meaning failure and success, respectively).  You can create random variables using <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> as follows.</p>
 <div class="section" id="creating-them">
-<h3><span class="section-number">22.2.1. </span>Creating them<a class="headerlink" href="#creating-them" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.2.1. </span>Creating them<a class="headerlink" href="#creating-them" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">bernoulli</span><span class="p">(</span> <span class="mf">0.25</span> <span class="p">)</span>  <span class="c1"># probability of success</span>
@@ -436,7 +448,7 @@
 </div>
 </div>
 <div class="section" id="computing-probabilities-from-a-discrete-random-variable">
-<h3><span class="section-number">22.2.2. </span>Computing probabilities from a Discrete Random Variable<a class="headerlink" href="#computing-probabilities-from-a-discrete-random-variable" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.2.2. </span>Computing probabilities from a Discrete Random Variable<a class="headerlink" href="#computing-probabilities-from-a-discrete-random-variable" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span> <span class="mi">0</span> <span class="p">),</span> <span class="n">b1</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)</span>  <span class="c1"># stands for &quot;probability mass function&quot;</span>
@@ -452,7 +464,7 @@
 <p>The same code works for any random variable, not just <code class="docutils literal notranslate"><span class="pre">b1</span></code>.</p>
 </div>
 <div class="section" id="generating-values-from-a-discrete-random-variable">
-<h3><span class="section-number">22.2.3. </span>Generating values from a Discrete Random Variable<a class="headerlink" href="#generating-values-from-a-discrete-random-variable" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.2.3. </span>Generating values from a Discrete Random Variable<a class="headerlink" href="#generating-values-from-a-discrete-random-variable" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span> <span class="mi">10</span> <span class="p">)</span>  <span class="c1"># asks for 10 random values (rvs)</span>
@@ -460,7 +472,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0, 1, 0, 0, 0, 0, 0, 0, 1, 1])
 </pre></div>
 </div>
 </div>
@@ -468,7 +480,7 @@
 <p>The same code works for any random variable, not just <code class="docutils literal notranslate"><span class="pre">b1</span></code>.</p>
 </div>
 <div class="section" id="computing-statistics-about-a-discrete-random-variable">
-<h3><span class="section-number">22.2.4. </span>Computing statistics about a Discrete Random Variable<a class="headerlink" href="#computing-statistics-about-a-discrete-random-variable" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.2.4. </span>Computing statistics about a Discrete Random Variable<a class="headerlink" href="#computing-statistics-about-a-discrete-random-variable" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">b1</span><span class="o">.</span><span class="n">var</span><span class="p">(),</span> <span class="n">b1</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>  <span class="c1"># mean, variance, standard deviation</span>
@@ -484,7 +496,7 @@
 <p>The same code works for any random variable, not just <code class="docutils literal notranslate"><span class="pre">b1</span></code>.</p>
 </div>
 <div class="section" id="plotting-the-distribution-of-a-discrete-random-variable">
-<h3><span class="section-number">22.2.5. </span>Plotting the Distribution of a Discrete Random Variable<a class="headerlink" href="#plotting-the-distribution-of-a-discrete-random-variable" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.2.5. </span>Plotting the Distribution of a Discrete Random Variable<a class="headerlink" href="#plotting-the-distribution-of-a-discrete-random-variable" title="Permalink to this headline">¶</a></h3>
 <p>Here’s a function you can use to plot (almost) any discrete probability distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -514,11 +526,11 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="continuous-random-variables">
-<h2><span class="section-number">22.3. </span>Continuous Random Variables<a class="headerlink" href="#continuous-random-variables" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.3. </span>Continuous Random Variables<a class="headerlink" href="#continuous-random-variables" title="Permalink to this headline">¶</a></h2>
 <p>(For discrete random variables, <a class="reference external" href="#discrete-random-variables">see further above</a>.</p>
 <p>Continuous random variables take on an infinite number of different values, sometimes in a certain range (like the uniform distribution on <span class="math notranslate nohighlight">\([0,1]\)</span>, for example) and sometimes over the whole real number line (like the normal distribution, for example).</p>
 <div class="section" id="id1">
-<h3><span class="section-number">22.3.1. </span>Creating them<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.1. </span>Creating them<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># for uniform on the interval [a,b]: use loc=a, scale=b-a</span>
@@ -533,7 +545,7 @@
 </div>
 </div>
 <div class="section" id="computing-probabilities-from-a-continuous-random-variable">
-<h3><span class="section-number">22.3.2. </span>Computing probabilities from a Continuous Random Variable<a class="headerlink" href="#computing-probabilities-from-a-continuous-random-variable" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.2. </span>Computing probabilities from a Continuous Random Variable<a class="headerlink" href="#computing-probabilities-from-a-continuous-random-variable" title="Permalink to this headline">¶</a></h3>
 <p>For a continuous random variable, you cannot compute the probability that it will equal a precise number, because such a probability is always zero.  But you can compute the probability that the value falls within a certain interval on the number line.</p>
 <p>To do so for an interval <span class="math notranslate nohighlight">\([a,b]\)</span>, compute the total probability accumulated up to <span class="math notranslate nohighlight">\(a\)</span> and subtract it from that up to <span class="math notranslate nohighlight">\(b\)</span>, as follows.</p>
 <div class="cell docutils container">
@@ -552,7 +564,7 @@
 <p>The same code works for any continuous random variable, not just <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
 </div>
 <div class="section" id="generating-values-from-a-continuous-random-variable">
-<h3><span class="section-number">22.3.3. </span>Generating values from a Continuous Random Variable<a class="headerlink" href="#generating-values-from-a-continuous-random-variable" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.3. </span>Generating values from a Continuous Random Variable<a class="headerlink" href="#generating-values-from-a-continuous-random-variable" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span> <span class="mi">10</span> <span class="p">)</span>  <span class="c1"># same as for discrete random variables</span>
@@ -560,16 +572,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([102.32699106,  94.81780422,  91.97159539,  97.85827002,
-        95.68276381, 106.53901027, 100.5389472 , 100.37862195,
-        99.29510102, 102.26897018])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 94.22395563,  95.84480775,  99.42675177, 104.249009  ,
+       107.50141932,  97.44272331,  96.45849703,  98.61017231,
+        99.10615245,  97.85552034])
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="plotting-the-distribution-of-a-continuous-random-variable">
-<h3><span class="section-number">22.3.4. </span>Plotting the Distribution of a Continuous Random Variable<a class="headerlink" href="#plotting-the-distribution-of-a-continuous-random-variable" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.4. </span>Plotting the Distribution of a Continuous Random Variable<a class="headerlink" href="#plotting-the-distribution-of-a-continuous-random-variable" title="Permalink to this headline">¶</a></h3>
 <p>Here’s a function you can use to plot the center 99.98% of any continuous probability distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -597,7 +609,7 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="confidence-intervals">
-<h2><span class="section-number">22.4. </span>Confidence Intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4. </span>Confidence Intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this headline">¶</a></h2>
 <p>Recall from GB213 that certain assumptions about normality must hold in order for you to do statistical inference.  We do not cover those here; refer to your GB213 text or notes.</p>
 <p>Here we cover a confidence interval for the sample mean using confidence level <span class="math notranslate nohighlight">\(\alpha\)</span>, which must be between 0 and 1 (typically 0.95).</p>
 <div class="cell docutils container">
@@ -622,12 +634,12 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="hypothesis-testing">
-<h2><span class="section-number">22.5. </span>Hypothesis Testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.5. </span>Hypothesis Testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">¶</a></h2>
 <p>Again, in GB213 you learned what assumptions must hold in order to do a hypothesis test, which I do not review here.</p>
 <p>Let <span class="math notranslate nohighlight">\(H_0\)</span> be the null hypothesis, the currently held belief.  Let <span class="math notranslate nohighlight">\(H_a\)</span> be the alternative, which would result in some change in our beliefs or actions.</p>
 <p>We assume some chosen value <span class="math notranslate nohighlight">\(0\leq\alpha\leq1\)</span>, which is the probability of a Type I error (false positive, finding we should reject <span class="math notranslate nohighlight">\(H_0\)</span> when it’s actually true).</p>
 <div class="section" id="two-sided-test-for-h-0-mu-bar-x">
-<h3><span class="section-number">22.5.1. </span>Two-sided test for <span class="math notranslate nohighlight">\(H_0:\mu=\bar{x}\)</span><a class="headerlink" href="#two-sided-test-for-h-0-mu-bar-x" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.5.1. </span>Two-sided test for <span class="math notranslate nohighlight">\(H_0:\mu=\bar{x}\)</span><a class="headerlink" href="#two-sided-test-for-h-0-mu-bar-x" title="Permalink to this headline">¶</a></h3>
 <p>Say we have a population whose mean <span class="math notranslate nohighlight">\(\mu\)</span> is known to be 10.  We take a sample <span class="math notranslate nohighlight">\(x_1,\ldots,x_n\)</span> and compute its mean, <span class="math notranslate nohighlight">\(\bar{x}\)</span>.  We then ask whether this sample is significantly different from the population at large, that is, is <span class="math notranslate nohighlight">\(\mu=\bar{x}\)</span>?  We can do a two-sided test of <span class="math notranslate nohighlight">\(H_0:\mu=\bar{x}\)</span> as follows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -649,7 +661,7 @@
 <p>The output above says that the data does NOT give us enough information to reject the null hypothesis.  So we should continue to assume that the sample is like the population, and <span class="math notranslate nohighlight">\(\mu=\bar{x}\)</span>.</p>
 </div>
 <div class="section" id="two-sided-test-for-h-0-bar-x-1-bar-x-2">
-<h3><span class="section-number">22.5.2. </span>Two-sided test for <span class="math notranslate nohighlight">\(H_0: \bar{x}_1=\bar{x}_2\)</span><a class="headerlink" href="#two-sided-test-for-h-0-bar-x-1-bar-x-2" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.5.2. </span>Two-sided test for <span class="math notranslate nohighlight">\(H_0: \bar{x}_1=\bar{x}_2\)</span><a class="headerlink" href="#two-sided-test-for-h-0-bar-x-1-bar-x-2" title="Permalink to this headline">¶</a></h3>
 <p>What if we had wanted to do a test for whether two independent samples had the same mean?  We can ask that question as follows.  (Here we assume they have equal variances, but you can turn that assumption off with a third parameter to <code class="docutils literal notranslate"><span class="pre">ttest_ind</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -673,9 +685,9 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="linear-regression">
-<h2><span class="section-number">22.6. </span>Linear Regression<a class="headerlink" href="#linear-regression" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.6. </span>Linear Regression<a class="headerlink" href="#linear-regression" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="creating-a-linear-model-of-data">
-<h3><span class="section-number">22.6.1. </span>Creating a linear model of data<a class="headerlink" href="#creating-a-linear-model-of-data" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.6.1. </span>Creating a linear model of data<a class="headerlink" href="#creating-a-linear-model-of-data" title="Permalink to this headline">¶</a></h3>
 <p>Normally you would have data that you wanted to model.  But in this example notebook, I have to make up some data first.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -747,7 +759,7 @@
 <p>In this case, <span class="math notranslate nohighlight">\(R^2\)</span> would be approximately <span class="math notranslate nohighlight">\(0.895^2\)</span>, or about <span class="math notranslate nohighlight">\(0.801\)</span>.  Thus our model explains about 80.1% of the variability in the data.</p>
 </div>
 <div class="section" id="visualizing-the-model">
-<h3><span class="section-number">22.6.2. </span>Visualizing the model<a class="headerlink" href="#visualizing-the-model" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.6.2. </span>Visualizing the model<a class="headerlink" href="#visualizing-the-model" title="Permalink to this headline">¶</a></h3>
 <p>The Seaborn visualization package provides a handy tool for making scatterplots with linear models overlaid.  The light blue shading is a confidence band we will not cover.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -764,13 +776,13 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="other-topics">
-<h2><span class="section-number">22.7. </span>Other Topics<a class="headerlink" href="#other-topics" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.7. </span>Other Topics<a class="headerlink" href="#other-topics" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="anova">
-<h3><span class="section-number">22.7.1. </span>ANOVA<a class="headerlink" href="#anova" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.7.1. </span>ANOVA<a class="headerlink" href="#anova" title="Permalink to this headline">¶</a></h3>
 <p>Analysis of variance is an optional topic your GB213 class may or may not have covered, depending on scheduling and instructor choices.  If you covered it in GB213 and would like to see how to do it in Python, check out <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.f_oneway.html">the Scipy documentation for <code class="docutils literal notranslate"><span class="pre">f_oneway</span></code></a>.</p>
 </div>
 <div class="section" id="chi-2-tests">
-<h3><span class="section-number">22.7.2. </span><span class="math notranslate nohighlight">\(\chi^2\)</span> Tests<a class="headerlink" href="#chi-2-tests" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.7.2. </span><span class="math notranslate nohighlight">\(\chi^2\)</span> Tests<a class="headerlink" href="#chi-2-tests" title="Permalink to this headline">¶</a></h3>
 <p>Chi-squared (<span class="math notranslate nohighlight">\(\chi^2\)</span>) tests are another optional GB213 topic that your class may or may not have covered.  If you are familiar with it and would like to see how to do it in Python, check out <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chisquare.html">the Scipy documentation for <code class="docutils literal notranslate"><span class="pre">chisquare</span></code></a>.</p>
 </div>
 </div>
@@ -804,7 +816,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="vs-code-installation.html" title="previous page"><span class="section-number">21. </span>VS Code for Python Installation</a>
+    <a class='left-prev' id="prev-link" href="vs-code-installation.html" title="previous page"><span class="section-number">4. </span>VS Code for Python Installation</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

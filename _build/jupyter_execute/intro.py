@@ -30,6 +30,7 @@ This page summarizes the course schedule.  Each day is a link to the appropriate
 :hidden:
 :titlesonly:
 :numbered: 
+:caption: Notes
 
 chapter-1-intro-to-data-science.ipynb
 chapter-2-mathematical-foundations.ipynb
@@ -48,6 +49,15 @@ chapter-14-dashboards.ipynb
 chapter-15-networks.ipynb
 chapter-16-matrices.ipynb
 chapter-17-machine-learning.ipynb
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:numbered: 
+:caption: Appendices
+
 course-schedule.ipynb
 big-cheat-sheet.ipynb
 anaconda-installation.md

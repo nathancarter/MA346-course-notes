@@ -84,7 +84,12 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="current nav sidenav_l1">
+  <p class="caption">
+ <span class="caption-text">
+  Notes
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-1-intro-to-data-science.html">
    1. Introduction to Data Science
@@ -170,29 +175,36 @@
    17. Introduction to Machine Learning
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="course-schedule.html">
-   18. Detailed Course Schedule
+   1. Detailed Course Schedule
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="big-cheat-sheet.html">
-   19. Big Cheat Sheet
+   2. Big Cheat Sheet
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="anaconda-installation.html">
-   20. Anaconda Installation
+   3. Anaconda Installation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vs-code-installation.html">
-   21. VS Code for Python Installation
+   4. VS Code for Python Installation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="GB213-review-in-Python.html">
-   22. GB213 Review in Python
+   5. GB213 Review in Python
   </a>
  </li>
 </ul>
@@ -257,7 +269,7 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -455,12 +467,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.13357701, 0.3890798 , 0.99408203, 0.79444074, 0.74498198,
-       0.88772501, 0.68545851, 0.60050064, 0.29784012, 0.69540591,
-       0.59297124, 0.04855854, 0.02889468, 0.87347868, 0.75843782,
-       0.60745941, 0.48110596, 0.87144234, 0.57633283, 0.23537685,
-       0.93272212, 0.31268243, 0.14649538, 0.29537618, 0.63773067,
-       0.94904881, 0.56923208, 0.11248817, 0.73729022, 0.69958347])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.0827237 , 0.69806269, 0.05344937, 0.18305991, 0.1624233 ,
+       0.39158937, 0.57449001, 0.32524394, 0.04881083, 0.70365403,
+       0.96348984, 0.38567284, 0.01956414, 0.21700363, 0.88452843,
+       0.02372681, 0.02242204, 0.82979792, 0.98191601, 0.81267343,
+       0.40981124, 0.91364753, 0.95288001, 0.41932472, 0.97649249,
+       0.53376843, 0.62018058, 0.16880463, 0.37736526, 0.2546386 ])
 </pre></div>
 </div>
 </div>
@@ -472,9 +484,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.13, 0.39, 0.99, 0.79, 0.74, 0.89, 0.69, 0.6 , 0.3 , 0.7 , 0.59,
-       0.05, 0.03, 0.87, 0.76, 0.61, 0.48, 0.87, 0.58, 0.24, 0.93, 0.31,
-       0.15, 0.3 , 0.64, 0.95, 0.57, 0.11, 0.74, 0.7 ])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.08, 0.7 , 0.05, 0.18, 0.16, 0.39, 0.57, 0.33, 0.05, 0.7 , 0.96,
+       0.39, 0.02, 0.22, 0.88, 0.02, 0.02, 0.83, 0.98, 0.81, 0.41, 0.91,
+       0.95, 0.42, 0.98, 0.53, 0.62, 0.17, 0.38, 0.25])
 </pre></div>
 </div>
 </div>
@@ -486,12 +498,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1.14290928, 1.4756223 , 2.70224263, 2.2132029 , 2.10640349,
-       2.42959605, 1.98468162, 1.82303126, 1.34694642, 2.00452257,
-       1.80935648, 1.04975682, 1.02931618, 2.3952286 , 2.13493845,
-       1.83576155, 1.61786271, 2.39035606, 1.77950071, 1.26538554,
-       2.54141783, 1.36708732, 1.15776958, 1.34363172, 1.89218202,
-       2.58325133, 1.76690968, 1.11905902, 2.09026368, 2.0129141 ])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1.08624164, 2.00985521, 1.05490358, 1.20088636, 1.17635809,
+       1.47933013, 1.77622444, 1.3843683 , 1.0500217 , 2.02112448,
+       2.6208268 , 1.47060347, 1.01975677, 1.24234861, 2.42184205,
+       1.02401053, 1.0226753 , 2.29285536, 2.66956626, 2.25392565,
+       1.50653338, 2.49340071, 2.59316726, 1.52093416, 2.65512701,
+       1.70534669, 1.85926375, 1.18388882, 1.45843692, 1.28999534])
 </pre></div>
 </div>
 </div>
@@ -503,14 +515,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1.78428181e-02, 1.51383089e-01, 9.88199090e-01, 6.31136092e-01,
-       5.54998158e-01, 7.88055694e-01, 4.69853366e-01, 3.60601020e-01,
-       8.87087358e-02, 4.83589381e-01, 3.51614895e-01, 2.35793178e-03,
-       8.34902494e-04, 7.62964998e-01, 5.75227923e-01, 3.69006932e-01,
-       2.31462949e-01, 7.59411745e-01, 3.32159526e-01, 5.54022603e-02,
-       8.69970561e-01, 9.77703025e-02, 2.14608953e-02, 8.72470903e-02,
-       4.06700411e-01, 9.00693643e-01, 3.24025156e-01, 1.26535877e-02,
-       5.43596871e-01, 4.89417034e-01])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([6.84321053e-03, 4.87291513e-01, 2.85683488e-03, 3.35109321e-02,
+       2.63813298e-02, 1.53342237e-01, 3.30038774e-01, 1.05783617e-01,
+       2.38249694e-03, 4.95128993e-01, 9.28312674e-01, 1.48743540e-01,
+       3.82755569e-04, 4.70905750e-02, 7.82390538e-01, 5.62961539e-04,
+       5.02747949e-04, 6.88564595e-01, 9.64159047e-01, 6.60438099e-01,
+       1.67945250e-01, 8.34751804e-01, 9.07980309e-01, 1.75833223e-01,
+       9.53537589e-01, 2.84908735e-01, 3.84623949e-01, 2.84950019e-02,
+       1.42404540e-01, 6.48408187e-02])
 </pre></div>
 </div>
 </div>
@@ -588,8 +600,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 7.54310033, 17.32976273, 70.34117419, 59.86102229, 10.94870359,
-       25.58717388, 27.01528819, 28.12996672, 37.92857177, 71.73230538])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([45.51745699, 66.58053792, 70.47264518, 37.17439357, 28.92914115,
+       23.05927427, 17.88746452, 85.41478089, 82.27248346, 61.97423341])
 </pre></div>
 </div>
 </div>
@@ -603,9 +615,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([4.85609174e+01, 1.28544573e+01, 2.13797558e+01, 7.57132393e+01,
-       1.42018826e+01, 1.80385257e+01, 4.28740730e-02, 2.44621689e+01,
-       1.27588969e+01, 5.32780989e+01])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([58.15801562, 82.49038895, 81.56006929, 52.013324  , 12.08138217,
+       50.72877908, 16.90631669, 76.50969099, 83.74210858, 61.69545433])
 </pre></div>
 </div>
 </div>
@@ -633,7 +644,7 @@
 </div>
 <div class="section" id="gb213-in-python">
 <h2><span class="section-number">9.5. </span>GB213 in Python<a class="headerlink" href="#gb213-in-python" title="Permalink to this headline">¶</a></h2>
-<p>You can refer at any time to one of the appendices in these course notes, a <a class="reference internal" href="GB213-review-in-Python.html"><span class="doc">review of GB213, but in Python</span></a>.</p>
+<p>You can refer at any time to one of the appendices in these course notes, a <a class="reference internal" href="GB213-review-in-Python.html"><span class="doc std std-doc">review of GB213, but in Python</span></a>.</p>
 <p>Topics covered there:</p>
 <ul class="simple">
 <li><p>Discrete and continuous random variables</p>

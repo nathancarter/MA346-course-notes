@@ -4,10 +4,10 @@ This include all topics covered and all assignments given and when they are due.
 
 ## Week 1 - 9/3/2020 - Introduction and mathematical foundations
 
-### Slides for today
+### Content
 
- * <a href='../../_slides/chapter-1-slides.html'>Chapter 1: Introduction to data science</a>
- * <a href='../../_slides/chapter-2-slides.html'>Chapter 2: Mathematical foundations</a>
+ * Chapter 1: Introduction to data science - [reading](chapter-1-intro-to-data-science) and <a href='../../_slides/chapter-1-slides.html'>slides</a>
+ * Chapter 2: Mathematical foundations - [reading](chapter-2-mathematical-foundations) and <a href='../../_slides/chapter-2-slides.html'>slides</a>
 
 ### Due before next class
 
@@ -34,11 +34,10 @@ This include all topics covered and all assignments given and when they are due.
 
 ## Week 2 - 9/10/2020 - Jupyter and a review of Python and pandas
 
-### Slides for today
+### Content
 
- * <a href='../../_slides/chapter-3-slides.html'>Chapter 3: Computational notebooks (Jupyter)</a>
-
-(There are no slides for Chapter 4, because it was just a review of CS230.)
+ * Chapter 3: Computational notebooks (Jupyter) - [reading](chapter-3-jupyter) and <a href='../../_slides/chapter-3-slides.html'>slides</a>
+ * Chapter 4: Review of Python and pandas - [reading](chapter-4-review-of-python-and-pandas), but no slides
 
 ### Due before next class
 
@@ -54,10 +53,10 @@ This include all topics covered and all assignments given and when they are due.
 
 ## Week 3 - 9/17/2020 - Before and after, single-table verbs
 
-### Slides for today
+### Content
 
- * <a href='../../_slides/chapter-5-slides.html'>Chapter 5: Before and after, in mathematics and communication</a>
- * <a href='../../_slides/chapter-6-slides.html'>Chapter 6: Pandas single-table verbs</a>
+ * Chapter 5: Before and after, in mathematics and communication - [reading](chapter-5-before-and-after) and <a href='../../_slides/chapter-5-slides.html'>slides</a>
+ * Chapter 6: Pandas single-table verbs - [reading](chapter-6-single-table-verbs) and <a href='../../_slides/chapter-6-slides.html'>slides</a>
 
 ### Due before next class
 
@@ -79,10 +78,10 @@ This include all topics covered and all assignments given and when they are due.
 
 ## Week 4 - 9/24/2020 - Abstraction and version control
 
-### Slides for today
+### Content
 
- * <a href='../../_slides/chapter-7-slides.html'>Chapter 7: Abstraction in mathematics and computing</a>
- * <a href='../../_slides/chapter-8-slides.html'>Chapter 8: Version control and GitHub</a>
+ * Chapter 7: Abstraction in mathematics and computing - [reading](chapter-7-abstraction) and <a href='../../_slides/chapter-7-slides.html'>slides</a>
+ * Chapter 8: Version control and GitHub - [reading](chapter-8-version-control) and <a href='../../_slides/chapter-8-slides.html'>slides</a>
 
 ### Due before next class
 
@@ -102,10 +101,10 @@ This include all topics covered and all assignments given and when they are due.
 
 ## Week 5 - 10/1/2020 - Math and stats in Python, plus Visualization
 
-### Slides for today
+### Content
 
- * <a href='../../_slides/chapter-9-slides.html'>Chapter 9: Math and stats in Python</a>
- * <a href='../../_slides/chapter-10-slides.html'>Chapter 10: New visualization tools</a>
+ * Chapter 9: Math and stats in Python - [reading](chapter-9-math-and-stats) and <a href='../../_slides/chapter-9-slides.html'>slides</a>
+ * Chapter 10: New visualization tools - [reading](chapter-10-visualization) and <a href='../../_slides/chapter-10-slides.html'>slides</a>
 
 ### Due before next class
 
@@ -130,9 +129,9 @@ This include all topics covered and all assignments given and when they are due.
 
 ## Week 6 - 10/8/2020 - Processing the Rows of a `DataFrame`
 
-### Slides for today
+### Content
 
- * <a href='../../_slides/chapter-11-slides.html'>Chapter 11: Processing the rows of a `DataFrame`</a>
+ * Chapter 11: Processing the rows of a `DataFrame` - [reading](chapter-11-processing-rows) and <a href='../../_slides/chapter-11-slides.html'>slides</a>
 
 ### Due before next class
 
@@ -146,9 +145,9 @@ This include all topics covered and all assignments given and when they are due.
 
 ## Week 7 - 10/15/2020 - Concatenation and Merging
 
-### Slides for today
+### Content
 
- * <a href='../../_slides/chapter-12-slides.html'>Chapter 12: Concatenation and Merging</a>
+ * Chapter 12: Concatenation and Merging - [reading](chapter-12-concat-and-merge) and <a href='../../_slides/chapter-12-slides.html'>slides</a>
 
 ### Due before next class
 
@@ -165,9 +164,9 @@ It's a light week, because you just did Project 1 and deserve a little time to r
 
 ## Week 8 - 10/22/2020 - Miscellaneous Munging Methods (ETL)
 
-### Slides for today
+### Content
 
- * <a href='../../_slides/chapter-13-slides.html'>Chapter 13: Miscellaneous Munging Methods (ETL)</a>
+ * Chapter 13: Miscellaneous Munging Methods (ETL) - [reading](chapter-13-etl) and <a href='../../_slides/chapter-13-slides.html'>slides</a>
 
 ### Due before next class
 
@@ -189,9 +188,9 @@ It's a light week, because you just did Project 1 and deserve a little time to r
 
 ## Week 9 - 10/29/2020 - Dashboards
 
-### Slides for today
+### Content
 
- * <a href='../../_slides/chapter-14-slides.html'>Chapter 14: Dashboards</a>
+ * Chapter 14: Dashboards - [reading](chapter-14-dashboards) and <a href='../../_slides/chapter-14-slides.html'>slides</a>
 
 ### Due before next class
 
@@ -213,9 +212,9 @@ It's a light week, because you just did Project 1 and deserve a little time to r
 
 ## Week 10 - 11/5/2020 - Relations, graphs, and networks
 
-### Slides for today
+### Content
 
- * <a href='../../_slides/chapter-15-slides.html'>Chapter 15: Relations as graphs and network analysis</a>
+ * Chapter 15: Relations as graphs and network analysis - [reading](chapter-15-networks) and <a href='../../_slides/chapter-15-slides.html'>slides</a>
 
 ### Due before next class
 
@@ -229,7 +228,7 @@ It's a light week, because you just did Project 1 and deserve a little time to r
     * We need only three columns of the result: user ID, artist, and song title.  Discard all other columns.
     * To give a song a unique name string, let's combine the artist and song title into a single column.  That is, rather than a column with "Don't Stop Believin'" for song title and "Journey" as artist, create a new column called "song" that contains text like "Don't Stop Believin', by Journey".
     * Drop the original title and artist columns so that your final jams DataFrame contains just two columns, user and song.
-    * Export that DataFrame to a new CSV file that we will analyze in class.
+    * Export that DataFrame to a new CSV file that we will analyze in class.  Call it `jam-sample.csv`.
     * It should be less than 3MB, so you can email it to your instructor to demonstrate that you have done this prep work.
  * **Reading**
     * [Chapter 16: Relations as matrices](chapter-16-matrices)
@@ -238,9 +237,9 @@ It's a light week, because you just did Project 1 and deserve a little time to r
 
 ## Week 11 - 11/12/2020 - Relations as matrices
 
-### Slides for today
+### Content
 
- * <a href='../../_slides/chapter-16-slides.html'>Chapter 15: Relations as matrices</a>
+ * Chapter 15: Relations as matrices - [reading](chapter-16-matrices) and <a href='../../_slides/chapter-16-slides.html'>slides</a>
 
 ### Due before next class
 
@@ -254,9 +253,9 @@ It's a light week, because you just did Project 1 and deserve a little time to r
 
 ## Week 12 - 11/19/2020 - Introduction to machine learning
 
-### Slides for today
+### Content
 
- * <a href='../../_slides/chapter-17-slides.html'>Chapter 17: Introduction to machine learning</a>
+ * Chapter 17: Introduction to machine learning - [reading](chapter-17-machine-learning) and <a href='../../_slides/chapter-17-slides.html'>slides</a>
 
 ### Due before next class
 

@@ -52,7 +52,7 @@
 <meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/chapter-16-matrices.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Relations as Matrices" />
-<meta property="og:description" content="Relations as Matrices  &lt;a href=&#34;../../_slides/chapter-16-slides.html&#34;&gt;See also the slides that summarize a portion of this content.&lt;/a&gt;  Warning  This chapter h" />
+<meta property="og:description" content="Relations as Matrices  &lt;a href=&#34;../../_slides/chapter-16-slides.html&#34;&gt;See also the slides that summarize a portion of this content.&lt;/a&gt;  Thanks to Jeff Leader’s" />
 <meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -84,7 +84,12 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="current nav sidenav_l1">
+  <p class="caption">
+ <span class="caption-text">
+  Notes
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-1-intro-to-data-science.html">
    1. Introduction to Data Science
@@ -170,29 +175,36 @@
    17. Introduction to Machine Learning
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="course-schedule.html">
-   18. Detailed Course Schedule
+   1. Detailed Course Schedule
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="big-cheat-sheet.html">
-   19. Big Cheat Sheet
+   2. Big Cheat Sheet
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="anaconda-installation.html">
-   20. Anaconda Installation
+   3. Anaconda Installation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vs-code-installation.html">
-   21. VS Code for Python Installation
+   4. VS Code for Python Installation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="GB213-review-in-Python.html">
-   22. GB213 Review in Python
+   5. GB213 Review in Python
   </a>
  </li>
 </ul>
@@ -257,10 +269,101 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-matrices-for-relations-other-than-networks">
+   16.1. Using matrices for relations other than networks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pivoting-an-edge-list">
+   16.2. Pivoting an edge list
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recommender-systems">
+   16.3. Recommender systems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-tiny-amount-of-linear-algebra">
+   16.4. A tiny amount of linear algebra
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normalizing-rows">
+   16.5. Normalizing rows
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#are-we-done">
+   16.6. Are we done?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#we-could-be-done-now">
+     16.6.1. We could be done now!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-we-approximate">
+     16.6.2. Why we approximate
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-singular-value-decomposition">
+   16.7. The Singular Value Decomposition
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrices-as-actions">
+     16.7.1. Matrices as actions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-svd">
+     16.7.2. The SVD
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-an-approximation">
+     16.7.3. Creating an approximation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measuring-the-quality-of-the-approximation">
+     16.7.4. Measuring the quality of the approximation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-the-approximations">
+     16.7.5. Visualizing the approximations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choosing-which-approximation-to-use">
+     16.7.6. Choosing which approximation to use
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#applying-our-approximation">
+   16.8. Applying our approximation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   16.9. Conclusion
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -272,9 +375,1053 @@
   <div class="section" id="relations-as-matrices">
 <h1><span class="section-number">16. </span>Relations as Matrices<a class="headerlink" href="#relations-as-matrices" title="Permalink to this headline">¶</a></h1>
 <p><a href="../../_slides/chapter-16-slides.html">See also the slides that summarize a portion of this content.</a></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This chapter has not yet been written.  Check back later.</p>
+<p><em>Thanks to Jeff Leader’s chapter on Linear Algebra in <a class="reference external" href="https://ds4m.github.io/">Data Science for Mathematicians</a> for the ideas and example described in this chapter.</em></p>
+<div class="section" id="using-matrices-for-relations-other-than-networks">
+<h2><span class="section-number">16.1. </span>Using matrices for relations other than networks<a class="headerlink" href="#using-matrices-for-relations-other-than-networks" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference internal" href="chapter-15-networks.html"><span class="doc std std-doc">chapter 15 of the notes</span></a>, we discussed two ways to store network data.  We talked about a table of edges, which listed each connection in the network as its own row in the dataframe, and we talked about an adjacency matrix, which was a table of 0-or-1 entries indicating whether the row heading was connected to the column heading.</p>
+<p>These same patterns can be used for data about other types of relations as well, not only networks.  Recall that a network is always a relation that connects a set to itself.  For instance, in the shipping network, both the row and column headings were the same set, the 50 U.S. states.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p><strong>MA</strong></p></th>
+<th class="head"><p><strong>NY</strong></p></th>
+<th class="head"><p><strong>CT</strong></p></th>
+<th class="head"><p><strong>NH</strong></p></th>
+<th class="head"><p>etc.</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>MA</strong></p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>NY</strong></p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>CT</strong></p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>NY</strong></p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>etc.</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>But we can create adjacency matrices that let us store other types of relations as well.  For example, let’s imagine we were doing a shipping network for the facilities owned by a single company, including both manufacturing and retail properties.  Let’s say we’re still tracking shipping, but only of newly manufactured products, which get shipped from manufacturing properties to retail properties, never the other way around.  Thus our factories would be the row headings and our retail outlets the column headings.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Store 1</p></th>
+<th class="head"><p>Store 2</p></th>
+<th class="head"><p>Store 3</p></th>
+<th class="head"><p>etc.</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Factory 1</strong></p></td>
+<td><p>58</p></td>
+<td><p>0</p></td>
+<td><p>21</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Factory 2</strong></p></td>
+<td><p>19</p></td>
+<td><p>35</p></td>
+<td><p>5</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Factory 3</strong></p></td>
+<td><p>80</p></td>
+<td><p>0</p></td>
+<td><p>119</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-odd"><td><p>etc.</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>This is the format for an adjacency matrix for <em>any</em> kind of binary relation between any two sets.  Just as when we were dealing with network data, we can choose the data type that goes in the matrix.  If it is boolean (true/false or 0/1) then we are storing only whether an edge exists between the row heading and the column heading.  But if we store something more detailed (like the numeric values in the example above) then we have more information; in that case, it’s measuring the quantity of materials shipped from the source to the destination.</p>
+<p>If we think of the data stored in an edge list instead, then with networks, the two columns come from the same set (both are lists of dolphins, or both are lists of U.S. states), but when we consider any kind of relation, then the two columns can be different sets.  In the example above, one column would be manufacturing locations and the other would be retail locations.</p>
+</div>
+<div class="section" id="pivoting-an-edge-list">
+<h2><span class="section-number">16.2. </span>Pivoting an edge list<a class="headerlink" href="#pivoting-an-edge-list" title="Permalink to this headline">¶</a></h2>
+<p>Recall from <a class="reference internal" href="chapter-15-networks.html"><span class="doc std std-doc">the chapter 15 notes</span></a> that if you have an edge list, you can turn it into an adjacency matrix with a single pivot command.  For instance, if we had the following edge list among a few factories and stores, we can create an adjacency matrix with the code shown.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">edge_list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span>
+    <span class="s1">&#39;From&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="s1">&#39;Factory 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Factory 2&#39;</span><span class="p">,</span> <span class="s1">&#39;Factory 2&#39;</span><span class="p">,</span> <span class="s1">&#39;Factory 3&#39;</span> <span class="p">],</span>
+    <span class="s1">&#39;To&#39;</span>   <span class="p">:</span> <span class="p">[</span> <span class="s1">&#39;Store 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Store 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Store 2&#39;</span><span class="p">,</span> <span class="s1">&#39;Store 2&#39;</span> <span class="p">]</span>
+<span class="p">}</span> <span class="p">)</span>
+
+<span class="n">edge_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>From</th>
+      <th>To</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Factory 1</td>
+      <td>Store 1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Factory 2</td>
+      <td>Store 1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Factory 2</td>
+      <td>Store 2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Factory 3</td>
+      <td>Store 2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">edge_list</span><span class="p">[</span><span class="s1">&#39;Connected&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">matrix</span> <span class="o">=</span> <span class="n">edge_list</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span> <span class="n">index</span><span class="o">=</span><span class="s1">&#39;From&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;To&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;Connected&#39;</span> <span class="p">)</span>
+<span class="n">matrix</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span> <span class="mi">0</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>To</th>
+      <th>Store 1</th>
+      <th>Store 2</th>
+    </tr>
+    <tr>
+      <th>From</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Factory 1</th>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Factory 2</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>Factory 3</th>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="recommender-systems">
+<h2><span class="section-number">16.3. </span>Recommender systems<a class="headerlink" href="#recommender-systems" title="Permalink to this headline">¶</a></h2>
+<p>A <em>recommender system</em> is an algorithm that can recommend to a customer a product they might like.  Amazon has had this feature (“Customers who bought this product also liked…”) since the early 2000s, and in the late 2000s, <a class="reference external" href="https://www.netflixprize.com/">Netflix ran a $1,000,000 prize</a> for creating the best movie recommender system.  In such a system, the input is some knowledge about a customer’s preferences about products, and the output should be a ranked list of products to recommend to that customer.  In Netflix’s case, it was movies, but it can be any set of products.</p>
+<p>To get a feeling for how this works, we’ll do a tiny example, as if Netflix were a tiny organization with 7 movies and 6 customers.  We’ll label the customers A,B,C,…,F and the movies G,H,I,…,M.  To make things more concrete, we’ll use the movies Godzilla, Hamlet, Ishtar, JFK, King Kong, Lincoln, and Macbeth.  (See the link at the top of this file for the original source of this example.)</p>
+<p>We’ll assume that in this tiny movie preferences example, users indicate which movies they liked with a binary response (1 meaning they liked it, and 0 meaning they did not, which might mean disliked or didn’t watch or anything).  Let’s work with the following matrix of preferences.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">prefs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span>
+    <span class="s1">&#39;Godzilla&#39;</span>  <span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+    <span class="s1">&#39;Hamlet&#39;</span>    <span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+    <span class="s1">&#39;Ishtar&#39;</span>    <span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+    <span class="s1">&#39;JFK&#39;</span>       <span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+    <span class="s1">&#39;King Kong&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+    <span class="s1">&#39;Lincoln&#39;</span>   <span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+    <span class="s1">&#39;Macbeth&#39;</span>   <span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">},</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">]</span> <span class="p">)</span>
+
+<span class="n">prefs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Godzilla</th>
+      <th>Hamlet</th>
+      <th>Ishtar</th>
+      <th>JFK</th>
+      <th>King Kong</th>
+      <th>Lincoln</th>
+      <th>Macbeth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>F</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>When a new user (let’s say user X) joins this tiny movie watching service, we will want to ask user X for their movie preferences, compare them to the preferences of existing users, and then use the similarities we find to recommend new movies.  Of course, normally this is done on a much larger scale; this is a tiny example.  (We will work with a much more realistically large example in class.)</p>
+<p>Let’s imagine that user X joins the club and indicates that they like Godzilla, JFK, and Macbeth.  We represent user X’s preferences as a Pandas series that could be another row in the preferences DataFrame, if we chose to add it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">prefs</span><span class="o">.</span><span class="n">columns</span> <span class="p">)</span>
+<span class="n">X</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Godzilla     1
+Hamlet       0
+Ishtar       0
+JFK          1
+King Kong    0
+Lincoln      0
+Macbeth      1
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="a-tiny-amount-of-linear-algebra">
+<h2><span class="section-number">16.4. </span>A tiny amount of linear algebra<a class="headerlink" href="#a-tiny-amount-of-linear-algebra" title="Permalink to this headline">¶</a></h2>
+<p>There is an entire subject within mathematics that studies matrices and how to work with them.  Perhaps you have seen matrix multiplication in another course, either outside of Bentley or in MA239 (Linear Algebra) or a small amount in MA307 (Computer Graphics).  We cannot dive deeply into the mathematics of matrix operations here, but we will give a few key facts.</p>
+<p>A pandas DataFrame is a grid of data, and when that grid contains only numbers, it can be referred to as a <em>matrix.</em>  A single pandas Series of numbers can be referred to as a <em>vector.</em>  These are the standard terms from linear algebra for grids and lists of numbers, respectively.  Throughout the rest of this chapter, because we’ll be dealing only with numerical data, I may say “matrix” or “DataFrame” to mean the same thing, and I may say “vector” or “pandas Series” to mean the same thing.</p>
+<p>First, a matrix can be multiplied by another matrix or vector.  The important step for us here is the multiplication of the preferences matrix for all users with the preferences vector for user X.  Such a multiplication is a combination of the columns in the matrix, using the vector as the weights when combining.  In Python, the symbol for matrix multiplication is <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>, so we can do the computation as follows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prefs</span> <span class="o">@</span> <span class="n">X</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>A    1
+B    2
+C    0
+D    1
+E    2
+F    0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that this is indeed a combination of the columns of the preferences matrix, but it combined only the columns for the movies user X liked.  That is, you can think of the <code class="docutils literal notranslate"><span class="pre">X</span></code> vector as saying, “I’ll take 1 copy of the Godzilla column, plus one copy of the JFK column, plus one copy of the Macbeth column.”  The result is a vector that tells us how user X compares to our existing set of users.  It seems user X is most similar to users B and E, sort of similar to users A and D, and not similar to users C or F.</p>
+<p>Again, this notion of matrix-by-vector multiplication is part of a rich subject within mathematics, and we’re only dipping our toe in here.  To learn more, see the linear algebra course recommended above, MA239.</p>
+</div>
+<div class="section" id="normalizing-rows">
+<h2><span class="section-number">16.5. </span>Normalizing rows<a class="headerlink" href="#normalizing-rows" title="Permalink to this headline">¶</a></h2>
+<p>There is a bit of a problem, however, with the method just described.  What if user A really liked movies, and clicked the “like” button very often, so that most of the first row of our matrix were ones instead of zeros?  Then no matter who user X was, they would probably get ranked as at least a little bit similar to user A.  In fact, everyone would.  This is probably not what we want, because it means that people who click the “like” button a lot will have their preferences dominating the movie recommendations.</p>
+<p>So instead, we will scale each row of the preferences matrix down.  The standard way to do this begins by treating each one as a vector in <span class="math notranslate nohighlight">\(n\)</span>-dimensional space; in this case we have 7 columns, so we’re considering 7-dimensional space.  (Don’t try to picture it; nobody can.)  The length of any vector <span class="math notranslate nohighlight">\((v_1,v_2,\ldots,v_n)\)</span> is computed as <span class="math notranslate nohighlight">\(\sqrt{v_1^2+v_2^2+\cdots+v_n^2}\)</span>, and this feature is built into numpy as the standard “linear algebra norm” for a vector.</p>
+<p>For example, the length of user X’s vector is <span class="math notranslate nohighlight">\(\sqrt{1^2+0^2+0^2+1^2+0^2+0^2+1^2}=\sqrt{3}\approx1.732\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span> <span class="n">X</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.7320508075688772
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once we have the length (or norm) of a vector, we can divide the vector by that length to ensure that the vector’s new length is 1.  This makes all the vectors have the same length (or magnitude), and thus makes the preferences matrix more “fair,” because no one user gets to dominate it.  If you put in more likes, then each of your overall scores is reduced so that your ratings’ magnitude matches everyone else’s.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">normalized_X</span> <span class="o">=</span> <span class="n">X</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span> <span class="n">X</span> <span class="p">)</span>
+<span class="n">normalized_X</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Godzilla     0.57735
+Hamlet       0.00000
+Ishtar       0.00000
+JFK          0.57735
+King Kong    0.00000
+Lincoln      0.00000
+Macbeth      0.57735
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can apply this to each row of our preferences matrix as follows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">norms_of_rows</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span> <span class="n">prefs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+<span class="n">norms_of_rows</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1.41421356, 2.        , 1.41421356, 1.73205081, 1.73205081,
+       1.41421356])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">normalized_prefs</span> <span class="o">=</span> <span class="n">prefs</span><span class="o">.</span><span class="n">div</span><span class="p">(</span> <span class="n">norms_of_rows</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span> <span class="p">)</span>
+<span class="n">normalized_prefs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Godzilla</th>
+      <th>Hamlet</th>
+      <th>Ishtar</th>
+      <th>JFK</th>
+      <th>King Kong</th>
+      <th>Lincoln</th>
+      <th>Macbeth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>0.707107</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
+      <td>0.707107</td>
+      <td>0.00000</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.000000</td>
+      <td>0.50000</td>
+      <td>0.000000</td>
+      <td>0.50000</td>
+      <td>0.000000</td>
+      <td>0.50000</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>0.000000</td>
+      <td>0.00000</td>
+      <td>0.707107</td>
+      <td>0.00000</td>
+      <td>0.707107</td>
+      <td>0.00000</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>0.577350</td>
+      <td>0.57735</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
+      <td>0.577350</td>
+      <td>0.00000</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>0.577350</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.57735</td>
+      <td>0.000000</td>
+      <td>0.57735</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>F</th>
+      <td>0.000000</td>
+      <td>0.00000</td>
+      <td>0.707107</td>
+      <td>0.00000</td>
+      <td>0.707107</td>
+      <td>0.00000</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>So our updated similarity measurement that compares user X to all of our existing users is now the following.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">normalized_prefs</span> <span class="o">@</span> <span class="n">normalized_X</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>A    0.408248
+B    0.577350
+C    0.000000
+D    0.333333
+E    0.666667
+F    0.000000
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We now have a clearer ranking of the users than we did before.  User X is most similar to E, then B, then A, then D, without any ties.</p>
+</div>
+<div class="section" id="are-we-done">
+<h2><span class="section-number">16.6. </span>Are we done?<a class="headerlink" href="#are-we-done" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="we-could-be-done-now">
+<h3><span class="section-number">16.6.1. </span>We could be done now!<a class="headerlink" href="#we-could-be-done-now" title="Permalink to this headline">¶</a></h3>
+<p>At this point, we could stop and build a very simple recommender system.  We could simply suggest to user X all the movies that were rated highly by perhaps the top two on the “similar existing users” list we just generated, E and B.  (We might also filter out movies that user X already indicated that they had seen and liked.)  That’s a simple algorithm we could apply.  It would take just a few lines of code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liked_by_E</span> <span class="o">=</span> <span class="n">prefs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">,:]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="n">liked_by_B</span> <span class="o">=</span> <span class="n">prefs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,:]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="n">liked_by_X</span> <span class="o">=</span> <span class="n">X</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="c1"># liked by E or by B but not by X:</span>
+<span class="n">recommend</span> <span class="o">=</span> <span class="p">(</span> <span class="n">liked_by_E</span> <span class="o">|</span> <span class="n">liked_by_B</span> <span class="p">)</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">liked_by_X</span>
+<span class="n">recommend</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Godzilla     False
+Hamlet        True
+Ishtar       False
+JFK          False
+King Kong    False
+Lincoln       True
+Macbeth      False
+dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>But there’s a big missed opportunity here.</p>
+</div>
+<div class="section" id="why-we-approximate">
+<h3><span class="section-number">16.6.2. </span>Why we approximate<a class="headerlink" href="#why-we-approximate" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes hidden in the pattern of user preferences is a general shape or structure of overall movie preferences.  For instance, we can clearly see that some of the movies in our library are biographies and others are monster movies.  Shouldn’t these themes somehow influence our recommendations?</p>
+<p>Furthermore, what if there is a theme among moviegoers’ preferences that none of us as humans would notice in the data, or maybe not even have a name for, but that matters a lot to moviegoers?  Perhaps there’s a set of movies that combines suspense, comedy, and excitement in just the right amounts, and doesn’t have a specific word in our vocabulary, but it hits home for many viewers, and could be detected by examining their preferences?</p>
+<p>Now, in the tiny 6-by-7 matrix of preferences we have here, we’re not going to create any brilliant insights of that nature.  But with a very large database (like Netflix has), maybe we could.  How would we go about it?</p>
+<p>There are techniques for <em>approximating a matrix.</em>  This may sound a little odd, because of course we have a specific matrix already (<code class="docutils literal notranslate"><span class="pre">normalized_prefs</span></code>) that we can use, so why bother making an approximation of it?  The reason is because we’re actually trying to bring out the big themes and ignore the tiny details.  We’d sort of like the computer to take a step back from the data and just squint a little until the details blur and only the big-picture patterns remain.</p>
+<p>To make this more concrete, consider the two pictures shown below.</p>
+<p><img alt="Two images, the left one a cloud of points in the plane, and the right one a blobby boundary drawn approximately around that cloud of points" src="_images/blurring.png" /></p>
+<p>The left one is a collection of precise data points, and there are many ways to interpret them.  The right one is a shape that vaguely follows the contours of the data, but introduces some structure by blurring or spreading each data point, somewhat following the overall geometry of the whole data set.  This kind of approximation could be useful for finding patterns in the data, such as themes of movies that go together.</p>
+<p>Of course, even our tiny movie data set has seven dimensions, not just two, like the data in the picture, and thus it can’t be visualized so simply.  But the intuition still applies.</p>
+</div>
+</div>
+<div class="section" id="the-singular-value-decomposition">
+<h2><span class="section-number">16.7. </span>The Singular Value Decomposition<a class="headerlink" href="#the-singular-value-decomposition" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="matrices-as-actions">
+<h3><span class="section-number">16.7.1. </span>Matrices as actions<a class="headerlink" href="#matrices-as-actions" title="Permalink to this headline">¶</a></h3>
+<p>When we speak of multiplying a matrix by a vector, as we did in <code class="docutils literal notranslate"><span class="pre">prefs</span> <span class="pre">&#64;</span> <span class="pre">X</span></code> and then later with <code class="docutils literal notranslate"><span class="pre">normalized_prefs</span> <span class="pre">&#64;</span> <span class="pre">normalized_X</span></code>, we are using the matrix not just as a piece of data, but as an action we’re using on the vector.  In fact, if we think of matrix multiplication as a binary function, and we see ourselves as binding the matrix as the first argument to that function, then the result is actually a function (an action) we can take on vectors like <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p>
+<p>I mentioned earlier that matrix multiplication also shows up in MA307, a Bentley course on the math of computer graphics.  This is because the action that results from multiplying a matrix by a vector is one that moves points through space in a way that’s useful in two- and three-dimensional computer graphics applications.</p>
+</div>
+<div class="section" id="the-svd">
+<h3><span class="section-number">16.7.2. </span>The SVD<a class="headerlink" href="#the-svd" title="Permalink to this headline">¶</a></h3>
+<p>The Singular Value Decomposition (SVD) is a way to break the action a matrix performs into three steps, each represented by a separate matrix.  Breaking up a matrix <span class="math notranslate nohighlight">\(M\)</span> produces three matrices, traditionally called <span class="math notranslate nohighlight">\(U\)</span>, <span class="math notranslate nohighlight">\(\Sigma\)</span>, and <span class="math notranslate nohighlight">\(V\)</span>, that have a very special relationship.  First, multiplying <span class="math notranslate nohighlight">\(U\Sigma V\)</span> (or <code class="docutils literal notranslate"><span class="pre">U</span> <span class="pre">&#64;</span> <span class="pre">Σ</span> <span class="pre">&#64;</span> <span class="pre">V</span></code> in Python) produces the original matrix <span class="math notranslate nohighlight">\(M\)</span>.  Other than that fact, the <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(V\)</span> matrices are not important for us to discuss here, but the <span class="math notranslate nohighlight">\(\Sigma\)</span> matrix is.  That matrix has zeros everywhere but along its diagonal, and the numbers on the diagonal are all positive, and in decreasing order of importance.  Here is an example of what a <span class="math notranslate nohighlight">\(\Sigma\)</span> matrix might look like.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \left[\begin{array}{cccc} 2.31 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1.19 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0.33 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0.0021 \end{array}\right]\end{split}\]</div>
+<p>In fact, because the <span class="math notranslate nohighlight">\(\Sigma\)</span> matrix is always diagonal, computations the produce <span class="math notranslate nohighlight">\(U\)</span>, <span class="math notranslate nohighlight">\(\Sigma\)</span>, and <span class="math notranslate nohighlight">\(V\)</span>, typically provide <span class="math notranslate nohighlight">\(\Sigma\)</span> just as a list of the entries along the diagonal, rather than providing the whole matrix that’s mostly zeros.</p>
+<p>Let’s see what these three matrices look like for our preferences matrix above.  We use the built-in NumPy routine called <code class="docutils literal notranslate"><span class="pre">svd</span></code> to perform the SVD.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">U</span><span class="p">,</span> <span class="n">Σ</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span> <span class="n">normalized_prefs</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s ask what the shape of each resulting matrix is.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">U</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">Σ</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">V</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>((6, 6), (6,), (7, 7))
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that <span class="math notranslate nohighlight">\(U\)</span> is <span class="math notranslate nohighlight">\(6\times6\)</span>, <span class="math notranslate nohighlight">\(V\)</span> is <span class="math notranslate nohighlight">\(7\times 7\)</span>, and <span class="math notranslate nohighlight">\(\Sigma\)</span> is actually just of length 6, because it contains just the diagonal entries that belong in the <span class="math notranslate nohighlight">\(\Sigma\)</span> matrix.  These entries are called the <em>singular values.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Σ</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1.71057805e+00, 1.30272528e+00, 9.26401065e-01, 6.73800315e-01,
+       2.54172767e-01, 1.83716538e-17])
+</pre></div>
+</div>
+</div>
+</div>
+<p>In general, if our input matrix (in this case, <code class="docutils literal notranslate"><span class="pre">normalized_prefs</span></code>) is <span class="math notranslate nohighlight">\(n\times m\)</span> in size (that is, <span class="math notranslate nohighlight">\(n\)</span> rows and <span class="math notranslate nohighlight">\(m\)</span> columns), then <span class="math notranslate nohighlight">\(U\)</span> will be <span class="math notranslate nohighlight">\(n\times n\)</span>, <span class="math notranslate nohighlight">\(V\)</span> will be <span class="math notranslate nohighlight">\(m\times m\)</span>, and <span class="math notranslate nohighlight">\(\Sigma\)</span> will be <span class="math notranslate nohighlight">\(n\times m\)</span>, but mostly zeros.  Let’s reconstruct a <span class="math notranslate nohighlight">\(\Sigma\)</span> matrix of the appropriate size from the singular values, then multiply <code class="docutils literal notranslate"><span class="pre">U</span> <span class="pre">&#64;</span> <span class="pre">Σ</span> <span class="pre">&#64;</span> <span class="pre">V</span></code> to verify that it’s the same as the original <code class="docutils literal notranslate"><span class="pre">normalized_prefs</span></code> matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Σ_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span> <span class="n">Σ_matrix</span><span class="p">,</span> <span class="n">Σ</span> <span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span> <span class="n">Σ_matrix</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>  <span class="c1"># rounding makes a simpler printout</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[1.71, 0.  , 0.  , 0.  , 0.  , 0.  , 0.  ],
+       [0.  , 1.3 , 0.  , 0.  , 0.  , 0.  , 0.  ],
+       [0.  , 0.  , 0.93, 0.  , 0.  , 0.  , 0.  ],
+       [0.  , 0.  , 0.  , 0.67, 0.  , 0.  , 0.  ],
+       [0.  , 0.  , 0.  , 0.  , 0.25, 0.  , 0.  ],
+       [0.  , 0.  , 0.  , 0.  , 0.  , 0.  , 0.  ]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>The sixth singular value is so tiny (about <span class="math notranslate nohighlight">\(1.84\times10^{-17}\)</span>) that it rounds to zero in the display above.</p>
+<p>(Note: The rounding is <em>not</em> the approximation we’re seeking!  It’s something that just makes the printout easier to read.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span> <span class="n">U</span> <span class="o">@</span> <span class="n">Σ_matrix</span> <span class="o">@</span> <span class="n">V</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[ 0.71, -0.  ,  0.  , -0.  ,  0.71, -0.  , -0.  ],
+       [ 0.  ,  0.5 , -0.  ,  0.5 , -0.  ,  0.5 ,  0.5 ],
+       [-0.  , -0.  ,  0.71, -0.  ,  0.71, -0.  , -0.  ],
+       [ 0.58,  0.58,  0.  ,  0.  ,  0.58,  0.  ,  0.  ],
+       [ 0.58,  0.  , -0.  ,  0.58, -0.  ,  0.58,  0.  ],
+       [-0.  , -0.  ,  0.71, -0.  ,  0.71, -0.  , -0.  ]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>if we look above at our <code class="docutils literal notranslate"><span class="pre">normalized_prefs</span></code> matrix, we see that this is indeed a match.</p>
+</div>
+<div class="section" id="creating-an-approximation">
+<h3><span class="section-number">16.7.3. </span>Creating an approximation<a class="headerlink" href="#creating-an-approximation" title="Permalink to this headline">¶</a></h3>
+<p>Recall that the reason we embarked upon the SVD exploration was to find a way to approximate a matrix.  Because the singular values are arranged in decreasing order, you can imagine that the matrix <span class="math notranslate nohighlight">\(U\Sigma V\)</span> wouldn’t change very much if just the smallest of them were replaced with a zero.  After all, <span class="math notranslate nohighlight">\(1.84\times10^{-17}\)</span> is almost zero anyway!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">almost_Σ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span> <span class="n">Σ</span> <span class="p">)</span>
+<span class="n">almost_Σ</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">almost_Σ_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span> <span class="n">almost_Σ_matrix</span><span class="p">,</span> <span class="n">almost_Σ</span> <span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span> <span class="n">U</span> <span class="o">@</span> <span class="n">almost_Σ_matrix</span> <span class="o">@</span> <span class="n">V</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[ 0.71, -0.  ,  0.  , -0.  ,  0.71, -0.  , -0.  ],
+       [ 0.  ,  0.5 , -0.  ,  0.5 , -0.  ,  0.5 ,  0.5 ],
+       [-0.  , -0.  ,  0.71, -0.  ,  0.71, -0.  , -0.  ],
+       [ 0.58,  0.58,  0.  ,  0.  ,  0.58,  0.  ,  0.  ],
+       [ 0.58,  0.  , -0.  ,  0.58, -0.  ,  0.58,  0.  ],
+       [-0.  , -0.  ,  0.71, -0.  ,  0.71, -0.  , -0.  ]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Indeed, this looks exactly the same when we round to two decimal places.  And yet, it is still an approximation to the original, because we did make a (tiny) change.  What if we changed even more?  Let’s replace the next-smallest singular value (the 0.25) with zero.  This will be a bigger change.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">almost_Σ</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">almost_Σ_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span> <span class="n">almost_Σ_matrix</span><span class="p">,</span> <span class="n">almost_Σ</span> <span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span> <span class="n">U</span> <span class="o">@</span> <span class="n">almost_Σ_matrix</span> <span class="o">@</span> <span class="n">V</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[ 0.72,  0.08,  0.06,  0.01,  0.65,  0.01, -0.13],
+       [ 0.01,  0.55,  0.03,  0.5 , -0.03,  0.5 ,  0.43],
+       [-0.  , -0.01,  0.7 , -0.  ,  0.71, -0.  ,  0.01],
+       [ 0.57,  0.51, -0.05, -0.  ,  0.62, -0.  ,  0.1 ],
+       [ 0.57, -0.04, -0.03,  0.57,  0.03,  0.57,  0.06],
+       [-0.  , -0.01,  0.7 , -0.  ,  0.71, -0.  ,  0.01]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can start to see some small changes.  Values that used to be zero are now approximately zero, such as 0.06 or -0.01.  An 0.71 became 0.72, and so on.  We have created a fuzzier (less precise) approximation to the original <code class="docutils literal notranslate"><span class="pre">normalized_prefs</span></code> matrix.</p>
+<p>We could repeat this, removing more and more of the singular values in <span class="math notranslate nohighlight">\(\Sigma\)</span>, until the resulting array were all zeros.  Obviously that final state would be a pretty bad approximation to the original matrix!  But by this method, we can choose how precise an approximation we want.  Here are our options:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Remove this many singular values</p></th>
+<th class="head"><p>And get this kind of approximation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0 (don’t remove any)</p></td>
+<td><p>Original matrix (not an approximation)</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Identical up to at least 2 decimals</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Fairly close, as shown above</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Less faithful</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Even less faithful</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>Even worse</p></td>
+</tr>
+<tr class="row-even"><td><p>6 (remove all)</p></td>
+<td><p>All zeros, terrible approximation</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="measuring-the-quality-of-the-approximation">
+<h3><span class="section-number">16.7.4. </span>Measuring the quality of the approximation<a class="headerlink" href="#measuring-the-quality-of-the-approximation" title="Permalink to this headline">¶</a></h3>
+<p>There is a measurement called <span class="math notranslate nohighlight">\(\rho\)</span> (Greek letter rho) that can let you know approximately how much of the “energy” of the original matrix is being lost with an approximation.  If <span class="math notranslate nohighlight">\(\Sigma\)</span> is the original vector of singular values and <span class="math notranslate nohighlight">\(z\)</span> is the vector of those that will be replaced by zeros, then <span class="math notranslate nohighlight">\(\rho^2\)</span> is computed by dividing the length of <span class="math notranslate nohighlight">\(z\)</span> by the length of <span class="math notranslate nohighlight">\(\Sigma\)</span>.  And so <span class="math notranslate nohighlight">\(\rho\)</span> is the square root of that number.  You can see <span class="math notranslate nohighlight">\(\rho\)</span> as a measurement of the error introduced by the approximation, between 0.0 and 1.0.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ρ</span> <span class="p">(</span> <span class="n">Σ</span><span class="p">,</span> <span class="n">num_to_remove</span> <span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">Σ</span><span class="p">[</span><span class="o">-</span><span class="n">num_to_remove</span><span class="p">:]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span> <span class="n">z</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">1.0</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span> <span class="n">z</span> <span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span> <span class="n">Σ</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="n">ρ</span><span class="p">(</span> <span class="n">Σ</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2.7386486204421176e-09
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that <span class="math notranslate nohighlight">\(\rho\)</span> says the error is tiny if we replace only the last singular value with zero, because that value was almost zero anyway.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ρ</span><span class="p">(</span> <span class="n">Σ</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.32212667929693084
+</pre></div>
+</div>
+</div>
+</div>
+<p>But the error is larger if we remove two singular values, because the second-lowest one was not already near to zero.</p>
+</div>
+<div class="section" id="visualizing-the-approximations">
+<h3><span class="section-number">16.7.5. </span>Visualizing the approximations<a class="headerlink" href="#visualizing-the-approximations" title="Permalink to this headline">¶</a></h3>
+<p>Let’s take a step back from our particular example for a moment, to consider what these SVD-based approximations look like in general.  I chose a <span class="math notranslate nohighlight">\(10\times10\)</span> matrix of random values and plotted it as a grid of colors, shown here.</p>
+<p><img alt="A ten-by-ten grid of random colors ranging from green to purple" src="_images/svd-step-0.png" /></p>
+<p>What would it look like to approximate this matrix by dropping 1, 2, 3, or more of its singular values?  We can visualize all of the answers at once, and compute the <span class="math notranslate nohighlight">\(\rho\)</span> value for each as well.</p>
+<p>In the picture below, we use <span class="math notranslate nohighlight">\(i\)</span> to denote the number of singular values we are dropping to create an approximation of the matrix.  So on the top left, when <span class="math notranslate nohighlight">\(i=0\)</span>, we have the original matrix unchanged.  But on the top right, when <span class="math notranslate nohighlight">\(i=10\)</span>, we’ve dropped all the singular values and our matrix is just all zeros, obviously containing little or no information.  You can see how the matrix blurs slowly from its original form to a complete lack of structure as <span class="math notranslate nohighlight">\(i\)</span> increases from 1 to 10.</p>
+<p><img alt="An illustration of two rows of matrices, the top described immediately above, and the bottom described immediately below" src="_images/svd-10-steps.png" /></p>
+<p>The bottom row shows the difference between the original matrix and the approximation.  On the bottom left, because the “approximation” equals the original, the difference is a matrix of zeros, so the the picture shown is a single color.  On the bottom right, because the approximation is all zeros, the difference is the original matrix!  As <span class="math notranslate nohighlight">\(i\)</span> increases and the approximations get blurrier, the error matrix grows more distinct, and you can see how <span class="math notranslate nohighlight">\(\rho\)</span> grows with it, measuring its importance.</p>
+</div>
+<div class="section" id="choosing-which-approximation-to-use">
+<h3><span class="section-number">16.7.6. </span>Choosing which approximation to use<a class="headerlink" href="#choosing-which-approximation-to-use" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have a sense of what SVD-based approximations do in general, let’s return to our particular example.  What are the various values of <span class="math notranslate nohighlight">\(\rho\)</span> for the approximations we might choose to approximate the preferences matrix?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="n">ρ</span><span class="p">(</span> <span class="n">Σ</span><span class="p">,</span> <span class="n">i</span> <span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">Σ</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span> <span class="p">)</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[1.0,
+ 2.7386486204421176e-09,
+ 0.32212667929693084,
+ 0.5422162727569352,
+ 0.6921213328320457,
+ 0.8460293400488615,
+ 1.0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we’re trying to keep most of the meaning of the original matrix, we’ll want to remove only 1 or 2 singular values.  For this example, let’s choose to remove three, which is close to 50% of the “energy” of the original preferences matrix.  (In a real application, you would perform tests on past data to measure which is the best choice, but let’s keep this example simple.)</p>
+<p>As a refresher for how to remove the lowest 3 singular values, here’s the code all in one place.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">almost_Σ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span> <span class="n">Σ</span> <span class="p">)</span>
+<span class="n">almost_Σ</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># replace the final 3 singular values with zeros</span>
+
+<span class="n">almost_Σ_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span> <span class="n">almost_Σ_matrix</span><span class="p">,</span> <span class="n">almost_Σ</span> <span class="p">)</span>
+
+<span class="n">approx_prefs</span> <span class="o">=</span> <span class="n">U</span> <span class="o">@</span> <span class="n">almost_Σ_matrix</span> <span class="o">@</span> <span class="n">V</span>
+<span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span> <span class="n">approx_prefs</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[ 0.7 ,  0.16,  0.04, -0.02,  0.66, -0.02, -0.09],
+       [ 0.08,  0.32,  0.09,  0.58, -0.06,  0.58,  0.34],
+       [-0.02,  0.05,  0.69, -0.02,  0.72, -0.02,  0.03],
+       [ 0.66,  0.21,  0.03,  0.1 ,  0.58,  0.1 , -0.02],
+       [ 0.45,  0.32, -0.13,  0.45,  0.08,  0.45,  0.21],
+       [-0.02,  0.05,  0.69, -0.02,  0.72, -0.02,  0.03]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the rounding to two decimal places is <em>not</em> part of the approximation we created.  We’re rounding it after the fact to make the display more readable.</p>
+<p>If we’d like it to have the same table structure it had before, we can convert it into a DataFrame and assign row and column headers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">approx_prefs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="n">approx_prefs</span> <span class="p">)</span>
+<span class="n">approx_prefs</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">prefs</span><span class="o">.</span><span class="n">index</span>
+<span class="n">approx_prefs</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">prefs</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">approx_prefs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Godzilla</th>
+      <th>Hamlet</th>
+      <th>Ishtar</th>
+      <th>JFK</th>
+      <th>King Kong</th>
+      <th>Lincoln</th>
+      <th>Macbeth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>0.696420</td>
+      <td>0.160650</td>
+      <td>0.039410</td>
+      <td>-0.021090</td>
+      <td>0.662098</td>
+      <td>-0.021090</td>
+      <td>-0.094822</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.080627</td>
+      <td>0.318500</td>
+      <td>0.093488</td>
+      <td>0.579816</td>
+      <td>-0.063906</td>
+      <td>0.579816</td>
+      <td>0.341795</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>-0.018735</td>
+      <td>0.046549</td>
+      <td>0.687042</td>
+      <td>-0.018883</td>
+      <td>0.720243</td>
+      <td>-0.018883</td>
+      <td>0.033053</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>0.662668</td>
+      <td>0.211608</td>
+      <td>0.033058</td>
+      <td>0.097823</td>
+      <td>0.577728</td>
+      <td>0.097823</td>
+      <td>-0.020174</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>0.453101</td>
+      <td>0.324129</td>
+      <td>-0.127217</td>
+      <td>0.450933</td>
+      <td>0.081084</td>
+      <td>0.450933</td>
+      <td>0.206132</td>
+    </tr>
+    <tr>
+      <th>F</th>
+      <td>-0.018735</td>
+      <td>0.046549</td>
+      <td>0.687042</td>
+      <td>-0.018883</td>
+      <td>0.720243</td>
+      <td>-0.018883</td>
+      <td>0.033053</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="applying-our-approximation">
+<h2><span class="section-number">16.8. </span>Applying our approximation<a class="headerlink" href="#applying-our-approximation" title="Permalink to this headline">¶</a></h2>
+<p>Now we have an approximation to the user preference matrix.  We hope it has brought out some of the latent relationships hiding in the data, although with an example this small, who can say?  It’s unlikely, but this same technique applies much more sensibly in larger examples, one of which we’ll do in our next class meeting.</p>
+<p>To find which users match up best, according to this approximate preference matrix, with our new user X, we do the same multiplication as before, but now with the approximate matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">approx_prefs</span> <span class="o">@</span> <span class="n">normalized_X</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>A    0.335156
+B    0.578642
+C   -0.002636
+D    0.427422
+E    0.640955
+F   -0.002636
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>It seems that users E and B have retained the highest similarities to user X in this example.  But user D has a pretty high rank as well, so let’s include them also, just for variety.</p>
+<p>Also, rather than just listing all the movies they like and that user X doesn’t, let’s try to be smarter about that as well.  Couldn’t we rank the recommendations?  Let’s take the E, B, and D rows from the approximate preferences matrix and add them together to combine an aggregate preferences vector for all movies.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rows_for_similar_users</span> <span class="o">=</span> <span class="n">approx_prefs</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">],:]</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">rows_for_similar_users</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">scores</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Godzilla     1.196396
+Hamlet       0.854238
+Ishtar      -0.000671
+JFK          1.128572
+King Kong    0.594907
+Lincoln      1.128572
+Macbeth      0.527753
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now which of these movies has user X not yet indicated they like?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span><span class="p">[</span><span class="o">~</span><span class="n">liked_by_X</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Hamlet       0.854238
+Ishtar      -0.000671
+King Kong    0.594907
+Lincoln      1.128572
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>All we need to do is rank them and we have our recommendation list!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span><span class="p">[</span><span class="o">~</span><span class="n">liked_by_X</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Lincoln      1.128572
+Hamlet       0.854238
+King Kong    0.594907
+Ishtar      -0.000671
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Of course, we don’t want to recommend all of these movies; there’s even a negative score for one of them!  How many recommendations are passed on to the user is a question best determined by the designers of the user experience.  Perhaps in this case we’d recommend Lincoln and Hamlet.</p>
+</div>
+<div class="section" id="conclusion">
+<h2><span class="section-number">16.9. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>In class, we will apply this same technique to an actual database of song recommendations from millions of users.  Be sure to download and prepare the data as part of <a class="reference external" href="course-schedule#week-10-11-5-2020-relations-graphs-and-networks">the homework assigned this week</a>.</p>
+<p>If you want to know more about the concepts of matrix multiplication and factorization, which were covered only extremely briefly in this chapter, consider taking MA239, Linear Algebra.</p>
 </div>
 </div>
 

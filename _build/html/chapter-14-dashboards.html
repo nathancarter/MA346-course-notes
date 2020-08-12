@@ -84,7 +84,12 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="current nav sidenav_l1">
+  <p class="caption">
+ <span class="caption-text">
+  Notes
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-1-intro-to-data-science.html">
    1. Introduction to Data Science
@@ -170,29 +175,36 @@
    17. Introduction to Machine Learning
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="course-schedule.html">
-   18. Detailed Course Schedule
+   1. Detailed Course Schedule
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="big-cheat-sheet.html">
-   19. Big Cheat Sheet
+   2. Big Cheat Sheet
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="anaconda-installation.html">
-   20. Anaconda Installation
+   3. Anaconda Installation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vs-code-installation.html">
-   21. VS Code for Python Installation
+   4. VS Code for Python Installation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="GB213-review-in-Python.html">
-   22. GB213 Review in Python
+   5. GB213 Review in Python
   </a>
  </li>
 </ul>
@@ -257,7 +269,7 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -589,7 +601,7 @@
 </div>
 <div class="section" id="step-3-abstraction">
 <h2><span class="section-number">14.5. </span>Step 3. Abstraction<a class="headerlink" href="#step-3-abstraction" title="Permalink to this headline">¶</a></h2>
-<p>Recall from <a class="reference internal" href="chapter-7-abstraction.html"><span class="doc">Chapter 7 of these notes</span></a> the techniques we have for making code more general.  These include noting when a specific computation may need to be done more than once with varying inputs, and turning that code into a function.</p>
+<p>Recall from <a class="reference internal" href="chapter-7-abstraction.html"><span class="doc std std-doc">Chapter 7 of these notes</span></a> the techniques we have for making code more general.  These include noting when a specific computation may need to be done more than once with varying inputs, and turning that code into a function.</p>
 <p>When using Streamlit to build a dashboard, the power it provides is that it will run our <em>entire Python script</em> as many times as needed, with inputs chosen by the user.  To make this happen, we first need to choose which parts of our script are going to become parameters that the user can change.  The first step in this process is to give each of those values names and turn them into variables that we declare at the top of our script.</p>
 <p>In the small example we’re using in this chapter, I have just two places where I will turn constants into parameters.  One constant is how many uniform random variables we will include in our sum (formerly fixed at 10) and the other is how large will be the sample we use to create our histogram (formerly fixed at 1000).  Here is a new version of the code in which those two parameters are declared up front.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
@@ -713,16 +725,16 @@
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">sample</span> <span class="o">=</span> <span class="p">[</span> <span class="n">my_random_variable</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sample_size</span><span class="p">)</span> <span class="p">]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">sample</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span> <span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;Histogram of a sample of size </span><span class="si">{sample_size}</span><span class="s1"> from X&#39;</span> <span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;X = the sum of </span><span class="si">{num_random_variables_to_sum}</span><span class="s1"> uniform random variables on [0,1]&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;Histogram of a sample of size </span><span class="si">{</span><span class="n">sample_size</span><span class="si">}</span><span class="s1"> from X&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;X = the sum of </span><span class="si">{</span><span class="n">num_random_variables_to_sum</span><span class="si">}</span><span class="s1"> uniform random variables on [0,1]&#39;</span> <span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s1">&#39;Frequency&#39;</span> <span class="p">)</span>
 <span class="n">st</span><span class="o">.</span><span class="n">pyplot</span><span class="p">()</span>
 
 <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">Because each $</span><span class="se">\\</span><span class="s1">mu_{{X_i}}=0.5$ and $n=</span><span class="si">{num_random_variables_to_sum}</span><span class="s1">$,</span>
-<span class="s1">we conclude $</span><span class="se">\\</span><span class="s1">mu_X=0.5</span><span class="se">\\</span><span class="s1">times</span><span class="si">{num_random_variables_to_sum}</span><span class="s1">={num_random_variables_to_sum*0.5}$.</span>
+<span class="s1">Because each $</span><span class="se">\\</span><span class="s1">mu_</span><span class="se">{{</span><span class="s1">X_i</span><span class="se">}}</span><span class="s1">=0.5$ and $n=</span><span class="si">{</span><span class="n">num_random_variables_to_sum</span><span class="si">}</span><span class="s1">$,</span>
+<span class="s1">we conclude $</span><span class="se">\\</span><span class="s1">mu_X=0.5</span><span class="se">\\</span><span class="s1">times</span><span class="si">{</span><span class="n">num_random_variables_to_sum</span><span class="si">}</span><span class="s1">=</span><span class="si">{</span><span class="n">num_random_variables_to_sum</span><span class="o">*</span><span class="mf">0.5</span><span class="si">}</span><span class="s1">$.</span>
 
-<span class="s1">Mean of our sample is $</span><span class="se">\\</span><span class="s1">bar{{x}}={np.mean( sample )}</span><span class="se">\\</span><span class="s1">approx{num_random_variables_to_sum*0.5}$.</span>
+<span class="s1">Mean of our sample is $</span><span class="se">\\</span><span class="s1">bar</span><span class="se">{{</span><span class="s1">x</span><span class="se">}}</span><span class="s1">=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span><span class="si">}</span><span class="se">\\</span><span class="s1">approx</span><span class="si">{</span><span class="n">num_random_variables_to_sum</span><span class="o">*</span><span class="mf">0.5</span><span class="si">}</span><span class="s1">$.</span>
 <span class="s1">&#39;&#39;&#39;</span> <span class="p">)</span>
 </pre></div>
 </div>

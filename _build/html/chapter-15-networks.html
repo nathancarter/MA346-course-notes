@@ -84,7 +84,12 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="current nav sidenav_l1">
+  <p class="caption">
+ <span class="caption-text">
+  Notes
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-1-intro-to-data-science.html">
    1. Introduction to Data Science
@@ -170,29 +175,36 @@
    17. Introduction to Machine Learning
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="course-schedule.html">
-   18. Detailed Course Schedule
+   1. Detailed Course Schedule
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="big-cheat-sheet.html">
-   19. Big Cheat Sheet
+   2. Big Cheat Sheet
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="anaconda-installation.html">
-   20. Anaconda Installation
+   3. Anaconda Installation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vs-code-installation.html">
-   21. VS Code for Python Installation
+   4. VS Code for Python Installation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="GB213-review-in-Python.html">
-   22. GB213 Review in Python
+   5. GB213 Review in Python
   </a>
  </li>
 </ul>
@@ -257,7 +269,7 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -347,7 +359,7 @@
 </ul>
 <div class="alert alert-primary admonition">
 <p class="admonition-title">Big Picture</p>
-<p>Notice that a graph is nothing but a picture representing a <em>binary relation,</em> a term we first defined in <a class="reference internal" href="chapter-2-mathematical-foundations.html"><span class="doc">the notes on Chapter 2</span></a>.  In the case of a graph, the two sets involved in the relation are the same; we’re connecting friends to friends in the picture above, or states to states with shipping information, or pages to pages with hyperlinks.  In a graph, the relation connects the set of vertices to itself, rather than to some other set.</p>
+<p>Notice that a graph is nothing but a picture representing a <em>binary relation,</em> a term we first defined in <a class="reference internal" href="chapter-2-mathematical-foundations.html"><span class="doc std std-doc">the notes on Chapter 2</span></a>.  In the case of a graph, the two sets involved in the relation are the same; we’re connecting friends to friends in the picture above, or states to states with shipping information, or pages to pages with hyperlinks.  In a graph, the relation connects the set of vertices to itself, rather than to some other set.</p>
 </div>
 <p>The graph of five friends shown above is a <em>directed graph,</em> because the edges have arrowheads to indicate that they make sense in only one direction.  While Augustus said he would seek advice from Cyrano, Cyrano did not say the same about Augustus.</p>
 <p>In an <em>undirected graph,</em> every connection goes in both directions.  For instance, the relation recorded in the dolphin data is about spending time together.  If dolphin A is spending time with dolphin B, then the reverse is obviously also true.  So in the dolphin data, all connections go in both directions, and we can thus draw them without arrowheads; they are all “two-way streets.”</p>
@@ -439,7 +451,7 @@
 <p>We will call this kind of table a <em>list of ordered pairs,</em> because the ordering of each pair often matters.  From Augustus to Cyrano is not the same as from Cyrano to Augustus.  We can also call it an <em>edge list,</em> because the connections in a graph are called edges.</p>
 <div class="alert alert-primary admonition">
 <p class="admonition-title">Big Picture</p>
-<p>These two ways to store the data are very related.  If we just imagine a third column for this last table, “From,” “To,” and “Connected (True/False),” then the two tables could be converted from one to the other using pivot and melt from <a class="reference internal" href="chapter-6-single-table-verbs.html"><span class="doc">Chapter 6 of the course notes</span></a>.  In that chapter, we learned that it is typically easier for a computer to process melted (tall) data, but easier for humans to read pivoted (wide) data.  To make our computations easier, we will work with this second, two-column form.</p>
+<p>These two ways to store the data are very related.  If we just imagine a third column for this last table, “From,” “To,” and “Connected (True/False),” then the two tables could be converted from one to the other using pivot and melt from <a class="reference internal" href="chapter-6-single-table-verbs.html"><span class="doc std std-doc">Chapter 6 of the course notes</span></a>.  In that chapter, we learned that it is typically easier for a computer to process melted (tall) data, but easier for humans to read pivoted (wide) data.  To make our computations easier, we will work with this second, two-column form.</p>
 </div>
 <p>But storing network data as a table of edges does have one small disadvantage:  It doesn’t make it obvious what the complete set of vertices is.  For instance, just given the second (tall) table shown above, we can’t be sure how many friends there are.  Is it just these five, or is there a sixth friend, or a seventh?  Imagine another friend, Fatima, who has unusual opinions, so she wouldn’t go to any of the friends for advice, nor would they go to her.  She wouldn’t show up in any of the edges, so we wouldn’t see her in the data.</p>
 <p>Thus if we store a graph as an edge list, we will also need a separate list of the graph’s vertices.  That list will include every vertex mentioned in the edge list, and possibly some others.</p>

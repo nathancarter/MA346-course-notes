@@ -84,7 +84,12 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="current nav sidenav_l1">
+  <p class="caption">
+ <span class="caption-text">
+  Notes
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-1-intro-to-data-science.html">
    1. Introduction to Data Science
@@ -170,29 +175,36 @@
    17. Introduction to Machine Learning
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="course-schedule.html">
-   18. Detailed Course Schedule
+   1. Detailed Course Schedule
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="big-cheat-sheet.html">
-   19. Big Cheat Sheet
+   2. Big Cheat Sheet
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="anaconda-installation.html">
-   20. Anaconda Installation
+   3. Anaconda Installation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vs-code-installation.html">
-   21. VS Code for Python Installation
+   4. VS Code for Python Installation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="GB213-review-in-Python.html">
-   22. GB213 Review in Python
+   5. GB213 Review in Python
   </a>
  </li>
 </ul>
@@ -257,7 +269,7 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -1169,7 +1181,7 @@
 </table>
 </div></div></div>
 </div>
-<p>In class, we will do a more complex example of applying a dictionary using <code class="docutils literal notranslate"><span class="pre">map()</span></code>.  Before class, you may want to glance back at Exercise 3 from <a class="reference internal" href="chapter-2-mathematical-foundations.html"><span class="doc">the Chapter 2 notes</span></a>, which shows you how to take two columns of a DataFrame representing a mathematical function and convert them into a dictionary for use in situations just like this one.  And be sure to complete the homework about the NPR dataset before class as well, because we will use that in our example!</p>
+<p>In class, we will do a more complex example of applying a dictionary using <code class="docutils literal notranslate"><span class="pre">map()</span></code>.  Before class, you may want to glance back at Exercise 3 from <a class="reference internal" href="chapter-2-mathematical-foundations.html"><span class="doc std std-doc">the Chapter 2 notes</span></a>, which shows you how to take two columns of a DataFrame representing a mathematical function and convert them into a dictionary for use in situations just like this one.  And be sure to complete the homework about the NPR dataset before class as well, because we will use that in our example!</p>
 </div>
 <div class="section" id="parallel-apply">
 <h3><span class="section-number">11.2.5. </span>Parallel <code class="docutils literal notranslate"><span class="pre">apply()</span></code><a class="headerlink" href="#parallel-apply" title="Permalink to this headline">¶</a></h3>
@@ -1510,7 +1522,7 @@ Name: 2, dtype: int64
 </div>
 <div class="section" id="split-apply-combine">
 <h2><span class="section-number">11.4. </span>Split-Apply-Combine<a class="headerlink" href="#split-apply-combine" title="Permalink to this headline">¶</a></h2>
-<p>Data scientist and R developer Hadley Wickham seems to coin lots of important phrases.  Recall from <a class="reference internal" href="chapter-5-before-and-after.html"><span class="doc">the Chapter 5 notes</span></a> that he introduced the phrase “tidy data.”  He also introduced the phrase “split, apply, combine,” in <a class="reference external" href="http://www.stat.wvu.edu/~jharner/courses/stat623/docs/plyrJSS.pdf">this paper</a>.</p>
+<p>Data scientist and R developer Hadley Wickham seems to coin lots of important phrases.  Recall from <a class="reference internal" href="chapter-5-before-and-after.html"><span class="doc std std-doc">the Chapter 5 notes</span></a> that he introduced the phrase “tidy data.”  He also introduced the phrase “split, apply, combine,” in <a class="reference external" href="http://www.stat.wvu.edu/~jharner/courses/stat623/docs/plyrJSS.pdf">this paper</a>.</p>
 <p>It is another extremely common operation done on DataFrames, and it is closely related to map-reduce, as we will see below.</p>
 <p>Let’s say you were concerned about pay equity, and wanted to compute the median salary across your organization, by gender, to get a sense of whether there were any important discrepancies.  The computation would look something like the following.  (We assume that the gender column contains either M for male, F for female, or a missing value for those who do not wish to classify.)</p>
 <p><img alt="Illustration of Python code for grouping a DataFrame by gender, then mapping to salary, then computing the median within groups" src="_images/split-apply-combine.png" /></p>
@@ -1588,7 +1600,7 @@ Name: Revenue, dtype: int64
 <h2><span class="section-number">11.5. </span>More on math in Python<a class="headerlink" href="#more-on-math-in-python" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="arithmetic-in-formulas">
 <h3><span class="section-number">11.5.1. </span>Arithmetic in formulas<a class="headerlink" href="#arithmetic-in-formulas" title="Permalink to this headline">¶</a></h3>
-<p>Recall that pandas is built on NumPy, and in <a class="reference internal" href="chapter-9-math-and-stats.html"><span class="doc">Chapter 9 of the notes</span></a> we talked about NumPy’s support for vectorization.  If we have a Series <code class="docutils literal notranslate"><span class="pre">height</span></code> containing heights in inches and we need instead to have it in centimeters, we don’t need to do <code class="docutils literal notranslate"><span class="pre">height.apply()</span></code> and give it a conversion function, because we can just do <code class="docutils literal notranslate"><span class="pre">height</span> <span class="pre">*</span> <span class="pre">2.54</span></code>.  NumPy automatically <em>vectorizes</em> this operation, spreading the “times 2.54” over each entry in the <code class="docutils literal notranslate"><span class="pre">height</span></code> array.</p>
+<p>Recall that pandas is built on NumPy, and in <a class="reference internal" href="chapter-9-math-and-stats.html"><span class="doc std std-doc">Chapter 9 of the notes</span></a> we talked about NumPy’s support for vectorization.  If we have a Series <code class="docutils literal notranslate"><span class="pre">height</span></code> containing heights in inches and we need instead to have it in centimeters, we don’t need to do <code class="docutils literal notranslate"><span class="pre">height.apply()</span></code> and give it a conversion function, because we can just do <code class="docutils literal notranslate"><span class="pre">height</span> <span class="pre">*</span> <span class="pre">2.54</span></code>.  NumPy automatically <em>vectorizes</em> this operation, spreading the “times 2.54” over each entry in the <code class="docutils literal notranslate"><span class="pre">height</span></code> array.</p>
 <p>This is quite natural, because we have mathematical notation that does the same thing (in math, not Python).  If you’ve taken a class involving vectors, you know that vector addition <span class="math notranslate nohighlight">\(\vec x+\vec y\)</span> means to do exactly what NumPy does–add the corresponding entries in each vector.  Similarly, scalar multiplication <span class="math notranslate nohighlight">\(s\vec x\)</span> means to multiply <span class="math notranslate nohighlight">\(s\)</span> by each entry in the vector <span class="math notranslate nohighlight">\(\vec x\)</span>, just like <code class="docutils literal notranslate"><span class="pre">height</span> <span class="pre">*</span> <span class="pre">2.54</span></code> does in Python.  So NumPy is not inventing something strange here; it’s normal mathematical stuff.</p>
 <p>All the basic mathematical operations are built into NumPy.  For example, if we have created a linear model <span class="math notranslate nohighlight">\(\hat y=\beta_0+\beta_1 x\)</span> with parameters stored in Python variables <code class="docutils literal notranslate"><span class="pre">β0</span></code> and <code class="docutils literal notranslate"><span class="pre">β1</span></code>, we can apply it to an entire series of inputs <code class="docutils literal notranslate"><span class="pre">xs</span></code> at once with the following code, because NumPy knows how to spread both <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">*</span></code> across arrays.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y_hat</span> <span class="o">=</span> <span class="n">β0</span> <span class="o">+</span> <span class="n">β1</span> <span class="o">*</span> <span class="n">xs</span>
