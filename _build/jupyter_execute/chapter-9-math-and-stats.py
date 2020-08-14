@@ -67,7 +67,7 @@ normal_pdf( 10, 2, 15 )
 
 Most data science projects in Python import both pandas and NumPy.  Since NumPy implements tons of mathematical tools, why bother using the ones in Python's built-in `math` module?  Well, on the one hand, NumPy doesn't have *everything*; for instance, the `math.comb()` and `math.perm()` functions mentioned above don't exist in NumPy.  But when you *can* use NumPy, you *should,* for the following important reason.
 
-```{admonition} Big Picture
+```{admonition} Big Picture - Vectorization and its benefits
 ---
 class: alert alert-primary
 ---
@@ -257,7 +257,7 @@ plt.scatter( xs, ys )
 plt.plot( many_xs, fit_model( many_xs ) )
 plt.show()
 
-```{admonition} Big Picture
+```{admonition} Big Picture - Models vs. fit models
 ---
 class: alert alert-primary
 ---

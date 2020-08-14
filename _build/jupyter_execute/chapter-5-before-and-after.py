@@ -58,7 +58,7 @@ It's important to be familiar with the guarantees provided by your math and stat
 
 ## Communication
 
-```{admonition} Big Picture
+```{admonition} Big Picture - Explanations before and after code
 ---
 class: alert alert-primary
 ---

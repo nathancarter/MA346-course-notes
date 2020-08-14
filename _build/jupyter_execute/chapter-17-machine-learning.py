@@ -11,7 +11,7 @@ Today's notes are a small preview of the kind of material that appears in a mach
 
 ## Supervised and unsupervised learning
 
-```{admonition} Big Picture
+```{admonition} Big Picture - Supervised vs. unsupervised machine learning
 ---
 class: alert alert-primary
 ---
@@ -35,7 +35,7 @@ I may use any of these terms in this chapter and in class; you should become fam
 
 ## Seen and unseen data
 
-```{admonition} Big Picture
+```{admonition} Big Picture - A central issue: overfitting vs. underfitting
 ---
 class: alert alert-primary
 ---
@@ -113,11 +113,13 @@ Now we know what the problems are.  How do we go about avoiding underfitting or 
 
 ## Training, validation, and testing
 
-```{admonition} Big Picture
+```{admonition} Big Picture - Why we split data into train and test sets
 ---
 class: alert alert-primary
 ---
-Recall that the key question we're trying to answer is, "How do I make a model that works well on unseen data?"  Or more precisely, "How do I make a model that works well on data that wasn't used to create the model?"  The solution is actually rather simple:  When given a dataset, split it into two parts, one you will use to create your model, and the other that you will use as "unseen data," on which to test your model.  The details are actually slightly more intricate than that simple answer, but that's the heart of it.
+Recall that the key question we're trying to answer is, "How do I make a model that works well on unseen data?"  Or more precisely, "How do I make a model that works well on data that wasn't used to create the model?"
+
+The solution is actually rather simple:  When given a dataset, split it into two parts, one you will use to create your model, and the other that you will use as "unseen data," on which to test your model.  The details are actually slightly more intricate than that simple answer, but that's the heart of it.
 ```
 
 ### Training vs. testing

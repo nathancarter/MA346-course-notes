@@ -92,11 +92,14 @@ There is, unfortunately, a related function `map()`.  It behaves very similarly 
 | You can use a dictionary instead of `f`           | No  | Yes |
 | You can ask it to skip NaNs                       | No  | Yes |
 
-```{admonition} Big Picture
+```{admonition} Big Picture - Informally, map is the same as apply
 ---
 class: alert alert-primary
 ---
-In most programming contexts, including data work, if someone speaks of "mapping" or "applying" a function, they mean the same thing:  Automatically running the function on each element of a list or series.  The function for this is often called `map()` or `apply()`, as in pandas, but not always.  In mathematics, it's called using a function "elementwise," meaning on each element of a structure separately.  In the popular language Julia, it's called "broadcasting" a function over an array or table.
+In most programming contexts, including data work, if someone speaks of "mapping" or "applying" a function, they mean the same thing:  Automatically running the function on each element of a list or series.
+ * The function for this is often called `map()` or `apply()`, as in pandas, but not always.
+ * In mathematics, it's called using a function "elementwise," meaning on each element of a structure separately.
+ * In the popular language Julia, it's called "broadcasting" a function over an array or table.
 ```
 
 The function that you give to `apply()` can't be just any function.  Its input type needs to match the data type of the individual elements in the Series or DataFrame you're applying it to.  Its output type will determine what kind of output you get.  For example, the `get_first_year()` function defined above takes strings as input and gives integers as output.  So using `apply(get_first_year)` will need to be done on a Series containing strings, and will produce a Series containing integers.
@@ -165,7 +168,7 @@ df.head()
 
 ## Map-Reduce
 
-```{admonition} Big Picture
+```{admonition} Big Picture - Important phrases: map-reduce and split-apply-combine
 ---
 class: alert alert-primary
 ---

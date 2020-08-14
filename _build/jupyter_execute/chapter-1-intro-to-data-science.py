@@ -48,7 +48,7 @@ But there are two focuses of our course that will make a big difference.
 
 ### Learning on your own (LOYO)
 
-```{admonition} Big Picture
+```{admonition} Big Picture - The importance of life-long learning
 ---
 class: alert alert-primary
 ---
@@ -63,7 +63,7 @@ If you're interested in a career in this space, I encourage you to follow data s
 
 This was already mentioned earlier, but I will re-emphasize it here, because of how important it is.  In a meeting between the Bentley University Career Services office and about a dozen employers of our graduates, the employers were asked whether they preferred technical knowledge or what some call "soft skills" and others call "power skills," which include communication perhaps first and foremost.  Unanimously every employer chose the latter.
 
-```{admonition} Big Picture
+```{admonition} Big Picture - The importance of communication
 ---
 class: alert alert-primary
 ---

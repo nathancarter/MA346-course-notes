@@ -28,7 +28,7 @@ The following two tables show the same data, but in different forms.  One is tal
 
 Although it's not part of MA346, it's worth mentioning that: In the famous paper [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf), data scientist and R developer Hadley Wickham calls tall form "tidy data" and defines it as having exactly one "observation" per row.  (What an observation is depends on what you've gathered data about.  In the first table above, an observation seems to be the amount of sales by a particular person on a particular day.)  His rationale comes from people who've studied databases, and if you've taken CS350 at Bentley, you may be familiar with the related concept of database normal forms.  The [tidyverse](https://www.tidyverse.org/) is a collection of R packages that help you work smoothly with data if you organize it in tidy form.
 
-```{admonition} Big Picture
+```{admonition} Big Picture - The relationship between tall and wide data
 ---
 class: alert alert-primary
 ---
@@ -52,7 +52,7 @@ As just stated, pivot is the verb for converting tall-form data to wide-form dat
 
 The big picture idea of the pivot operation is illustrated here:
 
-<img alt="Overview of the pivot operation" src="../../_images/table-verb-pivot.png"/>
+![Overview of the pivot operation](_images/table-verb-pivot.png)
 
 We will make that more precise later, but it can serve as a reference for the general idea.
 
@@ -121,7 +121,7 @@ The reverse operation to a pivot is called "melt."  This comes from the fact tha
 
 The big picture idea of the pivot operation is illustrated here:
 
-<img alt="Overview of the melt operation" src="../../_images/table-verb-melt.png"/>
+![Overview of the melt operation](_images/table-verb-melt.png)
 
 We will make that more precise later, but it can serve as a reference for the general idea.
 
@@ -170,7 +170,7 @@ If `df.pivot()` makes a tall table wide, then `df.pivot_table()` makes a tall ta
 
 The big picture idea of the pivot operation is illustrated here:
 
-<img alt="Overview of the pivot table operation" src="../../_images/table-verb-pivot-table.png"/>
+![Overview of the pivot table operation](_images/table-verb-pivot-table.png)
 
 We will make that more precise later, but it can serve as a reference for the general idea.
 

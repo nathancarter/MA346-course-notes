@@ -5,7 +5,7 @@
 
 ## What is version control and why should I care?
 
-```{admonition} Big Picture
+```{admonition} Big Picture - Why people use tools like git
 ---
 class: alert alert-primary
 ---

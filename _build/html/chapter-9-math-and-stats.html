@@ -448,7 +448,7 @@
 <h2><span class="section-number">9.3. </span>But what about NumPy?<a class="headerlink" href="#but-what-about-numpy" title="Permalink to this headline">¶</a></h2>
 <p>Most data science projects in Python import both pandas and NumPy.  Since NumPy implements tons of mathematical tools, why bother using the ones in Python’s built-in <code class="docutils literal notranslate"><span class="pre">math</span></code> module?  Well, on the one hand, NumPy doesn’t have <em>everything</em>; for instance, the <code class="docutils literal notranslate"><span class="pre">math.comb()</span></code> and <code class="docutils literal notranslate"><span class="pre">math.perm()</span></code> functions mentioned above don’t exist in NumPy.  But when you <em>can</em> use NumPy, you <em>should,</em> for the following important reason.</p>
 <div class="alert alert-primary admonition">
-<p class="admonition-title">Big Picture</p>
+<p class="admonition-title">Big Picture - Vectorization and its benefits</p>
 <p>All the functions in NumPy are <em>vectorized,</em> meaning that they will automatically apply themselves to every element of a NumPy array.  For instance, you can just as easily compute <code class="docutils literal notranslate"><span class="pre">square(5)</span></code> (and get 25) as you can compute <code class="docutils literal notranslate"><span class="pre">square(x)</span></code> if <code class="docutils literal notranslate"><span class="pre">x</span></code> is a list of 1000 entries.  NumPy notices that you provided a list of things to square, and it squares them all.  What are the benefits to vectorization?</p>
 <ol class="simple">
 <li><p>Using vectorization saves you <em>the work of writing loops.</em></p></li>
@@ -467,12 +467,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.0827237 , 0.69806269, 0.05344937, 0.18305991, 0.1624233 ,
-       0.39158937, 0.57449001, 0.32524394, 0.04881083, 0.70365403,
-       0.96348984, 0.38567284, 0.01956414, 0.21700363, 0.88452843,
-       0.02372681, 0.02242204, 0.82979792, 0.98191601, 0.81267343,
-       0.40981124, 0.91364753, 0.95288001, 0.41932472, 0.97649249,
-       0.53376843, 0.62018058, 0.16880463, 0.37736526, 0.2546386 ])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.80724218, 0.0349007 , 0.33182566, 0.19286228, 0.95152264,
+       0.74163011, 0.44681219, 0.89176513, 0.98331512, 0.14908147,
+       0.3770531 , 0.05929311, 0.82069252, 0.31441441, 0.83632037,
+       0.51864917, 0.00441048, 0.33075984, 0.47909396, 0.74597849,
+       0.52155408, 0.97789045, 0.35827873, 0.60716754, 0.30250828,
+       0.27467315, 0.89969365, 0.15954295, 0.37129444, 0.44652997])
 </pre></div>
 </div>
 </div>
@@ -484,9 +484,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.08, 0.7 , 0.05, 0.18, 0.16, 0.39, 0.57, 0.33, 0.05, 0.7 , 0.96,
-       0.39, 0.02, 0.22, 0.88, 0.02, 0.02, 0.83, 0.98, 0.81, 0.41, 0.91,
-       0.95, 0.42, 0.98, 0.53, 0.62, 0.17, 0.38, 0.25])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.81, 0.03, 0.33, 0.19, 0.95, 0.74, 0.45, 0.89, 0.98, 0.15, 0.38,
+       0.06, 0.82, 0.31, 0.84, 0.52, 0.  , 0.33, 0.48, 0.75, 0.52, 0.98,
+       0.36, 0.61, 0.3 , 0.27, 0.9 , 0.16, 0.37, 0.45])
 </pre></div>
 </div>
 </div>
@@ -498,12 +498,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1.08624164, 2.00985521, 1.05490358, 1.20088636, 1.17635809,
-       1.47933013, 1.77622444, 1.3843683 , 1.0500217 , 2.02112448,
-       2.6208268 , 1.47060347, 1.01975677, 1.24234861, 2.42184205,
-       1.02401053, 1.0226753 , 2.29285536, 2.66956626, 2.25392565,
-       1.50653338, 2.49340071, 2.59316726, 1.52093416, 2.65512701,
-       1.70534669, 1.85926375, 1.18388882, 1.45843692, 1.28999534])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([2.2417172 , 1.03551688, 1.39350989, 1.21271576, 2.58964978,
+       2.09935491, 1.56332067, 2.43943176, 2.67330388, 1.16076755,
+       1.45798173, 1.06108621, 2.27207274, 1.36945713, 2.30785927,
+       1.67975705, 1.00442022, 1.39202544, 1.61461083, 2.10850357,
+       1.68464368, 2.65884135, 1.43086439, 1.83522582, 1.35324889,
+       1.31610044, 2.45884972, 1.17297464, 1.44960983, 1.56287952])
 </pre></div>
 </div>
 </div>
@@ -515,14 +515,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([6.84321053e-03, 4.87291513e-01, 2.85683488e-03, 3.35109321e-02,
-       2.63813298e-02, 1.53342237e-01, 3.30038774e-01, 1.05783617e-01,
-       2.38249694e-03, 4.95128993e-01, 9.28312674e-01, 1.48743540e-01,
-       3.82755569e-04, 4.70905750e-02, 7.82390538e-01, 5.62961539e-04,
-       5.02747949e-04, 6.88564595e-01, 9.64159047e-01, 6.60438099e-01,
-       1.67945250e-01, 8.34751804e-01, 9.07980309e-01, 1.75833223e-01,
-       9.53537589e-01, 2.84908735e-01, 3.84623949e-01, 2.84950019e-02,
-       1.42404540e-01, 6.48408187e-02])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([6.51639934e-01, 1.21805910e-03, 1.10108270e-01, 3.71958583e-02,
+       9.05395343e-01, 5.50015223e-01, 1.99641136e-01, 7.95245041e-01,
+       9.66908619e-01, 2.22252837e-02, 1.42169040e-01, 3.51567261e-03,
+       6.73536206e-01, 9.88564194e-02, 6.99431763e-01, 2.68996962e-01,
+       1.94523650e-05, 1.09402069e-01, 2.29531019e-01, 5.56483901e-01,
+       2.72018655e-01, 9.56269725e-01, 1.28363649e-01, 3.68652416e-01,
+       9.15112624e-02, 7.54453415e-02, 8.09448662e-01, 2.54539518e-02,
+       1.37859560e-01, 1.99389011e-01])
 </pre></div>
 </div>
 </div>
@@ -600,8 +600,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([45.51745699, 66.58053792, 70.47264518, 37.17439357, 28.92914115,
-       23.05927427, 17.88746452, 85.41478089, 82.27248346, 61.97423341])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([72.45814241, 48.37636268, 37.64218462, 59.19184957, 70.29433467,
+       64.18287033, 99.34424078, 94.95203695, 36.45039975, 31.37376436])
 </pre></div>
 </div>
 </div>
@@ -615,8 +615,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([58.15801562, 82.49038895, 81.56006929, 52.013324  , 12.08138217,
-       50.72877908, 16.90631669, 76.50969099, 83.74210858, 61.69545433])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([80.33953909, 44.72173619, 61.46458148, 19.7498066 , 53.50710756,
+        9.18715567, 30.60251347, 59.96554507, 49.19081409, 24.76156349])
 </pre></div>
 </div>
 </div>
@@ -847,7 +847,7 @@
 </div>
 </div>
 <div class="alert alert-primary admonition">
-<p class="admonition-title">Big Picture</p>
+<p class="admonition-title">Big Picture - Models vs. fit models</p>
 <p>In mathematical modeling and machine learning, we sometimes distinguish between a <em>model</em> and a <em>fit model.</em></p>
 <ul class="simple">
 <li><p>A <em>model</em> is a general purpose technique that you decide might suit the data.  Examples:</p>

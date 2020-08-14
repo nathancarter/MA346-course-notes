@@ -437,7 +437,7 @@
 </table>
 <p>Although it’s not part of MA346, it’s worth mentioning that: In the famous paper <a class="reference external" href="https://vita.had.co.nz/papers/tidy-data.pdf">Tidy Data</a>, data scientist and R developer Hadley Wickham calls tall form “tidy data” and defines it as having exactly one “observation” per row.  (What an observation is depends on what you’ve gathered data about.  In the first table above, an observation seems to be the amount of sales by a particular person on a particular day.)  His rationale comes from people who’ve studied databases, and if you’ve taken CS350 at Bentley, you may be familiar with the related concept of database normal forms.  The <a class="reference external" href="https://www.tidyverse.org/">tidyverse</a> is a collection of R packages that help you work smoothly with data if you organize it in tidy form.</p>
 <div class="alert alert-primary admonition">
-<p class="admonition-title">Big Picture</p>
+<p class="admonition-title">Big Picture - The relationship between tall and wide data</p>
 <p><strong>The tall form is typically more useful when computing with data,</strong> because we often want to filter for just the rows we care about.  So the more separated the data is into rows, the easier it is to select just the data we need.</p>
 <p><strong>The wide form is typically more useful when presenting data to humans.</strong>  Although this tiny table is just an example, data in the real world has far more rows, meaning that the tall form will not fit on a page.  Reshaping it into a rectangle that does fit on one page is usually preferred.</p>
 <p><strong>Pivot</strong> is the verb that converts tall form to wide form.</p>
@@ -451,7 +451,7 @@
 <div class="section" id="the-general-idea">
 <h3><span class="section-number">6.2.1. </span>The general idea<a class="headerlink" href="#the-general-idea" title="Permalink to this headline">¶</a></h3>
 <p>The big picture idea of the pivot operation is illustrated here:</p>
-<img alt="Overview of the pivot operation" src="../../_images/table-verb-pivot.png"/>
+<p><img alt="Overview of the pivot operation" src="_images/table-verb-pivot.png" /></p>
 <p>We will make that more precise later, but it can serve as a reference for the general idea.</p>
 <p> </p>
 <p>The table below shows the same table from above, in “tall” form.  Drag the slider back and forth to watch the transition from tall to wide form.  While you do so, watch each of these parts of the table:</p>
@@ -566,7 +566,7 @@
 <div class="section" id="the-genreal-idea">
 <h3><span class="section-number">6.3.1. </span>The genreal idea<a class="headerlink" href="#the-genreal-idea" title="Permalink to this headline">¶</a></h3>
 <p>The big picture idea of the pivot operation is illustrated here:</p>
-<img alt="Overview of the melt operation" src="../../_images/table-verb-melt.png"/>
+<p><img alt="Overview of the melt operation" src="_images/table-verb-melt.png" /></p>
 <p>We will make that more precise later, but it can serve as a reference for the general idea.</p>
 <p> </p>
 <p>Just as pivoting was usually to turn data stored for computers into data readable by humans, melting is for the reverse.  If you’re given data in wide form, but you want to prepare it for analysis, you often want to convert it into tall form to make subsequent data processing code easier.</p>
@@ -641,7 +641,7 @@
 <div class="section" id="id2">
 <h3><span class="section-number">6.4.1. </span>The general idea<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>The big picture idea of the pivot operation is illustrated here:</p>
-<img alt="Overview of the pivot table operation" src="../../_images/table-verb-pivot-table.png"/>
+<p><img alt="Overview of the pivot table operation" src="_images/table-verb-pivot-table.png" /></p>
 <p>We will make that more precise later, but it can serve as a reference for the general idea.</p>
 <p> </p>
 <p>In the table shown below, notice that if we try to consider the gray and blue columns as inputs and the green column as outputs, the relationship is <em>not</em> a function.  If it were, we could pivot on the blue column, and the green cells would rearrange themselves just as they did in the first animation up above.  But try dragging the slider below <em>slowly</em> and you will see that some green cells collide.</p>

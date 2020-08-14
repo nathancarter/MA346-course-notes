@@ -282,7 +282,7 @@ But there are two focuses of our course that will make a big difference.
 
 \subsection{Learning on your own (LOYO)}
 \label{\detokenize{chapter-1-intro-to-data-science:learning-on-your-own-loyo}}
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} The importance of life\sphinxhyphen{}long learning}
 
 I once heard a director of informatics in the health care industry describe how quickly the field of data science changes by saying, “There aren’t any experts; it’s just who’s the fastest learner.”  For that reason, it’s essential to cultivate the skill of being able to learn new tools and concepts on your own.
 \end{sphinxadmonition}
@@ -296,7 +296,7 @@ If you’re interested in a career in this space, I encourage you to follow data
 \label{\detokenize{chapter-1-intro-to-data-science:excellent-communication}}
 This was already mentioned earlier, but I will re\sphinxhyphen{}emphasize it here, because of how important it is.  In a meeting between the Bentley University Career Services office and about a dozen employers of our graduates, the employers were asked whether they preferred technical knowledge or what some call “soft skills” and others call “power skills,” which include communication perhaps first and foremost.  Unanimously every employer chose the latter.
 
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} The importance of communication}
 
 Data science is about turning data into actionable knowledge.  If a data scientist cannot take the results of their analysis and effectively communicate them to decision makers, they have not turned data into actionable knowledge, and have therefore failed at their goal.  Even if the insights are brilliant, if they are never shared with those who need them, they achieve nothing.  Good communication is essential for data work.
 \end{sphinxadmonition}
@@ -409,7 +409,7 @@ at least one example of how to apply it to a set of data, when a smooth function
 \label{\detokenize{chapter-2-mathematical-foundations:mathematical-foundations}}\label{\detokenize{chapter-2-mathematical-foundations::doc}}
 See also the slides that summarize a portion of this content.
 
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Functions and relations}
 
 The contents of this page are extremely foundational to the course.  We will be weaving these foundations through every lesson in the course after this one.
 \end{sphinxadmonition}
@@ -710,7 +710,7 @@ In data science, we often do this using tables.  For example, consider the table
 
 If you want to check whether, for example, “Bangalore is the capitol of India” is true, you can look to see if any row of the table is \sphinxcode{\sphinxupquote{('India','Bangalore')}}.  Since there is no such row, the relation is false for that input.  (The capitol is actually New Delhi.)
 
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Every table represents a relation.}
 
 Every table is a relation.  Each row represents a set of inputs that would make the relation true, and any inputs that don’t appear as a row in the table make it false.
 
@@ -1214,7 +1214,7 @@ Okay, sounds great, so where do we point our browser to start using this thing? 
 
 \section{How does Jupyter work?}
 \label{\detokenize{chapter-3-jupyter:how-does-jupyter-work}}
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} The structure of Jupyter}
 
 Jupyter is made of two pieces:
 \begin{enumerate}
@@ -1399,7 +1399,7 @@ Has both console and terminal access
 
 Both technologies let you edit Jupyter notebooks.  (Yes, it’s confusing that one app is called “the Jupyter Notebook” and the files are also called “Jupyter notebooks.”  Sorry.)
 
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} How to shut down Jupyter}
 
 When you launch either the Jupyter Notebook or Jupyter Lab, you launch both the user interface (which you see in your browser) and the kernel (which you don’t!).  \sphinxstylestrong{Just closing the browser tab DOES NOT CLOSE THE KERNEL.}  Doing this repeatedly (e.g., each day in class) will clog up your computer with many kernels running invisibly in the background.
 
@@ -1585,7 +1585,7 @@ Running this code in the notebook you’ve created would work just fine, and wou
 
 But what happens if you try to run the same code, but just on the \sphinxcode{\sphinxupquote{women}} DataFrame (or \sphinxcode{\sphinxupquote{asians}} or \sphinxcode{\sphinxupquote{age75andup}})?
 
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Writing to a slice of a DataFrame}
 
 The warning message you see when you attempt to run the code described above is an important one!  It relates to the difference between a DataFrame and a \sphinxstyleemphasis{view} of that DataFrame.  You can add columns to a DataFrame, but if you add to just a view, you’ll receive a warning.  We will discuss the details of this in class.
 \end{sphinxadmonition}
@@ -1859,7 +1859,7 @@ It’s important to be familiar with the guarantees provided by your math and st
 
 \section{Communication}
 \label{\detokenize{chapter-5-before-and-after:communication}}
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Explanations before and after code}
 
 The best code notebooks explain their contents according to two rules:
 \begin{enumerate}
@@ -2216,7 +2216,7 @@ Jones
 
 Although it’s not part of MA346, it’s worth mentioning that: In the famous paper \sphinxhref{https://vita.had.co.nz/papers/tidy-data.pdf}{Tidy Data}, data scientist and R developer Hadley Wickham calls tall form “tidy data” and defines it as having exactly one “observation” per row.  (What an observation is depends on what you’ve gathered data about.  In the first table above, an observation seems to be the amount of sales by a particular person on a particular day.)  His rationale comes from people who’ve studied databases, and if you’ve taken CS350 at Bentley, you may be familiar with the related concept of database normal forms.  The \sphinxhref{https://www.tidyverse.org/}{tidyverse} is a collection of R packages that help you work smoothly with data if you organize it in tidy form.
 
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} The relationship between tall and wide data}
 
 \sphinxstylestrong{The tall form is typically more useful when computing with data,} because we often want to filter for just the rows we care about.  So the more separated the data is into rows, the easier it is to select just the data we need.
 
@@ -2239,7 +2239,7 @@ As just stated, pivot is the verb for converting tall\sphinxhyphen{}form data to
 \label{\detokenize{chapter-6-single-table-verbs:the-general-idea}}
 The big picture idea of the pivot operation is illustrated here:
 
-
+\sphinxincludegraphics{{table-verb-pivot}.png}
 
 We will make that more precise later, but it can serve as a reference for the general idea.
 
@@ -2415,7 +2415,7 @@ The reverse operation to a pivot is called “melt.”  This comes from the fact
 \label{\detokenize{chapter-6-single-table-verbs:the-genreal-idea}}
 The big picture idea of the pivot operation is illustrated here:
 
-
+\sphinxincludegraphics{{table-verb-melt}.png}
 
 We will make that more precise later, but it can serve as a reference for the general idea.
 
@@ -2522,7 +2522,7 @@ If \sphinxcode{\sphinxupquote{df.pivot()}} makes a tall table wide, then \sphinx
 \label{\detokenize{chapter-6-single-table-verbs:id2}}
 The big picture idea of the pivot operation is illustrated here:
 
-
+\sphinxincludegraphics{{table-verb-pivot-table}.png}
 
 We will make that more precise later, but it can serve as a reference for the general idea.
 
@@ -2760,7 +2760,7 @@ The statement above from Example 1 is a \sphinxstyleemphasis{universal} statemen
 
 \section{Abstraction in programming}
 \label{\detokenize{chapter-7-abstraction:abstraction-in-programming}}
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} The value of abstraction in programming}
 
 This section covers the value of abstraction for every programmer.  It is a valuable viewpoint to have and skill to be able to employ.  See the rest of this section for details on how it works and how to use it.
 \end{sphinxadmonition}
@@ -3070,7 +3070,7 @@ See also the slides that summarize a portion of this content.
 
 \section{What is version control and why should I care?}
 \label{\detokenize{chapter-8-version-control:what-is-version-control-and-why-should-i-care}}
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Why people use tools like git}
 
 The most common version control system is called \sphinxcode{\sphinxupquote{git}}.  It helps you with:
 \begin{itemize}
@@ -3555,7 +3555,7 @@ Interestingly, you can actually type Greek letters into Python code and use them
 \label{\detokenize{chapter-9-math-and-stats:but-what-about-numpy}}
 Most data science projects in Python import both pandas and NumPy.  Since NumPy implements tons of mathematical tools, why bother using the ones in Python’s built\sphinxhyphen{}in \sphinxcode{\sphinxupquote{math}} module?  Well, on the one hand, NumPy doesn’t have \sphinxstyleemphasis{everything}; for instance, the \sphinxcode{\sphinxupquote{math.comb()}} and \sphinxcode{\sphinxupquote{math.perm()}} functions mentioned above don’t exist in NumPy.  But when you \sphinxstyleemphasis{can} use NumPy, you \sphinxstyleemphasis{should,} for the following important reason.
 
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Vectorization and its benefits}
 
 All the functions in NumPy are \sphinxstyleemphasis{vectorized,} meaning that they will automatically apply themselves to every element of a NumPy array.  For instance, you can just as easily compute \sphinxcode{\sphinxupquote{square(5)}} (and get 25) as you can compute \sphinxcode{\sphinxupquote{square(x)}} if \sphinxcode{\sphinxupquote{x}} is a list of 1000 entries.  NumPy notices that you provided a list of things to square, and it squares them all.  What are the benefits to vectorization?
 \begin{enumerate}
@@ -3582,12 +3582,12 @@ We will return to vectorization and loops in Chapter 11 of these notes.  For now
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.0827237 , 0.69806269, 0.05344937, 0.18305991, 0.1624233 ,
-       0.39158937, 0.57449001, 0.32524394, 0.04881083, 0.70365403,
-       0.96348984, 0.38567284, 0.01956414, 0.21700363, 0.88452843,
-       0.02372681, 0.02242204, 0.82979792, 0.98191601, 0.81267343,
-       0.40981124, 0.91364753, 0.95288001, 0.41932472, 0.97649249,
-       0.53376843, 0.62018058, 0.16880463, 0.37736526, 0.2546386 ])
+array([0.80724218, 0.0349007 , 0.33182566, 0.19286228, 0.95152264,
+       0.74163011, 0.44681219, 0.89176513, 0.98331512, 0.14908147,
+       0.3770531 , 0.05929311, 0.82069252, 0.31441441, 0.83632037,
+       0.51864917, 0.00441048, 0.33075984, 0.47909396, 0.74597849,
+       0.52155408, 0.97789045, 0.35827873, 0.60716754, 0.30250828,
+       0.27467315, 0.89969365, 0.15954295, 0.37129444, 0.44652997])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3595,9 +3595,9 @@ array([0.0827237 , 0.69806269, 0.05344937, 0.18305991, 0.1624233 ,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.08, 0.7 , 0.05, 0.18, 0.16, 0.39, 0.57, 0.33, 0.05, 0.7 , 0.96,
-       0.39, 0.02, 0.22, 0.88, 0.02, 0.02, 0.83, 0.98, 0.81, 0.41, 0.91,
-       0.95, 0.42, 0.98, 0.53, 0.62, 0.17, 0.38, 0.25])
+array([0.81, 0.03, 0.33, 0.19, 0.95, 0.74, 0.45, 0.89, 0.98, 0.15, 0.38,
+       0.06, 0.82, 0.31, 0.84, 0.52, 0.  , 0.33, 0.48, 0.75, 0.52, 0.98,
+       0.36, 0.61, 0.3 , 0.27, 0.9 , 0.16, 0.37, 0.45])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3605,12 +3605,12 @@ array([0.08, 0.7 , 0.05, 0.18, 0.16, 0.39, 0.57, 0.33, 0.05, 0.7 , 0.96,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([1.08624164, 2.00985521, 1.05490358, 1.20088636, 1.17635809,
-       1.47933013, 1.77622444, 1.3843683 , 1.0500217 , 2.02112448,
-       2.6208268 , 1.47060347, 1.01975677, 1.24234861, 2.42184205,
-       1.02401053, 1.0226753 , 2.29285536, 2.66956626, 2.25392565,
-       1.50653338, 2.49340071, 2.59316726, 1.52093416, 2.65512701,
-       1.70534669, 1.85926375, 1.18388882, 1.45843692, 1.28999534])
+array([2.2417172 , 1.03551688, 1.39350989, 1.21271576, 2.58964978,
+       2.09935491, 1.56332067, 2.43943176, 2.67330388, 1.16076755,
+       1.45798173, 1.06108621, 2.27207274, 1.36945713, 2.30785927,
+       1.67975705, 1.00442022, 1.39202544, 1.61461083, 2.10850357,
+       1.68464368, 2.65884135, 1.43086439, 1.83522582, 1.35324889,
+       1.31610044, 2.45884972, 1.17297464, 1.44960983, 1.56287952])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -3618,14 +3618,14 @@ array([1.08624164, 2.00985521, 1.05490358, 1.20088636, 1.17635809,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([6.84321053e\PYGZhy{}03, 4.87291513e\PYGZhy{}01, 2.85683488e\PYGZhy{}03, 3.35109321e\PYGZhy{}02,
-       2.63813298e\PYGZhy{}02, 1.53342237e\PYGZhy{}01, 3.30038774e\PYGZhy{}01, 1.05783617e\PYGZhy{}01,
-       2.38249694e\PYGZhy{}03, 4.95128993e\PYGZhy{}01, 9.28312674e\PYGZhy{}01, 1.48743540e\PYGZhy{}01,
-       3.82755569e\PYGZhy{}04, 4.70905750e\PYGZhy{}02, 7.82390538e\PYGZhy{}01, 5.62961539e\PYGZhy{}04,
-       5.02747949e\PYGZhy{}04, 6.88564595e\PYGZhy{}01, 9.64159047e\PYGZhy{}01, 6.60438099e\PYGZhy{}01,
-       1.67945250e\PYGZhy{}01, 8.34751804e\PYGZhy{}01, 9.07980309e\PYGZhy{}01, 1.75833223e\PYGZhy{}01,
-       9.53537589e\PYGZhy{}01, 2.84908735e\PYGZhy{}01, 3.84623949e\PYGZhy{}01, 2.84950019e\PYGZhy{}02,
-       1.42404540e\PYGZhy{}01, 6.48408187e\PYGZhy{}02])
+array([6.51639934e\PYGZhy{}01, 1.21805910e\PYGZhy{}03, 1.10108270e\PYGZhy{}01, 3.71958583e\PYGZhy{}02,
+       9.05395343e\PYGZhy{}01, 5.50015223e\PYGZhy{}01, 1.99641136e\PYGZhy{}01, 7.95245041e\PYGZhy{}01,
+       9.66908619e\PYGZhy{}01, 2.22252837e\PYGZhy{}02, 1.42169040e\PYGZhy{}01, 3.51567261e\PYGZhy{}03,
+       6.73536206e\PYGZhy{}01, 9.88564194e\PYGZhy{}02, 6.99431763e\PYGZhy{}01, 2.68996962e\PYGZhy{}01,
+       1.94523650e\PYGZhy{}05, 1.09402069e\PYGZhy{}01, 2.29531019e\PYGZhy{}01, 5.56483901e\PYGZhy{}01,
+       2.72018655e\PYGZhy{}01, 9.56269725e\PYGZhy{}01, 1.28363649e\PYGZhy{}01, 3.68652416e\PYGZhy{}01,
+       9.15112624e\PYGZhy{}02, 7.54453415e\PYGZhy{}02, 8.09448662e\PYGZhy{}01, 2.54539518e\PYGZhy{}02,
+       1.37859560e\PYGZhy{}01, 1.99389011e\PYGZhy{}01])
 \end{sphinxVerbatim}
 
 Notice that this makes it very easy to compute certain mathematical formulas.  For example, when we want to measure the quality of a model, we might compute the RSSE, or Root Sum of Squared Errors, that is, the square root of the sum of the squared differences between each actual data value \(y_i\) and its predicted value \(\hat y_i\).  In math, we write it like this:
@@ -3696,8 +3696,8 @@ In fact, SciPy’s built\sphinxhyphen{}in random number generating procedures le
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([45.51745699, 66.58053792, 70.47264518, 37.17439357, 28.92914115,
-       23.05927427, 17.88746452, 85.41478089, 82.27248346, 61.97423341])
+array([72.45814241, 48.37636268, 37.64218462, 59.19184957, 70.29433467,
+       64.18287033, 99.34424078, 94.95203695, 36.45039975, 31.37376436])
 \end{sphinxVerbatim}
 
 Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two arguments and create a specific random variable, then call \sphinxcode{\sphinxupquote{rvs}} on that.
@@ -3708,8 +3708,8 @@ Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two a
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([58.15801562, 82.49038895, 81.56006929, 52.013324  , 12.08138217,
-       50.72877908, 16.90631669, 76.50969099, 83.74210858, 61.69545433])
+array([80.33953909, 44.72173619, 61.46458148, 19.7498066 , 53.50710756,
+        9.18715567, 30.60251347, 59.96554507, 49.19081409, 24.76156349])
 \end{sphinxVerbatim}
 
 The same random variable can, of course, be used to create more values later.
@@ -3911,7 +3911,7 @@ It fits the data very well, as you can see below.
 
 \noindent\sphinxincludegraphics{{chapter-9-math-and-stats_44_0}.png}
 
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Models vs. fit models}
 
 In mathematical modeling and machine learning, we sometimes distinguish between a \sphinxstyleemphasis{model} and a \sphinxstyleemphasis{fit model.}
 \begin{itemize}
@@ -4004,7 +4004,7 @@ The index and the Close column from \sphinxcode{\sphinxupquote{regi\_df}}
 
 \end{enumerate}
 
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Visualizing relations vs. functions}
 
 Recall that two columns of data always form a binary relation, but may or may not be a function.  Noticing whether the data are a function is very important when deciding how to visualize them.
 \begin{itemize}
@@ -4825,9 +4825,20 @@ Yes
 \par
 \sphinxattableend\end{savenotes}
 
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Informally, map is the same as apply}
 
-In most programming contexts, including data work, if someone speaks of “mapping” or “applying” a function, they mean the same thing:  Automatically running the function on each element of a list or series.  The function for this is often called \sphinxcode{\sphinxupquote{map()}} or \sphinxcode{\sphinxupquote{apply()}}, as in pandas, but not always.  In mathematics, it’s called using a function “elementwise,” meaning on each element of a structure separately.  In the popular language Julia, it’s called “broadcasting” a function over an array or table.
+In most programming contexts, including data work, if someone speaks of “mapping” or “applying” a function, they mean the same thing:  Automatically running the function on each element of a list or series.
+\begin{itemize}
+\item {} 
+The function for this is often called \sphinxcode{\sphinxupquote{map()}} or \sphinxcode{\sphinxupquote{apply()}}, as in pandas, but not always.
+
+\item {} 
+In mathematics, it’s called using a function “elementwise,” meaning on each element of a structure separately.
+
+\item {} 
+In the popular language Julia, it’s called “broadcasting” a function over an array or table.
+
+\end{itemize}
 \end{sphinxadmonition}
 
 The function that you give to \sphinxcode{\sphinxupquote{apply()}} can’t be just any function.  Its input type needs to match the data type of the individual elements in the Series or DataFrame you’re applying it to.  Its output type will determine what kind of output you get.  For example, the \sphinxcode{\sphinxupquote{get\_first\_year()}} function defined above takes strings as input and gives integers as output.  So using \sphinxcode{\sphinxupquote{apply(get\_first\_year)}} will need to be done on a Series containing strings, and will produce a Series containing integers.
@@ -4960,7 +4971,7 @@ Without swifter, you could accomplish the same thing with code like the followin
 
 \section{Map\sphinxhyphen{}Reduce}
 \label{\detokenize{chapter-11-processing-rows:map-reduce}}
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Important phrases: map\sphinxhyphen{}reduce and split\sphinxhyphen{}apply\sphinxhyphen{}combine}
 
 Both \sphinxstyleemphasis{map\sphinxhyphen{}reduce} and \sphinxstyleemphasis{split\sphinxhyphen{}apply\sphinxhyphen{}combine} are data manipulation buzzwords that you’ll want to be familiar with, for
 \begin{itemize}
@@ -5732,7 +5743,7 @@ The code is the same as all the code we’ve seen up to this point, but with \sp
 \label{\detokenize{chapter-12-concat-and-merge:summary}}
 Before we tackle the challenging question of what happens if there is no unique ID to use for merging, let’s review where we’ve been and add some key details.
 
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Concat adds rows and merge adds columns (usually!)}
 
 As I’ve introduced it here, \sphinxcode{\sphinxupquote{pd.concat()}} combines the rows of two DataFrames together and \sphinxcode{\sphinxupquote{pd.merge()}} combines the columns.  While \sphinxcode{\sphinxupquote{pd.concat()}} always adds rows, \sphinxcode{\sphinxupquote{pd.merge()}} may or may not, depending on whether you use left, right, inner, or outer joins.
 
@@ -6316,7 +6327,7 @@ I suspect people say ETL when they’re speaking professionally and they say mun
 
 \section{Why are we focusing on this?}
 \label{\detokenize{chapter-13-etl:why-are-we-focusing-on-this}}
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Munging/ETL is a large portion of data work}
 
 Many well\sphinxhyphen{}respected people in the data science community estimate that 70\% to 80\% of a data scientist’s time can be spent on ETL rather than on the more interesting work of modeling, analysis, visualization, and communication.
 \end{sphinxadmonition}
@@ -6356,7 +6367,7 @@ For instance, imagine you get a dataset in which some numeric columns are entitl
 
 \subsection{Data vs. information}
 \label{\detokenize{chapter-13-etl:data-vs-information}}
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Information = Data + Context}
 
 The difference between \sphinxstyleemphasis{data} and \sphinxstyleemphasis{information} is context.  Data is raw numbers, while information is having those numbers in a context we understand, so that the numbers have meaning.  Data provenance can be the context that turns data into information.
 \end{sphinxadmonition}
@@ -6379,7 +6390,7 @@ If a dataset doesn’t come from a data dictionary, but you have personal access
 \label{\detokenize{chapter-13-etl:missing-values}}
 This can be one of the most confusing aspects of data work for new students of data science, so let me begin by emphasizing four key points about missing values that you should always keep in mind.
 
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Summary of key points about missing values}
 \begin{enumerate}
 \sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
@@ -6837,7 +6848,7 @@ Most of the time, we write reports or create slide decks to share our results.  
 
 This is where \sphinxstyleemphasis{dashboards} come in.  A quick \sphinxhref{https://www.google.com/search?q=data+dashboard\&tbm=isch}{Google image search for “data dashboards”} will show you dozens of examples of what dashboards look like.  Their purpose is to let the user explore the data using inputs like buttons and sliders, and seeing outputs that are typically data visualizations and summaries.  Dashboards don’t give the user anywhere near as much flexibility as you have in Python, but they’re much easier and faster.
 
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Uses for data dashboards}
 
 There are many reasons why you might prepare a data dashboard.  Here are a few.
 \begin{itemize}
@@ -7480,9 +7491,9 @@ One of the largest examples of network data has as its vertices the collection o
 
 \end{itemize}
 
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} A graph depicts a binary relation of a set with itself}
 
-Notice that a graph is nothing but a picture representing a \sphinxstyleemphasis{binary relation,} a term we first defined in {\hyperref[\detokenize{chapter-2-mathematical-foundations::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{the notes on Chapter 2}}}}.  In the case of a graph, the two sets involved in the relation are the same; we’re connecting friends to friends in the picture above, or states to states with shipping information, or pages to pages with hyperlinks.  In a graph, the relation connects the set of vertices to itself, rather than to some other set.
+Notice that a graph is nothing but a picture representing a \sphinxstyleemphasis{binary relation,} a term we first defined in {\hyperref[\detokenize{chapter-2-mathematical-foundations::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{the notes on Chapter 2}}}}.  In the case of a graph, the two sets involved in the relation are the same; we’re connecting friends to friends in the picture above, or states to states with shipping information, or pages to pages with hyperlinks.  In a graph, the relation connects the set of vertices to itself, not to some other set.
 \end{sphinxadmonition}
 
 The graph of five friends shown above is a \sphinxstyleemphasis{directed graph,} because the edges have arrowheads to indicate that they make sense in only one direction.  While Augustus said he would seek advice from Cyrano, Cyrano did not say the same about Augustus.
@@ -7640,7 +7651,7 @@ Beatriz
 
 We will call this kind of table a \sphinxstyleemphasis{list of ordered pairs,} because the ordering of each pair often matters.  From Augustus to Cyrano is not the same as from Cyrano to Augustus.  We can also call it an \sphinxstyleemphasis{edge list,} because the connections in a graph are called edges.
 
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} How pivoting/melting impacts graph data}
 
 These two ways to store the data are very related.  If we just imagine a third column for this last table, “From,” “To,” and “Connected (True/False),” then the two tables could be converted from one to the other using pivot and melt from {\hyperref[\detokenize{chapter-6-single-table-verbs::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Chapter 6 of the course notes}}}}.  In that chapter, we learned that it is typically easier for a computer to process melted (tall) data, but easier for humans to read pivoted (wide) data.  To make our computations easier, we will work with this second, two\sphinxhyphen{}column form.
 \end{sphinxadmonition}
@@ -8155,7 +8166,10 @@ Factory 3      0.0      1.0
 
 \section{Recommender systems}
 \label{\detokenize{chapter-16-matrices:recommender-systems}}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} What is a recommender system?}
+
 A \sphinxstyleemphasis{recommender system} is an algorithm that can recommend to a customer a product they might like.  Amazon has had this feature (“Customers who bought this product also liked…”) since the early 2000s, and in the late 2000s, \sphinxhref{https://www.netflixprize.com/}{Netflix ran a \$1,000,000 prize} for creating the best movie recommender system.  In such a system, the input is some knowledge about a customer’s preferences about products, and the output should be a ranked list of products to recommend to that customer.  In Netflix’s case, it was movies, but it can be any set of products.
+\end{sphinxadmonition}
 
 To get a feeling for how this works, we’ll do a tiny example, as if Netflix were a tiny organization with 7 movies and 6 customers.  We’ll label the customers A,B,C,…,F and the movies G,H,I,…,M.  To make things more concrete, we’ll use the movies Godzilla, Hamlet, Ishtar, JFK, King Kong, Lincoln, and Macbeth.  (See the link at the top of this file for the original source of this example.)
 
@@ -8580,6 +8594,11 @@ In the picture below, we use \(i\) to denote the number of singular values we ar
 
 The bottom row shows the difference between the original matrix and the approximation.  On the bottom left, because the “approximation” equals the original, the difference is a matrix of zeros, so the the picture shown is a single color.  On the bottom right, because the approximation is all zeros, the difference is the original matrix!  As \(i\) increases and the approximations get blurrier, the error matrix grows more distinct, and you can see how \(\rho\) grows with it, measuring its importance.
 
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} The SVD and approximation}
+
+The singular value decomposition of a matrix lets us know which portions of the matrix are the most structurally important.  If we drop just a few of the least significant singular values, then reconstruct the matrix from what’s left, we arrive at an approximation of the original.  This has many uses, one of which is the detection of patterns within a matrix of data, as in this chapter.
+\end{sphinxadmonition}
+
 
 \subsection{Choosing which approximation to use}
 \label{\detokenize{chapter-16-matrices:choosing-which-approximation-to-use}}
@@ -8737,7 +8756,7 @@ Today’s notes are a small preview of the kind of material that appears in a ma
 
 \section{Supervised and unsupervised learning}
 \label{\detokenize{chapter-17-machine-learning:supervised-and-unsupervised-learning}}
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Supervised vs. unsupervised machine learning}
 
 Machine learning is broken into two categories, supervised and unsupervised.  The definitions for these are below.
 \end{sphinxadmonition}
@@ -8768,7 +8787,7 @@ I may use any of these terms in this chapter and in class; you should become fam
 
 \section{Seen and unseen data}
 \label{\detokenize{chapter-17-machine-learning:seen-and-unseen-data}}
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} A central issue: overfitting vs. underfitting}
 
 Probably the most significant concern in mathematical modeling in general (and machine learning in particular) is \sphinxstyleemphasis{overfitting} vs. \sphinxstyleemphasis{underfitting} for a mathematical model, sometimes also called \sphinxstyleemphasis{bias} vs. \sphinxstyleemphasis{variance.}  We explore its meaning in this section, and we will find that it is intimately tied up with how mathematical models perform on unseen data.
 \end{sphinxadmonition}
@@ -8878,9 +8897,11 @@ Now we know what the problems are.  How do we go about avoiding underfitting or 
 
 \section{Training, validation, and testing}
 \label{\detokenize{chapter-17-machine-learning:training-validation-and-testing}}
-\begin{sphinxadmonition}{note}{Big Picture}
+\begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Why we split data into train and test sets}
 
-Recall that the key question we’re trying to answer is, “How do I make a model that works well on unseen data?”  Or more precisely, “How do I make a model that works well on data that wasn’t used to create the model?”  The solution is actually rather simple:  When given a dataset, split it into two parts, one you will use to create your model, and the other that you will use as “unseen data,” on which to test your model.  The details are actually slightly more intricate than that simple answer, but that’s the heart of it.
+Recall that the key question we’re trying to answer is, “How do I make a model that works well on unseen data?”  Or more precisely, “How do I make a model that works well on data that wasn’t used to create the model?”
+
+The solution is actually rather simple:  When given a dataset, split it into two parts, one you will use to create your model, and the other that you will use as “unseen data,” on which to test your model.  The details are actually slightly more intricate than that simple answer, but that’s the heart of it.
 \end{sphinxadmonition}
 
 
@@ -8968,11 +8989,11 @@ Let’s see the resulting split.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
     Totally      Fake      Data
-0  1.000000  3.000000  5.000000
 1  1.111111  3.111111  5.111111
 2  1.222222  3.222222  5.222222
-3  1.333333  3.333333  5.333333
+4  1.444444  3.444444  5.444444
 5  1.555556  3.555556  5.555556
+6  1.666667  3.666667  5.666667
 7  1.777778  3.777778  5.777778
 8  1.888889  3.888889  5.888889
 9  2.000000  4.000000  6.000000
@@ -8984,8 +9005,8 @@ Let’s see the resulting split.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
     Totally      Fake      Data
-4  1.444444  3.444444  5.444444
-6  1.666667  3.666667  5.666667
+0  1.000000  3.000000  5.000000
+3  1.333333  3.333333  5.333333
 \end{sphinxVerbatim}
 
 

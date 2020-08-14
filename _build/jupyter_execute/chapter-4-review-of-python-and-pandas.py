@@ -53,7 +53,7 @@ Running this code in the notebook you've created would work just fine, and would
 
 But what happens if you try to run the same code, but just on the `women` DataFrame (or `asians` or `age75andup`)?
 
-```{admonition} Big Picture
+```{admonition} Big Picture - Writing to a slice of a DataFrame
 ---
 class: alert alert-primary
 ---

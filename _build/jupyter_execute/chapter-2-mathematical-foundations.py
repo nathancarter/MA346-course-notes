@@ -2,7 +2,7 @@
 
 <a href="../../_slides/chapter-2-slides.html">See also the slides that summarize a portion of this content.</a>
 
-```{admonition} Big Picture
+```{admonition} Big Picture - Functions and relations
 ---
 class: alert alert-primary
 ---
@@ -192,7 +192,7 @@ In data science, we often do this using tables.  For example, consider the table
 
 If you want to check whether, for example, "Bangalore is the capitol of India" is true, you can look to see if any row of the table is `('India','Bangalore')`.  Since there is no such row, the relation is false for that input.  (The capitol is actually New Delhi.)
 
-```{admonition} Big Picture
+```{admonition} Big Picture - Every table represents a relation.
 ---
 class: alert alert-primary
 ---

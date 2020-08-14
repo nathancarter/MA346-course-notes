@@ -16,7 +16,7 @@ I suspect people say ETL when they're speaking professionally and they say mungi
 
 ## Why are we focusing on this?
 
-```{admonition} Big Picture
+```{admonition} Big Picture - Munging/ETL is a large portion of data work
 ---
 class: alert alert-primary
 ---
@@ -51,7 +51,7 @@ For instance, imagine you get a dataset in which some numeric columns are entitl
 
 ### Data vs. information
 
-```{admonition} Big Picture
+```{admonition} Big Picture - Information = Data + Context
 ---
 class: alert alert-primary
 ---
@@ -74,7 +74,7 @@ If a dataset doesn't come from a data dictionary, but you have personal access t
 
 This can be one of the most confusing aspects of data work for new students of data science, so let me begin by emphasizing four key points about missing values that you should always keep in mind.
 
-```{admonition} Big Picture
+```{admonition} Big Picture - Summary of key points about missing values
 ---
 class: alert alert-primary
 ---

@@ -61,11 +61,11 @@
 \contentsline {subsection}{\numberline {6.3.1}The genreal idea}{40}{subsection.6.3.1}% 
 \contentsline {subsection}{\numberline {6.3.2}The precise definition}{41}{subsection.6.3.2}% 
 \contentsline {section}{\numberline {6.4}Pivot tables}{41}{section.6.4}% 
-\contentsline {subsection}{\numberline {6.4.1}The general idea}{41}{subsection.6.4.1}% 
+\contentsline {subsection}{\numberline {6.4.1}The general idea}{42}{subsection.6.4.1}% 
 \contentsline {subsection}{\numberline {6.4.2}The precise definition}{42}{subsection.6.4.2}% 
-\contentsline {section}{\numberline {6.5}Stack and unstack}{42}{section.6.5}% 
+\contentsline {section}{\numberline {6.5}Stack and unstack}{43}{section.6.5}% 
 \contentsline {subsection}{\numberline {6.5.1}Animation for unstack/stack at level 1}{43}{subsection.6.5.1}% 
-\contentsline {subsection}{\numberline {6.5.2}Animation for unstack/stack at level 0}{43}{subsection.6.5.2}% 
+\contentsline {subsection}{\numberline {6.5.2}Animation for unstack/stack at level 0}{44}{subsection.6.5.2}% 
 \contentsline {chapter}{\numberline {7}Abstraction}{45}{chapter.7}% 
 \contentsline {section}{\numberline {7.1}Abstract vs. concrete}{45}{section.7.1}% 
 \contentsline {section}{\numberline {7.2}Abstraction in mathematics}{45}{section.7.2}% 
@@ -224,13 +224,13 @@
 \contentsline {section}{\numberline {16.1}Using matrices for relations other than networks}{177}{section.16.1}% 
 \contentsline {section}{\numberline {16.2}Pivoting an edge list}{178}{section.16.2}% 
 \contentsline {section}{\numberline {16.3}Recommender systems}{178}{section.16.3}% 
-\contentsline {section}{\numberline {16.4}A tiny amount of linear algebra}{179}{section.16.4}% 
+\contentsline {section}{\numberline {16.4}A tiny amount of linear algebra}{180}{section.16.4}% 
 \contentsline {section}{\numberline {16.5}Normalizing rows}{180}{section.16.5}% 
-\contentsline {section}{\numberline {16.6}Are we done?}{181}{section.16.6}% 
-\contentsline {subsection}{\numberline {16.6.1}We could be done now!}{181}{subsection.16.6.1}% 
+\contentsline {section}{\numberline {16.6}Are we done?}{182}{section.16.6}% 
+\contentsline {subsection}{\numberline {16.6.1}We could be done now!}{182}{subsection.16.6.1}% 
 \contentsline {subsection}{\numberline {16.6.2}Why we approximate}{182}{subsection.16.6.2}% 
-\contentsline {section}{\numberline {16.7}The Singular Value Decomposition}{182}{section.16.7}% 
-\contentsline {subsection}{\numberline {16.7.1}Matrices as actions}{182}{subsection.16.7.1}% 
+\contentsline {section}{\numberline {16.7}The Singular Value Decomposition}{183}{section.16.7}% 
+\contentsline {subsection}{\numberline {16.7.1}Matrices as actions}{183}{subsection.16.7.1}% 
 \contentsline {subsection}{\numberline {16.7.2}The SVD}{183}{subsection.16.7.2}% 
 \contentsline {subsection}{\numberline {16.7.3}Creating an approximation}{184}{subsection.16.7.3}% 
 \contentsline {subsection}{\numberline {16.7.4}Measuring the quality of the approximation}{185}{subsection.16.7.4}% 

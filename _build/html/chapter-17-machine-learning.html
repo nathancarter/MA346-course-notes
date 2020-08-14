@@ -388,7 +388,7 @@
 <div class="section" id="supervised-and-unsupervised-learning">
 <h2><span class="section-number">17.1. </span>Supervised and unsupervised learning<a class="headerlink" href="#supervised-and-unsupervised-learning" title="Permalink to this headline">¶</a></h2>
 <div class="alert alert-primary admonition">
-<p class="admonition-title">Big Picture</p>
+<p class="admonition-title">Big Picture - Supervised vs. unsupervised machine learning</p>
 <p>Machine learning is broken into two categories, supervised and unsupervised.  The definitions for these are below.</p>
 </div>
 <p><strong>Supervised learning</strong> provides to the computer a dataset of inputs and their corresponding outputs, and asks the computer to learn something about the relationships between the inputs and the outputs.  One of the most commonly used examples is to provide small photographs of handwritten digits as the inputs (like those shown below, <a class="reference external" href="https://en.wikipedia.org/wiki/MNIST_database#/media/File:MnistExamples.png">from this source</a>) and make the corresponding outputs the integer represented.  For instance, for the top left input shown below, the output would be the integer 0.</p>
@@ -406,7 +406,7 @@
 <div class="section" id="seen-and-unseen-data">
 <h2><span class="section-number">17.2. </span>Seen and unseen data<a class="headerlink" href="#seen-and-unseen-data" title="Permalink to this headline">¶</a></h2>
 <div class="alert alert-primary admonition">
-<p class="admonition-title">Big Picture</p>
+<p class="admonition-title">Big Picture - A central issue: overfitting vs. underfitting</p>
 <p>Probably the most significant concern in mathematical modeling in general (and machine learning in particular) is <em>overfitting</em> vs. <em>underfitting</em> for a mathematical model, sometimes also called <em>bias</em> vs. <em>variance.</em>  We explore its meaning in this section, and we will find that it is intimately tied up with how mathematical models perform on unseen data.</p>
 </div>
 <div class="section" id="what-is-a-mathematical-model">
@@ -470,8 +470,9 @@
 <div class="section" id="training-validation-and-testing">
 <h2><span class="section-number">17.3. </span>Training, validation, and testing<a class="headerlink" href="#training-validation-and-testing" title="Permalink to this headline">¶</a></h2>
 <div class="alert alert-primary admonition">
-<p class="admonition-title">Big Picture</p>
-<p>Recall that the key question we’re trying to answer is, “How do I make a model that works well on unseen data?”  Or more precisely, “How do I make a model that works well on data that wasn’t used to create the model?”  The solution is actually rather simple:  When given a dataset, split it into two parts, one you will use to create your model, and the other that you will use as “unseen data,” on which to test your model.  The details are actually slightly more intricate than that simple answer, but that’s the heart of it.</p>
+<p class="admonition-title">Big Picture - Why we split data into train and test sets</p>
+<p>Recall that the key question we’re trying to answer is, “How do I make a model that works well on unseen data?”  Or more precisely, “How do I make a model that works well on data that wasn’t used to create the model?”</p>
+<p>The solution is actually rather simple:  When given a dataset, split it into two parts, one you will use to create your model, and the other that you will use as “unseen data,” on which to test your model.  The details are actually slightly more intricate than that simple answer, but that’s the heart of it.</p>
 </div>
 <div class="section" id="training-vs-testing">
 <h3><span class="section-number">17.3.1. </span>Training vs. testing<a class="headerlink" href="#training-vs-testing" title="Permalink to this headline">¶</a></h3>
@@ -642,12 +643,6 @@
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>1.000000</td>
-      <td>3.000000</td>
-      <td>5.000000</td>
-    </tr>
-    <tr>
       <th>1</th>
       <td>1.111111</td>
       <td>3.111111</td>
@@ -660,16 +655,22 @@
       <td>5.222222</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>1.333333</td>
-      <td>3.333333</td>
-      <td>5.333333</td>
+      <th>4</th>
+      <td>1.444444</td>
+      <td>3.444444</td>
+      <td>5.444444</td>
     </tr>
     <tr>
       <th>5</th>
       <td>1.555556</td>
       <td>3.555556</td>
       <td>5.555556</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.666667</td>
+      <td>3.666667</td>
+      <td>5.666667</td>
     </tr>
     <tr>
       <th>7</th>
@@ -725,16 +726,16 @@
   </thead>
   <tbody>
     <tr>
-      <th>4</th>
-      <td>1.444444</td>
-      <td>3.444444</td>
-      <td>5.444444</td>
+      <th>0</th>
+      <td>1.000000</td>
+      <td>3.000000</td>
+      <td>5.000000</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>1.666667</td>
-      <td>3.666667</td>
-      <td>5.666667</td>
+      <th>3</th>
+      <td>1.333333</td>
+      <td>3.333333</td>
+      <td>5.333333</td>
     </tr>
   </tbody>
 </table>

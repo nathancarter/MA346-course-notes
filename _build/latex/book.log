@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.5.8)  14 AUG 2020 11:43
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.5.8)  14 AUG 2020 12:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1158,9 +1158,16 @@ File: chapter-5-before-and-after_4_0.png Graphic file (type bmp)
 Chapter 6.
 [37
 
-] [38] [39] [40] [41] [42] [43] [44
-
 ]
+File: table-verb-pivot.png Graphic file (type bmp)
+<table-verb-pivot.png>
+ [38] [39]
+File: table-verb-melt.png Graphic file (type bmp)
+<table-verb-melt.png>
+ [40] [41]
+File: table-verb-pivot-table.png Graphic file (type bmp)
+<table-verb-pivot-table.png>
+ [42] [43] [44]
 Chapter 7.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2680--2680
@@ -1182,7 +1189,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 2680--2680
 []\TU/FreeSerif(0)/m/n/10 Systematically disadvantaging any
  []
 
-[45] [46] [47] [48] [49] [50] [51] [52]
+[45
+
+] [46] [47] [48] [49] [50] [51] [52]
 Chapter 8.
 [53
 
@@ -1325,7 +1334,7 @@ Chapter 12.
 File: concat-of-stock-data.png Graphic file (type bmp)
 <concat-of-stock-data.png>
 
-Overfull \vbox (2.64285pt too high) detected at line 5537
+Overfull \vbox (2.64285pt too high) detected at line 5548
  []
 
 [118] [119]
@@ -1342,7 +1351,7 @@ File: merge-of-firm-data.png Graphic file (type bmp)
 <merge-of-firm-data.png>
  [124] [125] [126] [127] [128] [129]
 [130] [131] [132] [133] [134]
-Overfull \vbox (1.78592pt too high) detected at line 6262
+Overfull \vbox (1.78592pt too high) detected at line 6273
  []
 
 [135] [136]
@@ -1379,11 +1388,11 @@ File: streamlit-screenshot-2.png Graphic file (type bmp)
  [159] [160]
 
 LaTeX Warning: Hyper reference `chapter-14-dashboards:whats-a-dashboard-and-why
--do-we-have-them' on page 161 undefined on input line 7318.
+-do-we-have-them' on page 161 undefined on input line 7329.
 
 
 LaTeX Warning: Hyper reference `chapter-14-dashboards:Step-2.-Converting-your-s
-cript-to-use-Streamlit' on page 161 undefined on input line 7350.
+cript-to-use-Streamlit' on page 161 undefined on input line 7361.
 
 [161] [162] [163] [164]
 Chapter 15.
@@ -1406,10 +1415,9 @@ File: chapter-15-networks_43_0.png Graphic file (type bmp)
 
 ]
 Chapter 16.
-[177] [178] [179] [180] [181] [182] [183] [184]
+[177] [178] [179] [180] [181] [182] [183] [184] [185]
 File: svd-step-0.png Graphic file (type bmp)
 <svd-step-0.png>
- [185]
 File: svd-10-steps.png Graphic file (type bmp)
 <svd-10-steps.png>
  [186] [187] [188]
@@ -1464,12 +1472,12 @@ File: GB213-review-in-Python_26_0.png Graphic file (type bmp)
 File: GB213-review-in-Python_45_0.png Graphic file (type bmp)
 <GB213-review-in-Python_45_0.png>
  [259] (./book.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 12695.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 12716.
  [260]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 12695.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 12716.
  (./book.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 12695.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 12695
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 12716.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 12716
 .
 Package rerunfilecheck Info: File `book.out' has not changed.
 (rerunfilecheck)             Checksum: 5C1D7C908E6BEA41FD12552A331A4F33.
@@ -1479,10 +1487,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 25199 strings out of 492916
- 482258 string characters out of 6133346
+ 25211 strings out of 492916
+ 482557 string characters out of 6133346
  782309 words of memory out of 5000000
- 28875 multiletter control sequences out of 15000+600000
+ 28884 multiletter control sequences out of 15000+600000
  540988 words of font info for 107 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  41i,20n,79p,1032b,506s stack positions out of 5000i,500n,10000p,200000b,80000s

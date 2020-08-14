@@ -51,7 +51,12 @@ matrix.fillna( 0 )
 
 ## Recommender systems
 
+```{admonition} Big Picture - What is a recommender system?
+---
+class: alert alert-primary
+---
 A *recommender system* is an algorithm that can recommend to a customer a product they might like.  Amazon has had this feature ("Customers who bought this product also liked...") since the early 2000s, and in the late 2000s, [Netflix ran a \$1,000,000 prize](https://www.netflixprize.com/) for creating the best movie recommender system.  In such a system, the input is some knowledge about a customer's preferences about products, and the output should be a ranked list of products to recommend to that customer.  In Netflix's case, it was movies, but it can be any set of products.
+```
 
 To get a feeling for how this works, we'll do a tiny example, as if Netflix were a tiny organization with 7 movies and 6 customers.  We'll label the customers A,B,C,...,F and the movies G,H,I,...,M.  To make things more concrete, we'll use the movies Godzilla, Hamlet, Ishtar, JFK, King Kong, Lincoln, and Macbeth.  (See the link at the top of this file for the original source of this example.)
 
@@ -253,6 +258,13 @@ In the picture below, we use $i$ to denote the number of singular values we are 
 ![An illustration of two rows of matrices, the top described immediately above, and the bottom described immediately below](_images/svd-10-steps.png)
 
 The bottom row shows the difference between the original matrix and the approximation.  On the bottom left, because the "approximation" equals the original, the difference is a matrix of zeros, so the the picture shown is a single color.  On the bottom right, because the approximation is all zeros, the difference is the original matrix!  As $i$ increases and the approximations get blurrier, the error matrix grows more distinct, and you can see how $\rho$ grows with it, measuring its importance.
+
+```{admonition} Big Picture - The SVD and approximation
+---
+class: alert alert-primary
+---
+The singular value decomposition of a matrix lets us know which portions of the matrix are the most structurally important.  If we drop just a few of the least significant singular values, then reconstruct the matrix from what's left, we arrive at an approximation of the original.  This has many uses, one of which is the detection of patterns within a matrix of data, as in this chapter.
+```
 
 ### Choosing which approximation to use
 

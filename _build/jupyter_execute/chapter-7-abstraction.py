@@ -54,7 +54,7 @@ The statement above from Example 1 is a *universal* statement, also called a "fo
 
 ## Abstraction in programming
 
-```{admonition} Big Picture
+```{admonition} Big Picture - The value of abstraction in programming
 ---
 class: alert alert-primary
 ---

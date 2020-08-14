@@ -922,8 +922,13 @@
 </tbody>
 </table>
 <div class="alert alert-primary admonition">
-<p class="admonition-title">Big Picture</p>
-<p>In most programming contexts, including data work, if someone speaks of “mapping” or “applying” a function, they mean the same thing:  Automatically running the function on each element of a list or series.  The function for this is often called <code class="docutils literal notranslate"><span class="pre">map()</span></code> or <code class="docutils literal notranslate"><span class="pre">apply()</span></code>, as in pandas, but not always.  In mathematics, it’s called using a function “elementwise,” meaning on each element of a structure separately.  In the popular language Julia, it’s called “broadcasting” a function over an array or table.</p>
+<p class="admonition-title">Big Picture - Informally, map is the same as apply</p>
+<p>In most programming contexts, including data work, if someone speaks of “mapping” or “applying” a function, they mean the same thing:  Automatically running the function on each element of a list or series.</p>
+<ul class="simple">
+<li><p>The function for this is often called <code class="docutils literal notranslate"><span class="pre">map()</span></code> or <code class="docutils literal notranslate"><span class="pre">apply()</span></code>, as in pandas, but not always.</p></li>
+<li><p>In mathematics, it’s called using a function “elementwise,” meaning on each element of a structure separately.</p></li>
+<li><p>In the popular language Julia, it’s called “broadcasting” a function over an array or table.</p></li>
+</ul>
 </div>
 <p>The function that you give to <code class="docutils literal notranslate"><span class="pre">apply()</span></code> can’t be just any function.  Its input type needs to match the data type of the individual elements in the Series or DataFrame you’re applying it to.  Its output type will determine what kind of output you get.  For example, the <code class="docutils literal notranslate"><span class="pre">get_first_year()</span></code> function defined above takes strings as input and gives integers as output.  So using <code class="docutils literal notranslate"><span class="pre">apply(get_first_year)</span></code> will need to be done on a Series containing strings, and will produce a Series containing integers.</p>
 <p>If you have a function that takes multiple inputs, you might want to bind some of the arguments so that it becomes a unary function and can be used in <code class="docutils literal notranslate"><span class="pre">apply()</span></code>.  Or you can use the <code class="docutils literal notranslate"><span class="pre">args</span></code> or <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> feature of <code class="docutils literal notranslate"><span class="pre">apply()</span></code>, but we won’t cover that in these course notes.  You can see a small example in <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.apply.html">the pandas documentation</a>.  We will, however, take a look at the possibility of using a dictionary with <code class="docutils literal notranslate"><span class="pre">map()</span></code>, because it is extremely useful.  We will consider a simple example application, but do a more sophisticated one in class.</p>
@@ -1313,7 +1318,7 @@
 <div class="section" id="map-reduce">
 <h2><span class="section-number">11.3. </span>Map-Reduce<a class="headerlink" href="#map-reduce" title="Permalink to this headline">¶</a></h2>
 <div class="alert alert-primary admonition">
-<p class="admonition-title">Big Picture</p>
+<p class="admonition-title">Big Picture - Important phrases: map-reduce and split-apply-combine</p>
 <p>Both <em>map-reduce</em> and <em>split-apply-combine</em> are data manipulation buzzwords that you’ll want to be familiar with, for</p>
 <ul class="simple">
 <li><p>thinking about your own data manipulation work,</p></li>

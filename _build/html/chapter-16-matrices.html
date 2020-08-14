@@ -591,7 +591,10 @@
 </div>
 <div class="section" id="recommender-systems">
 <h2><span class="section-number">16.3. </span>Recommender systems<a class="headerlink" href="#recommender-systems" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-primary admonition">
+<p class="admonition-title">Big Picture - What is a recommender system?</p>
 <p>A <em>recommender system</em> is an algorithm that can recommend to a customer a product they might like.  Amazon has had this feature (“Customers who bought this product also liked…”) since the early 2000s, and in the late 2000s, <a class="reference external" href="https://www.netflixprize.com/">Netflix ran a $1,000,000 prize</a> for creating the best movie recommender system.  In such a system, the input is some knowledge about a customer’s preferences about products, and the output should be a ranked list of products to recommend to that customer.  In Netflix’s case, it was movies, but it can be any set of products.</p>
+</div>
 <p>To get a feeling for how this works, we’ll do a tiny example, as if Netflix were a tiny organization with 7 movies and 6 customers.  We’ll label the customers A,B,C,…,F and the movies G,H,I,…,M.  To make things more concrete, we’ll use the movies Godzilla, Hamlet, Ishtar, JFK, King Kong, Lincoln, and Macbeth.  (See the link at the top of this file for the original source of this example.)</p>
 <p>We’ll assume that in this tiny movie preferences example, users indicate which movies they liked with a binary response (1 meaning they liked it, and 0 meaning they did not, which might mean disliked or didn’t watch or anything).  Let’s work with the following matrix of preferences.</p>
 <div class="cell docutils container">
@@ -1180,6 +1183,10 @@ dtype: bool
 <p>In the picture below, we use <span class="math notranslate nohighlight">\(i\)</span> to denote the number of singular values we are dropping to create an approximation of the matrix.  So on the top left, when <span class="math notranslate nohighlight">\(i=0\)</span>, we have the original matrix unchanged.  But on the top right, when <span class="math notranslate nohighlight">\(i=10\)</span>, we’ve dropped all the singular values and our matrix is just all zeros, obviously containing little or no information.  You can see how the matrix blurs slowly from its original form to a complete lack of structure as <span class="math notranslate nohighlight">\(i\)</span> increases from 1 to 10.</p>
 <p><img alt="An illustration of two rows of matrices, the top described immediately above, and the bottom described immediately below" src="_images/svd-10-steps.png" /></p>
 <p>The bottom row shows the difference between the original matrix and the approximation.  On the bottom left, because the “approximation” equals the original, the difference is a matrix of zeros, so the the picture shown is a single color.  On the bottom right, because the approximation is all zeros, the difference is the original matrix!  As <span class="math notranslate nohighlight">\(i\)</span> increases and the approximations get blurrier, the error matrix grows more distinct, and you can see how <span class="math notranslate nohighlight">\(\rho\)</span> grows with it, measuring its importance.</p>
+<div class="alert alert-primary admonition">
+<p class="admonition-title">Big Picture - The SVD and approximation</p>
+<p>The singular value decomposition of a matrix lets us know which portions of the matrix are the most structurally important.  If we drop just a few of the least significant singular values, then reconstruct the matrix from what’s left, we arrive at an approximation of the original.  This has many uses, one of which is the detection of patterns within a matrix of data, as in this chapter.</p>
+</div>
 </div>
 <div class="section" id="choosing-which-approximation-to-use">
 <h3><span class="section-number">16.7.6. </span>Choosing which approximation to use<a class="headerlink" href="#choosing-which-approximation-to-use" title="Permalink to this headline">¶</a></h3>

@@ -26,7 +26,7 @@ This situation is *extremely common,* and that's why we address it first.  If we
  3. The Volume and High columns from `regi_df`
  4. The index and the Close column from `regi_df`
 
-```{admonition} Big Picture
+```{admonition} Big Picture - Visualizing relations vs. functions
 ---
 class: alert alert-primary
 ---

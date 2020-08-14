@@ -187,7 +187,7 @@ df_merged = pd.merge( df_execs, df_marketing, on='Firm', how='outer' )
 
 Before we tackle the challenging question of what happens if there is no unique ID to use for merging, let's review where we've been and add some key details.
 
-```{admonition} Big Picture
+```{admonition} Big Picture - Concat adds rows and merge adds columns (usually!)
 ---
 class: alert alert-primary
 ---

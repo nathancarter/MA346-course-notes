@@ -384,7 +384,7 @@
 <p>Running this code in the notebook you’ve created would work just fine, and would create that new column.  It would have missing values for any rows that had missing property values or interest rates, naturally, but it would compute correct numerical values in all other rows.</p>
 <p>But what happens if you try to run the same code, but just on the <code class="docutils literal notranslate"><span class="pre">women</span></code> DataFrame (or <code class="docutils literal notranslate"><span class="pre">asians</span></code> or <code class="docutils literal notranslate"><span class="pre">age75andup</span></code>)?</p>
 <div class="alert alert-primary admonition">
-<p class="admonition-title">Big Picture</p>
+<p class="admonition-title">Big Picture - Writing to a slice of a DataFrame</p>
 <p>The warning message you see when you attempt to run the code described above is an important one!  It relates to the difference between a DataFrame and a <em>view</em> of that DataFrame.  You can add columns to a DataFrame, but if you add to just a view, you’ll receive a warning.  We will discuss the details of this in class.</p>
 </div>
 </div>

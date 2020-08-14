@@ -28,7 +28,7 @@ Okay, sounds great, so where do we point our browser to start using this thing? 
 
 ## How does Jupyter work?
 
-```{admonition} Big Picture
+```{admonition} Big Picture - The structure of Jupyter
 ---
 class: alert alert-primary
 ---
@@ -95,7 +95,7 @@ Before we discuss the other methods of installing Jupyter, let's discuss the dif
 
 Both technologies let you edit Jupyter notebooks.  (Yes, it's confusing that one app is called "the Jupyter Notebook" and the files are also called "Jupyter notebooks."  Sorry.)
 
-```{admonition} Big Picture
+```{admonition} Big Picture - How to shut down Jupyter
 ---
 class: alert alert-primary
 ---

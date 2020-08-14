@@ -11,7 +11,7 @@ Most of the time, we write reports or create slide decks to share our results.  
 
 This is where *dashboards* come in.  A quick [Google image search for "data dashboards"](https://www.google.com/search?q=data+dashboard&tbm=isch) will show you dozens of examples of what dashboards look like.  Their purpose is to let the user explore the data using inputs like buttons and sliders, and seeing outputs that are typically data visualizations and summaries.  Dashboards don't give the user anywhere near as much flexibility as you have in Python, but they're much easier and faster.
 
-```{admonition} Big Picture
+```{admonition} Big Picture - Uses for data dashboards
 ---
 class: alert alert-primary
 ---

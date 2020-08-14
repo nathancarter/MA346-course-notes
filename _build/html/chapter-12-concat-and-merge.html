@@ -654,7 +654,7 @@
 <h2><span class="section-number">12.8. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <p>Before we tackle the challenging question of what happens if there is no unique ID to use for merging, let’s review where we’ve been and add some key details.</p>
 <div class="alert alert-primary admonition">
-<p class="admonition-title">Big Picture</p>
+<p class="admonition-title">Big Picture - Concat adds rows and merge adds columns (usually!)</p>
 <p>As I’ve introduced it here, <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code> combines the rows of two DataFrames together and <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code> combines the columns.  While <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code> always adds rows, <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code> may or may not, depending on whether you use left, right, inner, or outer joins.</p>
 <p>Although <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code> and <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code> have tons of options that let you do merges and concatenations in the opposite direction from what I taught here (e.g., concat horizontally or merge vertically), this is almost never what is called for in a data project, due to the way we typically arrange tabular data.</p>
 </div>

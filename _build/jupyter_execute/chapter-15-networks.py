@@ -18,11 +18,11 @@ Now that we've seen a small (but pretend) example, let's consider some more real
  * In today's notes, we'll also look at a spreadsheet created by marine biologists recording the interaction among a community of dolphins living off Doubtful Sound in New Zealand.  The vertices of that network are the dolphins and the edges represent social interactions among them.  (The data comes from [Mark Newman's website](http://www-personal.umich.edu/~mejn/netdata/), which cites the biologists who collected it.)
  * One of the largest examples of network data has as its vertices the collection of all pages on the internet, and edges are links between them.  Google does linear algebra-based computations on this enormous graph regularly, to update their search engine to reflect the latest changes on the web.
 
-```{admonition} Big Picture
+```{admonition} Big Picture - A graph depicts a binary relation of a set with itself
 ---
 class: alert alert-primary
 ---
-Notice that a graph is nothing but a picture representing a *binary relation,* a term we first defined in [the notes on Chapter 2](chapter-2-mathematical-foundations).  In the case of a graph, the two sets involved in the relation are the same; we're connecting friends to friends in the picture above, or states to states with shipping information, or pages to pages with hyperlinks.  In a graph, the relation connects the set of vertices to itself, rather than to some other set.
+Notice that a graph is nothing but a picture representing a *binary relation,* a term we first defined in [the notes on Chapter 2](chapter-2-mathematical-foundations).  In the case of a graph, the two sets involved in the relation are the same; we're connecting friends to friends in the picture above, or states to states with shipping information, or pages to pages with hyperlinks.  In a graph, the relation connects the set of vertices to itself, not to some other set.
 ```
 
 The graph of five friends shown above is a *directed graph,* because the edges have arrowheads to indicate that they make sense in only one direction.  While Augustus said he would seek advice from Cyrano, Cyrano did not say the same about Augustus.
@@ -59,7 +59,7 @@ Alternately, we could represent a relation the way we've discussed in the past. 
 
 We will call this kind of table a *list of ordered pairs,* because the ordering of each pair often matters.  From Augustus to Cyrano is not the same as from Cyrano to Augustus.  We can also call it an *edge list,* because the connections in a graph are called edges.
 
-```{admonition} Big Picture
+```{admonition} Big Picture - How pivoting/melting impacts graph data
 ---
 class: alert alert-primary
 ---
