@@ -13281,7 +13281,7 @@ a.anchor-link {
 <li>I got $F_1\approx0.698$ and $F_1\approx0.677$, but this will vary based on your random training/validation split.</li>
 </ul>
 </li>
-<li>Abstract all of your work into two functions, so that you can do model fitting and scoring with two function calls, <code>fit_model = fit_model_to( df_training )</code> and <code>F1 = score_model( fit_model, df_validation )</code>.<ul>
+<li>Abstract all of your work into two functions, so that you can do model fitting and scoring with two function calls, <code>model = fit_model_to( df_training )</code> and <code>F1 = score_model( model, df_validation )</code>.<ul>
 <li>If you use this on the same training/validation split, you should get the same $F_1$ scores as you did before creating the functions.</li>
 </ul>
 </li>
@@ -13319,12 +13319,12 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Breakout-groups---phase-3">Breakout groups - phase 3<a class="anchor-link" href="#Breakout-groups---phase-3">&#182;</a></h2><p>Take this step and the one on the next slide in breakout groups now:</p>
+<h2 id="Breakout-groups---phase-3">Breakout groups - phase 3<a class="anchor-link" href="#Breakout-groups---phase-3">&#182;</a></h2><p>Take this step and the ones on the next slide in breakout groups now:</p>
 <ol>
 <li>Improve your <code>fit_model_to()</code> function so that, in addition to fitting a model to the provided predictors, it does these two things:<ul>
 <li>Fit a separate model to the standardized predictors, so that we can look at that second model's coefficients.</li>
 <li>Print out the coefficients for that second model.  (You will still return the original model; this second model is only for printing standardized coefficients.)</li>
-<li>Optional bonus: Can you print the coefficients in decreasing order of absolute value?</li>
+<li><strong>Optional bonus:</strong> Can you print the coefficients in decreasing order of absolute value?</li>
 </ul>
 </li>
 </ol>
@@ -13386,7 +13386,7 @@ a.anchor-link {
 <li>Change the filenames in your code so that it reads <code>mortgage-testing-data.csv</code>, cleans it, then writes <code>cleaned-mortgage-testing-data.csv</code>.  (Take care <em>not</em> to save it over top of your training data!)</li>
 <li>After the end of the code you wrote today, add code that loads the cleaned training data as a new DataFrame.</li>
 <li>Run <code>score_model()</code> to apply your already-chosen model to the test data you just received.</li>
-<li>Note the $F_1$ score it shows as output.</li>
+<li>Note the $F_1$ score it shows as output.  <strong>This score is your entry in the competition.</strong></li>
 </ol>
 <p>(Do <em>NOT</em> train your model on the testing data!  You're checking to see how well the model you already trained on known data generalizes to unseen data.)</p>
 
