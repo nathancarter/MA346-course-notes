@@ -243,6 +243,17 @@ It's a light week, because you just did Project 1 and deserve a little time to r
 
 ### Due before next class
 
+ * **Data preparation exercise**
+    * In class next time we will do an introductory machine learning exercise about predicting mortgage approval/denial.
+    * <a href='../../_static/mortgage-testing-data.csv'>Download the training dataset here.</a>  It is a sample from the same mortgage dataset we've used many times.  Recall that its data dictionary is available [online here](https://ffiec.cfpb.gov/documentation/2018/lar-data-fields/).
+    * Load it into pandas and check the data types of the columns.
+    * To make all the data numeric, we will be replacing categorical columns with boolean columns in which false is represented by 0 and true is represented by 1.  This will make it possible to use that data in a numerical model.
+    * Replace the `conforming_loan_limit` column with two boolean columns, one that means "conforming loan limit is C (conforming)" and one that means "conforming loan limit is NC (not conforming)."  Don't forget to use 0/1 instead of False/True.  (There are other values that column may take on, but we will analyze just those two.)
+    * Replace the `derived_sex` column with two boolean columns, one that means "derived sex is Male" and one that means "derived sex is Female."  Don't forget to use 0/1 instead of False/True.  (There are other values that column may take on, but we will analyze just those two.)
+    * The `action_taken` column contains only 1s and 3s.  This is because this dataset was filtered to include only accepted or rejected mortgages (no withdrawals, pre-approvals, etc.).  Replace this column with another boolean column, still using 0/1 for False/True, meaning "application accepted."
+    * The debt-to-income ratio column is categorical instead of numeric.  Make it numeric by replacing each category with a central value in that category.  For instance, the category "20%-<30%" can be replaced with the number 25, the category "43" can be just the number 43, etc.  Let's use 70 for ">60%."
+    * Your newly cleaned data should have all numeric columns.  Export it as a CSV file and bring it with you to class for an in-class activity in Week 12.
+    * To receive credit for having done this preparatory homework, also email the file to your instructor before class on Week 12.
  * **Reading**
     * [Chapter 17: Introduction to machine learning](chapter-17-machine-learning)
 
@@ -257,11 +268,7 @@ It's a light week, because you just did Project 1 and deserve a little time to r
 
  * Chapter 17: Introduction to machine learning - [reading](chapter-17-machine-learning) and <a href='../../_slides/chapter-17-slides.html'>slides</a>
 
-### Due before next class
-
- * None yet
-
-(Perhaps more assignments are coming; this section is still incomplete.)
+No more homework this semester!  Use the remaining time to do a great final project!
 
 
 ---
@@ -275,7 +282,10 @@ No assignments over break, but it would be wise to continue to make progress on 
 
 ## Week 14 - 12/3/2020 - Final Exam Review and Final Project Workshop
 
- * **Final Exam**
-    * Based on the review we do in class today, study for the Final Exam.
- * **Final Project**
-    * Come to class today ready to use half of class to work on your final project in class, and ask questions of the instructor if/when you get stuck on anything.
+### Final Exam
+
+* Based on the review we do in class today, study for the Final Exam.
+
+### Final Project
+
+* Come to class today ready to use half of class to work on your final project in class, and ask questions of the instructor if/when you get stuck on anything.

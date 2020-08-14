@@ -64,7 +64,7 @@
 
 
 \title{MA346 Course Notes}
-\date{Aug 12, 2020}
+\date{Aug 14, 2020}
 \release{}
 \author{Nathan Carter}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -8728,9 +8728,581 @@ If you want to know more about the concepts of matrix multiplication and factori
 \label{\detokenize{chapter-17-machine-learning:introduction-to-machine-learning}}\label{\detokenize{chapter-17-machine-learning::doc}}
 See also the slides that summarize a portion of this content.
 
-\begin{sphinxadmonition}{warning}{Warning:}
-This chapter has not yet been written.  Check back later.
+While Bentley University does not currently have an undergraduate course in Machine Learning, there are several related courses currently available.  MA347 (Data Mining) covers topics related to machine learning, but not exactly the same; both are advanced math and stats implemented in a programming environment, but with different focuses.
+
+Machine learning is also closely connected to mathematical modeling, and we have statistics courses that cover modeling, especially MA252 (Regression Analysis), MA315 (Mathematical Modeling with VBA in Excel), and MA380 (Introduction to Generalized Linear Models and Survival Analysis in Business).  And if you are planning to stay at Bentley for graduate school, there is a machine learning course at the graduate level, MA707 (Introduction to Machine Learning), and a somewhat related course CS733 (AI Techniques and Applications).
+
+Today’s notes are a small preview of the kind of material that appears in a machine learning course.
+
+
+\section{Supervised and unsupervised learning}
+\label{\detokenize{chapter-17-machine-learning:supervised-and-unsupervised-learning}}
+\begin{sphinxadmonition}{note}{Big Picture}
+
+Machine learning is broken into two categories, supervised and unsupervised.  The definitions for these are below.
 \end{sphinxadmonition}
+
+\sphinxstylestrong{Supervised learning} provides to the computer a dataset of inputs and their corresponding outputs, and asks the computer to learn something about the relationships between the inputs and the outputs.  One of the most commonly used examples is to provide small photographs of handwritten digits as the inputs (like those shown below, \sphinxhref{https://en.wikipedia.org/wiki/MNIST\_database\#/media/File:MnistExamples.png}{from this source}) and make the corresponding outputs the integer represented.  For instance, for the top left input shown below, the output would be the integer 0.
+
+\sphinxincludegraphics{{MnistExamples}.png}
+
+This is called supervised learning because the data scientist is providing the outputs that the computer \sphinxstyleemphasis{should} be giving for each input.  It is as if the data scientist is looking over the computer’s shoulder, teaching it what kinds of outputs it should learn to create.  A mathematical model trained on a large enough set of inputs and outputs like those can learn to recognize handwritten digits with a high degree of accuracy.  The most common technique of doing so is with neural networks and deep learning, topics covered in MA707.
+
+\sphinxstylestrong{Unsupervised learning} provides to the computer a dataset, but does not break it into input\sphinxhyphen{}output pairs.  Rather, the data scientist asks the computer to detect some kind of structure within the data.  One example of this is cluster analysis, covered in MA347, but you saw another example in {\hyperref[\detokenize{chapter-16-matrices::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{the Chapter 16 notes}}}}.  When we used SVD to approximate a network, thus revealing more of its latent structure than the precise data itself revealed, we were having the computer do unsupervised learning.  Another example of unsupervised learning is principal components analysis (PCA), covered in many statistics courses.
+
+Today, we will focus on supervised learning.  For this reason, when we look at data, we will designate one column as the output that we want the computer to learn to predict from all the other columns as inputs.  The terminology for inputs and output varies:
+\begin{itemize}
+\item {} 
+Computer science typically speaks of the \sphinxstyleemphasis{inputs} and the \sphinxstyleemphasis{output.}
+
+\item {} 
+Machine learning typically speaks of the \sphinxstyleemphasis{features} and the \sphinxstyleemphasis{target.}
+
+\item {} 
+Statistics typically speaks of the \sphinxstyleemphasis{predictors} and the \sphinxstyleemphasis{respoonse.}
+
+\end{itemize}
+
+I may use any of these terms in this chapter and in class; you should become familiar with the fact that they are synonyms for one another.  Although mathematics has its own terms for inputs and outputs (like domain and range) these are not used to refer to specific columns of a dataset, so I don’t include them on the list above.  \sphinxstylestrong{Most of machine learning is supervised, and we will focus on supervised learning exclusively in this chapter.}
+
+
+\section{Seen and unseen data}
+\label{\detokenize{chapter-17-machine-learning:seen-and-unseen-data}}
+\begin{sphinxadmonition}{note}{Big Picture}
+
+Probably the most significant concern in mathematical modeling in general (and machine learning in particular) is \sphinxstyleemphasis{overfitting} vs. \sphinxstyleemphasis{underfitting} for a mathematical model, sometimes also called \sphinxstyleemphasis{bias} vs. \sphinxstyleemphasis{variance.}  We explore its meaning in this section, and we will find that it is intimately tied up with how mathematical models perform on unseen data.
+\end{sphinxadmonition}
+
+
+\subsection{What is a mathematical model?}
+\label{\detokenize{chapter-17-machine-learning:what-is-a-mathematical-model}}
+Since overfitting and underfitting are concepts that apply to mathematical models, let’s ensure that we have a common definition for a mathematical model.  Just as a model airplane is an imitation of a real airplane, and just as the \sphinxhref{https://unausa.org/model-un/}{Model UN} is an imitation of the actual United Nations, a mathematical model is an imitation of reality.  But while a model airplane is built of plastic and the Model UN is built of students, a mathematical model is built of mathematics, such as equations, algorithms, or formulas.  Like any model, a mathematical model does not perfectly represent the real thing, but we aim to make models that are good enough to be useful.
+
+A mathematical model that you’re probably familiar with is the position of a falling object over time, introduced in every introductory physics class.  It’s written as \(s(t)=\frac12gt^2+v_0t+s_0\), where \(t\) is time, \(g\) is the acceleration due to gravity, \(v_0\) is the initial velocity, and \(s_0\) the initial position.  This is very accurate for experiments that happen in the small laboratories we encounter in physics classes, but it becomes inaccurate if we consider, for example, a skydiver.  Even before deploying a parachute, the person’s descent is significantly impacted by air resistance, and dramatically more so after deploying the parachute, but the simple model just given doesn’t include air resistance.  So it’s a good model, but not a perfect model.  All mathematical models of real world phenomena are imperfect; we just try to make good ones.
+
+
+\subsection{Models built on data}
+\label{\detokenize{chapter-17-machine-learning:models-built-on-data}}
+Physicists, however, have it easy, in the sense that physical phenomena tend to follow simple mathematical laws.  In fact, the rule for falling objects just given in the previous paragraph is so simple that students who have completed only Algebra I can understand it; no advanced degree in mathematics required!  Such simple patterns are easy to spot in experimental data.
+
+Data science, however, is typically applied to more complex systems, such as economies, markets, sports, medicine, and so on, where simple patterns aren’t always the rule.  In fact, when we see a dataset and try to create a mathematical model (say, a formula) that describes it well, it won’t always be obvious when we’ve done a good job.  A physicist can often go and get more data through an experiment, but a data scientist may not be able to do so; sometimes one dataset is all you have.  Is it enough data to validate when we’ve made a good model?
+
+That raises the question:  \sphinxstyleemphasis{What is a good model?}  The answer is that a good model is one that is reliable enough to be useful, often for prediction.  For example, if we write a formula that predicts the expected increase in sales that will come from a given amount of marketing spending in a certain channel, we’ll want to use that to consider possible future scenarios when making strategic decisions.  It’s a good model if it’s reliable enough to make decent predictions about the future (with some uncertainty of course).
+
+In that example, the formula for sales based on marketing spending would have been built from some past experience (\sphinxstyleemphasis{seen data,} that is, data we’ve actually seen, in the past).  But we’re using it to predict something that could happen in the future, asking “what if we spent this much?”  We’re hoping the model will still be good on \sphinxstyleemphasis{unseen data,} that is, inputs to the model that we haven’t yet seen happen.
+
+Consider another example.  When researchers work on developing self\sphinxhyphen{}driving cars, they gather lots of data from cameras and sensors in actual vehicles, and train their algorithms to make the correct decisions in all of those situations.  But of course, if self\sphinxhyphen{}driving cars are ever to succeed, the models the researchers create will need to work correctly on new, unseen data as well–that is, the new camera and sensor inputs the system experiences when it’s actually driving a car around the real world.  The model will be built using known/seen data, but it has to work well also on unkown, or not\sphinxhyphen{}yet\sphinxhyphen{}seen, data.
+
+
+\subsection{Overfitting and underfitting}
+\label{\detokenize{chapter-17-machine-learning:overfitting-and-underfitting}}
+This brings us to the big dilemma introduced above.  There are two big mistakes that a data scientist can make when fitting a model to existing data.
+\begin{itemize}
+\item {} 
+The data scientist could make a model that tailors itself to every detail of the known data precisely.
+\begin{itemize}
+\item {} 
+This is called \sphinxstyleemphasis{overfitting,} because the model is too much dependent on the peculiarities of that one dataset, and so it won’t behave well on new data.
+
+\item {} 
+It typically happens if the model is too complex and/or customized to the data.
+
+\item {} 
+It is also called \sphinxstyleemphasis{variance,} because the model follows too much the tiny variations of the dataset, rather than just its underlying structure.
+
+\end{itemize}
+
+\item {} 
+The data scientist could make a model that captures only very simple characteristics of the known data and ignores some important details.
+\begin{itemize}
+\item {} 
+This is called \sphinxstyleemphasis{underfitting,} because the model is too simple, and missed some signals that the data scientist could have learned from the known data.
+
+\item {} 
+It typically happens if the model is not complex enough.
+
+\item {} 
+It is also called \sphinxstyleemphasis{bias,} because just as a social bias may pigeonhole a complex person into a simple stereotype, making the decision to use too simple a mathematical model also pigeonholes a complex problem into a simple stereotype, and limits the values of the results.
+
+\end{itemize}
+
+\end{itemize}
+
+So we have a spectrum, from simple models to complex models, and there’s some happy medium in between.  Finding that happy medium is the job of a mathematical modeler.
+
+This issue is intimiately related to the common terms of signal and noise, so it’s worth exploring this important issue from that viewpoint as well.
+
+
+\subsection{Signal and noise}
+\label{\detokenize{chapter-17-machine-learning:signal-and-noise}}
+Surely, we’ve all seen a movie in which something like this happens:  An astronaut is trying to radio back to earth, but the voice they’re hearing is mostly static and crackling, with only some glimpses of actual words coming through.  The words are the \sphinxstyleemphasis{signal} the astronaut is hoping to hear and the crackling static is the \sphinxstyleemphasis{noise} on the line preventing the signal from coming through clearly.  Although these are terms with roots in engineering and the hard sciences, they are common metaphors in statistics and data work as well.  One famous modern example of their use in that sphere is the title of Nate Silver’s popular and award\sphinxhyphen{}winning 2012 book, \sphinxhref{https://www.amazon.com/Signal-Noise-Many-Predictions-Fail-but/dp/0143125087}{The Signal and the Noise}.  Let’s use the pictures below to see why Silver used these terms to talk about statistics.
+
+\sphinxincludegraphics{{signal-and-noise}.png}
+
+Let’s imagine for a moment a simple scenario with one input variable and one output variable, such as the example earlier of marketing spend in a particular channel vs. expected sales increase.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+If we could see with perfect clarity how the world worked, we would know exactly how customers respond to our marketing spending.  This omniscient knowledge about marketing nobody has, but we can imagine that it exists somewhere, even if no one knows it (except God).  That knowledge is the signal that we are trying to detect.  It’s shown on the left above.  (That curve doesn’t necessarily have anything to do with marketing; it’s just an example curve.)
+
+\item {} 
+Whenever we try to gather data about the phenomenon we care about, inevitably some problems mess things up.  We might make mistakes when measuring or recording data.  Some of our data might be recorded at times that are special (like a holiday weekend) that make them not representative of the whole picture.  And other variables might be influencing our data that we didn’t measure, such as the weather or other companies’ marketing campaigns.  All of this creates fluctuations we call noise, as shown in the middle.
+
+\item {} 
+What we actually measure when we gather data is the combination of these two things, as shown on the right, above.  Of course, when we get data, we see only that final graph, the signal plus the noise together, and we don’t know how to separate them.
+
+\end{enumerate}
+
+Not knowing that the original signal was parabolic, we might make either of two mistakes.  First, we might make a model that is too simple, an underfit model, such as a linear one.
+
+\sphinxincludegraphics{{signal-and-noise-2}.png}
+
+You can see that the model is a bit higher than the center of the data on each end, and a bit lower than the center of the data in the middle.  This is because the model is missing some key feature of the data, its slight downward curvature.  The model is \sphinxstyleemphasis{underfit;} it should be more fit to the unique characteristics this data is showing.
+
+Second, we might make a model that is too complex, an overfit model, such as a high\sphinxhyphen{}degree polynomial model.
+
+\sphinxincludegraphics{{signal-and-noise-3}.png}
+
+This is a particularly easy mistake to make in Excel, where you can use the options in the trendline dialog box to choose any polynomial model you like, and it’s tempting to crank up the polynomial degree and watch the measurement of goodness of fit increase!  But that measure is telling you only how well the model fits the data you have, not any unseen data.  That difference is the core of what overfitting means.  The model is overfit to known data, and thus probably generalizes poorly to unseen data.
+
+Polynomial models are especially problematic in this area, because all polynomials (other than linear ones) diverge rapidly towards \(\pm\infty\) in both directions, thus making them highly useless for prediction if given an input outside the range of the data on which the model was fit.
+
+The happy medium between these two mistakes, in this case, is a quadratic model, because in this example, I made the signal a simple quadratic function.  Of course, in the real world, signals of many types can occur, and their exact nature is not known from the data alone.
+
+\sphinxincludegraphics{{signal-and-noise-4}.png}
+
+Although this quadratic model may not exactly match the quadratic function that is the signal, it is the closest we can come based on the data we observed.
+
+Now we know what the problems are.  How do we go about avoiding underfitting or overfitting?  Machine learning (and mathematical modeling in general) have developed some best practices for doing just that.
+
+
+\section{Training, validation, and testing}
+\label{\detokenize{chapter-17-machine-learning:training-validation-and-testing}}
+\begin{sphinxadmonition}{note}{Big Picture}
+
+Recall that the key question we’re trying to answer is, “How do I make a model that works well on unseen data?”  Or more precisely, “How do I make a model that works well on data that wasn’t used to create the model?”  The solution is actually rather simple:  When given a dataset, split it into two parts, one you will use to create your model, and the other that you will use as “unseen data,” on which to test your model.  The details are actually slightly more intricate than that simple answer, but that’s the heart of it.
+\end{sphinxadmonition}
+
+
+\subsection{Training vs. testing}
+\label{\detokenize{chapter-17-machine-learning:training-vs-testing}}
+If we take the advice above into account, the process of mathematical modeling would then proceed like this:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+We get a dataset \sphinxcode{\sphinxupquote{df}} that we’re going to use to build a model.
+
+\item {} 
+We split the data into two parts, a larger part \sphinxcode{\sphinxupquote{df\_train}} that we’ll use for “training” (creating the model) and a smaller part \sphinxcode{\sphinxupquote{df\_test}} that we’ll use for testing the model after it’s been created.
+\begin{itemize}
+\item {} 
+Since \sphinxcode{\sphinxupquote{df\_test}} isn’t used to create the model, it’s “unseen data” from the model’s point of view, and can give us a hint on how the model will perform on data that’s entirely outside of \sphinxcode{\sphinxupquote{df}}.
+
+\item {} 
+Typically, \sphinxcode{\sphinxupquote{df\_train}} is a random sample of about 70\%\sphinxhyphen{}80\% of \sphinxcode{\sphinxupquote{df}}, and \sphinxcode{\sphinxupquote{df\_test}} is the other 20\%\sphinxhyphen{}30\%.
+
+\end{itemize}
+
+\item {} 
+We choose which model we want to use (such as linear regression, for example) and fit the model to \sphinxcode{\sphinxupquote{df\_train}} only.
+\begin{itemize}
+\item {} 
+This is called the \sphinxstyleemphasis{training} phase; what statisticians call “fitting a model,” machine learning people call “training the model.”
+
+\end{itemize}
+
+\item {} 
+We use the model to predict outputs for each input in \sphinxcode{\sphinxupquote{df\_test}} and compare them to the known outputs in \sphinxcode{\sphinxupquote{df\_test}}, and see how well the model does.
+\begin{itemize}
+\item {} 
+For example, you might compute the distribution of percent errors, and see if they’re within the tolerance you can accept in your business application.
+
+\item {} 
+This is called the \sphinxstyleemphasis{testing} phase.
+
+\end{itemize}
+
+\item {} 
+If the model seems acceptable, you would then proceed to re\sphinxhyphen{}fit the same model on the entire dataset \sphinxcode{\sphinxupquote{df}} before you use it for predictions, because more data tends to improve model quality.
+
+\end{enumerate}
+
+It is easy to split a DataFrame’s rows into two different sets like this with random sampling.  Use code like the following.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Create some fake data to use for demonstrating the technique:}
+\PYG{k+kn}{import} \PYG{n+nn}{pandas} \PYG{k}{as} \PYG{n+nn}{pd}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{n}{df} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{(} \PYG{p}{\PYGZob{}} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Totally}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Fake}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Data}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{l+m+mi}{6}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{)} \PYG{p}{\PYGZcb{}} \PYG{p}{)}
+\PYG{n}{df}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+    Totally      Fake      Data
+0  1.000000  3.000000  5.000000
+1  1.111111  3.111111  5.111111
+2  1.222222  3.222222  5.222222
+3  1.333333  3.333333  5.333333
+4  1.444444  3.444444  5.444444
+5  1.555556  3.555556  5.555556
+6  1.666667  3.666667  5.666667
+7  1.777778  3.777778  5.777778
+8  1.888889  3.888889  5.888889
+9  2.000000  4.000000  6.000000
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Choose an approximately 80\PYGZpc{} subset:}
+\PYG{c+c1}{\PYGZsh{} (In this case, 8 is 80\PYGZpc{} of the rows.)}
+\PYG{n}{rows\PYGZus{}for\PYGZus{}training} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{choice}\PYG{p}{(} \PYG{n}{df}\PYG{o}{.}\PYG{n}{index}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{p}{,} \PYG{k+kc}{False} \PYG{p}{)}
+\PYG{n}{training} \PYG{o}{=} \PYG{n}{df}\PYG{o}{.}\PYG{n}{index}\PYG{o}{.}\PYG{n}{isin}\PYG{p}{(} \PYG{n}{rows\PYGZus{}for\PYGZus{}training} \PYG{p}{)}
+\PYG{n}{df\PYGZus{}train} \PYG{o}{=} \PYG{n}{df}\PYG{p}{[}\PYG{n}{training}\PYG{p}{]}
+\PYG{n}{df\PYGZus{}test} \PYG{o}{=} \PYG{n}{df}\PYG{p}{[}\PYG{o}{\PYGZti{}}\PYG{n}{training}\PYG{p}{]}
+\end{sphinxVerbatim}
+
+Let’s see the resulting split.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}train}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+    Totally      Fake      Data
+0  1.000000  3.000000  5.000000
+1  1.111111  3.111111  5.111111
+2  1.222222  3.222222  5.222222
+3  1.333333  3.333333  5.333333
+5  1.555556  3.555556  5.555556
+7  1.777778  3.777778  5.777778
+8  1.888889  3.888889  5.888889
+9  2.000000  4.000000  6.000000
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}test}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+    Totally      Fake      Data
+4  1.444444  3.444444  5.444444
+6  1.666667  3.666667  5.666667
+\end{sphinxVerbatim}
+
+
+\subsection{Data leakage}
+\label{\detokenize{chapter-17-machine-learning:data-leakage}}
+It is is essential, in the above five\sphinxhyphen{}step process, not to touch (or typically even look at) the testing data (in \sphinxcode{\sphinxupquote{df\_test}}) until the testing phase.  It is also essential not to repeat back to step 1, 2, or 3 once you’ve reached step 4.  Otherwise \sphinxcode{\sphinxupquote{df\_test}} no longer represents unseen data.  (Like that embarrassing social media post, you can’t unsee it.)  In fact, in machine learning competitions, the group running the competition will typically split the data into training and testing sets before the competition, and distribute only the training set to competitors, leaving the testing set secret, to be used for judging the winner.  It’s truly unseen data!
+
+If a data scientist even looks at the test data or does summary statistics about it, this information can influence how they do the modeling process on training data.  This error is called \sphinxstyleemphasis{data leakage,} because some aspects of the test data have leaked out of where they’re supposed to be safely contained at the end of the whole process, and have contaminated the beginning of the process instead.  The five\sphinxhyphen{}step process given above is designed, in part, to eliminate data leakage.
+
+
+\subsection{Validation}
+\label{\detokenize{chapter-17-machine-learning:validation}}
+But this restriction on seeing \sphinxcode{\sphinxupquote{df\_test}} only once introduces a significant drawback.  What if you have several different models you’d like to try, and you’re not sure which one will work best on unseen data?  How can we compare multiple models if we can test only one?  The question is even more complex if the model comes with parameters that a data scientist is supposed to choose (so\sphinxhyphen{}called hyperparameters), which may require some iterative experimentation.
+
+The answer to this problem involves introducing a new phase, called \sphinxstyleemphasis{validation,} in between training and testing, and creating a three\sphinxhyphen{}way data split.  Perhaps you’ve heard of the technique of \sphinxstyleemphasis{cross\sphinxhyphen{}validation,} one particular way to do the validation step.  In this chapter, since we are just doing a quick introduction to the machine learning process, we will not dive deeply into the validation phase, but will just keep the five\sphinxhyphen{}step process shown above, which uses only a train/test split of the data.
+
+
+\section{Logistic Regression}
+\label{\detokenize{chapter-17-machine-learning:logistic-regression}}
+Machine learning is an area of statistics and computer science that includes many types of advanced models, such as support vector machines, neural networks, decision trees, random forests, and other ensemble methods.  We will see in this small, introductory chapter just one new modeling method, logistic regression.  But we will use it as a way to see several aspects of the way machine learning is done in practice, including the train/test data split discussed above.
+
+
+\subsection{Classification vs. regression}
+\label{\detokenize{chapter-17-machine-learning:classification-vs-regression}}
+The particular machine learning task we’ll cover as an example in this chapter uses a technique called logistic regression.  This technique is covered in detail in MA347 and MA380, but we will do just a small preview here.  The key difference between logistic regression and linear regression is one of output type:
+\begin{itemize}
+\item {} 
+Linear regression creates a model whose output type is real numbers.
+
+\item {} 
+Logistic regression creates a model whose output type is boolean, with values 0 and 1.
+
+\end{itemize}
+
+(Technically, logistic regression models create outputs anywhere in the interval \((0,1)\), not including either end, and we round up/down from the center to convert them to boolean outputs.)
+
+Machine learning tasks are often sorted broadly into two categories, \sphinxstyleemphasis{classification} and \sphinxstyleemphasis{regression}.  Models that output boolean values (or any small number of choices, not necessarily two) are called classification models, and models that output numerical values are called regression models.  (This is unfortunate, because logistic regression is used for classification.  I don’t pick the names.)  We are going to study a binary classification problem below, and so we want a model that outputs one of two values, 0 or 1.  Logistic regression is a natural choice.
+
+If you take MA347 or MA380, you will learn the exact transformation of the inputs and outputs that make logistic regression possible.  But for our purposes here, we will just use Python code that handles them for us.  The essentials are that we provide any set of numeric variables as input and we get boolean values (zeros and ones) as model output.
+
+
+\subsection{Medical example}
+\label{\detokenize{chapter-17-machine-learning:medical-example}}
+Let’s make this concrete with an example.  Assume we’ve measured three important health variables about ten patients in a study and then given them all an experimental drug.  We then measured whether they responded well or not to the drug (0 meaning no and 1 meaning yes).  We’d like to try to predict, from their initial three health variables, whether they will respond well to the drug, so we know which new patients might benefit.  We will use fabricated data, partly because medical data is private and partly beacuse it will be nice to have a small example from which to learn.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}drug\PYGZus{}response} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{(} \PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Height (in)}\PYG{l+s+s1}{\PYGZsq{}}     \PYG{p}{:} \PYG{p}{[}  \PYG{l+m+mi}{72}\PYG{p}{,}  \PYG{l+m+mi}{63}\PYG{p}{,}  \PYG{l+m+mi}{60}\PYG{p}{,}  \PYG{l+m+mi}{69}\PYG{p}{,}  \PYG{l+m+mi}{59}\PYG{p}{,}  \PYG{l+m+mi}{74}\PYG{p}{,}  \PYG{l+m+mi}{63}\PYG{p}{,}  \PYG{l+m+mi}{67}\PYG{p}{,}  \PYG{l+m+mi}{60}\PYG{p}{,}  \PYG{l+m+mi}{64} \PYG{p}{]}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Weight (lb)}\PYG{l+s+s1}{\PYGZsq{}}     \PYG{p}{:} \PYG{p}{[} \PYG{l+m+mi}{150}\PYG{p}{,} \PYG{l+m+mi}{191}\PYG{p}{,} \PYG{l+m+mi}{112}\PYG{p}{,} \PYG{l+m+mi}{205}\PYG{p}{,} \PYG{l+m+mi}{136}\PYG{p}{,} \PYG{l+m+mi}{139}\PYG{p}{,} \PYG{l+m+mi}{184}\PYG{p}{,} \PYG{l+m+mi}{230}\PYG{p}{,} \PYG{l+m+mi}{198}\PYG{p}{,} \PYG{l+m+mi}{169} \PYG{p}{]}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Systolic (mmHg)}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{:} \PYG{p}{[}  \PYG{l+m+mi}{90}\PYG{p}{,} \PYG{l+m+mi}{105}\PYG{p}{,}  \PYG{l+m+mi}{85}\PYG{p}{,} \PYG{l+m+mi}{130}\PYG{p}{,} \PYG{l+m+mi}{107}\PYG{p}{,} \PYG{l+m+mi}{117}\PYG{p}{,} \PYG{l+m+mi}{145}\PYG{p}{,}  \PYG{l+m+mi}{99}\PYG{p}{,} \PYG{l+m+mi}{109}\PYG{p}{,}  \PYG{l+m+mi}{89} \PYG{p}{]}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Response}\PYG{l+s+s1}{\PYGZsq{}}        \PYG{p}{:} \PYG{p}{[}   \PYG{l+m+mi}{0}\PYG{p}{,}   \PYG{l+m+mi}{1}\PYG{p}{,}   \PYG{l+m+mi}{0}\PYG{p}{,}   \PYG{l+m+mi}{0}\PYG{p}{,}   \PYG{l+m+mi}{1}\PYG{p}{,}   \PYG{l+m+mi}{1}\PYG{p}{,}   \PYG{l+m+mi}{1}\PYG{p}{,}   \PYG{l+m+mi}{0}\PYG{p}{,}   \PYG{l+m+mi}{1}\PYG{p}{,}   \PYG{l+m+mi}{1} \PYG{p}{]}
+\PYG{p}{\PYGZcb{}} \PYG{p}{)}
+\PYG{n}{df\PYGZus{}drug\PYGZus{}response}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+   Height (in)  Weight (lb)  Systolic (mmHg)  Response
+0           72          150               90         0
+1           63          191              105         1
+2           60          112               85         0
+3           69          205              130         0
+4           59          136              107         1
+5           74          139              117         1
+6           63          184              145         1
+7           67          230               99         0
+8           60          198              109         1
+9           64          169               89         1
+\end{sphinxVerbatim}
+
+Let us assume that this data is the training dataset, and the test dataset has already been split out and saved in a separate file, where we cannot yet see it.  We will create a model on this dataset, and then later evaluate how well it behaves on new data.
+
+When we apply logistic regression to this dataset, we will want to make it clear which columns are to be seen as inputs (or features or predictors) and which is to be seen as the output (or target or response).  To facilitate this, let’s store them in different variables.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{predictors} \PYG{o}{=} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Height (in)}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Weight (lb)}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Systolic (mmHg)}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{]}
+\PYG{n}{response}   \PYG{o}{=} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Response}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
+\end{sphinxVerbatim}
+
+
+\subsection{Logistic regression in scikit\sphinxhyphen{}learn}
+\label{\detokenize{chapter-17-machine-learning:logistic-regression-in-scikit-learn}}
+A very popular machine learning toolit is called scikit\sphinxhyphen{}learn, and is distributed as the Python module \sphinxcode{\sphinxupquote{sklearn}}.  If your Python installation came from Anaconda, you already have \sphinxcode{\sphinxupquote{sklearn}} installed.  We can use the logistic regression tools built into scikit\sphinxhyphen{}learn to create a logistic regression model that will use the first three columns above as inputs from which it should predict the final column as the output.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Import the module}
+\PYG{k+kn}{from} \PYG{n+nn}{sklearn}\PYG{n+nn}{.}\PYG{n+nn}{linear\PYGZus{}model} \PYG{k+kn}{import} \PYG{n}{LogisticRegression}
+
+\PYG{c+c1}{\PYGZsh{} Create a model and fit it to the data}
+\PYG{n}{model} \PYG{o}{=} \PYG{n}{LogisticRegression}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{model}\PYG{o}{.}\PYG{n}{fit}\PYG{p}{(} \PYG{n}{predictors}\PYG{p}{,} \PYG{n}{response} \PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Let\PYGZsq{}s see how close it came.}
+\PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Prediction}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{model}\PYG{o}{.}\PYG{n}{predict}\PYG{p}{(} \PYG{n}{predictors} \PYG{p}{)}
+\PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Correct}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Prediction}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Response}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
+\PYG{n}{df\PYGZus{}drug\PYGZus{}response}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+   Height (in)  Weight (lb)  Systolic (mmHg)  Response  Prediction  Correct
+0           72          150               90         0           0     True
+1           63          191              105         1           1     True
+2           60          112               85         0           1    False
+3           69          205              130         0           1    False
+4           59          136              107         1           1     True
+5           74          139              117         1           1     True
+6           63          184              145         1           1     True
+7           67          230               99         0           0     True
+8           60          198              109         1           1     True
+9           64          169               89         1           0    False
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Correct}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)} \PYG{o}{/} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+0.7
+\end{sphinxVerbatim}
+
+This model achieved a 70\% correct prediction rate on this data.  Of course, this is a small dataset and is completely fabricated, so this doesn’t mean anything in the real world.  But the purpose is to show you that a relatively small amount of code can set up and use logistic regression.  We will use it for a more interesting example in class.
+
+
+\subsection{Model coefficients}
+\label{\detokenize{chapter-17-machine-learning:model-coefficients}}
+But there is still more we can learn here.  Just like linear regression, logistic regression also computes the best coefficient for each variable as part of the model\sphinxhyphen{}fitting process.  In linear regression, the resulting model is just the combination of those coefficients with the variables, \(\beta_0+\beta_1x_1+\beta_2x_2+\cdots+\beta_nx_n\).  In logistic regression, that same formula is then composed with the logistic curve to fit the result into the interval \((0,1)\), but the coefficients can still tell us which variables were the most important.
+
+Right now, however, our model is fit using predictors that have very different scales.  Height is a two\sphinxhyphen{}digit number, weight is a three\sphinxhyphen{}digit number, and blood pressure varies in between.  So the coefficients, which must interact with these different units, are not currently comparable.  It is therefore common to create a standardized copy of the predictors and re\sphinxhyphen{}fit the model to it, just for comparing coefficients, because then they are all on the same scale.  Standardization is the process of subtracting the mean of a sample and dividing by its standard deviation.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{standardized} \PYG{o}{=} \PYG{p}{(} \PYG{n}{predictors} \PYG{o}{\PYGZhy{}} \PYG{n}{predictors}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{p}{)} \PYG{p}{)} \PYG{o}{/} \PYG{n}{predictors}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{standardized}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+   Height (in)  Weight (lb)  Systolic (mmHg)
+0     1.322744    \PYGZhy{}0.583434        \PYGZhy{}0.927831
+1    \PYGZhy{}0.402574     0.534360        \PYGZhy{}0.137066
+2    \PYGZhy{}0.977681    \PYGZhy{}1.619438        \PYGZhy{}1.191419
+3     0.747638     0.916046         1.180875
+4    \PYGZhy{}1.169383    \PYGZhy{}0.965120        \PYGZhy{}0.031631
+5     1.706149    \PYGZhy{}0.883330         0.495546
+6    \PYGZhy{}0.402574     0.343517         1.971640
+7     0.364234     1.597627        \PYGZhy{}0.453372
+8    \PYGZhy{}0.977681     0.725203         0.073805
+9    \PYGZhy{}0.210872    \PYGZhy{}0.065432        \PYGZhy{}0.980548
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{standardized\PYGZus{}model} \PYG{o}{=} \PYG{n}{LogisticRegression}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{standardized\PYGZus{}model}\PYG{o}{.}\PYG{n}{fit}\PYG{p}{(} \PYG{n}{predictors}\PYG{p}{,} \PYG{n}{response} \PYG{p}{)}
+\PYG{n}{coefficients} \PYG{o}{=} \PYG{n}{standardized\PYGZus{}model}\PYG{o}{.}\PYG{n}{coef\PYGZus{}}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+\PYG{n}{pd}\PYG{o}{.}\PYG{n}{Series}\PYG{p}{(} \PYG{n}{coefficients}\PYG{p}{,} \PYG{n}{index}\PYG{o}{=}\PYG{n}{predictors}\PYG{o}{.}\PYG{n}{columns} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+Height (in)       \PYGZhy{}0.170322
+Weight (lb)       \PYGZhy{}0.013302
+Systolic (mmHg)    0.062280
+dtype: float64
+\end{sphinxVerbatim}
+
+Here we can see that height and weight negatively impacted the drug response and blood pressure positively impacted it.  The magnitude of each variable (in absolute value) shows which variables are more important than others.  A higher absolute value for the variable’s coefficient means it is more important.
+
+This is a rather simple way to compare the importance of variables, and classes like MA252 and MA347 will cover more statistically sophisticated methods.
+
+So the good news is that fitting a logistic model to data is just a few lines of Python code!  But there are several additional details that it will be helpful to know about the context in which we apply logistic regression.  We cover each of those details in the remaining sections of this chapter.
+
+
+\section{Measuring success}
+\label{\detokenize{chapter-17-machine-learning:measuring-success}}
+In the example above, we saw a 70\% correct prediction rate on our training dataset.  But machine learning practitioners have several ways of measuring the quality of a classification model.  For instance, in some cases, a false positive is better than a false negative.  You don’t mind if the computer system that works for your credit card company texts you after your legitimate purchase and asks, “Was this you?”  It had a false positive for a fraud prediction, checked it out with you, and you said “No problem.”  So a false positive is no big deal.  But a false negative (undetected fraud) is much worse.  So a classification model for credit card fraud should be judged more on its false negative rate than on its false positive rate.  Which measurement is best varies by application domain.
+
+Two common measurements of binary classification accuracy are \sphinxstyleemphasis{precision} and \sphinxstyleemphasis{recall.}  Let’s make the following definitions.
+\begin{itemize}
+\item {} 
+Use \(TP\) to stand for the number of true positives among our model’s predictions.  (In the example above, \(TP=6\), for the six rows 1, 4, 5, 6, 8, and 9.
+
+\item {} 
+Similarly, let \(TN\), \(FP\), and \(FN\) stand for true negatives, false positives, and false negatives, respectively.  (Above, we had \(TN=2\), \(FP=2\), and \(FN=0\).)
+
+\item {} 
+We define the classifier’s \sphinxstylestrong{precision} to be \(\frac{TP}{TP+FP}\).  This answers the question:  If the test said “positive,” what are the odds that it’s a true positive?  This is the measure that a patient who just got a positive diagnosis cares about.  What are the odds it’s real?
+
+\item {} 
+We define the classifier’s \sphinxstylestrong{recall} to be \(\frac{TP}{TP+FN}\).  This answers the question:  If the reality is “positive,” what are the odds the test will detect that?  This is the measure that the credit card company cares about.  What percentage of fraud does our system catch?
+
+\end{itemize}
+
+Let’s see how to code these measurements in Python.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} True positive means the answer and the prediction were positive.}
+\PYG{n}{TP} \PYG{o}{=} \PYG{p}{(} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Response}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{\PYGZam{}} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Prediction}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} Similarly for the other three.}
+\PYG{n}{TN} \PYG{o}{=} \PYG{p}{(} \PYG{o}{\PYGZti{}}\PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Response}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{\PYGZam{}} \PYG{o}{\PYGZti{}}\PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Prediction}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{FP} \PYG{o}{=} \PYG{p}{(} \PYG{o}{\PYGZti{}}\PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Response}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{\PYGZam{}} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Prediction}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{FN} \PYG{o}{=} \PYG{p}{(} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Response}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{\PYGZam{}} \PYG{o}{\PYGZti{}}\PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Prediction}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Precision and recall are defined using the formulas above.}
+\PYG{n}{precision} \PYG{o}{=} \PYG{n}{TP} \PYG{o}{/} \PYG{p}{(} \PYG{n}{TP} \PYG{o}{+} \PYG{n}{FP} \PYG{p}{)}
+\PYG{n}{recall} \PYG{o}{=} \PYG{n}{TP} \PYG{o}{/} \PYG{p}{(} \PYG{n}{TP} \PYG{o}{+} \PYG{n}{FN} \PYG{p}{)}
+
+\PYG{n}{precision}\PYG{p}{,} \PYG{n}{recall}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+(0.7142857142857143, 0.8333333333333334)
+\end{sphinxVerbatim}
+
+In many cases, however, both precision and recall matter.  A common way to combine them is in a score called the \(F_1\) score, which combines precision and recall using a formula called the geometric mean.
+\begin{equation*}
+\begin{split}F_1=\frac{2\times\text{precision}\times\text{recall}}{\text{precision}+\text{recall}}\end{split}
+\end{equation*}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{F1} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{precision} \PYG{o}{*} \PYG{n}{recall} \PYG{o}{/} \PYG{p}{(} \PYG{n}{precision} \PYG{o}{+} \PYG{n}{recall} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+Just as a higher score is better for both precision and recall, a higher score is also better for \(F_1\).  We can use this measure to compare models, prioritizing a balance of both precision and recall.
+
+
+\section{Categorical input variables}
+\label{\detokenize{chapter-17-machine-learning:categorical-input-variables}}
+Often we have input variables that are not numeric; in the medical example above, we might also have a patient’s sex or race, and want to know if those impact whether they will respond well to the drug.  Those data are not numeric; they are categorical.  But we can make them numeric using any of several common techniques.
+
+Let’s say we had patient race, and there were several categories, including Black, White, Latino, Indian, Asian, and Other.  I will add data of this type to the original data we saw above.  Of course, this, too, is fictitious data.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Asian}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Black}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Black}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Latino}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{White}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{White}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Indian}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{White}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Asian}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Latino}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
+\PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{category}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+Suppose that the medical professionals believe, from past studies in this area, that Black and Indian patients might respond differently to the drug, but everyone else should be similar to one another.  We can therefore convert this categorical variable into two boolean variables, one answering the question, “Is the patient Black?” and the other answering the question, “Is the patient Indian?”
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race=Black}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Black}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race=Indian}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Indian}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{df\PYGZus{}drug\PYGZus{}response}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+   Height (in)  Weight (lb)  Systolic (mmHg)  Response  Prediction  Correct  \PYGZbs{}
+0           72          150               90         0           0     True   
+1           63          191              105         1           1     True   
+2           60          112               85         0           1    False   
+3           69          205              130         0           1    False   
+4           59          136              107         1           1     True   
+5           74          139              117         1           1     True   
+6           63          184              145         1           1     True   
+7           67          230               99         0           0     True   
+8           60          198              109         1           1     True   
+9           64          169               89         1           0    False   
+
+     Race  Race=Black  Race=Indian  
+0   Asian       False        False  
+1   Black        True        False  
+2   Black        True        False  
+3  Latino       False        False  
+4   White       False        False  
+5   White       False        False  
+6  Indian       False         True  
+7   White       False        False  
+8   Asian       False        False  
+9  Latino       False        False  
+\end{sphinxVerbatim}
+
+The value of having done this is that boolean inputs can be represented using numerical values 0 and 1, just as boolean outputs can.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race=Black}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race=Black}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(} \PYG{n+nb}{int} \PYG{p}{)}
+\PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race=Indian}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race=Indian}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(} \PYG{n+nb}{int} \PYG{p}{)}
+\PYG{n}{df\PYGZus{}drug\PYGZus{}response}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+   Height (in)  Weight (lb)  Systolic (mmHg)  Response  Prediction  Correct  \PYGZbs{}
+0           72          150               90         0           0     True   
+1           63          191              105         1           1     True   
+2           60          112               85         0           1    False   
+3           69          205              130         0           1    False   
+4           59          136              107         1           1     True   
+5           74          139              117         1           1     True   
+6           63          184              145         1           1     True   
+7           67          230               99         0           0     True   
+8           60          198              109         1           1     True   
+9           64          169               89         1           0    False   
+
+     Race  Race=Black  Race=Indian  
+0   Asian           0            0  
+1   Black           1            0  
+2   Black           1            0  
+3  Latino           0            0  
+4   White           0            0  
+5   White           0            0  
+6  Indian           0            1  
+7   White           0            0  
+8   Asian           0            0  
+9  Latino           0            0  
+\end{sphinxVerbatim}
+
+These variables could then be added to our \sphinxcode{\sphinxupquote{predictors}} DataFrame and used as numerical inputs to our model.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{predictors} \PYG{o}{=} \PYG{n}{predictors}\PYG{o}{.}\PYG{n}{copy}\PYG{p}{(}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} handle warnings about slices}
+\PYG{n}{predictors}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race=Black}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race=Black}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
+\PYG{n}{predictors}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race=Indian}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race=Indian}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
+\end{sphinxVerbatim}
+
+If no medical opinion had been present to suggest which races the model should focus on, we could create a boolean variable for each possible race.  There are some disadvantages to adding too many columns to your data, which we won’t cover here, but this is a common practice.  If all categories are converted into boolean variables, the result is called a \sphinxstyleemphasis{one\sphinxhyphen{}hot encoding,} because each row will have just one of the race columns equal to 1 and all others equal to 0.
+
+
+\section{Overfitting and underfitting in this example}
+\label{\detokenize{chapter-17-machine-learning:overfitting-and-underfitting-in-this-example}}
+Let’s return to the major theme introduced at the start of this chapter.  One way to overfit a regression or classification model is to throw in every variable you have access to as inputs to the model.  This is very similar to the example of polynomial regression used earlier, because polynomial regression essentially adds new columns \(x^2,x^3,x^4,\ldots\) as inputs.  A simple model will use just the most important variables, not necessarily every possible variable.
+
+Statistics has many methods for evaluating which variables should be included or excluded from a model, and MA252 (Regression Analysis) covers such techniques.  But we have seen one way to discern which variables are the most impactful in logistic regression–examining the coefficients on those variables.  Variables whose coefficients are closer to zero are less likely to be indicative of signal and more likely to be indicative of noise.  Variables whose coefficients are larger (in absolute value, that is, farther from zero) are more likely to be indicative of the actual underlying structure of the problem.
+
+Our in\sphinxhyphen{}class exercise on mortgage data will assess variable relevance using logistic regression coefficients.
 
 
 \chapter{Detailed Course Schedule}
@@ -9361,6 +9933,41 @@ Chapter 15: Relations as matrices \sphinxhyphen{} {\hyperref[\detokenize{chapter
 \subsection{Due before next class}
 \label{\detokenize{course-schedule:id20}}\begin{itemize}
 \item {} 
+\sphinxstylestrong{Data preparation exercise}
+\begin{itemize}
+\item {} 
+In class next time we will do an introductory machine learning exercise about predicting mortgage approval/denial.
+
+\item {} 
+Download the training dataset here.  It is a sample from the same mortgage dataset we’ve used many times.  Recall that its data dictionary is available \sphinxhref{https://ffiec.cfpb.gov/documentation/2018/lar-data-fields/}{online here}.
+
+\item {} 
+Load it into pandas and check the data types of the columns.
+
+\item {} 
+To make all the data numeric, we will be replacing categorical columns with boolean columns in which false is represented by 0 and true is represented by 1.  This will make it possible to use that data in a numerical model.
+
+\item {} 
+Replace the \sphinxcode{\sphinxupquote{conforming\_loan\_limit}} column with two boolean columns, one that means “conforming loan limit is C (conforming)” and one that means “conforming loan limit is NC (not conforming).”  Don’t forget to use 0/1 instead of False/True.  (There are other values that column may take on, but we will analyze just those two.)
+
+\item {} 
+Replace the \sphinxcode{\sphinxupquote{derived\_sex}} column with two boolean columns, one that means “derived sex is Male” and one that means “derived sex is Female.”  Don’t forget to use 0/1 instead of False/True.  (There are other values that column may take on, but we will analyze just those two.)
+
+\item {} 
+The \sphinxcode{\sphinxupquote{action\_taken}} column contains only 1s and 3s.  This is because this dataset was filtered to include only accepted or rejected mortgages (no withdrawals, pre\sphinxhyphen{}approvals, etc.).  Replace this column with another boolean column, still using 0/1 for False/True, meaning “application accepted.”
+
+\item {} 
+The debt\sphinxhyphen{}to\sphinxhyphen{}income ratio column is categorical instead of numeric.  Make it numeric by replacing each category with a central value in that category.  For instance, the category “20\%\sphinxhyphen{}<30\%” can be replaced with the number 25, the category “43” can be just the number 43, etc.  Let’s use 70 for “>60\%.”
+
+\item {} 
+Your newly cleaned data should have all numeric columns.  Export it as a CSV file and bring it with you to class for an in\sphinxhyphen{}class activity in Week 12.
+
+\item {} 
+To receive credit for having done this preparatory homework, also email the file to your instructor before class on Week 12.
+
+\end{itemize}
+
+\item {} 
 \sphinxstylestrong{Reading}
 \begin{itemize}
 \item {} 
@@ -9387,15 +9994,7 @@ Chapter 17: Introduction to machine learning \sphinxhyphen{} {\hyperref[\detoken
 
 \end{itemize}
 
-
-\subsection{Due before next class}
-\label{\detokenize{course-schedule:id22}}\begin{itemize}
-\item {} 
-None yet
-
-\end{itemize}
-
-(Perhaps more assignments are coming; this section is still incomplete.)
+No more homework this semester!  Use the remaining time to do a great final project!
 
 
 \bigskip\hrule\bigskip
@@ -9412,22 +10011,20 @@ No assignments over break, but it would be wise to continue to make progress on 
 
 
 \section{Week 14 \sphinxhyphen{} 12/3/2020 \sphinxhyphen{} Final Exam Review and Final Project Workshop}
-\label{\detokenize{course-schedule:week-14-12-3-2020-final-exam-review-and-final-project-workshop}}\begin{itemize}
-\item {} 
-\sphinxstylestrong{Final Exam}
-\begin{itemize}
+\label{\detokenize{course-schedule:week-14-12-3-2020-final-exam-review-and-final-project-workshop}}
+
+\subsection{Final Exam}
+\label{\detokenize{course-schedule:final-exam}}\begin{itemize}
 \item {} 
 Based on the review we do in class today, study for the Final Exam.
 
 \end{itemize}
 
-\item {} 
-\sphinxstylestrong{Final Project}
-\begin{itemize}
+
+\subsection{Final Project}
+\label{\detokenize{course-schedule:final-project}}\begin{itemize}
 \item {} 
 Come to class today ready to use half of class to work on your final project in class, and ask questions of the instructor if/when you get stuck on anything.
-
-\end{itemize}
 
 \end{itemize}
 

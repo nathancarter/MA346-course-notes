@@ -13206,6 +13206,192 @@ a.anchor-link {
 
 </div>
 </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Today's-Exercise">Today's Exercise<a class="anchor-link" href="#Today's-Exercise">&#182;</a></h2><p>We will fit a logistic regression model to a sample of data from the mortgage dataset we've used throughout the semester.</p>
+<p>From millions of mortgages, you have a sample of 5000.  Let's pretend these are the mortgage applications from the lender for which you work.</p>
+<p>The primary questions we'll answer with our model are these:</p>
+<ol>
+<li>Can we use a computer model to give a reasonable prediction of whether a mortgage application will be approved just based on a few variables?  (If so, the lender can create an online system where customers can type in some details and get a "likely to be approved" or "not likely to be approved" response immediately.)</li>
+<li>Is sex is a major contributing variable in the model?  (If so, the lender wants to review their existing practices to address any existing discrimination.)</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Competition">Competition<a class="anchor-link" href="#Competition">&#182;</a></h2><p>To make things fun, we will run today like a <a href="https://www.kaggle.com/competitions">Kaggle competition</a>.</p>
+<ul>
+<li>You've been given the training data in advance, and can create your model using any variables you wish within that data.</li>
+<li>Near the end of class, I'll share the test data, and you can score your model on that.</li>
+</ul>
+<p>We will judge models using the $F_1$ score introduced in <a href="../_build/html/chapter-17-machine-learning.html#measuring-success">this section of the course notes</a>.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Discussion">Discussion<a class="anchor-link" href="#Discussion">&#182;</a></h2><p><em>Question 1.</em> Why do we split a dataset into train/test data parts?</p>
+<p><em>Question 2.</em> Isn't it better to fit a model on <em>all</em> the data you have?</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Breakout-groups---phase-1">Breakout groups - phase 1<a class="anchor-link" href="#Breakout-groups---phase-1">&#182;</a></h2><p>Each student should work on their own model, so that you can master the concepts yourself, rather than just watch someone else.  But of course everyone in a group is encouraged to discuss and help one another as much as possible!</p>
+<p>Take these steps in breakout groups now:</p>
+<ol>
+<li>Load your cleaned dataset into a new Jupyter notebook or Python script.</li>
+<li>Load scikit-learn's logistic regression tools as discussed in <a href="../_build/html/chapter-17-machine-learning.html#logistic-regression-in-scikit-learn">this section of the course notes</a> and use them to fit a model to your training data.  Use all variables in this model.</li>
+<li>Write formulas that compute the precision, recall, and $F_1$ score for your model.</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Discussion">Discussion<a class="anchor-link" href="#Discussion">&#182;</a></h2><p>Check:  You should have found the following values, based on the training data I gave you.</p>
+<ul>
+<li>$\text{precision} \approx 0.6455$</li>
+<li>$\text{recall} \approx 0.6496$</li>
+<li>$F_1 \approx 0.6475$</li>
+</ul>
+<p><em>Question 3.</em> None of these measurements say how well the model performs on unseen data.  We will evaluate that in the test phase, at the end of our competition.  But what if you wanted, right now, to test whether the model works well on unseen data?  What might you do?</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Breakout-groups---phase-2">Breakout groups - phase 2<a class="anchor-link" href="#Breakout-groups---phase-2">&#182;</a></h2><p>Take these steps in breakout groups now:</p>
+<ol>
+<li>Split your training data into two parts, 80% and 20%.  But instead of calling them training and testing data, call them training and validation data.  (The test data I still haven't given you.)</li>
+<li>Train the model on just the (new, smaller) training data, and compute its $F_1$ scores on both the (new, smaller) training data and the validation data, separately.<ul>
+<li>I got $F_1\approx0.698$ and $F_1\approx0.677$, but this will vary based on your random training/validation split.</li>
+</ul>
+</li>
+<li>Abstract all of your work into two functions, so that you can do model fitting and scoring with two function calls, <code>fit_model = fit_model_to( df_training )</code> and <code>F1 = score_model( fit_model, df_validation )</code>.<ul>
+<li>If you use this on the same training/validation split, you should get the same $F_1$ scores as you did before creating the functions.</li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Discussion">Discussion<a class="anchor-link" href="#Discussion">&#182;</a></h2><p><em>Question 4.</em>  We can use the training/validation split to check whether a model is overfitting the training data.  Do you have any evidence that there is overfitting in your case?</p>
+<p><em>Question 5.</em>  If there were evidence of overfitting, how might we simplify the model to reduce that problem?</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Break">Break<a class="anchor-link" href="#Break">&#182;</a></h2><p>We will take our mid-class break here.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Discussion">Discussion<a class="anchor-link" href="#Discussion">&#182;</a></h2><p><em>Question 6.</em>  How can we measure which variables are the most/least important in a model?</p>
+<p><em>Question 7.</em>  What does this have to do with overfitting or underfitting?</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Breakout-groups---phase-3">Breakout groups - phase 3<a class="anchor-link" href="#Breakout-groups---phase-3">&#182;</a></h2><p>Take this step and the one on the next slide in breakout groups now:</p>
+<ol>
+<li>Improve your <code>fit_model_to()</code> function so that, in addition to fitting a model to the provided predictors, it does these two things:<ul>
+<li>Fit a separate model to the standardized predictors, so that we can look at that second model's coefficients.</li>
+<li>Print out the coefficients for that second model.  (You will still return the original model; this second model is only for printing standardized coefficients.)</li>
+<li>Optional bonus: Can you print the coefficients in decreasing order of absolute value?</li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Breakout-groups---phase-3,-continued">Breakout groups - phase 3, continued<a class="anchor-link" href="#Breakout-groups---phase-3,-continued">&#182;</a></h2><ol>
+<li>Choose one predictor to omit from the model, so that we can test whether the model will perform better on a subset of the features.</li>
+<li>Declare a variable <code>columns</code> that contains a list of all the columns except the one you want to omit.  (You might choose to use their indices instead of their names, to save some typing.)<ul>
+<li><strong><em>Be sure to include the target variable in the list of columns you want to keep!</em></strong></li>
+</ul>
+</li>
+<li>Run your <code>fit_model_to()</code> and <code>score_model()</code> functions again, this time using only your chosen subset of the predictors.</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Discussion">Discussion<a class="anchor-link" href="#Discussion">&#182;</a></h2><p><em>Question 8.</em> Which predictor did you choose to omit and why?</p>
+<p><em>Question 9.</em> Did your new model seem to generalize better to unseen data than the original did?</p>
+<p><em>Question 10.</em> Our results depend on the particular random training/validation splits that NumPy selected for us.  That should make us wonder whether they are reliable or just coincidental.  How might we address that concern?</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Breakout-groups---phase-4,-preparing-for-the-competition">Breakout groups - phase 4, preparing for the competition<a class="anchor-link" href="#Breakout-groups---phase-4,-preparing-for-the-competition">&#182;</a></h2><p>Experiment with various subsets of the predictor columns until you find a subset that generalizes well to unseen data.  It could contain all the predictors, just one of them, or anything in between.</p>
+<p>In actual modeling work, there are principled ways to go about choosing a good subset of the predictors.  In this small preview of machine learning, we will do it just by experimentation.  See MA252 or MA347 for more principled methods.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="(Friendly)-Competition">(Friendly) Competition<a class="anchor-link" href="#(Friendly)-Competition">&#182;</a></h2><ul>
+<li>The columns you've chosen to use are the model you will be entering into the (friendly) competition (with no prize) that will happen now.</li>
+<li>I will give you the testing data, and we will judge each model based on its $F_1$ score on the testing data.</li>
+<li>Honor system: From this point forward, don't change the set of predictor columns you've chosen to use.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="How-to-enter-the-competition">How to enter the competition<a class="anchor-link" href="#How-to-enter-the-competition">&#182;</a></h2><ol>
+<li>Open the Jupyter notebook or Python script you used when doing the <em>preparatory homework</em> for today.</li>
+<li>Change the filenames in your code so that it reads <code>mortgage-testing-data.csv</code>, cleans it, then writes <code>cleaned-mortgage-testing-data.csv</code>.  (Take care <em>not</em> to save it over top of your training data!)</li>
+<li>After the end of the code you wrote today, add code that loads the cleaned training data as a new DataFrame.</li>
+<li>Run <code>score_model()</code> to apply your already-chosen model to the test data you just received.</li>
+<li>Note the $F_1$ score it shows as output.</li>
+</ol>
+<p>(Do <em>NOT</em> train your model on the testing data!  You're checking to see how well the model you already trained on known data generalizes to unseen data.)</p>
+
+</div>
+</div>
 </div></section></section>
 </div>
 </div>

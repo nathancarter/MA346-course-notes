@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.5.8)  12 AUG 2020 13:48
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.5.8)  14 AUG 2020 11:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1417,59 +1417,74 @@ File: svd-10-steps.png Graphic file (type bmp)
 
 ]
 Chapter 17.
-[191] [192
+File: MnistExamples.png Graphic file (type bmp)
+<MnistExamples.png>
+[191] [192] [193]
+File: signal-and-noise.png Graphic file (type bmp)
+<signal-and-noise.png>
+ [194]
+File: signal-and-noise-2.png Graphic file (type bmp)
+<signal-and-noise-2.png>
+ [195]
+File: signal-and-noise-3.png Graphic file (type bmp)
+<signal-and-noise-3.png>
+ [196]
+File: signal-and-noise-4.png Graphic file (type bmp)
+<signal-and-noise-4.png>
+ [197] [198] [199] [200] [201] [202]
+[203] [204] [205] [206
 
 ]
 Chapter 18.
-[193] [194] [195] [196] [197] [198] [199] [200]
+[207] [208] [209] [210] [211] [212] [213] [214] [215] [216
+
+]
 Chapter 19.
-[201
-
-] [202] [203] [204] [205] [206] [207] [208] [209] [210] [211] [212]
-[213] [214] [215] [216] [217] [218] [219] [220] [221] [222] [223] [224]
-[225] [226] [227] [228] [229] [230] [231] [232]
+[217] [218] [219] [220] [221] [222] [223] [224] [225] [226] [227] [228]
+[229] [230] [231] [232] [233] [234] [235] [236] [237] [238] [239] [240]
+[241] [242] [243] [244] [245] [246] [247] [248]
 Chapter 20.
-[233
+[249
 
-] [234
+] [250
 
 ]
 Chapter 21.
-[235] [236]
+[251] [252]
 Chapter 22.
-[237
+[253
 
 ]
 File: GB213-review-in-Python_15_0.png Graphic file (type bmp)
 <GB213-review-in-Python_15_0.png>
- [238] [239]
+ [254] [255]
 File: GB213-review-in-Python_26_0.png Graphic file (type bmp)
 <GB213-review-in-Python_26_0.png>
- [240] [241] [242]
+ [256] [257] [258]
 File: GB213-review-in-Python_45_0.png Graphic file (type bmp)
 <GB213-review-in-Python_45_0.png>
- [243] (./book.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 12098.
- [244]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 12098.
+ [259] (./book.ind)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 12695.
+ [260]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 12695.
  (./book.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 12098.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 12098
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 12695.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 12695
 .
 Package rerunfilecheck Info: File `book.out' has not changed.
-(rerunfilecheck)             Checksum: 998153500625ED08C7624C3139559999.
+(rerunfilecheck)             Checksum: 5C1D7C908E6BEA41FD12552A331A4F33.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 25159 strings out of 492916
- 480769 string characters out of 6133346
- 779696 words of memory out of 5000000
- 28840 multiletter control sequences out of 15000+600000
+ 25199 strings out of 492916
+ 482258 string characters out of 6133346
+ 782309 words of memory out of 5000000
+ 28875 multiletter control sequences out of 15000+600000
  540988 words of font info for 107 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
- 41i,20n,79p,913b,506s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,20n,79p,1032b,506s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on book.pdf (250 pages).
+Output written on book.pdf (266 pages).
