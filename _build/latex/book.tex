@@ -64,7 +64,7 @@
 
 
 \title{MA346 Course Notes}
-\date{Aug 14, 2020}
+\date{Sep 09, 2020}
 \release{}
 \author{Nathan Carter}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -310,7 +310,7 @@ There are several topics you can investigate on your own that will help you get 
 
 \begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} File Explorers and Shell Commands}
 
-On Windows, the file explorer is called Windoows Explorer; on Mac, it is called Finder.  It is essential that every computer\sphinxhyphen{}literate person knows how to use these tools.  Most of the actions you can take with your mouse in Windows Explorer or OS X Finder can also be taken using commands at a command prompt.  On Windows, this prompt can be found by running command.exe; on Mac, it can be found in Terminal.app.  It is very useful to know how to do at least basic file manipulation tools with the command prompt, because it enables you to take such action in cloud computing evironments where a file explorer is not always available.
+On Windows, the file explorer is called Windows Explorer; on Mac, it is called Finder.  It is essential that every computer\sphinxhyphen{}literate person knows how to use these tools.  Most of the actions you can take with your mouse in Windows Explorer or OS X Finder can also be taken using commands at a command prompt.  On Windows, this prompt can be found by running command.exe; on Mac, it can be found in Terminal.app.  It is very useful to know how to do at least basic file manipulation tools with the command prompt, because it enables you to take such action in cloud computing evironments where a file explorer is not always available.
 \end{sphinxadmonition}
 
 A report on file explorers and shell commands would address all of the following points.
@@ -7395,10 +7395,11 @@ mkdir \PYGZhy{}p \PYGZti{}/.streamlit/
 \PYG{l+s+s2}{enableCORS=false\PYGZbs{}n\PYGZbs{}}
 \PYG{l+s+s2}{port = }\PYG{n+nv}{\PYGZdl{}PORT}\PYG{l+s+s2}{\PYGZbs{}n\PYGZbs{}}
 \PYG{l+s+s2}{\PYGZdq{}} \PYGZgt{} \PYGZti{}/.streamlit/config.toml
+\end{sphinxVerbatim}
 
-**Procfile:** Heroku needs to know what commands to run to get a web app started, and it expects to find them in a file called \PYG{l+s+sb}{`}Procfile\PYG{l+s+sb}{`} \PYG{o}{(}with no extension and a capital P\PYG{o}{)}.  It is also a plain text file.  Notice that it tells Heroku to run the \PYG{l+s+sb}{`}setup.sh\PYG{l+s+sb}{`} file we provided, \PYG{k}{then} run our Streamlit app.
+\sphinxstylestrong{Procfile:} Heroku needs to know what commands to run to get a web app started, and it expects to find them in a file called \sphinxcode{\sphinxupquote{Procfile}} (with no extension and a capital P).  It is also a plain text file.  Notice that it tells Heroku to run the \sphinxcode{\sphinxupquote{setup.sh}} file we provided, then run our Streamlit app.
 
-\PYG{l+s+sb}{`}\PYG{l+s+sb}{`}\PYG{l+s+sb}{`}sh
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
 web: sh setup.sh \PYG{o}{\PYGZam{}\PYGZam{}} streamlit run app.py
 \end{sphinxVerbatim}
 

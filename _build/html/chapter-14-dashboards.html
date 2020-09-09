@@ -832,11 +832,10 @@ streamlit==0.57.2
 <span class="s2">enableCORS=false\n\</span>
 <span class="s2">port = </span><span class="nv">$PORT</span><span class="s2">\n\</span>
 <span class="s2">&quot;</span> &gt; ~/.streamlit/config.toml
-
-**Procfile:** Heroku needs to know what commands to run to get a web app started, and it expects to find them in a file called <span class="sb">`</span>Procfile<span class="sb">`</span> <span class="o">(</span>with no extension and a capital P<span class="o">)</span>.  It is also a plain text file.  Notice that it tells Heroku to run the <span class="sb">`</span>setup.sh<span class="sb">`</span> file we provided, <span class="k">then</span> run our Streamlit app.
-
-<span class="sb">```</span>sh
-web: sh setup.sh <span class="o">&amp;&amp;</span> streamlit run app.py
+</pre></div>
+</div>
+<p><strong>Procfile:</strong> Heroku needs to know what commands to run to get a web app started, and it expects to find them in a file called <code class="docutils literal notranslate"><span class="pre">Procfile</span></code> (with no extension and a capital P).  It is also a plain text file.  Notice that it tells Heroku to run the <code class="docutils literal notranslate"><span class="pre">setup.sh</span></code> file we provided, then run our Streamlit app.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>web: sh setup.sh <span class="o">&amp;&amp;</span> streamlit run app.py
 </pre></div>
 </div>
 <p>Once you’ve placed all three of these files into your dashboard project folder, commit all of them to your git repository.</p>

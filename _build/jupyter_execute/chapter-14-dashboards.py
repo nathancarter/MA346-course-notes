@@ -455,6 +455,7 @@ headless = true\n\
 enableCORS=false\n\
 port = $PORT\n\
 " > ~/.streamlit/config.toml
+```
 
 **Procfile:** Heroku needs to know what commands to run to get a web app started, and it expects to find them in a file called `Procfile` (with no extension and a capital P).  It is also a plain text file.  Notice that it tells Heroku to run the `setup.sh` file we provided, then run our Streamlit app.
 

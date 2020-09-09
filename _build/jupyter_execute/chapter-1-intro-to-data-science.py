@@ -81,7 +81,7 @@ There are several topics you can investigate on your own that will help you get 
 ---
 class: alert alert-danger
 ---
-On Windows, the file explorer is called Windoows Explorer; on Mac, it is called Finder.  It is essential that every computer-literate person knows how to use these tools.  Most of the actions you can take with your mouse in Windows Explorer or OS X Finder can also be taken using commands at a command prompt.  On Windows, this prompt can be found by running command.exe; on Mac, it can be found in Terminal.app.  It is very useful to know how to do at least basic file manipulation tools with the command prompt, because it enables you to take such action in cloud computing evironments where a file explorer is not always available.
+On Windows, the file explorer is called Windows Explorer; on Mac, it is called Finder.  It is essential that every computer-literate person knows how to use these tools.  Most of the actions you can take with your mouse in Windows Explorer or OS X Finder can also be taken using commands at a command prompt.  On Windows, this prompt can be found by running command.exe; on Mac, it can be found in Terminal.app.  It is very useful to know how to do at least basic file manipulation tools with the command prompt, because it enables you to take such action in cloud computing evironments where a file explorer is not always available.
 ```
 
 A report on file explorers and shell commands would address all of the following points.
