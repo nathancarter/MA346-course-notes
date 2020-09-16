@@ -48,7 +48,7 @@ Hmm...While some portions of that picture are linear (such as the top and bottom
 
 ### Guarantees
 
-Each piece of code you run also provides certain guarantees that it will do for you (as long as you took care to ensure taht the assumptions it required held true).  Here are some examples:
+Each piece of code you run also provides certain guarantees that it will do for you (as long as you took care to ensure that the assumptions it required held true).  Here are some examples:
  * If you have a pandas DataFrame `df` containing numeric data and you call `df.mean()`, you will get a list of the mean value of each column in the data, computed separately, using the standard definition of mean from your intro stats class.
  * If you fit a linear model to data using the standard method (ordinary least squares), then you know that the resulting model is the one that minimizes the sum of the squared residuals.  In other words, the expected estimation error on your data is as small as possible.
 
@@ -93,7 +93,7 @@ Each state is shown next to the number of applications from that state in our da
 
 Even with just a small piece of code, notice how easy it is to understand when we have the two explanations.  The sentence before the code asks an easy-to-understand question that shows the writer's motivation for the code.  The two sentences after the code explain what the output shows and why we can trust it.
 
-We help the reader out (and ourselves later when we come back to thise code!) by following those two simple rules of explanation.
+We help the reader out (and ourselves later when we come back to this code!) by following those two simple rules of explanation.
 
 ### Example 2
 
