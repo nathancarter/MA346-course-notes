@@ -203,7 +203,7 @@ The second headache comes if Teammate B doesn't check to be sure that Teammate A
  1. Becky edits the last few cells of a Jupyter notebook, sees that they work well, and commits the changes to her local repo.
  2. She now wants to pass these edits to Carlo, so she uses the GitHub app to push.  The app tells her she can't push yet, because Carlo pushed some changes that Becky needs to download first.  This is great, because it's ensuring that the team makes sure that their work combines sensibly before publishing it online---nice!
  3. So Becky clicks the Pull button in the app.  Because the team was careful not to edit the same code, it works smoothly and brings Carlo's changes down to Becky's local repo on her laptop.  Great!
- 4. At this point comes the danger:  Becky can push her latest changes to the web, *but she hasn't yet checked to be sure they still work.*  She knows they worked *before* she pulle Carlo's work in.  But what if Carlo changed something that makes Becky's code no longer run?
+ 4. At this point comes the danger:  Becky can push her latest changes to the web, *but she hasn't yet checked to be sure they still work.*  She knows they worked *before* she pulled Carlo's work in.  But what if Carlo changed something that makes Becky's code no longer run?
 
 It's always important, before pushing your code to the GitHub site, to check once more that it still runs correctly.  If it doesn't, fix the problems and commit the fixes first, before you push to the web.
 

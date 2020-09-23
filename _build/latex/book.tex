@@ -64,7 +64,7 @@
 
 
 \title{MA346 Course Notes}
-\date{Sep 16, 2020}
+\date{Sep 23, 2020}
 \release{}
 \author{Nathan Carter}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -2697,7 +2697,7 @@ My kids are teenagers and have recently taken algebra classes where they learned
 Each homework problem was a \sphinxstyleemphasis{specific} example of this technique.
 
 \item {} 
-If you apply the technique to the equation \(ax^s+bx+c=0\), the result is the quadratic formula, \(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\), a \sphinxstyleemphasis{general} solution to all quadratic equations.
+If you apply the technique to the equation \(ax^2+bx+c=0\), the result is the quadratic formula, \(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\), a \sphinxstyleemphasis{general} solution to all quadratic equations.
 
 \end{itemize}
 
@@ -2950,7 +2950,7 @@ The limitation to Python’s \sphinxcode{\sphinxupquote{lambda}} syntax is that 
 \label{\detokenize{chapter-7-abstraction:how-to-do-abstraction}}
 If you aren’t sure how to take specific code and turn it into a general function, I suggest following the steps given here.  Once you’ve done this a few times, it will come naturally, without thinking through the steps.
 
-Let’s use with the following example code to illustrate the steps.  It’s useful in DataFrames imported from a file where dollar amounts were written in a form like \$4,320,000.00, which pandas won’t recognize as a number, because of the commas and the dollar sign.  This code converts such a column to numeric.  Since it’s so useful, we may want to use it on multiple columns.
+Let’s use the following example code to illustrate the steps.  It’s useful in DataFrames imported from a file where dollar amounts were written in a form like \$4,320,000.00, which pandas won’t recognize as a number, because of the commas and the dollar sign.  This code converts such a column to numeric.  Since it’s so useful, we may want to use it on multiple columns.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Tuition}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Tuition}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{str}\PYG{o}{.}\PYG{n}{replace}\PYG{p}{(} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdl{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}} \PYG{p}{)} \PYG{c+c1}{\PYGZsh{} remove dollar signs}
@@ -2973,7 +2973,7 @@ This is probably clearest if it’s illustrated:
 \PYG{n}{new\PYGZus{}type} \PYG{o}{=} \PYG{n+nb}{float}
 \PYG{n}{df}\PYG{p}{[}\PYG{n}{column}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df}\PYG{p}{[}\PYG{n}{column}\PYG{p}{]}\PYG{o}{.}\PYG{n}{str}\PYG{o}{.}\PYG{n}{replace}\PYG{p}{(} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdl{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}} \PYG{p}{)} \PYG{c+c1}{\PYGZsh{} remove dollar signs}
 \PYG{n}{df}\PYG{p}{[}\PYG{n}{column}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df}\PYG{p}{[}\PYG{n}{column}\PYG{p}{]}\PYG{o}{.}\PYG{n}{str}\PYG{o}{.}\PYG{n}{replace}\PYG{p}{(} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}} \PYG{p}{)} \PYG{c+c1}{\PYGZsh{} remove commas}
-\PYG{n}{df}\PYG{p}{[}\PYG{n}{column}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df}\PYG{p}{[}\PYG{n}{column}\PYG{p}{]}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(} \PYG{n}{new\PYGZus{}type} \PYG{p}{)}
+\PYG{n}{df}\PYG{p}{[}\PYG{n}{column}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df}\PYG{p}{[}\PYG{n}{column}\PYG{p}{]}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(} \PYG{n}{new\PYGZus{}type} \PYG{p}{)}         \PYG{c+c1}{\PYGZsh{} convert to new type}
 \end{sphinxVerbatim}
 
 You can then re\sphinxhyphen{}run this code to be sure it still does what it’s supposed to do.
@@ -3026,7 +3026,7 @@ Whenever you find yourself copying and pasting code with minor changes, this is 
 
 Also, if you have several lines of code in a row with only one thing changing, you can use abstraction to create a loop instead of a function.  We saw an example of this in the {\hyperref[\detokenize{chapter-7-abstraction:alternatives}]{\emph{Alternatives}}} section, above.  This is especially important if there’s a numeric progression involved.
 
-In class, we will practice using abstract to improve code written in a redundant style.
+In class, we will practice using abstraction to improve code written in a redundant style.
 
 \sphinxstylestrong{Later, the skill of abstracting code will be a crucial part of our work on creating interactive dashboards.}
 
@@ -3416,7 +3416,7 @@ She now wants to pass these edits to Carlo, so she uses the GitHub app to push. 
 So Becky clicks the Pull button in the app.  Because the team was careful not to edit the same code, it works smoothly and brings Carlo’s changes down to Becky’s local repo on her laptop.  Great!
 
 \item {} 
-At this point comes the danger:  Becky can push her latest changes to the web, \sphinxstyleemphasis{but she hasn’t yet checked to be sure they still work.}  She knows they worked \sphinxstyleemphasis{before} she pulle Carlo’s work in.  But what if Carlo changed something that makes Becky’s code no longer run?
+At this point comes the danger:  Becky can push her latest changes to the web, \sphinxstyleemphasis{but she hasn’t yet checked to be sure they still work.}  She knows they worked \sphinxstyleemphasis{before} she pulled Carlo’s work in.  But what if Carlo changed something that makes Becky’s code no longer run?
 
 \end{enumerate}
 

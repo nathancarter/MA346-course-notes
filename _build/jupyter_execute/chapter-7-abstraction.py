@@ -23,7 +23,7 @@ It's very useful in all kinds of programming, including data-related work, so it
 
 My kids are teenagers and have recently taken algebra classes where they learned to "complete the square."  This procedure takes a quadratic equation like $16x^2-9x+5=0$ and manipulates it into a form that's easy to solve.
  * Each homework problem was a *specific* example of this technique.
- * If you apply the technique to the equation $ax^s+bx+c=0$, the result is the quadratic formula, $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$, a *general* solution to all quadratic equations.
+ * If you apply the technique to the equation $ax^2+bx+c=0$, the result is the quadratic formula, $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$, a *general* solution to all quadratic equations.
 
 Abstraction from the specific to the general tends to create more powerful tools, because they can be applied to any specific instance of the problem.
 
@@ -196,7 +196,7 @@ The limitation to Python's `lambda` syntax is that you can put inside only a sin
 
 If you aren't sure how to take specific code and turn it into a general function, I suggest following the steps given here.  Once you've done this a few times, it will come naturally, without thinking through the steps.
 
-Let's use with the following example code to illustrate the steps.  It's useful in DataFrames imported from a file where dollar amounts were written in a form like $4,320,000.00, which pandas won't recognize as a number, because of the commas and the dollar sign.  This code converts such a column to numeric.  Since it's so useful, we may want to use it on multiple columns.
+Let's use the following example code to illustrate the steps.  It's useful in DataFrames imported from a file where dollar amounts were written in a form like $4,320,000.00, which pandas won't recognize as a number, because of the commas and the dollar sign.  This code converts such a column to numeric.  Since it's so useful, we may want to use it on multiple columns.
 
 ```python
 df['Tuition'] = df['Tuition'].str.replace( "$", "" ) # remove dollar signs
@@ -217,7 +217,7 @@ column = 'Tuition'
 new_type = float
 df[column] = df[column].str.replace( "$", "" ) # remove dollar signs
 df[column] = df[column].str.replace( ",", "" ) # remove commas
-df[column] = df[column].astype( new_type )
+df[column] = df[column].astype( new_type )         # convert to new type
 ```
 
 You can then re-run this code to be sure it still does what it's supposed to do.
@@ -267,7 +267,7 @@ Whenever you find yourself copying and pasting code with minor changes, this is 
 
 Also, if you have several lines of code in a row with only one thing changing, you can use abstraction to create a loop instead of a function.  We saw an example of this in the [Alternatives](#alternatives) section, above.  This is especially important if there's a numeric progression involved.
 
-In class, we will practice using abstract to improve code written in a redundant style.
+In class, we will practice using abstraction to improve code written in a redundant style.
 
 **Later, the skill of abstracting code will be a crucial part of our work on creating interactive dashboards.**
 
