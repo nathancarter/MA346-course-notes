@@ -285,14 +285,14 @@
 \contentsline {section}{\numberline {18.9}Week 9 \sphinxhyphen {} 10/29/2020 \sphinxhyphen {} Dashboards}{212}{section.18.9}% 
 \contentsline {subsection}{\numberline {18.9.1}Content}{212}{subsection.18.9.1}% 
 \contentsline {subsection}{\numberline {18.9.2}Due before next class}{212}{subsection.18.9.2}% 
-\contentsline {section}{\numberline {18.10}Week 10 \sphinxhyphen {} 11/5/2020 \sphinxhyphen {} Relations, graphs, and networks}{212}{section.18.10}% 
-\contentsline {subsection}{\numberline {18.10.1}Content}{212}{subsection.18.10.1}% 
+\contentsline {section}{\numberline {18.10}Week 10 \sphinxhyphen {} 11/5/2020 \sphinxhyphen {} Relations, graphs, and networks}{213}{section.18.10}% 
+\contentsline {subsection}{\numberline {18.10.1}Content}{213}{subsection.18.10.1}% 
 \contentsline {subsection}{\numberline {18.10.2}Due before next class}{213}{subsection.18.10.2}% 
-\contentsline {section}{\numberline {18.11}Week 11 \sphinxhyphen {} 11/12/2020 \sphinxhyphen {} Relations as matrices}{213}{section.18.11}% 
-\contentsline {subsection}{\numberline {18.11.1}Content}{213}{subsection.18.11.1}% 
+\contentsline {section}{\numberline {18.11}Week 11 \sphinxhyphen {} 11/12/2020 \sphinxhyphen {} Relations as matrices}{214}{section.18.11}% 
+\contentsline {subsection}{\numberline {18.11.1}Content}{214}{subsection.18.11.1}% 
 \contentsline {subsection}{\numberline {18.11.2}Due before next class}{214}{subsection.18.11.2}% 
-\contentsline {section}{\numberline {18.12}Week 12 \sphinxhyphen {} 11/19/2020 \sphinxhyphen {} Introduction to machine learning}{214}{section.18.12}% 
-\contentsline {subsection}{\numberline {18.12.1}Content}{214}{subsection.18.12.1}% 
+\contentsline {section}{\numberline {18.12}Week 12 \sphinxhyphen {} 11/19/2020 \sphinxhyphen {} Introduction to machine learning}{215}{section.18.12}% 
+\contentsline {subsection}{\numberline {18.12.1}Content}{215}{subsection.18.12.1}% 
 \contentsline {section}{\numberline {18.13}Week 13 \sphinxhyphen {} 11/26/2020 \sphinxhyphen {} Thanksgiving break, no class}{215}{section.18.13}% 
 \contentsline {section}{\numberline {18.14}Week 14 \sphinxhyphen {} 12/3/2020 \sphinxhyphen {} Final Exam Review and Final Project Workshop}{215}{section.18.14}% 
 \contentsline {subsection}{\numberline {18.14.1}Final Exam}{215}{subsection.18.14.1}% 

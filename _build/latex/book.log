@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.5.8)  23 SEP 2020 14:23
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.5.8)  30 SEP 2020 10:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1472,12 +1472,12 @@ File: GB213-review-in-Python_26_0.png Graphic file (type bmp)
 File: GB213-review-in-Python_45_0.png Graphic file (type bmp)
 <GB213-review-in-Python_45_0.png>
  [259] (./book.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 12717.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 12720.
  [260]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 12717.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 12720.
  (./book.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 12717.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 12717
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 12720.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 12720
 .
 Package rerunfilecheck Info: File `book.out' has not changed.
 (rerunfilecheck)             Checksum: 5C1D7C908E6BEA41FD12552A331A4F33.

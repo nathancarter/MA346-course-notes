@@ -109,6 +109,7 @@ This include all topics covered and all assignments given and when they are due.
 ### Due before next class
 
  * **Data preparation exercise**
+    * (Some steps of this you have probably already completed.  What's new for everyone is making a project that can easily load the file into Jupyter, so we're ready to experiment with it next week in class.)
     * Look at the 2016 election data [on this page of NPR's website](https://www.npr.org/2016/11/08/500927768/2016-presidential-election-results-for-each-state).
     * Extract the table from that page into a CSV file (for example, by copying and pasting into Excel, then touching it up as needed).
     * Write a Jupyter notebook that imports the CSV file.
