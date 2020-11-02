@@ -168,7 +168,7 @@ The Singular Value Decomposition (SVD) is a way to break the action a matrix per
 
 $$ \left[\begin{array}{cccc} 2.31 & 0 & 0 & 0 \\ 0 & 1.19 & 0 & 0 \\ 0 & 0 & 0.33 & 0 \\ 0 & 0 & 0 & 0.0021 \end{array}\right]$$
 
-In fact, because the $\Sigma$ matrix is always diagonal, computations the produce $U$, $\Sigma$, and $V$, typically provide $\Sigma$ just as a list of the entries along the diagonal, rather than providing the whole matrix that's mostly zeros.
+In fact, because the $\Sigma$ matrix is always diagonal, computations that produce $U$, $\Sigma$, and $V$, typically provide $\Sigma$ just as a list of the entries along the diagonal, rather than providing the whole matrix that's mostly zeros.
 
 Let's see what these three matrices look like for our preferences matrix above.  We use the built-in NumPy routine called `svd` to perform the SVD.
 
@@ -229,7 +229,7 @@ We could repeat this, removing more and more of the singular values in $\Sigma$,
 
 ### Measuring the quality of the approximation
 
-There is a measurement called $\rho$ (Greek letter rho) that can let you know approximately how much of the "energy" of the original matrix is being lost with an approximation.  If $\Sigma$ is the original vector of singular values and $z$ is the vector of those that will be replaced by zeros, then $\rho^2$ is computed by dividing the length of $z$ by the length of $\Sigma$.  And so $\rho$ is the square root of that number.  You can see $\rho$ as a measurement of the error introduced by the approximation, between 0.0 and 1.0.
+There is a measurement called $\rho$ (Greek letter rho) that can let you know approximately how much of the "energy" of the original matrix is being lost with an approximation.  If $\Sigma$ is the original vector of singular values and $z$ is the vector of those that will be replaced by zeros, then $\rho^2$ is computed by dividing the magnitude of $z$ by the magnitude of $\Sigma$.  And so $\rho$ is the square root of that number.  You can see $\rho$ as a measurement of the error introduced by the approximation, between 0.0 and 1.0.
 
 def ρ ( Σ, num_to_remove ):
     z = Σ[-num_to_remove:]

@@ -406,7 +406,7 @@
 <li><p>All that’s happening is that we’re stacking data vertically.  It’s very straightforward!</p></li>
 <li><p>In order for us to stack two DataFrames, they must have the same columns.  The column headers are highlighted in blue to emphasize that they’re the same in every table.</p></li>
 </ol>
-<p>(There are ways to deal with the case where new data comes in with different column headers, we’re covering the most common case here.)</p>
+<p>(There are ways to deal with the case where new data comes in with different column headers; we’re covering the most common case here.)</p>
 <p>The code to do this is extremely easy; it is a single call to the <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code> function.  You provide a Python list of all the DataFrames to concatenate; in this case, we have just two.  We tell it to ignore the old indexes and create a new one, so that we don’t have duplicate index entries.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -590,7 +590,7 @@
 <p>Let’s consider a concrete example to understand the idea of importing several new columns at once.  Consider a dataset we’ve seen before, tracking the number of confirmed COVID-19 cases over time in various countries.  Let’s say we wanted to see if the growth patterns in such a dataset were in any way related to health care information about the country, such as how much they spend on health care, how many doctors per capita, and so on.  We’ll need to bring in another dataset with all that information about each country, and import it in as new columns.  See the illustration below.</p>
 <p>(All tables illustrated from here on will have “…” in the final rows and columns, to indicate that the table is really much bigger, and we’re showing only a portion in the illustration.)</p>
 <p><img alt="Merging COVID-19 time series data for each country with health care information for each country" src="_images/merge-of-health-data.png" /></p>
-<p>The resulting DataFrame, on the bottom of the illustrationo, has all the data we want about each country, the COVID case data followed by the health data.</p>
+<p>The resulting DataFrame, on the bottom of the illustration, has all the data we want about each country, the COVID case data followed by the health data.</p>
 <p>If the rows were not in exactly the same order in each DataFrame, the ones on the right will be reordered so that they match correctly with the rows on the left.  To do this, we need a unique ID for each row that is consistent across both datasets.  In this case, we would use the country name.</p>
 <p>We’re making two important assumptions here.</p>
 <ol class="simple">
@@ -634,7 +634,7 @@
 <li><p><strong>What if a player is the receiver in more than one play?</strong>  (This happens all the time, of course.  Once a player is hired by a team, they often play in lots of games, and are involved in many plays.)  We will want the player’s stats to appear in <em>every</em> play for which the player was the receiver.  Good news!  This is how merges always work; if a row in one DataFrame matches many rows in the other, the row is always <em>copied.</em></p></li>
 <li><p><strong>What if a play has more than one receiver?</strong>  This actually cannot happen, according to the rules of the NFL.  Once a player has caught the ball, they are not eligible to pass it to another player.  (If you’re familiar with football, don’t start talking about laterals; that’s not a pass!)  So we don’t have to consider this possibility.</p></li>
 </ul>
-<p>So those two considerations don’t seems to change our merging code at all.  It seems like a standard merge will do what we want.</p>
+<p>So those two considerations don’t seem to change our merging code at all.  It seems like a standard merge will do what we want.</p>
 <p>But what about a row in one dataset matching zero rows in the other dataset?  This, too, might happen in two ways.</p>
 <ul class="simple">
 <li><p><strong>What if a player is the receiver in no play?</strong>  (This happens often also.  A player may be hired by a team, but is not as good as other players on the team, and thus does not yet get to play in real games.)  We will not want this player to appear at all in our merged dataset, because we care about receivers who showed up in actual plays.</p></li>
@@ -657,6 +657,7 @@
 <p>When putting their data together, they don’t yet know what questions they’re going to ask; they’ll probably start with some exploratory data analysis.  So they don’t want to throw away any of their data yet.</p>
 <p>If they used an inner join, then they’d keep only the firms that appear in both datasets; that’s not what they want.  A left or right join would also discard some firms.  But they want to keep them all.  This is called an <em>outer join,</em> and it’s shown in the illustration below.</p>
 <p><img alt="Merging data about corporate executives with data about marketing spending for a fictitious set of firms" src="_images/merge-of-firm-data.png" /></p>
+<p>(The split of the data into three categories, each of size 50, is just for this example.  A real example is unlikely to be separated so symmetrically.)</p>
 <p>The “Firm” column in the merged dataset will contain each name only once, and the row will be of one of three types.</p>
 <ol class="simple">
 <li><p>If it was in both datasets, then the row contains data in every column (as long as the original datasets did).</p></li>

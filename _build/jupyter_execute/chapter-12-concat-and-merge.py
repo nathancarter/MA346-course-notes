@@ -33,7 +33,7 @@ There are two important things to notice in the picture.
  1. All that's happening is that we're stacking data vertically.  It's very straightforward!
  2. In order for us to stack two DataFrames, they must have the same columns.  The column headers are highlighted in blue to emphasize that they're the same in every table.
  
-(There are ways to deal with the case where new data comes in with different column headers, we're covering the most common case here.)
+(There are ways to deal with the case where new data comes in with different column headers; we're covering the most common case here.)
 
 The code to do this is extremely easy; it is a single call to the `pd.concat()` function.  You provide a Python list of all the DataFrames to concatenate; in this case, we have just two.  We tell it to ignore the old indexes and create a new one, so that we don't have duplicate index entries.
 
@@ -77,7 +77,7 @@ Let's consider a concrete example to understand the idea of importing several ne
 
 ![Merging COVID-19 time series data for each country with health care information for each country](_images/merge-of-health-data.png)
 
-The resulting DataFrame, on the bottom of the illustrationo, has all the data we want about each country, the COVID case data followed by the health data.
+The resulting DataFrame, on the bottom of the illustration, has all the data we want about each country, the COVID case data followed by the health data.
 
 If the rows were not in exactly the same order in each DataFrame, the ones on the right will be reordered so that they match correctly with the rows on the left.  To do this, we need a unique ID for each row that is consistent across both datasets.  In this case, we would use the country name.
 
@@ -137,7 +137,7 @@ Now let's consider how we will handle the many possibilities for how rows might 
  * **What if a player is the receiver in more than one play?**  (This happens all the time, of course.  Once a player is hired by a team, they often play in lots of games, and are involved in many plays.)  We will want the player's stats to appear in *every* play for which the player was the receiver.  Good news!  This is how merges always work; if a row in one DataFrame matches many rows in the other, the row is always *copied.*
  * **What if a play has more than one receiver?**  This actually cannot happen, according to the rules of the NFL.  Once a player has caught the ball, they are not eligible to pass it to another player.  (If you're familiar with football, don't start talking about laterals; that's not a pass!)  So we don't have to consider this possibility.
  
-So those two considerations don't seems to change our merging code at all.  It seems like a standard merge will do what we want.
+So those two considerations don't seem to change our merging code at all.  It seems like a standard merge will do what we want.
 
 But what about a row in one dataset matching zero rows in the other dataset?  This, too, might happen in two ways.
  * **What if a player is the receiver in no play?**  (This happens often also.  A player may be hired by a team, but is not as good as other players on the team, and thus does not yet get to play in real games.)  We will not want this player to appear at all in our merged dataset, because we care about receivers who showed up in actual plays.
@@ -169,6 +169,8 @@ When putting their data together, they don't yet know what questions they're goi
 If they used an inner join, then they'd keep only the firms that appear in both datasets; that's not what they want.  A left or right join would also discard some firms.  But they want to keep them all.  This is called an *outer join,* and it's shown in the illustration below.
 
 ![Merging data about corporate executives with data about marketing spending for a fictitious set of firms](_images/merge-of-firm-data.png)
+
+(The split of the data into three categories, each of size 50, is just for this example.  A real example is unlikely to be separated so symmetrically.)
 
 The "Firm" column in the merged dataset will contain each name only once, and the row will be of one of three types.
  1. If it was in both datasets, then the row contains data in every column (as long as the original datasets did).

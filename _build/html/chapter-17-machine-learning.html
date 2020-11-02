@@ -662,6 +662,12 @@
   </thead>
   <tbody>
     <tr>
+      <th>0</th>
+      <td>1.000000</td>
+      <td>3.000000</td>
+      <td>5.000000</td>
+    </tr>
+    <tr>
       <th>1</th>
       <td>1.111111</td>
       <td>3.111111</td>
@@ -672,6 +678,12 @@
       <td>1.222222</td>
       <td>3.222222</td>
       <td>5.222222</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.333333</td>
+      <td>3.333333</td>
+      <td>5.333333</td>
     </tr>
     <tr>
       <th>4</th>
@@ -686,22 +698,10 @@
       <td>5.555556</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>1.666667</td>
-      <td>3.666667</td>
-      <td>5.666667</td>
-    </tr>
-    <tr>
       <th>7</th>
       <td>1.777778</td>
       <td>3.777778</td>
       <td>5.777778</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>1.888889</td>
-      <td>3.888889</td>
-      <td>5.888889</td>
     </tr>
     <tr>
       <th>9</th>
@@ -745,16 +745,16 @@
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>1.000000</td>
-      <td>3.000000</td>
-      <td>5.000000</td>
+      <th>6</th>
+      <td>1.666667</td>
+      <td>3.666667</td>
+      <td>5.666667</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>1.333333</td>
-      <td>3.333333</td>
-      <td>5.333333</td>
+      <th>8</th>
+      <td>1.888889</td>
+      <td>3.888889</td>
+      <td>5.888889</td>
     </tr>
   </tbody>
 </table>
@@ -1070,7 +1070,7 @@
 <div class="section" id="model-coefficients">
 <h3><span class="section-number">17.4.4. </span>Model coefficients<a class="headerlink" href="#model-coefficients" title="Permalink to this headline">¶</a></h3>
 <p>But there is still more we can learn here.  Just like linear regression, logistic regression also computes the best coefficient for each variable as part of the model-fitting process.  In linear regression, the resulting model is just the combination of those coefficients with the variables, <span class="math notranslate nohighlight">\(\beta_0+\beta_1x_1+\beta_2x_2+\cdots+\beta_nx_n\)</span>.  In logistic regression, that same formula is then composed with the logistic curve to fit the result into the interval <span class="math notranslate nohighlight">\((0,1)\)</span>, but the coefficients can still tell us which variables were the most important.</p>
-<p>Right now, however, our model is fit using predictors that have very different scales.  Height is a two-digit number, weight is a three-digit number, and blood pressure varies in between.  So the coefficients, which must interact with these different units, are not currently comparable.  It is therefore common to create a standardized copy of the predictors and re-fit the model to it, just for comparing coefficients, because then they are all on the same scale.  Standardization is the process of subtracting the mean of a sample and dividing by its standard deviation.</p>
+<p>Right now, however, our model is fit using predictors that have very different scales.  Height is a two-digit number, weight is a three-digit number, and blood pressure varies in between.  So the coefficients, which must interact with these different units, are not currently comparable.  It is therefore common to create a standardized copy of the predictors and re-fit the model to it, just for comparing coefficients, because then they are all on the same scale.  Standardization is the process of subtracting the mean of a sample and dividing by its standard deviation.  (Note that this makes the units in the column headers no longer accurate.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">standardized</span> <span class="o">=</span> <span class="p">(</span> <span class="n">predictors</span> <span class="o">-</span> <span class="n">predictors</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="p">)</span> <span class="o">/</span> <span class="n">predictors</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
