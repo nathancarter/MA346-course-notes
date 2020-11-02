@@ -588,7 +588,7 @@
 <ol class="simple">
 <li><p>Add <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">streamlit</span> <span class="pre">as</span> <span class="pre">st</span></code> to the top of the file, before anything else.  (This imports all the Streamlit tools into your script.)</p></li>
 <li><p>Change any <code class="docutils literal notranslate"><span class="pre">print()</span></code> function call in your script to <code class="docutils literal notranslate"><span class="pre">st.write()</span></code> instead.  (This replaces ordinary Python printing, which goes to the terminal, with Streamlit printing, which will go to the dashboard you’re creating.)</p></li>
-<li><p>Change any <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> function call in your script to <code class="docutils literal notranslate"><span class="pre">st.pyplot()</span></code> instead.  (This replaces ordinary Python plotting, which appears in its own window or in your IDE, with Streamlit plotting, which will go to the dashboard you’re creating.)</p></li>
+<li><p>Change any <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> function call in your script to <code class="docutils literal notranslate"><span class="pre">st.pyplot(plt.gcf())</span></code> instead.  (This replaces ordinary Python plotting, which appears in its own window or in your IDE, with Streamlit plotting, which will go to the dashboard you’re creating.)</p></li>
 </ol>
 <p>If we make these changes to the script above, we get the following result.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
@@ -600,7 +600,7 @@
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">sample</span> <span class="o">=</span> <span class="p">[</span> <span class="n">my_random_variable</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="p">]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">sample</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span> <span class="p">)</span>
-<span class="n">st</span><span class="o">.</span><span class="n">pyplot</span><span class="p">()</span>
+<span class="n">st</span><span class="o">.</span><span class="n">pyplot</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">())</span>
 
 <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="s1">&#39;Mean:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span> <span class="p">)</span>
 <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="s1">&#39;Standard deviation:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span> <span class="p">)</span>
@@ -635,7 +635,7 @@
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">sample</span> <span class="o">=</span> <span class="p">[</span> <span class="n">my_random_variable</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sample_size</span><span class="p">)</span> <span class="p">]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span>
-<span class="n">st</span><span class="o">.</span><span class="n">pyplot</span><span class="p">()</span>
+<span class="n">st</span><span class="o">.</span><span class="n">pyplot</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">())</span>
 
 <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="s1">&#39;Sample Mean:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span> <span class="p">)</span>
 <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="s1">&#39;Sample Standard Deviation:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span> <span class="p">)</span>
@@ -670,7 +670,7 @@
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">sample</span> <span class="o">=</span> <span class="p">[</span> <span class="n">my_random_variable</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sample_size</span><span class="p">)</span> <span class="p">]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span>
-<span class="n">st</span><span class="o">.</span><span class="n">pyplot</span><span class="p">()</span>
+<span class="n">st</span><span class="o">.</span><span class="n">pyplot</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">())</span>
 
 <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="s1">&#39;Sample Mean:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span> <span class="p">)</span>
 <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="s1">&#39;Sample Standard Deviation:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span> <span class="n">sample</span> <span class="p">)</span> <span class="p">)</span>
@@ -747,7 +747,7 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;Histogram of a sample of size </span><span class="si">{</span><span class="n">sample_size</span><span class="si">}</span><span class="s1"> from X&#39;</span> <span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;X = the sum of </span><span class="si">{</span><span class="n">num_random_variables_to_sum</span><span class="si">}</span><span class="s1"> uniform random variables on [0,1]&#39;</span> <span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s1">&#39;Frequency&#39;</span> <span class="p">)</span>
-<span class="n">st</span><span class="o">.</span><span class="n">pyplot</span><span class="p">()</span>
+<span class="n">st</span><span class="o">.</span><span class="n">pyplot</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">())</span>
 
 <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span>
 <span class="s1">Because each $</span><span class="se">\\</span><span class="s1">mu_</span><span class="se">{{</span><span class="s1">X_i</span><span class="se">}}</span><span class="s1">=0.5$ and $n=</span><span class="si">{</span><span class="n">num_random_variables_to_sum</span><span class="si">}</span><span class="s1">$,</span>

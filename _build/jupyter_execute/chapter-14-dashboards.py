@@ -168,7 +168,7 @@ Before proceeding to Step 2, be sure that you can successfully run your newly cr
 This step is very easy, but the results are not very spectacular (yet).  You simply take your existing Python script and make the following easy changes.
  1. Add `import streamlit as st` to the top of the file, before anything else.  (This imports all the Streamlit tools into your script.)
  2. Change any `print()` function call in your script to `st.write()` instead.  (This replaces ordinary Python printing, which goes to the terminal, with Streamlit printing, which will go to the dashboard you're creating.)
- 3. Change any `plt.show()` function call in your script to `st.pyplot()` instead.  (This replaces ordinary Python plotting, which appears in its own window or in your IDE, with Streamlit plotting, which will go to the dashboard you're creating.)
+ 3. Change any `plt.show()` function call in your script to `st.pyplot(plt.gcf())` instead.  (This replaces ordinary Python plotting, which appears in its own window or in your IDE, with Streamlit plotting, which will go to the dashboard you're creating.)
 
 If we make these changes to the script above, we get the following result.
 
@@ -182,7 +182,7 @@ def my_random_variable ():
 import matplotlib.pyplot as plt
 sample = [ my_random_variable() for i in range(1000) ]
 plt.hist( sample, bins=30 )
-st.pyplot()
+st.pyplot(plt.gcf())
 
 st.write( 'Mean:', np.mean( sample ) )
 st.write( 'Standard deviation:', np.std( sample ) )
@@ -229,7 +229,7 @@ def my_random_variable ():
 import matplotlib.pyplot as plt
 sample = [ my_random_variable() for i in range(sample_size) ]
 plt.hist( sample )
-st.pyplot()
+st.pyplot(plt.gcf())
 
 st.write( 'Sample Mean:', np.mean( sample ) )
 st.write( 'Sample Standard Deviation:', np.std( sample ) )
@@ -266,7 +266,7 @@ def my_random_variable ():
 import matplotlib.pyplot as plt
 sample = [ my_random_variable() for i in range(sample_size) ]
 plt.hist( sample )
-st.pyplot()
+st.pyplot(plt.gcf())
 
 st.write( 'Sample Mean:', np.mean( sample ) )
 st.write( 'Sample Standard Deviation:', np.std( sample ) )
@@ -358,7 +358,7 @@ plt.hist( sample, bins=30 )
 plt.title( f'Histogram of a sample of size {sample_size} from X' )
 plt.xlabel( f'X = the sum of {num_random_variables_to_sum} uniform random variables on [0,1]' )
 plt.ylabel( 'Frequency' )
-st.pyplot()
+st.pyplot(plt.gcf())
 
 st.write( f'''
 Because each $\\mu_{{X_i}}=0.5$ and $n={num_random_variables_to_sum}$,

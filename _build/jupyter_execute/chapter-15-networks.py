@@ -114,7 +114,7 @@ We will now add vertices and edges to that graph.  Let's start with the vertices
 dolphins.add_nodes_from( df1.name )  # the column of all dolphin names
 len( dolphins )                      # how many nodes do we have now?
 
-Similarly, we can add edges with the function `.add_edges_from(your_list)`, but the list must be a list of ordered pairs.  For instance, in our dolphin data case, we'd want it to be something like `[('Double','CCL'),('Feather,DN16'),('Feather','DN21'),...]` and so on.  But we don't want to have to type out the entire dolphin relationships table as ordered pairs; it's too big!
+Similarly, we can add edges with the function `.add_edges_from(your_list)`, but the list must be a list of ordered pairs.  For instance, in our dolphin data case, we'd want it to be something like `[('Double','CCL'),('Feather','DN16'),('Feather','DN21'),...]` and so on.  But we don't want to have to type out the entire dolphin relationships table as ordered pairs; it's too big!
 
 len( df2 )
 
@@ -201,7 +201,7 @@ The dolphin network was fairly small (62 vertices) and fairly sparse (most dolph
 
 ## Directed draphs in NetworkX
 
-The beginning of this chapter distinguished directed graphs (like the friends network, where arrows went one way only) from undirected graphs (like the dolphins network, where each relationship was reciprocal).  To work with a directed graph into NetworkX, there are a few changes to what we learned above.
+The beginning of this chapter distinguished directed graphs (like the friends network, where arrows went one way only) from undirected graphs (like the dolphins network, where each relationship was reciprocal).  To work with a directed graph in NetworkX, there are a few changes to what we learned above.
 
 First, you create a directed graph not with `nx.Graph()` but with `nx.DiGraph()`.
 

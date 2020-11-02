@@ -713,7 +713,7 @@
 </div>
 </div>
 </div>
-<p>Similarly, we can add edges with the function <code class="docutils literal notranslate"><span class="pre">.add_edges_from(your_list)</span></code>, but the list must be a list of ordered pairs.  For instance, in our dolphin data case, we’d want it to be something like <code class="docutils literal notranslate"><span class="pre">[('Double','CCL'),('Feather,DN16'),('Feather','DN21'),...]</span></code> and so on.  But we don’t want to have to type out the entire dolphin relationships table as ordered pairs; it’s too big!</p>
+<p>Similarly, we can add edges with the function <code class="docutils literal notranslate"><span class="pre">.add_edges_from(your_list)</span></code>, but the list must be a list of ordered pairs.  For instance, in our dolphin data case, we’d want it to be something like <code class="docutils literal notranslate"><span class="pre">[('Double','CCL'),('Feather','DN16'),('Feather','DN21'),...]</span></code> and so on.  But we don’t want to have to type out the entire dolphin relationships table as ordered pairs; it’s too big!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span> <span class="n">df2</span> <span class="p">)</span>
@@ -878,7 +878,7 @@ dtype: float64
 </div>
 <div class="section" id="directed-draphs-in-networkx">
 <h2><span class="section-number">15.6. </span>Directed draphs in NetworkX<a class="headerlink" href="#directed-draphs-in-networkx" title="Permalink to this headline">¶</a></h2>
-<p>The beginning of this chapter distinguished directed graphs (like the friends network, where arrows went one way only) from undirected graphs (like the dolphins network, where each relationship was reciprocal).  To work with a directed graph into NetworkX, there are a few changes to what we learned above.</p>
+<p>The beginning of this chapter distinguished directed graphs (like the friends network, where arrows went one way only) from undirected graphs (like the dolphins network, where each relationship was reciprocal).  To work with a directed graph in NetworkX, there are a few changes to what we learned above.</p>
 <p>First, you create a directed graph not with <code class="docutils literal notranslate"><span class="pre">nx.Graph()</span></code> but with <code class="docutils literal notranslate"><span class="pre">nx.DiGraph()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

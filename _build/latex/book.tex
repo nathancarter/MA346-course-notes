@@ -64,7 +64,7 @@
 
 
 \title{MA346 Course Notes}
-\date{Sep 30, 2020}
+\date{Nov 02, 2020}
 \release{}
 \author{Nathan Carter}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -7069,7 +7069,7 @@ Add \sphinxcode{\sphinxupquote{import streamlit as st}} to the top of the file, 
 Change any \sphinxcode{\sphinxupquote{print()}} function call in your script to \sphinxcode{\sphinxupquote{st.write()}} instead.  (This replaces ordinary Python printing, which goes to the terminal, with Streamlit printing, which will go to the dashboard you’re creating.)
 
 \item {} 
-Change any \sphinxcode{\sphinxupquote{plt.show()}} function call in your script to \sphinxcode{\sphinxupquote{st.pyplot()}} instead.  (This replaces ordinary Python plotting, which appears in its own window or in your IDE, with Streamlit plotting, which will go to the dashboard you’re creating.)
+Change any \sphinxcode{\sphinxupquote{plt.show()}} function call in your script to \sphinxcode{\sphinxupquote{st.pyplot(plt.gcf())}} instead.  (This replaces ordinary Python plotting, which appears in its own window or in your IDE, with Streamlit plotting, which will go to the dashboard you’re creating.)
 
 \end{enumerate}
 
@@ -7085,7 +7085,7 @@ If we make these changes to the script above, we get the following result.
 \PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
 \PYG{n}{sample} \PYG{o}{=} \PYG{p}{[} \PYG{n}{my\PYGZus{}random\PYGZus{}variable}\PYG{p}{(}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{)} \PYG{p}{]}
 \PYG{n}{plt}\PYG{o}{.}\PYG{n}{hist}\PYG{p}{(} \PYG{n}{sample}\PYG{p}{,} \PYG{n}{bins}\PYG{o}{=}\PYG{l+m+mi}{30} \PYG{p}{)}
-\PYG{n}{st}\PYG{o}{.}\PYG{n}{pyplot}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{pyplot}\PYG{p}{(}\PYG{n}{plt}\PYG{o}{.}\PYG{n}{gcf}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
 
 \PYG{n}{st}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Mean:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)} \PYG{p}{)}
 \PYG{n}{st}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Standard deviation:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)} \PYG{p}{)}
@@ -7133,7 +7133,7 @@ In the small example we’re using in this chapter, I have just two places where
 \PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
 \PYG{n}{sample} \PYG{o}{=} \PYG{p}{[} \PYG{n}{my\PYGZus{}random\PYGZus{}variable}\PYG{p}{(}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{sample\PYGZus{}size}\PYG{p}{)} \PYG{p}{]}
 \PYG{n}{plt}\PYG{o}{.}\PYG{n}{hist}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)}
-\PYG{n}{st}\PYG{o}{.}\PYG{n}{pyplot}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{pyplot}\PYG{p}{(}\PYG{n}{plt}\PYG{o}{.}\PYG{n}{gcf}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
 
 \PYG{n}{st}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Sample Mean:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)} \PYG{p}{)}
 \PYG{n}{st}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Sample Standard Deviation:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)} \PYG{p}{)}
@@ -7181,7 +7181,7 @@ I add two \sphinxcode{\sphinxupquote{st.slider()}} calls to our code as follows.
 \PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
 \PYG{n}{sample} \PYG{o}{=} \PYG{p}{[} \PYG{n}{my\PYGZus{}random\PYGZus{}variable}\PYG{p}{(}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{sample\PYGZus{}size}\PYG{p}{)} \PYG{p}{]}
 \PYG{n}{plt}\PYG{o}{.}\PYG{n}{hist}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)}
-\PYG{n}{st}\PYG{o}{.}\PYG{n}{pyplot}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{pyplot}\PYG{p}{(}\PYG{n}{plt}\PYG{o}{.}\PYG{n}{gcf}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
 
 \PYG{n}{st}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Sample Mean:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)} \PYG{p}{)}
 \PYG{n}{st}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Sample Standard Deviation:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(} \PYG{n}{sample} \PYG{p}{)} \PYG{p}{)}
@@ -7275,7 +7275,7 @@ Applying these techniques to my dashboard can make it look much more clean and u
 \PYG{n}{plt}\PYG{o}{.}\PYG{n}{title}\PYG{p}{(} \PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Histogram of a sample of size }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{sample\PYGZus{}size}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ from X}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
 \PYG{n}{plt}\PYG{o}{.}\PYG{n}{xlabel}\PYG{p}{(} \PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{X = the sum of }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{num\PYGZus{}random\PYGZus{}variables\PYGZus{}to\PYGZus{}sum}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ uniform random variables on [0,1]}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
 \PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylabel}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Frequency}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
-\PYG{n}{st}\PYG{o}{.}\PYG{n}{pyplot}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{st}\PYG{o}{.}\PYG{n}{pyplot}\PYG{p}{(}\PYG{n}{plt}\PYG{o}{.}\PYG{n}{gcf}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
 
 \PYG{n}{st}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(} \PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}\PYGZsq{}}
 \PYG{l+s+s1}{Because each \PYGZdl{}}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s+s1}{mu\PYGZus{}}\PYG{l+s+se}{\PYGZob{}\PYGZob{}}\PYG{l+s+s1}{X\PYGZus{}i}\PYG{l+s+se}{\PYGZcb{}\PYGZcb{}}\PYG{l+s+s1}{=0.5\PYGZdl{} and \PYGZdl{}n=}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{num\PYGZus{}random\PYGZus{}variables\PYGZus{}to\PYGZus{}sum}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{\PYGZdl{},}
@@ -7757,7 +7757,7 @@ We will now add vertices and edges to that graph.  Let’s start with the vertic
 62
 \end{sphinxVerbatim}
 
-Similarly, we can add edges with the function \sphinxcode{\sphinxupquote{.add\_edges\_from(your\_list)}}, but the list must be a list of ordered pairs.  For instance, in our dolphin data case, we’d want it to be something like \sphinxcode{\sphinxupquote{{[}('Double','CCL'),('Feather,DN16'),('Feather','DN21'),...{]}}} and so on.  But we don’t want to have to type out the entire dolphin relationships table as ordered pairs; it’s too big!
+Similarly, we can add edges with the function \sphinxcode{\sphinxupquote{.add\_edges\_from(your\_list)}}, but the list must be a list of ordered pairs.  For instance, in our dolphin data case, we’d want it to be something like \sphinxcode{\sphinxupquote{{[}('Double','CCL'),('Feather','DN16'),('Feather','DN21'),...{]}}} and so on.  But we don’t want to have to type out the entire dolphin relationships table as ordered pairs; it’s too big!
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n+nb}{len}\PYG{p}{(} \PYG{n}{df2} \PYG{p}{)}
@@ -7908,7 +7908,7 @@ The dolphin network was fairly small (62 vertices) and fairly sparse (most dolph
 
 \section{Directed draphs in NetworkX}
 \label{\detokenize{chapter-15-networks:directed-draphs-in-networkx}}
-The beginning of this chapter distinguished directed graphs (like the friends network, where arrows went one way only) from undirected graphs (like the dolphins network, where each relationship was reciprocal).  To work with a directed graph into NetworkX, there are a few changes to what we learned above.
+The beginning of this chapter distinguished directed graphs (like the friends network, where arrows went one way only) from undirected graphs (like the dolphins network, where each relationship was reciprocal).  To work with a directed graph in NetworkX, there are a few changes to what we learned above.
 
 First, you create a directed graph not with \sphinxcode{\sphinxupquote{nx.Graph()}} but with \sphinxcode{\sphinxupquote{nx.DiGraph()}}.
 
