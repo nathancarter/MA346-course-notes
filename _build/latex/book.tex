@@ -64,7 +64,7 @@
 
 
 \title{MA346 Course Notes}
-\date{Nov 11, 2020}
+\date{Nov 19, 2020}
 \release{}
 \author{Nathan Carter}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -9159,15 +9159,15 @@ Right now, however, our model is fit using predictors that have very different s
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{standardized\PYGZus{}model} \PYG{o}{=} \PYG{n}{LogisticRegression}\PYG{p}{(}\PYG{p}{)}
-\PYG{n}{standardized\PYGZus{}model}\PYG{o}{.}\PYG{n}{fit}\PYG{p}{(} \PYG{n}{predictors}\PYG{p}{,} \PYG{n}{response} \PYG{p}{)}
+\PYG{n}{standardized\PYGZus{}model}\PYG{o}{.}\PYG{n}{fit}\PYG{p}{(} \PYG{n}{standardized}\PYG{p}{,} \PYG{n}{response} \PYG{p}{)}
 \PYG{n}{coefficients} \PYG{o}{=} \PYG{n}{standardized\PYGZus{}model}\PYG{o}{.}\PYG{n}{coef\PYGZus{}}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
 \PYG{n}{pd}\PYG{o}{.}\PYG{n}{Series}\PYG{p}{(} \PYG{n}{coefficients}\PYG{p}{,} \PYG{n}{index}\PYG{o}{=}\PYG{n}{predictors}\PYG{o}{.}\PYG{n}{columns} \PYG{p}{)}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-Height (in)       \PYGZhy{}0.170322
-Weight (lb)       \PYGZhy{}0.013302
-Systolic (mmHg)    0.062280
+Height (in)       \PYGZhy{}0.506490
+Weight (lb)       \PYGZhy{}0.205779
+Systolic (mmHg)    0.563031
 dtype: float64
 \end{sphinxVerbatim}
 

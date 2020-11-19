@@ -1170,16 +1170,16 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">standardized_model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
-<span class="n">standardized_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span> <span class="n">predictors</span><span class="p">,</span> <span class="n">response</span> <span class="p">)</span>
+<span class="n">standardized_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span> <span class="n">standardized</span><span class="p">,</span> <span class="n">response</span> <span class="p">)</span>
 <span class="n">coefficients</span> <span class="o">=</span> <span class="n">standardized_model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span> <span class="n">coefficients</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">predictors</span><span class="o">.</span><span class="n">columns</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Height (in)       -0.170322
-Weight (lb)       -0.013302
-Systolic (mmHg)    0.062280
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Height (in)       -0.506490
+Weight (lb)       -0.205779
+Systolic (mmHg)    0.563031
 dtype: float64
 </pre></div>
 </div>

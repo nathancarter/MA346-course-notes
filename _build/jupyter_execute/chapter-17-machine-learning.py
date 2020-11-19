@@ -234,7 +234,7 @@ standardized = ( predictors - predictors.mean() ) / predictors.std()
 standardized
 
 standardized_model = LogisticRegression()
-standardized_model.fit( predictors, response )
+standardized_model.fit( standardized, response )
 coefficients = standardized_model.coef_[0]
 pd.Series( coefficients, index=predictors.columns )
 
