@@ -275,7 +275,7 @@ In class, we will practice using abstraction to improve code written in a redund
 ---
 class: alert alert-danger
 ---
-Some IDEs an help automate the process of abstraction.  This is part of a larger set of features that such apps often call "refactoring" or "code refactoring."  Consider researching features in VS Code, PyCharm, or Eclipse that support code refactoring in Python and creating a report or video showing the class how to use those features to accomplish the content of this chapter.
+Some IDEs can help automate the process of abstraction.  This is part of a larger set of features that such apps often call "refactoring" or "code refactoring."  Consider researching features in VS Code, PyCharm, or Eclipse that support code refactoring in Python and creating a report or video showing the class how to use those features to accomplish the content of this chapter.
 ```
 
 ```{admonition} Learning on Your Own - Writing Python modules
