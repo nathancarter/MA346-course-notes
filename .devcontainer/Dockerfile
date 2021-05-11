@@ -9,6 +9,8 @@ FROM jupyter/datascience-notebook
 COPY library-scripts/common-debian.sh /tmp/library-scripts/
 USER root
 RUN apt-get update \
+ && export DEBIAN_FRONTEND=noninteractive \
+ && apt-get -y install --no-install-recommends latexmk texlive-fonts-extra fonts-freefont-otf fonts-freefont-ttf \
  && groupadd jovyan \
  && usermod -a -G jovyan jovyan \
  && bash /tmp/library-scripts/common-debian.sh \
