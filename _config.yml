@@ -6,7 +6,7 @@ logo: logo.png
 exclude_patterns: ["_static/*","README.md","_slides/*","experiments/*"]
 
 repository:
-  url: https://github.com/nathancarter/ma346-course-notes
+  url: https://github.com/nathancarter/MA346-course-notes
 
 latex:
   latex_documents:
@@ -14,5 +14,6 @@ latex:
   latex_engine: xelatex
 
 html:
-  baseurl: "https://nathancarter.github.io/ma346-course-notes"
+  baseurl: "https://nathancarter.github.io/MA346-course-notes"
 
+copyright: "2021"
