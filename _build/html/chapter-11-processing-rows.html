@@ -1,12 +1,14 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>11. Processing the Rows of a DataFrame &#8212; MA346 Course Notes</title>
     
-  <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -18,38 +20,29 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/mystnb.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,28 +50,21 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/chapter-11-processing-rows.html" />
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://nathancarter.github.io/MA346-course-notes/chapter-11-processing-rows.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="12. Concatenating and Merging DataFrames" href="chapter-12-concat-and-merge.html" />
     <link rel="prev" title="10. Visualization" href="chapter-10-visualization.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/chapter-11-processing-rows.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Processing the Rows of a DataFrame" />
-<meta property="og:description" content="Processing the Rows of a DataFrame  &lt;a href=&#34;../../_slides/chapter-11-slides.html&#34;&gt;See also the slides that summarize a portion of this content.&lt;/a&gt;  Goal  Back" />
-<meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -87,28 +73,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <p class="caption">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Course Notes for Data Science (MA346)
+  </a>
+ </li>
+</ul>
+<p class="caption">
  <span class="caption-text">
   Notes
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-1-intro-to-data-science.html">
    1. Introduction to Data Science
@@ -200,7 +190,7 @@
   Appendices
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="course-schedule.html">
    1. Detailed Course Schedule
@@ -228,9 +218,12 @@
  </li>
 </ul>
 
-</nav>
+    </div>
+</nav> <!-- To handle the deprecated key -->
 
- <!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
 
 </div>
 
@@ -241,25 +234,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -271,27 +264,46 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
-        <!-- Source interaction buttons -->
 
+            <!-- Source interaction buttons -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Launch buttons -->
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nathancarter/MA346-course-notes/master?urlpath=tree/chapter-11-processing-rows.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
     </div>
+</div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#goal">
    11.1. Goal
@@ -432,7 +444,8 @@
  </li>
 </ul>
 
-        </nav>
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -450,7 +463,7 @@
 <p>And when we wanted to work with all the elements of an array, we had no choice but to write a loop.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">shipments_received</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">13</span> <span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shipments_received</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">13</span> <span class="p">]</span>
 
 <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">num_received</span> <span class="ow">in</span> <span class="n">shipments_received</span><span class="p">:</span>
@@ -461,7 +474,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>68
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>68
 </pre></div>
 </div>
 </div>
@@ -481,7 +494,7 @@
 <p>In an earlier homework assignment, I provided a cleaned dataset of baseball players’ salaries.  Let’s take a look at the original version of the dataset when I downloaded it <a class="reference external" href="https://data.world/natereed/baseball-salaries">from the web</a>, before it was cleaned.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;_static/baseball-salaries.csv&#39;</span> <span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -573,7 +586,7 @@
 <p>The “years” column looks particularly annoying.  Why does it say “1 (1991)” instead of just 1991?  Let’s take a look at some other rows…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">14440</span><span class="p">:</span><span class="mi">14445</span><span class="p">,:]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">14440</span><span class="p">:</span><span class="mi">14445</span><span class="p">,:]</span>
 </pre></div>
 </div>
 </div>
@@ -666,7 +679,7 @@
 <h3><span class="section-number">11.2.2. </span>Using a loop<a class="headerlink" href="#using-a-loop" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">first_years</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_years</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
 <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;years&#39;</span><span class="p">]:</span>
     <span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39; &#39;</span><span class="p">:</span> <span class="c1"># one-digit number of years</span>
         <span class="n">first_years</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="nb">int</span><span class="p">(</span> <span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
@@ -740,7 +753,7 @@
 <h3><span class="section-number">11.2.3. </span>Using <code class="docutils literal notranslate"><span class="pre">apply()</span></code><a class="headerlink" href="#using-apply" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                                 <span class="c1"># No need to start with an empty list.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>                                 <span class="c1"># No need to start with an empty list.</span>
 <span class="k">def</span> <span class="nf">get_first_year</span> <span class="p">(</span> <span class="n">text</span> <span class="p">):</span>     <span class="c1"># Function name helps explain the code.</span>
     <span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span> <span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span> <span class="p">)</span>  <span class="c1"># Clearer and shorter than append().</span>
@@ -811,7 +824,7 @@
 <p>If we’re honest, the code didn’t get <em>that</em> much simpler.  But <code class="docutils literal notranslate"><span class="pre">apply()</span></code> is especially nice if the function we want to write is a function that already exists.  Here’s a silly example, but it illustrates the point.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;name_length&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="nb">len</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;name_length&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="nb">len</span> <span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -957,12 +970,12 @@
 <p>Let’s assume that the analysis we wanted to do cared only about whether the baseball player had an infield position (IF), outfield position (OF), was a pitcher (P), or a designated hitter (DH), and we didn’t care about any other details of the position (such as first base vs. second base, or starting pitcher vs. relief pitcher).  We’d therefore like to simplify the “pos” column and convert all infield positions to IF, and so on.  First, let’s see what all the positions are.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;pos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;pos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([&#39;OF&#39;, &#39;1B&#39;, &#39;P&#39;, &#39;DH&#39;, &#39;3B&#39;, &#39;2B&#39;, &#39;C&#39;, &#39;SS&#39;, &#39;RF&#39;, &#39;SP&#39;, &#39;LF&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;OF&#39;, &#39;1B&#39;, &#39;P&#39;, &#39;DH&#39;, &#39;3B&#39;, &#39;2B&#39;, &#39;C&#39;, &#39;SS&#39;, &#39;RF&#39;, &#39;SP&#39;, &#39;LF&#39;,
        &#39;CF&#39;, &#39;RP&#39;], dtype=object)
 </pre></div>
 </div>
@@ -971,7 +984,7 @@
 <p>We could convert them with a big <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, like you see here, but this is tedious and repetitive code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simpler_position</span> <span class="p">(</span> <span class="n">pos</span> <span class="p">):</span>   <span class="c1"># BAD STYLE.  See better version below.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simpler_position</span> <span class="p">(</span> <span class="n">pos</span> <span class="p">):</span>   <span class="c1"># BAD STYLE.  See better version below.</span>
     <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="s1">&#39;P&#39;</span><span class="p">:</span>  <span class="k">return</span> <span class="s1">&#39;P&#39;</span>
     <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="s1">&#39;SP&#39;</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;P&#39;</span>
     <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="s1">&#39;RP&#39;</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;P&#39;</span>
@@ -1095,7 +1108,7 @@
 <p>All the repetitive code is just establishing a simple relationship among some very short strings.  We could store that same relationship in a dictionary with many fewer lines of code.  Note that we must use <code class="docutils literal notranslate"><span class="pre">map()</span></code>, because <code class="docutils literal notranslate"><span class="pre">apply()</span></code> doesn’t accept dictionaries.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;simple_pos&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;pos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span> <span class="p">{</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;simple_pos&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;pos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span> <span class="p">{</span>
     <span class="s1">&#39;P&#39;</span><span class="p">:</span>  <span class="s1">&#39;P&#39;</span><span class="p">,</span>    <span class="s1">&#39;SP&#39;</span><span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span>    <span class="s1">&#39;RP&#39;</span><span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span>    <span class="s1">&#39;C&#39;</span><span class="p">:</span>  <span class="s1">&#39;IF&#39;</span><span class="p">,</span>
     <span class="s1">&#39;1B&#39;</span><span class="p">:</span> <span class="s1">&#39;IF&#39;</span><span class="p">,</span>   <span class="s1">&#39;2B&#39;</span><span class="p">:</span> <span class="s1">&#39;IF&#39;</span><span class="p">,</span>   <span class="s1">&#39;3B&#39;</span><span class="p">:</span> <span class="s1">&#39;IF&#39;</span><span class="p">,</span>   <span class="s1">&#39;SS&#39;</span><span class="p">:</span> <span class="s1">&#39;IF&#39;</span><span class="p">,</span>
     <span class="s1">&#39;OF&#39;</span><span class="p">:</span> <span class="s1">&#39;OF&#39;</span><span class="p">,</span>   <span class="s1">&#39;LF&#39;</span><span class="p">:</span> <span class="s1">&#39;OF&#39;</span><span class="p">,</span>   <span class="s1">&#39;CF&#39;</span><span class="p">:</span> <span class="s1">&#39;OF&#39;</span><span class="p">,</span>   <span class="s1">&#39;RF&#39;</span><span class="p">:</span> <span class="s1">&#39;OF&#39;</span><span class="p">,</span>   <span class="s1">&#39;DH&#39;</span><span class="p">:</span> <span class="s1">&#39;DH&#39;</span>
@@ -1214,7 +1227,7 @@
 <p>Without swifter, you could accomplish the same thing with code like the following.  (In fact, if you have trouble installing swifter, you can use this code instead.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use Python&#39;s built-in multiprocessing module to find your number of cores.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use Python&#39;s built-in multiprocessing module to find your number of cores.</span>
 <span class="kn">import</span> <span class="nn">multiprocessing</span> <span class="k">as</span> <span class="nn">mp</span>
 <span class="n">n_cores</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span>
 
@@ -1351,7 +1364,7 @@
 <p>Let’s actually do the above computation on some small sample (fictional) data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># setup - example tiny dataset</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># setup - example tiny dataset</span>
 <span class="n">rev_quarters</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span>
     <span class="s1">&#39;Year&#39;</span>    <span class="p">:</span> <span class="p">[</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2012</span> <span class="p">],</span>
     <span class="s1">&#39;Quarter&#39;</span> <span class="p">:</span> <span class="p">[</span>    <span class="mi">1</span><span class="p">,</span>    <span class="mi">2</span><span class="p">,</span>    <span class="mi">3</span><span class="p">,</span>    <span class="mi">4</span><span class="p">,</span>    <span class="mi">1</span><span class="p">,</span>    <span class="mi">2</span><span class="p">,</span>    <span class="mi">3</span><span class="p">,</span>    <span class="mi">4</span><span class="p">,</span>    <span class="mi">1</span><span class="p">,</span>    <span class="mi">2</span> <span class="p">],</span>
@@ -1452,13 +1465,13 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># map-reduce work, one line:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># map-reduce work, one line:</span>
 <span class="n">rev_quarters</span><span class="p">[</span><span class="s1">&#39;Revenue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>167
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>167
 </pre></div>
 </div>
 </div>
@@ -1470,12 +1483,12 @@
 <p>A very common function that shows up in statistics is called <code class="docutils literal notranslate"><span class="pre">argmin</span></code> (and its companion <code class="docutils literal notranslate"><span class="pre">argmax</span></code>).  These are also implemented in pandas and are very useful in map-reduce situations.  In the example above, let’s say we didn’t want to know the minimum revenue, but we wanted to know in which quarter the minimum revenue happened.  We can replace <code class="docutils literal notranslate"><span class="pre">min</span></code> in the above code with <code class="docutils literal notranslate"><span class="pre">argmin</span></code> to ask that question.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rev_quarters</span><span class="p">[</span><span class="s1">&#39;Revenue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rev_quarters</span><span class="p">[</span><span class="s1">&#39;Revenue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -1483,12 +1496,12 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">argmin</span></code> function is short for “the argument that yields the minimum,” or in other words, what value would I need to supply as <em>input</em> to the map function to get the minimum output?  In this case, the map function takes each row and extracts its revenue, so we’re asking pandas, “When you found the minimum revenue, which row was the input?”  The answer was row 2, and we can see that it’s the correct row as follows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rev_quarters</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rev_quarters</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Year       2010
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Year       2010
 Quarter       3
 Revenue     167
 Name: 2, dtype: int64
@@ -1506,7 +1519,7 @@ Name: 2, dtype: int64
 <p>Let’s assume we’ve already computed the mean value <span class="math notranslate nohighlight">\(\bar x\)</span>.  Then computing the standard deviation is actually a map-reduce operation.  The map function takes each <span class="math notranslate nohighlight">\(x_i\)</span> as input and computes <span class="math notranslate nohighlight">\((x_i-\bar x)^2\)</span> as output.  The reduce operation then does a sum, divides by <span class="math notranslate nohighlight">\(n-1\)</span>, and takes a square root.  We could code it like so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">example_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;first_year&#39;</span><span class="p">]</span>
 <span class="n">x_bar</span> <span class="o">=</span> <span class="n">example_data</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -1521,7 +1534,7 @@ Name: 2, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>7.926156939014573
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.926156939014573
 </pre></div>
 </div>
 </div>
@@ -1529,12 +1542,12 @@ Name: 2, dtype: int64
 <p>Of course, we didn’t have to code that.  There’s already an existing standard deviation function built into pandas, and it gives almost exactly the same answer.  (I suspect theirs does something more careful with tiny issues of accuracy than my simple example does.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example_data</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_data</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>7.926156939014146
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.926156939014146
 </pre></div>
 </div>
 </div>
@@ -1555,12 +1568,12 @@ Name: 2, dtype: int64
 <p>The easiest type of split-apply-combine is shown in the picture above and can be done with a single line of code.  We’ll compute minimum revenue by year with the DataFrame from our map-reduce example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rev_quarters</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)[</span><span class="s1">&#39;Revenue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rev_quarters</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)[</span><span class="s1">&#39;Revenue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Year
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Year
 2010    167
 2011    180
 2012    201
@@ -1572,7 +1585,7 @@ Name: Revenue, dtype: int64
 <p>Split-apply-combine is actually a specific type of pivot table.  Thus split-apply-combine operations can be done on data in Excel as well, using its pivot table features.  We can even use <code class="docutils literal notranslate"><span class="pre">df.pivot_table()</span></code> to mimic the above procedure, as follows.  (Because we don’t need data separated into separate columns, we don’t provide a columns variable.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rev_quarters</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[],</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;Revenue&#39;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;min&#39;</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rev_quarters</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[],</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;Revenue&#39;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;min&#39;</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1641,7 +1654,7 @@ Name: Revenue, dtype: int64
 <p>This removes a lot of the need for both loops and <code class="docutils literal notranslate"><span class="pre">apply()</span></code>/<code class="docutils literal notranslate"><span class="pre">map()</span></code> calls, but not all.  One of the first things that makes us think we might need a loop is when a conditional computation needs to be done.  For instance, let’s say we were given a dataset like the following (made up) example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">patients</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">patients</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span>
     <span class="s1">&#39;id&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">100615</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">100616</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">100607</span><span class="p">,</span> <span class="mi">100618</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">65</span> <span class="p">],</span>
     <span class="s1">&#39;height&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">158</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">173</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">163</span><span class="p">,</span> <span class="mi">178</span> <span class="p">],</span>
     <span class="s1">&#39;dose&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">0</span> <span class="p">]</span>
@@ -1731,7 +1744,7 @@ Name: Revenue, dtype: int64
 <p>We can’t simply convert to cm with <code class="docutils literal notranslate"><span class="pre">patients['height']</span> <span class="pre">*</span> <span class="pre">2.54</span></code> because that would apply the conversion to all data rather than just the measurements in inches.  We need some conditional logic, perhaps using an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, to be selective.  Our first inclination might be a loop.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># before changing the contents, make a backup, for use later.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># before changing the contents, make a backup, for use later.</span>
 <span class="n">backup</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="c1"># solving the problem with a loop:</span>
@@ -1824,7 +1837,7 @@ Name: Revenue, dtype: int64
 <p>The solution here is to use NumPy’s <code class="docutils literal notranslate"><span class="pre">np.where()</span></code> function.  It lets you select just which rows should get which type of computation, like so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># restore the original data:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># restore the original data:</span>
 <span class="n">patients</span> <span class="o">=</span> <span class="n">backup</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="c1"># solution with np.where():</span>
@@ -1933,7 +1946,7 @@ Name: Revenue, dtype: int64
 <p>Let’s say I have the following function that computes <span class="math notranslate nohighlight">\(n!\)</span>, the product of all positive integers up to <span class="math notranslate nohighlight">\(n\)</span>.  (This is not the best way to write this function, but it’s just an example.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span> <span class="p">(</span> <span class="n">n</span> <span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span> <span class="p">(</span> <span class="n">n</span> <span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="p">):</span>
         <span class="n">result</span> <span class="o">*=</span> <span class="n">i</span>
@@ -1944,7 +1957,7 @@ Name: Revenue, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>120
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>120
 </pre></div>
 </div>
 </div>
@@ -1980,7 +1993,7 @@ Name: Revenue, dtype: int64
 <p>Let’s see how we might write the code for the stock example just given, but instead of stock data, we’ll use the (made up) quarterly revenue data from earlier.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># get just the column I care about:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get just the column I care about:</span>
 <span class="n">revenues</span> <span class="o">=</span> <span class="n">rev_quarters</span><span class="p">[</span><span class="s1">&#39;Revenue&#39;</span><span class="p">]</span>
 
 <span class="n">results</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
@@ -2052,7 +2065,7 @@ Name: Revenue, dtype: int64
 <p>Compare that to the same results computed using vectorization in NumPy rather than a loop.  If the data were large, this implementation would be faster, but it’s definitely not as clear to read.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get all but first and last, for searching.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get all but first and last, for searching.</span>
 <span class="n">to_search</span> <span class="o">=</span> <span class="n">rev_quarters</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="c1"># Compute arrays of previous/next quarters, for comparison.</span>
@@ -2178,7 +2191,7 @@ Name: Revenue, dtype: int64
 <p><strong>Do your work on a small dataset.</strong>  If the dataset you have to analyze is still large enough that your analysis code itself runs slowly as well, try the following.  Near the top of your file, replace the actual data with a small sample of it, perhaps using code like this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">patients</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span> <span class="mi">3</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">patients</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span> <span class="mi">3</span> <span class="p">)</span>
 <span class="n">patients</span>
 </pre></div>
 </div>
@@ -2259,15 +2272,15 @@ Name: Revenue, dtype: int64
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="chapter-10-visualization.html" title="previous page"><span class="section-number">10. </span>Visualization</a>
     <a class='right-next' id="next-link" href="chapter-12-concat-and-merge.html" title="next page"><span class="section-number">12. </span>Concatenating and Merging DataFrames</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -2275,7 +2288,7 @@ Name: Revenue, dtype: int64
         
           By Nathan Carter<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -2284,11 +2297,9 @@ Name: Revenue, dtype: int64
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.30270b6e4c972e43c488.js"></script>
-
-
-    
+  
   </body>
 </html>

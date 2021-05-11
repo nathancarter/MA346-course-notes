@@ -1,12 +1,14 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>16. Relations as Matrices &#8212; MA346 Course Notes</title>
     
-  <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -18,38 +20,29 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/mystnb.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,28 +50,21 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/chapter-16-matrices.html" />
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://nathancarter.github.io/MA346-course-notes/chapter-16-matrices.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="17. Introduction to Machine Learning" href="chapter-17-machine-learning.html" />
     <link rel="prev" title="15. Relations as Graphs - Network Analysis" href="chapter-15-networks.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/chapter-16-matrices.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Relations as Matrices" />
-<meta property="og:description" content="Relations as Matrices  &lt;a href=&#34;../../_slides/chapter-16-slides.html&#34;&gt;See also the slides that summarize a portion of this content.&lt;/a&gt;  Thanks to Jeff Leader’s" />
-<meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -87,28 +73,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <p class="caption">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Course Notes for Data Science (MA346)
+  </a>
+ </li>
+</ul>
+<p class="caption">
  <span class="caption-text">
   Notes
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-1-intro-to-data-science.html">
    1. Introduction to Data Science
@@ -200,7 +190,7 @@
   Appendices
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="course-schedule.html">
    1. Detailed Course Schedule
@@ -228,9 +218,12 @@
  </li>
 </ul>
 
-</nav>
+    </div>
+</nav> <!-- To handle the deprecated key -->
 
- <!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
 
 </div>
 
@@ -241,25 +234,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -271,27 +264,46 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
-        <!-- Source interaction buttons -->
 
+            <!-- Source interaction buttons -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Launch buttons -->
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nathancarter/MA346-course-notes/master?urlpath=tree/chapter-16-matrices.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
     </div>
+</div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-matrices-for-relations-other-than-networks">
    16.1. Using matrices for relations other than networks
@@ -383,7 +395,8 @@
  </li>
 </ul>
 
-        </nav>
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -492,7 +505,7 @@
 <p>Recall from <a class="reference internal" href="chapter-15-networks.html"><span class="doc std std-doc">the chapter 15 notes</span></a> that if you have an edge list, you can turn it into an adjacency matrix with a single pivot command.  For instance, if we had the following edge list among a few factories and stores, we can create an adjacency matrix with the code shown.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">edge_list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span>
     <span class="s1">&#39;From&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="s1">&#39;Factory 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Factory 2&#39;</span><span class="p">,</span> <span class="s1">&#39;Factory 2&#39;</span><span class="p">,</span> <span class="s1">&#39;Factory 3&#39;</span> <span class="p">],</span>
@@ -553,7 +566,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">edge_list</span><span class="p">[</span><span class="s1">&#39;Connected&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edge_list</span><span class="p">[</span><span class="s1">&#39;Connected&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">matrix</span> <span class="o">=</span> <span class="n">edge_list</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span> <span class="n">index</span><span class="o">=</span><span class="s1">&#39;From&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;To&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;Connected&#39;</span> <span class="p">)</span>
 <span class="n">matrix</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span> <span class="mi">0</span> <span class="p">)</span>
 </pre></div>
@@ -618,7 +631,7 @@
 <p>We’ll assume that in this tiny movie preferences example, users indicate which movies they liked with a binary response (1 meaning they liked it, and 0 meaning they did not, which might mean disliked or didn’t watch or anything).  Let’s work with the following matrix of preferences.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">prefs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span>
     <span class="s1">&#39;Godzilla&#39;</span>  <span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
@@ -731,13 +744,13 @@
 <p>Let’s imagine that user X joins the club and indicates that they like Godzilla, JFK, and Macbeth.  We represent user X’s preferences as a Pandas series that could be another row in the preferences DataFrame, if we chose to add it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">prefs</span><span class="o">.</span><span class="n">columns</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">prefs</span><span class="o">.</span><span class="n">columns</span> <span class="p">)</span>
 <span class="n">X</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Godzilla     1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Godzilla     1
 Hamlet       0
 Ishtar       0
 JFK          1
@@ -757,12 +770,12 @@ dtype: int64
 <p>First, a matrix can be multiplied by another matrix or vector.  The important step for us here is the multiplication of the preferences matrix for all users with the preferences vector for user X.  Such a multiplication is a combination of the columns in the matrix, using the vector as the weights when combining.  In Python, the symbol for matrix multiplication is <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>, so we can do the computation as follows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prefs</span> <span class="o">@</span> <span class="n">X</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prefs</span> <span class="o">@</span> <span class="n">X</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>A    1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A    1
 B    2
 C    0
 D    1
@@ -783,13 +796,13 @@ dtype: int64
 <p>For example, the length of user X’s vector is <span class="math notranslate nohighlight">\(\sqrt{1^2+0^2+0^2+1^2+0^2+0^2+1^2}=\sqrt{3}\approx1.732\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span> <span class="n">X</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.7320508075688772
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.7320508075688772
 </pre></div>
 </div>
 </div>
@@ -797,13 +810,13 @@ dtype: int64
 <p>Once we have the length (or norm) of a vector, we can divide the vector by that length to ensure that the vector’s new length is 1.  This makes all the vectors have the same length (or magnitude), and thus makes the preferences matrix more “fair,” because no one user gets to dominate it.  If you put in more likes, then each of your overall scores is reduced so that your ratings’ magnitude matches everyone else’s.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">normalized_X</span> <span class="o">=</span> <span class="n">X</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span> <span class="n">X</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normalized_X</span> <span class="o">=</span> <span class="n">X</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span> <span class="n">X</span> <span class="p">)</span>
 <span class="n">normalized_X</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Godzilla     0.57735
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Godzilla     0.57735
 Hamlet       0.00000
 Ishtar       0.00000
 JFK          0.57735
@@ -818,13 +831,13 @@ dtype: float64
 <p>We can apply this to each row of our preferences matrix as follows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">norms_of_rows</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span> <span class="n">prefs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">norms_of_rows</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span> <span class="n">prefs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
 <span class="n">norms_of_rows</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1.41421356, 2.        , 1.41421356, 1.73205081, 1.73205081,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.41421356, 2.        , 1.41421356, 1.73205081, 1.73205081,
        1.41421356])
 </pre></div>
 </div>
@@ -832,7 +845,7 @@ dtype: float64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">normalized_prefs</span> <span class="o">=</span> <span class="n">prefs</span><span class="o">.</span><span class="n">div</span><span class="p">(</span> <span class="n">norms_of_rows</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normalized_prefs</span> <span class="o">=</span> <span class="n">prefs</span><span class="o">.</span><span class="n">div</span><span class="p">(</span> <span class="n">norms_of_rows</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span> <span class="p">)</span>
 <span class="n">normalized_prefs</span>
 </pre></div>
 </div>
@@ -933,12 +946,12 @@ dtype: float64
 <p>So our updated similarity measurement that compares user X to all of our existing users is now the following.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">normalized_prefs</span> <span class="o">@</span> <span class="n">normalized_X</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normalized_prefs</span> <span class="o">@</span> <span class="n">normalized_X</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>A    0.408248
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A    0.408248
 B    0.577350
 C    0.000000
 D    0.333333
@@ -958,7 +971,7 @@ dtype: float64
 <p>At this point, we could stop and build a very simple recommender system.  We could simply suggest to user X all the movies that were rated highly by perhaps the top two on the “similar existing users” list we just generated, E and B.  (We might also filter out movies that user X already indicated that they had seen and liked.)  That’s a simple algorithm we could apply.  It would take just a few lines of code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liked_by_E</span> <span class="o">=</span> <span class="n">prefs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">,:]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liked_by_E</span> <span class="o">=</span> <span class="n">prefs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">,:]</span> <span class="o">&gt;</span> <span class="mi">0</span>
 <span class="n">liked_by_B</span> <span class="o">=</span> <span class="n">prefs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,:]</span> <span class="o">&gt;</span> <span class="mi">0</span>
 <span class="n">liked_by_X</span> <span class="o">=</span> <span class="n">X</span> <span class="o">&gt;</span> <span class="mi">0</span>
 <span class="c1"># liked by E or by B but not by X:</span>
@@ -968,7 +981,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Godzilla     False
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Godzilla     False
 Hamlet        True
 Ishtar       False
 JFK          False
@@ -1007,7 +1020,7 @@ dtype: bool
 <p>Let’s see what these three matrices look like for our preferences matrix above.  We use the built-in NumPy routine called <code class="docutils literal notranslate"><span class="pre">svd</span></code> to perform the SVD.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">U</span><span class="p">,</span> <span class="n">Σ</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span> <span class="n">normalized_prefs</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">U</span><span class="p">,</span> <span class="n">Σ</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span> <span class="n">normalized_prefs</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1015,12 +1028,12 @@ dtype: bool
 <p>Let’s ask what the shape of each resulting matrix is.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">U</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">Σ</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">V</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">U</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">Σ</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">V</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>((6, 6), (6,), (7, 7))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((6, 6), (6,), (7, 7))
 </pre></div>
 </div>
 </div>
@@ -1028,13 +1041,13 @@ dtype: bool
 <p>We see that <span class="math notranslate nohighlight">\(U\)</span> is <span class="math notranslate nohighlight">\(6\times6\)</span>, <span class="math notranslate nohighlight">\(V\)</span> is <span class="math notranslate nohighlight">\(7\times 7\)</span>, and <span class="math notranslate nohighlight">\(\Sigma\)</span> is actually just of length 6, because it contains just the diagonal entries that belong in the <span class="math notranslate nohighlight">\(\Sigma\)</span> matrix.  These entries are called the <em>singular values.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Σ</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Σ</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1.71057805e+00, 1.30272528e+00, 9.26401065e-01, 6.73800315e-01,
-       2.54172767e-01, 1.83716538e-17])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.71057805e+00, 1.30272528e+00, 9.26401065e-01, 6.73800315e-01,
+       2.54172767e-01, 2.79327791e-17])
 </pre></div>
 </div>
 </div>
@@ -1042,14 +1055,14 @@ dtype: bool
 <p>In general, if our input matrix (in this case, <code class="docutils literal notranslate"><span class="pre">normalized_prefs</span></code>) is <span class="math notranslate nohighlight">\(n\times m\)</span> in size (that is, <span class="math notranslate nohighlight">\(n\)</span> rows and <span class="math notranslate nohighlight">\(m\)</span> columns), then <span class="math notranslate nohighlight">\(U\)</span> will be <span class="math notranslate nohighlight">\(n\times n\)</span>, <span class="math notranslate nohighlight">\(V\)</span> will be <span class="math notranslate nohighlight">\(m\times m\)</span>, and <span class="math notranslate nohighlight">\(\Sigma\)</span> will be <span class="math notranslate nohighlight">\(n\times m\)</span>, but mostly zeros.  Let’s reconstruct a <span class="math notranslate nohighlight">\(\Sigma\)</span> matrix of the appropriate size from the singular values, then multiply <code class="docutils literal notranslate"><span class="pre">U</span> <span class="pre">&#64;</span> <span class="pre">Σ</span> <span class="pre">&#64;</span> <span class="pre">V</span></code> to verify that it’s the same as the original <code class="docutils literal notranslate"><span class="pre">normalized_prefs</span></code> matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Σ_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Σ_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span> <span class="n">Σ_matrix</span><span class="p">,</span> <span class="n">Σ</span> <span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span> <span class="n">Σ_matrix</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>  <span class="c1"># rounding makes a simpler printout</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[1.71, 0.  , 0.  , 0.  , 0.  , 0.  , 0.  ],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.71, 0.  , 0.  , 0.  , 0.  , 0.  , 0.  ],
        [0.  , 1.3 , 0.  , 0.  , 0.  , 0.  , 0.  ],
        [0.  , 0.  , 0.93, 0.  , 0.  , 0.  , 0.  ],
        [0.  , 0.  , 0.  , 0.67, 0.  , 0.  , 0.  ],
@@ -1063,17 +1076,17 @@ dtype: bool
 <p>(Note: The rounding is <em>not</em> the approximation we’re seeking!  It’s something that just makes the printout easier to read.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span> <span class="n">U</span> <span class="o">@</span> <span class="n">Σ_matrix</span> <span class="o">@</span> <span class="n">V</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span> <span class="n">U</span> <span class="o">@</span> <span class="n">Σ_matrix</span> <span class="o">@</span> <span class="n">V</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[ 0.71, -0.  ,  0.  , -0.  ,  0.71, -0.  , -0.  ],
-       [ 0.  ,  0.5 , -0.  ,  0.5 , -0.  ,  0.5 ,  0.5 ],
-       [-0.  , -0.  ,  0.71, -0.  ,  0.71, -0.  , -0.  ],
-       [ 0.58,  0.58,  0.  ,  0.  ,  0.58,  0.  ,  0.  ],
-       [ 0.58,  0.  , -0.  ,  0.58, -0.  ,  0.58,  0.  ],
-       [-0.  , -0.  ,  0.71, -0.  ,  0.71, -0.  , -0.  ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.71, -0.  ,  0.  ,  0.  ,  0.71, -0.  , -0.  ],
+       [-0.  ,  0.5 , -0.  ,  0.5 ,  0.  ,  0.5 ,  0.5 ],
+       [ 0.  , -0.  ,  0.71, -0.  ,  0.71,  0.  , -0.  ],
+       [ 0.58,  0.58, -0.  ,  0.  ,  0.58, -0.  ,  0.  ],
+       [ 0.58, -0.  , -0.  ,  0.58, -0.  ,  0.58,  0.  ],
+       [ 0.  , -0.  ,  0.71, -0.  ,  0.71, -0.  , -0.  ]])
 </pre></div>
 </div>
 </div>
@@ -1085,7 +1098,7 @@ dtype: bool
 <p>Recall that the reason we embarked upon the SVD exploration was to find a way to approximate a matrix.  Because the singular values are arranged in decreasing order, you can imagine that the matrix <span class="math notranslate nohighlight">\(U\Sigma V\)</span> wouldn’t change very much if just the smallest of them were replaced with a zero.  After all, <span class="math notranslate nohighlight">\(1.84\times10^{-17}\)</span> is almost zero anyway!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">almost_Σ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span> <span class="n">Σ</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">almost_Σ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span> <span class="n">Σ</span> <span class="p">)</span>
 <span class="n">almost_Σ</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">almost_Σ_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span> <span class="n">almost_Σ_matrix</span><span class="p">,</span> <span class="n">almost_Σ</span> <span class="p">)</span>
@@ -1094,12 +1107,12 @@ dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[ 0.71, -0.  ,  0.  , -0.  ,  0.71, -0.  , -0.  ],
-       [ 0.  ,  0.5 , -0.  ,  0.5 , -0.  ,  0.5 ,  0.5 ],
-       [-0.  , -0.  ,  0.71, -0.  ,  0.71, -0.  , -0.  ],
-       [ 0.58,  0.58,  0.  ,  0.  ,  0.58,  0.  ,  0.  ],
-       [ 0.58,  0.  , -0.  ,  0.58, -0.  ,  0.58,  0.  ],
-       [-0.  , -0.  ,  0.71, -0.  ,  0.71, -0.  , -0.  ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.71, -0.  ,  0.  ,  0.  ,  0.71, -0.  , -0.  ],
+       [-0.  ,  0.5 , -0.  ,  0.5 ,  0.  ,  0.5 ,  0.5 ],
+       [ 0.  , -0.  ,  0.71, -0.  ,  0.71,  0.  , -0.  ],
+       [ 0.58,  0.58, -0.  ,  0.  ,  0.58, -0.  ,  0.  ],
+       [ 0.58, -0.  , -0.  ,  0.58, -0.  ,  0.58,  0.  ],
+       [ 0.  , -0.  ,  0.71, -0.  ,  0.71, -0.  , -0.  ]])
 </pre></div>
 </div>
 </div>
@@ -1107,7 +1120,7 @@ dtype: bool
 <p>Indeed, this looks exactly the same when we round to two decimal places.  And yet, it is still an approximation to the original, because we did make a (tiny) change.  What if we changed even more?  Let’s replace the next-smallest singular value (the 0.25) with zero.  This will be a bigger change.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">almost_Σ</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">almost_Σ</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">almost_Σ_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span> <span class="n">almost_Σ_matrix</span><span class="p">,</span> <span class="n">almost_Σ</span> <span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span> <span class="n">U</span> <span class="o">@</span> <span class="n">almost_Σ_matrix</span> <span class="o">@</span> <span class="n">V</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
@@ -1115,7 +1128,7 @@ dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[ 0.72,  0.08,  0.06,  0.01,  0.65,  0.01, -0.13],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.72,  0.08,  0.06,  0.01,  0.65,  0.01, -0.13],
        [ 0.01,  0.55,  0.03,  0.5 , -0.03,  0.5 ,  0.43],
        [-0.  , -0.01,  0.7 , -0.  ,  0.71, -0.  ,  0.01],
        [ 0.57,  0.51, -0.05, -0.  ,  0.62, -0.  ,  0.1 ],
@@ -1163,7 +1176,7 @@ dtype: bool
 <p>There is a measurement called <span class="math notranslate nohighlight">\(\rho\)</span> (Greek letter rho) that can let you know approximately how much of the “energy” of the original matrix is being lost with an approximation.  If <span class="math notranslate nohighlight">\(\Sigma\)</span> is the original vector of singular values and <span class="math notranslate nohighlight">\(z\)</span> is the vector of those that will be replaced by zeros, then <span class="math notranslate nohighlight">\(\rho^2\)</span> is computed by dividing the magnitude of <span class="math notranslate nohighlight">\(z\)</span> by the magnitude of <span class="math notranslate nohighlight">\(\Sigma\)</span>.  And so <span class="math notranslate nohighlight">\(\rho\)</span> is the square root of that number.  You can see <span class="math notranslate nohighlight">\(\rho\)</span> as a measurement of the error introduced by the approximation, between 0.0 and 1.0.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ρ</span> <span class="p">(</span> <span class="n">Σ</span><span class="p">,</span> <span class="n">num_to_remove</span> <span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ρ</span> <span class="p">(</span> <span class="n">Σ</span><span class="p">,</span> <span class="n">num_to_remove</span> <span class="p">):</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">Σ</span><span class="p">[</span><span class="o">-</span><span class="n">num_to_remove</span><span class="p">:]</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span> <span class="n">z</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="mf">1.0</span>
@@ -1174,7 +1187,7 @@ dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2.7386486204421176e-09
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.37690824654076e-09
 </pre></div>
 </div>
 </div>
@@ -1182,12 +1195,12 @@ dtype: bool
 <p>We see that <span class="math notranslate nohighlight">\(\rho\)</span> says the error is tiny if we replace only the last singular value with zero, because that value was almost zero anyway.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ρ</span><span class="p">(</span> <span class="n">Σ</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ρ</span><span class="p">(</span> <span class="n">Σ</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.32212667929693084
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3221266792969309
 </pre></div>
 </div>
 </div>
@@ -1212,17 +1225,17 @@ dtype: bool
 <p>Now that we have a sense of what SVD-based approximations do in general, let’s return to our particular example.  What are the various values of <span class="math notranslate nohighlight">\(\rho\)</span> for the approximations we might choose to approximate the preferences matrix?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="n">ρ</span><span class="p">(</span> <span class="n">Σ</span><span class="p">,</span> <span class="n">i</span> <span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">Σ</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span> <span class="p">)</span> <span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="n">ρ</span><span class="p">(</span> <span class="n">Σ</span><span class="p">,</span> <span class="n">i</span> <span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">Σ</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span> <span class="p">)</span> <span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[1.0,
- 2.7386486204421176e-09,
- 0.32212667929693084,
- 0.5422162727569352,
- 0.6921213328320457,
- 0.8460293400488615,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.0,
+ 3.37690824654076e-09,
+ 0.3221266792969309,
+ 0.5422162727569354,
+ 0.6921213328320459,
+ 0.8460293400488614,
  1.0]
 </pre></div>
 </div>
@@ -1232,7 +1245,7 @@ dtype: bool
 <p>As a refresher for how to remove the lowest 3 singular values, here’s the code all in one place.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">almost_Σ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span> <span class="n">Σ</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">almost_Σ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span> <span class="n">Σ</span> <span class="p">)</span>
 <span class="n">almost_Σ</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># replace the final 3 singular values with zeros</span>
 
 <span class="n">almost_Σ_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="p">)</span>
@@ -1244,7 +1257,7 @@ dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[ 0.7 ,  0.16,  0.04, -0.02,  0.66, -0.02, -0.09],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.7 ,  0.16,  0.04, -0.02,  0.66, -0.02, -0.09],
        [ 0.08,  0.32,  0.09,  0.58, -0.06,  0.58,  0.34],
        [-0.02,  0.05,  0.69, -0.02,  0.72, -0.02,  0.03],
        [ 0.66,  0.21,  0.03,  0.1 ,  0.58,  0.1 , -0.02],
@@ -1258,7 +1271,7 @@ dtype: bool
 <p>If we’d like it to have the same table structure it had before, we can convert it into a DataFrame and assign row and column headers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">approx_prefs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="n">approx_prefs</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">approx_prefs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="n">approx_prefs</span> <span class="p">)</span>
 <span class="n">approx_prefs</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">prefs</span><span class="o">.</span><span class="n">index</span>
 <span class="n">approx_prefs</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">prefs</span><span class="o">.</span><span class="n">columns</span>
 <span class="n">approx_prefs</span>
@@ -1366,12 +1379,12 @@ dtype: bool
 <p>To find which users match up best, according to this approximate preference matrix, with our new user X, we do the same multiplication as before, but now with the approximate matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">approx_prefs</span> <span class="o">@</span> <span class="n">normalized_X</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">approx_prefs</span> <span class="o">@</span> <span class="n">normalized_X</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>A    0.335156
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A    0.335156
 B    0.578642
 C   -0.002636
 D    0.427422
@@ -1386,14 +1399,14 @@ dtype: float64
 <p>Also, rather than just listing all the movies they like and that user X doesn’t, let’s try to be smarter about that as well.  Couldn’t we rank the recommendations?  Let’s take the E, B, and D rows from the approximate preferences matrix and add them together to combine an aggregate preferences vector for all movies.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rows_for_similar_users</span> <span class="o">=</span> <span class="n">approx_prefs</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">],:]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rows_for_similar_users</span> <span class="o">=</span> <span class="n">approx_prefs</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">],:]</span>
 <span class="n">scores</span> <span class="o">=</span> <span class="n">rows_for_similar_users</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="n">scores</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Godzilla     1.196396
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Godzilla     1.196396
 Hamlet       0.854238
 Ishtar      -0.000671
 JFK          1.128572
@@ -1408,12 +1421,12 @@ dtype: float64
 <p>Now which of these movies has user X not yet indicated they like?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span><span class="p">[</span><span class="o">~</span><span class="n">liked_by_X</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span><span class="p">[</span><span class="o">~</span><span class="n">liked_by_X</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Hamlet       0.854238
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hamlet       0.854238
 Ishtar      -0.000671
 King Kong    0.594907
 Lincoln      1.128572
@@ -1425,12 +1438,12 @@ dtype: float64
 <p>All we need to do is rank them and we have our recommendation list!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span><span class="p">[</span><span class="o">~</span><span class="n">liked_by_X</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span><span class="p">[</span><span class="o">~</span><span class="n">liked_by_X</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Lincoln      1.128572
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lincoln      1.128572
 Hamlet       0.854238
 King Kong    0.594907
 Ishtar      -0.000671
@@ -1470,15 +1483,15 @@ dtype: float64
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="chapter-15-networks.html" title="previous page"><span class="section-number">15. </span>Relations as Graphs - Network Analysis</a>
     <a class='right-next' id="next-link" href="chapter-17-machine-learning.html" title="next page"><span class="section-number">17. </span>Introduction to Machine Learning</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -1486,7 +1499,7 @@ dtype: float64
         
           By Nathan Carter<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -1495,11 +1508,9 @@ dtype: float64
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.30270b6e4c972e43c488.js"></script>
-
-
-    
+  
   </body>
 </html>

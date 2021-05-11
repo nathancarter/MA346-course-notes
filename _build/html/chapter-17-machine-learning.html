@@ -1,12 +1,14 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>17. Introduction to Machine Learning &#8212; MA346 Course Notes</title>
     
-  <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -18,38 +20,29 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/mystnb.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,28 +50,21 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/chapter-17-machine-learning.html" />
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://nathancarter.github.io/MA346-course-notes/chapter-17-machine-learning.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="1. Detailed Course Schedule" href="course-schedule.html" />
     <link rel="prev" title="16. Relations as Matrices" href="chapter-16-matrices.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/chapter-17-machine-learning.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Introduction to Machine Learning" />
-<meta property="og:description" content="Introduction to Machine Learning  &lt;a href=&#34;../../_slides/chapter-17-slides.html&#34;&gt;See also the slides that summarize a portion of this content.&lt;/a&gt;  While Bentle" />
-<meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -87,28 +73,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <p class="caption">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Course Notes for Data Science (MA346)
+  </a>
+ </li>
+</ul>
+<p class="caption">
  <span class="caption-text">
   Notes
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-1-intro-to-data-science.html">
    1. Introduction to Data Science
@@ -200,7 +190,7 @@
   Appendices
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="course-schedule.html">
    1. Detailed Course Schedule
@@ -228,9 +218,12 @@
  </li>
 </ul>
 
-</nav>
+    </div>
+</nav> <!-- To handle the deprecated key -->
 
- <!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
 
 </div>
 
@@ -241,25 +234,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -271,27 +264,46 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
-        <!-- Source interaction buttons -->
 
+            <!-- Source interaction buttons -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Launch buttons -->
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nathancarter/MA346-course-notes/master?urlpath=tree/chapter-17-machine-learning.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
     </div>
+</div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#supervised-and-unsupervised-learning">
    17.1. Supervised and unsupervised learning
@@ -390,7 +402,8 @@
  </li>
 </ul>
 
-        </nav>
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -520,7 +533,7 @@
 <p>It is easy to split a DataFrame’s rows into two different sets like this with random sampling.  Use code like the following.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create some fake data to use for demonstrating the technique:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create some fake data to use for demonstrating the technique:</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span> <span class="s1">&#39;Totally&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;Fake&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;Data&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="p">}</span> <span class="p">)</span>
@@ -619,7 +632,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Choose an approximately 80% subset:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Choose an approximately 80% subset:</span>
 <span class="c1"># (In this case, 8 is 80% of the rows.)</span>
 <span class="n">rows_for_training</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="kc">False</span> <span class="p">)</span>
 <span class="n">training</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span> <span class="n">rows_for_training</span> <span class="p">)</span>
@@ -632,7 +645,90 @@
 <p>Let’s see the resulting split.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_train</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_train</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Totally</th>
+      <th>Fake</th>
+      <th>Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>1.111111</td>
+      <td>3.111111</td>
+      <td>5.111111</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.222222</td>
+      <td>3.222222</td>
+      <td>5.222222</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.333333</td>
+      <td>3.333333</td>
+      <td>5.333333</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.444444</td>
+      <td>3.444444</td>
+      <td>5.444444</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1.555556</td>
+      <td>3.555556</td>
+      <td>5.555556</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.666667</td>
+      <td>3.666667</td>
+      <td>5.666667</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1.888889</td>
+      <td>3.888889</td>
+      <td>5.888889</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2.000000</td>
+      <td>4.000000</td>
+      <td>6.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_test</span>
 </pre></div>
 </div>
 </div>
@@ -668,93 +764,10 @@
       <td>5.000000</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>1.111111</td>
-      <td>3.111111</td>
-      <td>5.111111</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1.222222</td>
-      <td>3.222222</td>
-      <td>5.222222</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1.333333</td>
-      <td>3.333333</td>
-      <td>5.333333</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1.444444</td>
-      <td>3.444444</td>
-      <td>5.444444</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>1.555556</td>
-      <td>3.555556</td>
-      <td>5.555556</td>
-    </tr>
-    <tr>
       <th>7</th>
       <td>1.777778</td>
       <td>3.777778</td>
       <td>5.777778</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2.000000</td>
-      <td>4.000000</td>
-      <td>6.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_test</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Totally</th>
-      <th>Fake</th>
-      <th>Data</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>6</th>
-      <td>1.666667</td>
-      <td>3.666667</td>
-      <td>5.666667</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>1.888889</td>
-      <td>3.888889</td>
-      <td>5.888889</td>
     </tr>
   </tbody>
 </table>
@@ -791,7 +804,7 @@
 <p>Let’s make this concrete with an example.  Assume we’ve measured three important health variables about ten patients in a study and then given them all an experimental drug.  We then measured whether they responded well or not to the drug (0 meaning no and 1 meaning yes).  We’d like to try to predict, from their initial three health variables, whether they will respond well to the drug, so we know which new patients might benefit.  We will use fabricated data, partly because medical data is private and partly beacuse it will be nice to have a small example from which to learn.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_drug_response</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_drug_response</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span>
     <span class="s1">&#39;Height (in)&#39;</span>     <span class="p">:</span> <span class="p">[</span>  <span class="mi">72</span><span class="p">,</span>  <span class="mi">63</span><span class="p">,</span>  <span class="mi">60</span><span class="p">,</span>  <span class="mi">69</span><span class="p">,</span>  <span class="mi">59</span><span class="p">,</span>  <span class="mi">74</span><span class="p">,</span>  <span class="mi">63</span><span class="p">,</span>  <span class="mi">67</span><span class="p">,</span>  <span class="mi">60</span><span class="p">,</span>  <span class="mi">64</span> <span class="p">],</span>
     <span class="s1">&#39;Weight (lb)&#39;</span>     <span class="p">:</span> <span class="p">[</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">191</span><span class="p">,</span> <span class="mi">112</span><span class="p">,</span> <span class="mi">205</span><span class="p">,</span> <span class="mi">136</span><span class="p">,</span> <span class="mi">139</span><span class="p">,</span> <span class="mi">184</span><span class="p">,</span> <span class="mi">230</span><span class="p">,</span> <span class="mi">198</span><span class="p">,</span> <span class="mi">169</span> <span class="p">],</span>
     <span class="s1">&#39;Systolic (mmHg)&#39;</span> <span class="p">:</span> <span class="p">[</span>  <span class="mi">90</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span>  <span class="mi">85</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">107</span><span class="p">,</span> <span class="mi">117</span><span class="p">,</span> <span class="mi">145</span><span class="p">,</span>  <span class="mi">99</span><span class="p">,</span> <span class="mi">109</span><span class="p">,</span>  <span class="mi">89</span> <span class="p">],</span>
@@ -905,7 +918,7 @@
 <p>When we apply logistic regression to this dataset, we will want to make it clear which columns are to be seen as inputs (or features or predictors) and which is to be seen as the output (or target or response).  To facilitate this, let’s store them in different variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">predictors</span> <span class="o">=</span> <span class="n">df_drug_response</span><span class="p">[[</span><span class="s1">&#39;Height (in)&#39;</span><span class="p">,</span><span class="s1">&#39;Weight (lb)&#39;</span><span class="p">,</span><span class="s1">&#39;Systolic (mmHg)&#39;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictors</span> <span class="o">=</span> <span class="n">df_drug_response</span><span class="p">[[</span><span class="s1">&#39;Height (in)&#39;</span><span class="p">,</span><span class="s1">&#39;Weight (lb)&#39;</span><span class="p">,</span><span class="s1">&#39;Systolic (mmHg)&#39;</span><span class="p">]]</span>
 <span class="n">response</span>   <span class="o">=</span> <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Response&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -917,7 +930,7 @@
 <p>A very popular machine learning toolit is called scikit-learn, and is distributed as the Python module <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.  If your Python installation came from Anaconda, you already have <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> installed.  We can use the logistic regression tools built into scikit-learn to create a logistic regression model that will use the first three columns above as inputs from which it should predict the final column as the output.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the module</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the module</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 
 <span class="c1"># Create a model and fit it to the data</span>
@@ -1055,12 +1068,12 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Correct&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_drug_response</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Correct&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_drug_response</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.7
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7
 </pre></div>
 </div>
 </div>
@@ -1073,7 +1086,7 @@
 <p>Right now, however, our model is fit using predictors that have very different scales.  Height is a two-digit number, weight is a three-digit number, and blood pressure varies in between.  So the coefficients, which must interact with these different units, are not currently comparable.  It is therefore common to create a standardized copy of the predictors and re-fit the model to it, just for comparing coefficients, because then they are all on the same scale.  Standardization is the process of subtracting the mean of a sample and dividing by its standard deviation.  (Note that this makes the units in the column headers no longer accurate.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">standardized</span> <span class="o">=</span> <span class="p">(</span> <span class="n">predictors</span> <span class="o">-</span> <span class="n">predictors</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="p">)</span> <span class="o">/</span> <span class="n">predictors</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">standardized</span> <span class="o">=</span> <span class="p">(</span> <span class="n">predictors</span> <span class="o">-</span> <span class="n">predictors</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="p">)</span> <span class="o">/</span> <span class="n">predictors</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 <span class="n">standardized</span>
 </pre></div>
 </div>
@@ -1169,7 +1182,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">standardized_model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">standardized_model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
 <span class="n">standardized_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span> <span class="n">standardized</span><span class="p">,</span> <span class="n">response</span> <span class="p">)</span>
 <span class="n">coefficients</span> <span class="o">=</span> <span class="n">standardized_model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span> <span class="n">coefficients</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">predictors</span><span class="o">.</span><span class="n">columns</span> <span class="p">)</span>
@@ -1177,7 +1190,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Height (in)       -0.506490
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Height (in)       -0.506490
 Weight (lb)       -0.205779
 Systolic (mmHg)    0.563031
 dtype: float64
@@ -1203,7 +1216,7 @@ dtype: float64
 <p>Let’s see how to code these measurements in Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># True positive means the answer and the prediction were positive.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># True positive means the answer and the prediction were positive.</span>
 <span class="n">TP</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Response&#39;</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Prediction&#39;</span><span class="p">]</span> <span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="c1"># Similarly for the other three.</span>
 <span class="n">TN</span> <span class="o">=</span> <span class="p">(</span> <span class="o">~</span><span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Response&#39;</span><span class="p">]</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Prediction&#39;</span><span class="p">]</span> <span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -1219,7 +1232,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(0.7142857142857143, 0.8333333333333334)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.7142857142857143, 0.8333333333333334)
 </pre></div>
 </div>
 </div>
@@ -1229,7 +1242,7 @@ dtype: float64
 \[F_1=\frac{2\times\text{precision}\times\text{recall}}{\text{precision}+\text{recall}}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">F1</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">precision</span> <span class="o">*</span> <span class="n">recall</span> <span class="o">/</span> <span class="p">(</span> <span class="n">precision</span> <span class="o">+</span> <span class="n">recall</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F1</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">precision</span> <span class="o">*</span> <span class="n">recall</span> <span class="o">/</span> <span class="p">(</span> <span class="n">precision</span> <span class="o">+</span> <span class="n">recall</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1242,7 +1255,7 @@ dtype: float64
 <p>Let’s say we had patient race, and there were several categories, including Black, White, Latino, Indian, Asian, and Other.  I will add data of this type to the original data we saw above.  Of course, this, too, is fictitious data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Asian&#39;</span><span class="p">,</span><span class="s1">&#39;Black&#39;</span><span class="p">,</span><span class="s1">&#39;Black&#39;</span><span class="p">,</span><span class="s1">&#39;Latino&#39;</span><span class="p">,</span><span class="s1">&#39;White&#39;</span><span class="p">,</span><span class="s1">&#39;White&#39;</span><span class="p">,</span><span class="s1">&#39;Indian&#39;</span><span class="p">,</span><span class="s1">&#39;White&#39;</span><span class="p">,</span><span class="s1">&#39;Asian&#39;</span><span class="p">,</span><span class="s1">&#39;Latino&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Asian&#39;</span><span class="p">,</span><span class="s1">&#39;Black&#39;</span><span class="p">,</span><span class="s1">&#39;Black&#39;</span><span class="p">,</span><span class="s1">&#39;Latino&#39;</span><span class="p">,</span><span class="s1">&#39;White&#39;</span><span class="p">,</span><span class="s1">&#39;White&#39;</span><span class="p">,</span><span class="s1">&#39;Indian&#39;</span><span class="p">,</span><span class="s1">&#39;White&#39;</span><span class="p">,</span><span class="s1">&#39;Asian&#39;</span><span class="p">,</span><span class="s1">&#39;Latino&#39;</span><span class="p">]</span>
 <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="s1">&#39;category&#39;</span> <span class="p">)</span>
 </pre></div>
 </div>
@@ -1251,7 +1264,7 @@ dtype: float64
 <p>Suppose that the medical professionals believe, from past studies in this area, that Black and Indian patients might respond differently to the drug, but everyone else should be similar to one another.  We can therefore convert this categorical variable into two boolean variables, one answering the question, “Is the patient Black?” and the other answering the question, “Is the patient Indian?”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race=Black&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Black&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race=Black&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Black&#39;</span>
 <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race=Indian&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Indian&#39;</span>
 <span class="n">df_drug_response</span>
 </pre></div>
@@ -1415,7 +1428,7 @@ dtype: float64
 <p>The value of having done this is that boolean inputs can be represented using numerical values 0 and 1, just as boolean outputs can.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race=Black&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race=Black&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">int</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race=Black&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race=Black&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">int</span> <span class="p">)</span>
 <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race=Indian&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race=Indian&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">int</span> <span class="p">)</span>
 <span class="n">df_drug_response</span>
 </pre></div>
@@ -1579,7 +1592,7 @@ dtype: float64
 <p>These variables could then be added to our <code class="docutils literal notranslate"><span class="pre">predictors</span></code> DataFrame and used as numerical inputs to our model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">predictors</span> <span class="o">=</span> <span class="n">predictors</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># handle warnings about slices</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictors</span> <span class="o">=</span> <span class="n">predictors</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># handle warnings about slices</span>
 <span class="n">predictors</span><span class="p">[</span><span class="s1">&#39;Race=Black&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race=Black&#39;</span><span class="p">]</span>
 <span class="n">predictors</span><span class="p">[</span><span class="s1">&#39;Race=Indian&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race=Indian&#39;</span><span class="p">]</span>
 </pre></div>
@@ -1618,15 +1631,15 @@ dtype: float64
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="chapter-16-matrices.html" title="previous page"><span class="section-number">16. </span>Relations as Matrices</a>
     <a class='right-next' id="next-link" href="course-schedule.html" title="next page"><span class="section-number">1. </span>Detailed Course Schedule</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -1634,7 +1647,7 @@ dtype: float64
         
           By Nathan Carter<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -1643,11 +1656,9 @@ dtype: float64
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.30270b6e4c972e43c488.js"></script>
-
-
-    
+  
   </body>
 </html>

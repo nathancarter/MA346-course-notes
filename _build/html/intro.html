@@ -1,12 +1,14 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Course Notes for Data Science (MA346) &#8212; MA346 Course Notes</title>
     
-  <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -18,38 +20,29 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/mystnb.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,27 +50,18 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/intro.html" />
+    <link rel="canonical" href="https://nathancarter.github.io/MA346-course-notes/intro.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="1. Introduction to Data Science" href="chapter-1-intro-to-data-science.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/intro.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Course Notes for Data Science (MA346)" />
-<meta property="og:description" content="Course Notes for Data Science (MA346)  These course notes are for Bentley University’s Data Science course (MA346) that will be taught by Nathan Carter in Fall " />
-<meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -86,28 +70,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <p class="caption">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   Course Notes for Data Science (MA346)
+  </a>
+ </li>
+</ul>
+<p class="caption">
  <span class="caption-text">
   Notes
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-1-intro-to-data-science.html">
    1. Introduction to Data Science
@@ -199,7 +187,7 @@
   Appendices
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="course-schedule.html">
    1. Detailed Course Schedule
@@ -227,9 +215,12 @@
  </li>
 </ul>
 
-</nav>
+    </div>
+</nav> <!-- To handle the deprecated key -->
 
- <!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
 
 </div>
 
@@ -240,25 +231,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -270,28 +261,84 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
-        <!-- Source interaction buttons -->
 
+            <!-- Source interaction buttons -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Launch buttons -->
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nathancarter/MA346-course-notes/master?urlpath=tree/intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
     </div>
+</div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        </nav>
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#purpose">
+   <span class="fa fa-star mr-1">
+   </span>
+   Purpose
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   <span class="fa fa-hand-point-left mr-1">
+   </span>
+   Table of Contents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schedule">
+   <span class="xref myst">
+    <span class="fa fa-calendar mr-1">
+    </span>
+    Schedule
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-href-static-ma346-course-notes-pdf-download-pdf-a">
+   <a href="../../_static/MA346-course-notes.pdf">
+    <span class="fa fa-file-pdf mr-1">
+    </span>
+    Download PDF
+   </a>
+  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -301,78 +348,27 @@
                 
   <div class="section" id="course-notes-for-data-science-ma346">
 <h1>Course Notes for Data Science (MA346)<a class="headerlink" href="#course-notes-for-data-science-ma346" title="Permalink to this headline">¶</a></h1>
-<p>These course notes are for <a class="reference external" href="http://www.bentley.edu">Bentley University</a>’s Data Science course (MA346) that will be taught by <a class="reference external" href="http://nathancarter.github.io">Nathan Carter</a> in Fall 2020.</p>
-<p>You can <a href="../../_static/MA346-course-notes.pdf">download a PDF of these course notes here</a>, in case you prefer to read it that way.</p>
-<p>This page summarizes the course schedule.  Each day is a link to the appropriate section in the <a class="reference internal" href="course-schedule.html"><span class="doc std std-doc">detailed course schedule with course notes, slides, and all assignments</span></a>.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Week</p></th>
-<th class="head"><p>Date</p></th>
-<th class="head"><p>Content for the day</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>9/3/2020</p></td>
-<td><p><a class="reference external" href="course-schedule.html#week-1-9-3-2020-introduction-and-mathematical-foundations">Introduction and mathematical foundations</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>9/10/2020</p></td>
-<td><p><a class="reference external" href="course-schedule.html#week-2-9-10-2020-jupyter-and-a-review-of-python-and-pandas">Jupyter and a review of Python and pandas</a></p></td>
-</tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>9/17/2020</p></td>
-<td><p><a class="reference external" href="course-schedule.html#week-3-9-17-2020-before-and-after-single-table-verbs">Before and after, single-table verbs</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>9/24/2020</p></td>
-<td><p><a class="reference external" href="course-schedule.html#week-4-9-24-2020-abstraction-and-version-control">Abstraction and version control</a></p></td>
-</tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><p>10/1/2020</p></td>
-<td><p><a class="reference external" href="course-schedule.html#week-5-10-1-2020-math-and-stats-in-python-plus-visualization">Math and stats in Python, plus Visualization</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>6</p></td>
-<td><p>10/8/2020</p></td>
-<td><p><a class="reference external" href="course-schedule.html#week-6-10-8-2020-processing-the-rows-of-a-dataframe">Processing the Rows of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></p></td>
-</tr>
-<tr class="row-even"><td><p>7</p></td>
-<td><p>10/15/2020</p></td>
-<td><p><a class="reference external" href="course-schedule.html#week-7-10-15-2020-concatenation-and-merging">Concatenation and Merging</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>8</p></td>
-<td><p>10/22/2020</p></td>
-<td><p><a class="reference external" href="course-schedule.html#week-8-10-22-2020-miscellaneous-munging-methods-etl">Miscellaneous Munging Methods (ETL)</a></p></td>
-</tr>
-<tr class="row-even"><td><p>9</p></td>
-<td><p>10/29/2020</p></td>
-<td><p><a class="reference external" href="course-schedule.html#week-9-10-29-2020-dashboards">Dashboards</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>10</p></td>
-<td><p>11/5/2020</p></td>
-<td><p><a class="reference external" href="course-schedule.html#week-10-11-5-2020-relations-graphs-and-networks">Relations, graphs, and networks</a></p></td>
-</tr>
-<tr class="row-even"><td><p>11</p></td>
-<td><p>11/12/2020</p></td>
-<td><p><a class="reference external" href="course-schedule.html#week-11-11-12-2020-relations-as-matrices">Relations as matrices</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>12</p></td>
-<td><p>11/19/2020</p></td>
-<td><p><a class="reference external" href="course-schedule.html#week-12-11-19-2020-introduction-to-machine-learning">Introduction to machine learning</a></p></td>
-</tr>
-<tr class="row-even"><td><p>13</p></td>
-<td><p>11/26/2020</p></td>
-<td><p>Thanksgiving break, no class</p></td>
-</tr>
-<tr class="row-odd"><td><p>14</p></td>
-<td><p>12/3/2020</p></td>
-<td><p>Final Exam Review and Final Project Workshop</p></td>
-</tr>
-</tbody>
-</table>
+<div class="section" id="purpose">
+<h2><span class="fa fa-star mr-1"></span> Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<p>These course notes are for <a class="reference external" href="http://www.bentley.edu">Bentley University</a>’s Data Science course (MA346) that will be taught by <a class="reference external" href="http://nathancarter.github.io">Nathan Carter</a> in Summer 2021.</p>
+</div>
+<div class="section" id="table-of-contents">
+<h2><span class="fa fa-hand-point-left mr-1"></span> Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<p>Readers using a web broswer will find the list of chapters in the navigation bar on the left.</p>
+<p>Readers on a mobile device will find them under the <span class="fa fa-bars"></span> menu.</p>
+<p>Readers of the PDF version will see a standard table of contents in the document.</p>
+</div>
+<div class="section" id="schedule">
+<h2><a class="reference internal" href="course-schedule.html"><span class="doc std std-doc"><span class="fa fa-calendar mr-1"></span> Schedule</span></a><a class="headerlink" href="#schedule" title="Permalink to this headline">¶</a></h2>
+<p>The complete schedule for the course, with all topics, assignments, and due dates, so that students know what’s due when, and what we’ll be covering on any given day.</p>
+</div>
+<div class="section" id="a-href-static-ma346-course-notes-pdf-download-pdf-a">
+<h2><a href="../../_static/MA346-course-notes.pdf"><span class="fa fa-file-pdf mr-1"></span> Download PDF</a><a class="headerlink" href="#a-href-static-ma346-course-notes-pdf-download-pdf-a" title="Permalink to this headline">¶</a></h2>
+<p>Use the above link if you prefer to read the notes as a PDF instead of a website.</p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
@@ -398,14 +394,14 @@
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='right-next' id="next-link" href="chapter-1-intro-to-data-science.html" title="next page"><span class="section-number">1. </span>Introduction to Data Science</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -413,7 +409,7 @@
         
           By Nathan Carter<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -422,11 +418,9 @@
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.30270b6e4c972e43c488.js"></script>
-
-
-    
+  
   </body>
 </html>

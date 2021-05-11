@@ -1,12 +1,14 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>12. Concatenating and Merging DataFrames &#8212; MA346 Course Notes</title>
     
-  <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -18,38 +20,29 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/mystnb.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,28 +50,19 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/chapter-12-concat-and-merge.html" />
+    <link rel="canonical" href="https://nathancarter.github.io/MA346-course-notes/chapter-12-concat-and-merge.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="13. Miscellaneous Munging Methods (ETL)" href="chapter-13-etl.html" />
     <link rel="prev" title="11. Processing the Rows of a DataFrame" href="chapter-11-processing-rows.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/chapter-12-concat-and-merge.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Concatenating and Merging DataFrames" />
-<meta property="og:description" content="Concatenating and Merging DataFrames  &lt;a href=&#34;../../_slides/chapter-12-slides.html&#34;&gt;See also the slides that summarize a portion of this content.&lt;/a&gt;  Why join" />
-<meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -87,28 +71,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <p class="caption">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Course Notes for Data Science (MA346)
+  </a>
+ </li>
+</ul>
+<p class="caption">
  <span class="caption-text">
   Notes
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-1-intro-to-data-science.html">
    1. Introduction to Data Science
@@ -200,7 +188,7 @@
   Appendices
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="course-schedule.html">
    1. Detailed Course Schedule
@@ -228,9 +216,12 @@
  </li>
 </ul>
 
-</nav>
+    </div>
+</nav> <!-- To handle the deprecated key -->
 
- <!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
 
 </div>
 
@@ -241,25 +232,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -271,27 +262,46 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
-        <!-- Source interaction buttons -->
 
+            <!-- Source interaction buttons -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Launch buttons -->
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nathancarter/MA346-course-notes/master?urlpath=tree/chapter-12-concat-and-merge.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
     </div>
+</div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#why-join-two-datasets">
    12.1. Why join two datasets?
@@ -371,7 +381,8 @@
  </li>
 </ul>
 
-        </nav>
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -410,7 +421,7 @@
 <p>The code to do this is extremely easy; it is a single call to the <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code> function.  You provide a Python list of all the DataFrames to concatenate; in this case, we have just two.  We tell it to ignore the old indexes and create a new one, so that we don’t have duplicate index entries.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df_jan</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;_static/regi-prices-jan-2020.csv&#39;</span> <span class="p">)</span>
 <span class="n">df_feb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;_static/regi-prices-feb-2020.csv&#39;</span> <span class="p">)</span>
@@ -493,7 +504,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_2mo</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2mo</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -740,7 +751,7 @@
 <p>Let’s actually try to merge two datasets of university data.  I will load here the comprehensive university dataset I mentioned, originally downloaded from <a class="reference external" href="https://data.world/kitedwards08/us-university-survey-2014">here</a>, as well as a US News university rankings dataset, originally downloaded from <a class="reference external" href="https://data.world/education/university-rankings-2017">here</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_big</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;_static/Colleges_and_Universities.csv&#39;</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_big</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;_static/Colleges_and_Universities.csv&#39;</span> <span class="p">)</span>
 <span class="n">df_big</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -915,7 +926,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_rank</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;_static/National Universities Rankings.csv&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin&#39;</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_rank</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="s1">&#39;_static/National Universities Rankings.csv&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin&#39;</span> <span class="p">)</span>
 <span class="n">df_rank</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1005,12 +1016,12 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span> <span class="n">df_big</span> <span class="p">),</span> <span class="nb">len</span><span class="p">(</span> <span class="n">df_rank</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span> <span class="n">df_big</span> <span class="p">),</span> <span class="nb">len</span><span class="p">(</span> <span class="n">df_rank</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(7735, 231)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(7735, 231)
 </pre></div>
 </div>
 </div>
@@ -1021,7 +1032,7 @@
 <p>Let’s just get a sense of how many of the 231 rows in the ranking dataset have an exact match in the big dataset, and thus their official names are already in the ranking dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">official_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="n">df_big</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">official_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="n">df_big</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span> <span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">has_exact_match</span> <span class="p">(</span> <span class="n">name_from_rank_df</span> <span class="p">):</span>
     <span class="k">return</span> <span class="n">name_from_rank_df</span> <span class="ow">in</span> <span class="n">official_names</span>
@@ -1031,7 +1042,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>141
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>141
 </pre></div>
 </div>
 </div>
@@ -1039,7 +1050,7 @@
 <p>Thus 90 schools do <em>not</em> have an exact match.  Those are the 90 we need to solve.  It would be tedious to match them up by hand, because there are 90.  So we will use a built-in Python text module to try to do some <em>approximate</em> string matching for us.  The Python module <code class="docutils literal notranslate"><span class="pre">difflib</span></code> has a function called <code class="docutils literal notranslate"><span class="pre">get_close_matches()</span></code> that will take a piece of text and a list of options, and give you the closest matches.  Here’s an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">difflib</span> <span class="kn">import</span> <span class="n">get_close_matches</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">difflib</span> <span class="kn">import</span> <span class="n">get_close_matches</span>
 <span class="n">get_close_matches</span><span class="p">(</span> <span class="s1">&#39;Python is cool&#39;</span><span class="p">,</span>
     <span class="p">[</span> <span class="s1">&#39;this is not close&#39;</span><span class="p">,</span> <span class="s1">&#39;also not close&#39;</span><span class="p">,</span>
       <span class="s1">&#39;Python is cruel&#39;</span><span class="p">,</span> <span class="s1">&#39;Nathan is cool&#39;</span> <span class="p">]</span> <span class="p">)</span>
@@ -1047,7 +1058,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;Python is cruel&#39;, &#39;Nathan is cool&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Python is cruel&#39;, &#39;Nathan is cool&#39;]
 </pre></div>
 </div>
 </div>
@@ -1055,12 +1066,12 @@
 <p>Note that it doesn’t always find a good guess, if there isn’t one.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get_close_matches</span><span class="p">(</span> <span class="s1">&#39;pork&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="s1">&#39;salad&#39;</span><span class="p">,</span> <span class="s1">&#39;lollipops&#39;</span><span class="p">,</span> <span class="s1">&#39;soda&#39;</span> <span class="p">]</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_close_matches</span><span class="p">(</span> <span class="s1">&#39;pork&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="s1">&#39;salad&#39;</span><span class="p">,</span> <span class="s1">&#39;lollipops&#39;</span><span class="p">,</span> <span class="s1">&#39;soda&#39;</span> <span class="p">]</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
 </div>
@@ -1068,7 +1079,7 @@
 <p>Let’s use <code class="docutils literal notranslate"><span class="pre">get_close_matches()</span></code> to create a function that will match up university names across the two datasets if they’re just off by a small amount.  This could automate some of the matching we’d otherwise have to do by hand for those 90 schools that didn’t match exactly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_closest_official_name</span> <span class="p">(</span> <span class="n">name_from_df_rank</span> <span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_closest_official_name</span> <span class="p">(</span> <span class="n">name_from_df_rank</span> <span class="p">):</span>
 
     <span class="c1"># If there&#39;s an exact match, we&#39;re already done.</span>
     <span class="k">if</span> <span class="n">has_exact_match</span><span class="p">(</span> <span class="n">name_from_df_rank</span> <span class="p">):</span>
@@ -1090,7 +1101,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Bentley University&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Bentley University&#39;
 </pre></div>
 </div>
 </div>
@@ -1098,7 +1109,7 @@
 <p>Let’s apply that function to every row in the small dataset.  Note that <code class="docutils literal notranslate"><span class="pre">get_close_matches()</span></code> can be a bit slow, so the following code actually takes about 15 seconds to complete executing.  (It would be even slower if we didn’t have the first <code class="docutils literal notranslate"><span class="pre">if</span></code> statement in <code class="docutils literal notranslate"><span class="pre">get_closest_official_name()</span></code>, which skips <code class="docutils literal notranslate"><span class="pre">get_close_matches()</span></code> when it’s not needed.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="n">get_closest_official_name</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="n">get_closest_official_name</span> <span class="p">)</span>
 <span class="n">df_rank</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1196,7 +1207,7 @@
 <p>We can check by taking a glance over the following output, and noting which rows are wrong.  I don’t include the full output here of all 90 discrepancies, just to save space, but you can use <code class="docutils literal notranslate"><span class="pre">pd.set_option(</span> <span class="pre">'display.max_rows',</span> <span class="pre">None</span> <span class="pre">)</span></code> to see them all.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rows_with_guesses</span> <span class="o">=</span> <span class="n">df_rank</span><span class="p">[</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rows_with_guesses</span> <span class="o">=</span> <span class="n">df_rank</span><span class="p">[</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="p">]</span>
 <span class="n">rows_with_guesses</span><span class="p">[[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
@@ -1290,13 +1301,13 @@
 <p>Let’s do a search.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show me all names containing Columbia...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show me all names containing Columbia...</span>
 <span class="n">df_big</span><span class="p">[</span><span class="n">df_big</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span> <span class="s1">&#39;Columbia&#39;</span> <span class="p">)][</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>60                      Paul Mitchell The School-Columbia
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60                      Paul Mitchell The School-Columbia
 439                    American Career Institute√Columbia
 619                                      Columbia College
 668                             Virginia College-Columbia
@@ -1344,14 +1355,14 @@ Name: NAME, dtype: object
 <p>Holy cow!  Let’s try to narrow our search a bit…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Just the rows with Columbia and University...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Just the rows with Columbia and University...</span>
 <span class="n">df_big</span><span class="p">[</span><span class="n">df_big</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span> <span class="s1">&#39;Columbia&#39;</span> <span class="p">)</span>
      <span class="o">&amp;</span> <span class="n">df_big</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span> <span class="s1">&#39;University&#39;</span> <span class="p">)][</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>750                          Columbia Southern University
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>750                          Columbia Southern University
 1366                University of Phoenix-Columbia Campus
 4042              Teachers College at Columbia University
 4509                            South University-Columbia
@@ -1370,7 +1381,7 @@ Name: NAME, dtype: object
 <p>Aha, Columbia University in the City of New York was so long of a phrase that <code class="docutils literal notranslate"><span class="pre">get_close_matches()</span></code> did not think it was “close” to Columbia University.  So now I’ve found that the entry for row 4 in <code class="docutils literal notranslate"><span class="pre">df_rank['Official</span> <span class="pre">Name']</span></code> should be Columbia University in the City of New York.  I can simply tell Python to change it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Columbia University in the City of New York&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Columbia University in the City of New York&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1378,7 +1389,7 @@ Name: NAME, dtype: object
 <p>When I’m done manually investigating the 30 schools that had to be fixed by hand, I will have 30 lines of code that look just like the one above, but for different schools.  Here’s a sample.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Columbia University in the City of New York&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Columbia University in the City of New York&#39;</span>
 <span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">34</span><span class="p">,</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Georgia Institute of Technology-Main Campus&#39;</span>
 <span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">41</span><span class="p">,</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Tulane University of Louisiana&#39;</span>
 <span class="n">df_rank</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">52</span><span class="p">,</span><span class="s1">&#39;Official Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Pennsylvania State University-Main Campus&#39;</span>
@@ -1390,7 +1401,7 @@ Name: NAME, dtype: object
 <p>But if we’re trying to follow DRY principles, we notice that there’s definitely a lot of repeated code here.  We’re copying and pasting the <code class="docutils literal notranslate"><span class="pre">df_rank.loc[...,'Official</span> <span class="pre">Name']</span> <span class="pre">=</span> <span class="pre">'...'</span></code> part each time.  We could simplify this by creating a Python dictionary with just our corrections.  Here I include all 30 corrections as they would be if we had carefully investigated each.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Store corrections in a dictionary:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Store corrections in a dictionary:</span>
 <span class="n">corrections</span> <span class="o">=</span> <span class="p">{</span>
     <span class="mi">4</span>   <span class="p">:</span> <span class="s1">&#39;Columbia University in the City of New York&#39;</span><span class="p">,</span>
     <span class="mi">34</span>  <span class="p">:</span> <span class="s1">&#39;Georgia Institute of Technology-Main Campus&#39;</span><span class="p">,</span>
@@ -1519,7 +1530,7 @@ Name: NAME, dtype: object
 <p><strong>Step 4.</strong> And now that all corrections have been made, we can do the merge with confidence.  We take care to merge the main dataset’s <code class="docutils literal notranslate"><span class="pre">&quot;NAME&quot;</span></code> column with the smaller dataset’s <code class="docutils literal notranslate"><span class="pre">&quot;Official</span> <span class="pre">Name&quot;</span></code> column.  This merge will be a left join, because we do not want to discard a school just because it wasn’t in US News’s rankings.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_big</span><span class="p">,</span> <span class="n">df_rank</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;Official Name&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_big</span><span class="p">,</span> <span class="n">df_rank</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;Official Name&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span> <span class="p">)</span>
 <span class="n">df_merged</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1695,7 +1706,7 @@ Name: NAME, dtype: object
 <p>Now we have one large dataset containing both the generic data and the ranking data.  Although we see all missing values for ranking columns above, this is just because the first five schools in the dataset didn’t happen to be ranked by US News.  This is not surprising; there were over 7700 schools in the dataset and only 231 were ranked by US News.  But we can see that the merge did go correctly if we inspect a row that had ranking data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span><span class="p">[</span><span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Harvard University&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span><span class="p">[</span><span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Harvard University&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1798,15 +1809,15 @@ Name: NAME, dtype: object
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="chapter-11-processing-rows.html" title="previous page"><span class="section-number">11. </span>Processing the Rows of a DataFrame</a>
     <a class='right-next' id="next-link" href="chapter-13-etl.html" title="next page"><span class="section-number">13. </span>Miscellaneous Munging Methods (ETL)</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -1814,7 +1825,7 @@ Name: NAME, dtype: object
         
           By Nathan Carter<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -1823,11 +1834,9 @@ Name: NAME, dtype: object
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.30270b6e4c972e43c488.js"></script>
-
-
-    
+  
   </body>
 </html>

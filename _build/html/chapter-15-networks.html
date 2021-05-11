@@ -1,12 +1,14 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>15. Relations as Graphs - Network Analysis &#8212; MA346 Course Notes</title>
     
-  <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -18,38 +20,29 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/mystnb.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,28 +50,21 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/chapter-15-networks.html" />
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://nathancarter.github.io/MA346-course-notes/chapter-15-networks.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="16. Relations as Matrices" href="chapter-16-matrices.html" />
     <link rel="prev" title="14. Dashboards" href="chapter-14-dashboards.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/chapter-15-networks.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Relations as Graphs - Network Analysis" />
-<meta property="og:description" content="Relations as Graphs - Network Analysis  &lt;a href=&#34;../../_slides/chapter-15-slides.html&#34;&gt;See also the slides that summarize a portion of this content.&lt;/a&gt;  What i" />
-<meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -87,28 +73,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <p class="caption">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Course Notes for Data Science (MA346)
+  </a>
+ </li>
+</ul>
+<p class="caption">
  <span class="caption-text">
   Notes
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-1-intro-to-data-science.html">
    1. Introduction to Data Science
@@ -200,7 +190,7 @@
   Appendices
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="course-schedule.html">
    1. Detailed Course Schedule
@@ -228,9 +218,12 @@
  </li>
 </ul>
 
-</nav>
+    </div>
+</nav> <!-- To handle the deprecated key -->
 
- <!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
 
 </div>
 
@@ -241,25 +234,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -271,27 +264,46 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
-        <!-- Source interaction buttons -->
 
+            <!-- Source interaction buttons -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Launch buttons -->
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nathancarter/MA346-course-notes/master?urlpath=tree/chapter-15-networks.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
     </div>
+</div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-a-graph">
    15.1. What is a graph?
@@ -353,7 +365,8 @@
  </li>
 </ul>
 
-        </nav>
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -483,14 +496,42 @@
 <p>First, what sheets are stored in the workbook?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">sheets</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span> <span class="s1">&#39;_static/dolphins.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="kc">None</span> <span class="p">)</span>
 <span class="n">sheets</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;ids_and_names&#39;, &#39;relationships&#39;])
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">d83e9e133d33</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">sheets</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span> <span class="s1">&#39;_static/dolphins.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="kc">None</span> <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">sheets</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+
+<span class="nn">/opt/conda/lib/python3.9/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span>                 <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span>                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">299</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span> 
+<span class="g g-Whitespace">    </span><span class="mi">301</span>         <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">/opt/conda/lib/python3.9/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">read_excel</span><span class="nt">(io, sheet_name, header, names, index_col, usecols, squeeze, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, thousands, comment, skipfooter, convert_float, mangle_dupe_cols, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">334</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">ExcelFile</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">335</span>         <span class="n">should_close</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="ne">--&gt; </span><span class="mi">336</span>         <span class="n">io</span> <span class="o">=</span> <span class="n">ExcelFile</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span>     <span class="k">elif</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">engine</span> <span class="o">!=</span> <span class="n">io</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+
+<span class="nn">/opt/conda/lib/python3.9/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">__init__</span><span class="nt">(self, path_or_buffer, engine, storage_options)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1100</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1101</span>             <span class="k">if</span> <span class="n">ext</span> <span class="o">!=</span> <span class="s2">&quot;xls&quot;</span> <span class="ow">and</span> <span class="n">xlrd_version</span> <span class="o">&gt;=</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1102</span>                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1103</span>                     <span class="sa">f</span><span class="s2">&quot;Your version of xlrd is </span><span class="si">{</span><span class="n">xlrd_version</span><span class="si">}</span><span class="s2">. In xlrd &gt;= 2.0, &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1104</span>                     <span class="sa">f</span><span class="s2">&quot;only the xls format is supported. Install openpyxl instead.&quot;</span>
+
+<span class="ne">ValueError</span>: Your version of xlrd is 2.0.1. In xlrd &gt;= 2.0, only the xls format is supported. Install openpyxl instead.
 </pre></div>
 </div>
 </div>
@@ -498,7 +539,7 @@
 <p>There are two sheets in the workbook, one called <code class="docutils literal notranslate"><span class="pre">&quot;ids_and_names&quot;</span></code> and one called <code class="docutils literal notranslate"><span class="pre">&quot;relationships&quot;</span></code>.  Let’s take a look at both.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">sheets</span><span class="p">[</span><span class="s1">&#39;ids_and_names&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">sheets</span><span class="p">[</span><span class="s1">&#39;ids_and_names&#39;</span><span class="p">]</span>
 <span class="n">df1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -558,7 +599,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">sheets</span><span class="p">[</span><span class="s1">&#39;relationships&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">sheets</span><span class="p">[</span><span class="s1">&#39;relationships&#39;</span><span class="p">]</span>
 <span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -620,7 +661,7 @@
 <p>But the data is not formatted conveniently.  The second table would be more convenient if it included dolphin names instead of IDs.  Let’s use Python dictionaries and <code class="docutils literal notranslate"><span class="pre">map()</span></code> to fix it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">convert_id_to_name</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">df1</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">df1</span><span class="o">.</span><span class="n">name</span> <span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">convert_id_to_name</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">df1</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">df1</span><span class="o">.</span><span class="n">name</span> <span class="p">)</span> <span class="p">)</span>
 <span class="n">df2</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">map</span><span class="p">(</span> <span class="n">convert_id_to_name</span> <span class="p">)</span>
 <span class="n">df2</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">map</span><span class="p">(</span> <span class="n">convert_id_to_name</span> <span class="p">)</span>
 <span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -686,7 +727,7 @@
 <p>Your Anaconda installation came with the <code class="docutils literal notranslate"><span class="pre">networkx</span></code> module for working with network data in Python.  If you have a non-Anaconda setup on your machine, or you plan to work in a cloud provider that doesn’t have it installed by default, you can install it with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">networkx</span></code>.  The standard way to import it is using the abbreviation <code class="docutils literal notranslate"><span class="pre">nx</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 </pre></div>
 </div>
 </div>
@@ -694,7 +735,7 @@
 <p>This module lets us turn tables of data (like the edge list for dolphins we just saw) into Python <code class="docutils literal notranslate"><span class="pre">Graph</span></code> objects, which we can use for both computation and visualization.  The first step in creating a <code class="docutils literal notranslate"><span class="pre">Graph</span></code> object is always the same; just call the <code class="docutils literal notranslate"><span class="pre">nx.Graph()</span></code> function and it will create a new, empty graph with no vertices and no edges.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dolphins</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dolphins</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -702,13 +743,13 @@
 <p>We will now add vertices and edges to that graph.  Let’s start with the vertices.  Each NetworkX <code class="docutils literal notranslate"><span class="pre">Graph</span></code> object lets you add vertices with the function <code class="docutils literal notranslate"><span class="pre">.add_nodes_from(your_list)</span></code>.  We will use that function to add all the dolphin names to our graph.  We can even check the size of the graph to be sure it worked.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dolphins</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span> <span class="n">df1</span><span class="o">.</span><span class="n">name</span> <span class="p">)</span>  <span class="c1"># the column of all dolphin names</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dolphins</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span> <span class="n">df1</span><span class="o">.</span><span class="n">name</span> <span class="p">)</span>  <span class="c1"># the column of all dolphin names</span>
 <span class="nb">len</span><span class="p">(</span> <span class="n">dolphins</span> <span class="p">)</span>                      <span class="c1"># how many nodes do we have now?</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>62
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>62
 </pre></div>
 </div>
 </div>
@@ -716,12 +757,12 @@
 <p>Similarly, we can add edges with the function <code class="docutils literal notranslate"><span class="pre">.add_edges_from(your_list)</span></code>, but the list must be a list of ordered pairs.  For instance, in our dolphin data case, we’d want it to be something like <code class="docutils literal notranslate"><span class="pre">[('Double','CCL'),('Feather','DN16'),('Feather','DN21'),...]</span></code> and so on.  But we don’t want to have to type out the entire dolphin relationships table as ordered pairs; it’s too big!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span> <span class="n">df2</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span> <span class="n">df2</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>159
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>159
 </pre></div>
 </div>
 </div>
@@ -729,13 +770,13 @@
 <p>Fortunately, we can use the same trick we do when creating a dictionary from two columns.  Recall that <code class="docutils literal notranslate"><span class="pre">zip()</span></code> takes two columns and converts them into a list of pairs; we often used this to create a dictionary with the trick <code class="docutils literal notranslate"><span class="pre">dict(zip(df.col1,df.col2))</span></code>.  We can use it with <code class="docutils literal notranslate"><span class="pre">list()</span></code> instead of <code class="docutils literal notranslate"><span class="pre">dict()</span></code> to create a list of the ordered pairs rather than a dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">edges</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">df2</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">df2</span><span class="o">.</span><span class="n">target</span> <span class="p">)</span> <span class="p">)</span>  <span class="c1"># get the list of edges</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edges</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">df2</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">df2</span><span class="o">.</span><span class="n">target</span> <span class="p">)</span> <span class="p">)</span>  <span class="c1"># get the list of edges</span>
 <span class="n">edges</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>                                     <span class="c1"># see if we did it right</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[(&#39;Double&#39;, &#39;CCL&#39;),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Double&#39;, &#39;CCL&#39;),
  (&#39;Feather&#39;, &#39;DN16&#39;),
  (&#39;Feather&#39;, &#39;DN21&#39;),
  (&#39;Fish&#39;, &#39;Beak&#39;),
@@ -752,7 +793,7 @@
 <p>It looks like we did.  Let’s add these to the dolphin graph.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dolphins</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span> <span class="n">edges</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dolphins</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span> <span class="n">edges</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -766,12 +807,12 @@
 <p>We can ask how dense the network is, which is a measure of what proportion of its possible connections it actually has.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">density</span><span class="p">(</span> <span class="n">dolphins</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">density</span><span class="p">(</span> <span class="n">dolphins</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.08408249603384453
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.08408249603384453
 </pre></div>
 </div>
 </div>
@@ -780,19 +821,19 @@
 <p>The number of connections any one particular dolphin has is called the <em>degree</em> of that vertex.  We can ask for a histogram of the degrees across the network.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">degree_histogram</span><span class="p">(</span> <span class="n">dolphins</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">degree_histogram</span><span class="p">(</span> <span class="n">dolphins</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[0, 9, 6, 6, 5, 8, 8, 7, 4, 4, 2, 2, 1]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 9, 6, 6, 5, 8, 8, 7, 4, 4, 2, 2, 1]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">degrees</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree_histogram</span><span class="p">(</span> <span class="n">dolphins</span> <span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span> <span class="n">x</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">degrees</span><span class="p">)),</span> <span class="n">height</span><span class="o">=</span><span class="n">degrees</span> <span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="s1">&#39;Number of friends, x&#39;</span> <span class="p">)</span>
@@ -811,14 +852,14 @@
 <p>Although it doesn’t make a lot of sense to measure this for dolphins (as opposed to humans), the code below illustrates how do to the computation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bc</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span> <span class="n">dolphins</span> <span class="p">)</span>  <span class="c1"># this is a big dictionary</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bc</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span> <span class="n">dolphins</span> <span class="p">)</span>  <span class="c1"># this is a big dictionary</span>
 <span class="n">bc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span> <span class="n">bc</span> <span class="p">)</span>                        <span class="c1"># now it&#39;s a pandas Series</span>
 <span class="n">bc</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span> <span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>    <span class="c1"># let&#39;s see the top values</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>SN100         0.248237
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SN100         0.248237
 Beescratch    0.213324
 SN9           0.143150
 SN4           0.138570
@@ -838,7 +879,7 @@ dtype: float64
 <p>The NetworkX module has a small number of graph-drawing features, but they will be sufficient for our needs here.  The simplest method is to just call <code class="docutils literal notranslate"><span class="pre">nx.draw(</span> <span class="pre">your_graph</span> <span class="pre">)</span></code>, but there are many options to help make it more attractive.  The simplest form of the dolphin network looks like this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span> <span class="n">dolphins</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span> <span class="n">dolphins</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -851,7 +892,7 @@ dtype: float64
 <p>The <code class="docutils literal notranslate"><span class="pre">nx.draw()</span></code> function takes many optional parameters, and you can see them all <a class="reference external" href="https://networkx.github.io/documentation/stable/reference/generated/networkx.drawing.nx_pylab.draw_networkx.html">here</a>.  In this case, we might want to label the vertices with the name of the dolphin, and increase the size of the figure.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="p">)</span>  <span class="c1"># 10in x 10in</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="p">)</span>  <span class="c1"># 10in x 10in</span>
 <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span> <span class="n">dolphins</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">font_weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span> <span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -882,7 +923,7 @@ dtype: float64
 <p>First, you create a directed graph not with <code class="docutils literal notranslate"><span class="pre">nx.Graph()</span></code> but with <code class="docutils literal notranslate"><span class="pre">nx.DiGraph()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friends</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">friends</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -890,7 +931,7 @@ dtype: float64
 <p>But we can add vertices and edges exactly the same way as we did with the dolphins.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friends</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span> <span class="p">[</span> <span class="s1">&#39;Augustus&#39;</span><span class="p">,</span> <span class="s1">&#39;Beatriz&#39;</span><span class="p">,</span> <span class="s1">&#39;Cyrano&#39;</span><span class="p">,</span> <span class="s1">&#39;Dauphine&#39;</span><span class="p">,</span> <span class="s1">&#39;Englebert&#39;</span> <span class="p">]</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">friends</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span> <span class="p">[</span> <span class="s1">&#39;Augustus&#39;</span><span class="p">,</span> <span class="s1">&#39;Beatriz&#39;</span><span class="p">,</span> <span class="s1">&#39;Cyrano&#39;</span><span class="p">,</span> <span class="s1">&#39;Dauphine&#39;</span><span class="p">,</span> <span class="s1">&#39;Englebert&#39;</span> <span class="p">]</span> <span class="p">)</span>
 <span class="n">friends</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span> <span class="p">[</span>
     <span class="p">(</span><span class="s1">&#39;Augustus&#39;</span><span class="p">,</span> <span class="s1">&#39;Cyrano&#39;</span><span class="p">),</span>
     <span class="p">(</span><span class="s1">&#39;Beatriz&#39;</span><span class="p">,</span> <span class="s1">&#39;Cyrano&#39;</span><span class="p">),</span>
@@ -907,12 +948,12 @@ dtype: float64
 <p>However, some computations make sense only in the context of a directed graph.  For instance, we can measure the <em>reciprocity</em> of a directed graph, which asks how many of its edges are two-directional.  In the friends case, only the Beatriz<span class="math notranslate nohighlight">\(\to\)</span>Cyrano connection is reciprocated (Cyrano<span class="math notranslate nohighlight">\(\to\)</span>Beatriz); all the others are one-directional.  So we expect a low proportion as the result.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">reciprocity</span><span class="p">(</span> <span class="n">friends</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">reciprocity</span><span class="p">(</span> <span class="n">friends</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.2857142857142857
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2857142857142857
 </pre></div>
 </div>
 </div>
@@ -921,7 +962,7 @@ dtype: float64
 <p>We can draw directed graphs using the same tools as we used for undirected graphs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span> <span class="n">friends</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">5000</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span> <span class="n">friends</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">5000</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -955,15 +996,15 @@ dtype: float64
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="chapter-14-dashboards.html" title="previous page"><span class="section-number">14. </span>Dashboards</a>
     <a class='right-next' id="next-link" href="chapter-16-matrices.html" title="next page"><span class="section-number">16. </span>Relations as Matrices</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -971,7 +1012,7 @@ dtype: float64
         
           By Nathan Carter<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -980,11 +1021,9 @@ dtype: float64
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.30270b6e4c972e43c488.js"></script>
-
-
-    
+  
   </body>
 </html>

@@ -1,12 +1,14 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1. Detailed Course Schedule &#8212; MA346 Course Notes</title>
     
-  <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -18,38 +20,29 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/mystnb.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,28 +50,19 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://nathancarter.github.io/ma346-course-notes/course-schedule.html" />
+    <link rel="canonical" href="https://nathancarter.github.io/MA346-course-notes/course-schedule.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="2. Big Cheat Sheet" href="big-cheat-sheet.html" />
     <link rel="prev" title="17. Introduction to Machine Learning" href="chapter-17-machine-learning.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://nathancarter.github.io/ma346-course-notes/course-schedule.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Detailed Course Schedule" />
-<meta property="og:description" content="Detailed Course Schedule  This include all topics covered and all assignments given and when they are due.  Week 1 - 9/3/2020 - Introduction and mathematical fo" />
-<meta property="og:image"       content="https://nathancarter.github.io/ma346-course-notes/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -87,28 +71,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">MA346 Course Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <p class="caption">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Course Notes for Data Science (MA346)
+  </a>
+ </li>
+</ul>
+<p class="caption">
  <span class="caption-text">
   Notes
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-1-intro-to-data-science.html">
    1. Introduction to Data Science
@@ -200,7 +188,7 @@
   Appendices
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    1. Detailed Course Schedule
@@ -228,9 +216,12 @@
  </li>
 </ul>
 
-</nav>
+    </div>
+</nav> <!-- To handle the deprecated key -->
 
- <!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
 
 </div>
 
@@ -241,25 +232,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -271,30 +262,49 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
-        <!-- Source interaction buttons -->
 
+            <!-- Source interaction buttons -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Launch buttons -->
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nathancarter/MA346-course-notes/master?urlpath=tree/course-schedule.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
     </div>
+</div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#week-1-9-3-2020-introduction-and-mathematical-foundations">
-   1.1. Week 1 - 9/3/2020 - Introduction and mathematical foundations
+  <a class="reference internal nav-link" href="#day-1-5-18-21-introduction-and-mathematical-foundations">
+   1.1. Day 1 - 5/18/21 - Introduction and mathematical foundations
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -310,8 +320,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#week-2-9-10-2020-jupyter-and-a-review-of-python-and-pandas">
-   1.2. Week 2 - 9/10/2020 - Jupyter and a review of Python and pandas
+  <a class="reference internal nav-link" href="#day-2-5-20-21-jupyter-and-a-review-of-python-and-pandas">
+   1.2. Day 2 - 5/20/21 - Jupyter and a review of Python and pandas
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -327,8 +337,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#week-3-9-17-2020-before-and-after-single-table-verbs">
-   1.3. Week 3 - 9/17/2020 - Before and after, single-table verbs
+  <a class="reference internal nav-link" href="#day-3-5-25-21-before-and-after-single-table-verbs">
+   1.3. Day 3 - 5/25/21 - Before and after, single-table verbs
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -344,8 +354,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#week-4-9-24-2020-abstraction-and-version-control">
-   1.4. Week 4 - 9/24/2020 - Abstraction and version control
+  <a class="reference internal nav-link" href="#day-4-5-27-21-abstraction-and-version-control">
+   1.4. Day 4 - 5/27/21 - Abstraction and version control
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -361,8 +371,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#week-5-10-1-2020-math-and-stats-in-python-plus-visualization">
-   1.5. Week 5 - 10/1/2020 - Math and stats in Python, plus Visualization
+  <a class="reference internal nav-link" href="#day-5-6-1-21-math-and-stats-in-python-plus-visualization">
+   1.5. Day 5 - 6/1/21 - Math and stats in Python, plus Visualization
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -378,8 +388,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#week-6-10-8-2020-processing-the-rows-of-a-dataframe">
-   1.6. Week 6 - 10/8/2020 - Processing the Rows of a
+  <a class="reference internal nav-link" href="#day-6-6-3-21-processing-the-rows-of-a-dataframe">
+   1.6. Day 6 - 6/3/21 - Processing the Rows of a
    <code class="docutils literal notranslate">
     <span class="pre">
      DataFrame
@@ -400,8 +410,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#week-7-10-15-2020-concatenation-and-merging">
-   1.7. Week 7 - 10/15/2020 - Concatenation and Merging
+  <a class="reference internal nav-link" href="#day-7-6-8-21-concatenation-and-merging">
+   1.7. Day 7 - 6/8/21 - Concatenation and Merging
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -417,8 +427,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#week-8-10-22-2020-miscellaneous-munging-methods-etl">
-   1.8. Week 8 - 10/22/2020 - Miscellaneous Munging Methods (ETL)
+  <a class="reference internal nav-link" href="#day-8-6-10-21-miscellaneous-munging-methods-etl">
+   1.8. Day 8 - 6/10/21 - Miscellaneous Munging Methods (ETL)
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -434,8 +444,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#week-9-10-29-2020-dashboards">
-   1.9. Week 9 - 10/29/2020 - Dashboards
+  <a class="reference internal nav-link" href="#day-9-6-15-21-dashboards">
+   1.9. Day 9 - 6/15/21 - Dashboards
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -451,8 +461,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#week-10-11-5-2020-relations-graphs-and-networks">
-   1.10. Week 10 - 11/5/2020 - Relations, graphs, and networks
+  <a class="reference internal nav-link" href="#day-10-6-17-21-relations-graphs-and-networks">
+   1.10. Day 10 - 6/17/21 - Relations, graphs, and networks
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -468,8 +478,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#week-11-11-12-2020-relations-as-matrices">
-   1.11. Week 11 - 11/12/2020 - Relations as matrices
+  <a class="reference internal nav-link" href="#day-11-6-22-21-relations-as-matrices">
+   1.11. Day 11 - 6/22/21 - Relations as matrices
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -485,8 +495,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#week-12-11-19-2020-introduction-to-machine-learning">
-   1.12. Week 12 - 11/19/2020 - Introduction to machine learning
+  <a class="reference internal nav-link" href="#day-12-6-24-21-introduction-to-machine-learning">
+   1.12. Day 12 - 6/24/21 - Introduction to machine learning
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -497,13 +507,13 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#week-13-11-26-2020-thanksgiving-break-no-class">
-   1.13. Week 13 - 11/26/2020 - Thanksgiving break, no class
+  <a class="reference internal nav-link" href="#day-13-6-29-21-thanksgiving-break-no-class">
+   1.13. Day 13 - 6/29/21 - Thanksgiving break, no class
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#week-14-12-3-2020-final-exam-review-and-final-project-workshop">
-   1.14. Week 14 - 12/3/2020 - Final Exam Review and Final Project Workshop
+  <a class="reference internal nav-link" href="#day-14-7-1-21-final-exam-review-and-final-project-workshop">
+   1.14. Day 14 - 7/1/21 - Final Exam Review and Final Project Workshop
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -520,7 +530,8 @@
  </li>
 </ul>
 
-        </nav>
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -531,8 +542,8 @@
   <div class="section" id="detailed-course-schedule">
 <h1><span class="section-number">1. </span>Detailed Course Schedule<a class="headerlink" href="#detailed-course-schedule" title="Permalink to this headline">¶</a></h1>
 <p>This include all topics covered and all assignments given and when they are due.</p>
-<div class="section" id="week-1-9-3-2020-introduction-and-mathematical-foundations">
-<h2><span class="section-number">1.1. </span>Week 1 - 9/3/2020 - Introduction and mathematical foundations<a class="headerlink" href="#week-1-9-3-2020-introduction-and-mathematical-foundations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="day-1-5-18-21-introduction-and-mathematical-foundations">
+<h2><span class="section-number">1.1. </span>Day 1 - 5/18/21 - Introduction and mathematical foundations<a class="headerlink" href="#day-1-5-18-21-introduction-and-mathematical-foundations" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="content">
 <h3><span class="section-number">1.1.1. </span>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -580,8 +591,8 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="week-2-9-10-2020-jupyter-and-a-review-of-python-and-pandas">
-<h2><span class="section-number">1.2. </span>Week 2 - 9/10/2020 - Jupyter and a review of Python and pandas<a class="headerlink" href="#week-2-9-10-2020-jupyter-and-a-review-of-python-and-pandas" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="day-2-5-20-21-jupyter-and-a-review-of-python-and-pandas">
+<h2><span class="section-number">1.2. </span>Day 2 - 5/20/21 - Jupyter and a review of Python and pandas<a class="headerlink" href="#day-2-5-20-21-jupyter-and-a-review-of-python-and-pandas" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3><span class="section-number">1.2.1. </span>Content<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -608,8 +619,8 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="week-3-9-17-2020-before-and-after-single-table-verbs">
-<h2><span class="section-number">1.3. </span>Week 3 - 9/17/2020 - Before and after, single-table verbs<a class="headerlink" href="#week-3-9-17-2020-before-and-after-single-table-verbs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="day-3-5-25-21-before-and-after-single-table-verbs">
+<h2><span class="section-number">1.3. </span>Day 3 - 5/25/21 - Before and after, single-table verbs<a class="headerlink" href="#day-3-5-25-21-before-and-after-single-table-verbs" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id3">
 <h3><span class="section-number">1.3.1. </span>Content<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -645,8 +656,8 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="week-4-9-24-2020-abstraction-and-version-control">
-<h2><span class="section-number">1.4. </span>Week 4 - 9/24/2020 - Abstraction and version control<a class="headerlink" href="#week-4-9-24-2020-abstraction-and-version-control" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="day-4-5-27-21-abstraction-and-version-control">
+<h2><span class="section-number">1.4. </span>Day 4 - 5/27/21 - Abstraction and version control<a class="headerlink" href="#day-4-5-27-21-abstraction-and-version-control" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id5">
 <h3><span class="section-number">1.4.1. </span>Content<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -680,8 +691,8 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="week-5-10-1-2020-math-and-stats-in-python-plus-visualization">
-<h2><span class="section-number">1.5. </span>Week 5 - 10/1/2020 - Math and stats in Python, plus Visualization<a class="headerlink" href="#week-5-10-1-2020-math-and-stats-in-python-plus-visualization" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="day-5-6-1-21-math-and-stats-in-python-plus-visualization">
+<h2><span class="section-number">1.5. </span>Day 5 - 6/1/21 - Math and stats in Python, plus Visualization<a class="headerlink" href="#day-5-6-1-21-math-and-stats-in-python-plus-visualization" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id7">
 <h3><span class="section-number">1.5.1. </span>Content<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -728,8 +739,8 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="week-6-10-8-2020-processing-the-rows-of-a-dataframe">
-<h2><span class="section-number">1.6. </span>Week 6 - 10/8/2020 - Processing the Rows of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#week-6-10-8-2020-processing-the-rows-of-a-dataframe" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="day-6-6-3-21-processing-the-rows-of-a-dataframe">
+<h2><span class="section-number">1.6. </span>Day 6 - 6/3/21 - Processing the Rows of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#day-6-6-3-21-processing-the-rows-of-a-dataframe" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id9">
 <h3><span class="section-number">1.6.1. </span>Content<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -754,8 +765,8 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="week-7-10-15-2020-concatenation-and-merging">
-<h2><span class="section-number">1.7. </span>Week 7 - 10/15/2020 - Concatenation and Merging<a class="headerlink" href="#week-7-10-15-2020-concatenation-and-merging" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="day-7-6-8-21-concatenation-and-merging">
+<h2><span class="section-number">1.7. </span>Day 7 - 6/8/21 - Concatenation and Merging<a class="headerlink" href="#day-7-6-8-21-concatenation-and-merging" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id11">
 <h3><span class="section-number">1.7.1. </span>Content<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -781,8 +792,8 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="week-8-10-22-2020-miscellaneous-munging-methods-etl">
-<h2><span class="section-number">1.8. </span>Week 8 - 10/22/2020 - Miscellaneous Munging Methods (ETL)<a class="headerlink" href="#week-8-10-22-2020-miscellaneous-munging-methods-etl" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="day-8-6-10-21-miscellaneous-munging-methods-etl">
+<h2><span class="section-number">1.8. </span>Day 8 - 6/10/21 - Miscellaneous Munging Methods (ETL)<a class="headerlink" href="#day-8-6-10-21-miscellaneous-munging-methods-etl" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id13">
 <h3><span class="section-number">1.8.1. </span>Content<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -823,8 +834,8 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="week-9-10-29-2020-dashboards">
-<h2><span class="section-number">1.9. </span>Week 9 - 10/29/2020 - Dashboards<a class="headerlink" href="#week-9-10-29-2020-dashboards" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="day-9-6-15-21-dashboards">
+<h2><span class="section-number">1.9. </span>Day 9 - 6/15/21 - Dashboards<a class="headerlink" href="#day-9-6-15-21-dashboards" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id15">
 <h3><span class="section-number">1.9.1. </span>Content<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -856,8 +867,8 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="week-10-11-5-2020-relations-graphs-and-networks">
-<h2><span class="section-number">1.10. </span>Week 10 - 11/5/2020 - Relations, graphs, and networks<a class="headerlink" href="#week-10-11-5-2020-relations-graphs-and-networks" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="day-10-6-17-21-relations-graphs-and-networks">
+<h2><span class="section-number">1.10. </span>Day 10 - 6/17/21 - Relations, graphs, and networks<a class="headerlink" href="#day-10-6-17-21-relations-graphs-and-networks" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id17">
 <h3><span class="section-number">1.10.1. </span>Content<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -891,8 +902,8 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="week-11-11-12-2020-relations-as-matrices">
-<h2><span class="section-number">1.11. </span>Week 11 - 11/12/2020 - Relations as matrices<a class="headerlink" href="#week-11-11-12-2020-relations-as-matrices" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="day-11-6-22-21-relations-as-matrices">
+<h2><span class="section-number">1.11. </span>Day 11 - 6/22/21 - Relations as matrices<a class="headerlink" href="#day-11-6-22-21-relations-as-matrices" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id19">
 <h3><span class="section-number">1.11.1. </span>Content<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -926,8 +937,8 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="week-12-11-19-2020-introduction-to-machine-learning">
-<h2><span class="section-number">1.12. </span>Week 12 - 11/19/2020 - Introduction to machine learning<a class="headerlink" href="#week-12-11-19-2020-introduction-to-machine-learning" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="day-12-6-24-21-introduction-to-machine-learning">
+<h2><span class="section-number">1.12. </span>Day 12 - 6/24/21 - Introduction to machine learning<a class="headerlink" href="#day-12-6-24-21-introduction-to-machine-learning" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id21">
 <h3><span class="section-number">1.12.1. </span>Content<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -937,13 +948,13 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="week-13-11-26-2020-thanksgiving-break-no-class">
-<h2><span class="section-number">1.13. </span>Week 13 - 11/26/2020 - Thanksgiving break, no class<a class="headerlink" href="#week-13-11-26-2020-thanksgiving-break-no-class" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="day-13-6-29-21-thanksgiving-break-no-class">
+<h2><span class="section-number">1.13. </span>Day 13 - 6/29/21 - Thanksgiving break, no class<a class="headerlink" href="#day-13-6-29-21-thanksgiving-break-no-class" title="Permalink to this headline">¶</a></h2>
 <p>No assignments over break, but it would be wise to continue to make progress on the Final Project.</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="week-14-12-3-2020-final-exam-review-and-final-project-workshop">
-<h2><span class="section-number">1.14. </span>Week 14 - 12/3/2020 - Final Exam Review and Final Project Workshop<a class="headerlink" href="#week-14-12-3-2020-final-exam-review-and-final-project-workshop" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="day-14-7-1-21-final-exam-review-and-final-project-workshop">
+<h2><span class="section-number">1.14. </span>Day 14 - 7/1/21 - Final Exam Review and Final Project Workshop<a class="headerlink" href="#day-14-7-1-21-final-exam-review-and-final-project-workshop" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="final-exam">
 <h3><span class="section-number">1.14.1. </span>Final Exam<a class="headerlink" href="#final-exam" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -981,15 +992,15 @@
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="chapter-17-machine-learning.html" title="previous page"><span class="section-number">17. </span>Introduction to Machine Learning</a>
     <a class='right-next' id="next-link" href="big-cheat-sheet.html" title="next page"><span class="section-number">2. </span>Big Cheat Sheet</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -997,7 +1008,7 @@
         
           By Nathan Carter<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -1006,11 +1017,9 @@
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.30270b6e4c972e43c488.js"></script>
-
-
-    
+  
   </body>
 </html>
