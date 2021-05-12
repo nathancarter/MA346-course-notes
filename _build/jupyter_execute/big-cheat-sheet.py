@@ -7,7 +7,7 @@
 
 # ---
 # 
-# ## Before Week 2: Review of CS230
+# ## Before Day 2: Review of CS230
 # 
 # ### [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science) (optional, basic review)
 # 
@@ -715,7 +715,7 @@
 
 # ---
 # 
-# ## Before Week 3
+# ## Before Day 3
 # 
 # ### [Manipulating DataFrames with pandas](https://learn.datacamp.com/courses/manipulating-dataframes-with-pandas)
 # 
@@ -871,7 +871,7 @@
 
 # ---
 # 
-# ## Before Week 4: Review of Visualization in CS230
+# ## Before Day 4: Review of Visualization in CS230
 # 
 # ### [pandas Foundations](https://www.datacamp.com/courses/pandas-foundations)
 # 
@@ -898,7 +898,7 @@
 
 # ---
 # 
-# ## Before Week 5
+# ## Before Day 5
 # 
 # ### [Intermediate Python](https://www.datacamp.com/courses/intermediate-python-for-data-science)
 # 
@@ -1236,7 +1236,7 @@
 
 # ---
 # 
-# ## Before Week 6
+# ## Before Day 6
 # 
 # ### [Merging DataFrames with pandas](https://learn.datacamp.com/courses/merging-dataframes-with-pandas)
 # 
@@ -1363,7 +1363,7 @@
 
 # ---
 # 
-# ## Before Week 8
+# ## Before Day 8
 # 
 # ### [Streamlined Data Ingestion with pandas](https://learn.datacamp.com/courses/streamlined-data-ingestion-with-pandas)
 # 
@@ -1536,7 +1536,7 @@
 
 # ---
 # 
-# ## Before Week 9
+# ## Before Day 9
 # 
 # ### [Introduction to SQL](https://learn.datacamp.com/courses/introduction-to-sql)
 # 

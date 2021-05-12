@@ -169,7 +169,7 @@ plot_continuous_distribution( n )
 
 
 α = 0.95
-# normally you'de have data; for this example, I make some up:
+# normally you'd have data; for this example, I make some up:
 data = [ 435,542,435,4,54,43,5,43,543,5,432,43,36,7,876,65,5 ]
 est_mean = np.mean( data )  # estimate for the population mean
 sem = stats.sem( data )     # standard error for the sample mean

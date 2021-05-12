@@ -504,7 +504,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 0, 1, 0, 0, 1, 0, 0, 0, 0])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 0, 1, 0, 0, 0, 0, 0, 1])
 </pre></div>
 </div>
 </div>
@@ -604,9 +604,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([103.68333981,  94.42887824,  98.10463004, 103.12119522,
-       105.31215447,  96.93914094,  98.84676907,  88.41718896,
-       106.06291404,  98.9946587 ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([103.98632342, 106.95484741, 100.25346004, 100.56873771,
+       102.39133137,  92.64778046,  99.76179902,  94.35958749,
+       107.80794604,  94.92576153])
 </pre></div>
 </div>
 </div>
@@ -647,7 +647,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">α</span> <span class="o">=</span> <span class="mf">0.95</span>
-<span class="c1"># normally you&#39;de have data; for this example, I make some up:</span>
+<span class="c1"># normally you&#39;d have data; for this example, I make some up:</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">435</span><span class="p">,</span><span class="mi">542</span><span class="p">,</span><span class="mi">435</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">54</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">543</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">432</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">876</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">5</span> <span class="p">]</span>
 <span class="n">est_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">data</span> <span class="p">)</span>  <span class="c1"># estimate for the population mean</span>
 <span class="n">sem</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">sem</span><span class="p">(</span> <span class="n">data</span> <span class="p">)</span>     <span class="c1"># standard error for the sample mean</span>
