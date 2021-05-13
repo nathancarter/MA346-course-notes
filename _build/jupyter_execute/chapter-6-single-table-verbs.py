@@ -5,11 +5,11 @@
 # 
 # <a href="../../_slides/chapter-6-slides.html">See also the slides that summarize a portion of this content.</a>
 # 
-# The function we'll discuss today got the name "verbs" because coders in the R community developed what they call [a "grammar" for data transformation](https://beanumber.github.io/sds192/lab-single_table.html), and the function we'll look at today are some of that grammar's "verbs."  The origins in R are unimportant for our course; what matters is that verbs are things you can *do* with tables of data.
+# The functions we'll discuss today got the name "verbs" because coders in the R community developed what they call [a "grammar" for data transformation](https://beanumber.github.io/sds192/lab-single_table.html), and today's content are some of that grammar's "verbs."  The origins in R are unimportant for our course; what matters is that today's topic is the *actions* you can do to a single table of data.
 
 # ## Tall and Wide Form
 # 
-# The following two tables show the same data, but in different forms.  One is tall while the other is wide.
+# The following two tables show the same (fake) sales data, but in different forms.  One is tall (6 rows, 4 columns) while the other is wide (2 rows, 5 columns).
 # 
 # **Tall form:**
 # 
@@ -29,27 +29,31 @@
 # | Amy   | Smith | 39     | 68      | 10        |
 # | Bob   | Jones | 93     | 85      | 0         |
 # 
-# Although it's not part of MA346, it's worth mentioning that: In the famous paper [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf), data scientist and R developer Hadley Wickham calls tall form "tidy data" and defines it as having exactly one "observation" per row.  (What an observation is depends on what you've gathered data about.  In the first table above, an observation seems to be the amount of sales by a particular person on a particular day.)  His rationale comes from people who've studied databases, and if you've taken CS350 at Bentley, you may be familiar with the related concept of database normal forms.  The [tidyverse](https://www.tidyverse.org/) is a collection of R packages that help you work smoothly with data if you organize it in tidy form.
+# Although it's not a focus of this course, let me take a moment to mention a famous data-related concept.  Data scientist and R developer Hadley Wickham wrote a paper called [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf), which he defines as data with exactly one "observation" per row.  (What an observation is depends on what you've gathered data about.  In the first table above, an observation seems to be the amount of sales by a particular person on a particular day.)  His rationale comes from people who've studied databases, and if you've taken CS350 at Bentley, you may be familiar with the related concept of database normal forms.  The [tidyverse](https://www.tidyverse.org/) is a collection of R packages that help you work smoothly with data if you organize it in tidy form.
+# 
+# Even though the details of tidy data aren't part of our course, they're closely related to whether data is stored in tall form or wide form (as shown in the two tables above).
 # 
 # ```{admonition} Big Picture - The relationship between tall and wide data
 # ---
 # class: alert alert-primary
 # ---
-# **The tall form is typically more useful when computing with data,** because we often want to filter for just the rows we care about.  So the more separated the data is into rows, the easier it is to select just the data we need.
+# **Tall form is typically more useful when doing computations,** because we often want to filter for just the rows we care about.  So the more separated the data is into rows, the easier it is to select just the data we need.
 # 
-# **The wide form is typically more useful when presenting data to humans.**  Although this tiny table is just an example, data in the real world has far more rows, meaning that the tall form will not fit on a page.  Reshaping it into a rectangle that does fit on one page is usually preferred.
+# **Wide form is typically more useful when presenting data to humans.**  Although this tiny table is just an example, data in the real world has far more rows, meaning that the tall form will not fit on a page.  Reshaping it into a rectangle that does fit on one page is easier to read.
 # 
-# **Pivot** is the verb that converts tall form to wide form.
+# **We can convert between these forms.**
 # 
-# **Melt** is the verb that converts wide form to tall form.
+#  * Converting tall to wide is called **pivoting.**
+#  * Converting wide to tall is called **melting.**
+# 
 # ```
 # 
-# Let's investigate them.
+# Let's investigate these two verbs.
 # 
 
 # ## Pivot
 # 
-# As just stated, pivot is the verb for converting tall-form data to wide-form data.  We'll give a precise definition later on.  Let's first get some intuition for how it works.
+# The box above says that pivot is the verb for converting tall-form data to wide-form data.  We'll give a precise definition later on.  Let's first get some intuition by looking at some pictures.
 # 
 # ### The general idea
 # 
@@ -57,28 +61,24 @@
 # 
 # ![Overview of the pivot operation](_images/table-verb-pivot.png)
 # 
-# We will make that more precise later, but it can serve as a reference for the general idea.
-# 
-# &nbsp;
-# 
-# The table below shows the same table from above, in "tall" form.  Drag the slider back and forth to watch the transition from tall to wide form.  While you do so, watch each of these parts of the table:
+# The table below shows the same fake sales data from earlier, in "tall" form.  If you're reading these notes online, you can drag the slider back and forth to see an animation of the transition from tall to wide form.  While you do so, notice each of these parts:
 # 
 #  1. The gray cells:
-#      * These are the unique IDs used in both shapes, tall or wide.
+#      * These are the unique IDs used in both forms, tall and wide.
 #      * They function like row headers.
-#      * In pandas, we call them the `index` of the pivot.
+#      * In pandas, we call them the `index` of the pivot operation (which is not the same as the index of the DataFrame).
 #  2. The blue cells:
-#      * The most important change happens here.
-#      * In tall form they're data, but in wide form they're column headers.
-#      * In pandas, we call them the `columns` of the pivot (because they turn into columns when we pivot).
+#      * These cells show the most important part of the pivot operation.
+#      * In tall form they're entries in the table, but in wide form they're column headers.
+#      * In pandas, we call them the `columns` of the pivot (because they become column headers when we pivot, even though they were table entries before).
 #  3. The green cells:
-#      * These contain the values, typically numbers.
-#      * They do not change, but merely move to sit in the appropriate place in each table.
+#      * Like the blue cells, these are also table entries, but are typically numbers.
+#      * Unlike the blue cells, they remain table entries, just moving to a new location or arrangement.
 #      * In pandas, we call them the `values` of the pivot.
 # 
-# (This animation can be viewed [in its own page here](https://nathancarter.github.io/dataframe-animations/pivot.html).)
+# (The animation below can be viewed [in its own page here](https://nathancarter.github.io/dataframe-animations/pivot.html).)
 
-# In[15]:
+# In[1]:
 
 
 from IPython.display import IFrame
@@ -95,26 +95,19 @@ IFrame( 'https://nathancarter.github.io/dataframe-animations/pivot.html?hide-tit
 #     * It is acceptable for the `index` to comprise more than one column, as in the example above.
 #     * Recall that for it to be a function, inputs cannot be repeated, because that could connect them with more than one output.
 #  * Guarantees of `df.pivot()`:
-#     * Each value from the `index` columns will appear only once in the resulting table.
+#     * Each value from the `index` columns will appear only once in the resulting table (even if they were repeated in the input table).
 #     * A new column will be created for each unique value in the old `columns` column.
 #     * The `values` column will have been removed.
-#     * For each `index` entry $i$ in the original DataFrame and each `columns` entry $c$, if $v$ is the unique value associated with it, then the new table will contain a row with `index` $i$ and with $v$ in the column entitled $c$.
+#     * For each `index` entry $i$ in the original DataFrame and each `columns` entry $c$, if $v$ is the unique value associated with it, then the new table will contain a row with `index` $i$ and with $v$ in the column entitled $c$.  This is shown in the illustration below.
 # 
 # You can think of `df.pivot()` as turning one function into many.  In the example above, it worked like this:
-#  * Original table
-#     * One function
-#        * Inputs: first name, last name, day
-#        * Output: sales
-#  * Result of pivoting
-#     * First function
-#        * Inputs: first name, last name
-#        * Output: Monday sales
-#     * Second function
-#        * Inputs: first name, last name
-#        * Output: Tuesday sales
-#     * Third function
-#        * Inputs: first name, last name
-#        * Output: Wednesday sales
+# 
+# | | | Inputs | | Output |
+# |-|-|--------|-|--------|
+# | **Original table** | One function | first name, last name, and day | $\to$ | sales |
+# | **Result of pivoting** | First function | first name and last name | $\to$ | Monday sales |
+# | | Second function | first name and last name | $\to$ | Tuesday sales |
+# | | Third function | first name and last name | $\to$ | Wednesday sales |
 # 
 # ### Purpose of pivoting
 # 
@@ -122,7 +115,7 @@ IFrame( 'https://nathancarter.github.io/dataframe-animations/pivot.html?hide-tit
 
 # ## Melt
 # 
-# The reverse operation to a pivot is called "melt."  This comes from the fact that wide data "falls down" (like the drips of a melting icicle perhaps?) into tall form.  The idea is summarized in the following picture, but you can watch it happen in the animation further below.
+# The reverse operation to a pivot is called "melt."  This comes from the fact that wide data "falls down" (like the drips of a melting icicle, I guess?) into tall form.  The idea is summarized in the following picture, but you can watch it happen in the animation further below.
 # 
 # ### The genreal idea
 # 
@@ -130,20 +123,16 @@ IFrame( 'https://nathancarter.github.io/dataframe-animations/pivot.html?hide-tit
 # 
 # ![Overview of the melt operation](_images/table-verb-melt.png)
 # 
-# We will make that more precise later, but it can serve as a reference for the general idea.
+# Just as pivoting was usually to turn data stored for computers into data readable by humans, melting is for the reverse.  If you're given data in wide form, but to prepare it for analysis, you often want to convert it into tall form to make subsequent data processing code easier.
 # 
-# &nbsp;
-# 
-# Just as pivoting was usually to turn data stored for computers into data readable by humans, melting is for the reverse.  If you're given data in wide form, but you want to prepare it for analysis, you often want to convert it into tall form to make subsequent data processing code easier.
-# 
-# For example, let's say we were given the table below of students' performance on various exams.  (Obviously, this is fake data.)  If we would rather view each exam as a separate observation, so that each row is a single exam score, we can melt the table.
+# For example, let's say we were given the table below of students' (fake) performance on various exams.  We may prefer to have each exam as a separate observation, so that each row is a single exam score.  To accomplish this, we can melt the table.
 # 
 # Drag the slider to see the melting in action.  While you do so, watch the following parts of the table:
 #  1. The gray cells:
 #      * Because we'll be spreading a student's data out over more than one row, these will be copied.
 #      * These function as unique IDs for each row, so pandas calls these columns the `id_vars`.
 #  2. The blue cells:
-#      * These are the titles for each of several different functions.
+#      * These are the row headings for each of several different functions.
 #      * Each function takes a student as input and gives a type of exam score as output.
 #      * They will change from being column headers to being values in the table, so pandas calls them the `value_vars`.
 #  3. The green cells:
@@ -152,7 +141,7 @@ IFrame( 'https://nathancarter.github.io/dataframe-animations/pivot.html?hide-tit
 # 
 # (This animation can be viewed [in its own page here](https://nathancarter.github.io/dataframe-animations/melt.html).)
 
-# In[18]:
+# In[2]:
 
 
 from IPython.display import IFrame
@@ -167,13 +156,13 @@ IFrame( 'https://nathancarter.github.io/dataframe-animations/melt.html?hide-titl
 #     * The `id_vars` are one or more columns that contain unique identifiers for each row.
 #     * The `value_vars` columns are each a function from the `id_vars`.  (That is, no value in `id_vars` appears twice.)
 #  * Guarantees of `df.melt()`
-#     * For each value $i$ in the `id_vars` column and for each column $c$ in the `value_vars`, if we write $f$ for the function that column represents, then the new table will contain a row with ID $i$ and values $c$ and $f(c)$.
-#     * This new table will therefore be a function from the $i$ and $c$ columns to the $f(c)$ column.  (By default, pandas calls those two new columns "variable" and "value" but you can give them more meaningful names.)
-#     * There are no other rows in the resulting table besides those just described.
+#     * For each value $i$ in the `id_vars` column and for each column $c$ in the `value_vars`, if $v$ is the entry in that row and column, then the new table will contain a row with ID $i$ and values $c$ and $v$.
+#     * This new table will therefore be a function from the $i$ and $c$ columns to the $v$ column.  (By default, pandas calls those two new columns "variable" and "value" but you can give them more meaningful names.)
+#     * There are no rows in the resulting table besides those just described.
 
 # ## Pivot tables
 # 
-# All this talk of pivoting should remind you of the very common Excel operation called "pivot table."  It is very much like the pivot operation, with two differences.  First, it doesn't require the table to represent a function.  Second, it does require you to explain how values will be summarized or combined.  Naturally, pandas suppoorts this operation as well, and it's extremely useful.
+# All this talk of pivoting should remind you of the very common tool in Microsoft Excel (and many other applications, such as Tableau) called "pivot table."  It is very much like the pivot operation, with two differences.  First, it doesn't require the table to represent a function.  Second, it does require you to explain how values will be summarized or combined.  Naturally, pandas supports this operation as well, and it's extremely useful.
 # 
 # If `df.pivot()` makes a tall table wide, then `df.pivot_table()` makes a tall table sort of wide.  We'll see why below.
 # 
@@ -183,21 +172,21 @@ IFrame( 'https://nathancarter.github.io/dataframe-animations/melt.html?hide-titl
 # 
 # ![Overview of the pivot table operation](_images/table-verb-pivot-table.png)
 # 
-# We will make that more precise later, but it can serve as a reference for the general idea.
+# It's worth looking back at [the first section of this chapter](#pivot) and comparing this illustration to that one to note the two important differences.
 # 
 # &nbsp;
 # 
-# In the table shown below, notice that if we try to consider the gray and blue columns as inputs and the green column as outputs, the relationship is *not* a function.  If it were, we could pivot on the blue column, and the green cells would rearrange themselves just as they did in the first animation up above.  But try dragging the slider below *slowly* and you will see that some green cells collide.
+# In the table shown below, notice that if we try to consider the gray and blue columns as inputs and the green column as outputs, the relationship is *not* a function.  If it were, we could pivot on the blue column, and the green cells would rearrange themselves just as they did in the first animation (in [the Pivot section](#pivot)).  But try dragging the slider below *slowly* and you will see that some green cells collide.
 # 
 # For instance, Amy Smith has two different sales to the same customer, Facebook, and Bob Jones has two different sales to the same customer, Amazon.  So we cannot simply create a Facebook column and an Amazon column and rearrange the sales data into them.  When two sales figures need to be placed under the same customer heading, we need some way to combine them.
 # 
-# The way the table below combines cells is by adding, which is a very sensible thing to do with sales data for a customer.  You can see that the code asks this by specifying the aggregation function (or `aggfunc`) to be "sum."
+# The way the table below combines cells is by adding, which is a very sensible thing to do with sales data for a customer.  You can see that the code asks this by specifying the aggregation function (or `aggfunc`) to be "sum."  But there are many aggregation functions, because "sum" is not always what you want; perhaps you wanted a report of average sales, or maximum sales, or something else.  [The DataCamp content](big-cheat-sheet.html#manipulating-dataframes-with-pandas) you did in preparation for today covered other aggregation functions.
 # 
 # This is why a `pivot_table` operation doesn't make a table that's as wide as a `pivot` might, because some cells are combined, meaning that the overall table reduces in size.
 # 
 # (This animation can be viewed [in its own page here](https://nathancarter.github.io/dataframe-animations/pivot-table.html).)
 
-# In[19]:
+# In[3]:
 
 
 from IPython.display import IFrame
@@ -219,10 +208,36 @@ IFrame( 'https://nathancarter.github.io/dataframe-animations/pivot-table.html?hi
 #     * The `values` column will have been removed.  (Same as for `df.pivot()`.)
 #     * For each `index` entry $i$ in the original DataFrame and each `columns` entry $c$, if $v_1,v_2,\ldots,v_n$ are the various values associated with it, then the new table will contain a row with `index` $i$ and with $A(v_1,v_2,\ldots,v_n)$ in the column entitled $c$.
 # 
+# Since the pivot table operation is so familiar from Microsoft Excel, now would be a good time to mention two Excel-related Learning on Your Own projects:
+# 
+# ```{admonition} Learning on Your Own - Mito
+# ---
+# class: alert alert-danger
+# ---
+# A new startup company called [Mito](https://trymito.io/) lets you use an online spreadsheet to generate Python code for manipulating dataframes.  Investigate the product and give a report that answers all of the following questions.
+# 
+#  * Could students in our class benefit from using Mito?
+#  * What are the most interesting/useful/powerful actions that Mito supports and for which it can construct Python code?  (For example, can it do all of the contents of this chapter, or not?)
+#  * If a student in our class wanted to get started using Mito, how should they do so?  (I.e., what do they need to install, and how do they get the results back into their own notebooks or Python projects?)
+#  * What are the current limitations of Mito?
+# ```
+# 
+# ```{admonition} Learning on Your Own - xlwings
+# ---
+# class: alert alert-danger
+# ---
+# xlwings is a product for connecting Python with Excel.  Investigate the product and give a report that answers all of the following questions.
+# 
+#  * For students of Python, what new powers does xlwings give you for accessing Excel?
+#  * Give an example (including code, an Excel workbook, and specific instructions) of how one of your classmates could use Python to control Excel.
+#  * For users of Excel, what new powers does xlwings give you for leveraging Python?
+#  * Give an example (including code, an Excel workbook, and specific instructions) of how one of your classmates could use Excel to leverage Python.
+#  * Which of xlwings's features do you think are most applicable or attractive for MA346 students?
+# ```
 
 # ## Stack and unstack
 # 
-# There are two other single-table verbs that you studied in the DataCamp review before today's reading.  These are less common because they apply only in the context where there is a multi-index, either on rows or columns.  But we give animations of each below to help the reader visualize them.
+# There are two other single-table verbs that you studied in [the DataCamp review before today's reading](big-cheat-sheet.html#manipulating-dataframes-with-pandas).  These are less common because they apply only in the context where there is a multi-index, either on rows or columns.  But we give animations of each below to help the reader visualize them.
 # 
 # The stack operation takes nested column indices (which are arranged horizontally) and makes them nested row indices (which are arranged vertically).  This is why it's called "stack," because it arranges the headings vertically.  Unstack is the same operation in reverse.
 # 
@@ -236,7 +251,7 @@ IFrame( 'https://nathancarter.github.io/dataframe-animations/pivot-table.html?hi
 # 
 # (This animation can be viewed [in its own page here](https://nathancarter.github.io/dataframe-animations/stack-1.html).)
 
-# In[24]:
+# In[4]:
 
 
 from IPython.display import IFrame
@@ -252,7 +267,7 @@ IFrame( 'https://nathancarter.github.io/dataframe-animations/stack-1.html?hide-t
 # 
 # (This animation can be viewed [in its own page here](https://nathancarter.github.io/dataframe-animations/stack-0.html).)
 
-# In[22]:
+# In[5]:
 
 
 from IPython.display import IFrame
