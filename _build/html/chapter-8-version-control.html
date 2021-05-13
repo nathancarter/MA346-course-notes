@@ -436,7 +436,7 @@
 <div class="section" id="repositories">
 <h3><span class="section-number">8.2.1. </span>Repositories<a class="headerlink" href="#repositories" title="Permalink to this headline">¶</a></h3>
 <p>When you start a new project, you should make a folder to contain just the stuff for that project.  By default, a folder on your computer is <em>not</em> tracked by <code class="docutils literal notranslate"><span class="pre">git</span></code>.  If you want <code class="docutils literal notranslate"><span class="pre">git</span></code> to start tracking a folder and keeping snapshots, to enable the features listed above, you have to turn the folder into what is called a <strong><code class="docutils literal notranslate"><span class="pre">git</span></code> repository</strong>, or for short, a <strong>repo.</strong>  (You might also hear “source code repository” or “source repo” or similar terms.)</p>
-<p>Once you do so, <code class="docutils literal notranslate"><span class="pre">git</span></code> is ready to track the changes in that folder.  But it need some direction from you.  Let’s see why.</p>
+<p>Once you do so, <code class="docutils literal notranslate"><span class="pre">git</span></code> is ready to track the changes in that folder.  But it needs some direction from you.  Let’s see why.</p>
 </div>
 <div class="section" id="tracking-changes">
 <h3><span class="section-number">8.2.2. </span>Tracking changes<a class="headerlink" href="#tracking-changes" title="Permalink to this headline">¶</a></h3>
@@ -486,7 +486,7 @@
 <h2><span class="section-number">8.3. </span>How to use <code class="docutils literal notranslate"><span class="pre">git</span></code> and GitHub<a class="headerlink" href="#how-to-use-git-and-github" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>When you’re reading this chapter to prepare for Week 4’s class, you do not need to follow all these instructions.  We will do them together in class.  Feel free to just skim this section for now, and begin reading again in <a class="reference external" href="#what-if-i-want-to-collaborate">the next section</a>.</p>
+<p>When you’re reading this chapter to prepare for Day 4’s class, you do not need to follow all these instructions.  We will do them together in class.  Feel free to just skim this section for now, and begin reading again in <a class="reference external" href="#what-if-i-want-to-collaborate">the next section</a>.</p>
 </div>
 <div class="section" id="get-a-github-account">
 <h3><span class="section-number">8.3.1. </span>Get a GitHub account<a class="headerlink" href="#get-a-github-account" title="Permalink to this headline">¶</a></h3>
@@ -502,21 +502,14 @@
 <p>If you ever hear horror stories of people dealing with <code class="docutils literal notranslate"><span class="pre">git</span></code>, there are two main reasons for this.  First, they may have had a repo get screwed up because multiple people were trying to edit it in conflicting ways.  We will avoid such problems by focusing first on using <code class="docutils literal notranslate"><span class="pre">git</span></code> by yourself before we consider how to use it on a team project.  Second, they may have been using <code class="docutils literal notranslate"><span class="pre">git</span></code>’s command-line interface, meaning they interact with it through typing commands, rather than using an app.  We will avoid this hassle by getting the GitHub app.</p>
 <p><a class="reference external" href="https://desktop.github.com/">Download and install the GitHub app from here.</a></p>
 <p>When you set the app up, it will ask for the username and password of your GitHub account, so it can connect to the GitHub site.</p>
+<p>(Actually, if you’re using VS Code consistently on your computer, it has <code class="docutils literal notranslate"><span class="pre">git</span></code> tools built in, and you could skip getting the GitHub app.  If you’re interested in this approach, check out the LOYO opportunity at the end of this chapter.)</p>
 </div>
 <div class="section" id="create-a-repository">
 <h3><span class="section-number">8.3.3. </span>Create a repository<a class="headerlink" href="#create-a-repository" title="Permalink to this headline">¶</a></h3>
-<p>Let’s create a repository for you to use when submitting Project 1 later in a little over two weeks.</p>
+<p>Let’s create a repository for you to use when submitting Project 1 later in the course.</p>
 <ul class="simple">
-<li><p>If you haven’t already done so, create a folder on your computer for storing your work on Project 1.</p>
-<ul>
-<li><p>You don’t have to put anything in the repository at all—the folder can stay empty for now.</p></li>
-</ul>
-</li>
-<li><p>Using the GitHub app, turn that folder into a repository.</p>
-<ul>
-<li><p>From the File menu, choose “Add local repository…” and pick the folder you just created.</p></li>
-</ul>
-</li>
+<li><p>If you haven’t already done so, create a folder on your computer for storing your work on Project 1.  You don’t have to put anything in the folder at all—it can stay empty for now.</p></li>
+<li><p>Using the GitHub app, turn that folder into a repository.  From the File menu, choose “Add local repository…” and pick the folder you just created.</p></li>
 </ul>
 </div>
 <div class="section" id="publish-the-repository">
@@ -541,13 +534,12 @@
 <h3><span class="section-number">8.3.6. </span>Make a commit<a class="headerlink" href="#make-a-commit" title="Permalink to this headline">¶</a></h3>
 <p>In order to commit some changes to our new Project 1 repo, we have to actually do something in that folder, so there <em>are</em> some changes to commit.  Let’s do some simple setup.</p>
 <ul class="simple">
-<li><p>The Project 1 assignment on Blackboard lists three datasets you should download for use in the project.  If you haven’t already downloaded them, do so now.  Once you’ve downloaded them, move them into the folder for your new repo.</p></li>
+<li><p>The Project 1 assignment on <a class="reference external" href="https://blackboard.bentley.edu">Blackboard</a> lists three datasets you should download for use in the project.  If you haven’t already downloaded them, do so now.  Once you’ve downloaded them, move them into the folder for your new repo.</p></li>
 <li><p>Return to the GitHub app and you should notice the three new files listed in the left column, showing you what’s new in the repo since it was created.</p></li>
-<li><p>On the bottom left of the page, type an appropriate commit message, such as “Adding data files,” and click “Commit to master.”</p>
+<li><p>On the bottom left of the page, type an appropriate commit message, such as “Adding data files,” and click “Commit to main.”</p>
 <ul>
-<li><p>You can have multiple different flavors of a project all in one repo.  They’re called <strong>branches</strong> and the main one is called the <strong>master branch</strong> by default.</p></li>
-<li><p>In an effort to remove any potential reference to slavery, however indirect, <a class="reference external" href="https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/">GitHub is in the process of changing the term “master” to “main,”</a> but that process is not yet complete as of this writing.</p></li>
-<li><p>In the meantime, think of the term “master” as just a reference to the primary copy of your work.</p></li>
+<li><p>You can have multiple different flavors of a project all in one repo.  They’re called <strong>branches</strong> and the main one is called the <strong>main branch</strong> by default.</p></li>
+<li><p>Previous <code class="docutils literal notranslate"><span class="pre">git</span></code>/GitHub projects began with a <strong>master branch</strong> by default, but in an effort to <a class="reference external" href="https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/">remove any reference to slavery</a>, even an indirect one, they’ve changed that.  You should see only main branches as the defaults going forward.</p></li>
 <li><p>You probably won’t need to create any other branches in any repo in MA346.</p></li>
 </ul>
 </li>
@@ -560,13 +552,13 @@
 </div>
 <div class="section" id="repeat-as-needed">
 <h3><span class="section-number">8.3.8. </span>Repeat as needed<a class="headerlink" href="#repeat-as-needed" title="Permalink to this headline">¶</a></h3>
-<p>Whenever you make changes to your work and want to save a snapshot, feel free to repeat the “commit” instructions you see above.  The best practice is to do this as often as possible, but to try to never commit a project that’s got errors or broken code.  So try to make small, successful changes and commit after each one.</p>
+<p>Whenever you make changes to your work and want to save a snapshot, feel free to repeat <a class="reference external" href="#make-a-commit">the commit instructions you see above</a>.  The best practice is to do this as often as possible, but to try to never commit a project that’s got errors or broken code.  So try to make small, successful changes and commit after each one.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The GitHub app and <code class="docutils literal notranslate"><span class="pre">git</span></code> in general can see <em>only changes that you have saved to disk!</em>  So if you’ve edited a Python script but <em>have not saved,</em> then <code class="docutils literal notranslate"><span class="pre">git</span></code>/GitHub will not be able to see those changes.  The GitHub app looks only at the files on your hard drive.  It does not spy on what you’re doing in Jupyter or VS Code or any other app you have open.</p>
 <p><strong>The takeaway:</strong>  Be sure to save your files to disk before you try to commit.</p>
 </div>
-<p>Whenever you want to publish your most recent commits to the GitHub site, repeat the “publish” instructions you see above.</p>
+<p>Whenever you want to publish your most recent commits to the GitHub site, repeat <a class="reference external" href="#publish-your-commit">the publish instructions you see above</a>.</p>
 </div>
 </div>
 <div class="section" id="what-if-i-want-to-collaborate">
@@ -606,8 +598,8 @@
 <p>Then Teammate A can go off and do some work on the project and <em>Teammate B can do work at the same time.</em>  They should coordinate, however, so that they don’t do conflicting work.  We’ll come back to this in detail later.</p>
 <p>Let’s say Teammate A accomplishes some stuff and wants to commit it and share it with Teammate B.  They can do this:</p>
 <ul class="simple">
-<li><p>Do a commit just as they ordinarily would.  (See instructions up above.)</p></li>
-<li><p>Push that commit to GitHub just as before.  (See instructions up above.)</p></li>
+<li><p>Do a commit just as they ordinarily would.  (See <a class="reference external" href="#make-a-commit">instructions up above</a>.)</p></li>
+<li><p>Push that commit to GitHub just as before.  (See <a class="reference external" href="#publish-your-commit">instructions up above</a>.)</p></li>
 <li><p>Tell Teammate B they have pushed, so that Teammate B knows there’s new work they’ll want to get.</p></li>
 </ul>
 <p>Then Teammate B uses the GitHub app to <strong>pull</strong> the latest changes from the repo.  This will download Teammate A’s work and automatically merge it in with Teammate B’s latest copy of things.</p>
@@ -645,6 +637,19 @@
 <ul class="simple">
 <li><p>how to do each of the activities covered in these notes using VS Code’s <code class="docutils literal notranslate"><span class="pre">git</span></code> support rather than the GitHub app</p></li>
 <li><p>the advantages and disadvatages to each of those two options</p></li>
+</ul>
+<p>You may want to refer to Microsoft’s <a class="reference external" href="https://code.visualstudio.com/docs/editor/versioncontrol#_git-support">official documentation</a> for VS Code’s built-in <code class="docutils literal notranslate"><span class="pre">git</span></code> features.</p>
+</div>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - Deepnote’s git features</p>
+<p>Deepnote also has GitHub integration features, but they require you to learn <code class="docutils literal notranslate"><span class="pre">git</span></code>’s command-line interface first.  One of the icons on the left of the window is the GitHub logo, and lets you link your Deepnote project with a GitHub repository.  But to do commits, pulls, and pushes requires opening a terminal and issuing <code class="docutils literal notranslate"><span class="pre">git</span></code> commands.</p>
+<p>Prepare a reference document for your classmates that answers these questions:</p>
+<ul class="simple">
+<li><p>Where is the documentation for how to link a Deepnote project and a GitHub repository?</p></li>
+<li><p>How can I open a command prompt in a Deepnote project?</p></li>
+<li><p>When I’m at that command prompt, how do I do a <code class="docutils literal notranslate"><span class="pre">git</span></code> commit?</p></li>
+<li><p>When I’m at that command prompt, how do I do a <code class="docutils literal notranslate"><span class="pre">git</span></code> push?</p></li>
+<li><p>When I’m at that command prompt, how do I do a <code class="docutils literal notranslate"><span class="pre">git</span></code> pull?</p></li>
 </ul>
 </div>
 </div>

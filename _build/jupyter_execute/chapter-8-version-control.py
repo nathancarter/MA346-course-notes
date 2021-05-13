@@ -26,7 +26,7 @@
 # 
 # When you start a new project, you should make a folder to contain just the stuff for that project.  By default, a folder on your computer is *not* tracked by `git`.  If you want `git` to start tracking a folder and keeping snapshots, to enable the features listed above, you have to turn the folder into what is called a **`git` repository**, or for short, a **repo.**  (You might also hear "source code repository" or "source repo" or similar terms.)
 # 
-# Once you do so, `git` is ready to track the changes in that folder.  But it need some direction from you.  Let's see why.
+# Once you do so, `git` is ready to track the changes in that folder.  But it needs some direction from you.  Let's see why.
 # 
 # ### Tracking changes
 # 
@@ -72,7 +72,7 @@
 # ## How to use `git` and GitHub
 # 
 # ```{warning}
-# When you're reading this chapter to prepare for Week 4's class, you do not need to follow all these instructions.  We will do them together in class.  Feel free to just skim this section for now, and begin reading again in [the next section](#what-if-i-want-to-collaborate).
+# When you're reading this chapter to prepare for Day 4's class, you do not need to follow all these instructions.  We will do them together in class.  Feel free to just skim this section for now, and begin reading again in [the next section](#what-if-i-want-to-collaborate).
 # ```
 # 
 # ### Get a GitHub account
@@ -93,13 +93,14 @@
 # 
 # When you set the app up, it will ask for the username and password of your GitHub account, so it can connect to the GitHub site.
 # 
+# (Actually, if you're using VS Code consistently on your computer, it has `git` tools built in, and you could skip getting the GitHub app.  If you're interested in this approach, check out the LOYO opportunity at the end of this chapter.)
+# 
 # ### Create a repository
 # 
-# Let's create a repository for you to use when submitting Project 1 later in a little over two weeks.
-#  * If you haven't already done so, create a folder on your computer for storing your work on Project 1.
-#     * You don't have to put anything in the repository at all---the folder can stay empty for now.
-#  * Using the GitHub app, turn that folder into a repository.
-#     * From the File menu, choose "Add local repository..." and pick the folder you just created.
+# Let's create a repository for you to use when submitting Project 1 later in the course.
+# 
+#  * If you haven't already done so, create a folder on your computer for storing your work on Project 1.  You don't have to put anything in the folder at all---it can stay empty for now.
+#  * Using the GitHub app, turn that folder into a repository.  From the File menu, choose "Add local repository..." and pick the folder you just created.
 # 
 # ### Publish the repository
 # 
@@ -124,12 +125,11 @@
 # 
 # In order to commit some changes to our new Project 1 repo, we have to actually do something in that folder, so there *are* some changes to commit.  Let's do some simple setup.
 # 
-#  * The Project 1 assignment on Blackboard lists three datasets you should download for use in the project.  If you haven't already downloaded them, do so now.  Once you've downloaded them, move them into the folder for your new repo.
+#  * The Project 1 assignment on [Blackboard](https://blackboard.bentley.edu) lists three datasets you should download for use in the project.  If you haven't already downloaded them, do so now.  Once you've downloaded them, move them into the folder for your new repo.
 #  * Return to the GitHub app and you should notice the three new files listed in the left column, showing you what's new in the repo since it was created.
-#  * On the bottom left of the page, type an appropriate commit message, such as "Adding data files," and click "Commit to master."
-#     * You can have multiple different flavors of a project all in one repo.  They're called **branches** and the main one is called the **master branch** by default.
-#     * In an effort to remove any potential reference to slavery, however indirect, [GitHub is in the process of changing the term "master" to "main,"](https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/) but that process is not yet complete as of this writing.
-#     * In the meantime, think of the term "master" as just a reference to the primary copy of your work.
+#  * On the bottom left of the page, type an appropriate commit message, such as "Adding data files," and click "Commit to main."
+#     * You can have multiple different flavors of a project all in one repo.  They're called **branches** and the main one is called the **main branch** by default.
+#     * Previous `git`/GitHub projects began with a **master branch** by default, but in an effort to [remove any reference to slavery](https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/), even an indirect one, they've changed that.  You should see only main branches as the defaults going forward.
 #     * You probably won't need to create any other branches in any repo in MA346.
 # 
 # You should see your changes disappear from the left column.  This doesn't mean that they've been removed!  It just means that the snapshot has been saved, so those changes aren't "new" any more.  They've been committed (saved) to the repo's history.
@@ -140,7 +140,7 @@
 # 
 # ### Repeat as needed
 # 
-# Whenever you make changes to your work and want to save a snapshot, feel free to repeat the "commit" instructions you see above.  The best practice is to do this as often as possible, but to try to never commit a project that's got errors or broken code.  So try to make small, successful changes and commit after each one.
+# Whenever you make changes to your work and want to save a snapshot, feel free to repeat [the commit instructions you see above](#make-a-commit).  The best practice is to do this as often as possible, but to try to never commit a project that's got errors or broken code.  So try to make small, successful changes and commit after each one.
 # 
 # ```{warning}
 # The GitHub app and `git` in general can see *only changes that you have saved to disk!*  So if you've edited a Python script but *have not saved,* then `git`/GitHub will not be able to see those changes.  The GitHub app looks only at the files on your hard drive.  It does not spy on what you're doing in Jupyter or VS Code or any other app you have open.
@@ -148,7 +148,7 @@
 # **The takeaway:**  Be sure to save your files to disk before you try to commit.
 # ```
 # 
-# Whenever you want to publish your most recent commits to the GitHub site, repeat the "publish" instructions you see above.
+# Whenever you want to publish your most recent commits to the GitHub site, repeat [the publish instructions you see above](#publish-your-commit).
 
 # ## What if I want to collaborate?
 # 
@@ -185,8 +185,8 @@
 # Then Teammate A can go off and do some work on the project and *Teammate B can do work at the same time.*  They should coordinate, however, so that they don't do conflicting work.  We'll come back to this in detail later.
 # 
 # Let's say Teammate A accomplishes some stuff and wants to commit it and share it with Teammate B.  They can do this:
-#  * Do a commit just as they ordinarily would.  (See instructions up above.)
-#  * Push that commit to GitHub just as before.  (See instructions up above.)
+#  * Do a commit just as they ordinarily would.  (See [instructions up above](#make-a-commit).)
+#  * Push that commit to GitHub just as before.  (See [instructions up above](#publish-your-commit).)
 #  * Tell Teammate B they have pushed, so that Teammate B knows there's new work they'll want to get.
 # 
 # Then Teammate B uses the GitHub app to **pull** the latest changes from the repo.  This will download Teammate A's work and automatically merge it in with Teammate B's latest copy of things.
@@ -224,7 +224,25 @@
 # class: alert alert-danger
 # ---
 # If you use VS Code for your Python coding, you may find it convenient to use VS Code's git features, rather than having to switch back and forth to the GitHub app.  Feel free to investigate those features on your own, and if you do so, prepare a tutorial video for the class covering:
+# 
 #  * how to do each of the activities covered in these notes using VS Code's `git` support rather than the GitHub app
 #  * the advantages and disadvatages to each of those two options
+# 
+# You may want to refer to Microsoft's [official documentation](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support) for VS Code's built-in `git` features.
+# ```
+# 
+# ```{admonition} Learning on Your Own - Deepnote's git features
+# ---
+# class: alert alert-danger
+# ---
+# Deepnote also has GitHub integration features, but they require you to learn `git`'s command-line interface first.  One of the icons on the left of the window is the GitHub logo, and lets you link your Deepnote project with a GitHub repository.  But to do commits, pulls, and pushes requires opening a terminal and issuing `git` commands.
+# 
+# Prepare a reference document for your classmates that answers these questions:
+# 
+#  * Where is the documentation for how to link a Deepnote project and a GitHub repository?
+#  * How can I open a command prompt in a Deepnote project?
+#  * When I'm at that command prompt, how do I do a `git` commit?
+#  * When I'm at that command prompt, how do I do a `git` push?
+#  * When I'm at that command prompt, how do I do a `git` pull?
 # ```
 # 

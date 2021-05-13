@@ -407,6 +407,27 @@
    7.5. How do I know when to use abstraction?
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#admonition-learning-on-your-own-jupyter-run-magic">
+   7.6. ```{admonition} Learning on Your Own - Jupyter
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     %run
+    </span>
+   </code>
+   magic
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#class-alert-alert-danger">
+   7.7. class: alert alert-danger
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-if-abstraction-seems-tricky">
+   7.8. What if abstraction seems tricky?
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -423,7 +444,7 @@
 <p><a href="../../_slides/chapter-7-slides.html">See also the slides that summarize a portion of this content.</a></p>
 <div class="section" id="abstract-vs-concrete">
 <h2><span class="section-number">7.1. </span>Abstract vs. concrete<a class="headerlink" href="#abstract-vs-concrete" title="Permalink to this headline">¶</a></h2>
-<p>Abstract/concrete are opposite ends of a spectrum:</p>
+<p>Abstract and concrete are at opposite ends of a spectrum; concrete refers to specific things, usually with more details in them, and abstract refers to general principles or ideas, usually unconnected to any specific example.  The following table may help clarify this.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
@@ -434,11 +455,11 @@
 <tbody>
 <tr class="row-even"><td><p>Example from science:</p></td>
 <td><p>When we drop things, they fall to earth.</p></td>
-<td><p><span class="math notranslate nohighlight">\(G_{\mu v}+\Lambda g_{\mu v}=\frac{8\pi G}{c^4}T_{\mu v}\)</span> (Einstein’s field equation)</p></td>
+<td><p>Gravitation obeys the principle <span class="math notranslate nohighlight">\(G_{\mu v}+\Lambda g_{\mu v}=\frac{8\pi G}{c^4}T_{\mu v}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>Example from business:</p></td>
 <td><p>That startup failed because each partner tried to pull it in a different direction.</p></td>
-<td><p>Organizations need a clearly stated vision.</p></td>
+<td><p>Organizations need everyone to pursue a single, clear vision.</p></td>
 </tr>
 <tr class="row-even"><td><p>Example from ethics:</p></td>
 <td><p>The Nazis’ attacks on the Jews were a great evil.</p></td>
@@ -458,7 +479,7 @@
 <li><p>Each homework problem was a <em>specific</em> example of this technique.</p></li>
 <li><p>If you apply the technique to the equation <span class="math notranslate nohighlight">\(ax^2+bx+c=0\)</span>, the result is the quadratic formula, <span class="math notranslate nohighlight">\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\)</span>, a <em>general</em> solution to all quadratic equations.</p></li>
 </ul>
-<p>Abstraction from the specific to the general tends to create more powerful tools, because they can be applied to any specific instance of the problem.</p>
+<p>Abstraction from the specific to the general tends to create more powerful tools, because they can be applied to any specific instance of the problem.  The quadratic formula is a powerful tool because it can solve any quadratic equation.</p>
 </div>
 <div class="section" id="example-2-excel-formulas">
 <h3><span class="section-number">7.2.2. </span>Example 2: Excel formulas<a class="headerlink" href="#example-2-excel-formulas" title="Permalink to this headline">¶</a></h3>
@@ -480,17 +501,17 @@
 <li><p>We can ask what happens when one of the variables changes, a question that calculus focuses on.</p>
 <ul class="simple">
 <li><p>For instance, you could ask what happens to your computation as one of the variables gets larger and larger.  (In calculus, we wrote this as <span class="math notranslate nohighlight">\(\lim_{x\to\infty}\)</span>.)</p></li>
-<li><p>Or you could ask how the result of the computation responds to changes in one input variable.  (In calculus, we wrote this as <span class="math notranslate nohighlight">\(\frac{d}{dx}\)</span>.)</p></li>
+<li><p>Or you could ask how quickly the result of the computation responds to changes in one input variable.  (In calculus, we wrote this as <span class="math notranslate nohighlight">\(\frac{d}{dx}\)</span>.)</p></li>
 </ul>
 </li>
 <li><p>We can make statements about the computation in terms of the input variables.</p>
 <ul class="simple">
 <li><p>In Example 1, we might say that “Every quadratic equation has two complex number solutions.”</p></li>
-<li><p>In Example 2, we might say that “It’s still possible for me to get a 4.0 in this course if my final exam score is good enough.”</p></li>
+<li><p>In Example 2, we might say that “It’s still possible for me to get an A- in this course if my final exam score is good enough.”</p></li>
 </ul>
 </li>
 </ol>
-<p>The statement above from Example 1 is a <em>universal</em> statement, also called a “for all” statement.  You could rephrase it as:  For all inputs <span class="math notranslate nohighlight">\(a,b,c\)</span>, the outputs of the quadratic formula are two complex numbers.  The statement from Example 2 is an <em>existence</em> statement, also called a “for some” statement.  You could rephrase it as:  For some final exam scores, my final course grade is still a 4.0.  For all/for some statements are central to mathematics and we will see them show up a lot.  “For all” and “for some” are called <em>quantifiers</em> and are sometimes written <span class="math notranslate nohighlight">\(\forall\)</span> (for all) and <span class="math notranslate nohighlight">\(\exists\)</span> (for some, or “there exists”).</p>
+<p>The statement you just read about every quadratic equation is a <em>universal</em> statement, also called a “for all” statement.  You could rephrase it as:  For all inputs <span class="math notranslate nohighlight">\(a,b,c\)</span>, the outputs of the quadratic formula are two complex numbers.  The statement from Example 2 is an <em>existence</em> statement, also called a “for some” statement.  You could rephrase it as:  For some final exam scores, my final course grade is still a 4.0.  For all/for some statements are central to mathematics and we will see them show up a lot.  “For all” and “for some” are called <em>quantifiers</em> and are sometimes written <span class="math notranslate nohighlight">\(\forall\)</span> (for all) and <span class="math notranslate nohighlight">\(\exists\)</span> (for some, or “there exists”).</p>
 </div>
 </div>
 <div class="section" id="abstraction-in-programming">
@@ -502,73 +523,81 @@
 <div class="section" id="example-3-copying-and-pasting-code">
 <h3><span class="section-number">7.3.1. </span>Example 3: Copying and pasting code<a class="headerlink" href="#example-3-copying-and-pasting-code" title="Permalink to this headline">¶</a></h3>
 <p>Best practices for coding include writing DRY code, where DRY stands for Don’t Repeat Yourself.  If you find yourself writing the same code (or extremely similar code) more than once, especially if you’re copying and pasting, this is a sure sign that you are not writing DRY code and should try to correct this style error.  The way to correct it is with abstraction, as shown below.  (The opposite of DRY code is WET code–Write Everything Twice.  Don’t do that.)</p>
-<p>Here is an example of some code a student once wrote for me in a past data science course.  They had three pandas DataFrames of data about COVID-19, one containing numbers of cases, one containing numbers of deaths, and one containing numbers of recoveries.  They wanted to change the column names in each DataFrame.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_cases</span> <span class="o">=</span> <span class="n">df_cases</span><span class="o">.</span><span class="n">add_suffix</span><span class="p">(</span> <span class="s1">&#39;_cases&#39;</span> <span class="p">)</span>
-<span class="n">df_cases</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Province/State&#39;</span><span class="p">,</span><span class="s1">&#39;Country/Region&#39;</span><span class="p">,</span><span class="s1">&#39;Lat&#39;</span><span class="p">,</span><span class="s1">&#39;Long&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_cases</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">4</span><span class="p">:])</span>
-<span class="n">df_deaths</span> <span class="o">=</span> <span class="n">df_deaths</span><span class="o">.</span><span class="n">add_suffix</span><span class="p">(</span> <span class="s1">&#39;_deaths&#39;</span> <span class="p">)</span>
-<span class="n">df_deaths</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Province/State&#39;</span><span class="p">,</span><span class="s1">&#39;Country/Region&#39;</span><span class="p">,</span><span class="s1">&#39;Lat&#39;</span><span class="p">,</span><span class="s1">&#39;Long&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_deaths</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">4</span><span class="p">:])</span>
-<span class="n">df_recoveries</span> <span class="o">=</span> <span class="n">df_recoveries</span><span class="o">.</span><span class="n">add_suffix</span><span class="p">(</span> <span class="s1">&#39;_recoveries&#39;</span> <span class="p">)</span>
-<span class="n">df_recoveries</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Province/State&#39;</span><span class="p">,</span><span class="s1">&#39;Country/Region&#39;</span><span class="p">,</span><span class="s1">&#39;Lat&#39;</span><span class="p">,</span><span class="s1">&#39;Long&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_recoveries</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">4</span><span class="p">:])</span>
+<p>In Spring and Fall 2020, my MA346 students analyzed COVID-19 case data from various states in the U.S.  They had DataFrames with case numbers, death numbers, and recovery numbers.  Let’s imagine that they wanted to keep just the first 8 columns and give them clearly readable names.  The code might look like this.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_cases</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span> <span class="n">columns</span><span class="o">=</span><span class="n">df_cases</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">8</span><span class="p">:],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
+<span class="n">df_cases</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;State, &#39;</span><span class="n">Country</span><span class="s1">&#39;, &#39;</span><span class="n">Latitude</span><span class="s1">&#39;, &#39;</span><span class="n">Longitude</span><span class="s1">&#39;,</span>
+                     <span class="s1">&#39;January&#39;</span><span class="p">,</span> <span class="s1">&#39;February&#39;</span><span class="p">,</span> <span class="s1">&#39;March&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span> <span class="p">]</span>
+<span class="n">df_deaths</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span> <span class="n">columns</span><span class="o">=</span><span class="n">df_deaths</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">8</span><span class="p">:],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
+<span class="n">df_deaths</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;State, &#39;</span><span class="n">Country</span><span class="s1">&#39;, &#39;</span><span class="n">Latitude</span><span class="s1">&#39;, &#39;</span><span class="n">Longitude</span><span class="s1">&#39;,</span>
+                      <span class="s1">&#39;January&#39;</span><span class="p">,</span> <span class="s1">&#39;February&#39;</span><span class="p">,</span> <span class="s1">&#39;March&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span> <span class="p">]</span>
+<span class="n">df_recoveries</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span> <span class="n">columns</span><span class="o">=</span><span class="n">df_recoveries</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">8</span><span class="p">:],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
+<span class="n">df_recoveries</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;State, &#39;</span><span class="n">Country</span><span class="s1">&#39;, &#39;</span><span class="n">Latitude</span><span class="s1">&#39;, &#39;</span><span class="n">Longitude</span><span class="s1">&#39;,</span>
+                          <span class="s1">&#39;January&#39;</span><span class="p">,</span> <span class="s1">&#39;February&#39;</span><span class="p">,</span> <span class="s1">&#39;March&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span> <span class="p">]</span>
 </pre></div>
 </div>
-<p>I suspect the student wrote the first two lines, ran them, verified that they worked, and then copied and pasted them twice and changed the variable names to apply the same code to the other two DataFrames.  But this code can be made much cleaner through abstraction.  Rather than copy and paste the code, then change key parts of it, replace those key parts with a <em>general</em> (that is, abstract) variable name, and then turn the code into a function.  Since this code renames columns, the student could have made that the name of the function.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rename_columns</span> <span class="p">(</span> <span class="n">df</span> <span class="p">):</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">add_suffix</span><span class="p">(</span> <span class="s1">&#39;_cases&#39;</span> <span class="p">)</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Province/State&#39;</span><span class="p">,</span><span class="s1">&#39;Country/Region&#39;</span><span class="p">,</span><span class="s1">&#39;Lat&#39;</span><span class="p">,</span><span class="s1">&#39;Long&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">4</span><span class="p">:])</span>
+<p>The typical way of creating code like what’s shown above is to write just the code for <code class="docutils literal notranslate"><span class="pre">df_cases</span></code>, run it, verifiy that it works, and then copy and paste it twice and change the details to apply the same code to the other two DataFrames.  But this code can be made much cleaner through abstraction.</p>
+<p>Rather than copy and paste the code and change key parts of it, replace those key parts with a <em>general</em> (that is, abstract) variable name, and then turn the code into a function.  Since this code drops the columns we don’t care about, we could have made that the name of the function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">drop_unneeded_columns</span> <span class="p">(</span> <span class="n">df</span> <span class="p">):</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span> <span class="n">columns</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">8</span><span class="p">:],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;State, &#39;</span><span class="n">Country</span><span class="s1">&#39;, &#39;</span><span class="n">Latitude</span><span class="s1">&#39;, &#39;</span><span class="n">Longitude</span><span class="s1">&#39;,</span>
+                   <span class="s1">&#39;January&#39;</span><span class="p">,</span> <span class="s1">&#39;February&#39;</span><span class="p">,</span> <span class="s1">&#39;March&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span> <span class="p">]</span>
 </pre></div>
 </div>
-<p>Once this general version is complete, you can apply it to each specific case you need.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rename_columns</span><span class="p">(</span> <span class="n">df_cases</span> <span class="p">)</span>
-<span class="n">rename_columns</span><span class="p">(</span> <span class="n">df_deaths</span> <span class="p">)</span>
-<span class="n">rename_columns</span><span class="p">(</span> <span class="n">df_recoveries</span> <span class="p">)</span>
+<p>Once this general version is complete, we can apply it to each specific case we need.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">drop_unneeded_columns</span><span class="p">(</span> <span class="n">df_cases</span> <span class="p">)</span>
+<span class="n">drop_unneeded_columns</span><span class="p">(</span> <span class="n">df_deaths</span> <span class="p">)</span>
+<span class="n">drop_unneeded_columns</span><span class="p">(</span> <span class="n">df_recoveries</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>There are several advantages to this new version.</p>
 <ol class="simple">
 <li><p>While it is still six lines of code, half of them are much shorter, so there’s less to read and understand.</p></li>
-<li><p>What the code is doing is more obvious, because we’ve given it a name; we’re obviously renaming columns.</p></li>
+<li><p>What the code is doing is more obvious, because we’ve given it a name; we’re obviously dropping columns we don’t need.</p></li>
 <li><p>It wasn’t immediately obvious in the first version of the code that we were repeating the same procedure three times.  Now it is.</p></li>
-<li><p>If you later need to change how you rename columns, you have to make that change in only one place (inside the function).  Before, you would have had to make the same change three times.</p></li>
-<li><p>Also, if you tried to make a change to the code later, but accidentally missed changing one of the three, you’d have broken code and not realize it.</p></li>
+<li><p>If you later need to change which columns you keep or how you name them, you have to make that change in only one place (inside the function).  Before, you would have had to make the same change three times.</p></li>
+<li><p>Also, if you tried to make a change to the code later, but accidentally forgot to change one of the three copies, you’d have broken your code and maybe not realized it.</p></li>
 <li><p>You could share this same function to other notebooks or with other coders if needed.</p></li>
 </ol>
-<p>So the moment you find yourself copying and pasting code, remember to stay DRY instead–create a function and call it multiple times, so that you get all these benefits.</p>
+<p>So the moment you find yourself copying and pasting code, remember to stay DRY instead—create a function and call it multiple times, so that you get all these benefits.</p>
 </div>
 <div class="section" id="alternatives">
 <h3><span class="section-number">7.3.2. </span>Alternatives<a class="headerlink" href="#alternatives" title="Permalink to this headline">¶</a></h3>
 <p>Another method of abstraction would have been a loop instead of a function.  Since the original code does the same thing three times, we could have rewritten it as follows instead.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[</span> <span class="n">df_cases</span><span class="p">,</span> <span class="n">df_deaths</span><span class="p">,</span> <span class="n">df_recoveries</span> <span class="p">]:</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">add_suffix</span><span class="p">(</span> <span class="s1">&#39;_cases&#39;</span> <span class="p">)</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Province/State&#39;</span><span class="p">,</span><span class="s1">&#39;Country/Region&#39;</span><span class="p">,</span><span class="s1">&#39;Lat&#39;</span><span class="p">,</span><span class="s1">&#39;Long&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">4</span><span class="p">:])</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span> <span class="n">columns</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">8</span><span class="p">:],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;State, &#39;</span><span class="n">Country</span><span class="s1">&#39;, &#39;</span><span class="n">Latitude</span><span class="s1">&#39;, &#39;</span><span class="n">Longitude</span><span class="s1">&#39;,</span>
+                   <span class="s1">&#39;January&#39;</span><span class="p">,</span> <span class="s1">&#39;February&#39;</span><span class="p">,</span> <span class="s1">&#39;March&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span> <span class="p">]</span>
 </pre></div>
 </div>
 <p>This has all the same benefits as the previous method, except for #6.</p>
 <p>One could even combine the two methods together, as follows.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rename_columns</span> <span class="p">(</span> <span class="n">df</span> <span class="p">):</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">add_suffix</span><span class="p">(</span> <span class="s1">&#39;_cases&#39;</span> <span class="p">)</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Province/State&#39;</span><span class="p">,</span><span class="s1">&#39;Country/Region&#39;</span><span class="p">,</span><span class="s1">&#39;Lat&#39;</span><span class="p">,</span><span class="s1">&#39;Long&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">4</span><span class="p">:])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">drop_unneeded_columns</span> <span class="p">(</span> <span class="n">df</span> <span class="p">):</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span> <span class="n">columns</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">8</span><span class="p">:],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;State, &#39;</span><span class="n">Country</span><span class="s1">&#39;, &#39;</span><span class="n">Latitude</span><span class="s1">&#39;, &#39;</span><span class="n">Longitude</span><span class="s1">&#39;,</span>
+                   <span class="s1">&#39;January&#39;</span><span class="p">,</span> <span class="s1">&#39;February&#39;</span><span class="p">,</span> <span class="s1">&#39;March&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span> <span class="p">]</span>
 
 <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[</span> <span class="n">df_cases</span><span class="p">,</span> <span class="n">df_deaths</span><span class="p">,</span> <span class="n">df_recoveries</span> <span class="p">]:</span>
-    <span class="n">rename_columns</span><span class="p">(</span> <span class="n">df</span> <span class="p">)</span>
+    <span class="n">drop_unneeded_columns</span><span class="p">(</span> <span class="n">df</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-4-testing-a-computation">
 <h3><span class="section-number">7.3.3. </span>Example 4: Testing a computation<a class="headerlink" href="#example-4-testing-a-computation" title="Permalink to this headline">¶</a></h3>
-<p>Let’s imagine that the same student as above, who has COVID-19 data, wants to investigate its connection to the polarized political climate in the U.S., since COVID-19 response has become very politicized.  They want to ask whether there’s any correlation between the spread of the virus in a state and that state’s prevailing political leaning.  So the student gets another dataset, this one listing the percentage of registered Republicans and Democrats in each U.S. state.  They will want to look up each state in the COVID-19 dataset in this new dataset, to connect them.  They try this:</p>
+<p>Let’s imagine that the same student as above, who has COVID-19 data, wants to investigate its connection to the polarized political climate in the U.S., since COVID-19 response has been very politicized. They want to ask whether there’s any correlation between the spread of the virus in a state and that state’s prevailing political leaning. So the student gets another dataset, this one listing the percentage of registered Republicans and Democrats in each U.S. state. They will want to look up each state in the COVID-19 dataset in this new dataset, to connect them. They try this:</p>
+<p>So the student gets a second dataset, this one listing the percentage of registered Republicans and Democrats in each U.S. state.  They will want to look up each state in the COVID-19 dataset in this new dataset, to connect them.  They try this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load political data</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df_pol_reg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span> <span class="s1">&#39;_static/political-registrations.xlsx&#39;</span><span class="p">,</span>
-                            <span class="n">sheet_name</span><span class="o">=</span><span class="mi">0</span> <span class="p">)</span>
+<span class="n">df_registration</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span> <span class="s1">&#39;_static/political-registrations.xlsx&#39;</span><span class="p">,</span>
+                                 <span class="n">sheet_name</span><span class="o">=</span><span class="mi">0</span> <span class="p">)</span>
 
 <span class="c1"># make dictionaries for easy lookup:</span>
-<span class="n">state_rep_pct</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">df_pol_reg</span><span class="p">[</span><span class="s1">&#39;State&#39;</span><span class="p">],</span> <span class="n">df_pol_reg</span><span class="p">[</span><span class="s1">&#39;R%&#39;</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
-<span class="n">state_dem_pct</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">df_pol_reg</span><span class="p">[</span><span class="s1">&#39;State&#39;</span><span class="p">],</span> <span class="n">df_pol_reg</span><span class="p">[</span><span class="s1">&#39;D%&#39;</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">percent_republican</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">df_registration</span><span class="p">[</span><span class="s1">&#39;State&#39;</span><span class="p">],</span> <span class="n">df_registration</span><span class="p">[</span><span class="s1">&#39;R%&#39;</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">percent_democratic</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">df_registration</span><span class="p">[</span><span class="s1">&#39;State&#39;</span><span class="p">],</span> <span class="n">df_registration</span><span class="p">[</span><span class="s1">&#39;D%&#39;</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
 
 <span class="c1"># see if it works on Alaska:</span>
-<span class="n">state_rep_pct</span><span class="p">[</span><span class="s1">&#39;AK&#39;</span><span class="p">]</span>
+<span class="n">percent_republican</span><span class="p">[</span><span class="s1">&#39;AK&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -582,16 +611,16 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># see if it works on Alabama:</span>
-<span class="n">state_rep_pct</span><span class="p">[</span><span class="s1">&#39;AL&#39;</span><span class="p">]</span>
+<span class="n">percent_republican</span><span class="p">[</span><span class="s1">&#39;AL&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">012</span><span class="n">bacaf2696</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">18</span><span class="n">a057d6e676</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># see if it works on Alabama:</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">state_rep_pct</span><span class="p">[</span><span class="s1">&#39;AL&#39;</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">percent_republican</span><span class="p">[</span><span class="s1">&#39;AL&#39;</span><span class="p">]</span>
 
 <span class="ne">KeyError</span>: &#39;AL&#39;
 </pre></div>
@@ -602,7 +631,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">state_rep_pct</span><span class="p">[</span><span class="s1">&#39;AL&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;AL&#39;</span> <span class="ow">in</span> <span class="n">state_rep_pct</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">percent_republican</span><span class="p">[</span><span class="s1">&#39;AL&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;AL&#39;</span> <span class="ow">in</span> <span class="n">percent_republican</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 </pre></div>
 </div>
 </div>
@@ -612,27 +641,40 @@
 </div>
 </div>
 </div>
-<p>Great, this looks like it will work for any input.  Let’s turn it into a function and test that function.</p>
+<p>This technique looks like it will work for any input, because instead of giving an error it returns NaN.  Because NaN is the standard way to represent missing values, this makes sense.  Good, let’s turn it into a function and test that function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_rep_pct</span> <span class="p">(</span> <span class="n">state_code</span> <span class="p">):</span>
-    <span class="k">return</span> <span class="n">state_rep_pct</span><span class="p">[</span><span class="n">state_code</span><span class="p">]</span> <span class="k">if</span> <span class="n">state_code</span> <span class="ow">in</span> <span class="n">state_rep_pct</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-<span class="k">def</span> <span class="nf">get_dem_pct</span> <span class="p">(</span> <span class="n">state_code</span> <span class="p">):</span>
-    <span class="k">return</span> <span class="n">state_dem_pct</span><span class="p">[</span><span class="n">state_code</span><span class="p">]</span> <span class="k">if</span> <span class="n">state_code</span> <span class="ow">in</span> <span class="n">state_dem_pct</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-<span class="n">get_rep_pct</span><span class="p">(</span> <span class="s1">&#39;AK&#39;</span> <span class="p">),</span> <span class="n">get_rep_pct</span><span class="p">(</span> <span class="s1">&#39;AL&#39;</span> <span class="p">),</span> <span class="n">get_dem_pct</span><span class="p">(</span> <span class="s1">&#39;AK&#39;</span> <span class="p">),</span> <span class="n">get_dem_pct</span><span class="p">(</span> <span class="s1">&#39;AL&#39;</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_percent_republican</span> <span class="p">(</span> <span class="n">state_code</span> <span class="p">):</span>
+    <span class="k">return</span> <span class="n">percent_republican</span><span class="p">[</span><span class="n">state_code</span><span class="p">]</span> <span class="k">if</span> <span class="n">state_code</span> <span class="ow">in</span> <span class="n">percent_republican</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="k">def</span> <span class="nf">get_percent_democratic</span> <span class="p">(</span> <span class="n">state_code</span> <span class="p">):</span>
+    <span class="k">return</span> <span class="n">percent_democratic</span><span class="p">[</span><span class="n">state_code</span><span class="p">]</span> <span class="k">if</span> <span class="n">state_code</span> <span class="ow">in</span> <span class="n">percent_democratic</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="n">get_percent_republican</span><span class="p">(</span> <span class="s1">&#39;AK&#39;</span> <span class="p">),</span> <span class="n">get_percent_republican</span><span class="p">(</span> <span class="s1">&#39;AL&#39;</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.26, nan, 0.14, nan)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.26, nan)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_percent_democratic</span><span class="p">(</span> <span class="s1">&#39;AK&#39;</span> <span class="p">),</span> <span class="n">get_percent_democratic</span><span class="p">(</span> <span class="s1">&#39;AL&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.14, nan)
 </pre></div>
 </div>
 </div>
 </div>
 <p>So Example 4 has shown us that abstracting a computation into a function can be done as part of an ordinary coding workflow:  Start easy, by doing the computation on just one input and get that working.  Once it does, test it on some other inputs.  Then create a function that works in general.</p>
 <p>The benefits of this include all the benefits discussed after Example 3, plus this one:  The student wanted to run this computation for every row in a DataFrame.  That’s easy to do now, with code like the following.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_cases</span><span class="p">[</span><span class="s1">&#39;state_rep_pct&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_cases</span><span class="p">[</span><span class="s1">&#39;Province/State&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="n">get_rep_pct</span> <span class="p">)</span>
-<span class="n">df_cases</span><span class="p">[</span><span class="s1">&#39;state_dem_pct&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_cases</span><span class="p">[</span><span class="s1">&#39;Province/State&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="n">get_dem_pct</span> <span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_cases</span><span class="p">[</span><span class="s1">&#39;percent_republican&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_cases</span><span class="p">[</span><span class="s1">&#39;Province/State&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="n">get_percent_republican</span> <span class="p">)</span>
+<span class="n">df_cases</span><span class="p">[</span><span class="s1">&#39;percent_democratic&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_cases</span><span class="p">[</span><span class="s1">&#39;Province/State&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="n">get_percent_democratic</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -666,7 +708,7 @@
 </div>
 <div class="section" id="step-1-decide-which-parts-of-the-code-are-customizable-that-is-which-parts-of-the-code-might-change-the-next-time-you-want-to-use-it">
 <h3><span class="section-number">7.4.1. </span>Step 1:  Decide which parts of the code are customizable.  That is, which parts of the code might change the next time you want to use it?<a class="headerlink" href="#step-1-decide-which-parts-of-the-code-are-customizable-that-is-which-parts-of-the-code-might-change-the-next-time-you-want-to-use-it" title="Permalink to this headline">¶</a></h3>
-<p>In this code, we certainly want to be able to specify a different column, so <code class="docutils literal notranslate"><span class="pre">'Tuition'</span></code> needs to be customizable.  Also, we’ve converted this column to type <code class="docutils literal notranslate"><span class="pre">float</span></code>, but perhaps some other column of money might better be represented as <code class="docutils literal notranslate"><span class="pre">int</span></code>, so we’ll let the type be customizable also.</p>
+<p>In this code, we certainly want to be able to specify a different column, so <code class="docutils literal notranslate"><span class="pre">'Tuition'</span></code> needs to be customizable.  Also, we’ve converted this column to type <code class="docutils literal notranslate"><span class="pre">float</span></code>, but perhaps some other column of money might better be represented as <code class="docutils literal notranslate"><span class="pre">int</span></code>, so we’ll want the data type to be customizable also.</p>
 </div>
 <div class="section" id="step-2-move-each-of-the-customizable-pieces-of-code-out-into-a-variable-with-a-helpful-name-declared-before-the-code-is-run">
 <h3><span class="section-number">7.4.2. </span>Step 2:  Move each of the customizable pieces of code out into a variable with a helpful name, declared before the code is run.<a class="headerlink" href="#step-2-move-each-of-the-customizable-pieces-of-code-out-into-a-variable-with-a-helpful-name-declared-before-the-code-is-run" title="Permalink to this headline">¶</a></h3>
@@ -675,14 +717,14 @@
 <span class="n">new_type</span> <span class="o">=</span> <span class="nb">float</span>
 <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span> <span class="c1"># remove dollar signs</span>
 <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span> <span class="c1"># remove commas</span>
-<span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="n">new_type</span> <span class="p">)</span>         <span class="c1"># convert to new type</span>
+<span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="n">new_type</span> <span class="p">)</span>     <span class="c1"># convert to new type</span>
 </pre></div>
 </div>
-<p>You can then re-run this code to be sure it still does what it’s supposed to do.</p>
+<p>You can then re-run this code to be sure it still does what it’s supposed to do.   (That is, check to be sure you haven’t accidentally changed the code’s meaning.)</p>
 </div>
 <div class="section" id="step-3-decide-on-a-succinct-description-for-what-your-code-does-to-use-as-the-name-of-a-new-function">
 <h3><span class="section-number">7.4.3. </span>Step 3:  Decide on a succinct description for what your code does, to use as the name of a new function.<a class="headerlink" href="#step-3-decide-on-a-succinct-description-for-what-your-code-does-to-use-as-the-name-of-a-new-function" title="Permalink to this headline">¶</a></h3>
-<p>In this case, we’re converting a column of currency to a new type, but I don’t want to call it “convert currency” because that sound like we’re using exchange rates between two currencies.  Let’s call it “simplify currency.”</p>
+<p>In this case, we’re converting a column of currency to a new type, but I don’t want to call it <code class="docutils literal notranslate"><span class="pre">convert_currency</span></code> because that sound like we’re using exchange rates between two currencies.  Let’s call it <code class="docutils literal notranslate"><span class="pre">simplify_currency</span></code>.</p>
 </div>
 <div class="section" id="step-4-indent-your-original-code-and-introduce-a-def-line-to-define-a-new-function-with-your-chosen-name-its-inputs-should-be-the-names-of-the-variables-you-created">
 <h3><span class="section-number">7.4.4. </span>Step 4:  Indent your original code and introduce a <code class="docutils literal notranslate"><span class="pre">def</span></code> line to define a new function with your chosen name.  Its inputs should be the names of the variables you created.<a class="headerlink" href="#step-4-indent-your-original-code-and-introduce-a-def-line-to-define-a-new-function-with-your-chosen-name-its-inputs-should-be-the-names-of-the-variables-you-created" title="Permalink to this headline">¶</a></h3>
@@ -690,19 +732,19 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simplify_currency</span> <span class="p">(</span> <span class="n">column</span><span class="p">,</span> <span class="n">new_type</span> <span class="p">):</span>
     <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span> <span class="c1"># remove dollar signs</span>
     <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span> <span class="c1"># remove commas</span>
-    <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="n">new_type</span> <span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="n">new_type</span> <span class="p">)</span>     <span class="c1"># convert to new type</span>
 </pre></div>
 </div>
-<p>If you run it at this point, it doesn’t actually do anything to your DataFrame, because this just defines a function.  So we need one more step.</p>
+<p>If you run it at this point, it doesn’t actually do anything to your DataFrame, because the code shown above just defines a function.  So we need one more step.</p>
 </div>
 <div class="section" id="step-5-call-your-new-function-to-accomplish-what-your-original-code-used-to-accomplish">
 <h3><span class="section-number">7.4.5. </span>Step 5:  Call your new function to accomplish what your original code used to accomplish.<a class="headerlink" href="#step-5-call-your-new-function-to-accomplish-what-your-original-code-used-to-accomplish" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simplify_currency</span> <span class="p">(</span> <span class="n">column</span><span class="p">,</span> <span class="n">new_type</span> <span class="p">):</span>
     <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span> <span class="c1"># remove dollar signs</span>
     <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span> <span class="c1"># remove commas</span>
-    <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="n">new_type</span> <span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="n">new_type</span> <span class="p">)</span>     <span class="c1"># convert to new type</span>
 
-<span class="n">simplify_currency</span><span class="p">(</span> <span class="s1">&#39;Tuition&#39;</span><span class="p">,</span> <span class="nb">float</span> <span class="p">)</span>
+<span class="n">simplify_currency</span><span class="p">(</span> <span class="s1">&#39;Tuition&#39;</span><span class="p">,</span> <span class="nb">float</span> <span class="p">)</span>  <span class="c1"># &lt;--- Here we use our function.</span>
 </pre></div>
 </div>
 <p>This should have the same effect as the original code.  Except now you can re-use it on as many inputs as you like.</p>
@@ -716,14 +758,9 @@
 </div>
 <div class="section" id="how-do-i-know-when-to-use-abstraction">
 <h2><span class="section-number">7.5. </span>How do I know when to use abstraction?<a class="headerlink" href="#how-do-i-know-when-to-use-abstraction" title="Permalink to this headline">¶</a></h2>
-<p>Whenever you find yourself copying and pasting code with minor changes, this is a sure sign that you should write a function instead.  The reasons why are essentially the six benefits listed at the end of <a class="reference external" href="#example-3-copying-and-pasting-code">Example 3</a>, above.</p>
+<p>Whenever you find yourself copying and pasting code with minor changes, this is a sure sign that you should write a function instead.  The reasons why are all the benefits listed at the end of <a class="reference external" href="#example-3-copying-and-pasting-code">Example 3</a>, above.</p>
 <p>Also, if you have several lines of code in a row with only one thing changing, you can use abstraction to create a loop instead of a function.  We saw an example of this in the <a class="reference external" href="#alternatives">Alternatives</a> section, above.  This is especially important if there’s a numeric progression involved.</p>
-<p>In class, we will practice using abstraction to improve code written in a redundant style.</p>
-<p><strong>Later, the skill of abstracting code will be a crucial part of our work on creating interactive dashboards.</strong></p>
-<div class="alert alert-danger admonition">
-<p class="admonition-title">Learning on Your Own - Code refactoring</p>
-<p>Some IDEs can help automate the process of abstraction.  This is part of a larger set of features that such apps often call “refactoring” or “code refactoring.”  Consider researching features in VS Code, PyCharm, or Eclipse that support code refactoring in Python and creating a report or video showing the class how to use those features to accomplish the content of this chapter.</p>
-</div>
+<p><strong>Later, the skill of abstracting code will be a crucial part of our work on creating interactive dashboards.</strong>  In class, we will practice using abstraction to improve code written in a redundant style.</p>
 <div class="alert alert-danger admonition">
 <p class="admonition-title">Learning on Your Own - Writing Python modules</p>
 <p>Once you’ve created a useful function, such as the <code class="docutils literal notranslate"><span class="pre">simplify_currency</span></code> function above, that you might want to reuse in many Python scripts or Jupyter notebooks, where should you store it?  Copying and pasting it across many notebooks creates the same problems that copying and pasting any code causes.  The best strategy is to create a Python module.</p>
@@ -737,6 +774,83 @@
 <li><p>How do I use the functions in my module after I’ve imported it?</p></li>
 <li><p>Can I publish my module online in an official way?</p></li>
 </ul>
+</div>
+<div class="section" id="admonition-learning-on-your-own-jupyter-run-magic">
+<h2><span class="section-number">7.6. </span>```{admonition} Learning on Your Own - Jupyter <code class="docutils literal notranslate"><span class="pre">%run</span></code> magic<a class="headerlink" href="#admonition-learning-on-your-own-jupyter-run-magic" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="class-alert-alert-danger">
+<h2><span class="section-number">7.7. </span>class: alert alert-danger<a class="headerlink" href="#class-alert-alert-danger" title="Permalink to this headline">¶</a></h2>
+<p>In a Jupyter notebook, the <code class="docutils literal notranslate"><span class="pre">%run</span></code> command tells Jupyter to execute an entire other Jupyter notebook or Python script as if it had been inserted into a single cell in your current notebook.  (It’s called a “magic” command because the <code class="docutils literal notranslate"><span class="pre">%</span></code> sign gives it a meaning beyond normal Python code.)  This command could be used to avoid creating Python modules in some cases.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+A tutorial on the `%run` magic command would address these questions:
+
+ * How exactly do I use the `%run` command to run one Jupyter notebook inside another?
+ * Why might I want to write a Jupyter notebook instead of a Python module?
+ * What are the pros and cons of doing this instead of writing a Python module?
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-if-abstraction-seems-tricky">
+<h2><span class="section-number">7.8. </span>What if abstraction seems tricky?<a class="headerlink" href="#what-if-abstraction-seems-tricky" title="Permalink to this headline">¶</a></h2>
+<p>It’s always good to be careful!  If writing Python functions is new to you, or you aren’t sure that the functions you write are working correctly, it’s good to stop and test them carefully before you rely on them.</p>
+<p>If your function returns a value, you can run it on a few example inputs to be sure it works.  Let’s say we had to write a Celsius-to-Fahrenheit converter, like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_C_to_F</span> <span class="p">(</span> <span class="n">C</span> <span class="p">):</span>
+    <span class="k">return</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span><span class="o">+</span><span class="mi">32</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We could test to be sure that it works by plugging in some values for which we know the answer, and ensuring it gives the right output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">convert_C_to_F</span><span class="p">(</span> <span class="mi">0</span> <span class="p">),</span> <span class="n">convert_C_to_F</span><span class="p">(</span> <span class="mi">100</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(32.0, 212.0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>But then we still have to manually observe and verify that the numbers are correct.  Later, if something changes (perhaps we accidentally edited our original function), we could easily not notice, because we weren’t re-checking these test outputs.</p>
+<p>To solve that problem, Python provides the <code class="docutils literal notranslate"><span class="pre">assert</span></code> keyword.  It lets you, well, assert things that you think are true, and Python will check them.  If they are true, Python does nothing.  But if they aren’t true, then Python throws an error message so that the problem will become visually obvious to you in your notebook.</p>
+<p>So we could convert our tests up above into the <code class="docutils literal notranslate"><span class="pre">assert</span></code> format as follows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">convert_C_to_F</span><span class="p">(</span> <span class="mi">0</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">32</span>
+<span class="k">assert</span> <span class="n">convert_C_to_F</span><span class="p">(</span> <span class="mi">100</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">212</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that there is no output.  That’s a good thing.  Python is silent because there are no problems here.  If we had asserted something false, it would have given us an obvious error message, to increase the likelihood that we would notice and fix the problem.</p>
+<p>Here’s an assertion that’s intentionally wrong, so you can see what the error messages look like.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">convert_C_to_F</span><span class="p">(</span> <span class="mi">0</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>        <span class="c1"># this should give an error...</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">766</span><span class="n">b548a1053</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">assert</span> <span class="n">convert_C_to_F</span><span class="p">(</span> <span class="mi">0</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>  <span class="c1"># intentionally wrong...gives an error</span>
+
+<span class="ne">AssertionError</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<p>But some functions don’t return values.  The <code class="docutils literal notranslate"><span class="pre">drop_unneded_columns</span></code> function from earlier just modifies a DataFrame that we had already loaded.  In that case, since there is no output of the function for us to test, we could test its effectiveness by using <code class="docutils literal notranslate"><span class="pre">assert</span></code> on the DataFrame that was modified.  We might write statements like the following.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span> <span class="n">df_cases</span><span class="o">.</span><span class="n">columns</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">8</span>
+<span class="k">assert</span> <span class="n">df_cases</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;January&#39;</span>
+</pre></div>
+</div>
+<p>Putting a few of these checks throughout your notebooks will ensure that if you change something important without realizing it, the next time you re-run your notebook, you’ll immediately see the problem and can fix it.  This helps avoid compounding problems over time, and gives a sense of reassurance, when all the <code class="docutils literal notranslate"><span class="pre">assert</span></code>ions pass, that your code is still working smoothly.</p>
 </div>
 </div>
 
