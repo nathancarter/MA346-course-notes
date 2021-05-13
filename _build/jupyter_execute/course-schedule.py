@@ -22,7 +22,7 @@
 #        * [Intermediate Python](https://www.datacamp.com/courses/intermediate-python-for-data-science), chapters 1-4
 #        * [pandas Foundations](https://www.datacamp.com/courses/pandas-foundations), just chapter 1
 #        * [Manipulating DataFrames with pandas](https://www.datacamp.com/courses/manipulating-dataframes-with-pandas), just chapter 1
-#     * [See here for a cheat sheet](big-cheat-sheet.html#before-week-2-review-of-cs230) of all the content of the above DataCamp lessons.
+#     * [See here for a cheat sheet](big-cheat-sheet.html#before-day-2-review-of-cs230) of all the content of the above DataCamp lessons.
 #  * **Reading**
 #     * Each week, you are expected to read the appropriate chapters from the course notes *before* class.  Since this is the first day for the course, I did not expect you to have read Chapters 1-2 in advance.  But that means that you must now read them together with Chapters 3-4 before next week.
 #     * [Chapter 1: Introduction to data science](chapter-1-intro-to-data-science) (adds details to today's class content)
@@ -46,7 +46,7 @@
 # 
 #  * **DataCamp**
 #     * [Manipulating DataFrames with pandas](https://www.datacamp.com/courses/manipulating-dataframes-with-pandas), chapters 2-4
-#     * [See here for a cheat sheet](big-cheat-sheet.html#before-week-3) of all the content of the above DataCamp lessons.
+#     * [See here for a cheat sheet](big-cheat-sheet.html#before-day-3) of all the content of the above DataCamp lessons.
 #  * **Reading**
 #     * [Chapter 5: Before and after, in mathematics and communication](chapter-5-before-and-after)
 #     * [Chapter 6: Pandas single-table verbs](chapter-6-single-table-verbs)
@@ -71,7 +71,7 @@
 #     * Email the URL for that project to your instructor.
 #  * **DataCamp**
 #     * [pandas Foundations](https://www.datacamp.com/courses/pandas-foundations), just chapter 2
-#     * [See here for a cheat sheet](big-cheat-sheet.html#before-week-4-review-of-visualization-in-cs230) of all the content of the above DataCamp lessons.
+#     * [See here for a cheat sheet](big-cheat-sheet.html#before-day-4-review-of-visualization-in-cs230) of all the content of the above DataCamp lessons.
 #  * **Reading**
 #     * [Chapter 7: Abstraction in mathematics and computing](chapter-7-abstraction)
 #     * [Chapter 8: Version control and GitHub](chapter-8-version-control)
@@ -94,7 +94,7 @@
 #     * [Intermediate Python](https://www.datacamp.com/courses/intermediate-python-for-data-science), chapter 5
 #     * [Statistical Thinking in Python, Part 1](https://www.datacamp.com/courses/statistical-thinking-in-python-part-1), all chapters
 #     * [Introduction to Data Visualization with Python](https://www.datacamp.com/courses/introduction-to-data-visualization-in-python), chapters 1 and 3 only
-#     * [See here for a cheat sheet](big-cheat-sheet.html#before-week-5) of all the content of the above DataCamp lessons.
+#     * [See here for a cheat sheet](big-cheat-sheet.html#before-day-5) of all the content of the above DataCamp lessons.
 #  * **Reading**
 #     * [Chapter 9: Math and stats in Python](chapter-9-math-and-stats)
 #     * [Chapter 10: New visualization tools](chapter-10-visualization)
@@ -123,7 +123,7 @@
 #  * **DataCamp**
 #     * [Merging DataFrames with pandas](https://learn.datacamp.com/courses/merging-dataframes-with-pandas), chapters 1-3
 #        * **NOTE:** We will not cover this content in class next week.  We will cover it the subsequent week instead.  But I'm assigning you to do it this week because then you won't have any homework next week, when the project is due, and you'll be able to focus on that instead.
-#     * [See here for a cheat sheet](big-cheat-sheet.html#before-week-6) of all the content of the above DataCamp lessons.
+#     * [See here for a cheat sheet](big-cheat-sheet.html#before-day-6) of all the content of the above DataCamp lessons.
 #  * **Reading**
 #     * [Chapter 11: Processing the rows of a `DataFrame`](chapter-11-processing-rows)
 #  * **Other**
@@ -159,7 +159,7 @@
 # 
 #  * **DataCamp**
 #     * [Streamlined Data Ingestion with pandas](https://learn.datacamp.com/courses/streamlined-data-ingestion-with-pandas)
-#     * [See here for a cheat sheet](big-cheat-sheet.html#before-week-8) of all the content of the above DataCamp lessons.
+#     * [See here for a cheat sheet](big-cheat-sheet.html#before-day-8) of all the content of the above DataCamp lessons.
 #  * **Reading**
 #     * [Chapter 13: Miscellaneous Munging Methods (ETL)](chapter-13-etl)
 # 
@@ -177,7 +177,7 @@
 #  * **DataCamp** (last one for the whole semester!)
 #     * [Introduction to SQL for Data Science](https://learn.datacamp.com/courses/introduction-to-sql)
 #        * **NOTE:** Bentley's CS350 course goes into this content in far greater detail.  You can see this lesson as a small preview or taste of that course.
-#     * [See here for a cheat sheet](big-cheat-sheet.html#before-week-9) of all the content of the above DataCamp lessons.
+#     * [See here for a cheat sheet](big-cheat-sheet.html#before-day-9) of all the content of the above DataCamp lessons.
 #  * **Reading**
 #     * [Chapter 14: Dashboards](chapter-14-dashboards)
 #  * **Other**

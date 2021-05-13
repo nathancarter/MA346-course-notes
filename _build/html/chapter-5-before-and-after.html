@@ -384,9 +384,9 @@
 <li><p>If I’m going to fit a linear model to the relationship between the “heart rate” variable and the “oxygen replacement” variable, I should be sure that the relationship between those two variables appears to be approximately linear.  (This is a requirement imposed by the nature of linear models.  It isn’t always a smart idea to use a linear model if that doesn’t reflect the actual relationship in the data.)</p></li>
 </ul>
 <p>Any code I’m about to run has <em>requirements</em> that must be true in order for that code to work, and if those requirements aren’t satisfied, the code will either give you an error or silently do the wrong thing.  Sometimes these are called “assumptions” instead of requirements, because the code assumes you’re running it in a situation where it makes sense to do so.</p>
-<p>For instance, in the “heart rate” example above, we would get an error, because the column we tried to sort by didn’t exist.  But in the linear model example above, we would get no error, just a linear model that probably wasn’t very useful, or might produce poor predictions.</p>
-<p>You can think of these requirements as <strong>what to know before running your code</strong> (or what to check if you don’t yet know it).  They are almost always phrased in terms of the inputs to the function you’re about to run, such as the data type the input must have, or the size/shape it must have, or the contents it must have.</p>
-<p>How do we avoid messing this up?  <em>Know what the relevant requirements are</em> for the code you’re about to run and <em>check them before you run the code.</em>  In some cases, the requirements are so small that it doesn’t make sense to waste time checking them, as in the “heart rate” example above.  (If we get it wrong, the error message will tell us, and we’ll fix it, nice and easy.)  But in other cases, the requirements are important and take time to check, as in the linear model example above.  In fact, let’s see how that would work:</p>
+<p>For instance, in the sorting example above, if the DataFrame didn’t have a “heart rate” column, our sorting code would give an error saying so.  But in the linear model example above, we would get no error, but we would probably get a linear model that wasn’t very useful, or that produces poor predictions.</p>
+<p>You can think of these requirements or assumptions as <strong>what to know before running your code</strong> (or what to check if you don’t yet know it).  They are almost always phrased in terms of the inputs to the function you’re about to run, such as the data type the input must have, or the size/shape it must have, or the contents it must have.</p>
+<p>How do we make sure we don’t violate any important requirements, or ignore any important assumptions?  <em>Know what the relevant requirements are</em> for the code you’re about to run and <em>check them before you run the code.</em>  In some cases, the requirements are so small that it doesn’t make sense to waste time checking them, as in the “heart rate” example above.  (If we get it wrong, the error message will tell us, and we’ll fix it, nice and easy.)  But in other cases, the requirements are important and take time to check, as in the linear model example above.  In fact, let’s look at that specific example more closely.</p>
 <p>Let’s say we’ve loaded a dataset of mortgages, with columns for <code class="docutils literal notranslate"><span class="pre">property_value</span></code> and <code class="docutils literal notranslate"><span class="pre">total_loan_costs</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -396,7 +396,7 @@
 </div>
 </div>
 </div>
-<p>I’m suspecting <code class="docutils literal notranslate"><span class="pre">total_loan_costs</span></code> can be estimated pretty reliably with a linear model from <code class="docutils literal notranslate"><span class="pre">property_value</span></code>.  But before I go and fit such a model, I had better check to be sure that the relationship between those variables actually seems to be linear.  The code below does so.</p>
+<p>I’m suspecting <code class="docutils literal notranslate"><span class="pre">total_loan_costs</span></code> can be estimated pretty reliably with a linear model from <code class="docutils literal notranslate"><span class="pre">property_value</span></code>.  But before I go and fit such a model, I had better check to be sure that the relationship between those variables actually seems to be linear.  The code below checks exactly that.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -420,7 +420,7 @@
 </div>
 <div class="section" id="guarantees">
 <h3><span class="section-number">5.1.2. </span>Guarantees<a class="headerlink" href="#guarantees" title="Permalink to this headline">¶</a></h3>
-<p>Each piece of code you run also provides certain guarantees that it will do for you (as long as you took care to ensure that the assumptions it required held true).  Here are some examples:</p>
+<p>Each piece of code you run also provides certain guarantees that will be true <em>after</em> it was run (as long as you took care to ensure that the assumptions it required held true <em>before</em> it was run).  Here are some examples:</p>
 <ul class="simple">
 <li><p>If you have a pandas DataFrame <code class="docutils literal notranslate"><span class="pre">df</span></code> containing numeric data and you call <code class="docutils literal notranslate"><span class="pre">df.mean()</span></code>, you will get a list of the mean value of each column in the data, computed separately, using the standard definition of mean from your intro stats class.</p></li>
 <li><p>If you fit a linear model to data using the standard method (ordinary least squares), then you know that the resulting model is the one that minimizes the sum of the squared residuals.  In other words, the expected estimation error on your data is as small as possible.</p></li>
@@ -466,10 +466,10 @@ Name: state_code, dtype: int64
 </div>
 </div>
 </div>
-<p>Seeing this code naturally causes us to ask questions like:  Why are we running this code?  What is this output saying?  Who cares?  What are the numbers next to the state codes?  Why just these 10 states?</p>
-<p>If instead the writer of the code had followed the two rules in the “Big Picture” lesson from earlier in the chapter, none of those questions would arise.  Here’s how they could have done it:</p>
+<p>Seeing this code naturally causes us to ask questions like:  Why are we running this code?  What is this output saying?  Who cares?  What are the numbers next to the state codes?  Why just these 10 states?  <strong>In short, this code all by itself gives us almost no idea what’s going on.</strong></p>
+<p>If instead the writer of the code had followed the rules in the “Big Picture” at the start of this section, none of those questions would arise.  Here’s how they could have done it:</p>
 <hr class="docutils" />
-<p>Which states have the most mortgage applications in our dataset?</p>
+<p><strong>Which states have the most mortgage applications in our dataset?</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;state_code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span> <span class="mi">10</span> <span class="p">)</span>
@@ -492,10 +492,10 @@ Name: state_code, dtype: int64
 </div>
 </div>
 </div>
-<p>Each state is shown next to the number of applications from that state in our dataset, largest first, then descending.  Here we show just the top 10.</p>
+<p><strong>Each state is shown next to the number of applications from that state in our dataset, largest first, then descending.  Here we show just the top 10.</strong></p>
 <hr class="docutils" />
 <p>Even with just a small piece of code, notice how easy it is to understand when we have the two explanations.  The sentence before the code asks an easy-to-understand question that shows the writer’s motivation for the code.  The two sentences after the code explain what the output shows and why we can trust it.</p>
-<p>We help the reader out (and ourselves later when we come back to this code!) by following those two simple rules of explanation.</p>
+<p>We help the reader (and ourselves later when we come back to this code!) by following those simple before-and-after rules of explanation.</p>
 </div>
 <div class="section" id="example-2">
 <h3><span class="section-number">5.2.2. </span>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h3>
@@ -517,10 +517,10 @@ Name: interest_rate, dtype: object
 </div>
 </div>
 </div>
-<p>Although in this case, you might know what’s going on because <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> is so common in pandas, it still doesn’t tell us why the code was run, or what we’re supposed to pay attention to in the output.</p>
+<p>In this case, you might know what’s going on because <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> is so common in pandas that many people are familiar with its output.  But we still can’t tell why the code was run, or what we’re supposed to pay attention to in the output.</p>
 <p>Imagine instead that the writer of the code had done this:</p>
 <hr class="docutils" />
-<p>We’d like to use the interest rates in the dataset to do some computation.  What format are they currently stored in?</p>
+<p><strong>We’d like to use the interest rates in the dataset to do some computation.  What format are they currently stored in?</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rates</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;interest_rate&#39;</span><span class="p">]</span>
@@ -538,25 +538,31 @@ Name: interest_rate, dtype: object
 </div>
 </div>
 </div>
-<p>The interest rates are written as percentages, since we see the most common one was 4.75 (instead of 0.0475, for example).  However, they are currently stored as text (what pandas calls “dtype: object”), so we must convert them before using them.  We stored them in the <code class="docutils literal notranslate"><span class="pre">rates</span></code> variable so we can manipulate it further later.</p>
+<p><strong>The interest rates are written as percentages, since we see the most common one was 4.75 (instead of 0.0475, for example).  However, they are currently stored as text (what pandas calls “dtype: object”), so we must convert them before using them.  We stored them in the <code class="docutils literal notranslate"><span class="pre">rates</span></code> variable so we can manipulate it further later.</strong></p>
 <hr class="docutils" />
-<p>Now we know why the original coder cared about this output (and perhaps why we should).  Also, if we didn’t know what “dtype: object” meant, or why we might pay attention to that, now we know.  Also, we know not to multiply anything by these interest rates without also dividing by 100, because they’re percentages.  Much more helpful than just the code alone!</p>
-<p>Poor or missing explanations decrease productivity.  When you work on a project that takes more than one day to do (and you will definitely have that experience in MA346), you’re guaranteed to come back and look at some code that you wrote in the past and scratch your head, wondering why it doesn’t look familiar.  This happens to everyone.  Help yourself out by adding explanations about each piece of code you write.  This is a requirement for the projects you do in this class; you’ll se more about this when you read the specific grading requirements for each project.</p>
-<p>If one day you find yourself coding in a professional environment, you’ll definitely want to document your work with comments and explanations.  You’re sure to share your work with teammates at some point.  You may even use your work to show new people who join the team how to get started.  A pile of code without explanations is far less useful than code interspersed with careful explanations.</p>
+<p>Now we know why the original coder cared about this output (and perhaps why we should).  Also, if we didn’t know what “dtype: object” meant, or why we might pay attention to that, now we know.  Also, we know not to multiply anything by these interest rates without also dividing by 100, because they’re percentages.  In fact, we know we can’t even multiply anything by them yet, until we convert them from text to numbers.  That’s so much more helpful than just the code alone!</p>
+<p>Poor or missing explanations decrease productivity.  When you work on a project that takes more than one day to do (and you will definitely have that experience in MA346), you’re guaranteed to come back and look at some code that you wrote in the past and scratch your head, wondering why it doesn’t look familiar.  This happens to everyone.  Help yourself out by adding explanations about each piece of code you write.  This is a requirement for the projects you do in this class; you’ll see more about this when you read the specific grading requirements for each project.</p>
+<p>It’s likely that one day you will write code for an employer, and you’ll definitely want to document that work with comments and explanations.  That work is very likely to be shared work with teammates at some point, such as using it to show new team members how to get started.  A pile of code without explanations is far less useful than code interspersed with careful explanations.</p>
 </div>
 <div class="section" id="knowing-your-target-audience">
 <h3><span class="section-number">5.2.3. </span>Knowing your target audience<a class="headerlink" href="#knowing-your-target-audience" title="Permalink to this headline">¶</a></h3>
 <p>When you’re considering adding explanations to your code, imagine yourself explaining the code to a future reader.</p>
 <ul class="simple">
-<li><p>If you suspect it’s a teammate that will read your code, write what you would say to them if you had to explain the code in person.</p></li>
+<li><p>If you suspect it’s a teammate that will read your code, write in the style you would use if you had to explain the code in person.</p></li>
 <li><p>If you know it’s your MA346 instructor who will read your code, write in such a way that you prove you know what your code does and can articulate why you wrote it.</p></li>
-<li><p>If you know it’s a new coder who will read your code, be more thorough and don’t take any knowledge for granted.  Think about what might confuse them and address it.</p></li>
+<li><p>If you know it’s a new coder who will read your code, be more thorough and don’t take any knowledge for granted.  Think about what was confusing to you about the topic back when you first learned it, and help your reader past the same potential confusion by speaking about it directly.</p></li>
 </ul>
 </div>
 <div class="section" id="professionalism">
 <h3><span class="section-number">5.2.4. </span>Professionalism<a class="headerlink" href="#professionalism" title="Permalink to this headline">¶</a></h3>
-<p>In a business context, taking the time required to make your writing as brief as possible has many benefits.  It enhances productivity because your writing is faster to read.  It reduces confusion because long writing makes people space out.  It shows respect because you’ve invested the time required to make sure your writing doesn’t waste your reader’s time.  Short, simple writing doesn’t make you look unintelligent; it makes you look like a clear writer.</p>
-<p>It is also essential to proofread what you’ve written.  Code explanations that don’t make sense because of typos, missing words, spelling errors, or enormous paragraphs are helpful to almost no one.  Take the time to ensure your writing would make your EXP101 professor proud.  In particular, any sufficiently long text (over one page, or one computer screen) needs headings to help the reader see the big picture.</p>
+<p>In a business context, taking the time required to make your writing as brief as possible has many benefits.</p>
+<ul class="simple">
+<li><p><strong>Greater productivity:</strong> Less to read means you’re done reading sooner.</p></li>
+<li><p><strong>Less confusion:</strong> Long writing makes people space out.</p></li>
+<li><p><strong>Showing respsect:</strong> You’ve invested the time required to make sure your writing doesn’t waste your reader’s time.</p></li>
+<li><p><strong>Your reputation:</strong> Some worry that writing simply makes you look unintelligent.  Quite the opposite!  It makes you look like a clear writer.</p></li>
+</ul>
+<p>It is also essential to proofread what you’ve written.  Code explanations that don’t make sense because of typos, missing words, spelling errors, or enormous paragraphs help almost no one.  Take the time to ensure your writing would make your EXP101 professor proud.  In particular, any sufficiently long text (over one page, or one computer screen) needs headings to help the reader understand the structure.</p>
 <div class="alert alert-danger admonition">
 <p class="admonition-title">Learning on Your Own - Technical Writing Tips</p>
 <p>Interview a professor in the English and Media Studies department.  Ask what their top 5 tips are for technical and/or business writing.  Create a report, video, or presentation on this for your MA346 peers.  Is it possible, for each tip, to show a realistic example of how bad things can be when someone disobeys the tip, compared side-by-side with a realistic example of how good things can be when the tip is followed?</p>
@@ -564,7 +570,7 @@ Name: interest_rate, dtype: object
 </div>
 <div class="section" id="choosing-a-medium">
 <h3><span class="section-number">5.2.5. </span>Choosing a medium<a class="headerlink" href="#choosing-a-medium" title="Permalink to this headline">¶</a></h3>
-<p>Should I put my code explanations as comments in the code, or as Markdown cells, or what?  Here are some brief guidelines, but there are no set rules.</p>
+<p>Should I explanain my code using comments in the code, or Markdown cells, or what?  Here are some brief guidelines, but there are no set rules.</p>
 <ul class="simple">
 <li><p>A Python script with comments in it is best if:</p>
 <ul>
@@ -575,16 +581,16 @@ Name: interest_rate, dtype: object
 <li><p>A Jupyter notebook with Markdown cells is best if:</p>
 <ul>
 <li><p>the code will generate tables and graphs that are a key part of what you’re trying to communicate, and</p></li>
-<li><p>the readers are other coders, who may want to see the code along with the tables and graphs,</p></li>
-<li><p>but it’s okay to also insert comments within code cells <em>in addition to</em> the before-and-after explanations between cells.</p></li>
+<li><p>the readers are other coders, who may want to see the code along with the tables and graphs.</p></li>
+<li><p>(It’s okay to also insert comments within code cells <em>in addition to</em> the before-and-after explanations between cells!)</p></li>
 </ul>
 </li>
 <li><p>A report (such as a Word doc) or slide deck is best if:</p>
 <ul>
-<li><p>your audience is nontechnical and therefore will be disconcerted to see your code, or</p></li>
+<li><p>your audience is nontechnical and therefore will be turned off by seeing code, or</p></li>
 <li><p>your audience is technical but in this particular instance they just want your results, or</p></li>
 <li><p>the amount of writing and pictures in what you need to share is high, and the amount of code very small.</p></li>
-<li><p>Showing code in slides is rarely welcome in a business context.</p></li>
+<li><p>(Showing code in slides is almost never welcome in a business context.  Even when presenting to other coders, very small sections of code are best.)</p></li>
 </ul>
 </li>
 <li><p>A code repository (which we’ll learn about in future weeks) is best if:</p>
