@@ -8,7 +8,7 @@
 
 # ## Python review 1: Remembering pandas
 # 
-# This first set of exercises works with a database from the U.S. Consumer Financial Protection Bureau.  The dataset recorded all mortgage applications in the U.S. in 2018, over 15 million of them.  Here we will work with a sample of about 0.1% of that data, just over 15 thousand entries.  These 15 thousand entries are randomly sampled from just those applications that were for a conventional loan for a typical home purchase of a principal residence (i.e., not a rental property, not an office building, etc., just standard house or condo for an individual or family).
+# This first set of exercises works with a database from the U.S. Consumer Financial Protection Bureau.  The dataset recorded all mortgage applications in the U.S. in 2018, over 15,000,000 of them.  Here we will work with a sample of about 0.1% of that data, just over 15,000 entries.  These 15,000 entries are randomly sampled from just those applications that were for a conventional loan for a typical home purchase of a principal residence (i.e., not a rental property, not an office building, etc., just standard house or condo for an individual or family).
 # 
 # <a href="../../_static/practice-project-dataset-1.csv">Download the dataset as a CSV file here.</a>  If you have questions about the meanings of any column in the dataset, they are fully documented [on the government website](https://ffiec.cfpb.gov/documentation/2018/lar-data-fields/) from which I got the original (much larger) dataset.
 # 
@@ -25,9 +25,9 @@
 #  5. The dataset has many columns we won't use.  Drop all columns except for `interest_rate`, `property_value`, `state_code`, `tract_minority_population_percent`, `derived_race`, `derived_sex`, and `applicant_age`.
 #  6. Reading a CSV file does not always ensure that columns are assigned the correct data type.  Use pandas's built-in `astype` function to correct any columns that have the wrong data type.
 #  7. Practice selecting just a subset of the DataFrame by trying each of these things:
-#      * Define a new variable `women` that contains just the rows of the dataset containing mortgage applications from females.  How many are there?  What are the mean and median loan amounts for that group?
-#      * Repeat the previous bullet point, but for Asian applicants, stored in a variable named `asians`.
-#      * Repeat the previous bullet point, but for applicants whose age is 75 or over, stored in a variable `age75andup`.
+#      * Define a new variable `female_applicants` that contains just the rows of the dataset containing mortgage applications from females.  How many are there?  What are the mean and median loan amounts for that group?
+#      * Repeat the previous bullet point, but for Asian applicants, stored in a variable named `asian_applicants`.
+#      * Repeat the previous bullet point, but for applicants whose age is 75 or over, stored in a variable `applicants_75_and_older`.
 #  8. Make your notebook presentable, using appropriate Markdown comments between cells to explain your code.  (Chapter 5 will cover best practices for how to write such comments, but do what you think is best for now.)
 #  9. Use Deepnote or Colab's publishing feature to create a shareable link to your notebook.  Paste that link into our class's Microsoft Teams chat, so that we can share our work with one another and learn from each other's work.
 # ```
@@ -49,12 +49,11 @@
 # 
 # ```python
 # df['interest_first_year'] = df['property_value'] * df['interest_rate'] / 100
-# df.head()
 # ```
 # 
 # Running this code in the notebook you've created would work just fine, and would create that new column.  It would have missing values for any rows that had missing property values or interest rates, naturally, but it would compute correct numerical values in all other rows.
 # 
-# But what happens if you try to run the same code, but just on the `women` DataFrame (or `asians` or `age75andup`)?
+# But what happens if you try to run the same code, but just on the `female_applicants` DataFrame (or `asian_applicants` or `applicants_75_and_older`)?
 # 
 # ```{admonition} Big Picture - Writing to a slice of a DataFrame
 # ---
@@ -69,7 +68,7 @@
 # 
 # ### DataCamp
 # 
-# I will regularly be assigning you exercises from [DataCamp](http://www.datacamp.com), some of which will review CS230 materials.  If you remember everything from CS230, the first few weeks of these exercises should be easy and quick for you.  If not, you will need to put in more time, but it will help you catch up.
+# I will regularly assign you exercises from [DataCamp](http://www.datacamp.com), some of which will review CS230 materials.  If you remember everything from CS230, the first few weeks of these exercises should be easy and quick for you.  If not, you will need to put in more time, but it will help you catch up.
 # 
 # ### Bentley faculty
 # 
@@ -84,7 +83,7 @@
 #  * When you do a search, put as many specific words related to your question as possible.
 #     * Be sure to mention Python, pandas, or whatever other libraries your question might touch upon.
 #     * If your question is about an error message, put the specific key words from the error message in your search.
-#  * When viewing questions and answers on Stack Overflow, don't just accept the top answer; see if later answers might be better suited to you.
+#  * When viewing questions and answers on Stack Overflow, don't read only the top answer.  A lower-ranked answer might actually be more suited to your specific needs.
 # 
 # ### O'Reilly books
 # 
@@ -121,6 +120,8 @@
 # class: alert alert-secondary
 # ---
 # Create a pandas DataFrame with two columns.  The first column should be entitled F for Fahrenheit, and should contain the numbers from 0 to 100, counting by fives.  The next column should be entitled C for Celsius, and contain the corresponding temperature in degrees Celsius for the number in the first column.  Display the resulting table in the notebook.
+# 
+# Now try changing your work so that the result is a single pandas Series whose *index* is the Fahrenheit temperatures, and whose *values* are the Celsius temperatures.
 # ```
 # 
 # ```{admonition} Exercise 4
@@ -151,30 +152,32 @@
 
 import numpy as np
 
-def variance_style_1 ( data ):
+# Coding style #1, "functional"
+def variance ( data ):
     return sum( [ ( x - np.mean(data) )**2 for x in data ] ) / ( len(data) - 1 )
 
 test_data = [ 5, 10, 3, 9, -1, 5, 3, 1 ]
-variance_style_1( test_data )
+variance( test_data )
 
 
 # Although this function computes the variance of a list of data correctly, it piles up a lot of parentheses and brackets that some readers find unnecessarily confusing when reading code.  We can make the function less compact and more explanatory by breaking the nested parentheses into several different lines of code, each storing its result in a variable.  Here is an example.
 
-# In[2]:
+# In[3]:
 
 
-def variance_style_2 ( data ):
+# Coding style #2, "imperative"
+def variance ( data ):
     n = len(data)
     xbar = np.mean( data )
     squared_differences = [ ( x - xbar )**2 for x in data ]
     return sum( squared_differences ) / ( n - 1 )
 
-variance_style_2( test_data )
+variance( test_data )
 
 
-# I call the first one *functional style* because we're composing a lot of functions, each inside another.  I call the second one *imperative style* because this is a programming term used to describe a line of code that gives a command; here we've broken the formula out into three separate commands to create variables, followed by the final formula.
+# I call the first one *functional style* because we're composing a lot of functions, each inside another.  I call the second one *imperative style* because the term "imperative" is used in programming to refer to lines of code that give the computer a command; here we've broken the formula out into three separate commands to create variables, followed by the final formula.
 # 
-# Neither of these is always right or always wrong.  For a short formula, you probably just want to use functional style.  But for a long formula, imperative style has these advantages:
+# Neither of these two styles is always better than the other.  For a short formula, you probably just want to use functional style.  But for a long formula, imperative style has these advantages:
 #  * You can use good, descriptive variable names to clarify for the reader of your code what it's computing in each step.
 #  * If the code you're writing isn't inside a function, you can split imperative-style code over multiple cells, and put explanations in between.
 #  * If you know the reader of your code is new to coding (such as a new teammate in your organization) then imperative style gives them small pieces of code to digest one at a time, rather than a big pile of code they must understand all at once.

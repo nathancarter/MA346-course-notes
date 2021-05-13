@@ -372,7 +372,7 @@
 <p>Unlike most chapters, there are no slides corresponding to this chapter, because they consist mostly of in-class exercises.  They aim to help you remember the Python and pandas you learned in CS230 and be sure they’re refreshed and at the front of your mind, so that we can build on them in future weeks.</p>
 <div class="section" id="python-review-1-remembering-pandas">
 <h2><span class="section-number">4.1. </span>Python review 1: Remembering pandas<a class="headerlink" href="#python-review-1-remembering-pandas" title="Permalink to this headline">¶</a></h2>
-<p>This first set of exercises works with a database from the U.S. Consumer Financial Protection Bureau.  The dataset recorded all mortgage applications in the U.S. in 2018, over 15 million of them.  Here we will work with a sample of about 0.1% of that data, just over 15 thousand entries.  These 15 thousand entries are randomly sampled from just those applications that were for a conventional loan for a typical home purchase of a principal residence (i.e., not a rental property, not an office building, etc., just standard house or condo for an individual or family).</p>
+<p>This first set of exercises works with a database from the U.S. Consumer Financial Protection Bureau.  The dataset recorded all mortgage applications in the U.S. in 2018, over 15,000,000 of them.  Here we will work with a sample of about 0.1% of that data, just over 15,000 entries.  These 15,000 entries are randomly sampled from just those applications that were for a conventional loan for a typical home purchase of a principal residence (i.e., not a rental property, not an office building, etc., just standard house or condo for an individual or family).</p>
 <p><a href="../../_static/practice-project-dataset-1.csv">Download the dataset as a CSV file here.</a>  If you have questions about the meanings of any column in the dataset, they are fully documented <a class="reference external" href="https://ffiec.cfpb.gov/documentation/2018/lar-data-fields/">on the government website</a> from which I got the original (much larger) dataset.</p>
 <div class="alert alert-secondary admonition">
 <p class="admonition-title">Exercise 1</p>
@@ -386,9 +386,9 @@
 <li><p>Reading a CSV file does not always ensure that columns are assigned the correct data type.  Use pandas’s built-in <code class="docutils literal notranslate"><span class="pre">astype</span></code> function to correct any columns that have the wrong data type.</p></li>
 <li><p>Practice selecting just a subset of the DataFrame by trying each of these things:</p>
 <ul class="simple">
-<li><p>Define a new variable <code class="docutils literal notranslate"><span class="pre">women</span></code> that contains just the rows of the dataset containing mortgage applications from females.  How many are there?  What are the mean and median loan amounts for that group?</p></li>
-<li><p>Repeat the previous bullet point, but for Asian applicants, stored in a variable named <code class="docutils literal notranslate"><span class="pre">asians</span></code>.</p></li>
-<li><p>Repeat the previous bullet point, but for applicants whose age is 75 or over, stored in a variable <code class="docutils literal notranslate"><span class="pre">age75andup</span></code>.</p></li>
+<li><p>Define a new variable <code class="docutils literal notranslate"><span class="pre">female_applicants</span></code> that contains just the rows of the dataset containing mortgage applications from females.  How many are there?  What are the mean and median loan amounts for that group?</p></li>
+<li><p>Repeat the previous bullet point, but for Asian applicants, stored in a variable named <code class="docutils literal notranslate"><span class="pre">asian_applicants</span></code>.</p></li>
+<li><p>Repeat the previous bullet point, but for applicants whose age is 75 or over, stored in a variable <code class="docutils literal notranslate"><span class="pre">applicants_75_and_older</span></code>.</p></li>
 </ul>
 </li>
 <li><p>Make your notebook presentable, using appropriate Markdown comments between cells to explain your code.  (Chapter 5 will cover best practices for how to write such comments, but do what you think is best for now.)</p></li>
@@ -410,11 +410,10 @@
 <h2><span class="section-number">4.2. </span>Adding a new column<a class="headerlink" href="#adding-a-new-column" title="Permalink to this headline">¶</a></h2>
 <p>As you may recall from CS230, you can add new columns to a pandas DataFrame using code like the example below.  This example calculates how much interest the loan would accrue in the first year.  (This is not fully accurate, since of course the borrower would make some payments that year, but it’s just an example.)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;interest_first_year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;property_value&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;interest_rate&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">100</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Running this code in the notebook you’ve created would work just fine, and would create that new column.  It would have missing values for any rows that had missing property values or interest rates, naturally, but it would compute correct numerical values in all other rows.</p>
-<p>But what happens if you try to run the same code, but just on the <code class="docutils literal notranslate"><span class="pre">women</span></code> DataFrame (or <code class="docutils literal notranslate"><span class="pre">asians</span></code> or <code class="docutils literal notranslate"><span class="pre">age75andup</span></code>)?</p>
+<p>But what happens if you try to run the same code, but just on the <code class="docutils literal notranslate"><span class="pre">female_applicants</span></code> DataFrame (or <code class="docutils literal notranslate"><span class="pre">asian_applicants</span></code> or <code class="docutils literal notranslate"><span class="pre">applicants_75_and_older</span></code>)?</p>
 <div class="alert alert-primary admonition">
 <p class="admonition-title">Big Picture - Writing to a slice of a DataFrame</p>
 <p>The warning message you see when you attempt to run the code described above is an important one!  It relates to the difference between a DataFrame and a <em>view</em> of that DataFrame.  You can add columns to a DataFrame, but if you add to just a view, you’ll receive a warning.  We will discuss the details of this in class.</p>
@@ -425,7 +424,7 @@
 <p>I have several recommendations of resources you can use:</p>
 <div class="section" id="datacamp">
 <h3><span class="section-number">4.3.1. </span>DataCamp<a class="headerlink" href="#datacamp" title="Permalink to this headline">¶</a></h3>
-<p>I will regularly be assigning you exercises from <a class="reference external" href="http://www.datacamp.com">DataCamp</a>, some of which will review CS230 materials.  If you remember everything from CS230, the first few weeks of these exercises should be easy and quick for you.  If not, you will need to put in more time, but it will help you catch up.</p>
+<p>I will regularly assign you exercises from <a class="reference external" href="http://www.datacamp.com">DataCamp</a>, some of which will review CS230 materials.  If you remember everything from CS230, the first few weeks of these exercises should be easy and quick for you.  If not, you will need to put in more time, but it will help you catch up.</p>
 </div>
 <div class="section" id="bentley-faculty">
 <h3><span class="section-number">4.3.2. </span>Bentley faculty<a class="headerlink" href="#bentley-faculty" title="Permalink to this headline">¶</a></h3>
@@ -442,7 +441,7 @@
 <li><p>If your question is about an error message, put the specific key words from the error message in your search.</p></li>
 </ul>
 </li>
-<li><p>When viewing questions and answers on Stack Overflow, don’t just accept the top answer; see if later answers might be better suited to you.</p></li>
+<li><p>When viewing questions and answers on Stack Overflow, don’t read only the top answer.  A lower-ranked answer might actually be more suited to your specific needs.</p></li>
 </ul>
 </div>
 <div class="section" id="o-reilly-books">
@@ -478,6 +477,7 @@
 <div class="alert alert-secondary admonition">
 <p class="admonition-title">Exercise 3</p>
 <p>Create a pandas DataFrame with two columns.  The first column should be entitled F for Fahrenheit, and should contain the numbers from 0 to 100, counting by fives.  The next column should be entitled C for Celsius, and contain the corresponding temperature in degrees Celsius for the number in the first column.  Display the resulting table in the notebook.</p>
+<p>Now try changing your work so that the result is a single pandas Series whose <em>index</em> is the Fahrenheit temperatures, and whose <em>values</em> are the Celsius temperatures.</p>
 </div>
 <div class="alert alert-secondary admonition">
 <p class="admonition-title">Exercise 4</p>
@@ -506,11 +506,12 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="k">def</span> <span class="nf">variance_style_1</span> <span class="p">(</span> <span class="n">data</span> <span class="p">):</span>
+<span class="c1"># Coding style #1, &quot;functional&quot;</span>
+<span class="k">def</span> <span class="nf">variance</span> <span class="p">(</span> <span class="n">data</span> <span class="p">):</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span> <span class="p">[</span> <span class="p">(</span> <span class="n">x</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span> <span class="p">]</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span>
 
 <span class="n">test_data</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span> <span class="p">]</span>
-<span class="n">variance_style_1</span><span class="p">(</span> <span class="n">test_data</span> <span class="p">)</span>
+<span class="n">variance</span><span class="p">(</span> <span class="n">test_data</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -523,13 +524,14 @@
 <p>Although this function computes the variance of a list of data correctly, it piles up a lot of parentheses and brackets that some readers find unnecessarily confusing when reading code.  We can make the function less compact and more explanatory by breaking the nested parentheses into several different lines of code, each storing its result in a variable.  Here is an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">variance_style_2</span> <span class="p">(</span> <span class="n">data</span> <span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Coding style #2, &quot;imperative&quot;</span>
+<span class="k">def</span> <span class="nf">variance</span> <span class="p">(</span> <span class="n">data</span> <span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="n">xbar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">data</span> <span class="p">)</span>
     <span class="n">squared_differences</span> <span class="o">=</span> <span class="p">[</span> <span class="p">(</span> <span class="n">x</span> <span class="o">-</span> <span class="n">xbar</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span> <span class="p">]</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span> <span class="n">squared_differences</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span>
 
-<span class="n">variance_style_2</span><span class="p">(</span> <span class="n">test_data</span> <span class="p">)</span>
+<span class="n">variance</span><span class="p">(</span> <span class="n">test_data</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -539,8 +541,8 @@
 </div>
 </div>
 </div>
-<p>I call the first one <em>functional style</em> because we’re composing a lot of functions, each inside another.  I call the second one <em>imperative style</em> because this is a programming term used to describe a line of code that gives a command; here we’ve broken the formula out into three separate commands to create variables, followed by the final formula.</p>
-<p>Neither of these is always right or always wrong.  For a short formula, you probably just want to use functional style.  But for a long formula, imperative style has these advantages:</p>
+<p>I call the first one <em>functional style</em> because we’re composing a lot of functions, each inside another.  I call the second one <em>imperative style</em> because the term “imperative” is used in programming to refer to lines of code that give the computer a command; here we’ve broken the formula out into three separate commands to create variables, followed by the final formula.</p>
+<p>Neither of these two styles is always better than the other.  For a short formula, you probably just want to use functional style.  But for a long formula, imperative style has these advantages:</p>
 <ul class="simple">
 <li><p>You can use good, descriptive variable names to clarify for the reader of your code what it’s computing in each step.</p></li>
 <li><p>If the code you’re writing isn’t inside a function, you can split imperative-style code over multiple cells, and put explanations in between.</p></li>
@@ -562,13 +564,13 @@
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "python392jvsc74a57bd098b0a9b7b4eaaa670588a142fd0a9b87eaafe866f1db4228be72b4211d12040f",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'python392jvsc74a57bd098b0a9b7b4eaaa670588a142fd0a9b87eaafe866f1db4228be72b4211d12040f'</script>
 
               </div>
               
