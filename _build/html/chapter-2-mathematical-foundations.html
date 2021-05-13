@@ -406,26 +406,26 @@
 <p><a href="../../_slides/chapter-2-slides.html">See also the slides that summarize a portion of this content.</a></p>
 <div class="alert alert-primary admonition">
 <p class="admonition-title">Big Picture - Functions and relations</p>
-<p>The contents of this page are extremely foundational to the course.  We will be weaving these foundations through every lesson in the course after this one.</p>
+<p>The contents of this page are extremely foundational to the course.  We will be weaving these foundations through almost every lesson in the course after this one.</p>
 </div>
 <div class="section" id="functions">
 <h2><span class="section-number">2.1. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <p><strong>Definition:</strong> A <em>function</em> is any method for taking a list of inputs and determining the corresponding output.</p>
 <div class="section" id="examples-of-functions">
 <h3><span class="section-number">2.1.1. </span>Examples of functions<a class="headerlink" href="#examples-of-functions" title="Permalink to this headline">¶</a></h3>
-<p><strong>Math:</strong> We can write functions with the usual notation from an algebra or calculus course:</p>
+<p><strong>Functions in mathematics:</strong> We can write functions with the usual notation from an algebra or calculus course:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(f(x)=x^2-5\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(g(x,y,z)=\frac{x^2-y^2}{z}\)</span></p></li>
 </ul>
-<p>How is this a method for turning inputs into outputs?  Given an input like <span class="math notranslate nohighlight">\(x=2\)</span>, a function like <span class="math notranslate nohighlight">\(f\)</span> can find an output through the usual mechanism of substitution, more commonly called “plugging it in.”  Just substitute <span class="math notranslate nohighlight">\(2\)</span> into <span class="math notranslate nohighlight">\(f(x)=x^2-5\)</span> to get <span class="math notranslate nohighlight">\(f(2)=2^2-5=-1\)</span>.  There are also computer programs into which you can type mathematical notation and ask it to apply the function for you.</p>
-<p><strong>English:</strong> We can write functions in plain English (or any other natural language, but we’ll use English).  To do so, we write a <em>noun phrase,</em> and include blanks where the inputs belong:</p>
+<p>How is this a method for turning inputs into outputs?  Given an input like <span class="math notranslate nohighlight">\(x=2\)</span>, a function like <span class="math notranslate nohighlight">\(f\)</span> can find an output through the usual mechanism of substitution, more commonly called “plugging it in.”  Just substitute <span class="math notranslate nohighlight">\(2\)</span> into <span class="math notranslate nohighlight">\(f(x)=x^2-5\)</span> to get <span class="math notranslate nohighlight">\(f(2)=2^2-5=-1\)</span>.</p>
+<p><strong>Functions in English:</strong> We can write functions in plain English (or any other natural language, but we’ll use English).  To do so, we write a <em>noun phrase,</em> and include blanks where the inputs belong:</p>
 <ul class="simple">
-<li><p>the capitol of <u>       </u></p></li>
-<li><p>the difference in ages between <u>       </u> and <u>       </u></p></li>
+<li><p>the capitol of <u><nobr>       </nobr></u></p></li>
+<li><p>the difference in ages between <u><nobr>       </nobr></u> and <u><nobr>       </nobr></u></p></li>
 </ul>
-<p>How is this a method for turning inputs into outputs?  Given an input like France, I can substitute it into “the capitol of <u>       </u>” to get “the capitol of France” and use my knowledge to get Paris.  If it were a capitol I didn’t know, I could use the Internet to find out.</p>
-<p><strong>Python:</strong> We can write functions in Python (or other programming languages, but this course focuses on Python), like this:</p>
+<p>How is this a method for turning inputs into outputs?  Given an input like France, I can substitute it into “the capitol of <u><nobr>       </nobr></u>” to get “the capitol of France” and use my knowledge to get Paris.  If it were a capitol I didn’t know, I could use the Internet to find out.</p>
+<p><strong>Functions in Python:</strong> We can write functions in Python (or other programming languages, but this course focuses on Python), like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square</span> <span class="p">(</span> <span class="n">x</span> <span class="p">):</span>
@@ -462,7 +462,7 @@
 </div>
 </div>
 </div>
-<p><strong>Tables:</strong> Any two-column table can work as a function, if we follow a few conventions.</p>
+<p><strong>Functions in tables:</strong> Any two-column table can work as a function, if we follow a few conventions.</p>
 <ol class="simple">
 <li><p>The left column will list the possible inputs to the function.</p></li>
 <li><p>The right column will list the corresponding outputs.</p></li>
@@ -471,8 +471,8 @@
 <p>Here’s an example, which converts Bentley email IDs to real names for a few members of the Mathematical Sciences Department:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>User ID</p></th>
-<th class="head"><p>Name</p></th>
+<tr class="row-odd"><th class="head"><p>Bentley Email ID</p></th>
+<th class="head"><p>Real Name</p></th>
 </tr>
 </thead>
 <tbody>
@@ -494,12 +494,12 @@
 </tbody>
 </table>
 <p>(We could add more names, but it’s just an example.)</p>
-<p>How is this a method for turning inputs into outputs?  We use the familiar and fundamental operation of <em>lookup,</em> something that shows up in numerous places when working with data.  (We’ll return to the concept of lookup at the end of this chapter.)  Given a User ID as input, we look for it in the first column of the table, and once it’s found, the appropriate output is right next to it in the right column.</p>
-<p><strong>Others:</strong> Later in the course we will see other ways to represent functions, but the ones above are the most common.</p>
+<p>How is this a method for turning inputs into outputs?  We use the familiar and fundamental operation of <em>lookup,</em> something that shows up in numerous places when working with data.  (We’ll return to the concept of lookup at the end of this chapter.)  Given a Bentley Email ID as input, we look for it in the first column of the table, and once it’s found, the appropriate output is right next to it in the right column.</p>
+<p><strong>Other types of functions:</strong> Later in the course we will see other ways to represent functions, but the ones above are the most common.</p>
 </div>
 <div class="section" id="which-way-is-best">
 <h3><span class="section-number">2.1.2. </span>Which way is best?<a class="headerlink" href="#which-way-is-best" title="Permalink to this headline">¶</a></h3>
-<p>The examples above show that you can express functions using math, English, Python, tables, and more.  Although none of these ways is always better than the others, we will typically give functions names and refer to them by those names.  Examples:</p>
+<p>The examples above show that you can express functions using math, English, Python, tables, and more.  Although none of these ways is better than the others 100% of the time, we will typically give functions names and refer to them by those names.  Examples:</p>
 <ul class="simple">
 <li><p>In Math:  Rather than writing out <span class="math notranslate nohighlight">\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\)</span> all the time, people just use the short name “the quadratic formula.”</p></li>
 <li><p>In Python:  The <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword in Python is for giving names to functions so that you can use them later by just typing their name.</p></li>
@@ -513,7 +513,7 @@
 <li><p>You better learn your times tables. (In other words, you should memorize the function that gives the product of two small whole numbers.)</p></li>
 <li><p>What’s Kayla’s phone number? (In other words, please apply the phone-number-of-person function to Kayla for me.)</p></li>
 </ul>
-<p>Unsurprisingly, functions show up all over the place in data science.  In particular, when working with a pandas DataFrame, we use functions often to summarize columns (such as compute the max, min, or mean) or to compute new columns, as in this example using Python’s built in <code class="docutils literal notranslate"><span class="pre">/</span></code> function:</p>
+<p>Unsurprisingly, functions show up all over the place in data science.  In particular, when working with a pandas DataFrame, we use functions often to summarize columns (such as compute the max, min, or mean) or to compute new columns, as in this example using Python’s built in division function (written with a <code class="docutils literal notranslate"><span class="pre">/</span></code>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Per capita cost&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Cost&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -551,11 +551,13 @@
 <li><p>A list of countries and capitols appears here: <a class="reference external" href="https://www.boldtuesday.com/pages/alphabetical-list-of-all-countries-and-capitals-shown-on-list-of-countries-poster">https://www.boldtuesday.com/pages/alphabetical-list-of-all-countries-and-capitals-shown-on-list-of-countries-poster</a></p></li>
 <li><p>To convert two columns of a pandas DataFrame into a Python <code class="docutils literal notranslate"><span class="pre">dict</span></code> for easy lookup, try the following.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;input column name&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;output column name&#39;</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">input_col</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;input column name&#39;</span><span class="p">]</span>
+<span class="n">output_col</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;output column name&#39;</span><span class="p">]</span>
+<span class="n">dictionary</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">input_col</span><span class="p">,</span> <span class="n">output_col</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>You can then look items up using <code class="docutils literal notranslate"><span class="pre">D[item_to_look_up]</span></code>, as in <code class="docutils literal notranslate"><span class="pre">D['ZIMBABWE']</span></code>.</p></li>
+<li><p>You can then look items up using <code class="docutils literal notranslate"><span class="pre">dictionary[item_to_look_up]</span></code>, as in <code class="docutils literal notranslate"><span class="pre">dictionary['ZIMBABWE']</span></code>.</p></li>
 </ul>
 <p>Example: <code class="docutils literal notranslate"><span class="pre">country_capitol('JORDAN')</span></code> would yield <code class="docutils literal notranslate"><span class="pre">'AMMAN'</span></code>.</p>
 </div>
@@ -582,11 +584,15 @@
 <p><strong>Definition:</strong> A <em>relation</em> is a function whose output type is <code class="docutils literal notranslate"><span class="pre">bool</span></code>, that is, the outputs are always either true or false.</p>
 <div class="section" id="examples-of-relations">
 <h3><span class="section-number">2.4.1. </span>Examples of relations<a class="headerlink" href="#examples-of-relations" title="Permalink to this headline">¶</a></h3>
-<p><strong>Math:</strong> Any equation or inequality in mathematics is a relation, such as <span class="math notranslate nohighlight">\(x^2+y^2\ge z^2\)</span> or <span class="math notranslate nohighlight">\(x\ge 0\)</span>.</p>
+<p><strong>Relations in mathematics:</strong> Any equation or inequality in mathematics is a relation, such as <span class="math notranslate nohighlight">\(x^2+y^2\ge z^2\)</span> or <span class="math notranslate nohighlight">\(x\ge 0\)</span>.</p>
 <p>Consider <span class="math notranslate nohighlight">\(x\ge 0\)</span>.  Given any input of the appropriate type, say <span class="math notranslate nohighlight">\(x=15\)</span>, we can determine a true or false value by substitution.  In this case, substituting <span class="math notranslate nohighlight">\(x=15\)</span> into <span class="math notranslate nohighlight">\(x\ge0\)</span> gives <span class="math notranslate nohighlight">\(15\ge0\)</span>, which we know is true.  We could do a similar thing with <span class="math notranslate nohighlight">\(x^2+y^2\ge z^2\)</span> if given three numerical inputs instead of just one.</p>
-<p><strong>English:</strong> Any declarative sentence with blanks in it is a relation, such as “<u>       </u> is the capitol of <u>       </u>” or “<u>       </u> is a fruit.”</p>
-<p>Given any input, you can use it to fill in the blank in the sentence and then judge (using your ordinary knowledge of the world and English) whether the sentence is true.  For instance, if we’re working with the sentence “<u>       </u> is a fruit” and I provide the input “Python,” then I get the sentence “Python is a fruit,” which is obviously false, because it’s a programming language, not a fruit.</p>
-<p><strong>Python:</strong> Any Python function with output type <code class="docutils literal notranslate"><span class="pre">bool</span></code> is a relation.</p>
+<p><strong>Relations in English:</strong> Any declarative sentence with blanks in it is a relation.  Here are two examples:</p>
+<ul class="simple">
+<li><p><u><nobr>       </nobr></u> is the capitol of <u><nobr>       </nobr></u></p></li>
+<li><p><u><nobr>       </nobr></u> is a fruit.</p></li>
+</ul>
+<p>Given any input, you can use it to fill in the blank (or blanks) in the sentence and then judge (using your ordinary knowledge of the world and English) whether the sentence is true.  For instance, if we’re working with the sentence “<u>       </u> is a fruit” and I provide the input “Python,” then I get the sentence “Python is a fruit,” which is obviously false, because it’s a programming language, not a fruit.</p>
+<p><strong>Relations in Python:</strong> Any Python function with output type <code class="docutils literal notranslate"><span class="pre">bool</span></code> is a relation.</p>
 <p>You can evaluate such relations by running them in Python, just as we did with functions earlier.  In fact, the <code class="docutils literal notranslate"><span class="pre">is_a_long_word</span></code> function from earlier is not only a function, but also a relation.  Here are two other examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -612,7 +618,7 @@
 </div>
 </div>
 </div>
-<p><strong>Lists:</strong> A very common way of defining a relation is to just list all the inputs for which the relation is true, and then we know that everything else makes it false.</p>
+<p><strong>Relations as lists:</strong> A very common way of defining a relation is to just list all the inputs for which the relation is true, and then we know that everything else makes it false.</p>
 <p>In data science, we often do this using tables.  For example, consider the table on the webpage mentioned in Exercise 3, above.  That table lists all the pairs of inputs that make the “<u>       </u> is the capitol of <u>       </u>” relation true.</p>
 <p>If you want to check whether, for example, “Bangalore is the capitol of India” is true, you can look to see if any row of the table is <code class="docutils literal notranslate"><span class="pre">('India','Bangalore')</span></code>.  Since there is no such row, the relation is false for that input.  (The capitol is actually New Delhi.)</p>
 <div class="alert alert-primary admonition">
@@ -620,8 +626,8 @@
 <p>Every table is a relation.  Each row represents a set of inputs that would make the relation true, and any inputs that don’t appear as a row in the table make it false.</p>
 <p>Thus every pandas DataFrame is a relation, every SQL table is a relation, and every table you see printed in a book or on a webpage is a relation.  This is why SQL is the language for querying <em>relational</em> databases.</p>
 </div>
-<p>The above big picture concept is almost 100% true.  Technically, a pandas DataFrame or an SQL table can have repeated rows, which is unnecessary if you’re defining a relation.  And technically pandas DataFrames and SQL tables also have an extra layer of data called the “index” which we’re ignoring for now, just concentrating on the contents of the table’s columns.</p>
-<p><strong>Others:</strong> Later in the class we’ll see even other ways to represent functions.</p>
+<p>The above big picture concept is almost 100% true.  Technically, a pandas DataFrame or a SQL table can have repeated rows, which is unnecessary if you’re defining a relation.  And technically pandas DataFrames and SQL tables also have an extra layer of data called the “index” which we’re ignoring for now, just concentrating on the contents of the table’s columns.</p>
+<p><strong>Other types of relations:</strong> Later in the class we’ll see even other ways to represent relations.</p>
 </div>
 <div class="section" id="id1">
 <h3><span class="section-number">2.4.2. </span>Which way is best?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
@@ -635,7 +641,7 @@
 <li><p>If I say, “George isn’t friends with Mia,” then I’m relying on your familiarity with the being-friends-with relation, which you’ve known since Kindergarten.</p></li>
 <li><p>If I say, “Dell acquired EMC in 2015,” then I’m relying on your familiarity with the “acquired” relation among companies, which you might not have been very familiar with before coming to Bentley.</p></li>
 </ul>
-<p>The above examples are from binary relations, which are possibly the most common type.  Just as a function can be binary (that is, take two inputs), so can a relation, because it’s just a special type of function.  But of course we can have unary functions as well (taking one input only), like the <code class="docutils literal notranslate"><span class="pre">is_a_long_word</span></code> and <code class="docutils literal notranslate"><span class="pre">is_a_primary_color</span></code> examples above, and we can have relations with three or more inputs as well.</p>
+<p>The above examples are from binary relations, which are possibly the most common type.  Just as a function can be binary (that is, take two inputs), so can a relation, because it’s just a special type of function.  But of course we can have unary relations as well (taking one input only), like the <code class="docutils literal notranslate"><span class="pre">is_a_long_word</span></code> and <code class="docutils literal notranslate"><span class="pre">is_a_primary_color</span></code> examples above, and we can have relations with three or more inputs as well.</p>
 <p>A very important use of relations in data science is for <em>filtering</em> a dataset.  We often want to focus our attention on just the section of a dataset we’re interested in, which we describe as “filtering” to keep the rows we want (or “filtering out” the rows we don’t want).  In pandas, you can select a subset of a DataFrame <code class="docutils literal notranslate"><span class="pre">df</span></code> and return it as a new DataFrame (or, rather, a view on the original), like so:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># To filter the rows of a DataFrame, index the DataFrame with the relation:</span>
 <span class="n">df</span><span class="p">[</span><span class="n">put_any_relation_here</span><span class="p">]</span>
@@ -843,13 +849,13 @@
 <div class="section" id="inverses">
 <h3><span class="section-number">2.6.3. </span>Inverses<a class="headerlink" href="#inverses" title="Permalink to this headline">¶</a></h3>
 <p>As mentioned above, a function is a relation in which <em>for each</em> input, <em>there is exactly one</em> output.  But for <em>some</em> functions, the reverse is also true:  For each <em>output</em>, there is exactly one <em>input.</em></p>
-<p>For example, consider the Technology Fast 500 table again, and let’s assume that each company and CEO name is unique (i.e., there are not two CEOs name Jack Newton, or two companies named Clearpath, etc.).  Consider the function that maps a company name to the corresponding CEO name; let’s call it <code class="docutils literal notranslate"><span class="pre">find_ceo_for_company</span></code>.</p>
+<p>For example, consider the Technology Fast 500 table again, and let’s assume that each company and CEO name is unique (i.e., there are not two CEOs name Jack Newton, or two companies named Clearpath, etc.).  Consider the function that maps a company name to the corresponding CEO name; let’s call it <code class="docutils literal notranslate"><span class="pre">lookup_ceo_for_company</span></code>.</p>
 <ul class="simple">
 <li><p>As with every function, for each input company, there is exactly one CEO output.</p></li>
 <li><p>But in this case, also, for each CEO output, there is exactly one input company.</p></li>
 </ul>
-<p>While we chose to use the company as input and provide the CEO name as output, we could also have done it in the other order.  That is, we could have created a function <code class="docutils literal notranslate"><span class="pre">find_company_for_ceo</span></code> that takes a CEO name as input and provides the corresponding company name as output.  It just depends on which column you chose to use as the input and which you choose to use as the output.</p>
-<p>This concept is probably familiar from mathematics, where we speak of <em>inverting</em> a function.  In mathematical notation, we write the inverse of <span class="math notranslate nohighlight">\(f\)</span> as <span class="math notranslate nohighlight">\(f^{-1}\)</span>, but in computing, we can use more descriptive names, like the example of <code class="docutils literal notranslate"><span class="pre">find_ceo_for_company</span></code> and <code class="docutils literal notranslate"><span class="pre">find_company_for_ceo</span></code>.</p>
+<p>While we chose to use the company as input and provide the CEO name as output, we could also have done it in the other order.  That is, we could have created a function <code class="docutils literal notranslate"><span class="pre">lookup_company_for_ceo</span></code> that takes a CEO name as input and provides the corresponding company name as output.  It just depends on which column you choose to use as the input and which you choose to use as the output.</p>
+<p>This concept is probably familiar from mathematics, where we speak of <em>inverting</em> a function.  In mathematical notation, we write the inverse of <span class="math notranslate nohighlight">\(f\)</span> as <span class="math notranslate nohighlight">\(f^{-1}\)</span>, but in computing, we can use more descriptive names, like the example of <code class="docutils literal notranslate"><span class="pre">lookup_ceo_for_company</span></code> and <code class="docutils literal notranslate"><span class="pre">lookup_company_for_ceo</span></code>.</p>
 <p>In summary:  For a relation to be a function, it has to provide just one output for each input.  For it to be invertible, it has to have just one input for each output.</p>
 </div>
 </div>

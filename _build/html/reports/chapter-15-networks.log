@@ -1,0 +1,55 @@
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/opt/conda/lib/python3.9/site-packages/nbclient/client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/conda/lib/python3.9/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/opt/conda/lib/python3.9/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/conda/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/opt/conda/lib/python3.9/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/opt/conda/lib/python3.9/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/opt/conda/lib/python3.9/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import pandas as pd
+sheets = pd.read_excel( '_static/dolphins.xlsx', sheet_name=None )
+sheets.keys()
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+[0;32m<ipython-input-1-d83e9e133d33>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;32mimport[0m [0mpandas[0m [0;32mas[0m [0mpd[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0msheets[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_excel[0m[0;34m([0m [0;34m'_static/dolphins.xlsx'[0m[0;34m,[0m [0msheet_name[0m[0;34m=[0m[0;32mNone[0m [0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0msheets[0m[0;34m.[0m[0mkeys[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/opt/conda/lib/python3.9/site-packages/pandas/util/_decorators.py[0m in [0;36mwrapper[0;34m(*args, **kwargs)[0m
+[1;32m    297[0m                 )
+[1;32m    298[0m                 [0mwarnings[0m[0;34m.[0m[0mwarn[0m[0;34m([0m[0mmsg[0m[0;34m,[0m [0mFutureWarning[0m[0;34m,[0m [0mstacklevel[0m[0;34m=[0m[0mstacklevel[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 299[0;31m             [0;32mreturn[0m [0mfunc[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    300[0m [0;34m[0m[0m
+[1;32m    301[0m         [0;32mreturn[0m [0mwrapper[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/opt/conda/lib/python3.9/site-packages/pandas/io/excel/_base.py[0m in [0;36mread_excel[0;34m(io, sheet_name, header, names, index_col, usecols, squeeze, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, thousands, comment, skipfooter, convert_float, mangle_dupe_cols, storage_options)[0m
+[1;32m    334[0m     [0;32mif[0m [0;32mnot[0m [0misinstance[0m[0;34m([0m[0mio[0m[0;34m,[0m [0mExcelFile[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    335[0m         [0mshould_close[0m [0;34m=[0m [0;32mTrue[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 336[0;31m         [0mio[0m [0;34m=[0m [0mExcelFile[0m[0;34m([0m[0mio[0m[0;34m,[0m [0mstorage_options[0m[0;34m=[0m[0mstorage_options[0m[0;34m,[0m [0mengine[0m[0;34m=[0m[0mengine[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    337[0m     [0;32melif[0m [0mengine[0m [0;32mand[0m [0mengine[0m [0;34m!=[0m [0mio[0m[0;34m.[0m[0mengine[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    338[0m         raise ValueError(
+
+[0;32m/opt/conda/lib/python3.9/site-packages/pandas/io/excel/_base.py[0m in [0;36m__init__[0;34m(self, path_or_buffer, engine, storage_options)[0m
+[1;32m   1100[0m [0;34m[0m[0m
+[1;32m   1101[0m             [0;32mif[0m [0mext[0m [0;34m!=[0m [0;34m"xls"[0m [0;32mand[0m [0mxlrd_version[0m [0;34m>=[0m [0;34m"2"[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1102[0;31m                 raise ValueError(
+[0m[1;32m   1103[0m                     [0;34mf"Your version of xlrd is {xlrd_version}. In xlrd >= 2.0, "[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1104[0m                     [0;34mf"only the xls format is supported. Install openpyxl instead."[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mValueError[0m: Your version of xlrd is 2.0.1. In xlrd >= 2.0, only the xls format is supported. Install openpyxl instead.
+ValueError: Your version of xlrd is 2.0.1. In xlrd >= 2.0, only the xls format is supported. Install openpyxl instead.
+

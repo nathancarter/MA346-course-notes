@@ -9,7 +9,7 @@
 # ---
 # class: alert alert-primary
 # ---
-# The contents of this page are extremely foundational to the course.  We will be weaving these foundations through every lesson in the course after this one.
+# The contents of this page are extremely foundational to the course.  We will be weaving these foundations through almost every lesson in the course after this one.
 # ```
 
 # ## Functions
@@ -18,19 +18,19 @@
 # 
 # ### Examples of functions
 # 
-# **Math:** We can write functions with the usual notation from an algebra or calculus course:
+# **Functions in mathematics:** We can write functions with the usual notation from an algebra or calculus course:
 #  * $f(x)=x^2-5$
 #  * $g(x,y,z)=\frac{x^2-y^2}{z}$
 # 
-# How is this a method for turning inputs into outputs?  Given an input like $x=2$, a function like $f$ can find an output through the usual mechanism of substitution, more commonly called "plugging it in."  Just substitute $2$ into $f(x)=x^2-5$ to get $f(2)=2^2-5=-1$.  There are also computer programs into which you can type mathematical notation and ask it to apply the function for you.
+# How is this a method for turning inputs into outputs?  Given an input like $x=2$, a function like $f$ can find an output through the usual mechanism of substitution, more commonly called "plugging it in."  Just substitute $2$ into $f(x)=x^2-5$ to get $f(2)=2^2-5=-1$.
 # 
-# **English:** We can write functions in plain English (or any other natural language, but we'll use English).  To do so, we write a *noun phrase,* and include blanks where the inputs belong:
-#  * the capitol of <u>&nbsp; &nbsp; &nbsp; &nbsp;</u>
-#  * the difference in ages between <u>&nbsp; &nbsp; &nbsp; &nbsp;</u> and <u>&nbsp; &nbsp; &nbsp; &nbsp;</u>
+# **Functions in English:** We can write functions in plain English (or any other natural language, but we'll use English).  To do so, we write a *noun phrase,* and include blanks where the inputs belong:
+#  * the capitol of <u><nobr>&nbsp; &nbsp; &nbsp; &nbsp;</nobr></u>
+#  * the difference in ages between <u><nobr>&nbsp; &nbsp; &nbsp; &nbsp;</nobr></u> and <u><nobr>&nbsp; &nbsp; &nbsp; &nbsp;</nobr></u>
 # 
-# How is this a method for turning inputs into outputs?  Given an input like France, I can substitute it into "the capitol of <u>&nbsp; &nbsp; &nbsp; &nbsp;</u>" to get "the capitol of France" and use my knowledge to get Paris.  If it were a capitol I didn't know, I could use the Internet to find out.
+# How is this a method for turning inputs into outputs?  Given an input like France, I can substitute it into "the capitol of <u><nobr>&nbsp; &nbsp; &nbsp; &nbsp;</nobr></u>" to get "the capitol of France" and use my knowledge to get Paris.  If it were a capitol I didn't know, I could use the Internet to find out.
 # 
-# **Python:** We can write functions in Python (or other programming languages, but this course focuses on Python), like this:
+# **Functions in Python:** We can write functions in Python (or other programming languages, but this course focuses on Python), like this:
 
 # In[1]:
 
@@ -56,30 +56,30 @@ square(50)
 is_a_long_word( 'Hello' )
 
 
-# **Tables:** Any two-column table can work as a function, if we follow a few conventions.
+# **Functions in tables:** Any two-column table can work as a function, if we follow a few conventions.
 #  1. The left column will list the possible inputs to the function.
 #  2. The right column will list the corresponding outputs.
 #  3. Each input must show up only once in the table, so there's no ambiguity about what its corresponding output is.
 #  
 # Here's an example, which converts Bentley email IDs to real names for a few members of the Mathematical Sciences Department:
 # 
-# | User ID   | Name            |
-# |-----------|-----------------|
-# | aaltidor  | Alina Altidor   |
-# | mbhaduri  | Moinak Bhaduri  |
-# | wbuckley  | Winston Buckley |
-# | ncarter   | Nathan Carter   |
-# | lcherveny | Luke Cherveny   |
+# | Bentley Email ID  | Real Name       |
+# |-------------------|-----------------|
+# | aaltidor          | Alina Altidor   |
+# | mbhaduri          | Moinak Bhaduri  |
+# | wbuckley          | Winston Buckley |
+# | ncarter           | Nathan Carter   |
+# | lcherveny         | Luke Cherveny   |
 # 
 # (We could add more names, but it's just an example.)
 # 
-# How is this a method for turning inputs into outputs?  We use the familiar and fundamental operation of *lookup,* something that shows up in numerous places when working with data.  (We'll return to the concept of lookup at the end of this chapter.)  Given a User ID as input, we look for it in the first column of the table, and once it's found, the appropriate output is right next to it in the right column.
+# How is this a method for turning inputs into outputs?  We use the familiar and fundamental operation of *lookup,* something that shows up in numerous places when working with data.  (We'll return to the concept of lookup at the end of this chapter.)  Given a Bentley Email ID as input, we look for it in the first column of the table, and once it's found, the appropriate output is right next to it in the right column.
 # 
-# **Others:** Later in the course we will see other ways to represent functions, but the ones above are the most common.
+# **Other types of functions:** Later in the course we will see other ways to represent functions, but the ones above are the most common.
 
 # ### Which way is best?
 # 
-# The examples above show that you can express functions using math, English, Python, tables, and more.  Although none of these ways is always better than the others, we will typically give functions names and refer to them by those names.  Examples:
+# The examples above show that you can express functions using math, English, Python, tables, and more.  Although none of these ways is better than the others 100% of the time, we will typically give functions names and refer to them by those names.  Examples:
 #  * In Math:  Rather than writing out $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$ all the time, people just use the short name "the quadratic formula."
 #  * In Python:  The `def` keyword in Python is for giving names to functions so that you can use them later by just typing their name.
 
@@ -90,7 +90,7 @@ is_a_long_word( 'Hello' )
 #  * You better learn your times tables. (In other words, you should memorize the function that gives the product of two small whole numbers.)
 #  * What's Kayla's phone number? (In other words, please apply the phone-number-of-person function to Kayla for me.)
 # 
-# Unsurprisingly, functions show up all over the place in data science.  In particular, when working with a pandas DataFrame, we use functions often to summarize columns (such as compute the max, min, or mean) or to compute new columns, as in this example using Python's built in `/` function:
+# Unsurprisingly, functions show up all over the place in data science.  In particular, when working with a pandas DataFrame, we use functions often to summarize columns (such as compute the max, min, or mean) or to compute new columns, as in this example using Python's built in division function (written with a `/`):
 # 
 # ```python
 # df['Per capita cost'] = df['Cost'] / df['Population']
@@ -136,9 +136,11 @@ is_a_long_word( 'Hello' )
 #  * A list of countries and capitols appears here: [https://www.boldtuesday.com/pages/alphabetical-list-of-all-countries-and-capitals-shown-on-list-of-countries-poster](https://www.boldtuesday.com/pages/alphabetical-list-of-all-countries-and-capitals-shown-on-list-of-countries-poster)
 #  * To convert two columns of a pandas DataFrame into a Python `dict` for easy lookup, try the following.
 # ```python
-# D = dict( zip( df['input column name'], df['output column name'] ) )
+# input_col = df['input column name']
+# output_col = df['output column name']
+# dictionary = dict( zip( input_col, output_col ) )
 # ```
-#  * You can then look items up using `D[item_to_look_up]`, as in `D['ZIMBABWE']`.
+#  * You can then look items up using `dictionary[item_to_look_up]`, as in `dictionary['ZIMBABWE']`.
 # 
 # Example: `country_capitol('JORDAN')` would yield `'AMMAN'`.
 # ````
@@ -179,15 +181,18 @@ is_a_long_word( 'Hello' )
 # 
 # ### Examples of relations
 # 
-# **Math:** Any equation or inequality in mathematics is a relation, such as $x^2+y^2\ge z^2$ or $x\ge 0$.
+# **Relations in mathematics:** Any equation or inequality in mathematics is a relation, such as $x^2+y^2\ge z^2$ or $x\ge 0$.
 # 
 # Consider $x\ge 0$.  Given any input of the appropriate type, say $x=15$, we can determine a true or false value by substitution.  In this case, substituting $x=15$ into $x\ge0$ gives $15\ge0$, which we know is true.  We could do a similar thing with $x^2+y^2\ge z^2$ if given three numerical inputs instead of just one.
 # 
-# **English:** Any declarative sentence with blanks in it is a relation, such as "<u>&nbsp; &nbsp; &nbsp; &nbsp;</u> is the capitol of <u>&nbsp; &nbsp; &nbsp; &nbsp;</u>" or "<u>&nbsp; &nbsp; &nbsp; &nbsp;</u> is a fruit."
+# **Relations in English:** Any declarative sentence with blanks in it is a relation.  Here are two examples:
 # 
-# Given any input, you can use it to fill in the blank in the sentence and then judge (using your ordinary knowledge of the world and English) whether the sentence is true.  For instance, if we're working with the sentence "<u>&nbsp; &nbsp; &nbsp; &nbsp;</u> is a fruit" and I provide the input "Python," then I get the sentence "Python is a fruit," which is obviously false, because it's a programming language, not a fruit.
+#  * <u><nobr>&nbsp; &nbsp; &nbsp; &nbsp;</nobr></u> is the capitol of <u><nobr>&nbsp; &nbsp; &nbsp; &nbsp;</nobr></u>
+#  * <u><nobr>&nbsp; &nbsp; &nbsp; &nbsp;</nobr></u> is a fruit.
 # 
-# **Python:** Any Python function with output type `bool` is a relation.
+# Given any input, you can use it to fill in the blank (or blanks) in the sentence and then judge (using your ordinary knowledge of the world and English) whether the sentence is true.  For instance, if we're working with the sentence "<u>&nbsp; &nbsp; &nbsp; &nbsp;</u> is a fruit" and I provide the input "Python," then I get the sentence "Python is a fruit," which is obviously false, because it's a programming language, not a fruit.
+# 
+# **Relations in Python:** Any Python function with output type `bool` is a relation.
 # 
 # You can evaluate such relations by running them in Python, just as we did with functions earlier.  In fact, the `is_a_long_word` function from earlier is not only a function, but also a relation.  Here are two other examples:
 
@@ -209,7 +214,7 @@ def is_a_primary_color ( c ):
 is_a_primary_color( 'blue' ), is_a_primary_color( 'orange' )
 
 
-# **Lists:** A very common way of defining a relation is to just list all the inputs for which the relation is true, and then we know that everything else makes it false.
+# **Relations as lists:** A very common way of defining a relation is to just list all the inputs for which the relation is true, and then we know that everything else makes it false.
 # 
 # In data science, we often do this using tables.  For example, consider the table on the webpage mentioned in Exercise 3, above.  That table lists all the pairs of inputs that make the "<u>&nbsp; &nbsp; &nbsp; &nbsp;</u> is the capitol of <u>&nbsp; &nbsp; &nbsp; &nbsp;</u>" relation true.
 # 
@@ -224,9 +229,9 @@ is_a_primary_color( 'blue' ), is_a_primary_color( 'orange' )
 # Thus every pandas DataFrame is a relation, every SQL table is a relation, and every table you see printed in a book or on a webpage is a relation.  This is why SQL is the language for querying *relational* databases.
 # ```
 # 
-# The above big picture concept is almost 100% true.  Technically, a pandas DataFrame or an SQL table can have repeated rows, which is unnecessary if you're defining a relation.  And technically pandas DataFrames and SQL tables also have an extra layer of data called the "index" which we're ignoring for now, just concentrating on the contents of the table's columns.
+# The above big picture concept is almost 100% true.  Technically, a pandas DataFrame or a SQL table can have repeated rows, which is unnecessary if you're defining a relation.  And technically pandas DataFrames and SQL tables also have an extra layer of data called the "index" which we're ignoring for now, just concentrating on the contents of the table's columns.
 # 
-# **Others:** Later in the class we'll see even other ways to represent functions.
+# **Other types of relations:** Later in the class we'll see even other ways to represent relations.
 
 # ### Which way is best?
 # 
@@ -240,7 +245,7 @@ is_a_primary_color( 'blue' ), is_a_primary_color( 'orange' )
 #  * If I say, "George isn't friends with Mia," then I'm relying on your familiarity with the being-friends-with relation, which you've known since Kindergarten.
 #  * If I say, "Dell acquired EMC in 2015," then I'm relying on your familiarity with the "acquired" relation among companies, which you might not have been very familiar with before coming to Bentley.
 # 
-# The above examples are from binary relations, which are possibly the most common type.  Just as a function can be binary (that is, take two inputs), so can a relation, because it's just a special type of function.  But of course we can have unary functions as well (taking one input only), like the `is_a_long_word` and `is_a_primary_color` examples above, and we can have relations with three or more inputs as well.
+# The above examples are from binary relations, which are possibly the most common type.  Just as a function can be binary (that is, take two inputs), so can a relation, because it's just a special type of function.  But of course we can have unary relations as well (taking one input only), like the `is_a_long_word` and `is_a_primary_color` examples above, and we can have relations with three or more inputs as well.
 # 
 # A very important use of relations in data science is for *filtering* a dataset.  We often want to focus our attention on just the section of a dataset we're interested in, which we describe as "filtering" to keep the rows we want (or "filtering out" the rows we don't want).  In pandas, you can select a subset of a DataFrame `df` and return it as a new DataFrame (or, rather, a view on the original), like so:
 # 
@@ -324,13 +329,13 @@ is_a_primary_color( 'blue' ), is_a_primary_color( 'orange' )
 # 
 # As mentioned above, a function is a relation in which *for each* input, *there is exactly one* output.  But for *some* functions, the reverse is also true:  For each *output*, there is exactly one *input.*
 # 
-# For example, consider the Technology Fast 500 table again, and let's assume that each company and CEO name is unique (i.e., there are not two CEOs name Jack Newton, or two companies named Clearpath, etc.).  Consider the function that maps a company name to the corresponding CEO name; let's call it `find_ceo_for_company`.
+# For example, consider the Technology Fast 500 table again, and let's assume that each company and CEO name is unique (i.e., there are not two CEOs name Jack Newton, or two companies named Clearpath, etc.).  Consider the function that maps a company name to the corresponding CEO name; let's call it `lookup_ceo_for_company`.
 #  * As with every function, for each input company, there is exactly one CEO output.
 #  * But in this case, also, for each CEO output, there is exactly one input company.
 # 
-# While we chose to use the company as input and provide the CEO name as output, we could also have done it in the other order.  That is, we could have created a function `find_company_for_ceo` that takes a CEO name as input and provides the corresponding company name as output.  It just depends on which column you chose to use as the input and which you choose to use as the output.
+# While we chose to use the company as input and provide the CEO name as output, we could also have done it in the other order.  That is, we could have created a function `lookup_company_for_ceo` that takes a CEO name as input and provides the corresponding company name as output.  It just depends on which column you choose to use as the input and which you choose to use as the output.
 # 
-# This concept is probably familiar from mathematics, where we speak of *inverting* a function.  In mathematical notation, we write the inverse of $f$ as $f^{-1}$, but in computing, we can use more descriptive names, like the example of `find_ceo_for_company` and `find_company_for_ceo`.
+# This concept is probably familiar from mathematics, where we speak of *inverting* a function.  In mathematical notation, we write the inverse of $f$ as $f^{-1}$, but in computing, we can use more descriptive names, like the example of `lookup_ceo_for_company` and `lookup_company_for_ceo`.
 # 
 # In summary:  For a relation to be a function, it has to provide just one output for each input.  For it to be invertible, it has to have just one input for each output.
 
