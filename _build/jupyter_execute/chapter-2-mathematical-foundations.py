@@ -90,7 +90,7 @@ is_a_long_word( 'Hello' )
 #  * You better learn your times tables. (In other words, you should memorize the function that gives the product of two small whole numbers.)
 #  * What's Kayla's phone number? (In other words, please apply the phone-number-of-person function to Kayla for me.)
 # 
-# Unsurprisingly, functions show up all over the place in data science.  In particular, when working with a pandas DataFrame, we use functions often to summarize columns (such as compute the max, min, or mean) or to compute new columns, as in this example using Python's built in division function (written with a `/`):
+# Unsurprisingly, functions show up all over the place in data science.  In particular, when working with a pandas DataFrame, we use functions often to summarize columns (such as compute the max, min, or mean) or to compute new columns, as in this example using Python's built in division function (written with the `/` symbol):
 # 
 # ```python
 # df['Per capita cost'] = df['Cost'] / df['Population']
