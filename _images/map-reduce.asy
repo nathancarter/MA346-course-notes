@@ -1,5 +1,5 @@
 
-size( 600 );
+size( 800 );
 
 picture dataframe ( int num_rows, int num_cols,
                     real row_height = 1, real col_width = 1.5,
@@ -40,22 +40,28 @@ picture dataframe ( int num_rows, int num_cols,
 int nrows = 10;
 
 add( dataframe( nrows, 3, col_width = 2,
-                col_headers = new string[]{"Year","Quarter","Revenue"} ) );
+                col_headers = new string[]{
+                    "Semester","\# Students","\# Teachers"} ) );
 
 label( "\Large\bf MAP", (8,2), red );
-label( "\texttt{df['Revenue']}", (8,1), red );
+label( "\parbox{1.6in}{\texttt{df['\# Students'] /}\\ "
+     + "\texttt{\phantom{x}df['\# Teachers']}}",
+       (8,1), red );
 for ( int i = 0 ; i < nrows ; ++i )
     draw( (7,-i-0.5)--(9,-i-0.5), red+linewidth(1), Arrow );
 
 add( shift( 11, 0 )
    * dataframe( nrows, 1, col_width = 2,
-                col_headers = new string[]{"Revenue"} ) );
+                col_headers = new string[]{"S/T Ratio"} ) );
 
 label( "\Large\bf REDUCE", (15,2), blue );
-label( "\texttt{.min()}", (15,1), blue );
+label( "\texttt{.max()}", (15,1), blue );
 draw( (14,0){E}..{E}(16,-5) ^^ (16,-5){W}..{W}(14,-10), blue+linewidth(1) );
 
-label( "\parbox{1in}{\Large\bf Minimum Revenue}", (18,-2), purple );
-label( "\texttt{df['Revenue'].min()}", (18,-3.5), purple );
+label( "\parbox{2.5in}{\raggedright\Large\bf Maximum Student/ Teacher Ratio}",
+       (18,-2), purple );
+label( "\parbox{2.5in}{\texttt{( df['\# Students'] /}\\ "
+     + "\texttt{\phantom{xx}df['\# Teachers'] ).max()}}",
+       (18,-3.5), purple );
 add( shift( (17,-4.5) ) * dataframe( 1, 1, false, false, col_width=2 ) );
 
