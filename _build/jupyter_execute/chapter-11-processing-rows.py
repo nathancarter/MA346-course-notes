@@ -13,7 +13,7 @@
 # 
 # And when we wanted to work with all the elements of an array, we had no choice but to write a loop.
 
-# In[1]:
+# In[47]:
 
 
 shipments_received = [ 6, 9, 3, 4, 0, 0, 10, 4, 7, 6, 6, 0, 0, 13 ]
@@ -25,9 +25,9 @@ for num_received in shipments_received:
 total
 
 
-# Most introductory programming courses teach loops, and for good reason; they show up a lot in programming!  But there are a few reasons we'll try to avoid loops in data work whenever we can.
+# Most introductory programming courses teach loops, and for good reason; they are very useful and versatile!  But there are a few reasons we'll try to avoid loops in data work whenever we can.
 # 
-# The lesser reason is **readability.**  Loops are always at least two lines of code in Python; the one above is three because it has to initialize the `total` variable to zero.  Many alternatives to loops can be done in just one line of code, which is more readable.
+# First, we want to promote **readability** of our code.  Loops are always at least two lines of code in Python; the one above is three because it has to initialize the `total` variable to zero.  Many alternatives to loops can be done in just one line of code, which is more readable.
 # 
 # The more important reason is **speed.**  Loops in Python are not very efficient, and this can be a serious problem.  In the final project for MA346 in Spring 2020, many students came to my office hours with a loop that had been running for hours, and they didn't know if or when it would finish.  There are *many* ways to speed loops up, sometimes by just altering the loop, but usually by replacing the loop with something else entirely.
 # 
@@ -45,7 +45,7 @@ total
 # 
 # In an earlier homework assignment, I provided a cleaned dataset of baseball players' salaries.  Let's take a look at the original version of the dataset when I downloaded it [from the web](https://data.world/natereed/baseball-salaries), before it was cleaned.
 
-# In[2]:
+# In[48]:
 
 
 import pandas as pd
@@ -55,17 +55,17 @@ df.head()
 
 # The "years" column looks particularly annoying.  Why does it say "1 (1991)" instead of just 1991?  Let's take a look at some other rows...
 
-# In[3]:
+# In[49]:
 
 
 df.iloc[14440:14445,:]
 
 
-# Aha, some entries in the "years" column represent multiple years.  We might naturally want to split that column up into three columns: number of years, first year, and last year.  Each is a little project all on its own, but we just want to look at one example, so let's consider just the task of extracting the first year from the text.  If we wrote a loop, it might go something like this.
+# Aha, some entries in the "years" column represent multiple years.  We might naturally want to split that column up into three columns: number of years, first year, and last year.  Creating each of the three new columns would be an exercise all on its own, so we will choose just one example, the task of extracting the first year from the text.  If we wrote a loop, it might go something like this.
 # 
 # ### Using a loop
 
-# In[4]:
+# In[50]:
 
 
 first_years = [ ]
@@ -79,11 +79,13 @@ df['first_year'] = first_years
 df.iloc[[0,14441],:] # quick spot check of our work
 
 
-# A loop over a list of values is what pandas' `apply()` function was made for.  You write `df['column'].apply(f)` to apply the function `f` to every entry in the chosen column.  For example, we could simplify our work above as follows.  The differences are noted in the comments.
+# The final column of the table immediately above shows that our loop seems to do the job.
+# 
+# But pandas' `apply()` function was made for the task of taking the same action on every entry in a Series or DataFrame.  You write `df['column'].apply(f)` to apply the function `f` to every entry in the chosen column.  For example, we could simplify our work above as follows.  The differences are noted in the comments.
 # 
 # ### Using `apply()`
 
-# In[5]:
+# In[51]:
 
 
 # No need to start with an empty list.
@@ -99,7 +101,7 @@ df.iloc[[0,14441],:] # same check as before
 
 # If we're honest, the code didn't get *that* much simpler.  But `apply()` is especially nice if the function we want to write is a function that already exists.  Here's a silly example, but it illustrates the point.
 
-# In[6]:
+# In[52]:
 
 
 df['name_length'] = df['name'].apply( len )
@@ -110,7 +112,7 @@ df.head()
 # 
 # Although it's less often useful, you can use `df.apply(f)` to run `f` on each column of the DataFrame, or `df.apply(f,axis=1)` to run `f` on each row of the DataFrame.
 # 
-# There is, unfortunately, a related function `map()`.  It behaves very similarly to `apply()`, with a few subtle differences.  This is unfortunate because in computer programming more broadly, the concepts of "map" and "apply" are often used synonymously/interchangeably.  So to have them behave almost the same (but slightly differently!) in pandas is unfortunate.  Oh well.  Here are the differences:
+# There is a very similar pandas function called `map()`.  It behaves very similarly to `apply()`, with a few subtle differences.  This is unfortunate because in computer programming more broadly, the concepts of "map" and "apply" are often used synonymously/interchangeably.  So to have them behave almost the same (but slightly differently!) in pandas is unfortunate.  Oh well.  Here are the differences:
 # 
 # | Feature | `apply()` | `map()` |
 # |---------|-----------|---------|
@@ -137,7 +139,7 @@ df.head()
 # 
 # Let's assume that the analysis we wanted to do cared only about whether the baseball player had an infield position (IF), outfield position (OF), was a pitcher (P), or a designated hitter (DH), and we didn't care about any other details of the position (such as first base vs. second base, or starting pitcher vs. relief pitcher).  We'd therefore like to simplify the "pos" column and convert all infield positions to IF, and so on.  First, let's see what all the positions are.
 
-# In[7]:
+# In[53]:
 
 
 df['pos'].unique()
@@ -145,7 +147,7 @@ df['pos'].unique()
 
 # We could convert them with a big `if` statement, like you see here, but this is tedious and repetitive code.
 
-# In[8]:
+# In[54]:
 
 
 def simpler_position ( pos ):   # BAD STYLE.  See better version below.
@@ -169,7 +171,7 @@ df.head()
 
 # All the repetitive code is just establishing a simple relationship among some very short strings.  We could store that same relationship in a dictionary with many fewer lines of code.  Note that we must use `map()`, because `apply()` doesn't accept dictionaries.
 
-# In[9]:
+# In[55]:
 
 
 df['simple_pos'] = df['pos'].map( {
@@ -182,15 +184,17 @@ df.head()
 
 # In class, we will do a more complex example of applying a dictionary using `map()`.  Before class, you may want to glance back at Exercise 3 from [the Chapter 2 notes](chapter-2-mathematical-foundations), which shows you how to take two columns of a DataFrame representing a mathematical function and convert them into a dictionary for use in situations just like this one.  And be sure to complete the homework about the NPR dataset before class as well, because we will use that in our example!
 # 
+# Also, just to add to the confusion of too many pandas functions, there's another one called `replace` that can be used to apply a dictionary to one or more columns in a DataFrame.  So the code above that's written `df['pos'].map( { ... } )` could have been written `df['pos'].replace( { ... } )`.  I mention this option because it's a little more readable than "map," since "replace" is a more common English word.
+# 
 # ### Parallel `apply()`
 # 
-# I mentioned earlier that converting a loop into an `apply()` or `map()` call doesn't gain us much speed.  But it does make it easy for us to add a nice speed improvement.  There's a Python package called [swifter](https://github.com/jmcarpenter2/swifter) that you can install using the instructions on that page.  Once it's installed, you can convert any code like `df['column'].apply(f)` easily into a faster version by replacing it with `df['column'].swifter.apply(f)`.  That's all!
+# I mentioned earlier that converting a loop into an `apply()` or `map()` call doesn't gain us much speed.  But it is also the first step in a process that can give a more significant speed improvement.  There's a Python package called [swifter](https://github.com/jmcarpenter2/swifter) that you can install using the instructions on that page.  Once it's installed, you can convert any code like `df['column'].apply(f)` easily into a faster version by replacing it with `df['column'].swifter.apply(f)`.  That's all!
 # 
 # Under the hood, swifter is trying a variety of speedup mechanisms (many of which we discuss in this chapter) and deciding which of them works best for your situation.  The most common one for large dataset is probably parallel processing.  This means that if your computer has more than one processor core (which most modern laptops do), then it can process more than one entry of the data at once, each on a separate core.
 # 
 # Without swifter, you could accomplish the same thing with code like the following.  (In fact, if you have trouble installing swifter, you can use this code instead.)
 
-# In[10]:
+# In[56]:
 
 
 # Use Python's built-in multiprocessing module to find your number of cores.
@@ -223,51 +227,71 @@ df.head()
 # This section covers map-reduce and the next section covers split-apply-combine.
 # ```
 # 
-# A map-reduce process is one that takes any list, *maps* a specific function across all entries of the list, then *reduces* those outputs down to a single, smaller result.  Consider the following picture, which shows a very simple map-reduce operation that takes a DataFrame about historic revenue numbers and computes the lowest revenue across all quarters.
+# A map-reduce process is one that takes any list, *maps* a specific function across all entries of the list, then *reduces* those outputs down to a single, smaller result.  Consider the following picture, which shows a very simple map-reduce operation that takes a DataFrame about numbers of students and teachers over time and computes the highest student/teacher ratio across all semesters.
 # 
-# ![Illustration of Python code for mapping a DataFrame to revenue, then computing the minimum](_images/map-reduce.png)
+# ![Illustration of Python code for mapping a DataFrame to student/teacher ratio, then computing the maximum](_images/map-reduce.png)
 # 
 # Let's actually do the above computation on some small sample (fictional) data:
 
-# In[11]:
+# In[57]:
 
 
-# setup - example tiny dataset
-rev_quarters = pd.DataFrame( {
-    'Year'    : [ 2010, 2010, 2010, 2010, 2011, 2011, 2011, 2011, 2012, 2012 ],
-    'Quarter' : [    1,    2,    3,    4,    1,    2,    3,    4,    1,    2 ],
-    'Revenue' : [  177,  186,  167,  263,  180,  193,  189,  281,  201,  210 ]
+# setup - example tiny dataset (fake data)
+sociology_department = pd.DataFrame( {
+    'Year'       : [  2016,   2016,  2017,   2017,  2018,   2018,  2019,   2019,  2020,   2020 ],
+    'Semester'   : [ 'Spr', 'Fall', 'Spr', 'Fall', 'Spr', 'Fall', 'Spr', 'Fall', 'Spr', 'Fall' ],
+    '# Students' : [   177,    186,   167,    263,   180,    193,   189,    281,   201,    210 ],
+    '# Teachers' : [     2,      2,     3,      4,     3,      2,     3,      4,     2,      2 ]
 } )
-rev_quarters
+sociology_department
 
 
-# In[12]:
+# In[58]:
 
 
 # map-reduce work, one line:
-rev_quarters['Revenue'].min()
+( sociology_department['# Students'] / sociology_department['# Teachers'] ).max()
 
 
-# As mentioned earlier, "map" is a synonym for "apply," so the first step of the process applies the same operation to all rows of the DataFrame; in this case, that operation extracts the revenue from the row.  The "reduce" operation in this case is a simple `min()` operation, but it can be something more complex.
+# As mentioned earlier, "map" is a synonym for "apply," so the first step of the process applies the same operation to all rows of the DataFrame; in this case, that operation extracts two values from each row and computes the ratio of the two.  The "reduce" operation in this case is a simple `max()` operation, but it could be more complex in other examples.
 # 
-# So a map-reduce operation involves two functions, the first performing a `map()` operation (as discussed earlier), and the second doing something new.  The function used for the reducing step must be something that takes an entire list or series as input and produces a single value as output.  The `min()` operation was used in the example above, but other operations are common, such as `max()`, `sum()`, `len()`, `mean()`, `median()`, and more.
+# If we wanted to actually use the pandas `apply` function, we could restructure the above code to use it, but it wouldn't be as clean.  Just to show that it can be done, I write it here, but the shorter version above is preferred.
+
+# In[59]:
+
+
+student_teacher_ratio = lambda row: row['# Students'] / row['# Teachers']
+sociology_department.apply( student_teacher_ratio, axis=1 ).max()
+
+
+# So a map-reduce operation involves two functions, the first performing a `map()` operation (as discussed earlier), and the second doing something new.  The function used for the reducing step must be something that takes an entire list or series as input and produces a single value as output.  The `max()` operation was used in the example above, but other operations are common, such as `min()`, `sum()`, `len()`, `mean()`, `median()`, and more.
+# 
+# Here are two other examples of map-reduce operations.  Notice that the map operation in the second one is extremely simple (just looking up a column) but it still fits the map-reduce pattern.
+# 
+# ```python
+# # Average property size of a home in acres
+# df_homes['lot size sq ft'].apply( sq_ft_to_acres ).mean()
+# 
+# # Largest property size of a home in square feet
+# df_homes['lot size sq ft'].max()
+# ```
 # 
 # ### Argmin and argmax
 # 
-# A very common function that shows up in statistics is called `argmin` (and its companion `argmax`).  These are also implemented in pandas and are very useful in map-reduce situations.  In the example above, let's say we didn't want to know the minimum revenue, but we wanted to know in which quarter the minimum revenue happened.  We can replace `min` in the above code with `argmin` to ask that question.
+# A very common function that shows up in statistics is called `argmin` (and its companion `argmax`).  These are also implemented in pandas and are very useful in map-reduce situations.  In the example above, let's say we didn't want to know the maximum student/teacher ratio, but we wanted to know in which semester that maximum ratio happened.  We can replace `max` in the above code with `argmax` to ask that question.
 
-# In[13]:
-
-
-rev_quarters['Revenue'].argmin()
+# In[60]:
 
 
-# The `argmin` function is short for "the argument that yields the minimum," or in other words, what value would I need to supply as *input* to the map function to get the minimum output?  In this case, the map function takes each row and extracts its revenue, so we're asking pandas, "When you found the minimum revenue, which row was the input?"  The answer was row 2, and we can see that it's the correct row as follows.
-
-# In[14]:
+( sociology_department['# Students'] / sociology_department['# Teachers'] ).argmax()
 
 
-rev_quarters.iloc[2]
+# The `argmax` function is short for "the argument that yields the maximum," or in other words, what value would I need to supply as *input* to the map function to get the maximum output?  In this case, the map function takes each row and computes its student/teacher ratio, so we're asking pandas, "When you found the maximum ratio, which row was the input?"  The answer was row 9, and we can see that it's the correct row as follows.
+
+# In[61]:
+
+
+sociology_department.iloc[9]
 
 
 # While the pandas documentation for `argmin` and `argmax` suggest that they return multiple values in the case of ties, this doesn't seem to be true.  They seem to return the first index only.  You can therefore always rely on the result of `argmin`/`argmax` being a single value, never a list or series.  If you want the indices of all max/min entries, you will need to compute it another way.
@@ -280,7 +304,7 @@ rev_quarters.iloc[2]
 # 
 # Let's assume we've already computed the mean value $\bar x$.  Then computing the standard deviation is actually a map-reduce operation.  The map function takes each $x_i$ as input and computes $(x_i-\bar x)^2$ as output.  The reduce operation then does a sum, divides by $n-1$, and takes a square root.  We could code it like so:
 
-# In[15]:
+# In[62]:
 
 
 import numpy as np
@@ -298,7 +322,7 @@ reduce_func( example_data.map( map_func ) )
 
 # Of course, we didn't have to code that.  There's already an existing standard deviation function built into pandas, and it gives almost exactly the same answer.  (I suspect theirs does something more careful with tiny issues of accuracy than my simple example does.)
 
-# In[16]:
+# In[63]:
 
 
 example_data.std()
@@ -312,7 +336,7 @@ example_data.std()
 
 # ## Split-Apply-Combine
 # 
-# Data scientist and R developer Hadley Wickham seems to coin lots of important phrases.  Recall from [the Chapter 5 notes](chapter-5-before-and-after) that he introduced the phrase "tidy data."  He also introduced the phrase "split, apply, combine," in [this paper](http://www.stat.wvu.edu/~jharner/courses/stat623/docs/plyrJSS.pdf).
+# Data scientist and R developer Hadley Wickham seems to coin lots of important phrases.  Recall from [the Chapter 5 notes](chapter-5-before-and-after) that he introduced the phrase "tidy data."  He also introduced the phrase "split, apply, combine," in [this paper](https://www.jstatsoft.org/article/view/v040i01).
 # 
 # It is another extremely common operation done on DataFrames, and it is closely related to map-reduce, as we will see below.
 # 
@@ -320,24 +344,24 @@ example_data.std()
 # 
 # ![Illustration of Python code for grouping a DataFrame by gender, then mapping to salary, then computing the median within groups](_images/split-apply-combine.png)
 # 
-# As you can see from the picture, the first phase (called "split") breaks the data into groups by the categorical variable we care about--in this case, gender.  After that, each smaller DataFrame undergoes a map-reduce process, and the results of each small map-reduce get aggregated into a result, indexed by the original categorical variable.
+# As you can see from the picture, the first phase (called "split") breaks the data into groups by the categorical variable we care about---in this case, gender.  After that, each smaller DataFrame undergoes a map-reduce process, and the results of each small map-reduce get aggregated into a result, indexed by the original categorical variable.
 # 
-# Note that the output type of the split operation (which, in pandas, is a `df.groupby()` call) is *NOT* a DataFrame, but rather a collection of DataFrames.  It is essential to follow a `df.groupby()` call with the apply and combine steps of the process, so that the result is a familiar and usable type of object again--a pandas DataFrame.
+# Note that the output type of the split operation (which, in pandas, is a `df.groupby()` call) is *NOT* a DataFrame, but rather a collection of DataFrames.  It is essential to follow a `df.groupby()` call with the apply and combine steps of the process, so that the result is a familiar and usable type of object again---a pandas DataFrame.
 # 
-# The easiest type of split-apply-combine is shown in the picture above and can be done with a single line of code.  We'll compute minimum revenue by year with the DataFrame from our map-reduce example.
+# The easiest type of split-apply-combine is shown in the picture above and can be done with a single line of code.  We'll compute minimum number of students by year with the DataFrame from our map-reduce example.
 
-# In[17]:
+# In[64]:
 
 
-rev_quarters.groupby('Year')['Revenue'].min()
+sociology_department.groupby('Year')['# Students'].min()
 
 
 # Split-apply-combine is actually a specific type of pivot table.  Thus split-apply-combine operations can be done on data in Excel as well, using its pivot table features.  We can even use `df.pivot_table()` to mimic the above procedure, as follows.  (Because we don't need data separated into separate columns, we don't provide a columns variable.)
 
-# In[18]:
+# In[65]:
 
 
-rev_quarters.pivot_table( index=['Year'], columns=[], values='Revenue', aggfunc='min' )
+sociology_department.pivot_table( index=['Year'], columns=[], values='# Students', aggfunc='min' )
 
 
 # ## More on math in Python
@@ -346,9 +370,9 @@ rev_quarters.pivot_table( index=['Year'], columns=[], values='Revenue', aggfunc=
 # 
 # Recall that pandas is built on NumPy, and in [Chapter 9 of the notes](chapter-9-math-and-stats) we talked about NumPy's support for vectorization.  If we have a Series `height` containing heights in inches and we need instead to have it in centimeters, we don't need to do `height.apply()` and give it a conversion function, because we can just do `height * 2.54`.  NumPy automatically *vectorizes* this operation, spreading the "times 2.54" over each entry in the `height` array.
 # 
-# This is quite natural, because we have mathematical notation that does the same thing (in math, not Python).  If you've taken a class involving vectors, you know that vector addition $\vec x+\vec y$ means to do exactly what NumPy does--add the corresponding entries in each vector.  Similarly, scalar multiplication $s\vec x$ means to multiply $s$ by each entry in the vector $\vec x$, just like `height * 2.54` does in Python.  So NumPy is not inventing something strange here; it's normal mathematical stuff.
+# This is quite natural, because we have mathematical notation that does the same thing (in math, not Python).  If you've taken a class involving vectors, you know that vector addition $\vec x+\vec y$ means to do exactly what NumPy does---add the corresponding entries in each vector.  Similarly, scalar multiplication $s\vec x$ means to multiply $s$ by each entry in the vector $\vec x$, just like `height * 2.54` does in Python.  So NumPy is not inventing something strange here; it's normal mathematical stuff.
 # 
-# All the basic mathematical operations are built into NumPy.  For example, if we have created a linear model $\hat y=\beta_0+\beta_1 x$ with parameters stored in Python variables `β0` and `β1`, we can apply it to an entire series of inputs `xs` at once with the following code, because NumPy knows how to spread both `+` and `*` across arrays.
+# NumPy supports vectorizing all the basic mathematical operations.  For example, if we have created a linear model $\hat y=\beta_0+\beta_1 x$ with parameters stored in Python variables `β0` and `β1`, we can apply it to an entire series of inputs `xs` at once with the following code, because NumPy knows how to spread both `+` and `*` across arrays.
 # 
 # ```python
 # y_hat = β0 + β1 * xs
@@ -360,13 +384,13 @@ rev_quarters.pivot_table( index=['Year'], columns=[], values='Revenue', aggfunc=
 # np.sqrt( np.sum( ( y_hat - ys ) ** 2 ) / len( ys ) )
 # ```
 # 
-# The subtraction with `-` and the squaring with `** 2` would all be spread across arrays of inputs correctly, because NumPy comes with code to support doing so.
+# The subtraction with `-` and the squaring with `** 2` would all be spread across arrays of inputs correctly, because NumPy comes with code to support doing so.  This is very similar to the computation of RSSE that we discussed in Chapter 9.
 # 
 # ### Conditionals with `np.where()`
 # 
 # This removes a lot of the need for both loops and `apply()`/`map()` calls, but not all.  One of the first things that makes us think we might need a loop is when a conditional computation needs to be done.  For instance, let's say we were given a dataset like the following (made up) example.
 
-# In[19]:
+# In[66]:
 
 
 patients = pd.DataFrame( {
@@ -381,10 +405,11 @@ patients
 # 
 # We can't simply convert to cm with `patients['height'] * 2.54` because that would apply the conversion to all data rather than just the measurements in inches.  We need some conditional logic, perhaps using an `if` statement, to be selective.  Our first inclination might be a loop.
 
-# In[20]:
+# In[67]:
 
 
-# before changing the contents, make a backup, for use later.
+# Before changing the contents, I'm going to make a backup,
+# so that later I can show you a second method.
 backup = patients.copy()
 
 # solving the problem with a loop:
@@ -400,10 +425,10 @@ patients
 # 
 # The solution here is to use NumPy's `np.where()` function.  It lets you select just which rows should get which type of computation, like so:
 
-# In[21]:
+# In[68]:
 
 
-# restore the original data:
+# Let's get back the original data...
 patients = backup.copy()
 
 # solution with np.where():
@@ -411,7 +436,7 @@ patients['height'] = np.where( patients['id'] > 100000, patients['height'] * 2.5
 patients
 
 
-# The `np.where()` function works just like `=IF()` does in Excel, taking three inputs, a conditional, an "if" result, and an "else" result.  But the difference is that `np.where()` is vectorized, effectively doing an Excel `=IF()` on each entry in the Series separately.  You can read an `np.where()` function just like a sentence:
+# The `np.where()` function works just like `=IF()` does in Excel, taking three inputs: a conditional, an "if" result, and an "else" result.  But the difference is that `np.where()` is vectorized, effectively doing an Excel `=IF()` on each entry in the Series separately.  You can read an `np.where()` function just like a sentence:
 # 
 # Where patient id is over 100000, do patient height times 2.54, otherwise just keep the original height.
 # 
@@ -419,34 +444,11 @@ patients
 # 
 # ### Speeding up mathematics
 # 
-# There are also some very impressive tools for speeding up mathematical operations in NumPy a *LOT.*  I will not cover them here, but will lest each of the following as an opportunity for Learning On Your Own.  Note that these are relevant only if you have a very large dataset over which you need to do complex mathematical computations, so that you notice pandas behaving slowly, and thus you need a speed boost.
-# 
-# ```{admonition} Learning on Your Own - CuPy (fastest option)
-# ---
-# class: alert alert-danger
-# ---
-# Doing certain types of computations can be sped up significantly by using graphics cards (originally designed for gaming rather than data science) instead of the computer's CPU (which does all the non-graphics computations).  See [this blog post](https://towardsdatascience.com/make-your-python-functions-10x-faster-142ab40b31a7) for information on CuPy, a Python library for harnessing your GPU to do fast arithmetic.
-# 
-# CuPy requires you to first describe to it the computation you'll want to do quickly, and it will compile it into GPU-friendly code that you can then use.  This is an extra level of annoyance for the programmer, but often produces the fastest results.
-# ```
-# 
-# ```{admonition} Learning on Your Own - NumExpr (easiest option)
-# ---
-# class: alert alert-danger
-# ---
-# If you've already got some code that does the arithmetic operation you want on NumPy arrays (or pandas Series, which are also NumPy arrays), then it's pretty easy to convert that code to use NumExpr.  It doesn't give as big a speedup as CuPy, but it's easier to set up.  [See this blog post](https://towardsdatascience.com/speed-up-your-numpy-and-pandas-with-numexpr-package-25bd1ab0836b) for details, and note the connection to `pd.eval()`.
-# ```
-# 
-# ```{admonition} Learning on Your Own - Cython (most flexible)
-# ---
-# class: alert alert-danger
-# ---
-# The previous two options work only for speeding up arithmetic.  To speed up any operation (including string manipulation, working with dictionaries, sets, or any Python class), you'll need Cython.  This is a tool for converting Python code into C code automatically, without your having to learn to program in C.  C code almost always runs significantly faster than Python code, but C is much less easy to use, especially for data work.  See [this tutorial](https://ipython-books.github.io/55-accelerating-python-code-with-cython/) on using Cython in Jupyter, plus the example below.
-# ```
+# There are also some very impressive tools for speeding up mathematical operations in NumPy a *LOT.*  I will not cover them here, but will list several below as opportunities for Learning On Your Own.  But I'll give a preview of one of the solutions, Cython.  Note that these speedup tools are relevant only if you have a very large dataset over which you need to do complex mathematical computations, so that you notice pandas behaving slowly, and thus you need a speed boost.
 # 
 # Let's say I have the following function that computes $n!$, the product of all positive integers up to $n$.  (This is not the best way to write this function, but it's just an example.)
 
-# In[22]:
+# In[69]:
 
 
 def factorial ( n ):
@@ -478,11 +480,35 @@ factorial( 5 )
 #     return result
 # ```
 # 
-# If you run the above code in Jupyter, it will show you an interactive display of the code it created and how much speedup you can expect.  The function still generates the same outputs as before, but typically much faster.  How much faster?  Check out the tutorial linked to above for more information.
+# If you run the above code in Jupyter, it will show you an interactive display of the code it created and how much speedup you can expect.  The function still generates the same outputs as before, but typically much faster.  How much faster?  Check out the tutorial linked to below for more information.
+# 
+# ```{admonition} Learning on Your Own - CuPy (fastest option)
+# ---
+# class: alert alert-danger
+# ---
+# Doing certain types of computations can be sped up significantly by using graphics cards (originally designed for gaming rather than data science) instead of the computer's CPU (which does all the non-graphics computations).  See [this blog post](https://towardsdatascience.com/make-your-python-functions-10x-faster-142ab40b31a7) for information on CuPy, a Python library for harnessing your GPU to do fast arithmetic.
+# 
+# CuPy requires you to first describe to it the computation you'll want to do quickly, and it will compile it into GPU-friendly code that you can then use.  This is an extra level of annoyance for the programmer, but often produces the fastest results.
+# ```
+# 
+# ```{admonition} Learning on Your Own - NumExpr (easiest option)
+# ---
+# class: alert alert-danger
+# ---
+# If you've already got some code that does the arithmetic operation you want on NumPy arrays (or pandas Series, which are also NumPy arrays), then it's pretty easy to convert that code to use NumExpr.  It doesn't give as big a speedup as CuPy, but it's easier to set up.  [See this blog post](https://towardsdatascience.com/speed-up-your-numpy-and-pandas-with-numexpr-package-25bd1ab0836b) for details, and note the connection to `pd.eval()`.
+# ```
+# 
+# ```{admonition} Learning on Your Own - Cython (most flexible)
+# ---
+# class: alert alert-danger
+# ---
+# The previous two options work only for speeding up arithmetic.  To speed up any operation (including string manipulation, working with dictionaries, sets, or any Python class), you'll need Cython.  This is a tool for converting Python code into C code automatically, without your having to learn to program in C.  C code almost always runs significantly faster than Python code, but C is much less easy to use, especially for data work.  See [this tutorial](https://ipython-books.github.io/55-accelerating-python-code-with-cython/) on using Cython in Jupyter, plus the example below.
+# ```
+# 
 
 # ## So do we *always* avoid loops?
 # 
-# No, there are some times when you might still want to avoid loops.
+# No, there are some times when you might still want to use loops.
 # 
 # ### When to opt for a loop
 # 
@@ -492,50 +518,52 @@ factorial( 5 )
 #  
 #  2. Sometimes the computation you're doing involves comparing one row to adjacent rows.  For example, you might want to find those days when the price of a stock was significantly more or less than it was on the two adjacent days (one before and one after).  Although it's possible to do this without a loop, the code is a harder to write and to read, as you can see in the example below.  With a loop, it's not as fast, but it's clearer.  So if speed isn't an issue, use the loop.
 # 
-# Let's see how we might write the code for the stock example just given, but instead of stock data, we'll use the (made up) quarterly revenue data from earlier.
+# Let's see how we might write the code for the stock example just given, but instead of stock data, we'll use the (made up) student and teacher data from earlier.
 
-# In[27]:
+# In[70]:
 
 
 # get just the column I care about:
-revenues = rev_quarters['Revenue']
+num_students = sociology_department['# Students']
 
 results = [ ]
-# For each quarter execpt the first and last...
-for index in revenues.index[1:-1]:
+# For each semester execpt the first and last...
+for index in sociology_department.index[1:-1]:
     # If it's bigger than the previous and the next...
-    if revenues.loc[index] > revenues.loc[index-1] and        revenues.loc[index] > revenues.loc[index+1]:
+    if num_students.loc[index] > num_students.loc[index-1] and        num_students.loc[index] > num_students.loc[index+1]:
         results.append( index )  # Save it for later
 
-# Show me just the quarters I saved.
-rev_quarters.iloc[results,:]
+# Show me just the semesters I saved.
+sociology_department.loc[results,:]
 
 
 # Compare that to the same results computed using vectorization in NumPy rather than a loop.  If the data were large, this implementation would be faster, but it's definitely not as clear to read.
 
-# In[28]:
+# In[71]:
 
 
 # Get all but first and last, for searching.
-to_search = rev_quarters.iloc[1:-1]
+to_search = sociology_department.iloc[1:-1]
 
 # Compute arrays of previous/next quarters, for comparison.
-previous_rev = rev_quarters.iloc[:-2]
-next_rev = rev_quarters.iloc[2:]
+previous_num_stu = sociology_department.iloc[:-2]
+next_num_stu = sociology_department.iloc[2:]
 
 # Adjust indices so they match the to_search Series.
-previous_rev.index = previous_rev.index + 1
-next_rev.index = next_rev.index - 1
+previous_num_stu.index = previous_num_stu.index + 1
+next_num_stu.index = next_num_stu.index - 1
 
 # Do the computation using NumPy vectorized comparisons.
-to_search[( to_search['Revenue'] > previous_rev['Revenue'] )         & ( to_search['Revenue'] > next_rev['Revenue'] )]
+to_search[( to_search['# Students'] > previous_num_stu['# Students'] )         & ( to_search['# Students'] > next_num_stu['# Students'] )]
 
 
 # Any time when speed isn't an issue, and you think the clearest way to write the code is a loop, then go right ahead and write clear code!  Loops aren't always bad.
 # 
 # ### Factoring computations out of the loop
 # 
-# Sometimes what's making a loop slow is a repeated computation that doesn't need to happen inside the loop.  The *loop variable* is the variable that immediately follows the `for` statement in a loop.  In the loop example above, that's the `index` variable.  If there were any computation inside the loop that didn't use the `index` variable, we could bring that computation outside the loop, doing it once, before the loop, and saving time.
+# Sometimes what's making a loop slow is a repeated computation that doesn't need to happen inside the loop.  How can we tell whether a computation needs to be in a loop or not?
+# 
+# The *loop variable* is the variable that immediately follows the `for` statement in a loop.  In the loop example above, that's the `index` variable.  Usually any computation inside the loop that doesn't use the `index` variable can be moved outside the loop, so that we run it just once, before the loop, and save time.
 # 
 # For example, in the final project some students did for MA346 in Spring 2020, some teams had a loop that processed a large database of baseball players, and tried to look their names up in a different database.  It went something like this:
 # 
@@ -570,7 +598,7 @@ to_search[( to_search['Revenue'] > previous_rev['Revenue'] )         & ( to_sear
 # 
 # ### Knowing how long you'll have to wait
 # 
-# Few things are more frustrating than running a code cell and seeing the computer just sit there doing nothing.  We start to wonder whether it will take 15 seconds to process the data, and we should just have a little patience, or 15 minutes and we should go get a coffee, or 15 hours and we should give up and rewrite the code.  Which is it?  How can we tell except just waiting?
+# It can be very frustrating to run a code cell and see no output for a long time, while the computer seems to be doing nothing.  We start to wonder whether it will take 15 seconds to process the data, and we should just have a little patience, or 15 minutes and we should go get a coffee, or 15 hours and we should give up and rewrite the code.  Which is it?  How can we tell except just waiting?
 # 
 # There are two easy ways to get some feedback as your loop is progressing.  The easiest one is to install the `tqdm` module, whose purpose is to help you see a progress bar for a long-running loop.  After following [tqdm's installation instructions](https://github.com/tqdm/tqdm#installation) (using `pip` or `conda`), just import the module, then take the Series or list over which you're looping and wrap it in `tqdm(...)`, as in the example below.
 # 
@@ -578,11 +606,11 @@ to_search[( to_search['Revenue'] > previous_rev['Revenue'] )         & ( to_sear
 # from tqdm.notebook import tqdm
 # 
 # results = [ ]
-# for index in tqdm( revenues.index[1:-1] ):   # <---- Notice tqdm here.
-#     if revenues.loc[index] > revenues.loc[index-1] and \
-#        revenues.loc[index] > revenues.loc[index+1]:
-#         results.append( index )
-# rev_quarters.iloc[results,:]
+# for index in tqdm( sociology_department.index[1:-1] ):  # <---- Notice tqdm here.
+#     if num_students.loc[index] > num_students.loc[index-1] and \
+#        num_students.loc[index] > num_students.loc[index+1]:
+#         results.append( index )  # Save it for later
+# sociology_department.loc[results,:]
 # ```
 
 # While the computation is running, a progress bar shows up in the notebook, filling as the computation progresses.  It looks like the following example.
@@ -595,7 +623,7 @@ to_search[( to_search['Revenue'] > previous_rev['Revenue'] )         & ( to_sear
 # 
 # Sometimes, you can't get around the fact that you just have to process a lot of data, and that can be slow.  Unless you're working for a company that will provide you with some powerful computing resources in the cloud on which to run your Jupyter notebook, so that it runs faster than it does on your laptop (or the free Colab/Deepnote machines), you'll just have to run the slow code.  But there are still some ways to make this better.
 # 
-# **Don't run it more than you have to.**  Often, the slow code is something that happens early your work, such as cleaning a huge dataset or searching through it for just the rows you need for your analysis.  Once you've written code that does this, save the result to a file with `pd.to_csv()` or `pd.to_pickle()` and don't run that code again.
+# **Don't run it more than you have to.**  Often, the slow code is something that happens early in your work, such as cleaning a huge dataset or searching through it for just the rows you need for your analysis.  Once you've written code that does this, save the result to a file with `pd.to_csv()` or `pd.to_pickle()` and don't run that code again.
 # 
 # Don't fall into the trap of thinking that all your code needs to be in one Python script or one Jupyter notebook.  If that slow code that cleaned your data never needs to be run again, then once you've run it and saved the output, save the script/notebook, close it, and start a new script or notebook to contain your data analysis code.  Then when you re-run your analysis, you don't have to sit around and wait for the data cleaning to happen all over again!
 # 
@@ -603,7 +631,7 @@ to_search[( to_search['Revenue'] > previous_rev['Revenue'] )         & ( to_sear
 # 
 # **Do your work on a small dataset.**  If the dataset you have to analyze is still large enough that your analysis code itself runs slowly as well, try the following.  Near the top of your file, replace the actual data with a small sample of it, perhaps using code like this.
 
-# In[37]:
+# In[72]:
 
 
 patients = patients.sample( 3 )
@@ -616,4 +644,4 @@ patients
 # 
 # *Danger!*  Don't forget to delete that cell when your code is polished and you want to do the real, final analysis!  I suggest adding a note in giant text at the end of your notebook saying something like, "Don't forget, before you turn this in, USE THE WHOLE DATASET!"  Then you'll remember to do that key step before you complete the project.
 # 
-# **If the dataset is truly huge,** so large that it can't be stored in your computer's memory all at once, then trying to load it will either generate out-of-memory errors or it will slow the process down enormously while the computer tries to use its hard drive as temporary extra memory storage.  In such cases, don't forget the tip at the end of [this DataCamp chapter](big-cheat-sheet#chapter-1-using-iterators-in-pythonland) about the `chunksize` parameter.  It lets you process large files in smaller chunks.
+# **If the dataset is truly huge,** so large that it can't be stored in your computer's memory all at once, then trying to load it will either generate out-of-memory errors or it will slow the process down enormously while the computer tries to use its hard drive as temporary extra memory storage.  In such cases, don't forget the tip at the end of [this DataCamp chapter](big-cheat-sheet.html#chapter-1-using-iterators-in-pythonland) about the `chunksize` parameter.  It lets you process large files in smaller chunks.

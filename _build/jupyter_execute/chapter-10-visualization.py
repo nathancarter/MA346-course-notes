@@ -8,7 +8,7 @@
 
 # In preparation for today, you learned many [data visualization tools from DataCamp](big-cheat-sheet.html#before-week-5).  In fact, if you're doing this reading before you do the DataCamp homework, I strongly suggest that you stop here, do the DataCamp first, and then come back here.
 # 
-# Rather than review those tools here, I will categorize them instead.  This page is therefore a reference in which you can look up the kind of data you *have* and see which visualizations make the most sense for it, and what each one accomplishes.
+# Rather than review those tools here, I will categorize them instead.  This page is therefore a reference in which you can look up the kind of data you *have* and see which visualizations make the most sense for it, and what each visualization accomplishes.
 # 
 # We will use two datasets throughout the examples below.  The first is a set of sales data for the employees of an imaginary company (Dunder Mifflin, perhaps?).  The data has the following format, organized by employee ID numbers, and including year, quarter, sales quantity, and bonus earned for each ID in each relevant time frame.
 
@@ -32,6 +32,7 @@ regi_df.head()
 # ## What if I have two columns of numeric data?
 # 
 # This situation is *extremely common,* and that's why we address it first.  If we consider the two datasets described above, we can find many ways to create two columns of numeric data, including the following examples.
+# 
 #  1. The year and sales columns from `sales_df`
 #  2. The year and sales columns we would get by grouping `sales_df` by year
 #  3. The Volume and High columns from `regi_df`
@@ -41,7 +42,7 @@ regi_df.head()
 # ---
 # class: alert alert-primary
 # ---
-# Recall that two columns of data always form a binary relation, but may or may not be a function.  Noticing whether the data are a function is very important when deciding how to visualize them.
+# Recall from [Chapter 2](chapter-2-mathematical-foundations) that two columns of data always form a binary relation, but may or may not be a function.  Noticing whether the data are a function is very important when deciding how to visualize them.
 #  * A **function** can be shown with a **line plot**, as in algebra classes.
 #  * A **relation** that is not a function must be shown as a **scatterplot.**
 # ```
@@ -67,7 +68,8 @@ plt.show()
 
 
 plt.plot( sales_df['year'], sales_df['sales'], '-o' ) # dots and lines
-plt.title( 'This is a relation, so we\nshould have used a scatterplot!', fontdict={ "fontsize": 25 } )
+plt.title( 'Whoops!  This is a relation, so we\nshould have used a scatterplot!',
+           fontdict={ "fontsize": 25 } )
 plt.show()
 
 
@@ -78,7 +80,8 @@ plt.show()
 
 temp_df = sales_df.sort_values( 'emp_id' )
 plt.plot( temp_df['year'], temp_df['sales'], '-o' ) # dots and lines
-plt.title( 'This is a relation, so we\nshould have used a scatterplot!', fontdict={ "fontsize": 25 } )
+plt.title( 'Whoops!  This is a relation, so we\nshould have used a scatterplot!',
+           fontdict={ "fontsize": 25 } )
 plt.show()
 
 
@@ -131,7 +134,7 @@ plt.show()
 
 # ## But can my two columns of data look more awesome?
 # 
-# Recall that the Seaborn library makes it easy to add histograms to both the horizontal and vertical axes of a standard ploot to get a better sense of the distribution.  This is possible with both line and scatter plots, but it is more commonly useful with scatterplots.
+# Recall that the Seaborn library makes it easy to add histograms to both the horizontal and vertical axes of a standard plot to get a better sense of the distribution.  This is possible with both line and scatter plots, but it is more commonly useful with scatterplots.
 
 # In[9]:
 
@@ -164,9 +167,9 @@ plt.show()
 # 
 # Seaborn provides a few tools for showing how one variable depends on another.
 # 
-# First, you can plot a line of best fit over a scatterplot, together with confidence bars for the predictions made by that linear model.  Recall from GB213 that it is not always sensible to fit a linear model to data.  But in cases where it makes sense, Seaborn makes it easy to visualize.
+# First, you can plot a line of best fit over a scatterplot, together with confidence bars for the predictions made by that linear model.  **Recall from GB213 that it is not always sensible to fit a linear model to data!**  But in cases where it makes sense, Seaborn makes it easy to visualize.
 # 
-# Keep in mind that Seaborn is quite happy to show you a linear model even when it does not make any sense to do so!  Just because Python will plot it for you does not mean that you should ask it to!  Here's an example of just such a situation.
+# **Keep in mind that Seaborn is quite happy to show you a linear model even when it does not make any sense to use a linear model!**  Just because Python will plot it for you does not mean that you should ask it to!  Here's an example of just such a situation.
 
 # In[12]:
 
@@ -181,7 +184,7 @@ plt.show()
 
 # Seaborn won't show you the coefficients of the model, nor measure its goodness of fit; see [the GB213 review](GB213-review-in-Python) for how to do those things in Python.
 # 
-# Of course, there are some situations where a linear model is reasonable, like the total sales over time plot from earlier.  Seaborn is fussy about using column names only in `lmplot`, so we have to move the index in as an actual column here.
+# Of course, there are some situations where a linear model is reasonable, like the total sales over time plot from earlier.  Seaborn restricts us to using only column names in `lmplot`, so we must convert the index to be an actual column in this example.
 
 # In[13]:
 
@@ -207,7 +210,7 @@ plt.show()
 # 
 # The primary visualization tools appropriate for such a situation are variations on the idea of a histogram.  These include a standard histogram plus swarm plots, strip plots, and violin plots.  A secondary visualization in this situation is an ECDF, which we will return to below.
 # 
-# We can plot a standard histogram with `plt.hist()`, but this doesn't work very well for very small data sets.  It can also suffer from "binning bias," which distorts the actual distribution through the approximation inherent in clustering points into bars.  But with many data points distributed smoothly along the horizontal axis, it often works well.
+# We can plot a standard histogram with `plt.hist()`, but this doesn't work very well for very small data sets.  It can also suffer from "binning bias," which distorts the actual distribution through the approximation inherent in clustering points into bars.  But if you have a large number of data points distributed smoothly along the horizontal axis, it works well.
 # 
 # When labeling a histogram, the $y$ axis is almost always "frequency" and the title should typically mention the idea of a "distribution."
 
@@ -221,7 +224,7 @@ plt.title( 'Distribution of Quarterly Sales' )
 plt.show()
 
 
-# Matplotlib's built-in `plt.hist()` works fine, but to upgrade your histogram game, consider checking out [Seaborn's `sns.distplot()`](https://seaborn.pydata.org/generated/seaborn.distplot.html), which also shows histograms, but with handy options for commonly-desired additional features.
+# Matplotlib's built-in `plt.hist()` works fine, but to up your histogram game, consider checking out [Seaborn's `sns.distplot()`](https://seaborn.pydata.org/generated/seaborn.distplot.html), which also shows histograms, but with handy options for commonly-desired additional features.
 # 
 # To remove the problem of binning bias, you can try a swarm plot.  This works well with a small-to-medium number of data points, but becomes unmanageable for large datasets, because it attempts to give each data point its own visual space.  Also, data points are just plotted *close* to where they actually belong, so the distortion of a histogram's binning bias has been reduced, but not fully removed.  The picture is still an approximation of the actual data, but still much more accurate than a histogram.
 # 
@@ -296,7 +299,7 @@ import numpy as np
 ecdf_xs = sales_df['sales'].sort_values()
 ecdf_ys = np.arange( 1, len(ecdf_xs)+1 ) / len(ecdf_xs)
 
-# simulate a normal CDF with the same mean and std
+# simulate a normal CDF with the same mean and std dev
 sample_mean = ecdf_xs.mean()
 sample_std = ecdf_xs.std()
 samples = np.random.normal( sample_mean, sample_std, size=10000 )
@@ -337,7 +340,7 @@ plt.show()
 
 # What if we wanted to plot the four price distributions in the REGI dataset, the open, close, low, and high prices, side-by-side?  Right now, these are stored in three separate columns in the data.  But as you can see from the code above, Seaborn expects the data to be in a single column, and it will use a separate column to split the values into categories.
 # 
-# Of course, we know how to combine four columns of related data into one based on our work in a previous week--it's melting!
+# Of course, we know how to combine four columns of related data into one based on our work in a previous week---it's melting!
 
 # In[24]:
 
@@ -411,7 +414,39 @@ plt.yticks( np.arange(6)+0.5, numeric_columns_only.columns, rotation=0 )
 plt.show()
 
 
-# Of course, because we used the same data, we still find out that all the prices are highly correlated (because they're organized by day) and the volume isn't really correlated much with anything.  But it's much easier to tell both the correlations and the lacks of correlation when we have hard numbers to look at, rather than having to estimate it ourselves from shapes.
+# Of course, because we used the same data, we still find out that all the prices are highly correlated (because they're organized by day) and the volume isn't really correlated much with anything.  But it's much easier to tell both the correlations and the lacks of correlation when we have hard numbers to look at, rather than having to estimate it ourselves from pictures.
+
+# ## What if I'm just starting to explore my data?
+# 
+# Many of the sections above assumed you knew what was in your data and had something you wanted to communicate or investigate, such as the relationship between two distributions, or the correlations among some variables of interest.  But perhaps you're not that far along yet.  Maybe you just got a dataset and don't know what's in it, or what might seem interesting.  There are tools for that situation as well!
+# 
+# In fact, there are so many tools that I don't have time to cover them all here.  Instead, I'll turn each one into a Learning on Your Own opportunity.
+# 
+# ```{admonition} Learning on Your Own - Visual EDA Tools
+# ---
+# class: alert alert-danger
+# ---
+# [This blog post](https://towardsdatascience.com/data-frame-eda-packages-comparison-pandas-profiling-sweetviz-and-pandasgui-bbab4841943b) covers three Python tools for visual exploratory data analysis, and a fourth is covered in [this post](https://towardsdatascience.com/introduction-to-d-tale-5eddd81abe3f).  Read them and create a report that answers the following questions.
+# 
+#  * Which of the four tools are usable within Deepnote?  Which are compatible with VSCode?
+#  * If I want to install the tools in Deepnote or VSCode, how do I do it?
+#  * How do the tools compare with the [similar features built into Deepnote's interface](https://www.youtube.com/watch?v=3PhEO41WVLQ&ab_channel=Deepnote)?
+#  * Based on your reading, do you have a recommendation of which of these (now five) options is best?
+# ```
+# 
+# ```{admonition} Learning on Your Own - SandDance
+# ---
+# class: alert alert-danger
+# ---
+# [This GitHub repository](https://github.com/microsoft/SandDance) contains a tool from Microsoft Research called SandDance, for fancy interactive visual data exploration.
+# 
+#  * Is it usable within Deepnote?  If so, how do I install it there?
+#  * It has a VSCode extension.  Once I've installed that, how do I use it?
+#  * What are the 3 or 4 most useful features you found when you read about SandDance?
+#  * Give some examples that showcase the use of those features, either in a notebook you can share or a video demonstration/screencast.
+#  * What source do you recommend someone go to if they want to read more about SandDance?
+# ```
+# 
 
 # ## Summary of plotting tools
 # 
@@ -426,16 +461,16 @@ plt.show()
 # | Very good approximation of the distribution, maybe very wide | Swarm plot |
 # | Good approximation of the distribution, not too wide | Strip plot |
 # | Good approximation of a large distribution, smoothed | Violin plot |
-# | How similar is the distribution to normal? | Overlapping ECDFs |
+# | Whether the distribution is approximately normal | Overlapping ECDFs |
 # 
 # ### With two numeric columns of data:
 # 
 # | If you want to see this | Then use this |
 # |-------------------------|---------------|
-# | A graph of my data, which is a function | Line plot |
-# | The shape of my data, which is a relation | Scatter plot |
-# | The shape of my data, which is a relation, plus each variable's distribution | Joint plot |
-# | The line of best fit through my data | `sns.lmplot` |
+# | A graph of the data when the data is a function | Line plot |
+# | The shape of the data when the data is a relation | Scatter plot |
+# | The shape of the data when the data is a relation, plus each variable's distribution | Joint plot |
+# | The line of best fit through the data | `sns.lmplot` |
 # 
 # ### With many numeric columns of data:
 # 
@@ -452,7 +487,7 @@ plt.show()
 
 # ## Techniques *not* to use (and why)
 # 
-# You may notice that we did not cover **pie charts** anywhere in this tutorial.  Matplotlib can certainly produce pie charts for you, but visualization experts recommend against them, because viewers tend to have trouble assessing the exact meanings of the shapes.  It's much harder to compare how much bigger one pie slice is to another than it is to compare, say, two bars on a histogram, or to points on a graph.  So I suggest you avoid pie charts.
+# You may notice that we did not cover **pie charts** anywhere in this tutorial.  Matplotlib can certainly produce pie charts for you, but visualization experts recommend against them, because viewers tend to have trouble assessing the exact meanings of the shapes.  It's much harder to compare how much bigger one pie slice is to another than it is to compare, say, two bars on a histogram, or two points on a graph.  So I suggest you avoid pie charts.
 # 
 # We also did not cover **bubble charts** anywhere in this tutorial.  (A bubble chart is one in which each data point is plotted by a large circle, proportional to one of the variables in the data.)  These are very popular in modern data visualization because they are eye-catching and attractive.  But visualization experts recommend against these as well, because each person perceives the bubble sizes differently.  For example, some people perceive the magnitude of a bubble on a graph in proportion to its radius, some perceive it in proportion to its area, and others are somewhere in between.
 # 
@@ -460,11 +495,11 @@ plt.show()
 # 
 # We did not cover charts with **3D elements,** as Microsoft Excel often creates.  This is because those elements also tend to distort the viewer's perception of the data and make it unclear exactly how extreme (or not) they're perceiving what you're showing.  Thus we avoid any 3D elements in charts for the same reason we avoid bubble charts.
 # 
-# Finally, DataCamp showed you how to fit polynomial models to data using `sns.regplot()`.  But I did not cover it hear, because it is dangerous to dive into polynomial models without a solid grounding in mathematical modeling, which this course does not cover.  Before using a polynomial model, you would need a solid, domain-specific reason to believe that such a model is applicable, or `sns.regplot()` will (obediently) produce result that are unreliable if used for prediction.  Consequently, I won't cover `sns.regplot()` in MA346.
+# Finally, DataCamp showed you how to fit polynomial models to data using `sns.regplot()`.  But I did not cover it here, because it is dangerous to dive into polynomial models without a solid grounding in mathematical modeling, which this course does not cover.  Before using a polynomial model, you would need a solid, domain-specific reason to believe that such a model is applicable, or `sns.regplot()` will (obediently) produce result that are unreliable if used for prediction.  Consequently, I won't cover `sns.regplot()` in MA346.
 
 # ## What about plot styles?
 # 
-# I didn't cover plot styles here, but there's nothing wrong with them.  I simply left them out because most of them are only cosmetic; [see this week's section in the DataCamp cheat sheet](big-cheat-sheet#before-week-5) for details on items like `sns.set()`, `plt.subplot()`, and `plt.style`.
+# I didn't cover plot styles here, but there's nothing wrong with them.  I simply left them out because most of them are only cosmetic; [see this section in the DataCamp cheat sheet](big-cheat-sheet#before-day-5) for details on items like `sns.set()`, `plt.subplot()`, and `plt.style`.
 # 
 # There are also some good blog posts on Matplotlib styles you might want to check out, such as [this](https://towardsdatascience.com/the-last-matplotlib-tweaking-guide-youll-ever-need-dbd4374a1c1e) or [this](https://towardsdatascience.com/cyberpunk-style-with-matplotlib-f47404c9d4c5).
 # 
@@ -498,14 +533,26 @@ plt.show()
 # ---
 # class: alert alert-danger
 # ---
-# Drawing data on a map is extremely common and useful, but we don't have time to cover it in today's notes.  [Here's a blog post about an easy way to do so in Python,](https://www.earthdatascience.org/tutorials/introduction-to-leaflet-animated-maps/) but you don't need to feel bound to that one.  There are many map toolkits for use in Python-based visualizations.  Feel free to choose the one you like best and decide on the best format by which to report on it to the class.  As an example, try showing how housing costs vary across the U.S. by plotting the property values in the mortgage dataset from Week 3 on a map.
+# Drawing data on a map is extremely common and useful, but we don't have time to cover it in today's notes.  Here are two blog posts on easy ways to plot geographical data in Python: [one using Leaflet and Folium](https://www.earthdatascience.org/tutorials/introduction-to-leaflet-animated-maps/) and [one using Matplotlib and Geopandas](https://towardsdatascience.com/the-easiest-way-to-plot-data-from-pandas-on-a-world-map-1a62962a27f3).  Investigate which of the two seems better to you and decide on the best format by which to report on one or both of these to the class.  As an example, try showing how housing costs vary across the U.S. by plotting on a map the property values in the mortgage dataset from Day 3.
 # ```
 # 
 # ```{admonition} Learning on Your Own - Tableau
 # ---
 # class: alert alert-danger
 # ---
-# One of the most famous tools for data visualization in industry is Tableau.  Although coding in Python, R, etc., is always the most flexible option, tools like Tableau are far easier and faster when you don't need maximal flexibility.  Take a Tableau tutorial and report to the class on its key features.  Ensure you cover how to get a copy of Tableau, how to get data into it, and what it's best at.
+# One of the most famous tools for data visualization in industry is Tableau.  Although coding in Python, R, etc., is always the most flexible option, tools like Tableau are far easier and faster when you don't need maximal flexibility.  Take a Tableau tutorial and report to the class on its key features.  Ensure your tutorial covers:
+# 
+#  * how to get a copy of Tableau
+#  * how to get data into Tableau
+#  * what tasks Tableau is most suited to accomplishing
+#  * a few examples of how to do common and useful visualization tasks in Tableau, maybe using the mortgage dataset from Day 3 so that readers are familiar with it
+# ```
+# 
+# ```{admonition} Learning on Your Own - Charticulator
+# ---
+# class: alert alert-danger
+# ---
+# Microsoft Research recently made [Charticulator](https://charticulator.com/) a free and open-source tool.  It is for interactively creating custom visualizations, and thus has a very similar purpose to Tableau, mentioned above.  Create a report just like the one suggested above for Tableau, but for Charticulator instead.
 # ```
 # 
 # ```{admonition} Learning on Your Own - Visualization Design Principles

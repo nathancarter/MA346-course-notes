@@ -338,43 +338,48 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#is-joining-the-same-as-merging">
+   12.8. Is joining the same as merging?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
-   12.8. Summary
+   12.9. Summary
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ensuring-a-unique-id-appears-in-both-datasets">
-   12.9. Ensuring a unique ID appears in both datasets
+   12.10. Ensuring a unique ID appears in both datasets
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#merging-on-multiple-columns">
-     12.9.1. Merging on multiple columns
+     12.10.1. Merging on multiple columns
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#changing-the-format-of-a-column">
-     12.9.2. Changing the format of a column
+     12.10.2. Changing the format of a column
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#joining-multiple-columns-into-one">
-     12.9.3. Joining multiple columns into one
+     12.10.3. Joining multiple columns into one
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sequences-with-different-frequencies">
-     12.9.4. Sequences with different frequencies
+     12.10.4. Sequences with different frequencies
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#what-about-unstandardized-text">
-     12.9.5. What about unstandardized text?
+     12.10.5. What about unstandardized text?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#extended-example">
-     12.9.6. Extended Example
+     12.10.6. Extended Example
     </a>
    </li>
   </ul>
@@ -397,10 +402,10 @@
 <h2><span class="section-number">12.1. </span>Why join two datasets?<a class="headerlink" href="#why-join-two-datasets" title="Permalink to this headline">¶</a></h2>
 <p>This chapter is about two ways to combine DataFrames together.  The concepts we’ll be discussing (concatenation and merging) are not unique to pandas DataFrames; they show up wherever tabular data is used, including in SQL.</p>
 <p>Combining more than one dataset together is a crucial aspect of data work.  Let’s see two examples.</p>
-<p><strong>Example 1.</strong>  One of my friends runs <a class="reference external" href="https://secondnature.org/">a nonprofit organization</a> that helps colleges and universities set climate action goals and track their progress toward keeping them.  He asked my graduate data science course in Fall 2019 to look at their database and come up with any insights.  Naturally, their database had records of all the climate goals and progress for schools they were working with, but it didn’t have much other information about those schools.  What if we wanted to analyze a variable they weren’t tracking, like endowment?  Or what if we wanted to look at schools that hadn’t get partnered with the nonprofit?  That information would need to be brought in from another dataset.  Until we do so, we can’t give interesting answers to the question the client posed.</p>
+<p><strong>Example 1.</strong>  One of my friends runs <a class="reference external" href="https://secondnature.org/">a nonprofit organization</a> that helps colleges and universities set climate action goals and track their progress toward keeping them.  He asked my graduate data science course in Fall 2019 to look at their database and come up with any insights.  Naturally, their database had records of all the climate goals and progress for schools they were working with, but it didn’t have much other information about those schools.  What if we wanted to analyze a variable they weren’t tracking, like endowment?  Or what if we wanted to look at schools that hadn’t yet partnered with the nonprofit?  That information would need to be brought in from another dataset.  Until we do so, we can’t give interesting answers to the question the client posed.</p>
 <p><strong>Example 2.</strong>  One of my colleagues in the math department told me about a clever strategy one investment group used to predict the earnings of companies they were considering investing in.  They already had lots of data about each company, including the addresses of the company’s various offices and factories.  They could also purchase access to a large database of satellite images.  They used the addresses and some image-detection software to compute the number of cars in the parking lots of the company’s properties.  This turned out to be a very useful predictor of growth that they could access before their competing investors had the information.  It involved bringing together two datasets in a clever way.</p>
 <p>In this chapter, we’ll discuss how to combine just two DataFrames, but the ideas apply if you have more than two.  For instance, to concatenate five DataFrames <code class="docutils literal notranslate"><span class="pre">df1</span></code> through <code class="docutils literal notranslate"><span class="pre">df5</span></code>, we can proceed in pairs, combining <code class="docutils literal notranslate"><span class="pre">df1</span></code> and <code class="docutils literal notranslate"><span class="pre">df2</span></code>, then combining that result with <code class="docutils literal notranslate"><span class="pre">df3</span></code>, and so on until we have included <code class="docutils literal notranslate"><span class="pre">df5</span></code>.</p>
-<p>Let’s start by dicsussing concatenation, which is definitely the easier of the two concepts, before we tackle merging.  The English verb “concatenate” means to attach two things together, one after the end of the other.</p>
+<p>Let’s start by discussing concatenation, which is definitely the easier of the two concepts, before we tackle merging.  The English verb “concatenate” means to attach two things together, one after the end of the other.</p>
 </div>
 <div class="section" id="concatenation-is-vertical">
 <h2><span class="section-number">12.2. </span>Concatenation is vertical<a class="headerlink" href="#concatenation-is-vertical" title="Permalink to this headline">¶</a></h2>
@@ -410,7 +415,7 @@
 <li><p>For instance, if you’re taking scientific measurements in a lab, one week you get a set of measurements, and the next week you get more data in the same format.</p></li>
 <li><p>Or if you’re following a stock or other financial instrument, its prices one week form a dataset, then the next week, you see more data with the same format.</p></li>
 </ul>
-<p>Because the standard way to organize tabular data is to put observations in rows, then getting more observations means we just need to add more rows onto the bottom of our previous table of data.  This is what concatenation is for.  Here’s an illustration using the stock prices example, with data that comes from Renewable Energy Group, Inc., whose 2020 data we’ve seen before in this course.</p>
+<p>Because the standard way to organize tabular data is to put observations in rows, then getting more observations means we just need to add more rows onto the bottom of our previous table of data.  This is what concatenation is for.  Here’s an illustration using the stock prices example, with data that comes from Renewable Energy Group, Inc., whose 2020 data we’ve seen in an earlier chapter.</p>
 <p><img alt="Illustration of stacking two tables of stock data vertically into one larger table" src="_images/concat-of-stock-data.png" /></p>
 <p>There are two important things to notice in the picture.</p>
 <ol class="simple">
@@ -584,7 +589,7 @@
 <div class="section" id="merging-is-horizontal">
 <h2><span class="section-number">12.3. </span>Merging is horizontal<a class="headerlink" href="#merging-is-horizontal" title="Permalink to this headline">¶</a></h2>
 <p>Concatenation was appropriate when we had new rows (that is, new observations) to add to our dataset.  But what if we had new columns instead?  Keep in mind that, under the standard way we organize tabular data, columns represent the <em>variables</em> in our dataset.  So getting new columns means learning more information about the rows we already had.</p>
-<p>We saw a simple example of this last week; it was simple enough that we didn’t need to learn the full power of merging to handle it.  Recall that we had a dataset of home mortgage applications, and we wanted to add into it a variable that measured political affiliation of the state in which the mortgage took place.  We thus got a table that provided a measure of political alignment for each state, and we used that to <em>add a new column</em> to our old home mortgage dataset.  Each row in the mortgage dataset got a new variable measuring political alignment.  The table grew <em>horizontally</em> with new information from another table.</p>
+<p>We saw a simple example of this in a recent in-class activity; it was simple enough that we didn’t need to learn the full power of merging to handle it.  Recall that we had a dataset of home mortgage applications, and we wanted to add into it a variable that measured political affiliation of the state in which the mortgage took place.  We thus got a table that provided a measure of political alignment for each state, and we used that to <em>add a new column</em> to our old home mortgage dataset.  Each row in the mortgage dataset got a new variable measuring political alignment.  The table grew <em>horizontally</em> with new information from another table.</p>
 <p>In fact, when we have only one column to add, the technique from last week’s class is easier than the full complexity of merging.  Recall how we did it:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># make a dictionary that maps state abbreviations to voting measurements</span>
 <span class="n">repub_votes_in_state</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">df_election</span><span class="p">[</span><span class="s1">&#39;State&#39;</span><span class="p">],</span> <span class="n">df_election</span><span class="p">[</span><span class="s1">&#39;Trump&#39;</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
@@ -598,7 +603,7 @@
 <div class="section" id="adding-many-columns-at-once">
 <h2><span class="section-number">12.4. </span>Adding many columns at once<a class="headerlink" href="#adding-many-columns-at-once" title="Permalink to this headline">¶</a></h2>
 <p>The technique shown above, which we used last week in class, is easy if bringing in only one new column.  If we wanted to bring in many new columns, we’d need to apply that technique repeatedly, in a loop over those columns.  But <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code> can do it all in one function call, and for the reasons we learned last week, that will probably be faster than a Python loop.</p>
-<p>Let’s consider a concrete example to understand the idea of importing several new columns at once.  Consider a dataset we’ve seen before, tracking the number of confirmed COVID-19 cases over time in various countries.  Let’s say we wanted to see if the growth patterns in such a dataset were in any way related to health care information about the country, such as how much they spend on health care, how many doctors per capita, and so on.  We’ll need to bring in another dataset with all that information about each country, and import it in as new columns.  See the illustration below.</p>
+<p>Let’s consider a concrete example to understand the idea of importing several new columns at once.  Consider a dataset that’s been very important over the past year, tracking the number of confirmed COVID-19 cases over time in various countries.  Let’s say we wanted to see if the growth patterns in such a dataset were in any way related to health care information about the country, such as how much they spend on health care, how many doctors per capita, and so on.  We’ll need to bring in another dataset with all that information about each country, and import it in as new columns.  See the illustration below.</p>
 <p>(All tables illustrated from here on will have “…” in the final rows and columns, to indicate that the table is really much bigger, and we’re showing only a portion in the illustration.)</p>
 <p><img alt="Merging COVID-19 time series data for each country with health care information for each country" src="_images/merge-of-health-data.png" /></p>
 <p>The resulting DataFrame, on the bottom of the illustration, has all the data we want about each country, the COVID case data followed by the health data.</p>
@@ -632,12 +637,12 @@
 </pre></div>
 </div>
 <p>If we had chosen to do <code class="docutils literal notranslate"><span class="pre">how='right'</span></code> instead, the right DataFrame would be considered the definitive one.  Any school from the left DataFrame that didn’t appear in the right DataFrame would be discarded, and we would end up with under 500 rows, precisely one row for each school in the climate nonprofit’s dataset.</p>
-<p>Note that we’re still making the unrealistic assumption that the school names in the government dataset will match perfectly with those in the nonprofit’s dataset, and we’ll address that at the end of the chapter.</p>
+<p>Note that we’re still making the unrealistic assumption that the school names in the government dataset will match perfectly with those in the nonprofit’s dataset, and we’ll address that <a class="reference external" href="#ensuring-a-unique-id-appears-in-both-datasets">at the end of the chapter</a>.</p>
 <p>This example showed what it was like if some of the rows in the left dataset match up with <em>zero</em> rows in the right dataset.  But what if they match up with <em>many</em> rows in the right dataset?</p>
 </div>
 <div class="section" id="when-there-are-many-matches-for-some-rows">
 <h2><span class="section-number">12.6. </span>When there are many matches for some rows<a class="headerlink" href="#when-there-are-many-matches-for-some-rows" title="Permalink to this headline">¶</a></h2>
-<p>Let’s consider another example, this one from sports.  We’ll use NFL football, but if you’re not familiar with the sport, the example will still make sense.  All you need to know is that each team has many players, and that each <em>play</em> is a small part of a football game that uses just some of the team’s players.  Some plays have a <em>receiver,</em> which is the player who catches the ball thrown to him (if any–sometimes the play does not involve throwing the ball).</p>
+<p>Let’s consider another example, this one from sports.  We’ll use NFL football, but if you’re not familiar with the sport, the example will still make sense.  All you need to know is that each team has many players, and that each <em>play</em> is a small part of a football game that uses just some of the team’s players.  Some plays have a <em>receiver,</em> which is the player who catches the ball thrown to him (if any—sometimes the play does not involve throwing the ball).</p>
 <p>As always in this chapter, imagine two datasets.  The first is the set of all NFL players in a certain year and their stats for that year.  (You can get these datasets online for free; here I’ll use a small sample of the players from the 2009 season.)  The second is the set of all plays that happened in that same season, in any game.  (The NFL lets you fetch this data from their website for free; again, I’ll use a small sample of plays from the 2009 season.)</p>
 <p>Perhaps we have a theory we want to test about a team’s receivers.  We want to compare certain statistics about the receiver to how the receiver performs in certain plays.  (The details are unimportant.)  So we will need to combine the two datasets, one with player stats and one with the plays from the games.  We will want to match them up so that a row in the merged dataset contains the stats for the player who caught the ball, that is, the receiver for that play.</p>
 <p>Now let’s consider how we will handle the many possibilities for how rows might match across the datasets.  First let’s consider rows that match many other rows; this might happen in two ways.</p>
@@ -667,8 +672,8 @@
 <p>Let’s imagine that two Bentley professors found out they had done research on some of the same firms, and wanted to share data.  Let’s say Professor Adams had investigated the executives at a set of firms, and had information about those roles, while Professor Cordova had information about the marketing investments of a similar set of firms.</p>
 <p>When putting their data together, they don’t yet know what questions they’re going to ask; they’ll probably start with some exploratory data analysis.  So they don’t want to throw away any of their data yet.</p>
 <p>If they used an inner join, then they’d keep only the firms that appear in both datasets; that’s not what they want.  A left or right join would also discard some firms.  But they want to keep them all.  This is called an <em>outer join,</em> and it’s shown in the illustration below.</p>
-<p><img alt="Merging data about corporate executives with data about marketing spending for a fictitious set of firms" src="_images/merge-of-firm-data.png" /></p>
 <p>(The split of the data into three categories, each of size 50, is just for this example.  A real example is unlikely to be separated so symmetrically.)</p>
+<p><img alt="Merging data about corporate executives with data about marketing spending for a fictitious set of firms" src="_images/merge-of-firm-data.png" /></p>
 <p>The “Firm” column in the merged dataset will contain each name only once, and the row will be of one of three types.</p>
 <ol class="simple">
 <li><p>If it was in both datasets, then the row contains data in every column (as long as the original datasets did).</p></li>
@@ -681,8 +686,13 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="is-joining-the-same-as-merging">
+<h2><span class="section-number">12.8. </span>Is joining the same as merging?<a class="headerlink" href="#is-joining-the-same-as-merging" title="Permalink to this headline">¶</a></h2>
+<p>In most data science or database contexts, these two terms refer to the same idea.  However, in pandas, they are two different functions that behave almost exactly the same.  Just like pandas has both <code class="docutils literal notranslate"><span class="pre">map</span></code> and <code class="docutils literal notranslate"><span class="pre">apply</span></code> that behave similarly but not exactly the same (which is frustrating), it also has <code class="docutils literal notranslate"><span class="pre">merge</span></code> and <code class="docutils literal notranslate"><span class="pre">join</span></code> that behave similarly but not exactly the same (which is also frustrating).</p>
+<p>Because they are so similar in function, if you have learned <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code>, you probably do not need to bother learning <code class="docutils literal notranslate"><span class="pre">pd.join()</span></code>.  The one exception is that if you want to merge two DataFrames using the <em>index</em> from one or both as if it were a column on which to merge, then <code class="docutils literal notranslate"><span class="pre">pd.join()</span></code> makes that easier than <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code> does.  In fact, merging on DataFrame indexes is the default behavior for <code class="docutils literal notranslate"><span class="pre">pd.join()</span></code>.  So if that’s what you need, <code class="docutils literal notranslate"><span class="pre">pd.join()</span></code> is probably easier to use.  In every other case, you can just stick with <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code>.</p>
+</div>
 <div class="section" id="summary">
-<h2><span class="section-number">12.8. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.9. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <p>Before we tackle the challenging question of what happens if there is no unique ID to use for merging, let’s review where we’ve been and add some key details.</p>
 <div class="alert alert-primary admonition">
 <p class="admonition-title">Big Picture - Concat adds rows and merge adds columns (usually!)</p>
@@ -694,10 +704,11 @@
 <li><p>With <code class="docutils literal notranslate"><span class="pre">how='inner'</span></code>, the default, it creates new rows for every pair of rows from <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> that match on the specified columns, and it discards everything else.</p></li>
 <li><p>With <code class="docutils literal notranslate"><span class="pre">how='left'</span></code>, it creates new rows for every pair of rows from <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> that match on the specified columns, plus it also keeps every row from <code class="docutils literal notranslate"><span class="pre">A</span></code> that didn’t match anything from <code class="docutils literal notranslate"><span class="pre">B</span></code>, and fills in their <code class="docutils literal notranslate"><span class="pre">B</span></code> columns with missing values.  This sees <code class="docutils literal notranslate"><span class="pre">A</span></code> as the important dataset, into which we’re bringing some information from <code class="docutils literal notranslate"><span class="pre">B</span></code> where possible.</p></li>
 <li><p>With <code class="docutils literal notranslate"><span class="pre">how='right'</span></code>, the reverse happens.  But you don’t need this option if you prefer thinking of the left dataset as the important one, into which we’re bringing new columns on the right.  Instead of <code class="docutils literal notranslate"><span class="pre">pd.merge(A,B,how='right')</span></code>, you can always just use <code class="docutils literal notranslate"><span class="pre">pd.merge(B,A,how='left')</span></code> instead.</p></li>
-<li><p>With <code class="docutils literal notranslate"><span class="pre">how='outer'</span></code>, it creates new rows for every pair of rows from <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> that match on the specified columns, plus it also</p>
+<li><p>With <code class="docutils literal notranslate"><span class="pre">how='outer'</span></code>, it creates new rows for every pair of rows from <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> that match on the specified columns.</p>
 <ul>
-<li><p>keeps every row from <code class="docutils literal notranslate"><span class="pre">A</span></code> that didn’t match anything from <code class="docutils literal notranslate"><span class="pre">B</span></code>, and fills in their <code class="docutils literal notranslate"><span class="pre">B</span></code> columns with missing values, and</p></li>
-<li><p>keeps every row from <code class="docutils literal notranslate"><span class="pre">B</span></code> that didn’t match anything from <code class="docutils literal notranslate"><span class="pre">A</span></code>, and fills in their <code class="docutils literal notranslate"><span class="pre">A</span></code> columns with missing values.  This throws no data away.</p></li>
+<li><p>It also keeps every row from <code class="docutils literal notranslate"><span class="pre">A</span></code> that didn’t match anything from <code class="docutils literal notranslate"><span class="pre">B</span></code>, and fills in their <code class="docutils literal notranslate"><span class="pre">B</span></code> columns with missing values.</p></li>
+<li><p>It also keeps every row from <code class="docutils literal notranslate"><span class="pre">B</span></code> that didn’t match anything from <code class="docutils literal notranslate"><span class="pre">A</span></code>, and fills in their <code class="docutils literal notranslate"><span class="pre">A</span></code> columns with missing values.</p></li>
+<li><p>This throws no data away.</p></li>
 </ul>
 </li>
 </ul>
@@ -705,12 +716,12 @@
 <p>And yet it’s not common for those two datasets to have been planned carefully enough in advance that they share a unique ID system for their rows.  More than likely, the two datasets were created by different teams, organizations, or software systems, and have quite different contents and formats.  So we come to the final section of this chapter, figuring out how to do a merge even when there isn’t an obvious unique ID column to use for merging.</p>
 </div>
 <div class="section" id="ensuring-a-unique-id-appears-in-both-datasets">
-<h2><span class="section-number">12.9. </span>Ensuring a unique ID appears in both datasets<a class="headerlink" href="#ensuring-a-unique-id-appears-in-both-datasets" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.10. </span>Ensuring a unique ID appears in both datasets<a class="headerlink" href="#ensuring-a-unique-id-appears-in-both-datasets" title="Permalink to this headline">¶</a></h2>
 <p>Ensuring that the datasets you want to merge each have a column that will match perfectly with the other dataset is an essential step before merging.  Sometimes that step is extremely easy and sometimes it is very challenging.  In the examples above, we assumed that the datasets already had columns that would match up perfectly.</p>
 <p>And that’s not always an unrealistic assumption.  For instance, when we merged the NPR voting records from 2016 into the home mortgage dataset in class, we merged on the two-letter abbreviation for each state.  This standard set of abbreviations was established many years ago and is used consistently everywhere U.S. states are mentioned, so it was reliable and required no work on our part.</p>
 <p>But let’s consider some more complex cases, so you’re ready for them when you encounter them.</p>
 <div class="section" id="merging-on-multiple-columns">
-<h3><span class="section-number">12.9.1. </span>Merging on multiple columns<a class="headerlink" href="#merging-on-multiple-columns" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.10.1. </span>Merging on multiple columns<a class="headerlink" href="#merging-on-multiple-columns" title="Permalink to this headline">¶</a></h3>
 <p>If you don’t have a single column that works as a unique ID, but you have a set of columns that togther form a unique ID in the same way in each dataset, pandas supports merging on multiple columns.  For instance, if your datasets each have columns for first and last names of the people in an organization, and you’re confident that no names repeat (e.g., only one John Smith, only one Erin Jones, etc.), then you can tell pandas to use more than one column to identify rows when merging.  Just supply the list of column names when merging.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_members</span><span class="p">,</span> <span class="n">df_activities</span><span class="p">,</span>
     <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;First Name&#39;</span><span class="p">,</span><span class="s1">&#39;Last Name&#39;</span><span class="p">],</span>
@@ -719,22 +730,22 @@
 </div>
 </div>
 <div class="section" id="changing-the-format-of-a-column">
-<h3><span class="section-number">12.9.2. </span>Changing the format of a column<a class="headerlink" href="#changing-the-format-of-a-column" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.10.2. </span>Changing the format of a column<a class="headerlink" href="#changing-the-format-of-a-column" title="Permalink to this headline">¶</a></h3>
 <p>When you plan to merge two datasets, but no column is appropriate for the match, sometimes a quick computation of a new column will do the trick.</p>
 <p><strong>Example:</strong>  If you were merging a dataset of customers using their phone numbers, perhaps dataset A contains just the numeric values (e.g., 17818913171) and dataset B contains the phone numbers formatted for human readability (e.g., +1 (781) 891-3171).  You can create a new column in dataset B that removes all the spaces, plusses, minuses, and parentheses from the phone numbers, so that they’re ready to match with dataset A.</p>
 </div>
 <div class="section" id="joining-multiple-columns-into-one">
-<h3><span class="section-number">12.9.3. </span>Joining multiple columns into one<a class="headerlink" href="#joining-multiple-columns-into-one" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.10.3. </span>Joining multiple columns into one<a class="headerlink" href="#joining-multiple-columns-into-one" title="Permalink to this headline">¶</a></h3>
 <p>It may also be possible to compute an appropriate column for merging by combining more than one column together.</p>
 <p><strong>Example:</strong>  Let’s say you were merging two datasets about albums released by recording artists.  The artists have a unique ID in your datasets, but the albums don’t.  If you know that no artist released more than one album in the same month, you could combine together the artist’s unique ID with the month and year of the album’s release to form a unique ID for the album.  E.g., if The Beatles had ID 2789045 and you’re considering the Sgt. Pepper album (May 1967), then you would use the code 2789045-May-1967 for that album.  You could compute such a code for each row in each DataFrame.</p>
 </div>
 <div class="section" id="sequences-with-different-frequencies">
-<h3><span class="section-number">12.9.4. </span>Sequences with different frequencies<a class="headerlink" href="#sequences-with-different-frequencies" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.10.4. </span>Sequences with different frequencies<a class="headerlink" href="#sequences-with-different-frequencies" title="Permalink to this headline">¶</a></h3>
 <p>Another common problem is merging two types of time-based data that were reported on different time scales.  For instance, let’s say you are trying to study police activity and criminal activity in a city.  You have crime data in the form of daily records and police reports in terms of officers’ hourly shifts.  If you wanted to combine these two datasets based on time, the difference in reporting frequency means it’s not obvious how to do it.</p>
-<p>So pandas provides two functions for helping with such situations.  These notes do not cover them in detail, but suggest you check out the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge_ordered.html">documentation for <code class="docutils literal notranslate"><span class="pre">pd.merge_orered()</span></code></a> and the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge_asof.html#pandas.merge_asof">documentation for <code class="docutils literal notranslate"><span class="pre">pd.merge_asof()</span></code></a> for more sophisticated handling of time-based merge data.</p>
+<p>So pandas provides two functions for helping with such situations.  These notes do not cover them in detail, but suggest you check out the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge_ordered.html">documentation for <code class="docutils literal notranslate"><span class="pre">pd.merge_ordered()</span></code></a> and the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge_asof.html">documentation for <code class="docutils literal notranslate"><span class="pre">pd.merge_asof()</span></code></a> for more sophisticated handling of time-based merge data.</p>
 </div>
 <div class="section" id="what-about-unstandardized-text">
-<h3><span class="section-number">12.9.5. </span>What about unstandardized text?<a class="headerlink" href="#what-about-unstandardized-text" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.10.5. </span>What about unstandardized text?<a class="headerlink" href="#what-about-unstandardized-text" title="Permalink to this headline">¶</a></h3>
 <p>This is more or less the hardest scenario.  For instance, in Fall 2019, when my students wanted to merge the government’s comprehensive database of universities with the climate commitments of the schools who were working with our nonprofit client, our best option was to merge on the institution’s name.  This is problematic due to variations in naming and spelling.  For instance, what if one dataset writes Bentley University and the other writes Bentley Univ.?  Or what if one dataset writes University of North Carolina at Chapel Hill and the other writes UNC Chapel Hill?  How is a computer to know how to match these up?  (That project actually involved merging several datasets about universities, and this same problem arose more than once!)</p>
 <p>The short answer is that the computer will not figure this out, because <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code> only matches on exact equality of IDs, and so you as the data scientist are in charge of somehow creating columns of unique IDs in both datasets that will match up perfectly.  This may require learning something about that domain.  In Fall 2019, my students and I spent time googling various schools whose names didn’t seem to appear in the government’s dataset to figure out why!</p>
 <p>When you’re stuck trying to get two similar-but-not-the-same columns of text to try to match perfectly, I suggest the following method.  Whether this method is quick and easy or long and difficult varies significantly from one problem to the next.  But the outline is the same.</p>
@@ -747,7 +758,7 @@
 <p>Notice that steps 1, 2, and 4 are quick and easy, but step 3 is where problems may or may not arise.  Depending on how well the chosen columns match in the two datasets, step 3 might take a short time or a long time.</p>
 </div>
 <div class="section" id="extended-example">
-<h3><span class="section-number">12.9.6. </span>Extended Example<a class="headerlink" href="#extended-example" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.10.6. </span>Extended Example<a class="headerlink" href="#extended-example" title="Permalink to this headline">¶</a></h3>
 <p>Let’s actually try to merge two datasets of university data.  I will load here the comprehensive university dataset I mentioned, originally downloaded from <a class="reference external" href="https://data.world/kitedwards08/us-university-survey-2014">here</a>, as well as a US News university rankings dataset, originally downloaded from <a class="reference external" href="https://data.world/education/university-rankings-2017">here</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1032,12 +1043,8 @@
 <p>Let’s just get a sense of how many of the 231 rows in the ranking dataset have an exact match in the big dataset, and thus their official names are already in the ranking dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">official_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="n">df_big</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span> <span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">has_exact_match</span> <span class="p">(</span> <span class="n">name_from_rank_df</span> <span class="p">):</span>
-    <span class="k">return</span> <span class="n">name_from_rank_df</span> <span class="ow">in</span> <span class="n">official_names</span>
-
-<span class="nb">sum</span><span class="p">(</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="n">has_exact_match</span> <span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">official_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="n">df_big</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span> <span class="p">)</span>        <span class="c1"># from big dataset</span>
+<span class="nb">sum</span><span class="p">(</span> <span class="n">df_rank</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span> <span class="n">official_names</span> <span class="p">)</span> <span class="p">)</span>  <span class="c1"># from rank dataset</span>
 </pre></div>
 </div>
 </div>
@@ -1082,7 +1089,7 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_closest_official_name</span> <span class="p">(</span> <span class="n">name_from_df_rank</span> <span class="p">):</span>
 
     <span class="c1"># If there&#39;s an exact match, we&#39;re already done.</span>
-    <span class="k">if</span> <span class="n">has_exact_match</span><span class="p">(</span> <span class="n">name_from_df_rank</span> <span class="p">):</span>
+    <span class="k">if</span> <span class="n">name_from_df_rank</span> <span class="ow">in</span> <span class="n">official_names</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">name_from_df_rank</span>
     
     <span class="c1"># Get the closest matches, if any.</span>

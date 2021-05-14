@@ -50,7 +50,7 @@
 # 
 # The value of data is also significantly impacted by its history and origins.  If we know how the data was collected and can read about the details of that process, that will probably significantly increase its usefulness to us.
 # 
-# For instance, imagine you get a dataset in which some numeric columns are entitled `EQ50`, `EQ51`, `EQ52`, and so on.  You would probably not be able to use the numbers in those columns for any purpose, because you don't know what they mean.  But what if you find out that the data came from an economic survey that happened every quarter, and measured the GDP of various U.S. states during that quarter, in units of millions of dollars.  The organization that did the work referred to such measurements as "Economic Quarters" or EQs for short, and started with EQ1 in January 1987, counting upwards from there.  We can therefore figure out that EQ50 must refer to the second quarter of 2000, and so on.  Formerly useless data now has meaning and could be used.
+# For instance, imagine you get a dataset in which some numeric columns are entitled `EQ50`, `EQ51`, `EQ52`, and so on.  You would probably not be able to use the numbers in those columns for any purpose, because you don't know what they mean.  But now imagine that you find out that the data came from an economic survey that happened every quarter, and measured the GDP of various U.S. states during that quarter, in units of millions of dollars.  The organization that did the work referred to such measurements as "Economic Quarters" or EQs for short, and started with EQ1 in January 1987, counting upwards from there.  We can therefore figure out that EQ50 must refer to the second quarter of 2000, and so on.  Formerly useless data now has meaning and could be used.
 # 
 # ### Data vs. information
 # 
@@ -61,7 +61,7 @@
 # The difference between *data* and *information* is context.  Data is raw numbers, while information is having those numbers in a context we understand, so that the numbers have meaning.  Data provenance can be the context that turns data into information.
 # ```
 # 
-# To make sense of data, that is, to have information, not just data, requires knowing something about the domain in which the data lives.  [One of the examples in the previous chapter](chapter-12-concat-and-merge#when-there-are-many-matches-for-some-rows) was about data from American football.  If you're not familiar with that sport, it's harder to understand the example, so I was careful to explain in the chapter the few necessary football concepts you'd need.  If your dataset comes from finance, you'll be better equipped to turn that data into information if you know something about finance.  If you're working with economic data, you'll do better if you know economics.
+# To make sense of data (that is, to have information, not just data) requires knowing something about the domain in which the data lives.  [One of the examples in the previous chapter](chapter-12-concat-and-merge.html#when-there-are-many-matches-for-some-rows) was about data from American football.  If you're not familiar with that sport, it's harder to understand the example, so I was careful to explain in the chapter the few necessary football concepts you'd need.  If your dataset comes from finance, you'll be better equipped to turn that data into information if you know something about finance.  If you're working with economic data, you'll do better if you know economics.
 # 
 # This is where Bentley students have an advantage in data science over students from other universities.  While some schools have excellent technical educations and may cover more programming or machine learning skills than a data degree from Bentley does, every Bentley graduate has undergone an extensive training in business.  If you're planning on applying your data skills in the business world, you'll have a broader knowledge of that domain than most students from, say, an engineering school or a computer science degree.
 # 
@@ -101,7 +101,7 @@
 # 
 # But sometimes missing values are inserted into a dataset intentionally, because the creator of the dataset wants to communicate that a certain piece of data is unavailable.  For instance, in my football dataset, if the Receiver column in the Plays table has some missing entries, that means that there was no receiver involved in the play.  The missing values are communicating something intentional, sensible, and correct.  *Missing values don't always indicate a problem.*
 # 
-# Even in the example of the failed sensor, where the missing values indicate a problem, that doesn't mean that they should be removed or filled in with actual values.  Those missing values are truthfully stating what data was collected and what data was not collected.  Altering them would mean that our dataset would no longer be telling the truth about its origins.  If you're sworn in on the witness stand, and you're asked who committed the robbery, and you honestly don't know the answer, the truthful thing to do is to say that you don't know!  Making up an answer is clearly a deceptive thing to do in that situation, and it is often a deceptive thing to do with data as well.  *Resist the urge to "solve" missing values by always filling them in.*  Sometimes they're telling an important truth.
+# Even in the example of the failed sensor, where the missing values indicate a problem, that doesn't mean that they should be removed or filled in with actual values.  Those missing values are truthfully stating when data was not collected.  Altering them would mean that our dataset would no longer be telling the truth about its origins.  If you're sworn in on the witness stand, and you're asked who committed the robbery, and you honestly don't know the answer, the truthful thing to do is to say that you don't know!  Making up an answer is clearly a deceptive thing to do in that situation, and making up values is often a deceptive thing to do with data as well.  *Resist the urge to "solve" missing values by always filling them in.*  Sometimes they're telling an important truth.
 # 
 # In fact, this is why NumPy has the built-in value `np.nan`, Python has `None`, R has `NA`, and Julia has `missing`.  These languages all recognize the legitimacy of missing values, and give you a way to express them when you need to.
 # 
@@ -113,7 +113,7 @@
 # 
 # Some circumstances demand that we remove missing values.  Consider the following (real) dataset of the number of home runs hit per game in each Major League Baseball World Series in the 1990s.
 
-# In[6]:
+# In[2]:
 
 
 import pandas as pd
@@ -128,7 +128,7 @@ df['HR/Game'] = df['HR'] / df['#Games']
 df
 
 
-# In[9]:
+# In[3]:
 
 
 import matplotlib.pyplot as plt
@@ -143,7 +143,7 @@ plt.show()
 
 # Assume you were trying to show that this number was not going convincingly up or down throughout the 1990s (a made-up research question just as an example).  You're considering fitting a linear model to the data and showing that its slope is close to zero (perhaps even not statistically significantly different from zero).  Let's try.
 
-# In[10]:
+# In[4]:
 
 
 import scipy.stats as stats
@@ -156,7 +156,7 @@ stats.linregress( df['Year'], df['HR/Game'] )
 # 
 # But we do not remove them from the original dataset; we simply don't include them in the data used to create the linear model.  The original dataset stays intact.
 
-# In[11]:
+# In[5]:
 
 
 df_without_94 = df.dropna()
@@ -177,7 +177,7 @@ stats.linregress( df_without_94['Year'], df_without_94['HR/Game'] )
 
 # **Example 3: Actually adding missing values**
 # 
-# In the home mortgage dataset with which we're very familiar, some columns (such as interest rate) contain mostly numerical data, but occasionally the word Exempt in place of a number.  This makes it impossible to do any computations on such columns, such as `df['interest_rate'].mean()`, because the column is text, not numeric.
+# In the home mortgage dataset with which we're very familiar, some columns (such as interest rate) contain mostly numerical data, but occasionally the word Exempt appears instead of a number.  This makes it impossible to do any computations on such columns, such as `df['interest_rate'].mean()`, because the column is text, not numeric.
 # 
 # In this case, it can be valuable to replace the word Exempt with the actual missing value `np.nan` throughout the column, so that it can then be converted to type `float`.  In doing so, you should carefully document that all Exempt entries have become missing values, in order to facilitate analysis.  *This is a situation in which missing values are actually intentionally added!*
 # 
@@ -224,7 +224,7 @@ stats.linregress( df_without_94['Year'], df_without_94['HR/Game'] )
 # 
 # Comments in code to track units can help with discrepencies like these.  See the code below that takes care with units as we adjust movie revenues for inflation in the following dataset.
 
-# In[32]:
+# In[6]:
 
 
 df_films = pd.DataFrame( {
@@ -235,7 +235,7 @@ df_films = pd.DataFrame( {
 df_films
 
 
-# In[33]:
+# In[7]:
 
 
 avg_annual_inflation = 3                                # An approximate percentage
@@ -243,7 +243,7 @@ inflation_factor = 1 + avg_annual_inflation/100         # Useful as an annual mu
 df_films['Years since film'] = 2020 - df_films['Year']  # Number of years elapsed
 df_films['Inflation factor'] = inflation_factor ** df_films['Years since film']
                                                         # Multiplier to apply inflation
-df_films['Opening Weekend (M$2020)'] = df_films['Opening Weekend (M$)']     * df_films['Inflation factor']                      # Converted to today's dollars
+df_films['Opening Weekend (M$2020)'] = df_films['Opening Weekend (M$)']     * df_films['Inflation factor']                      # Convert all to $ millions in 2020
 df_films
 
 
@@ -251,18 +251,18 @@ df_films
 
 # ## Reading data files
 # 
-# As you know from [the DataCamp assignment that corresponds to this chapter](big-cheat-sheet#before-week-8), there are many ways to read data into pandas.  Since you've learned some of the technical details from DataCamp, let's look at the relative pros and cons of each file format here, and add a few pieces of advice that didn't appear in the DataCamp lessons.  We start with the easiest file formats and work our way up.
+# As you know from [the DataCamp assignment that corresponds to this chapter](big-cheat-sheet.html#before-day-8), there are many ways to read data into pandas.  Since you've learned some of the technical details from DataCamp, let's look at the relative pros and cons of each file format here, and add a few pieces of advice that didn't appear in the DataCamp lessons.  We start with the easiest file formats and work our way up.
 # 
 # ### Easy formats to read: CSV and TSV
 # 
 # We've been using `pd.read_csv()` for ages, so there is no surprise here, and you've had to deal with its `encoding` parameter in the past as well.  It has tons of optional parameters, but the one introduced in the latest DataCamp lessons was `sep`, useful for reading TSV (tab-separated values) files, by choosing `sep="\t"`.
 # 
-# One piece of advice to add to DataCamp:  If you find the URL of a CSV file on the web, you can include that URL as the input parameter to `pd.read_csv()`, and it will download and read the file for you in one shot, without your having to manually download the file.
+# One piece of advice I'll add to what DataCamp taught:  If you find the URL of a CSV file on the web, you can include that URL as the input parameter to `pd.read_csv()`, and it will download and read the file for you in one shot, without your having to manually download the file.
 #  * Pro: It automatically gets the latest version of the file every time you run your code.
 #  * Con: It accesses the Internet (which can sometimes be slow) every time you run your code.
 #  * Con: If the file is removed from the web, your code no longer functions.
 
-# In[35]:
+# In[8]:
 
 
 # Providing a URL directly to pd.read_csv():
@@ -273,9 +273,9 @@ pd.read_csv( 'https://www1.ncdc.noaa.gov/pub/data/cdo/samples/PRECIP_HLY_sample_
 # 
 # The `pd.read_excel()` function is nearly as easy to use as `pd.read_csv()`, with a few exceptions documented below.  You can give this function a URL also, if there's a publicly accessible Excel file on the web you want to download.  The same pros and cons apply when providing a URL to `pd.read_excel()` as they do for `pd.read_csv()`, as discussed above.
 # 
-#  1. If you're running Python on a cloud service, you'll need the `xlrd` module to be installed to add Excel support to pandas.  (You can tell if it's not when a `pd.read_excel()` call fails with an error about the missing module.)  If you're on your local computer with an Anaconda installation, you already have this module.  Otherwise, you need to run `pip install xlrd` to add it.
+#  1. If you're running Python on a cloud service, you'll need the `openpyxl` module to be installed to add Excel support to pandas.  (You can tell if it's not when a `pd.read_excel()` call fails with an error about the missing module, or perhaps about the missing `xlrd` module, which is related.)  If you're on your local computer with an Anaconda installation, you may already have this module.  Otherwise, you need to run `pip install openpyxl` to add it.
 #  2. You need to remember that this function returns a Python list of DataFrames, unless you choose one specific sheet, with `sheet_name='Name'` or choose one by index, with `sheet_name=0`, for example.
-#  3. Excel spreadsheets may not have the data in the top left, so parameters like `usecols` and `skiprows` are often needed.
+#  3. Excel spreadsheets may not have the data in the top left, so parameters like `usecols` and `skiprows` are often needed.  See [the official documentation](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) for details on those parameters.
 # 
 # ### Easy format to read with occasional problems: HTML
 # 
@@ -287,7 +287,7 @@ pd.read_csv( 'https://www1.ncdc.noaa.gov/pub/data/cdo/samples/PRECIP_HLY_sample_
 # 
 # ### Not an easy format to read: JSON
 # 
-# Although this format is not easy, it is powerful, and this is why it's very prevalent on the web.  It can represent a huge variety of different types of data, not just tabular data.  It is flexible enough to represent tabular data in a variety of ways, but also hierarchical data of any kind.  Due to its complexity, we will not fully review this here; refer to [the appropriate section of our course's coding cheat sheet](big-cheat-sheet#chapter-4-importing-json-data-and-working-with-apis) for some information, or [the corresponding DataCamp course](https://learn.datacamp.com/courses/streamlined-data-ingestion-with-pandas).
+# Although this format is not easy, it is powerful, and this is why it's very prevalent on the web.  It can represent a huge variety of different types of data, not just tabular data.  It is flexible enough to represent tabular data in a variety of ways, but also hierarchical data of any kind.  Due to its complexity, we will not fully review this here; refer to [the appropriate section of our course's coding cheat sheet](big-cheat-sheet.html#chapter-4-importing-json-data-and-working-with-apis) for some information, or [the corresponding DataCamp course](https://learn.datacamp.com/courses/streamlined-data-ingestion-with-pandas).
 # 
 # ### Not an easy source to read: SQL
 # 
@@ -303,9 +303,9 @@ pd.read_csv( 'https://www1.ncdc.noaa.gov/pub/data/cdo/samples/PRECIP_HLY_sample_
 # 
 # ### For a nontechnical audience, create an Excel file.
 # 
-# If sharing your data with non-technical people, they will want to simply double-click the file and see its contents.  The easiest way to ensure this happens is to create an Excel file.  (To make it even easier, you can upload the file to SharePoint or Google Sheets and send only the link.  This is especially valuable if you suspect the recipient doesn't have Excel installed.)
+# If sharing your data with non-technical people, they will want to simply double-click the file and see its contents.  The easiest way to ensure this happens is to create an Excel file.  (To make it even easier, you can upload the file to SharePoint or Google Sheets and send only the link.  This is especially valuable if you suspect the recipient doesn't have Excel installed or might be viewing your email on a mobile device.)
 # 
-# Just as when reading Excel files, you must have the `xlrd` module installed; [see above for details](#pretty-easy-format-to-read-xlsx).  If you want to create an Excel file with just one sheet in it, you can make a single call to `df.to_excel()`.
+# Just as when reading Excel files, you must have the `openpyxl` module installed; [see above for details](#pretty-easy-format-to-read-xlsx).  If you want to create an Excel file with just one sheet in it, you can make a single call to `df.to_excel()`.
 # 
 # ```python
 # df_films.to_excel( 'Opening Weekends.xlsx' )
@@ -325,7 +325,7 @@ pd.read_csv( 'https://www1.ncdc.noaa.gov/pub/data/cdo/samples/PRECIP_HLY_sample_
 # 
 # ### For a technical audience, usually use a CSV file.
 # 
-# If sharing data with other data workers, who are likely to use Python, R, or some similarly nerdy tool, you probably want to create a CSV file.  The reason is simple: You know that this is one of the easiest file types to import in your code, so make life easy for your coworkers, too.  Just call `pd.to_csv( 'my-filename.csv' )` to save your DataFrame.  Although you can use the `sep="\t"` parameter to create a TSV file, this is rarely what your coworkers want, so it's to be generally avoided.
+# If sharing data with other data workers, who are likely to use Python, R, or some similarly nerdy tool, you probably want to create a CSV file.  The reason is simple: You know that this is one of the easiest file types to import in your code, so make life easy for your coworkers, too.  Just call `pd.to_csv( 'my-filename.csv' )` to save your DataFrame.  Although you can use the `sep="\t"` parameter to create a TSV file, this is rarely what your coworkers want, so it's generally to be avoided.
 # 
 # But note that you can lose a lot of important information this way!  You may be familiar with how Excel complains if you try to save an Excel workbook in CSV format, letting you know that you're losing information, such as formatting and formulas.  Any information in your DataFrame other than the text contents of the cells will be lost when saving as CSV.  For instance, if you've converted a column to a categorial variable, that won't be obvious when the data is saved to CSV, and it will be re-imported as plain text.
 # 
@@ -337,7 +337,7 @@ pd.read_csv( 'https://www1.ncdc.noaa.gov/pub/data/cdo/samples/PRECIP_HLY_sample_
 # 
 # Because Python guarantees that any object you pickle to a file will come back from that file in exactly the same form, you can pickle entire DataFrames and know that every little detail will be preserved, even things that won't get saved correctly to CSV or Excel files, like categorical data types.
 # 
-# This is a great way to obey the advice [at the end of the Chapter 11 notes](chapter-11-processing-rows#when-the-bottleneck-is-the-dataset).  If you load a big dataset and do a bunch of data cleaning work, and your code is a little slow to run, just save your work to a file right then.
+# This is a great way to obey the advice [at the end of the Chapter 11 notes](chapter-11-processing-rows.html#when-the-bottleneck-is-the-dataset).  If you load a big dataset and do a bunch of data cleaning work, and your code is a little slow to run, just save your work to a file right then.
 # 
 # ```python
 # df.to_pickle( 'cleaned-dataset.pkl' )
@@ -346,7 +346,7 @@ pd.read_csv( 'https://www1.ncdc.noaa.gov/pub/data/cdo/samples/PRECIP_HLY_sample_
 # Then start a new Python script or Jupyter notebook and load the DataFrame you just saved.
 # 
 # ```python
-# df = pd.read_pickle( 'saved-for-later.pkl' )
+# df = pd.read_pickle( 'cleaned-dataset.pkl' )
 # ```
 # 
 # Now do all your analysis work in that second script or notebook, and whenever you have to re-run your analysis from the beginning, you won't have to wait for all the data cleaning code to get run again.
@@ -360,7 +360,7 @@ pd.read_csv( 'https://www1.ncdc.noaa.gov/pub/data/cdo/samples/PRECIP_HLY_sample_
 # ---
 # class: alert alert-danger
 # ---
-# Look up the `ipython-sql` extension to Jupyter and research the following essential parts, then reporting on them in some sensible medium for your classmates.
+# Look up the `ipython-sql` extension to Jupyter and research the following essential parts, then report on them in some sensible medium for your classmates.
 #  1. How to install it and load it.
 #  2. How to connect to a database.
 #  3. How to use both `%sql` and `%%sql` commands.
@@ -371,6 +371,6 @@ pd.read_csv( 'https://www1.ncdc.noaa.gov/pub/data/cdo/samples/PRECIP_HLY_sample_
 # ---
 # class: alert alert-danger
 # ---
-# Python actually comes with a built-in SQLite database module, which you can use by doing `import sqlite3 as sl`, without even any installation step.  Check out [this blog post](https://towardsdatascience.com/do-you-know-python-has-a-built-in-database-d553989c87bd) for more information, and report on its key features to the class.
+# Python actually comes with a built-in SQLite database module, which you can use by doing `import sqlite3 as sl`, without even any installation step.  Check out [this blog post](https://towardsdatascience.com/do-you-know-python-has-a-built-in-database-d553989c87bd) for more information, and report to the class on its key features.  Ensure that you include at least one complete example of creating a database on disk and then reading values out of it again later with some queries.
 # ```
 # 

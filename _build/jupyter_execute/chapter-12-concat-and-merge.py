@@ -12,13 +12,13 @@
 # 
 # Combining more than one dataset together is a crucial aspect of data work.  Let's see two examples.
 # 
-# **Example 1.**  One of my friends runs [a nonprofit organization](https://secondnature.org/) that helps colleges and universities set climate action goals and track their progress toward keeping them.  He asked my graduate data science course in Fall 2019 to look at their database and come up with any insights.  Naturally, their database had records of all the climate goals and progress for schools they were working with, but it didn't have much other information about those schools.  What if we wanted to analyze a variable they weren't tracking, like endowment?  Or what if we wanted to look at schools that hadn't get partnered with the nonprofit?  That information would need to be brought in from another dataset.  Until we do so, we can't give interesting answers to the question the client posed.
+# **Example 1.**  One of my friends runs [a nonprofit organization](https://secondnature.org/) that helps colleges and universities set climate action goals and track their progress toward keeping them.  He asked my graduate data science course in Fall 2019 to look at their database and come up with any insights.  Naturally, their database had records of all the climate goals and progress for schools they were working with, but it didn't have much other information about those schools.  What if we wanted to analyze a variable they weren't tracking, like endowment?  Or what if we wanted to look at schools that hadn't yet partnered with the nonprofit?  That information would need to be brought in from another dataset.  Until we do so, we can't give interesting answers to the question the client posed.
 # 
 # **Example 2.**  One of my colleagues in the math department told me about a clever strategy one investment group used to predict the earnings of companies they were considering investing in.  They already had lots of data about each company, including the addresses of the company's various offices and factories.  They could also purchase access to a large database of satellite images.  They used the addresses and some image-detection software to compute the number of cars in the parking lots of the company's properties.  This turned out to be a very useful predictor of growth that they could access before their competing investors had the information.  It involved bringing together two datasets in a clever way.
 # 
 # In this chapter, we'll discuss how to combine just two DataFrames, but the ideas apply if you have more than two.  For instance, to concatenate five DataFrames `df1` through `df5`, we can proceed in pairs, combining `df1` and `df2`, then combining that result with `df3`, and so on until we have included `df5`.
 # 
-# Let's start by dicsussing concatenation, which is definitely the easier of the two concepts, before we tackle merging.  The English verb "concatenate" means to attach two things together, one after the end of the other.
+# Let's start by discussing concatenation, which is definitely the easier of the two concepts, before we tackle merging.  The English verb "concatenate" means to attach two things together, one after the end of the other.
 
 # ## Concatenation is vertical
 # 
@@ -28,7 +28,7 @@
 #  * For instance, if you're taking scientific measurements in a lab, one week you get a set of measurements, and the next week you get more data in the same format.
 #  * Or if you're following a stock or other financial instrument, its prices one week form a dataset, then the next week, you see more data with the same format.
 # 
-# Because the standard way to organize tabular data is to put observations in rows, then getting more observations means we just need to add more rows onto the bottom of our previous table of data.  This is what concatenation is for.  Here's an illustration using the stock prices example, with data that comes from Renewable Energy Group, Inc., whose 2020 data we've seen before in this course.
+# Because the standard way to organize tabular data is to put observations in rows, then getting more observations means we just need to add more rows onto the bottom of our previous table of data.  This is what concatenation is for.  Here's an illustration using the stock prices example, with data that comes from Renewable Energy Group, Inc., whose 2020 data we've seen in an earlier chapter.
 # 
 # ![Illustration of stacking two tables of stock data vertically into one larger table](_images/concat-of-stock-data.png)
 
@@ -64,7 +64,7 @@ df_2mo.tail()
 # 
 # Concatenation was appropriate when we had new rows (that is, new observations) to add to our dataset.  But what if we had new columns instead?  Keep in mind that, under the standard way we organize tabular data, columns represent the *variables* in our dataset.  So getting new columns means learning more information about the rows we already had.
 # 
-# We saw a simple example of this last week; it was simple enough that we didn't need to learn the full power of merging to handle it.  Recall that we had a dataset of home mortgage applications, and we wanted to add into it a variable that measured political affiliation of the state in which the mortgage took place.  We thus got a table that provided a measure of political alignment for each state, and we used that to *add a new column* to our old home mortgage dataset.  Each row in the mortgage dataset got a new variable measuring political alignment.  The table grew *horizontally* with new information from another table.
+# We saw a simple example of this in a recent in-class activity; it was simple enough that we didn't need to learn the full power of merging to handle it.  Recall that we had a dataset of home mortgage applications, and we wanted to add into it a variable that measured political affiliation of the state in which the mortgage took place.  We thus got a table that provided a measure of political alignment for each state, and we used that to *add a new column* to our old home mortgage dataset.  Each row in the mortgage dataset got a new variable measuring political alignment.  The table grew *horizontally* with new information from another table.
 # 
 # In fact, when we have only one column to add, the technique from last week's class is easier than the full complexity of merging.  Recall how we did it:
 # 
@@ -82,7 +82,7 @@ df_2mo.tail()
 # 
 # The technique shown above, which we used last week in class, is easy if bringing in only one new column.  If we wanted to bring in many new columns, we'd need to apply that technique repeatedly, in a loop over those columns.  But `pd.merge()` can do it all in one function call, and for the reasons we learned last week, that will probably be faster than a Python loop.
 # 
-# Let's consider a concrete example to understand the idea of importing several new columns at once.  Consider a dataset we've seen before, tracking the number of confirmed COVID-19 cases over time in various countries.  Let's say we wanted to see if the growth patterns in such a dataset were in any way related to health care information about the country, such as how much they spend on health care, how many doctors per capita, and so on.  We'll need to bring in another dataset with all that information about each country, and import it in as new columns.  See the illustration below.
+# Let's consider a concrete example to understand the idea of importing several new columns at once.  Consider a dataset that's been very important over the past year, tracking the number of confirmed COVID-19 cases over time in various countries.  Let's say we wanted to see if the growth patterns in such a dataset were in any way related to health care information about the country, such as how much they spend on health care, how many doctors per capita, and so on.  We'll need to bring in another dataset with all that information about each country, and import it in as new columns.  See the illustration below.
 # 
 # (All tables illustrated from here on will have "..." in the final rows and columns, to indicate that the table is really much bigger, and we're showing only a portion in the illustration.)
 # 
@@ -132,13 +132,13 @@ df_2mo.tail()
 
 # If we had chosen to do `how='right'` instead, the right DataFrame would be considered the definitive one.  Any school from the left DataFrame that didn't appear in the right DataFrame would be discarded, and we would end up with under 500 rows, precisely one row for each school in the climate nonprofit's dataset.
 # 
-# Note that we're still making the unrealistic assumption that the school names in the government dataset will match perfectly with those in the nonprofit's dataset, and we'll address that at the end of the chapter.
+# Note that we're still making the unrealistic assumption that the school names in the government dataset will match perfectly with those in the nonprofit's dataset, and we'll address that [at the end of the chapter](#ensuring-a-unique-id-appears-in-both-datasets).
 # 
 # This example showed what it was like if some of the rows in the left dataset match up with *zero* rows in the right dataset.  But what if they match up with *many* rows in the right dataset?
 
 # ## When there are many matches for some rows
 # 
-# Let's consider another example, this one from sports.  We'll use NFL football, but if you're not familiar with the sport, the example will still make sense.  All you need to know is that each team has many players, and that each *play* is a small part of a football game that uses just some of the team's players.  Some plays have a *receiver,* which is the player who catches the ball thrown to him (if any--sometimes the play does not involve throwing the ball).
+# Let's consider another example, this one from sports.  We'll use NFL football, but if you're not familiar with the sport, the example will still make sense.  All you need to know is that each team has many players, and that each *play* is a small part of a football game that uses just some of the team's players.  Some plays have a *receiver,* which is the player who catches the ball thrown to him (if any---sometimes the play does not involve throwing the ball).
 # 
 # As always in this chapter, imagine two datasets.  The first is the set of all NFL players in a certain year and their stats for that year.  (You can get these datasets online for free; here I'll use a small sample of the players from the 2009 season.)  The second is the set of all plays that happened in that same season, in any game.  (The NFL lets you fetch this data from their website for free; again, I'll use a small sample of plays from the 2009 season.)
 # 
@@ -179,10 +179,10 @@ df_2mo.tail()
 # 
 # If they used an inner join, then they'd keep only the firms that appear in both datasets; that's not what they want.  A left or right join would also discard some firms.  But they want to keep them all.  This is called an *outer join,* and it's shown in the illustration below.
 # 
-# ![Merging data about corporate executives with data about marketing spending for a fictitious set of firms](_images/merge-of-firm-data.png)
-
 # (The split of the data into three categories, each of size 50, is just for this example.  A real example is unlikely to be separated so symmetrically.)
 # 
+# ![Merging data about corporate executives with data about marketing spending for a fictitious set of firms](_images/merge-of-firm-data.png)
+
 # The "Firm" column in the merged dataset will contain each name only once, and the row will be of one of three types.
 #  1. If it was in both datasets, then the row contains data in every column (as long as the original datasets did).
 #  2. If it was in the left dataset, then the row contains data about executives, with missing values for marketing.
@@ -195,6 +195,12 @@ df_2mo.tail()
 # ```python
 # df_merged = pd.merge( df_execs, df_marketing, on='Firm', how='outer' )
 # ```
+
+# ## Is joining the same as merging?
+# 
+# In most data science or database contexts, these two terms refer to the same idea.  However, in pandas, they are two different functions that behave almost exactly the same.  Just like pandas has both `map` and `apply` that behave similarly but not exactly the same (which is frustrating), it also has `merge` and `join` that behave similarly but not exactly the same (which is also frustrating).
+# 
+# Because they are so similar in function, if you have learned `pd.merge()`, you probably do not need to bother learning `pd.join()`.  The one exception is that if you want to merge two DataFrames using the *index* from one or both as if it were a column on which to merge, then `pd.join()` makes that easier than `pd.merge()` does.  In fact, merging on DataFrame indexes is the default behavior for `pd.join()`.  So if that's what you need, `pd.join()` is probably easier to use.  In every other case, you can just stick with `pd.merge()`.
 
 # ## Summary
 # 
@@ -210,12 +216,14 @@ df_2mo.tail()
 # ```
 # 
 # The `pd.concat()` function is the easy one, and simply unites two datasets vertically.  The `pd.merge()` function is the more complicated of the two.  Let's imagine that we've called `pd.merge(A,B)` for two DataFrames `A` and `B`.
+# 
 #  * With `how='inner'`, the default, it creates new rows for every pair of rows from `A` and `B` that match on the specified columns, and it discards everything else.
 #  * With `how='left'`, it creates new rows for every pair of rows from `A` and `B` that match on the specified columns, plus it also keeps every row from `A` that didn't match anything from `B`, and fills in their `B` columns with missing values.  This sees `A` as the important dataset, into which we're bringing some information from `B` where possible.
 #  * With `how='right'`, the reverse happens.  But you don't need this option if you prefer thinking of the left dataset as the important one, into which we're bringing new columns on the right.  Instead of `pd.merge(A,B,how='right')`, you can always just use `pd.merge(B,A,how='left')` instead.
-#  * With `how='outer'`, it creates new rows for every pair of rows from `A` and `B` that match on the specified columns, plus it also
-#     * keeps every row from `A` that didn't match anything from `B`, and fills in their `B` columns with missing values, and
-#     * keeps every row from `B` that didn't match anything from `A`, and fills in their `A` columns with missing values.  This throws no data away.
+#  * With `how='outer'`, it creates new rows for every pair of rows from `A` and `B` that match on the specified columns.
+#     * It also keeps every row from `A` that didn't match anything from `B`, and fills in their `B` columns with missing values.
+#     * It also keeps every row from `B` that didn't match anything from `A`, and fills in their `A` columns with missing values.
+#     * This throws no data away.
 # 
 # And as a final reminder, we're covering merging because it's extremely common and useful to find that you have two related datasets or databases that you want to bring together, so that subsequent analyses can benefit from relating the data in the two sources.
 # 
@@ -255,7 +263,7 @@ df_2mo.tail()
 # 
 # Another common problem is merging two types of time-based data that were reported on different time scales.  For instance, let's say you are trying to study police activity and criminal activity in a city.  You have crime data in the form of daily records and police reports in terms of officers' hourly shifts.  If you wanted to combine these two datasets based on time, the difference in reporting frequency means it's not obvious how to do it.
 # 
-# So pandas provides two functions for helping with such situations.  These notes do not cover them in detail, but suggest you check out the [documentation for `pd.merge_orered()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge_ordered.html) and the [documentation for `pd.merge_asof()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge_asof.html#pandas.merge_asof) for more sophisticated handling of time-based merge data.
+# So pandas provides two functions for helping with such situations.  These notes do not cover them in detail, but suggest you check out the [documentation for `pd.merge_ordered()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge_ordered.html) and the [documentation for `pd.merge_asof()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge_asof.html) for more sophisticated handling of time-based merge data.
 
 # ### What about unstandardized text?
 # 
@@ -307,12 +315,8 @@ len( df_big ), len( df_rank )
 # In[6]:
 
 
-official_names = list( df_big['NAME'] )
-
-def has_exact_match ( name_from_rank_df ):
-    return name_from_rank_df in official_names
-
-sum( df_rank['Name'].apply( has_exact_match ) )
+official_names = list( df_big['NAME'] )        # from big dataset
+sum( df_rank['Name'].isin( official_names ) )  # from rank dataset
 
 
 # Thus 90 schools do *not* have an exact match.  Those are the 90 we need to solve.  It would be tedious to match them up by hand, because there are 90.  So we will use a built-in Python text module to try to do some *approximate* string matching for us.  The Python module `difflib` has a function called `get_close_matches()` that will take a piece of text and a list of options, and give you the closest matches.  Here's an example.
@@ -342,7 +346,7 @@ get_close_matches( 'pork', [ 'salad', 'lollipops', 'soda' ] )
 def get_closest_official_name ( name_from_df_rank ):
 
     # If there's an exact match, we're already done.
-    if has_exact_match( name_from_df_rank ):
+    if name_from_df_rank in official_names:
         return name_from_df_rank
     
     # Get the closest matches, if any.

@@ -73,7 +73,7 @@
         
 
 \title{MA346 Course Notes}
-\date{May 13, 2021}
+\date{May 14, 2021}
 \release{}
 \author{Nathan Carter}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -2849,7 +2849,7 @@ In pandas, we call them the \sphinxcode{\sphinxupquote{values}} of the pivot.
 (The animation below can be viewed \sphinxhref{https://nathancarter.github.io/dataframe-animations/pivot.html}{in its own page here}.)
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}IPython.lib.display.IFrame at 0x7fb05daa5d60\PYGZgt{}
+\PYGZlt{}IPython.lib.display.IFrame at 0x7f32793317c0\PYGZgt{}
 \end{sphinxVerbatim}
 
 
@@ -3076,7 +3076,7 @@ Because we’re collecting all scores into a single column, these will stack up 
 (This animation can be viewed \sphinxhref{https://nathancarter.github.io/dataframe-animations/melt.html}{in its own page here}.)
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}IPython.lib.display.IFrame at 0x7fb05dab6d30\PYGZgt{}
+\PYGZlt{}IPython.lib.display.IFrame at 0x7f32792ca310\PYGZgt{}
 \end{sphinxVerbatim}
 
 
@@ -3159,7 +3159,7 @@ This is why a \sphinxcode{\sphinxupquote{pivot\_table}} operation doesn’t make
 (This animation can be viewed \sphinxhref{https://nathancarter.github.io/dataframe-animations/pivot-table.html}{in its own page here}.)
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}IPython.lib.display.IFrame at 0x7fb05dab6e80\PYGZgt{}
+\PYGZlt{}IPython.lib.display.IFrame at 0x7f32792ca340\PYGZgt{}
 \end{sphinxVerbatim}
 
 
@@ -3290,7 +3290,7 @@ The reverse operation is exactly \sphinxcode{\sphinxupquote{df.stack( level=1 )}
 (This animation can be viewed \sphinxhref{https://nathancarter.github.io/dataframe-animations/stack-1.html}{in its own page here}.)
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}IPython.lib.display.IFrame at 0x7fb05dab6850\PYGZgt{}
+\PYGZlt{}IPython.lib.display.IFrame at 0x7f32792cabe0\PYGZgt{}
 \end{sphinxVerbatim}
 
 
@@ -3306,7 +3306,7 @@ The reverse operation is therefore actually a combination of \sphinxcode{\sphinx
 (This animation can be viewed \sphinxhref{https://nathancarter.github.io/dataframe-animations/stack-0.html}{in its own page here}.)
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}IPython.lib.display.IFrame at 0x7fb05dab6f70\PYGZgt{}
+\PYGZlt{}IPython.lib.display.IFrame at 0x7f32792caeb0\PYGZgt{}
 \end{sphinxVerbatim}
 
 
@@ -4492,36 +4492,47 @@ Natural logarithms are written \(\ln x\) in mathematics, but just \sphinxcode{\s
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
-There are some other functions useful for data work (like \sphinxcode{\sphinxupquote{math.dist()}}, \sphinxcode{\sphinxupquote{math.comb()}}, and \sphinxcode{\sphinxupquote{math.perm()}}) coming in Python 3.8, but most Python tools (like pandas, NumPy, and SciPy) haven’t yet been udpated to work with Python 3.8.  So I do not cover those functions here, and I recommend that you stick with Python 3.7 for now.
+A few other functions in the \sphinxcode{\sphinxupquote{math}} module are also useful for data work, but show up much less often.  The distance between any two points in the plane (or any number of dimensions) can be computed with \sphinxcode{\sphinxupquote{math.dist()}}.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{math}\PYG{o}{.}\PYG{n}{dist}\PYG{p}{(} \PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,} \PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+6.324555320336759
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Combinations and permutations can be computed with \sphinxcode{\sphinxupquote{math.comb()}} and \sphinxcode{\sphinxupquote{math.perm()}} (since Python 3.8).
 
 
 \section{Naming mathematical variables}
 \label{\detokenize{chapter-9-math-and-stats:naming-mathematical-variables}}
 \sphinxAtStartPar
-In programming, we almost never name variables with unhelpful names like \sphinxcode{\sphinxupquote{k}} and \sphinxcode{\sphinxupquote{x}}, because later readers of the code (or even ourselves reading it in two months) won’t know what \sphinxcode{\sphinxupquote{k}} and \sphinxcode{\sphinxupquote{x}} actually do.  The one exception to this is in mathematics, where it is normal to use single\sphinxhyphen{}letter variables, and indeed sometimes the letters matter.
+In programming, we almost never name variables with unhelpful names like \sphinxcode{\sphinxupquote{k}} and \sphinxcode{\sphinxupquote{x}}, because later readers of the code (or even ourselves reading it in two months) won’t know what \sphinxcode{\sphinxupquote{k}} and \sphinxcode{\sphinxupquote{x}} actually mean.  The one exception to this is in mathematics, where it is normal to use single\sphinxhyphen{}letter variables, and indeed sometimes the letters matter.
 
 \sphinxAtStartPar
 \sphinxstylestrong{Example 1:}  The quadratic formula is almost always written using the letters \(a\), \(b\), and \(c\).  Yes, names like \sphinxcode{\sphinxupquote{x\_squared\_coefficient}}, \sphinxcode{\sphinxupquote{x\_coefficient}}, and \sphinxcode{\sphinxupquote{constant}} are more descriptive, but they would lead to much uglier code that’s not what anyone expects.  Compare:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{\PYGZsh{} not super easy to read, but not bad:}
-\PYG{k}{def} \PYG{n+nf}{quadratic\PYGZus{}nice} \PYG{p}{(} \PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{c} \PYG{p}{)}\PYG{p}{:}
-    \PYG{k}{return} \PYG{p}{(} \PYG{p}{(} \PYG{o}{\PYGZhy{}}\PYG{n}{b} \PYG{o}{+} \PYG{p}{(} \PYG{n}{b}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{4}\PYG{o}{*}\PYG{n}{a}\PYG{o}{*}\PYG{n}{c} \PYG{p}{)}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mf}{0.5} \PYG{p}{)} \PYG{o}{/} \PYG{p}{(} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{a} \PYG{p}{)}\PYG{p}{,}
-             \PYG{p}{(} \PYG{o}{\PYGZhy{}}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{p}{(} \PYG{n}{b}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{4}\PYG{o}{*}\PYG{n}{a}\PYG{o}{*}\PYG{n}{c} \PYG{p}{)}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mf}{0.5} \PYG{p}{)} \PYG{o}{/} \PYG{p}{(} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{a} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{def} \PYG{n+nf}{quadratic\PYGZus{}formula\PYGZus{}1} \PYG{p}{(} \PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{c} \PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{solution1} \PYG{o}{=} \PYG{p}{(} \PYG{o}{\PYGZhy{}}\PYG{n}{b} \PYG{o}{+} \PYG{p}{(} \PYG{n}{b}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{4}\PYG{o}{*}\PYG{n}{a}\PYG{o}{*}\PYG{n}{c} \PYG{p}{)}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mf}{0.5} \PYG{p}{)} \PYG{o}{/} \PYG{p}{(} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{a} \PYG{p}{)}
+    \PYG{n}{solution2} \PYG{o}{=} \PYG{p}{(} \PYG{o}{\PYGZhy{}}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{p}{(} \PYG{n}{b}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{4}\PYG{o}{*}\PYG{n}{a}\PYG{o}{*}\PYG{n}{c} \PYG{p}{)}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mf}{0.5} \PYG{p}{)} \PYG{o}{/} \PYG{p}{(} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{a} \PYG{p}{)}
+    \PYG{k}{return} \PYG{p}{(} \PYG{n}{solution1}\PYG{p}{,} \PYG{n}{solution2} \PYG{p}{)}
 
 \PYG{c+c1}{\PYGZsh{} oh my make it stop:}
-\PYG{k}{def} \PYG{n+nf}{quadratic\PYGZus{}bad} \PYG{p}{(} \PYG{n}{x\PYGZus{}squared\PYGZus{}coefficient}\PYG{p}{,} \PYG{n}{x\PYGZus{}coefficient}\PYG{p}{,} \PYG{n}{constant} \PYG{p}{)}\PYG{p}{:}
-    \PYG{k}{return} \PYG{p}{(}
-        \PYG{p}{(} \PYG{o}{\PYGZhy{}}\PYG{n}{x\PYGZus{}coefficient} \PYG{o}{+} \PYGZbs{}
-             \PYG{p}{(} \PYG{n}{x\PYGZus{}coefficient}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{4}\PYG{o}{*}\PYG{n}{x\PYGZus{}squared\PYGZus{}coefficient}\PYG{o}{*}\PYG{n}{constant} \PYG{p}{)}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mf}{0.5} \PYG{p}{)} \PYGZbs{}
-           \PYG{o}{/} \PYG{p}{(} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{x\PYGZus{}squared\PYGZus{}coefficient} \PYG{p}{)}\PYG{p}{,}
-        \PYG{p}{(} \PYG{o}{\PYGZhy{}}\PYG{n}{x\PYGZus{}coefficient} \PYG{o}{\PYGZhy{}} \PYGZbs{}
-             \PYG{p}{(} \PYG{n}{x\PYGZus{}coefficient}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{4}\PYG{o}{*}\PYG{n}{x\PYGZus{}squared\PYGZus{}coefficient}\PYG{o}{*}\PYG{n}{constant} \PYG{p}{)}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mf}{0.5} \PYG{p}{)} \PYGZbs{}
-           \PYG{o}{/} \PYG{p}{(} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{x\PYGZus{}squared\PYGZus{}coefficient} \PYG{p}{)}
-    \PYG{p}{)}
+\PYG{k}{def} \PYG{n+nf}{quadratic\PYGZus{}formula\PYGZus{}2} \PYG{p}{(} \PYG{n}{x\PYGZus{}squared\PYGZus{}coefficient}\PYG{p}{,} \PYG{n}{x\PYGZus{}coefficient}\PYG{p}{,} \PYG{n}{constant} \PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{solution1} \PYG{o}{=} \PYG{p}{(} \PYG{o}{\PYGZhy{}}\PYG{n}{x\PYGZus{}coefficient} \PYG{o}{+} \PYGZbs{}
+                    \PYG{p}{(} \PYG{n}{x\PYGZus{}coefficient}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{4}\PYG{o}{*}\PYG{n}{x\PYGZus{}squared\PYGZus{}coefficient}\PYG{o}{*}\PYG{n}{constant} \PYG{p}{)}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mf}{0.5} \PYG{p}{)} \PYGZbs{}
+                  \PYG{o}{/} \PYG{p}{(} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{x\PYGZus{}squared\PYGZus{}coefficient} \PYG{p}{)}
+    \PYG{n}{solution2} \PYG{o}{=} \PYG{p}{(} \PYG{o}{\PYGZhy{}}\PYG{n}{x\PYGZus{}coefficient} \PYG{o}{\PYGZhy{}} \PYGZbs{}
+                    \PYG{p}{(} \PYG{n}{x\PYGZus{}coefficient}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{4}\PYG{o}{*}\PYG{n}{x\PYGZus{}squared\PYGZus{}coefficient}\PYG{o}{*}\PYG{n}{constant} \PYG{p}{)}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mf}{0.5} \PYG{p}{)} \PYGZbs{}
+                  \PYG{o}{/} \PYG{p}{(} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{x\PYGZus{}squared\PYGZus{}coefficient} \PYG{p}{)}
+    \PYG{k}{return} \PYG{p}{(} \PYG{n}{solution1}\PYG{p}{,} \PYG{n}{solution2} \PYG{p}{)}
 
 \PYG{c+c1}{\PYGZsh{} of course both work fine:}
-\PYG{n}{quadratic\PYGZus{}nice}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{9}\PYG{p}{,}\PYG{l+m+mi}{6}\PYG{p}{)}\PYG{p}{,} \PYG{n}{quadratic\PYGZus{}bad}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{9}\PYG{p}{,}\PYG{l+m+mi}{6}\PYG{p}{)}
+\PYG{n}{quadratic\PYGZus{}formula\PYGZus{}1}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{9}\PYG{p}{,}\PYG{l+m+mi}{6}\PYG{p}{)}\PYG{p}{,} \PYG{n}{quadratic\PYGZus{}formula\PYGZus{}2}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{9}\PYG{p}{,}\PYG{l+m+mi}{6}\PYG{p}{)}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -4553,11 +4564,14 @@ Interestingly, you can actually type Greek letters into Python code and use them
 0.00876415024678427
 \end{sphinxVerbatim}
 
+\sphinxAtStartPar
+The same feature is not (yet?) available in VS Code, but you can copy and paste Greek letters from anywhere into your code in any editor, and they still count as valid Python variable names.
+
 
 \section{But what about NumPy?}
 \label{\detokenize{chapter-9-math-and-stats:but-what-about-numpy}}
 \sphinxAtStartPar
-Most data science projects in Python import both pandas and NumPy.  Since NumPy implements tons of mathematical tools, why bother using the ones in Python’s built\sphinxhyphen{}in \sphinxcode{\sphinxupquote{math}} module?  Well, on the one hand, NumPy doesn’t have \sphinxstyleemphasis{everything}; for instance, the \sphinxcode{\sphinxupquote{math.comb()}} and \sphinxcode{\sphinxupquote{math.perm()}} functions mentioned above don’t exist in NumPy.  But when you \sphinxstyleemphasis{can} use NumPy, you \sphinxstyleemphasis{should,} for the following important reason.
+Pandas is built on NumPy, and many data science projects also use NumPy directly.  Since NumPy implements tons of mathematical tools, why bother using the ones in Python’s built\sphinxhyphen{}in \sphinxcode{\sphinxupquote{math}} module?  Well, on the one hand, NumPy doesn’t have \sphinxstyleemphasis{everything}; for instance, the \sphinxcode{\sphinxupquote{math.comb()}} and \sphinxcode{\sphinxupquote{math.perm()}} functions mentioned above don’t exist in NumPy.  But when you \sphinxstyleemphasis{can} use NumPy, you \sphinxstyleemphasis{should,} for the following important reason.
 
 \begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Vectorization and its benefits}
 
@@ -4567,7 +4581,7 @@ All the functions in NumPy are \sphinxstyleemphasis{vectorized,} meaning that th
 \sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 \sphinxAtStartPar
-Using vectorization saves you \sphinxstyleemphasis{the work of writing loops.}
+Using vectorization saves you \sphinxstyleemphasis{the work of writing loops.}  You don’t have to loop through all 1000 entries in \sphinxcode{\sphinxupquote{x}} to square each one; NumPy knew what you meant.
 
 \item {} 
 \sphinxAtStartPar
@@ -4591,12 +4605,12 @@ We will return to vectorization and loops in Chapter 11 of these notes.  For now
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.39157703, 0.01456115, 0.76822382, 0.09973344, 0.07179624,
-       0.92727462, 0.69968281, 0.15859871, 0.9122692 , 0.63639505,
-       0.44454011, 0.5741073 , 0.13917095, 0.85081202, 0.19416396,
-       0.93218411, 0.01360117, 0.6092669 , 0.91102143, 0.27485311,
-       0.6416168 , 0.07453698, 0.57677952, 0.07492082, 0.88422556,
-       0.93634266, 0.968102  , 0.1002545 , 0.88839571, 0.42937999])
+array([0.64121344, 0.82722719, 0.1051134 , 0.20658102, 0.28849283,
+       0.25182869, 0.9026589 , 0.19621108, 0.77626529, 0.20391868,
+       0.84583828, 0.61986331, 0.0376539 , 0.76950757, 0.59679701,
+       0.51286385, 0.36877279, 0.17746551, 0.55271253, 0.3950121 ,
+       0.29154434, 0.46731039, 0.21757034, 0.32558231, 0.49893898,
+       0.04036436, 0.88328343, 0.96073611, 0.20523466, 0.7889224 ])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -4604,9 +4618,9 @@ array([0.39157703, 0.01456115, 0.76822382, 0.09973344, 0.07179624,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.39, 0.01, 0.77, 0.1 , 0.07, 0.93, 0.7 , 0.16, 0.91, 0.64, 0.44,
-       0.57, 0.14, 0.85, 0.19, 0.93, 0.01, 0.61, 0.91, 0.27, 0.64, 0.07,
-       0.58, 0.07, 0.88, 0.94, 0.97, 0.1 , 0.89, 0.43])
+array([0.64, 0.83, 0.11, 0.21, 0.29, 0.25, 0.9 , 0.2 , 0.78, 0.2 , 0.85,
+       0.62, 0.04, 0.77, 0.6 , 0.51, 0.37, 0.18, 0.55, 0.4 , 0.29, 0.47,
+       0.22, 0.33, 0.5 , 0.04, 0.88, 0.96, 0.21, 0.79])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -4614,12 +4628,12 @@ array([0.39, 0.01, 0.77, 0.1 , 0.07, 0.93, 0.7 , 0.16, 0.91, 0.64, 0.44,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([1.47931188, 1.01466768, 2.15593353, 1.10487637, 1.07443639,
-       2.52761108, 2.01311406, 1.1718676 , 2.48996637, 1.88965646,
-       1.55977271, 1.77554479, 1.14932056, 2.34154745, 1.21429536,
-       2.54005089, 1.01369408, 1.83908267, 2.48686138, 1.3163373 ,
-       1.89954958, 1.07738519, 1.78029578, 1.07779881, 2.42110867,
-       2.5506358 , 2.63294238, 1.10545222, 2.43122614, 1.5363047 ])
+array([1.89878355, 2.28696861, 1.11083658, 1.22946734, 1.33441478,
+       1.28637565, 2.46615164, 1.21678371, 2.1733403 , 1.22619844,
+       2.32993013, 1.85867397, 1.03837179, 2.15870298, 1.81629191,
+       1.67006718, 1.44595903, 1.19418686, 1.7379609 , 1.48440215,
+       1.33849298, 1.59569662, 1.24305286, 1.38483681, 1.64697287,
+       1.04119007, 2.41882874, 2.61361967, 1.22781315, 2.20102333])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -4627,14 +4641,12 @@ array([1.47931188, 1.01466768, 2.15593353, 1.10487637, 1.07443639,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([1.53332572e\PYGZhy{}01, 2.12027213e\PYGZhy{}04, 5.90167840e\PYGZhy{}01, 9.94675985e\PYGZhy{}03,
-       5.15469937e\PYGZhy{}03, 8.59838218e\PYGZhy{}01, 4.89556028e\PYGZhy{}01, 2.51535523e\PYGZhy{}02,
-       8.32235101e\PYGZhy{}01, 4.04998657e\PYGZhy{}01, 1.97615913e\PYGZhy{}01, 3.29599194e\PYGZhy{}01,
-       1.93685531e\PYGZhy{}02, 7.23881086e\PYGZhy{}01, 3.76996425e\PYGZhy{}02, 8.68967223e\PYGZhy{}01,
-       1.84991741e\PYGZhy{}04, 3.71206153e\PYGZhy{}01, 8.29960038e\PYGZhy{}01, 7.55442295e\PYGZhy{}02,
-       4.11672112e\PYGZhy{}01, 5.55576185e\PYGZhy{}03, 3.32674613e\PYGZhy{}01, 5.61312942e\PYGZhy{}03,
-       7.81854844e\PYGZhy{}01, 8.76737580e\PYGZhy{}01, 9.37221479e\PYGZhy{}01, 1.00509644e\PYGZhy{}02,
-       7.89246944e\PYGZhy{}01, 1.84367174e\PYGZhy{}01])
+array([0.41115468, 0.68430482, 0.01104883, 0.04267572, 0.08322811,
+       0.06341769, 0.81479308, 0.03849879, 0.6025878 , 0.04158283,
+       0.71544239, 0.38423053, 0.00141782, 0.5921419 , 0.35616667,
+       0.26302933, 0.13599337, 0.03149401, 0.30549114, 0.15603456,
+       0.0849981 , 0.218379  , 0.04733685, 0.10600384, 0.2489401 ,
+       0.00162928, 0.78018962, 0.92301387, 0.04212126, 0.62239856])
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -4678,7 +4690,7 @@ A comprehensive list of NumPy’s math routines appear \sphinxhref{https://numpy
 Many functions in statistics have two types of parameters.  Some of the parameters you change very rarely, and others you change all the time.
 
 \sphinxAtStartPar
-\sphinxstylestrong{Example 1:}  Consider the \sphinxcode{\sphinxupquote{normal\_pdf}} function whose code appears earlier in this chapter.  It has three parameters, \(\mu\), \(\sigma\), and \(x\).  You’ll probably have a particular normal distribution you want to work with, so you’ll choose \(\mu\) and \(\sigma\), and then you’ll want to use the function on many different values of \(x\).  So the first two parameters we choose just once, and the third parameter changes all the time.
+\sphinxstylestrong{Example 1:}  Consider the \sphinxcode{\sphinxupquote{normal\_pdf}} function whose code appears {\hyperref[\detokenize{chapter-9-math-and-stats:naming-mathematical-variables}]{\emph{in an earlier section}}} of this chapter.  It has three parameters, \(\mu\), \(\sigma\), and \(x\).  You’ll probably have a particular normal distribution you want to work with, so you’ll choose \(\mu\) and \(\sigma\), and then you’ll want to use the function on many different values of \(x\).  So the first two parameters we choose just once, and the third parameter changes all the time.
 
 \sphinxAtStartPar
 \sphinxstylestrong{Example 2:}  Consider fitting a linear model \(\beta_0+\beta_1x\) to some data \(x_1,x_2,\ldots,x_n\).  That linear model is technically a function of three variables; we might write it as \(f(\beta_0,\beta_1,x)\).  But when we fit the model to the data, then \(\beta_0\) and \(\beta_1\) get chosen, and we don’t change them after that.  But we might plug in hundreds or even thousands of different \(x\) values to \(f\), using the same \(\beta_0\) and \(\beta_1\) values each time.
@@ -4714,9 +4726,8 @@ In fact, SciPy’s built\sphinxhyphen{}in random number generating procedures le
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([6.57855529e+01, 4.50603544e+01, 3.56246636e+01, 3.21974814e+01,
-       8.42007991e+01, 5.48961227e+01, 2.59482538e\PYGZhy{}02, 8.22791426e+01,
-       3.33073739e+01, 5.23651429e+00])
+array([26.12070746, 92.0606303 , 63.58872875, 61.65058533, 36.62675817,
+       47.75396588, 89.27517933, 35.53084489, 73.484198  , 73.48030349])
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -4728,8 +4739,8 @@ Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two a
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([20.61421644, 58.92117404, 41.92345185,  7.57130073, 55.77788395,
-       44.28761846, 24.11332086, 22.30804185, 23.17281057, 70.1996343 ])
+array([96.24424349, 85.08249507, 90.94666985, 11.34714146, 80.15979576,
+       67.72086572, 35.66719543, 34.48081458, 29.27916318, 75.6636077 ])
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -4758,7 +4769,7 @@ We will also use the concept of binding function parameters when we come to curv
 \section{GB213 in Python}
 \label{\detokenize{chapter-9-math-and-stats:gb213-in-python}}
 \sphinxAtStartPar
-You can refer at any time to one of the appendices in these course notes, a {\hyperref[\detokenize{GB213-review-in-Python::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{review of GB213, but in Python}}}}.
+All MA346 students have taken GB213 as a prerequisite, and we will not spend time in our course reviewing its content.  However, you may very well want to know how to do computations from GB213 using Python, and these notes provide {\hyperref[\detokenize{GB213-review-in-Python::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{an appendix that covers exactly that}}}}.  Refer to it whenever you need to use some GB213 content in this course.
 
 \sphinxAtStartPar
 Topics covered there:
@@ -4824,7 +4835,7 @@ visualizing the model
 \end{itemize}
 
 \sphinxAtStartPar
-Topics not covered in that chapter, but that you may have seen in GB213:
+That appendix does not cover the following topics.
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -4843,7 +4854,21 @@ ANOVA (covered in some GB213 sections)
 \begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} Pingouin}
 
 \sphinxAtStartPar
-The GB213 review appendix that I linked to above uses the very popular Python statistics tools \sphinxcode{\sphinxupquote{statsmodels}} and \sphinxcode{\sphinxupquote{scipy.stats}}.  But there is a relatively new toolkit called Pingouin; it’s not as popular (yet?) but it has some advantages over the other two.  See \sphinxhref{https://towardsdatascience.com/the-new-kid-on-the-statistics-in-python-block-pingouin-6b353a1db57c}{this blog post} for an introduction and consider a tutorial, video, presentation, or notebook for the class that showcases when you might prefer Pingouin to the others, and how to use it in such cases.  Be sure to include the installation procedure.
+The GB213 review appendix that I linked to above uses the very popular Python statistics tools \sphinxcode{\sphinxupquote{statsmodels}} and \sphinxcode{\sphinxupquote{scipy.stats}}.  But there is a relatively new toolkit called Pingouin; it’s not as popular (yet?) but it has some advantages over the other two.  See \sphinxhref{https://towardsdatascience.com/the-new-kid-on-the-statistics-in-python-block-pingouin-6b353a1db57c}{this blog post} for an introduction and consider a tutorial, video, presentation, or notebook for the class that answers the following questions.
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+For what tasks is Pingouin better than \sphinxcode{\sphinxupquote{statsmodels}} or \sphinxcode{\sphinxupquote{scipy.stats}}?  Show example code for doing those tasks in Pingouin.
+
+\item {} 
+\sphinxAtStartPar
+For what tasks is Pingouin less useful or not yet capable, compared to the others?
+
+\item {} 
+\sphinxAtStartPar
+If I want to use Pingouin, how do I get started?
+
+\end{itemize}
 \end{sphinxadmonition}
 
 
@@ -4853,8 +4878,8 @@ The GB213 review appendix that I linked to above uses the very popular Python st
 The final topic covered in the GB213 review mentioned above is simple linear regression, which fits a line to a set of (two\sphinxhyphen{}dimensional) data points.  But Python’s scientific tools permit you to handle much more complex models.  We cannot cover mathematical modeling in detail in MA346, because it can take several courses on its own, but you can learn more about regression modeling in particular in \sphinxhref{https://catalog.bentley.edu/search/?P=MA\%20252}{MA252 at Bentley}.  But we will cover how to fit an arbitrary curve to data in Python.
 
 
-\subsection{1. Say we have some data}
-\label{\detokenize{chapter-9-math-and-stats:say-we-have-some-data}}
+\subsection{Let’s say we have some data…}
+\label{\detokenize{chapter-9-math-and-stats:let-s-say-we-have-some-data}}
 \sphinxAtStartPar
 We will assume you have data stored in a pandas DataFrame, and we will lift out just two columns of the DataFrame, one that will be used as our \(x\) values (independent variable), and the other as our \(y\) values (dependent variable).  I’ll make up some data here just for use in this example.
 
@@ -4886,10 +4911,10 @@ We will assume you have data stored in a pandas DataFrame, and we will lift out 
 \PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{chapter-9-math-and-stats_36_0}.png}
+\noindent\sphinxincludegraphics{{chapter-9-math-and-stats_39_0}.png}
 
 
-\subsection{2. Choose a model}
+\subsection{Choose a model}
 \label{\detokenize{chapter-9-math-and-stats:choose-a-model}}
 \sphinxAtStartPar
 Curve\sphinxhyphen{}fitting is a powerful tool, and it’s easy to misuse it by fitting to your data a model that doesn’t make sense for that data.  A mathematical modeling course can help you learn how to assess the appropriateness of a given type of line, curve, or more complex model for a given situation.  But for this small example, let’s pretend that we know that the following model makes sense, perhaps because some earlier work with salt and ice had success with it.  (Again, keep in mind that this example is really, truly, totally made up.)
@@ -4897,7 +4922,10 @@ Curve\sphinxhyphen{}fitting is a powerful tool, and it’s easy to misuse it by 
 \begin{split} y=\frac{\beta_0}{\beta_1+x}+\beta_2 \end{split}
 \end{equation*}
 \sphinxAtStartPar
-We will use this model.  Obviously, it’s not the equation of a line, so linear regression tools like those covered in the GB213 review notebook won’t be sufficient.  To begin, we code the model as a Python function taking inputs in this order: first, \(x\), then after it, all the model parameters \(\beta_0,\beta_1\), and so on, however many model parameters there happen to be (in this case three).
+We will use this model.  \sphinxstylestrong{When you do actual curve\sphinxhyphen{}fitting, do not use this model.  It is a formula I crafted just for use in this one specific example with made\sphinxhyphen{}up data.}  When fitting a model to data, choose an appropriate model for your data.
+
+\sphinxAtStartPar
+Obviously, it’s not the equation of a line, so linear regression tools like those covered in the GB213 review notebook won’t be sufficient.  To begin, we code the model as a Python function taking inputs in this order: first, \(x\), then after it, all the model parameters \(\beta_0,\beta_1\), and so on, however many model parameters there happen to be (in this case three).
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k}{def} \PYG{n+nf}{my\PYGZus{}model} \PYG{p}{(} \PYG{n}{x}\PYG{p}{,} \PYG{n}{β0}\PYG{p}{,} \PYG{n}{β1}\PYG{p}{,} \PYG{n}{β2} \PYG{p}{)}\PYG{p}{:}
@@ -4905,26 +4933,30 @@ We will use this model.  Obviously, it’s not the equation of a line, so linear
 \end{sphinxVerbatim}
 
 
-\subsection{3. Have SciPy find the \protect\(\beta\protect\)s}
-\label{\detokenize{chapter-9-math-and-stats:have-scipy-find-the-betas}}
+\subsection{Ask SciPy to find the \protect\(\beta\protect\)s}
+\label{\detokenize{chapter-9-math-and-stats:ask-scipy-to-find-the-betas}}
 \sphinxAtStartPar
-This step is called “fitting the model to your data.”  It finds the values of \(\beta_0,\beta_1,\beta_2\) that make the most sense for the particular \(x\) and \(y\) adata values that you have.  Using the language from earlier in this chapter, SciPy will tell us how to \sphinxstyleemphasis{bind values to the parameters} \(\beta_0,\beta_1,\beta_2\) of \sphinxcode{\sphinxupquote{my\_model}} so that the resulting function, which just takes \sphinxcode{\sphinxupquote{x}} as input, is the one best fit to our data.
+This step is called “fitting the model to your data.”  It finds the values of \(\beta_0,\beta_1,\beta_2\) that make the most sense for the particular \(x\) and \(y\) data values that you have.  Using the language from earlier in this chapter, SciPy will tell us how to \sphinxstyleemphasis{bind values to the parameters} \(\beta_0,\beta_1,\beta_2\) of \sphinxcode{\sphinxupquote{my\_model}} so that the resulting function, which just takes \sphinxcode{\sphinxupquote{x}} as input, is the one best fit to our data.
 
 \sphinxAtStartPar
-For example, if we picked our own values for the model parameters, we would probably guess poorly.  Let’s try guessing \(\beta_0=1,\beta_1=2,\beta_2=3\).
+For example, if we picked our own values for the model parameters, we would probably guess poorly.  Let’s try guessing \(\beta_0=3,\beta_1=4,\beta_2=5\).
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} fill in my guesses for the β parameters:}
 \PYG{n}{guess\PYGZus{}model} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n}{my\PYGZus{}model}\PYG{p}{(} \PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{5} \PYG{p}{)}
 
-\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
-\PYG{n}{many\PYGZus{}xs} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mi}{100} \PYG{p}{)}
-
+\PYG{c+c1}{\PYGZsh{} plot the data:}
 \PYG{n}{plt}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(} \PYG{n}{xs}\PYG{p}{,} \PYG{n}{ys} \PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} plot my model by sampling many x values on it:}
+\PYG{n}{many\PYGZus{}xs} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mi}{100} \PYG{p}{)}
 \PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(} \PYG{n}{many\PYGZus{}xs}\PYG{p}{,} \PYG{n}{guess\PYGZus{}model}\PYG{p}{(} \PYG{n}{many\PYGZus{}xs} \PYG{p}{)} \PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} show the two plots together:}
 \PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{chapter-9-math-and-stats_40_0}.png}
+\noindent\sphinxincludegraphics{{chapter-9-math-and-stats_43_0}.png}
 
 \sphinxAtStartPar
 Yyyyyyeah…  Our model is nowhere near the data.  That’s why we need SciPy to find the \(\beta\)s.  Here’s how we ask it to do so.  You start with your own guess for the parameters, and SciPy will improve it.
@@ -4962,7 +4994,7 @@ It fits the data very well, as you can see below.
 \PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{chapter-9-math-and-stats_44_0}.png}
+\noindent\sphinxincludegraphics{{chapter-9-math-and-stats_47_0}.png}
 
 \begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Models vs. fit models}
 
@@ -4971,7 +5003,11 @@ In mathematical modeling and machine learning, we sometimes distinguish between 
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-A \sphinxstyleemphasis{model} is a general purpose technique that you decide might suit the data.  Examples:
+\sphinxstyleemphasis{Models} are general descriptions of how a real\sphinxhyphen{}world system behaves, typically expressed using mathematical formulas.  Each model can be used on many datasets, and a statistician or data scientist does the work of choosing the model they think suits their data (and often also choosing which variables from the data are relevant).
+
+\item {} 
+\sphinxAtStartPar
+Example models:
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -5002,7 +5038,29 @@ For example, if your model were \(y=\beta_0+\beta_1x\), then your fit model migh
 \end{sphinxadmonition}
 
 \sphinxAtStartPar
-In class, we will use this technique to fit a logistic growth model to COVID\sphinxhyphen{}19 data.  Be sure to have completed the preparatory work on writing a function that extracts the series of COVID\sphinxhyphen{}19 cases over time for a given state!  Recall that it appears on the final slide of the Chapter 8 slides.
+When speaking informally, a data scientist or statistician might not always distinguish between “model” and “fit model,” sometimes just using the word “model” and expecting the listener to know which one is being discussed.  In other words, you will often hear people not bother with fussing over the specific technical terminology I just introduced.
+
+\sphinxAtStartPar
+But when we’re coding or writing mathematical formulas, the difference between a model and a fit model will always be clear.  The model in the example above was a mathematical formula with \(\beta\)s in it, and a Python function called \sphinxcode{\sphinxupquote{my\_model}}, that had \sphinxcode{\sphinxupquote{β}} parameters.  But the fit model was the result of asking SciPy to do a \sphinxcode{\sphinxupquote{curve\_fit}}, and in that result, all the \(\beta\)s had been replaced with actual values.  That’s why we named that result \sphinxcode{\sphinxupquote{fit\_model}}.
+
+\sphinxAtStartPar
+The {\hyperref[\detokenize{chapter-17-machine-learning::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{final chapter}}}} in these course notes does a preview of machine learning, using the popular Python package scikit\sphinxhyphen{}learn.  Here’s a little preview of what it looks like to fit a model to data using scikit\sphinxhyphen{}learn.  It’s not important to fully understand this code right now, but just to notice that scikit\sphinxhyphen{}learn makes the distinction between models and fit models impossible to ignore.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Let\PYGZsq{}s say we\PYGZsq{}re planning to use a linear model.}
+\PYG{k+kn}{from} \PYG{n+nn}{scklearn}\PYG{n+nn}{.}\PYG{n+nn}{linear\PYGZus{}model} \PYG{k+kn}{import} \PYG{n}{LinearRegression}
+\PYG{n}{model} \PYG{o}{=} \PYG{n}{LinearRegression}\PYG{p}{(}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} We now have a model, but not a fit model.}
+\PYG{c+c1}{\PYGZsh{} We can\PYGZsq{}t ask what its coefficients are, because they don\PYGZsq{}t exist yet.}
+
+\PYG{c+c1}{\PYGZsh{} I want to find the best linear model for *my* data.}
+\PYG{n}{model}\PYG{o}{.}\PYG{n}{fit}\PYG{p}{(} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{my independent variable}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{my dependent variable}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} We now have a fit model.}
+\PYG{c+c1}{\PYGZsh{} If we asked for its coefficients, we would see actual numbers.}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+In class, we will use the SciPy model\sphinxhyphen{}fitting technique above to fit a logistic growth model to COVID\sphinxhyphen{}19 data.  Be sure to have completed the preparatory work on writing a function that extracts the series of COVID\sphinxhyphen{}19 cases over time for a given state!  Recall that it appears on the final slide of the Chapter 8 slides.
 
 
 \chapter{Visualization}
@@ -5014,7 +5072,7 @@ See also the slides that summarize a portion of this content.
 In preparation for today, you learned many \sphinxhref{big-cheat-sheet.html\#before-week-5}{data visualization tools from DataCamp}.  In fact, if you’re doing this reading before you do the DataCamp homework, I strongly suggest that you stop here, do the DataCamp first, and then come back here.
 
 \sphinxAtStartPar
-Rather than review those tools here, I will categorize them instead.  This page is therefore a reference in which you can look up the kind of data you \sphinxstyleemphasis{have} and see which visualizations make the most sense for it, and what each one accomplishes.
+Rather than review those tools here, I will categorize them instead.  This page is therefore a reference in which you can look up the kind of data you \sphinxstyleemphasis{have} and see which visualizations make the most sense for it, and what each visualization accomplishes.
 
 \sphinxAtStartPar
 We will use two datasets throughout the examples below.  The first is a set of sales data for the employees of an imaginary company (Dunder Mifflin, perhaps?).  The data has the following format, organized by employee ID numbers, and including year, quarter, sales quantity, and bonus earned for each ID in each relevant time frame.
@@ -5079,7 +5137,7 @@ The index and the Close column from \sphinxcode{\sphinxupquote{regi\_df}}
 \begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} Visualizing relations vs. functions}
 
 \sphinxAtStartPar
-Recall that two columns of data always form a binary relation, but may or may not be a function.  Noticing whether the data are a function is very important when deciding how to visualize them.
+Recall from {\hyperref[\detokenize{chapter-2-mathematical-foundations::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Chapter 2}}}} that two columns of data always form a binary relation, but may or may not be a function.  Noticing whether the data are a function is very important when deciding how to visualize them.
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -5114,7 +5172,8 @@ The same example would have gone quite wrong if we had attempted to use a line p
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(} \PYG{n}{sales\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{year}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{n}{sales\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sales}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}o}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)} \PYG{c+c1}{\PYGZsh{} dots and lines}
-\PYG{n}{plt}\PYG{o}{.}\PYG{n}{title}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{This is a relation, so we}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{should have used a scatterplot!}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{fontdict}\PYG{o}{=}\PYG{p}{\PYGZob{}} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{fontsize}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+m+mi}{25} \PYG{p}{\PYGZcb{}} \PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{title}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Whoops!  This is a relation, so we}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{should have used a scatterplot!}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+           \PYG{n}{fontdict}\PYG{o}{=}\PYG{p}{\PYGZob{}} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{fontsize}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+m+mi}{25} \PYG{p}{\PYGZcb{}} \PYG{p}{)}
 \PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
 \end{sphinxVerbatim}
 
@@ -5126,7 +5185,8 @@ It would have been even more hideous if the data hadn’t been sorted by year.  
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{temp\PYGZus{}df} \PYG{o}{=} \PYG{n}{sales\PYGZus{}df}\PYG{o}{.}\PYG{n}{sort\PYGZus{}values}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{emp\PYGZus{}id}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
 \PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(} \PYG{n}{temp\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{year}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{n}{temp\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sales}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}o}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)} \PYG{c+c1}{\PYGZsh{} dots and lines}
-\PYG{n}{plt}\PYG{o}{.}\PYG{n}{title}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{This is a relation, so we}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{should have used a scatterplot!}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{fontdict}\PYG{o}{=}\PYG{p}{\PYGZob{}} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{fontsize}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+m+mi}{25} \PYG{p}{\PYGZcb{}} \PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{title}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Whoops!  This is a relation, so we}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{should have used a scatterplot!}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+           \PYG{n}{fontdict}\PYG{o}{=}\PYG{p}{\PYGZob{}} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{fontsize}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+m+mi}{25} \PYG{p}{\PYGZcb{}} \PYG{p}{)}
 \PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
 \end{sphinxVerbatim}
 
@@ -5191,7 +5251,7 @@ We can clearly see that there \sphinxstyleemphasis{might} be a collision in ther
 \section{But can my two columns of data look more awesome?}
 \label{\detokenize{chapter-10-visualization:but-can-my-two-columns-of-data-look-more-awesome}}
 \sphinxAtStartPar
-Recall that the Seaborn library makes it easy to add histograms to both the horizontal and vertical axes of a standard ploot to get a better sense of the distribution.  This is possible with both line and scatter plots, but it is more commonly useful with scatterplots.
+Recall that the Seaborn library makes it easy to add histograms to both the horizontal and vertical axes of a standard plot to get a better sense of the distribution.  This is possible with both line and scatter plots, but it is more commonly useful with scatterplots.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k+kn}{import} \PYG{n+nn}{seaborn} \PYG{k}{as} \PYG{n+nn}{sns}
@@ -5240,10 +5300,10 @@ Use \sphinxcode{\sphinxupquote{kind='hex'}} to bin values within the scatterplot
 Seaborn provides a few tools for showing how one variable depends on another.
 
 \sphinxAtStartPar
-First, you can plot a line of best fit over a scatterplot, together with confidence bars for the predictions made by that linear model.  Recall from GB213 that it is not always sensible to fit a linear model to data.  But in cases where it makes sense, Seaborn makes it easy to visualize.
+First, you can plot a line of best fit over a scatterplot, together with confidence bars for the predictions made by that linear model.  \sphinxstylestrong{Recall from GB213 that it is not always sensible to fit a linear model to data!}  But in cases where it makes sense, Seaborn makes it easy to visualize.
 
 \sphinxAtStartPar
-Keep in mind that Seaborn is quite happy to show you a linear model even when it does not make any sense to do so!  Just because Python will plot it for you does not mean that you should ask it to!  Here’s an example of just such a situation.
+\sphinxstylestrong{Keep in mind that Seaborn is quite happy to show you a linear model even when it does not make any sense to use a linear model!}  Just because Python will plot it for you does not mean that you should ask it to!  Here’s an example of just such a situation.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{sns}\PYG{o}{.}\PYG{n}{lmplot}\PYG{p}{(} \PYG{n}{x}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Volume}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{y}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{High}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{data}\PYG{o}{=}\PYG{n}{regi\PYGZus{}df} \PYG{p}{)}
@@ -5260,7 +5320,7 @@ Keep in mind that Seaborn is quite happy to show you a linear model even when it
 Seaborn won’t show you the coefficients of the model, nor measure its goodness of fit; see {\hyperref[\detokenize{GB213-review-in-Python::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{the GB213 review}}}} for how to do those things in Python.
 
 \sphinxAtStartPar
-Of course, there are some situations where a linear model is reasonable, like the total sales over time plot from earlier.  Seaborn is fussy about using column names only in \sphinxcode{\sphinxupquote{lmplot}}, so we have to move the index in as an actual column here.
+Of course, there are some situations where a linear model is reasonable, like the total sales over time plot from earlier.  Seaborn restricts us to using only column names in \sphinxcode{\sphinxupquote{lmplot}}, so we must convert the index to be an actual column in this example.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{grouped\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{year}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{grouped\PYGZus{}df}\PYG{o}{.}\PYG{n}{index}
@@ -5290,7 +5350,7 @@ As you know from GB213, part of assessing whether linear regression is appropria
 The primary visualization tools appropriate for such a situation are variations on the idea of a histogram.  These include a standard histogram plus swarm plots, strip plots, and violin plots.  A secondary visualization in this situation is an ECDF, which we will return to below.
 
 \sphinxAtStartPar
-We can plot a standard histogram with \sphinxcode{\sphinxupquote{plt.hist()}}, but this doesn’t work very well for very small data sets.  It can also suffer from “binning bias,” which distorts the actual distribution through the approximation inherent in clustering points into bars.  But with many data points distributed smoothly along the horizontal axis, it often works well.
+We can plot a standard histogram with \sphinxcode{\sphinxupquote{plt.hist()}}, but this doesn’t work very well for very small data sets.  It can also suffer from “binning bias,” which distorts the actual distribution through the approximation inherent in clustering points into bars.  But if you have a large number of data points distributed smoothly along the horizontal axis, it works well.
 
 \sphinxAtStartPar
 When labeling a histogram, the \(y\) axis is almost always “frequency” and the title should typically mention the idea of a “distribution.”
@@ -5306,7 +5366,7 @@ When labeling a histogram, the \(y\) axis is almost always “frequency” and t
 \noindent\sphinxincludegraphics{{chapter-10-visualization_29_0}.png}
 
 \sphinxAtStartPar
-Matplotlib’s built\sphinxhyphen{}in \sphinxcode{\sphinxupquote{plt.hist()}} works fine, but to upgrade your histogram game, consider checking out \sphinxhref{https://seaborn.pydata.org/generated/seaborn.distplot.html}{Seaborn’s \sphinxcode{\sphinxupquote{sns.distplot()}}}, which also shows histograms, but with handy options for commonly\sphinxhyphen{}desired additional features.
+Matplotlib’s built\sphinxhyphen{}in \sphinxcode{\sphinxupquote{plt.hist()}} works fine, but to up your histogram game, consider checking out \sphinxhref{https://seaborn.pydata.org/generated/seaborn.distplot.html}{Seaborn’s \sphinxcode{\sphinxupquote{sns.distplot()}}}, which also shows histograms, but with handy options for commonly\sphinxhyphen{}desired additional features.
 
 \sphinxAtStartPar
 To remove the problem of binning bias, you can try a swarm plot.  This works well with a small\sphinxhyphen{}to\sphinxhyphen{}medium number of data points, but becomes unmanageable for large datasets, because it attempts to give each data point its own visual space.  Also, data points are just plotted \sphinxstyleemphasis{close} to where they actually belong, so the distortion of a histogram’s binning bias has been reduced, but not fully removed.  The picture is still an approximation of the actual data, but still much more accurate than a histogram.
@@ -5391,7 +5451,7 @@ Here, we’ll use what you saw in DataCamp.
 \PYG{n}{ecdf\PYGZus{}xs} \PYG{o}{=} \PYG{n}{sales\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sales}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{sort\PYGZus{}values}\PYG{p}{(}\PYG{p}{)}
 \PYG{n}{ecdf\PYGZus{}ys} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{ecdf\PYGZus{}xs}\PYG{p}{)}\PYG{o}{+}\PYG{l+m+mi}{1} \PYG{p}{)} \PYG{o}{/} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{ecdf\PYGZus{}xs}\PYG{p}{)}
 
-\PYG{c+c1}{\PYGZsh{} simulate a normal CDF with the same mean and std}
+\PYG{c+c1}{\PYGZsh{} simulate a normal CDF with the same mean and std dev}
 \PYG{n}{sample\PYGZus{}mean} \PYG{o}{=} \PYG{n}{ecdf\PYGZus{}xs}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{p}{)}
 \PYG{n}{sample\PYGZus{}std} \PYG{o}{=} \PYG{n}{ecdf\PYGZus{}xs}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{p}{)}
 \PYG{n}{samples} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{normal}\PYG{p}{(} \PYG{n}{sample\PYGZus{}mean}\PYG{p}{,} \PYG{n}{sample\PYGZus{}std}\PYG{p}{,} \PYG{n}{size}\PYG{o}{=}\PYG{l+m+mi}{10000} \PYG{p}{)}
@@ -5440,7 +5500,7 @@ When showing only one variable (earlier), a box plot was quite boring.  But when
 What if we wanted to plot the four price distributions in the REGI dataset, the open, close, low, and high prices, side\sphinxhyphen{}by\sphinxhyphen{}side?  Right now, these are stored in three separate columns in the data.  But as you can see from the code above, Seaborn expects the data to be in a single column, and it will use a separate column to split the values into categories.
 
 \sphinxAtStartPar
-Of course, we know how to combine four columns of related data into one based on our work in a previous week–it’s melting!
+Of course, we know how to combine four columns of related data into one based on our work in a previous week—it’s melting!
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{melted\PYGZus{}df} \PYG{o}{=} \PYG{n}{regi\PYGZus{}df}\PYG{o}{.}\PYG{n}{melt}\PYG{p}{(} \PYG{n}{id\PYGZus{}vars}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Date}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{n}{value\PYGZus{}vars}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Open}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Close}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Low}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{High}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,}
@@ -5532,7 +5592,68 @@ Earlier I mentioned that \sphinxcode{\sphinxupquote{sns.pairplot()}} was the tec
 \noindent\sphinxincludegraphics{{chapter-10-visualization_58_0}.png}
 
 \sphinxAtStartPar
-Of course, because we used the same data, we still find out that all the prices are highly correlated (because they’re organized by day) and the volume isn’t really correlated much with anything.  But it’s much easier to tell both the correlations and the lacks of correlation when we have hard numbers to look at, rather than having to estimate it ourselves from shapes.
+Of course, because we used the same data, we still find out that all the prices are highly correlated (because they’re organized by day) and the volume isn’t really correlated much with anything.  But it’s much easier to tell both the correlations and the lacks of correlation when we have hard numbers to look at, rather than having to estimate it ourselves from pictures.
+
+
+\section{What if I’m just starting to explore my data?}
+\label{\detokenize{chapter-10-visualization:what-if-i-m-just-starting-to-explore-my-data}}
+\sphinxAtStartPar
+Many of the sections above assumed you knew what was in your data and had something you wanted to communicate or investigate, such as the relationship between two distributions, or the correlations among some variables of interest.  But perhaps you’re not that far along yet.  Maybe you just got a dataset and don’t know what’s in it, or what might seem interesting.  There are tools for that situation as well!
+
+\sphinxAtStartPar
+In fact, there are so many tools that I don’t have time to cover them all here.  Instead, I’ll turn each one into a Learning on Your Own opportunity.
+
+\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} Visual EDA Tools}
+
+\sphinxAtStartPar
+\sphinxhref{https://towardsdatascience.com/data-frame-eda-packages-comparison-pandas-profiling-sweetviz-and-pandasgui-bbab4841943b}{This blog post} covers three Python tools for visual exploratory data analysis, and a fourth is covered in \sphinxhref{https://towardsdatascience.com/introduction-to-d-tale-5eddd81abe3f}{this post}.  Read them and create a report that answers the following questions.
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Which of the four tools are usable within Deepnote?  Which are compatible with VSCode?
+
+\item {} 
+\sphinxAtStartPar
+If I want to install the tools in Deepnote or VSCode, how do I do it?
+
+\item {} 
+\sphinxAtStartPar
+How do the tools compare with the \sphinxhref{https://www.youtube.com/watch?v=3PhEO41WVLQ\&ab\_channel=Deepnote}{similar features built into Deepnote’s interface}?
+
+\item {} 
+\sphinxAtStartPar
+Based on your reading, do you have a recommendation of which of these (now five) options is best?
+
+\end{itemize}
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} SandDance}
+
+\sphinxAtStartPar
+\sphinxhref{https://github.com/microsoft/SandDance}{This GitHub repository} contains a tool from Microsoft Research called SandDance, for fancy interactive visual data exploration.
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Is it usable within Deepnote?  If so, how do I install it there?
+
+\item {} 
+\sphinxAtStartPar
+It has a VSCode extension.  Once I’ve installed that, how do I use it?
+
+\item {} 
+\sphinxAtStartPar
+What are the 3 or 4 most useful features you found when you read about SandDance?
+
+\item {} 
+\sphinxAtStartPar
+Give some examples that showcase the use of those features, either in a notebook you can share or a video demonstration/screencast.
+
+\item {} 
+\sphinxAtStartPar
+What source do you recommend someone go to if they want to read more about SandDance?
+
+\end{itemize}
+\end{sphinxadmonition}
 
 
 \section{Summary of plotting tools}
@@ -5592,7 +5713,7 @@ Violin plot
 \\
 \hline
 \sphinxAtStartPar
-How similar is the distribution to normal?
+Whether the distribution is approximately normal
 &
 \sphinxAtStartPar
 Overlapping ECDFs
@@ -5619,28 +5740,28 @@ Then use this
 \\
 \hline
 \sphinxAtStartPar
-A graph of my data, which is a function
+A graph of the data when the data is a function
 &
 \sphinxAtStartPar
 Line plot
 \\
 \hline
 \sphinxAtStartPar
-The shape of my data, which is a relation
+The shape of the data when the data is a relation
 &
 \sphinxAtStartPar
 Scatter plot
 \\
 \hline
 \sphinxAtStartPar
-The shape of my data, which is a relation, plus each variable’s distribution
+The shape of the data when the data is a relation, plus each variable’s distribution
 &
 \sphinxAtStartPar
 Joint plot
 \\
 \hline
 \sphinxAtStartPar
-The line of best fit through my data
+The line of best fit through the data
 &
 \sphinxAtStartPar
 \sphinxcode{\sphinxupquote{sns.lmplot}}
@@ -5723,7 +5844,7 @@ Heat map of correlation coefficients
 \section{Techniques \sphinxstyleemphasis{not} to use (and why)}
 \label{\detokenize{chapter-10-visualization:techniques-not-to-use-and-why}}
 \sphinxAtStartPar
-You may notice that we did not cover \sphinxstylestrong{pie charts} anywhere in this tutorial.  Matplotlib can certainly produce pie charts for you, but visualization experts recommend against them, because viewers tend to have trouble assessing the exact meanings of the shapes.  It’s much harder to compare how much bigger one pie slice is to another than it is to compare, say, two bars on a histogram, or to points on a graph.  So I suggest you avoid pie charts.
+You may notice that we did not cover \sphinxstylestrong{pie charts} anywhere in this tutorial.  Matplotlib can certainly produce pie charts for you, but visualization experts recommend against them, because viewers tend to have trouble assessing the exact meanings of the shapes.  It’s much harder to compare how much bigger one pie slice is to another than it is to compare, say, two bars on a histogram, or two points on a graph.  So I suggest you avoid pie charts.
 
 \sphinxAtStartPar
 We also did not cover \sphinxstylestrong{bubble charts} anywhere in this tutorial.  (A bubble chart is one in which each data point is plotted by a large circle, proportional to one of the variables in the data.)  These are very popular in modern data visualization because they are eye\sphinxhyphen{}catching and attractive.  But visualization experts recommend against these as well, because each person perceives the bubble sizes differently.  For example, some people perceive the magnitude of a bubble on a graph in proportion to its radius, some perceive it in proportion to its area, and others are somewhere in between.
@@ -5735,13 +5856,13 @@ Visualization is a type of communication, and doing it well means focusing on th
 We did not cover charts with \sphinxstylestrong{3D elements,} as Microsoft Excel often creates.  This is because those elements also tend to distort the viewer’s perception of the data and make it unclear exactly how extreme (or not) they’re perceiving what you’re showing.  Thus we avoid any 3D elements in charts for the same reason we avoid bubble charts.
 
 \sphinxAtStartPar
-Finally, DataCamp showed you how to fit polynomial models to data using \sphinxcode{\sphinxupquote{sns.regplot()}}.  But I did not cover it hear, because it is dangerous to dive into polynomial models without a solid grounding in mathematical modeling, which this course does not cover.  Before using a polynomial model, you would need a solid, domain\sphinxhyphen{}specific reason to believe that such a model is applicable, or \sphinxcode{\sphinxupquote{sns.regplot()}} will (obediently) produce result that are unreliable if used for prediction.  Consequently, I won’t cover \sphinxcode{\sphinxupquote{sns.regplot()}} in MA346.
+Finally, DataCamp showed you how to fit polynomial models to data using \sphinxcode{\sphinxupquote{sns.regplot()}}.  But I did not cover it here, because it is dangerous to dive into polynomial models without a solid grounding in mathematical modeling, which this course does not cover.  Before using a polynomial model, you would need a solid, domain\sphinxhyphen{}specific reason to believe that such a model is applicable, or \sphinxcode{\sphinxupquote{sns.regplot()}} will (obediently) produce result that are unreliable if used for prediction.  Consequently, I won’t cover \sphinxcode{\sphinxupquote{sns.regplot()}} in MA346.
 
 
 \section{What about plot styles?}
 \label{\detokenize{chapter-10-visualization:what-about-plot-styles}}
 \sphinxAtStartPar
-I didn’t cover plot styles here, but there’s nothing wrong with them.  I simply left them out because most of them are only cosmetic; \sphinxhref{big-cheat-sheet\#before-week-5}{see this week’s section in the DataCamp cheat sheet} for details on items like \sphinxcode{\sphinxupquote{sns.set()}}, \sphinxcode{\sphinxupquote{plt.subplot()}}, and \sphinxcode{\sphinxupquote{plt.style}}.
+I didn’t cover plot styles here, but there’s nothing wrong with them.  I simply left them out because most of them are only cosmetic; \sphinxhref{big-cheat-sheet\#before-day-5}{see this section in the DataCamp cheat sheet} for details on items like \sphinxcode{\sphinxupquote{sns.set()}}, \sphinxcode{\sphinxupquote{plt.subplot()}}, and \sphinxcode{\sphinxupquote{plt.style}}.
 
 \sphinxAtStartPar
 There are also some good blog posts on Matplotlib styles you might want to check out, such as \sphinxhref{https://towardsdatascience.com/the-last-matplotlib-tweaking-guide-youll-ever-need-dbd4374a1c1e}{this} or \sphinxhref{https://towardsdatascience.com/cyberpunk-style-with-matplotlib-f47404c9d4c5}{this}.
@@ -5760,7 +5881,7 @@ But there is one stylistic element I want to highlight:  DataCamp showed that \s
 \PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{chapter-10-visualization_63_0}.png}
+\noindent\sphinxincludegraphics{{chapter-10-visualization_64_0}.png}
 
 
 \section{There’s so much more!}
@@ -5777,13 +5898,37 @@ In some cases, you can plot data directly from pandas without needing to use Mat
 \begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} Geographical Plots}
 
 \sphinxAtStartPar
-Drawing data on a map is extremely common and useful, but we don’t have time to cover it in today’s notes.  \sphinxhref{https://www.earthdatascience.org/tutorials/introduction-to-leaflet-animated-maps/}{Here’s a blog post about an easy way to do so in Python,} but you don’t need to feel bound to that one.  There are many map toolkits for use in Python\sphinxhyphen{}based visualizations.  Feel free to choose the one you like best and decide on the best format by which to report on it to the class.  As an example, try showing how housing costs vary across the U.S. by plotting the property values in the mortgage dataset from Week 3 on a map.
+Drawing data on a map is extremely common and useful, but we don’t have time to cover it in today’s notes.  Here are two blog posts on easy ways to plot geographical data in Python: \sphinxhref{https://www.earthdatascience.org/tutorials/introduction-to-leaflet-animated-maps/}{one using Leaflet and Folium} and \sphinxhref{https://towardsdatascience.com/the-easiest-way-to-plot-data-from-pandas-on-a-world-map-1a62962a27f3}{one using Matplotlib and Geopandas}.  Investigate which of the two seems better to you and decide on the best format by which to report on one or both of these to the class.  As an example, try showing how housing costs vary across the U.S. by plotting on a map the property values in the mortgage dataset from Day 3.
 \end{sphinxadmonition}
 
 \begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} Tableau}
 
 \sphinxAtStartPar
-One of the most famous tools for data visualization in industry is Tableau.  Although coding in Python, R, etc., is always the most flexible option, tools like Tableau are far easier and faster when you don’t need maximal flexibility.  Take a Tableau tutorial and report to the class on its key features.  Ensure you cover how to get a copy of Tableau, how to get data into it, and what it’s best at.
+One of the most famous tools for data visualization in industry is Tableau.  Although coding in Python, R, etc., is always the most flexible option, tools like Tableau are far easier and faster when you don’t need maximal flexibility.  Take a Tableau tutorial and report to the class on its key features.  Ensure your tutorial covers:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+how to get a copy of Tableau
+
+\item {} 
+\sphinxAtStartPar
+how to get data into Tableau
+
+\item {} 
+\sphinxAtStartPar
+what tasks Tableau is most suited to accomplishing
+
+\item {} 
+\sphinxAtStartPar
+a few examples of how to do common and useful visualization tasks in Tableau, maybe using the mortgage dataset from Day 3 so that readers are familiar with it
+
+\end{itemize}
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} Charticulator}
+
+\sphinxAtStartPar
+Microsoft Research recently made \sphinxhref{https://charticulator.com/}{Charticulator} a free and open\sphinxhyphen{}source tool.  It is for interactively creating custom visualizations, and thus has a very similar purpose to Tableau, mentioned above.  Create a report just like the one suggested above for Tableau, but for Charticulator instead.
 \end{sphinxadmonition}
 
 \begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} Visualization Design Principles}
@@ -5825,10 +5970,10 @@ And when we wanted to work with all the elements of an array, we had no choice b
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
-Most introductory programming courses teach loops, and for good reason; they show up a lot in programming!  But there are a few reasons we’ll try to avoid loops in data work whenever we can.
+Most introductory programming courses teach loops, and for good reason; they are very useful and versatile!  But there are a few reasons we’ll try to avoid loops in data work whenever we can.
 
 \sphinxAtStartPar
-The lesser reason is \sphinxstylestrong{readability.}  Loops are always at least two lines of code in Python; the one above is three because it has to initialize the \sphinxcode{\sphinxupquote{total}} variable to zero.  Many alternatives to loops can be done in just one line of code, which is more readable.
+First, we want to promote \sphinxstylestrong{readability} of our code.  Loops are always at least two lines of code in Python; the one above is three because it has to initialize the \sphinxcode{\sphinxupquote{total}} variable to zero.  Many alternatives to loops can be done in just one line of code, which is more readable.
 
 \sphinxAtStartPar
 The more important reason is \sphinxstylestrong{speed.}  Loops in Python are not very efficient, and this can be a serious problem.  In the final project for MA346 in Spring 2020, many students came to my office hours with a loop that had been running for hours, and they didn’t know if or when it would finish.  There are \sphinxstyleemphasis{many} ways to speed loops up, sometimes by just altering the loop, but usually by replacing the loop with something else entirely.
@@ -5893,7 +6038,7 @@ The “years” column looks particularly annoying.  Why does it say “1 (1991)
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
-Aha, some entries in the “years” column represent multiple years.  We might naturally want to split that column up into three columns: number of years, first year, and last year.  Each is a little project all on its own, but we just want to look at one example, so let’s consider just the task of extracting the first year from the text.  If we wrote a loop, it might go something like this.
+Aha, some entries in the “years” column represent multiple years.  We might naturally want to split that column up into three columns: number of years, first year, and last year.  Creating each of the three new columns would be an exercise all on its own, so we will choose just one example, the task of extracting the first year from the text.  If we wrote a loop, it might go something like this.
 
 
 \subsection{Using a loop}
@@ -5921,7 +6066,10 @@ Aha, some entries in the “years” column represent multiple years.  We might 
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
-A loop over a list of values is what pandas’ \sphinxcode{\sphinxupquote{apply()}} function was made for.  You write \sphinxcode{\sphinxupquote{df{[}'column'{]}.apply(f)}} to apply the function \sphinxcode{\sphinxupquote{f}} to every entry in the chosen column.  For example, we could simplify our work above as follows.  The differences are noted in the comments.
+The final column of the table immediately above shows that our loop seems to do the job.
+
+\sphinxAtStartPar
+But pandas’ \sphinxcode{\sphinxupquote{apply()}} function was made for the task of taking the same action on every entry in a Series or DataFrame.  You write \sphinxcode{\sphinxupquote{df{[}'column'{]}.apply(f)}} to apply the function \sphinxcode{\sphinxupquote{f}} to every entry in the chosen column.  For example, we could simplify our work above as follows.  The differences are noted in the comments.
 
 
 \subsection{Using \sphinxstyleliteralintitle{\sphinxupquote{apply()}}}
@@ -5979,7 +6127,7 @@ Using \sphinxcode{\sphinxupquote{apply()}} will run a little faster than writing
 Although it’s less often useful, you can use \sphinxcode{\sphinxupquote{df.apply(f)}} to run \sphinxcode{\sphinxupquote{f}} on each column of the DataFrame, or \sphinxcode{\sphinxupquote{df.apply(f,axis=1)}} to run \sphinxcode{\sphinxupquote{f}} on each row of the DataFrame.
 
 \sphinxAtStartPar
-There is, unfortunately, a related function \sphinxcode{\sphinxupquote{map()}}.  It behaves very similarly to \sphinxcode{\sphinxupquote{apply()}}, with a few subtle differences.  This is unfortunate because in computer programming more broadly, the concepts of “map” and “apply” are often used synonymously/interchangeably.  So to have them behave almost the same (but slightly differently!) in pandas is unfortunate.  Oh well.  Here are the differences:
+There is a very similar pandas function called \sphinxcode{\sphinxupquote{map()}}.  It behaves very similarly to \sphinxcode{\sphinxupquote{apply()}}, with a few subtle differences.  This is unfortunate because in computer programming more broadly, the concepts of “map” and “apply” are often used synonymously/interchangeably.  So to have them behave almost the same (but slightly differently!) in pandas is unfortunate.  Oh well.  Here are the differences:
 
 
 \begin{savenotes}\sphinxattablestart
@@ -6152,11 +6300,14 @@ All the repetitive code is just establishing a simple relationship among some ve
 \sphinxAtStartPar
 In class, we will do a more complex example of applying a dictionary using \sphinxcode{\sphinxupquote{map()}}.  Before class, you may want to glance back at Exercise 3 from {\hyperref[\detokenize{chapter-2-mathematical-foundations::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{the Chapter 2 notes}}}}, which shows you how to take two columns of a DataFrame representing a mathematical function and convert them into a dictionary for use in situations just like this one.  And be sure to complete the homework about the NPR dataset before class as well, because we will use that in our example!
 
+\sphinxAtStartPar
+Also, just to add to the confusion of too many pandas functions, there’s another one called \sphinxcode{\sphinxupquote{replace}} that can be used to apply a dictionary to one or more columns in a DataFrame.  So the code above that’s written \sphinxcode{\sphinxupquote{df{[}'pos'{]}.map( \{ ... \} )}} could have been written \sphinxcode{\sphinxupquote{df{[}'pos'{]}.replace( \{ ... \} )}}.  I mention this option because it’s a little more readable than “map,” since “replace” is a more common English word.
+
 
 \subsection{Parallel \sphinxstyleliteralintitle{\sphinxupquote{apply()}}}
 \label{\detokenize{chapter-11-processing-rows:parallel-apply}}
 \sphinxAtStartPar
-I mentioned earlier that converting a loop into an \sphinxcode{\sphinxupquote{apply()}} or \sphinxcode{\sphinxupquote{map()}} call doesn’t gain us much speed.  But it does make it easy for us to add a nice speed improvement.  There’s a Python package called \sphinxhref{https://github.com/jmcarpenter2/swifter}{swifter} that you can install using the instructions on that page.  Once it’s installed, you can convert any code like \sphinxcode{\sphinxupquote{df{[}'column'{]}.apply(f)}} easily into a faster version by replacing it with \sphinxcode{\sphinxupquote{df{[}'column'{]}.swifter.apply(f)}}.  That’s all!
+I mentioned earlier that converting a loop into an \sphinxcode{\sphinxupquote{apply()}} or \sphinxcode{\sphinxupquote{map()}} call doesn’t gain us much speed.  But it is also the first step in a process that can give a more significant speed improvement.  There’s a Python package called \sphinxhref{https://github.com/jmcarpenter2/swifter}{swifter} that you can install using the instructions on that page.  Once it’s installed, you can convert any code like \sphinxcode{\sphinxupquote{df{[}'column'{]}.apply(f)}} easily into a faster version by replacing it with \sphinxcode{\sphinxupquote{df{[}'column'{]}.swifter.apply(f)}}.  That’s all!
 
 \sphinxAtStartPar
 Under the hood, swifter is trying a variety of speedup mechanisms (many of which we discuss in this chapter) and deciding which of them works best for your situation.  The most common one for large dataset is probably parallel processing.  This means that if your computer has more than one processor core (which most modern laptops do), then it can process more than one entry of the data at once, each on a separate core.
@@ -6224,7 +6375,7 @@ This section covers map\sphinxhyphen{}reduce and the next section covers split\s
 \end{sphinxadmonition}
 
 \sphinxAtStartPar
-A map\sphinxhyphen{}reduce process is one that takes any list, \sphinxstyleemphasis{maps} a specific function across all entries of the list, then \sphinxstyleemphasis{reduces} those outputs down to a single, smaller result.  Consider the following picture, which shows a very simple map\sphinxhyphen{}reduce operation that takes a DataFrame about historic revenue numbers and computes the lowest revenue across all quarters.
+A map\sphinxhyphen{}reduce process is one that takes any list, \sphinxstyleemphasis{maps} a specific function across all entries of the list, then \sphinxstyleemphasis{reduces} those outputs down to a single, smaller result.  Consider the following picture, which shows a very simple map\sphinxhyphen{}reduce operation that takes a DataFrame about numbers of students and teachers over time and computes the highest student/teacher ratio across all semesters.
 
 \sphinxAtStartPar
 \sphinxincludegraphics{{map-reduce}.png}
@@ -6233,70 +6384,95 @@ A map\sphinxhyphen{}reduce process is one that takes any list, \sphinxstyleempha
 Let’s actually do the above computation on some small sample (fictional) data:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+c1}{\PYGZsh{} setup \PYGZhy{} example tiny dataset}
-\PYG{n}{rev\PYGZus{}quarters} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{(} \PYG{p}{\PYGZob{}}
-    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Year}\PYG{l+s+s1}{\PYGZsq{}}    \PYG{p}{:} \PYG{p}{[} \PYG{l+m+mi}{2010}\PYG{p}{,} \PYG{l+m+mi}{2010}\PYG{p}{,} \PYG{l+m+mi}{2010}\PYG{p}{,} \PYG{l+m+mi}{2010}\PYG{p}{,} \PYG{l+m+mi}{2011}\PYG{p}{,} \PYG{l+m+mi}{2011}\PYG{p}{,} \PYG{l+m+mi}{2011}\PYG{p}{,} \PYG{l+m+mi}{2011}\PYG{p}{,} \PYG{l+m+mi}{2012}\PYG{p}{,} \PYG{l+m+mi}{2012} \PYG{p}{]}\PYG{p}{,}
-    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Quarter}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{:} \PYG{p}{[}    \PYG{l+m+mi}{1}\PYG{p}{,}    \PYG{l+m+mi}{2}\PYG{p}{,}    \PYG{l+m+mi}{3}\PYG{p}{,}    \PYG{l+m+mi}{4}\PYG{p}{,}    \PYG{l+m+mi}{1}\PYG{p}{,}    \PYG{l+m+mi}{2}\PYG{p}{,}    \PYG{l+m+mi}{3}\PYG{p}{,}    \PYG{l+m+mi}{4}\PYG{p}{,}    \PYG{l+m+mi}{1}\PYG{p}{,}    \PYG{l+m+mi}{2} \PYG{p}{]}\PYG{p}{,}
-    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{:} \PYG{p}{[}  \PYG{l+m+mi}{177}\PYG{p}{,}  \PYG{l+m+mi}{186}\PYG{p}{,}  \PYG{l+m+mi}{167}\PYG{p}{,}  \PYG{l+m+mi}{263}\PYG{p}{,}  \PYG{l+m+mi}{180}\PYG{p}{,}  \PYG{l+m+mi}{193}\PYG{p}{,}  \PYG{l+m+mi}{189}\PYG{p}{,}  \PYG{l+m+mi}{281}\PYG{p}{,}  \PYG{l+m+mi}{201}\PYG{p}{,}  \PYG{l+m+mi}{210} \PYG{p}{]}
+\PYG{c+c1}{\PYGZsh{} setup \PYGZhy{} example tiny dataset (fake data)}
+\PYG{n}{sociology\PYGZus{}department} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{(} \PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Year}\PYG{l+s+s1}{\PYGZsq{}}       \PYG{p}{:} \PYG{p}{[}  \PYG{l+m+mi}{2016}\PYG{p}{,}   \PYG{l+m+mi}{2016}\PYG{p}{,}  \PYG{l+m+mi}{2017}\PYG{p}{,}   \PYG{l+m+mi}{2017}\PYG{p}{,}  \PYG{l+m+mi}{2018}\PYG{p}{,}   \PYG{l+m+mi}{2018}\PYG{p}{,}  \PYG{l+m+mi}{2019}\PYG{p}{,}   \PYG{l+m+mi}{2019}\PYG{p}{,}  \PYG{l+m+mi}{2020}\PYG{p}{,}   \PYG{l+m+mi}{2020} \PYG{p}{]}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Semester}\PYG{l+s+s1}{\PYGZsq{}}   \PYG{p}{:} \PYG{p}{[} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Spr}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Fall}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Spr}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Fall}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Spr}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Fall}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Spr}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Fall}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Spr}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Fall}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{]}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZsh{} Students}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{:} \PYG{p}{[}   \PYG{l+m+mi}{177}\PYG{p}{,}    \PYG{l+m+mi}{186}\PYG{p}{,}   \PYG{l+m+mi}{167}\PYG{p}{,}    \PYG{l+m+mi}{263}\PYG{p}{,}   \PYG{l+m+mi}{180}\PYG{p}{,}    \PYG{l+m+mi}{193}\PYG{p}{,}   \PYG{l+m+mi}{189}\PYG{p}{,}    \PYG{l+m+mi}{281}\PYG{p}{,}   \PYG{l+m+mi}{201}\PYG{p}{,}    \PYG{l+m+mi}{210} \PYG{p}{]}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZsh{} Teachers}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{:} \PYG{p}{[}     \PYG{l+m+mi}{2}\PYG{p}{,}      \PYG{l+m+mi}{2}\PYG{p}{,}     \PYG{l+m+mi}{3}\PYG{p}{,}      \PYG{l+m+mi}{4}\PYG{p}{,}     \PYG{l+m+mi}{3}\PYG{p}{,}      \PYG{l+m+mi}{2}\PYG{p}{,}     \PYG{l+m+mi}{3}\PYG{p}{,}      \PYG{l+m+mi}{4}\PYG{p}{,}     \PYG{l+m+mi}{2}\PYG{p}{,}      \PYG{l+m+mi}{2} \PYG{p}{]}
 \PYG{p}{\PYGZcb{}} \PYG{p}{)}
-\PYG{n}{rev\PYGZus{}quarters}
+\PYG{n}{sociology\PYGZus{}department}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-   Year  Quarter  Revenue
-0  2010        1      177
-1  2010        2      186
-2  2010        3      167
-3  2010        4      263
-4  2011        1      180
-5  2011        2      193
-6  2011        3      189
-7  2011        4      281
-8  2012        1      201
-9  2012        2      210
+   Year Semester  \PYGZsh{} Students  \PYGZsh{} Teachers
+0  2016      Spr         177           2
+1  2016     Fall         186           2
+2  2017      Spr         167           3
+3  2017     Fall         263           4
+4  2018      Spr         180           3
+5  2018     Fall         193           2
+6  2019      Spr         189           3
+7  2019     Fall         281           4
+8  2020      Spr         201           2
+9  2020     Fall         210           2
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{\PYGZsh{} map\PYGZhy{}reduce work, one line:}
-\PYG{n}{rev\PYGZus{}quarters}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{min}\PYG{p}{(}\PYG{p}{)}
+\PYG{p}{(} \PYG{n}{sociology\PYGZus{}department}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZsh{} Students}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{/} \PYG{n}{sociology\PYGZus{}department}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZsh{} Teachers}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{p}{)}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-167
+105.0
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
-As mentioned earlier, “map” is a synonym for “apply,” so the first step of the process applies the same operation to all rows of the DataFrame; in this case, that operation extracts the revenue from the row.  The “reduce” operation in this case is a simple \sphinxcode{\sphinxupquote{min()}} operation, but it can be something more complex.
+As mentioned earlier, “map” is a synonym for “apply,” so the first step of the process applies the same operation to all rows of the DataFrame; in this case, that operation extracts two values from each row and computes the ratio of the two.  The “reduce” operation in this case is a simple \sphinxcode{\sphinxupquote{max()}} operation, but it could be more complex in other examples.
 
 \sphinxAtStartPar
-So a map\sphinxhyphen{}reduce operation involves two functions, the first performing a \sphinxcode{\sphinxupquote{map()}} operation (as discussed earlier), and the second doing something new.  The function used for the reducing step must be something that takes an entire list or series as input and produces a single value as output.  The \sphinxcode{\sphinxupquote{min()}} operation was used in the example above, but other operations are common, such as \sphinxcode{\sphinxupquote{max()}}, \sphinxcode{\sphinxupquote{sum()}}, \sphinxcode{\sphinxupquote{len()}}, \sphinxcode{\sphinxupquote{mean()}}, \sphinxcode{\sphinxupquote{median()}}, and more.
+If we wanted to actually use the pandas \sphinxcode{\sphinxupquote{apply}} function, we could restructure the above code to use it, but it wouldn’t be as clean.  Just to show that it can be done, I write it here, but the shorter version above is preferred.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{student\PYGZus{}teacher\PYGZus{}ratio} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{row}\PYG{p}{:} \PYG{n}{row}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZsh{} Students}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{/} \PYG{n}{row}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZsh{} Teachers}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
+\PYG{n}{sociology\PYGZus{}department}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(} \PYG{n}{student\PYGZus{}teacher\PYGZus{}ratio}\PYG{p}{,} \PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{1} \PYG{p}{)}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+105.0
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+So a map\sphinxhyphen{}reduce operation involves two functions, the first performing a \sphinxcode{\sphinxupquote{map()}} operation (as discussed earlier), and the second doing something new.  The function used for the reducing step must be something that takes an entire list or series as input and produces a single value as output.  The \sphinxcode{\sphinxupquote{max()}} operation was used in the example above, but other operations are common, such as \sphinxcode{\sphinxupquote{min()}}, \sphinxcode{\sphinxupquote{sum()}}, \sphinxcode{\sphinxupquote{len()}}, \sphinxcode{\sphinxupquote{mean()}}, \sphinxcode{\sphinxupquote{median()}}, and more.
+
+\sphinxAtStartPar
+Here are two other examples of map\sphinxhyphen{}reduce operations.  Notice that the map operation in the second one is extremely simple (just looking up a column) but it still fits the map\sphinxhyphen{}reduce pattern.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Average property size of a home in acres}
+\PYG{n}{df\PYGZus{}homes}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{lot size sq ft}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(} \PYG{n}{sq\PYGZus{}ft\PYGZus{}to\PYGZus{}acres} \PYG{p}{)}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Largest property size of a home in square feet}
+\PYG{n}{df\PYGZus{}homes}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{lot size sq ft}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
 
 
 \subsection{Argmin and argmax}
 \label{\detokenize{chapter-11-processing-rows:argmin-and-argmax}}
 \sphinxAtStartPar
-A very common function that shows up in statistics is called \sphinxcode{\sphinxupquote{argmin}} (and its companion \sphinxcode{\sphinxupquote{argmax}}).  These are also implemented in pandas and are very useful in map\sphinxhyphen{}reduce situations.  In the example above, let’s say we didn’t want to know the minimum revenue, but we wanted to know in which quarter the minimum revenue happened.  We can replace \sphinxcode{\sphinxupquote{min}} in the above code with \sphinxcode{\sphinxupquote{argmin}} to ask that question.
+A very common function that shows up in statistics is called \sphinxcode{\sphinxupquote{argmin}} (and its companion \sphinxcode{\sphinxupquote{argmax}}).  These are also implemented in pandas and are very useful in map\sphinxhyphen{}reduce situations.  In the example above, let’s say we didn’t want to know the maximum student/teacher ratio, but we wanted to know in which semester that maximum ratio happened.  We can replace \sphinxcode{\sphinxupquote{max}} in the above code with \sphinxcode{\sphinxupquote{argmax}} to ask that question.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{rev\PYGZus{}quarters}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{argmin}\PYG{p}{(}\PYG{p}{)}
+\PYG{p}{(} \PYG{n}{sociology\PYGZus{}department}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZsh{} Students}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{/} \PYG{n}{sociology\PYGZus{}department}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZsh{} Teachers}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}\PYG{o}{.}\PYG{n}{argmax}\PYG{p}{(}\PYG{p}{)}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-2
+9
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
-The \sphinxcode{\sphinxupquote{argmin}} function is short for “the argument that yields the minimum,” or in other words, what value would I need to supply as \sphinxstyleemphasis{input} to the map function to get the minimum output?  In this case, the map function takes each row and extracts its revenue, so we’re asking pandas, “When you found the minimum revenue, which row was the input?”  The answer was row 2, and we can see that it’s the correct row as follows.
+The \sphinxcode{\sphinxupquote{argmax}} function is short for “the argument that yields the maximum,” or in other words, what value would I need to supply as \sphinxstyleemphasis{input} to the map function to get the maximum output?  In this case, the map function takes each row and computes its student/teacher ratio, so we’re asking pandas, “When you found the maximum ratio, which row was the input?”  The answer was row 9, and we can see that it’s the correct row as follows.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{rev\PYGZus{}quarters}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}
+\PYG{n}{sociology\PYGZus{}department}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{9}\PYG{p}{]}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-Year       2010
-Quarter       3
-Revenue     167
-Name: 2, dtype: int64
+Year          2020
+Semester      Fall
+\PYGZsh{} Students     210
+\PYGZsh{} Teachers       2
+Name: 9, dtype: object
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -6355,7 +6531,7 @@ Many more examples of map\sphinxhyphen{}reduce from math and statistics could ha
 \section{Split\sphinxhyphen{}Apply\sphinxhyphen{}Combine}
 \label{\detokenize{chapter-11-processing-rows:split-apply-combine}}
 \sphinxAtStartPar
-Data scientist and R developer Hadley Wickham seems to coin lots of important phrases.  Recall from {\hyperref[\detokenize{chapter-5-before-and-after::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{the Chapter 5 notes}}}} that he introduced the phrase “tidy data.”  He also introduced the phrase “split, apply, combine,” in \sphinxhref{http://www.stat.wvu.edu/~jharner/courses/stat623/docs/plyrJSS.pdf}{this paper}.
+Data scientist and R developer Hadley Wickham seems to coin lots of important phrases.  Recall from {\hyperref[\detokenize{chapter-5-before-and-after::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{the Chapter 5 notes}}}} that he introduced the phrase “tidy data.”  He also introduced the phrase “split, apply, combine,” in \sphinxhref{https://www.jstatsoft.org/article/view/v040i01}{this paper}.
 
 \sphinxAtStartPar
 It is another extremely common operation done on DataFrames, and it is closely related to map\sphinxhyphen{}reduce, as we will see below.
@@ -6367,39 +6543,43 @@ Let’s say you were concerned about pay equity, and wanted to compute the media
 \sphinxincludegraphics{{split-apply-combine}.png}
 
 \sphinxAtStartPar
-As you can see from the picture, the first phase (called “split”) breaks the data into groups by the categorical variable we care about–in this case, gender.  After that, each smaller DataFrame undergoes a map\sphinxhyphen{}reduce process, and the results of each small map\sphinxhyphen{}reduce get aggregated into a result, indexed by the original categorical variable.
+As you can see from the picture, the first phase (called “split”) breaks the data into groups by the categorical variable we care about—in this case, gender.  After that, each smaller DataFrame undergoes a map\sphinxhyphen{}reduce process, and the results of each small map\sphinxhyphen{}reduce get aggregated into a result, indexed by the original categorical variable.
 
 \sphinxAtStartPar
-Note that the output type of the split operation (which, in pandas, is a \sphinxcode{\sphinxupquote{df.groupby()}} call) is \sphinxstyleemphasis{NOT} a DataFrame, but rather a collection of DataFrames.  It is essential to follow a \sphinxcode{\sphinxupquote{df.groupby()}} call with the apply and combine steps of the process, so that the result is a familiar and usable type of object again–a pandas DataFrame.
+Note that the output type of the split operation (which, in pandas, is a \sphinxcode{\sphinxupquote{df.groupby()}} call) is \sphinxstyleemphasis{NOT} a DataFrame, but rather a collection of DataFrames.  It is essential to follow a \sphinxcode{\sphinxupquote{df.groupby()}} call with the apply and combine steps of the process, so that the result is a familiar and usable type of object again—a pandas DataFrame.
 
 \sphinxAtStartPar
-The easiest type of split\sphinxhyphen{}apply\sphinxhyphen{}combine is shown in the picture above and can be done with a single line of code.  We’ll compute minimum revenue by year with the DataFrame from our map\sphinxhyphen{}reduce example.
+The easiest type of split\sphinxhyphen{}apply\sphinxhyphen{}combine is shown in the picture above and can be done with a single line of code.  We’ll compute minimum number of students by year with the DataFrame from our map\sphinxhyphen{}reduce example.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{rev\PYGZus{}quarters}\PYG{o}{.}\PYG{n}{groupby}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Year}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{min}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{sociology\PYGZus{}department}\PYG{o}{.}\PYG{n}{groupby}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Year}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZsh{} Students}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{min}\PYG{p}{(}\PYG{p}{)}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 Year
-2010    167
-2011    180
-2012    201
-Name: Revenue, dtype: int64
+2016    177
+2017    167
+2018    180
+2019    189
+2020    201
+Name: \PYGZsh{} Students, dtype: int64
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
 Split\sphinxhyphen{}apply\sphinxhyphen{}combine is actually a specific type of pivot table.  Thus split\sphinxhyphen{}apply\sphinxhyphen{}combine operations can be done on data in Excel as well, using its pivot table features.  We can even use \sphinxcode{\sphinxupquote{df.pivot\_table()}} to mimic the above procedure, as follows.  (Because we don’t need data separated into separate columns, we don’t provide a columns variable.)
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{rev\PYGZus{}quarters}\PYG{o}{.}\PYG{n}{pivot\PYGZus{}table}\PYG{p}{(} \PYG{n}{index}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Year}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{n}{columns}\PYG{o}{=}\PYG{p}{[}\PYG{p}{]}\PYG{p}{,} \PYG{n}{values}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{aggfunc}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{min}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\PYG{n}{sociology\PYGZus{}department}\PYG{o}{.}\PYG{n}{pivot\PYGZus{}table}\PYG{p}{(} \PYG{n}{index}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Year}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{n}{columns}\PYG{o}{=}\PYG{p}{[}\PYG{p}{]}\PYG{p}{,} \PYG{n}{values}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZsh{} Students}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{aggfunc}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{min}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-      Revenue
-Year         
-2010      167
-2011      180
-2012      201
+      \PYGZsh{} Students
+Year            
+2016         177
+2017         167
+2018         180
+2019         189
+2020         201
 \end{sphinxVerbatim}
 
 
@@ -6412,10 +6592,10 @@ Year
 Recall that pandas is built on NumPy, and in {\hyperref[\detokenize{chapter-9-math-and-stats::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Chapter 9 of the notes}}}} we talked about NumPy’s support for vectorization.  If we have a Series \sphinxcode{\sphinxupquote{height}} containing heights in inches and we need instead to have it in centimeters, we don’t need to do \sphinxcode{\sphinxupquote{height.apply()}} and give it a conversion function, because we can just do \sphinxcode{\sphinxupquote{height * 2.54}}.  NumPy automatically \sphinxstyleemphasis{vectorizes} this operation, spreading the “times 2.54” over each entry in the \sphinxcode{\sphinxupquote{height}} array.
 
 \sphinxAtStartPar
-This is quite natural, because we have mathematical notation that does the same thing (in math, not Python).  If you’ve taken a class involving vectors, you know that vector addition \(\vec x+\vec y\) means to do exactly what NumPy does–add the corresponding entries in each vector.  Similarly, scalar multiplication \(s\vec x\) means to multiply \(s\) by each entry in the vector \(\vec x\), just like \sphinxcode{\sphinxupquote{height * 2.54}} does in Python.  So NumPy is not inventing something strange here; it’s normal mathematical stuff.
+This is quite natural, because we have mathematical notation that does the same thing (in math, not Python).  If you’ve taken a class involving vectors, you know that vector addition \(\vec x+\vec y\) means to do exactly what NumPy does—add the corresponding entries in each vector.  Similarly, scalar multiplication \(s\vec x\) means to multiply \(s\) by each entry in the vector \(\vec x\), just like \sphinxcode{\sphinxupquote{height * 2.54}} does in Python.  So NumPy is not inventing something strange here; it’s normal mathematical stuff.
 
 \sphinxAtStartPar
-All the basic mathematical operations are built into NumPy.  For example, if we have created a linear model \(\hat y=\beta_0+\beta_1 x\) with parameters stored in Python variables \sphinxcode{\sphinxupquote{β0}} and \sphinxcode{\sphinxupquote{β1}}, we can apply it to an entire series of inputs \sphinxcode{\sphinxupquote{xs}} at once with the following code, because NumPy knows how to spread both \sphinxcode{\sphinxupquote{+}} and \sphinxcode{\sphinxupquote{*}} across arrays.
+NumPy supports vectorizing all the basic mathematical operations.  For example, if we have created a linear model \(\hat y=\beta_0+\beta_1 x\) with parameters stored in Python variables \sphinxcode{\sphinxupquote{β0}} and \sphinxcode{\sphinxupquote{β1}}, we can apply it to an entire series of inputs \sphinxcode{\sphinxupquote{xs}} at once with the following code, because NumPy knows how to spread both \sphinxcode{\sphinxupquote{+}} and \sphinxcode{\sphinxupquote{*}} across arrays.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{y\PYGZus{}hat} \PYG{o}{=} \PYG{n}{β0} \PYG{o}{+} \PYG{n}{β1} \PYG{o}{*} \PYG{n}{xs}
@@ -6429,7 +6609,7 @@ In fact, if we had actual \sphinxcode{\sphinxupquote{ys}} that went with the \sp
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
-The subtraction with \sphinxcode{\sphinxupquote{\sphinxhyphen{}}} and the squaring with \sphinxcode{\sphinxupquote{** 2}} would all be spread across arrays of inputs correctly, because NumPy comes with code to support doing so.
+The subtraction with \sphinxcode{\sphinxupquote{\sphinxhyphen{}}} and the squaring with \sphinxcode{\sphinxupquote{** 2}} would all be spread across arrays of inputs correctly, because NumPy comes with code to support doing so.  This is very similar to the computation of RSSE that we discussed in Chapter 9.
 
 
 \subsection{Conditionals with \sphinxstyleliteralintitle{\sphinxupquote{np.where()}}}
@@ -6465,7 +6645,8 @@ Let’s imagine that we then found out that it was the result of merging data fr
 We can’t simply convert to cm with \sphinxcode{\sphinxupquote{patients{[}'height'{]} * 2.54}} because that would apply the conversion to all data rather than just the measurements in inches.  We need some conditional logic, perhaps using an \sphinxcode{\sphinxupquote{if}} statement, to be selective.  Our first inclination might be a loop.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+c1}{\PYGZsh{} before changing the contents, make a backup, for use later.}
+\PYG{c+c1}{\PYGZsh{} Before changing the contents, I\PYGZsq{}m going to make a backup,}
+\PYG{c+c1}{\PYGZsh{} so that later I can show you a second method.}
 \PYG{n}{backup} \PYG{o}{=} \PYG{n}{patients}\PYG{o}{.}\PYG{n}{copy}\PYG{p}{(}\PYG{p}{)}
 
 \PYG{c+c1}{\PYGZsh{} solving the problem with a loop:}
@@ -6497,7 +6678,7 @@ But if you were trying to follow the advice in this chapter of the notes, you mi
 The solution here is to use NumPy’s \sphinxcode{\sphinxupquote{np.where()}} function.  It lets you select just which rows should get which type of computation, like so:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+c1}{\PYGZsh{} restore the original data:}
+\PYG{c+c1}{\PYGZsh{} Let\PYGZsq{}s get back the original data...}
 \PYG{n}{patients} \PYG{o}{=} \PYG{n}{backup}\PYG{o}{.}\PYG{n}{copy}\PYG{p}{(}\PYG{p}{)}
 
 \PYG{c+c1}{\PYGZsh{} solution with np.where():}
@@ -6518,7 +6699,7 @@ The solution here is to use NumPy’s \sphinxcode{\sphinxupquote{np.where()}} fu
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
-The \sphinxcode{\sphinxupquote{np.where()}} function works just like \sphinxcode{\sphinxupquote{=IF()}} does in Excel, taking three inputs, a conditional, an “if” result, and an “else” result.  But the difference is that \sphinxcode{\sphinxupquote{np.where()}} is vectorized, effectively doing an Excel \sphinxcode{\sphinxupquote{=IF()}} on each entry in the Series separately.  You can read an \sphinxcode{\sphinxupquote{np.where()}} function just like a sentence:
+The \sphinxcode{\sphinxupquote{np.where()}} function works just like \sphinxcode{\sphinxupquote{=IF()}} does in Excel, taking three inputs: a conditional, an “if” result, and an “else” result.  But the difference is that \sphinxcode{\sphinxupquote{np.where()}} is vectorized, effectively doing an Excel \sphinxcode{\sphinxupquote{=IF()}} on each entry in the Series separately.  You can read an \sphinxcode{\sphinxupquote{np.where()}} function just like a sentence:
 
 \sphinxAtStartPar
 Where patient id is over 100000, do patient height times 2.54, otherwise just keep the original height.
@@ -6530,28 +6711,7 @@ In summary, thanks to \sphinxcode{\sphinxupquote{np.where()}}, even many conditi
 \subsection{Speeding up mathematics}
 \label{\detokenize{chapter-11-processing-rows:speeding-up-mathematics}}
 \sphinxAtStartPar
-There are also some very impressive tools for speeding up mathematical operations in NumPy a \sphinxstyleemphasis{LOT.}  I will not cover them here, but will lest each of the following as an opportunity for Learning On Your Own.  Note that these are relevant only if you have a very large dataset over which you need to do complex mathematical computations, so that you notice pandas behaving slowly, and thus you need a speed boost.
-
-\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} CuPy (fastest option)}
-
-\sphinxAtStartPar
-Doing certain types of computations can be sped up significantly by using graphics cards (originally designed for gaming rather than data science) instead of the computer’s CPU (which does all the non\sphinxhyphen{}graphics computations).  See \sphinxhref{https://towardsdatascience.com/make-your-python-functions-10x-faster-142ab40b31a7}{this blog post} for information on CuPy, a Python library for harnessing your GPU to do fast arithmetic.
-
-\sphinxAtStartPar
-CuPy requires you to first describe to it the computation you’ll want to do quickly, and it will compile it into GPU\sphinxhyphen{}friendly code that you can then use.  This is an extra level of annoyance for the programmer, but often produces the fastest results.
-\end{sphinxadmonition}
-
-\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} NumExpr (easiest option)}
-
-\sphinxAtStartPar
-If you’ve already got some code that does the arithmetic operation you want on NumPy arrays (or pandas Series, which are also NumPy arrays), then it’s pretty easy to convert that code to use NumExpr.  It doesn’t give as big a speedup as CuPy, but it’s easier to set up.  \sphinxhref{https://towardsdatascience.com/speed-up-your-numpy-and-pandas-with-numexpr-package-25bd1ab0836b}{See this blog post} for details, and note the connection to \sphinxcode{\sphinxupquote{pd.eval()}}.
-\end{sphinxadmonition}
-
-\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} Cython (most flexible)}
-
-\sphinxAtStartPar
-The previous two options work only for speeding up arithmetic.  To speed up any operation (including string manipulation, working with dictionaries, sets, or any Python class), you’ll need Cython.  This is a tool for converting Python code into C code automatically, without your having to learn to program in C.  C code almost always runs significantly faster than Python code, but C is much less easy to use, especially for data work.  See \sphinxhref{https://ipython-books.github.io/55-accelerating-python-code-with-cython/}{this tutorial} on using Cython in Jupyter, plus the example below.
-\end{sphinxadmonition}
+There are also some very impressive tools for speeding up mathematical operations in NumPy a \sphinxstyleemphasis{LOT.}  I will not cover them here, but will list several below as opportunities for Learning On Your Own.  But I’ll give a preview of one of the solutions, Cython.  Note that these speedup tools are relevant only if you have a very large dataset over which you need to do complex mathematical computations, so that you notice pandas behaving slowly, and thus you need a speed boost.
 
 \sphinxAtStartPar
 Let’s say I have the following function that computes \(n!\), the product of all positive integers up to \(n\).  (This is not the best way to write this function, but it’s just an example.)
@@ -6594,13 +6754,34 @@ Then, ask Cython to convert your Python code into C.  This requires giving it so
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
-If you run the above code in Jupyter, it will show you an interactive display of the code it created and how much speedup you can expect.  The function still generates the same outputs as before, but typically much faster.  How much faster?  Check out the tutorial linked to above for more information.
+If you run the above code in Jupyter, it will show you an interactive display of the code it created and how much speedup you can expect.  The function still generates the same outputs as before, but typically much faster.  How much faster?  Check out the tutorial linked to below for more information.
+
+\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} CuPy (fastest option)}
+
+\sphinxAtStartPar
+Doing certain types of computations can be sped up significantly by using graphics cards (originally designed for gaming rather than data science) instead of the computer’s CPU (which does all the non\sphinxhyphen{}graphics computations).  See \sphinxhref{https://towardsdatascience.com/make-your-python-functions-10x-faster-142ab40b31a7}{this blog post} for information on CuPy, a Python library for harnessing your GPU to do fast arithmetic.
+
+\sphinxAtStartPar
+CuPy requires you to first describe to it the computation you’ll want to do quickly, and it will compile it into GPU\sphinxhyphen{}friendly code that you can then use.  This is an extra level of annoyance for the programmer, but often produces the fastest results.
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} NumExpr (easiest option)}
+
+\sphinxAtStartPar
+If you’ve already got some code that does the arithmetic operation you want on NumPy arrays (or pandas Series, which are also NumPy arrays), then it’s pretty easy to convert that code to use NumExpr.  It doesn’t give as big a speedup as CuPy, but it’s easier to set up.  \sphinxhref{https://towardsdatascience.com/speed-up-your-numpy-and-pandas-with-numexpr-package-25bd1ab0836b}{See this blog post} for details, and note the connection to \sphinxcode{\sphinxupquote{pd.eval()}}.
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} Cython (most flexible)}
+
+\sphinxAtStartPar
+The previous two options work only for speeding up arithmetic.  To speed up any operation (including string manipulation, working with dictionaries, sets, or any Python class), you’ll need Cython.  This is a tool for converting Python code into C code automatically, without your having to learn to program in C.  C code almost always runs significantly faster than Python code, but C is much less easy to use, especially for data work.  See \sphinxhref{https://ipython-books.github.io/55-accelerating-python-code-with-cython/}{this tutorial} on using Cython in Jupyter, plus the example below.
+\end{sphinxadmonition}
 
 
 \section{So do we \sphinxstyleemphasis{always} avoid loops?}
 \label{\detokenize{chapter-11-processing-rows:so-do-we-always-avoid-loops}}
 \sphinxAtStartPar
-No, there are some times when you might still want to avoid loops.
+No, there are some times when you might still want to use loops.
 
 
 \subsection{When to opt for a loop}
@@ -6620,30 +6801,30 @@ Sometimes the computation you’re doing involves comparing one row to adjacent 
 \end{enumerate}
 
 \sphinxAtStartPar
-Let’s see how we might write the code for the stock example just given, but instead of stock data, we’ll use the (made up) quarterly revenue data from earlier.
+Let’s see how we might write the code for the stock example just given, but instead of stock data, we’ll use the (made up) student and teacher data from earlier.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{\PYGZsh{} get just the column I care about:}
-\PYG{n}{revenues} \PYG{o}{=} \PYG{n}{rev\PYGZus{}quarters}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
+\PYG{n}{num\PYGZus{}students} \PYG{o}{=} \PYG{n}{sociology\PYGZus{}department}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZsh{} Students}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
 
 \PYG{n}{results} \PYG{o}{=} \PYG{p}{[} \PYG{p}{]}
-\PYG{c+c1}{\PYGZsh{} For each quarter execpt the first and last...}
-\PYG{k}{for} \PYG{n}{index} \PYG{o+ow}{in} \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{index}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{:}
+\PYG{c+c1}{\PYGZsh{} For each semester execpt the first and last...}
+\PYG{k}{for} \PYG{n}{index} \PYG{o+ow}{in} \PYG{n}{sociology\PYGZus{}department}\PYG{o}{.}\PYG{n}{index}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{:}
     \PYG{c+c1}{\PYGZsh{} If it\PYGZsq{}s bigger than the previous and the next...}
-    \PYG{k}{if} \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o+ow}{and} \PYGZbs{}
-       \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{:}
+    \PYG{k}{if} \PYG{n}{num\PYGZus{}students}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{num\PYGZus{}students}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o+ow}{and} \PYGZbs{}
+       \PYG{n}{num\PYGZus{}students}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{num\PYGZus{}students}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{:}
         \PYG{n}{results}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(} \PYG{n}{index} \PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Save it for later}
 
-\PYG{c+c1}{\PYGZsh{} Show me just the quarters I saved.}
-\PYG{n}{rev\PYGZus{}quarters}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{n}{results}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]}
+\PYG{c+c1}{\PYGZsh{} Show me just the semesters I saved.}
+\PYG{n}{sociology\PYGZus{}department}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{results}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-   Year  Quarter  Revenue
-1  2010        2      186
-3  2010        4      263
-5  2011        2      193
-7  2011        4      281
+   Year Semester  \PYGZsh{} Students  \PYGZsh{} Teachers
+1  2016     Fall         186           2
+3  2017     Fall         263           4
+5  2018     Fall         193           2
+7  2019     Fall         281           4
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -6651,27 +6832,27 @@ Compare that to the same results computed using vectorization in NumPy rather th
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{\PYGZsh{} Get all but first and last, for searching.}
-\PYG{n}{to\PYGZus{}search} \PYG{o}{=} \PYG{n}{rev\PYGZus{}quarters}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}
+\PYG{n}{to\PYGZus{}search} \PYG{o}{=} \PYG{n}{sociology\PYGZus{}department}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}
 
 \PYG{c+c1}{\PYGZsh{} Compute arrays of previous/next quarters, for comparison.}
-\PYG{n}{previous\PYGZus{}rev} \PYG{o}{=} \PYG{n}{rev\PYGZus{}quarters}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{]}
-\PYG{n}{next\PYGZus{}rev} \PYG{o}{=} \PYG{n}{rev\PYGZus{}quarters}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{:}\PYG{p}{]}
+\PYG{n}{previous\PYGZus{}num\PYGZus{}stu} \PYG{o}{=} \PYG{n}{sociology\PYGZus{}department}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{]}
+\PYG{n}{next\PYGZus{}num\PYGZus{}stu} \PYG{o}{=} \PYG{n}{sociology\PYGZus{}department}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{:}\PYG{p}{]}
 
 \PYG{c+c1}{\PYGZsh{} Adjust indices so they match the to\PYGZus{}search Series.}
-\PYG{n}{previous\PYGZus{}rev}\PYG{o}{.}\PYG{n}{index} \PYG{o}{=} \PYG{n}{previous\PYGZus{}rev}\PYG{o}{.}\PYG{n}{index} \PYG{o}{+} \PYG{l+m+mi}{1}
-\PYG{n}{next\PYGZus{}rev}\PYG{o}{.}\PYG{n}{index} \PYG{o}{=} \PYG{n}{next\PYGZus{}rev}\PYG{o}{.}\PYG{n}{index} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}
+\PYG{n}{previous\PYGZus{}num\PYGZus{}stu}\PYG{o}{.}\PYG{n}{index} \PYG{o}{=} \PYG{n}{previous\PYGZus{}num\PYGZus{}stu}\PYG{o}{.}\PYG{n}{index} \PYG{o}{+} \PYG{l+m+mi}{1}
+\PYG{n}{next\PYGZus{}num\PYGZus{}stu}\PYG{o}{.}\PYG{n}{index} \PYG{o}{=} \PYG{n}{next\PYGZus{}num\PYGZus{}stu}\PYG{o}{.}\PYG{n}{index} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}
 
 \PYG{c+c1}{\PYGZsh{} Do the computation using NumPy vectorized comparisons.}
-\PYG{n}{to\PYGZus{}search}\PYG{p}{[}\PYG{p}{(} \PYG{n}{to\PYGZus{}search}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{previous\PYGZus{}rev}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)} \PYGZbs{}
-        \PYG{o}{\PYGZam{}} \PYG{p}{(} \PYG{n}{to\PYGZus{}search}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{next\PYGZus{}rev}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Revenue}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}\PYG{p}{]}
+\PYG{n}{to\PYGZus{}search}\PYG{p}{[}\PYG{p}{(} \PYG{n}{to\PYGZus{}search}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZsh{} Students}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{previous\PYGZus{}num\PYGZus{}stu}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZsh{} Students}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)} \PYGZbs{}
+        \PYG{o}{\PYGZam{}} \PYG{p}{(} \PYG{n}{to\PYGZus{}search}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZsh{} Students}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{next\PYGZus{}num\PYGZus{}stu}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZsh{} Students}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}\PYG{p}{]}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-   Year  Quarter  Revenue
-1  2010        2      186
-3  2010        4      263
-5  2011        2      193
-7  2011        4      281
+   Year Semester  \PYGZsh{} Students  \PYGZsh{} Teachers
+1  2016     Fall         186           2
+3  2017     Fall         263           4
+5  2018     Fall         193           2
+7  2019     Fall         281           4
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -6681,7 +6862,10 @@ Any time when speed isn’t an issue, and you think the clearest way to write th
 \subsection{Factoring computations out of the loop}
 \label{\detokenize{chapter-11-processing-rows:factoring-computations-out-of-the-loop}}
 \sphinxAtStartPar
-Sometimes what’s making a loop slow is a repeated computation that doesn’t need to happen inside the loop.  The \sphinxstyleemphasis{loop variable} is the variable that immediately follows the \sphinxcode{\sphinxupquote{for}} statement in a loop.  In the loop example above, that’s the \sphinxcode{\sphinxupquote{index}} variable.  If there were any computation inside the loop that didn’t use the \sphinxcode{\sphinxupquote{index}} variable, we could bring that computation outside the loop, doing it once, before the loop, and saving time.
+Sometimes what’s making a loop slow is a repeated computation that doesn’t need to happen inside the loop.  How can we tell whether a computation needs to be in a loop or not?
+
+\sphinxAtStartPar
+The \sphinxstyleemphasis{loop variable} is the variable that immediately follows the \sphinxcode{\sphinxupquote{for}} statement in a loop.  In the loop example above, that’s the \sphinxcode{\sphinxupquote{index}} variable.  Usually any computation inside the loop that doesn’t use the \sphinxcode{\sphinxupquote{index}} variable can be moved outside the loop, so that we run it just once, before the loop, and save time.
 
 \sphinxAtStartPar
 For example, in the final project some students did for MA346 in Spring 2020, some teams had a loop that processed a large database of baseball players, and tried to look their names up in a different database.  It went something like this:
@@ -6724,7 +6908,7 @@ Note that this advice, factoring out a computation that does not depend on the l
 \subsection{Knowing how long you’ll have to wait}
 \label{\detokenize{chapter-11-processing-rows:knowing-how-long-you-ll-have-to-wait}}
 \sphinxAtStartPar
-Few things are more frustrating than running a code cell and seeing the computer just sit there doing nothing.  We start to wonder whether it will take 15 seconds to process the data, and we should just have a little patience, or 15 minutes and we should go get a coffee, or 15 hours and we should give up and rewrite the code.  Which is it?  How can we tell except just waiting?
+It can be very frustrating to run a code cell and see no output for a long time, while the computer seems to be doing nothing.  We start to wonder whether it will take 15 seconds to process the data, and we should just have a little patience, or 15 minutes and we should go get a coffee, or 15 hours and we should give up and rewrite the code.  Which is it?  How can we tell except just waiting?
 
 \sphinxAtStartPar
 There are two easy ways to get some feedback as your loop is progressing.  The easiest one is to install the \sphinxcode{\sphinxupquote{tqdm}} module, whose purpose is to help you see a progress bar for a long\sphinxhyphen{}running loop.  After following \sphinxhref{https://github.com/tqdm/tqdm\#installation}{tqdm’s installation instructions} (using \sphinxcode{\sphinxupquote{pip}} or \sphinxcode{\sphinxupquote{conda}}), just import the module, then take the Series or list over which you’re looping and wrap it in \sphinxcode{\sphinxupquote{tqdm(...)}}, as in the example below.
@@ -6733,11 +6917,11 @@ There are two easy ways to get some feedback as your loop is progressing.  The e
 \PYG{k+kn}{from} \PYG{n+nn}{tqdm}\PYG{n+nn}{.}\PYG{n+nn}{notebook} \PYG{k+kn}{import} \PYG{n}{tqdm}
 
 \PYG{n}{results} \PYG{o}{=} \PYG{p}{[} \PYG{p}{]}
-\PYG{k}{for} \PYG{n}{index} \PYG{o+ow}{in} \PYG{n}{tqdm}\PYG{p}{(} \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{index}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{p}{)}\PYG{p}{:}   \PYG{c+c1}{\PYGZsh{} \PYGZlt{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} Notice tqdm here.}
-    \PYG{k}{if} \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o+ow}{and} \PYGZbs{}
-       \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{revenues}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{:}
-        \PYG{n}{results}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(} \PYG{n}{index} \PYG{p}{)}
-\PYG{n}{rev\PYGZus{}quarters}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{n}{results}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]}
+\PYG{k}{for} \PYG{n}{index} \PYG{o+ow}{in} \PYG{n}{tqdm}\PYG{p}{(} \PYG{n}{sociology\PYGZus{}department}\PYG{o}{.}\PYG{n}{index}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{p}{)}\PYG{p}{:}  \PYG{c+c1}{\PYGZsh{} \PYGZlt{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} Notice tqdm here.}
+    \PYG{k}{if} \PYG{n}{num\PYGZus{}students}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{num\PYGZus{}students}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o+ow}{and} \PYGZbs{}
+       \PYG{n}{num\PYGZus{}students}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{num\PYGZus{}students}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{index}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{:}
+        \PYG{n}{results}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(} \PYG{n}{index} \PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Save it for later}
+\PYG{n}{sociology\PYGZus{}department}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{results}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]}
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -6756,7 +6940,7 @@ The numbers indicate that over 300 of the 1000 steps in that large loop are comp
 Sometimes, you can’t get around the fact that you just have to process a lot of data, and that can be slow.  Unless you’re working for a company that will provide you with some powerful computing resources in the cloud on which to run your Jupyter notebook, so that it runs faster than it does on your laptop (or the free Colab/Deepnote machines), you’ll just have to run the slow code.  But there are still some ways to make this better.
 
 \sphinxAtStartPar
-\sphinxstylestrong{Don’t run it more than you have to.}  Often, the slow code is something that happens early your work, such as cleaning a huge dataset or searching through it for just the rows you need for your analysis.  Once you’ve written code that does this, save the result to a file with \sphinxcode{\sphinxupquote{pd.to\_csv()}} or \sphinxcode{\sphinxupquote{pd.to\_pickle()}} and don’t run that code again.
+\sphinxstylestrong{Don’t run it more than you have to.}  Often, the slow code is something that happens early in your work, such as cleaning a huge dataset or searching through it for just the rows you need for your analysis.  Once you’ve written code that does this, save the result to a file with \sphinxcode{\sphinxupquote{pd.to\_csv()}} or \sphinxcode{\sphinxupquote{pd.to\_pickle()}} and don’t run that code again.
 
 \sphinxAtStartPar
 Don’t fall into the trap of thinking that all your code needs to be in one Python script or one Jupyter notebook.  If that slow code that cleaned your data never needs to be run again, then once you’ve run it and saved the output, save the script/notebook, close it, and start a new script or notebook to contain your data analysis code.  Then when you re\sphinxhyphen{}run your analysis, you don’t have to sit around and wait for the data cleaning to happen all over again!
@@ -6773,10 +6957,10 @@ This advice is especially important if the slow part of your work requires fetch
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-       id  height  dose
-5  100618  170.18   2.0
-3      83  173.00   2.0
-0  100615  182.88   2.0
+   id  height  dose
+7  65   178.0   0.0
+1  51   158.0   0.0
+6  19   163.0   2.5
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -6789,7 +6973,7 @@ Then as you create your data analysis code, which inevitably involves running it
 \sphinxstyleemphasis{Danger!}  Don’t forget to delete that cell when your code is polished and you want to do the real, final analysis!  I suggest adding a note in giant text at the end of your notebook saying something like, “Don’t forget, before you turn this in, USE THE WHOLE DATASET!”  Then you’ll remember to do that key step before you complete the project.
 
 \sphinxAtStartPar
-\sphinxstylestrong{If the dataset is truly huge,} so large that it can’t be stored in your computer’s memory all at once, then trying to load it will either generate out\sphinxhyphen{}of\sphinxhyphen{}memory errors or it will slow the process down enormously while the computer tries to use its hard drive as temporary extra memory storage.  In such cases, don’t forget the tip at the end of \sphinxhref{big-cheat-sheet\#chapter-1-using-iterators-in-pythonland}{this DataCamp chapter} about the \sphinxcode{\sphinxupquote{chunksize}} parameter.  It lets you process large files in smaller chunks.
+\sphinxstylestrong{If the dataset is truly huge,} so large that it can’t be stored in your computer’s memory all at once, then trying to load it will either generate out\sphinxhyphen{}of\sphinxhyphen{}memory errors or it will slow the process down enormously while the computer tries to use its hard drive as temporary extra memory storage.  In such cases, don’t forget the tip at the end of \sphinxhref{big-cheat-sheet.html\#chapter-1-using-iterators-in-pythonland}{this DataCamp chapter} about the \sphinxcode{\sphinxupquote{chunksize}} parameter.  It lets you process large files in smaller chunks.
 
 
 \chapter{Concatenating and Merging DataFrames}
@@ -6807,7 +6991,7 @@ This chapter is about two ways to combine DataFrames together.  The concepts we�
 Combining more than one dataset together is a crucial aspect of data work.  Let’s see two examples.
 
 \sphinxAtStartPar
-\sphinxstylestrong{Example 1.}  One of my friends runs \sphinxhref{https://secondnature.org/}{a nonprofit organization} that helps colleges and universities set climate action goals and track their progress toward keeping them.  He asked my graduate data science course in Fall 2019 to look at their database and come up with any insights.  Naturally, their database had records of all the climate goals and progress for schools they were working with, but it didn’t have much other information about those schools.  What if we wanted to analyze a variable they weren’t tracking, like endowment?  Or what if we wanted to look at schools that hadn’t get partnered with the nonprofit?  That information would need to be brought in from another dataset.  Until we do so, we can’t give interesting answers to the question the client posed.
+\sphinxstylestrong{Example 1.}  One of my friends runs \sphinxhref{https://secondnature.org/}{a nonprofit organization} that helps colleges and universities set climate action goals and track their progress toward keeping them.  He asked my graduate data science course in Fall 2019 to look at their database and come up with any insights.  Naturally, their database had records of all the climate goals and progress for schools they were working with, but it didn’t have much other information about those schools.  What if we wanted to analyze a variable they weren’t tracking, like endowment?  Or what if we wanted to look at schools that hadn’t yet partnered with the nonprofit?  That information would need to be brought in from another dataset.  Until we do so, we can’t give interesting answers to the question the client posed.
 
 \sphinxAtStartPar
 \sphinxstylestrong{Example 2.}  One of my colleagues in the math department told me about a clever strategy one investment group used to predict the earnings of companies they were considering investing in.  They already had lots of data about each company, including the addresses of the company’s various offices and factories.  They could also purchase access to a large database of satellite images.  They used the addresses and some image\sphinxhyphen{}detection software to compute the number of cars in the parking lots of the company’s properties.  This turned out to be a very useful predictor of growth that they could access before their competing investors had the information.  It involved bringing together two datasets in a clever way.
@@ -6816,7 +7000,7 @@ Combining more than one dataset together is a crucial aspect of data work.  Let�
 In this chapter, we’ll discuss how to combine just two DataFrames, but the ideas apply if you have more than two.  For instance, to concatenate five DataFrames \sphinxcode{\sphinxupquote{df1}} through \sphinxcode{\sphinxupquote{df5}}, we can proceed in pairs, combining \sphinxcode{\sphinxupquote{df1}} and \sphinxcode{\sphinxupquote{df2}}, then combining that result with \sphinxcode{\sphinxupquote{df3}}, and so on until we have included \sphinxcode{\sphinxupquote{df5}}.
 
 \sphinxAtStartPar
-Let’s start by dicsussing concatenation, which is definitely the easier of the two concepts, before we tackle merging.  The English verb “concatenate” means to attach two things together, one after the end of the other.
+Let’s start by discussing concatenation, which is definitely the easier of the two concepts, before we tackle merging.  The English verb “concatenate” means to attach two things together, one after the end of the other.
 
 
 \section{Concatenation is vertical}
@@ -6838,7 +7022,7 @@ Or if you’re following a stock or other financial instrument, its prices one w
 \end{itemize}
 
 \sphinxAtStartPar
-Because the standard way to organize tabular data is to put observations in rows, then getting more observations means we just need to add more rows onto the bottom of our previous table of data.  This is what concatenation is for.  Here’s an illustration using the stock prices example, with data that comes from Renewable Energy Group, Inc., whose 2020 data we’ve seen before in this course.
+Because the standard way to organize tabular data is to put observations in rows, then getting more observations means we just need to add more rows onto the bottom of our previous table of data.  This is what concatenation is for.  Here’s an illustration using the stock prices example, with data that comes from Renewable Energy Group, Inc., whose 2020 data we’ve seen in an earlier chapter.
 
 \sphinxAtStartPar
 \sphinxincludegraphics{{concat-of-stock-data}.png}
@@ -6905,7 +7089,7 @@ The \sphinxcode{\sphinxupquote{pd.concat()}} function is actually much more powe
 Concatenation was appropriate when we had new rows (that is, new observations) to add to our dataset.  But what if we had new columns instead?  Keep in mind that, under the standard way we organize tabular data, columns represent the \sphinxstyleemphasis{variables} in our dataset.  So getting new columns means learning more information about the rows we already had.
 
 \sphinxAtStartPar
-We saw a simple example of this last week; it was simple enough that we didn’t need to learn the full power of merging to handle it.  Recall that we had a dataset of home mortgage applications, and we wanted to add into it a variable that measured political affiliation of the state in which the mortgage took place.  We thus got a table that provided a measure of political alignment for each state, and we used that to \sphinxstyleemphasis{add a new column} to our old home mortgage dataset.  Each row in the mortgage dataset got a new variable measuring political alignment.  The table grew \sphinxstyleemphasis{horizontally} with new information from another table.
+We saw a simple example of this in a recent in\sphinxhyphen{}class activity; it was simple enough that we didn’t need to learn the full power of merging to handle it.  Recall that we had a dataset of home mortgage applications, and we wanted to add into it a variable that measured political affiliation of the state in which the mortgage took place.  We thus got a table that provided a measure of political alignment for each state, and we used that to \sphinxstyleemphasis{add a new column} to our old home mortgage dataset.  Each row in the mortgage dataset got a new variable measuring political alignment.  The table grew \sphinxstyleemphasis{horizontally} with new information from another table.
 
 \sphinxAtStartPar
 In fact, when we have only one column to add, the technique from last week’s class is easier than the full complexity of merging.  Recall how we did it:
@@ -6928,7 +7112,7 @@ But what if the situation is more complicated?  This can happen in several ways.
 The technique shown above, which we used last week in class, is easy if bringing in only one new column.  If we wanted to bring in many new columns, we’d need to apply that technique repeatedly, in a loop over those columns.  But \sphinxcode{\sphinxupquote{pd.merge()}} can do it all in one function call, and for the reasons we learned last week, that will probably be faster than a Python loop.
 
 \sphinxAtStartPar
-Let’s consider a concrete example to understand the idea of importing several new columns at once.  Consider a dataset we’ve seen before, tracking the number of confirmed COVID\sphinxhyphen{}19 cases over time in various countries.  Let’s say we wanted to see if the growth patterns in such a dataset were in any way related to health care information about the country, such as how much they spend on health care, how many doctors per capita, and so on.  We’ll need to bring in another dataset with all that information about each country, and import it in as new columns.  See the illustration below.
+Let’s consider a concrete example to understand the idea of importing several new columns at once.  Consider a dataset that’s been very important over the past year, tracking the number of confirmed COVID\sphinxhyphen{}19 cases over time in various countries.  Let’s say we wanted to see if the growth patterns in such a dataset were in any way related to health care information about the country, such as how much they spend on health care, how many doctors per capita, and so on.  We’ll need to bring in another dataset with all that information about each country, and import it in as new columns.  See the illustration below.
 
 \sphinxAtStartPar
 (All tables illustrated from here on will have “…” in the final rows and columns, to indicate that the table is really much bigger, and we’re showing only a portion in the illustration.)
@@ -7004,7 +7188,7 @@ Because we used the \sphinxstyleemphasis{left} DataFrame as the definitive one, 
 If we had chosen to do \sphinxcode{\sphinxupquote{how='right'}} instead, the right DataFrame would be considered the definitive one.  Any school from the left DataFrame that didn’t appear in the right DataFrame would be discarded, and we would end up with under 500 rows, precisely one row for each school in the climate nonprofit’s dataset.
 
 \sphinxAtStartPar
-Note that we’re still making the unrealistic assumption that the school names in the government dataset will match perfectly with those in the nonprofit’s dataset, and we’ll address that at the end of the chapter.
+Note that we’re still making the unrealistic assumption that the school names in the government dataset will match perfectly with those in the nonprofit’s dataset, and we’ll address that {\hyperref[\detokenize{chapter-12-concat-and-merge:ensuring-a-unique-id-appears-in-both-datasets}]{\emph{at the end of the chapter}}}.
 
 \sphinxAtStartPar
 This example showed what it was like if some of the rows in the left dataset match up with \sphinxstyleemphasis{zero} rows in the right dataset.  But what if they match up with \sphinxstyleemphasis{many} rows in the right dataset?
@@ -7013,7 +7197,7 @@ This example showed what it was like if some of the rows in the left dataset mat
 \section{When there are many matches for some rows}
 \label{\detokenize{chapter-12-concat-and-merge:when-there-are-many-matches-for-some-rows}}
 \sphinxAtStartPar
-Let’s consider another example, this one from sports.  We’ll use NFL football, but if you’re not familiar with the sport, the example will still make sense.  All you need to know is that each team has many players, and that each \sphinxstyleemphasis{play} is a small part of a football game that uses just some of the team’s players.  Some plays have a \sphinxstyleemphasis{receiver,} which is the player who catches the ball thrown to him (if any–sometimes the play does not involve throwing the ball).
+Let’s consider another example, this one from sports.  We’ll use NFL football, but if you’re not familiar with the sport, the example will still make sense.  All you need to know is that each team has many players, and that each \sphinxstyleemphasis{play} is a small part of a football game that uses just some of the team’s players.  Some plays have a \sphinxstyleemphasis{receiver,} which is the player who catches the ball thrown to him (if any—sometimes the play does not involve throwing the ball).
 
 \sphinxAtStartPar
 As always in this chapter, imagine two datasets.  The first is the set of all NFL players in a certain year and their stats for that year.  (You can get these datasets online for free; here I’ll use a small sample of the players from the 2009 season.)  The second is the set of all plays that happened in that same season, in any game.  (The NFL lets you fetch this data from their website for free; again, I’ll use a small sample of plays from the 2009 season.)
@@ -7086,10 +7270,10 @@ When putting their data together, they don’t yet know what questions they’re
 If they used an inner join, then they’d keep only the firms that appear in both datasets; that’s not what they want.  A left or right join would also discard some firms.  But they want to keep them all.  This is called an \sphinxstyleemphasis{outer join,} and it’s shown in the illustration below.
 
 \sphinxAtStartPar
-\sphinxincludegraphics{{merge-of-firm-data}.png}
+(The split of the data into three categories, each of size 50, is just for this example.  A real example is unlikely to be separated so symmetrically.)
 
 \sphinxAtStartPar
-(The split of the data into three categories, each of size 50, is just for this example.  A real example is unlikely to be separated so symmetrically.)
+\sphinxincludegraphics{{merge-of-firm-data}.png}
 
 \sphinxAtStartPar
 The “Firm” column in the merged dataset will contain each name only once, and the row will be of one of three types.
@@ -7118,6 +7302,15 @@ The code is the same as all the code we’ve seen up to this point, but with \sp
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{df\PYGZus{}merged} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{merge}\PYG{p}{(} \PYG{n}{df\PYGZus{}execs}\PYG{p}{,} \PYG{n}{df\PYGZus{}marketing}\PYG{p}{,} \PYG{n}{on}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Firm}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{how}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{outer}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
 \end{sphinxVerbatim}
+
+
+\section{Is joining the same as merging?}
+\label{\detokenize{chapter-12-concat-and-merge:is-joining-the-same-as-merging}}
+\sphinxAtStartPar
+In most data science or database contexts, these two terms refer to the same idea.  However, in pandas, they are two different functions that behave almost exactly the same.  Just like pandas has both \sphinxcode{\sphinxupquote{map}} and \sphinxcode{\sphinxupquote{apply}} that behave similarly but not exactly the same (which is frustrating), it also has \sphinxcode{\sphinxupquote{merge}} and \sphinxcode{\sphinxupquote{join}} that behave similarly but not exactly the same (which is also frustrating).
+
+\sphinxAtStartPar
+Because they are so similar in function, if you have learned \sphinxcode{\sphinxupquote{pd.merge()}}, you probably do not need to bother learning \sphinxcode{\sphinxupquote{pd.join()}}.  The one exception is that if you want to merge two DataFrames using the \sphinxstyleemphasis{index} from one or both as if it were a column on which to merge, then \sphinxcode{\sphinxupquote{pd.join()}} makes that easier than \sphinxcode{\sphinxupquote{pd.merge()}} does.  In fact, merging on DataFrame indexes is the default behavior for \sphinxcode{\sphinxupquote{pd.join()}}.  So if that’s what you need, \sphinxcode{\sphinxupquote{pd.join()}} is probably easier to use.  In every other case, you can just stick with \sphinxcode{\sphinxupquote{pd.merge()}}.
 
 
 \section{Summary}
@@ -7151,15 +7344,19 @@ With \sphinxcode{\sphinxupquote{how='right'}}, the reverse happens.  But you don
 
 \item {} 
 \sphinxAtStartPar
-With \sphinxcode{\sphinxupquote{how='outer'}}, it creates new rows for every pair of rows from \sphinxcode{\sphinxupquote{A}} and \sphinxcode{\sphinxupquote{B}} that match on the specified columns, plus it also
+With \sphinxcode{\sphinxupquote{how='outer'}}, it creates new rows for every pair of rows from \sphinxcode{\sphinxupquote{A}} and \sphinxcode{\sphinxupquote{B}} that match on the specified columns.
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-keeps every row from \sphinxcode{\sphinxupquote{A}} that didn’t match anything from \sphinxcode{\sphinxupquote{B}}, and fills in their \sphinxcode{\sphinxupquote{B}} columns with missing values, and
+It also keeps every row from \sphinxcode{\sphinxupquote{A}} that didn’t match anything from \sphinxcode{\sphinxupquote{B}}, and fills in their \sphinxcode{\sphinxupquote{B}} columns with missing values.
 
 \item {} 
 \sphinxAtStartPar
-keeps every row from \sphinxcode{\sphinxupquote{B}} that didn’t match anything from \sphinxcode{\sphinxupquote{A}}, and fills in their \sphinxcode{\sphinxupquote{A}} columns with missing values.  This throws no data away.
+It also keeps every row from \sphinxcode{\sphinxupquote{B}} that didn’t match anything from \sphinxcode{\sphinxupquote{A}}, and fills in their \sphinxcode{\sphinxupquote{A}} columns with missing values.
+
+\item {} 
+\sphinxAtStartPar
+This throws no data away.
 
 \end{itemize}
 
@@ -7220,7 +7417,7 @@ It may also be possible to compute an appropriate column for merging by combinin
 Another common problem is merging two types of time\sphinxhyphen{}based data that were reported on different time scales.  For instance, let’s say you are trying to study police activity and criminal activity in a city.  You have crime data in the form of daily records and police reports in terms of officers’ hourly shifts.  If you wanted to combine these two datasets based on time, the difference in reporting frequency means it’s not obvious how to do it.
 
 \sphinxAtStartPar
-So pandas provides two functions for helping with such situations.  These notes do not cover them in detail, but suggest you check out the \sphinxhref{https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge\_ordered.html}{documentation for \sphinxcode{\sphinxupquote{pd.merge\_orered()}}} and the \sphinxhref{https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge\_asof.html\#pandas.merge\_asof}{documentation for \sphinxcode{\sphinxupquote{pd.merge\_asof()}}} for more sophisticated handling of time\sphinxhyphen{}based merge data.
+So pandas provides two functions for helping with such situations.  These notes do not cover them in detail, but suggest you check out the \sphinxhref{https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge\_ordered.html}{documentation for \sphinxcode{\sphinxupquote{pd.merge\_ordered()}}} and the \sphinxhref{https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge\_asof.html}{documentation for \sphinxcode{\sphinxupquote{pd.merge\_asof()}}} for more sophisticated handling of time\sphinxhyphen{}based merge data.
 
 
 \subsection{What about unstandardized text?}
@@ -7355,12 +7552,8 @@ Let’s actually try to merge two datasets of university data.  I will load here
 Let’s just get a sense of how many of the 231 rows in the ranking dataset have an exact match in the big dataset, and thus their official names are already in the ranking dataset.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{official\PYGZus{}names} \PYG{o}{=} \PYG{n+nb}{list}\PYG{p}{(} \PYG{n}{df\PYGZus{}big}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}
-
-\PYG{k}{def} \PYG{n+nf}{has\PYGZus{}exact\PYGZus{}match} \PYG{p}{(} \PYG{n}{name\PYGZus{}from\PYGZus{}rank\PYGZus{}df} \PYG{p}{)}\PYG{p}{:}
-    \PYG{k}{return} \PYG{n}{name\PYGZus{}from\PYGZus{}rank\PYGZus{}df} \PYG{o+ow}{in} \PYG{n}{official\PYGZus{}names}
-
-\PYG{n+nb}{sum}\PYG{p}{(} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(} \PYG{n}{has\PYGZus{}exact\PYGZus{}match} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{official\PYGZus{}names} \PYG{o}{=} \PYG{n+nb}{list}\PYG{p}{(} \PYG{n}{df\PYGZus{}big}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NAME}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{p}{)}        \PYG{c+c1}{\PYGZsh{} from big dataset}
+\PYG{n+nb}{sum}\PYG{p}{(} \PYG{n}{df\PYGZus{}rank}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{isin}\PYG{p}{(} \PYG{n}{official\PYGZus{}names} \PYG{p}{)} \PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} from rank dataset}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -7399,7 +7592,7 @@ Let’s use \sphinxcode{\sphinxupquote{get\_close\_matches()}} to create a funct
 \PYG{k}{def} \PYG{n+nf}{get\PYGZus{}closest\PYGZus{}official\PYGZus{}name} \PYG{p}{(} \PYG{n}{name\PYGZus{}from\PYGZus{}df\PYGZus{}rank} \PYG{p}{)}\PYG{p}{:}
 
     \PYG{c+c1}{\PYGZsh{} If there\PYGZsq{}s an exact match, we\PYGZsq{}re already done.}
-    \PYG{k}{if} \PYG{n}{has\PYGZus{}exact\PYGZus{}match}\PYG{p}{(} \PYG{n}{name\PYGZus{}from\PYGZus{}df\PYGZus{}rank} \PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{if} \PYG{n}{name\PYGZus{}from\PYGZus{}df\PYGZus{}rank} \PYG{o+ow}{in} \PYG{n}{official\PYGZus{}names}\PYG{p}{:}
         \PYG{k}{return} \PYG{n}{name\PYGZus{}from\PYGZus{}df\PYGZus{}rank}
     
     \PYG{c+c1}{\PYGZsh{} Get the closest matches, if any.}
@@ -7813,7 +8006,7 @@ If you’ve ever watched \sphinxhref{https://www.pbs.org/wgbh/roadshow/}{Antique
 The value of data is also significantly impacted by its history and origins.  If we know how the data was collected and can read about the details of that process, that will probably significantly increase its usefulness to us.
 
 \sphinxAtStartPar
-For instance, imagine you get a dataset in which some numeric columns are entitled \sphinxcode{\sphinxupquote{EQ50}}, \sphinxcode{\sphinxupquote{EQ51}}, \sphinxcode{\sphinxupquote{EQ52}}, and so on.  You would probably not be able to use the numbers in those columns for any purpose, because you don’t know what they mean.  But what if you find out that the data came from an economic survey that happened every quarter, and measured the GDP of various U.S. states during that quarter, in units of millions of dollars.  The organization that did the work referred to such measurements as “Economic Quarters” or EQs for short, and started with EQ1 in January 1987, counting upwards from there.  We can therefore figure out that EQ50 must refer to the second quarter of 2000, and so on.  Formerly useless data now has meaning and could be used.
+For instance, imagine you get a dataset in which some numeric columns are entitled \sphinxcode{\sphinxupquote{EQ50}}, \sphinxcode{\sphinxupquote{EQ51}}, \sphinxcode{\sphinxupquote{EQ52}}, and so on.  You would probably not be able to use the numbers in those columns for any purpose, because you don’t know what they mean.  But now imagine that you find out that the data came from an economic survey that happened every quarter, and measured the GDP of various U.S. states during that quarter, in units of millions of dollars.  The organization that did the work referred to such measurements as “Economic Quarters” or EQs for short, and started with EQ1 in January 1987, counting upwards from there.  We can therefore figure out that EQ50 must refer to the second quarter of 2000, and so on.  Formerly useless data now has meaning and could be used.
 
 
 \subsection{Data vs. information}
@@ -7825,7 +8018,7 @@ The difference between \sphinxstyleemphasis{data} and \sphinxstyleemphasis{infor
 \end{sphinxadmonition}
 
 \sphinxAtStartPar
-To make sense of data, that is, to have information, not just data, requires knowing something about the domain in which the data lives.  \sphinxhref{chapter-12-concat-and-merge\#when-there-are-many-matches-for-some-rows}{One of the examples in the previous chapter} was about data from American football.  If you’re not familiar with that sport, it’s harder to understand the example, so I was careful to explain in the chapter the few necessary football concepts you’d need.  If your dataset comes from finance, you’ll be better equipped to turn that data into information if you know something about finance.  If you’re working with economic data, you’ll do better if you know economics.
+To make sense of data (that is, to have information, not just data) requires knowing something about the domain in which the data lives.  \sphinxhref{chapter-12-concat-and-merge.html\#when-there-are-many-matches-for-some-rows}{One of the examples in the previous chapter} was about data from American football.  If you’re not familiar with that sport, it’s harder to understand the example, so I was careful to explain in the chapter the few necessary football concepts you’d need.  If your dataset comes from finance, you’ll be better equipped to turn that data into information if you know something about finance.  If you’re working with economic data, you’ll do better if you know economics.
 
 \sphinxAtStartPar
 This is where Bentley students have an advantage in data science over students from other universities.  While some schools have excellent technical educations and may cover more programming or machine learning skills than a data degree from Bentley does, every Bentley graduate has undergone an extensive training in business.  If you’re planning on applying your data skills in the business world, you’ll have a broader knowledge of that domain than most students from, say, an engineering school or a computer science degree.
@@ -7892,7 +8085,7 @@ Sometimes missing values occur in a dataset because of a problem.  Consider the 
 But sometimes missing values are inserted into a dataset intentionally, because the creator of the dataset wants to communicate that a certain piece of data is unavailable.  For instance, in my football dataset, if the Receiver column in the Plays table has some missing entries, that means that there was no receiver involved in the play.  The missing values are communicating something intentional, sensible, and correct.  \sphinxstyleemphasis{Missing values don’t always indicate a problem.}
 
 \sphinxAtStartPar
-Even in the example of the failed sensor, where the missing values indicate a problem, that doesn’t mean that they should be removed or filled in with actual values.  Those missing values are truthfully stating what data was collected and what data was not collected.  Altering them would mean that our dataset would no longer be telling the truth about its origins.  If you’re sworn in on the witness stand, and you’re asked who committed the robbery, and you honestly don’t know the answer, the truthful thing to do is to say that you don’t know!  Making up an answer is clearly a deceptive thing to do in that situation, and it is often a deceptive thing to do with data as well.  \sphinxstyleemphasis{Resist the urge to “solve” missing values by always filling them in.}  Sometimes they’re telling an important truth.
+Even in the example of the failed sensor, where the missing values indicate a problem, that doesn’t mean that they should be removed or filled in with actual values.  Those missing values are truthfully stating when data was not collected.  Altering them would mean that our dataset would no longer be telling the truth about its origins.  If you’re sworn in on the witness stand, and you’re asked who committed the robbery, and you honestly don’t know the answer, the truthful thing to do is to say that you don’t know!  Making up an answer is clearly a deceptive thing to do in that situation, and making up values is often a deceptive thing to do with data as well.  \sphinxstyleemphasis{Resist the urge to “solve” missing values by always filling them in.}  Sometimes they’re telling an important truth.
 
 \sphinxAtStartPar
 In fact, this is why NumPy has the built\sphinxhyphen{}in value \sphinxcode{\sphinxupquote{np.nan}}, Python has \sphinxcode{\sphinxupquote{None}}, R has \sphinxcode{\sphinxupquote{NA}}, and Julia has \sphinxcode{\sphinxupquote{missing}}.  These languages all recognize the legitimacy of missing values, and give you a way to express them when you need to.
@@ -7976,7 +8169,7 @@ But we do not remove them from the original dataset; we simply don’t include t
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-LinregressResult(slope=\PYGZhy{}0.0012387387387387322, intercept=4.305389317889305, rvalue=\PYGZhy{}0.0085545966495754, pvalue=0.9825737815654227, stderr=0.054728717410681665)
+LinregressResult(slope=\PYGZhy{}0.001238738738738731, intercept=4.305389317889302, rvalue=\PYGZhy{}0.008554596649575391, pvalue=0.9825737815654227, stderr=0.05472871741068167)
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -8001,7 +8194,7 @@ Any decision like this made when constructing a dataset should be documented in 
 \sphinxstylestrong{Example 3: Actually adding missing values}
 
 \sphinxAtStartPar
-In the home mortgage dataset with which we’re very familiar, some columns (such as interest rate) contain mostly numerical data, but occasionally the word Exempt in place of a number.  This makes it impossible to do any computations on such columns, such as \sphinxcode{\sphinxupquote{df{[}'interest\_rate'{]}.mean()}}, because the column is text, not numeric.
+In the home mortgage dataset with which we’re very familiar, some columns (such as interest rate) contain mostly numerical data, but occasionally the word Exempt appears instead of a number.  This makes it impossible to do any computations on such columns, such as \sphinxcode{\sphinxupquote{df{[}'interest\_rate'{]}.mean()}}, because the column is text, not numeric.
 
 \sphinxAtStartPar
 In this case, it can be valuable to replace the word Exempt with the actual missing value \sphinxcode{\sphinxupquote{np.nan}} throughout the column, so that it can then be converted to type \sphinxcode{\sphinxupquote{float}}.  In doing so, you should carefully document that all Exempt entries have become missing values, in order to facilitate analysis.  \sphinxstyleemphasis{This is a situation in which missing values are actually intentionally added!}
@@ -8142,7 +8335,7 @@ Comments in code to track units can help with discrepencies like these.  See the
 \PYG{n}{df\PYGZus{}films}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Inflation factor}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{inflation\PYGZus{}factor} \PYG{o}{*}\PYG{o}{*} \PYG{n}{df\PYGZus{}films}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Years since film}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
                                                         \PYG{c+c1}{\PYGZsh{} Multiplier to apply inflation}
 \PYG{n}{df\PYGZus{}films}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Opening Weekend (M\PYGZdl{}2020)}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df\PYGZus{}films}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Opening Weekend (M\PYGZdl{})}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYGZbs{}
-    \PYG{o}{*} \PYG{n}{df\PYGZus{}films}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Inflation factor}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}                      \PYG{c+c1}{\PYGZsh{} Converted to today\PYGZsq{}s dollars}
+    \PYG{o}{*} \PYG{n}{df\PYGZus{}films}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Inflation factor}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}                      \PYG{c+c1}{\PYGZsh{} Convert all to \PYGZdl{} millions in 2020}
 \PYG{n}{df\PYGZus{}films}
 \end{sphinxVerbatim}
 
@@ -8167,7 +8360,7 @@ Before we finish discussing ETL, we should talk about file formats, which are a 
 \section{Reading data files}
 \label{\detokenize{chapter-13-etl:reading-data-files}}
 \sphinxAtStartPar
-As you know from \sphinxhref{big-cheat-sheet\#before-week-8}{the DataCamp assignment that corresponds to this chapter}, there are many ways to read data into pandas.  Since you’ve learned some of the technical details from DataCamp, let’s look at the relative pros and cons of each file format here, and add a few pieces of advice that didn’t appear in the DataCamp lessons.  We start with the easiest file formats and work our way up.
+As you know from \sphinxhref{big-cheat-sheet.html\#before-day-8}{the DataCamp assignment that corresponds to this chapter}, there are many ways to read data into pandas.  Since you’ve learned some of the technical details from DataCamp, let’s look at the relative pros and cons of each file format here, and add a few pieces of advice that didn’t appear in the DataCamp lessons.  We start with the easiest file formats and work our way up.
 
 
 \subsection{Easy formats to read: CSV and TSV}
@@ -8176,7 +8369,7 @@ As you know from \sphinxhref{big-cheat-sheet\#before-week-8}{the DataCamp assign
 We’ve been using \sphinxcode{\sphinxupquote{pd.read\_csv()}} for ages, so there is no surprise here, and you’ve had to deal with its \sphinxcode{\sphinxupquote{encoding}} parameter in the past as well.  It has tons of optional parameters, but the one introduced in the latest DataCamp lessons was \sphinxcode{\sphinxupquote{sep}}, useful for reading TSV (tab\sphinxhyphen{}separated values) files, by choosing \sphinxcode{\sphinxupquote{sep="\textbackslash{}t"}}.
 
 \sphinxAtStartPar
-One piece of advice to add to DataCamp:  If you find the URL of a CSV file on the web, you can include that URL as the input parameter to \sphinxcode{\sphinxupquote{pd.read\_csv()}}, and it will download and read the file for you in one shot, without your having to manually download the file.
+One piece of advice I’ll add to what DataCamp taught:  If you find the URL of a CSV file on the web, you can include that URL as the input parameter to \sphinxcode{\sphinxupquote{pd.read\_csv()}}, and it will download and read the file for you in one shot, without your having to manually download the file.
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -8218,7 +8411,7 @@ The \sphinxcode{\sphinxupquote{pd.read\_excel()}} function is nearly as easy to 
 \sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 \sphinxAtStartPar
-If you’re running Python on a cloud service, you’ll need the \sphinxcode{\sphinxupquote{xlrd}} module to be installed to add Excel support to pandas.  (You can tell if it’s not when a \sphinxcode{\sphinxupquote{pd.read\_excel()}} call fails with an error about the missing module.)  If you’re on your local computer with an Anaconda installation, you already have this module.  Otherwise, you need to run \sphinxcode{\sphinxupquote{pip install xlrd}} to add it.
+If you’re running Python on a cloud service, you’ll need the \sphinxcode{\sphinxupquote{openpyxl}} module to be installed to add Excel support to pandas.  (You can tell if it’s not when a \sphinxcode{\sphinxupquote{pd.read\_excel()}} call fails with an error about the missing module, or perhaps about the missing \sphinxcode{\sphinxupquote{xlrd}} module, which is related.)  If you’re on your local computer with an Anaconda installation, you may already have this module.  Otherwise, you need to run \sphinxcode{\sphinxupquote{pip install openpyxl}} to add it.
 
 \item {} 
 \sphinxAtStartPar
@@ -8226,7 +8419,7 @@ You need to remember that this function returns a Python list of DataFrames, unl
 
 \item {} 
 \sphinxAtStartPar
-Excel spreadsheets may not have the data in the top left, so parameters like \sphinxcode{\sphinxupquote{usecols}} and \sphinxcode{\sphinxupquote{skiprows}} are often needed.
+Excel spreadsheets may not have the data in the top left, so parameters like \sphinxcode{\sphinxupquote{usecols}} and \sphinxcode{\sphinxupquote{skiprows}} are often needed.  See \sphinxhref{https://pandas.pydata.org/docs/reference/api/pandas.read\_excel.html}{the official documentation} for details on those parameters.
 
 \end{enumerate}
 
@@ -8246,7 +8439,7 @@ Note that if you don’t need to get live data from the web, but are content wit
 \subsection{Not an easy format to read: JSON}
 \label{\detokenize{chapter-13-etl:not-an-easy-format-to-read-json}}
 \sphinxAtStartPar
-Although this format is not easy, it is powerful, and this is why it’s very prevalent on the web.  It can represent a huge variety of different types of data, not just tabular data.  It is flexible enough to represent tabular data in a variety of ways, but also hierarchical data of any kind.  Due to its complexity, we will not fully review this here; refer to \sphinxhref{big-cheat-sheet\#chapter-4-importing-json-data-and-working-with-apis}{the appropriate section of our course’s coding cheat sheet} for some information, or \sphinxhref{https://learn.datacamp.com/courses/streamlined-data-ingestion-with-pandas}{the corresponding DataCamp course}.
+Although this format is not easy, it is powerful, and this is why it’s very prevalent on the web.  It can represent a huge variety of different types of data, not just tabular data.  It is flexible enough to represent tabular data in a variety of ways, but also hierarchical data of any kind.  Due to its complexity, we will not fully review this here; refer to \sphinxhref{big-cheat-sheet.html\#chapter-4-importing-json-data-and-working-with-apis}{the appropriate section of our course’s coding cheat sheet} for some information, or \sphinxhref{https://learn.datacamp.com/courses/streamlined-data-ingestion-with-pandas}{the corresponding DataCamp course}.
 
 
 \subsection{Not an easy source to read: SQL}
@@ -8278,10 +8471,10 @@ As with all types of communication, it’s essential to consider your audience w
 \subsection{For a nontechnical audience, create an Excel file.}
 \label{\detokenize{chapter-13-etl:for-a-nontechnical-audience-create-an-excel-file}}
 \sphinxAtStartPar
-If sharing your data with non\sphinxhyphen{}technical people, they will want to simply double\sphinxhyphen{}click the file and see its contents.  The easiest way to ensure this happens is to create an Excel file.  (To make it even easier, you can upload the file to SharePoint or Google Sheets and send only the link.  This is especially valuable if you suspect the recipient doesn’t have Excel installed.)
+If sharing your data with non\sphinxhyphen{}technical people, they will want to simply double\sphinxhyphen{}click the file and see its contents.  The easiest way to ensure this happens is to create an Excel file.  (To make it even easier, you can upload the file to SharePoint or Google Sheets and send only the link.  This is especially valuable if you suspect the recipient doesn’t have Excel installed or might be viewing your email on a mobile device.)
 
 \sphinxAtStartPar
-Just as when reading Excel files, you must have the \sphinxcode{\sphinxupquote{xlrd}} module installed; {\hyperref[\detokenize{chapter-13-etl:pretty-easy-format-to-read-xlsx}]{\emph{see above for details}}}.  If you want to create an Excel file with just one sheet in it, you can make a single call to \sphinxcode{\sphinxupquote{df.to\_excel()}}.
+Just as when reading Excel files, you must have the \sphinxcode{\sphinxupquote{openpyxl}} module installed; {\hyperref[\detokenize{chapter-13-etl:pretty-easy-format-to-read-xlsx}]{\emph{see above for details}}}.  If you want to create an Excel file with just one sheet in it, you can make a single call to \sphinxcode{\sphinxupquote{df.to\_excel()}}.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{df\PYGZus{}films}\PYG{o}{.}\PYG{n}{to\PYGZus{}excel}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Opening Weekends.xlsx}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
@@ -8306,7 +8499,7 @@ For more details, see \sphinxhref{https://pandas.pydata.org/pandas-docs/stable/r
 \subsection{For a technical audience, usually use a CSV file.}
 \label{\detokenize{chapter-13-etl:for-a-technical-audience-usually-use-a-csv-file}}
 \sphinxAtStartPar
-If sharing data with other data workers, who are likely to use Python, R, or some similarly nerdy tool, you probably want to create a CSV file.  The reason is simple: You know that this is one of the easiest file types to import in your code, so make life easy for your coworkers, too.  Just call \sphinxcode{\sphinxupquote{pd.to\_csv( 'my\sphinxhyphen{}filename.csv' )}} to save your DataFrame.  Although you can use the \sphinxcode{\sphinxupquote{sep="\textbackslash{}t"}} parameter to create a TSV file, this is rarely what your coworkers want, so it’s to be generally avoided.
+If sharing data with other data workers, who are likely to use Python, R, or some similarly nerdy tool, you probably want to create a CSV file.  The reason is simple: You know that this is one of the easiest file types to import in your code, so make life easy for your coworkers, too.  Just call \sphinxcode{\sphinxupquote{pd.to\_csv( 'my\sphinxhyphen{}filename.csv' )}} to save your DataFrame.  Although you can use the \sphinxcode{\sphinxupquote{sep="\textbackslash{}t"}} parameter to create a TSV file, this is rarely what your coworkers want, so it’s generally to be avoided.
 
 \sphinxAtStartPar
 But note that you can lose a lot of important information this way!  You may be familiar with how Excel complains if you try to save an Excel workbook in CSV format, letting you know that you’re losing information, such as formatting and formulas.  Any information in your DataFrame other than the text contents of the cells will be lost when saving as CSV.  For instance, if you’ve converted a column to a categorial variable, that won’t be obvious when the data is saved to CSV, and it will be re\sphinxhyphen{}imported as plain text.
@@ -8324,7 +8517,7 @@ Python has always had a way to store any Python object in a file, perfectly inta
 Because Python guarantees that any object you pickle to a file will come back from that file in exactly the same form, you can pickle entire DataFrames and know that every little detail will be preserved, even things that won’t get saved correctly to CSV or Excel files, like categorical data types.
 
 \sphinxAtStartPar
-This is a great way to obey the advice \sphinxhref{chapter-11-processing-rows\#when-the-bottleneck-is-the-dataset}{at the end of the Chapter 11 notes}.  If you load a big dataset and do a bunch of data cleaning work, and your code is a little slow to run, just save your work to a file right then.
+This is a great way to obey the advice \sphinxhref{chapter-11-processing-rows.html\#when-the-bottleneck-is-the-dataset}{at the end of the Chapter 11 notes}.  If you load a big dataset and do a bunch of data cleaning work, and your code is a little slow to run, just save your work to a file right then.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{df}\PYG{o}{.}\PYG{n}{to\PYGZus{}pickle}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{cleaned\PYGZhy{}dataset.pkl}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
@@ -8334,7 +8527,7 @@ This is a great way to obey the advice \sphinxhref{chapter-11-processing-rows\#w
 Then start a new Python script or Jupyter notebook and load the DataFrame you just saved.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{df} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{read\PYGZus{}pickle}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{saved\PYGZhy{}for\PYGZhy{}later.pkl}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
+\PYG{n}{df} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{read\PYGZus{}pickle}\PYG{p}{(} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{cleaned\PYGZhy{}dataset.pkl}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{)}
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -8361,7 +8554,7 @@ Consider forming a team for one of the Learning On Your Own activities shown bel
 \begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} SQL in Jupyter}
 
 \sphinxAtStartPar
-Look up the \sphinxcode{\sphinxupquote{ipython\sphinxhyphen{}sql}} extension to Jupyter and research the following essential parts, then reporting on them in some sensible medium for your classmates.
+Look up the \sphinxcode{\sphinxupquote{ipython\sphinxhyphen{}sql}} extension to Jupyter and research the following essential parts, then report on them in some sensible medium for your classmates.
 \begin{enumerate}
 \sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
@@ -8386,7 +8579,7 @@ How to store the results of database queries in pandas DataFrames.
 \begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} SQLite in Python}
 
 \sphinxAtStartPar
-Python actually comes with a built\sphinxhyphen{}in SQLite database module, which you can use by doing \sphinxcode{\sphinxupquote{import sqlite3 as sl}}, without even any installation step.  Check out \sphinxhref{https://towardsdatascience.com/do-you-know-python-has-a-built-in-database-d553989c87bd}{this blog post} for more information, and report on its key features to the class.
+Python actually comes with a built\sphinxhyphen{}in SQLite database module, which you can use by doing \sphinxcode{\sphinxupquote{import sqlite3 as sl}}, without even any installation step.  Check out \sphinxhref{https://towardsdatascience.com/do-you-know-python-has-a-built-in-database-d553989c87bd}{this blog post} for more information, and report to the class on its key features.  Ensure that you include at least one complete example of creating a database on disk and then reading values out of it again later with some queries.
 \end{sphinxadmonition}
 
 
@@ -9481,50 +9674,6 @@ Your Anaconda installation came with the \sphinxcode{\sphinxupquote{networkx}} m
 \PYG{k+kn}{import} \PYG{n+nn}{networkx} \PYG{k}{as} \PYG{n+nn}{nx}
 \end{sphinxVerbatim}
 
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{g+gt}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
-\PYG{n+ne}{ImportError}\PYG{g+gWhitespace}{                               }Traceback (most recent call last)
-\PYG{o}{\PYGZlt{}}\PYG{n}{ipython}\PYG{o}{\PYGZhy{}}\PYG{n+nb}{input}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{5}\PYG{o}{\PYGZhy{}}\PYG{n}{f17d728e971c}\PYG{o}{\PYGZgt{}} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{1} \PYG{k+kn}{import} \PYG{n+nn}{networkx} \PYG{k}{as} \PYG{n+nn}{nx}
-
-\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{l+m+mf}{.9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{112} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{relabel} \PYG{k+kn}{import} \PYG{o}{*}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{113} 
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{114} \PYG{k+kn}{import} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{115} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators} \PYG{k+kn}{import} \PYG{o}{*}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{116} 
-
-\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{l+m+mf}{.9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n}{generators}\PYG{o}{/}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{12} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators}\PYG{n+nn}{.}\PYG{n+nn}{expanders} \PYG{k+kn}{import} \PYG{o}{*}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{13} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators}\PYG{n+nn}{.}\PYG{n+nn}{geometric} \PYG{k+kn}{import} \PYG{o}{*}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{14} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators}\PYG{n+nn}{.}\PYG{n+nn}{intersection} \PYG{k+kn}{import} \PYG{o}{*}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{15} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators}\PYG{n+nn}{.}\PYG{n+nn}{joint\PYGZus{}degree\PYGZus{}seq} \PYG{k+kn}{import} \PYG{o}{*}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{16} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators}\PYG{n+nn}{.}\PYG{n+nn}{lattice} \PYG{k+kn}{import} \PYG{o}{*}
-
-\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{l+m+mf}{.9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n}{generators}\PYG{o}{/}\PYG{n}{intersection}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{11} \PYG{k+kn}{import} \PYG{n+nn}{random}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{12} \PYG{k+kn}{import} \PYG{n+nn}{networkx} \PYG{k}{as} \PYG{n+nn}{nx}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{13} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{algorithms} \PYG{k+kn}{import} \PYG{n}{bipartite}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{14} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{utils} \PYG{k+kn}{import} \PYG{n}{py\PYGZus{}random\PYGZus{}state}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{15} 
-
-\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{l+m+mf}{.9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n}{algorithms}\PYG{o}{/}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{14} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{algorithms}\PYG{n+nn}{.}\PYG{n+nn}{cycles} \PYG{k+kn}{import} \PYG{o}{*}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{15} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{algorithms}\PYG{n+nn}{.}\PYG{n+nn}{cuts} \PYG{k+kn}{import} \PYG{o}{*}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{16} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{algorithms}\PYG{n+nn}{.}\PYG{n+nn}{dag} \PYG{k+kn}{import} \PYG{o}{*}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{17} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{algorithms}\PYG{n+nn}{.}\PYG{n+nn}{distance\PYGZus{}measures} \PYG{k+kn}{import} \PYG{o}{*}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{18} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{algorithms}\PYG{n+nn}{.}\PYG{n+nn}{distance\PYGZus{}regular} \PYG{k+kn}{import} \PYG{o}{*}
-
-\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{l+m+mf}{.9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n}{algorithms}\PYG{o}{/}\PYG{n}{dag}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{21} 
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{22} \PYG{k+kn}{from} \PYG{n+nn}{collections} \PYG{k+kn}{import} \PYG{n}{defaultdict}\PYG{p}{,} \PYG{n}{deque}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{23} \PYG{k+kn}{from} \PYG{n+nn}{fractions} \PYG{k+kn}{import} \PYG{n}{gcd}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{24} \PYG{k+kn}{from} \PYG{n+nn}{functools} \PYG{k+kn}{import} \PYG{n}{partial}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{25} \PYG{k+kn}{from} \PYG{n+nn}{itertools} \PYG{k+kn}{import} \PYG{n}{chain}
-
-\PYG{n+ne}{ImportError}: cannot import name \PYGZsq{}gcd\PYGZsq{} from \PYGZsq{}fractions\PYGZsq{} (/opt/conda/lib/python3.9/fractions.py)
-\end{sphinxVerbatim}
-
 \sphinxAtStartPar
 This module lets us turn tables of data (like the edge list for dolphins we just saw) into Python \sphinxcode{\sphinxupquote{Graph}} objects, which we can use for both computation and visualization.  The first step in creating a \sphinxcode{\sphinxupquote{Graph}} object is always the same; just call the \sphinxcode{\sphinxupquote{nx.Graph()}} function and it will create a new, empty graph with no vertices and no edges.
 
@@ -10331,7 +10480,7 @@ We see that \(U\) is \(6\times6\), \(V\) is \(7\times 7\), and \(\Sigma\) is act
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 array([1.71057805e+00, 1.30272528e+00, 9.26401065e\PYGZhy{}01, 6.73800315e\PYGZhy{}01,
-       2.54172767e\PYGZhy{}01, 2.79327791e\PYGZhy{}17])
+       2.54172767e\PYGZhy{}01, 8.83953137e\PYGZhy{}18])
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -10363,12 +10512,12 @@ The sixth singular value is so tiny (about \(1.84\times10^{-17}\)) that it round
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([[ 0.71, \PYGZhy{}0.  ,  0.  ,  0.  ,  0.71, \PYGZhy{}0.  , \PYGZhy{}0.  ],
-       [\PYGZhy{}0.  ,  0.5 , \PYGZhy{}0.  ,  0.5 ,  0.  ,  0.5 ,  0.5 ],
-       [ 0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.71,  0.  , \PYGZhy{}0.  ],
-       [ 0.58,  0.58, \PYGZhy{}0.  ,  0.  ,  0.58, \PYGZhy{}0.  ,  0.  ],
-       [ 0.58, \PYGZhy{}0.  , \PYGZhy{}0.  ,  0.58, \PYGZhy{}0.  ,  0.58,  0.  ],
-       [ 0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  , \PYGZhy{}0.  ]])
+array([[ 0.71, \PYGZhy{}0.  , \PYGZhy{}0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.  ],
+       [ 0.  ,  0.5 ,  0.  ,  0.5 ,  0.  ,  0.5 ,  0.5 ],
+       [\PYGZhy{}0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.  ],
+       [ 0.58,  0.58, \PYGZhy{}0.  ,  0.  ,  0.58,  0.  ,  0.  ],
+       [ 0.58,  0.  , \PYGZhy{}0.  ,  0.58, \PYGZhy{}0.  ,  0.58,  0.  ],
+       [\PYGZhy{}0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  , \PYGZhy{}0.  ]])
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -10389,12 +10538,12 @@ Recall that the reason we embarked upon the SVD exploration was to find a way to
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([[ 0.71, \PYGZhy{}0.  ,  0.  ,  0.  ,  0.71, \PYGZhy{}0.  , \PYGZhy{}0.  ],
-       [\PYGZhy{}0.  ,  0.5 , \PYGZhy{}0.  ,  0.5 ,  0.  ,  0.5 ,  0.5 ],
-       [ 0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.71,  0.  , \PYGZhy{}0.  ],
-       [ 0.58,  0.58, \PYGZhy{}0.  ,  0.  ,  0.58, \PYGZhy{}0.  ,  0.  ],
-       [ 0.58, \PYGZhy{}0.  , \PYGZhy{}0.  ,  0.58, \PYGZhy{}0.  ,  0.58,  0.  ],
-       [ 0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  , \PYGZhy{}0.  ]])
+array([[ 0.71, \PYGZhy{}0.  , \PYGZhy{}0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.  ],
+       [ 0.  ,  0.5 ,  0.  ,  0.5 ,  0.  ,  0.5 ,  0.5 ],
+       [\PYGZhy{}0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.  ],
+       [ 0.58,  0.58, \PYGZhy{}0.  ,  0.  ,  0.58,  0.  ,  0.  ],
+       [ 0.58,  0.  , \PYGZhy{}0.  ,  0.58, \PYGZhy{}0.  ,  0.58,  0.  ],
+       [\PYGZhy{}0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  , \PYGZhy{}0.  ]])
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -10505,7 +10654,7 @@ There is a measurement called \(\rho\) (Greek letter rho) that can let you know 
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-3.37690824654076e\PYGZhy{}09
+1.8996640677931257e\PYGZhy{}09
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -10516,7 +10665,7 @@ We see that \(\rho\) says the error is tiny if we replace only the last singular
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-0.3221266792969309
+0.32212667929693095
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -10561,11 +10710,11 @@ Now that we have a sense of what SVD\sphinxhyphen{}based approximations do in ge
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 [1.0,
- 3.37690824654076e\PYGZhy{}09,
- 0.3221266792969309,
+ 1.8996640677931257e\PYGZhy{}09,
+ 0.32212667929693095,
  0.5422162727569354,
  0.6921213328320459,
- 0.8460293400488614,
+ 0.8460293400488615,
  1.0]
 \end{sphinxVerbatim}
 
@@ -11019,10 +11168,10 @@ Let’s see the resulting split.
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
     Totally      Fake      Data
 0  1.000000  3.000000  5.000000
-1  1.111111  3.111111  5.111111
+2  1.222222  3.222222  5.222222
 3  1.333333  3.333333  5.333333
 4  1.444444  3.444444  5.444444
-5  1.555556  3.555556  5.555556
+6  1.666667  3.666667  5.666667
 7  1.777778  3.777778  5.777778
 8  1.888889  3.888889  5.888889
 9  2.000000  4.000000  6.000000
@@ -11034,8 +11183,8 @@ Let’s see the resulting split.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
     Totally      Fake      Data
-2  1.222222  3.222222  5.222222
-6  1.666667  3.666667  5.666667
+1  1.111111  3.111111  5.111111
+5  1.555556  3.555556  5.555556
 \end{sphinxVerbatim}
 
 
@@ -14859,7 +15008,7 @@ The same code works for any random variable, not just \sphinxcode{\sphinxupquote
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([1, 1, 0, 1, 0, 0, 1, 0, 0, 1])
+array([1, 0, 0, 0, 0, 1, 0, 1, 0, 1])
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -14958,9 +15107,9 @@ The same code works for any continuous random variable, not just \sphinxcode{\sp
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([ 96.27565519,  96.57325868,  95.18338188,  95.8308922 ,
-       100.35082257,  98.81968122, 104.63658437, 110.52895436,
-        95.54441363, 103.41107763])
+array([ 98.65522997,  92.42686989,  87.93399829,  99.89599075,
+       100.13652866,  94.67244195,  97.28548555, 100.72083596,
+       102.59073093,  94.03755861])
 \end{sphinxVerbatim}
 
 
@@ -15129,7 +15278,7 @@ To create a linear model, use \sphinxcode{\sphinxupquote{scipy}} as follows.
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-LinregressResult(slope=0.1327195637885226, intercept=\PYGZhy{}37.32141898334582, rvalue=0.8949574425541466, pvalue=0.006486043236692156, stderr=0.029588975845594334, intercept\PYGZus{}stderr=18.995444317768097)
+LinregressResult(slope=0.1327195637885226, intercept=\PYGZhy{}37.32141898334582, rvalue=0.8949574425541466, pvalue=0.006486043236692156, stderr=0.029588975845594334)
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
