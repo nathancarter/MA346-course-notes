@@ -374,3 +374,32 @@ pd.read_csv( 'https://www1.ncdc.noaa.gov/pub/data/cdo/samples/PRECIP_HLY_sample_
 # Python actually comes with a built-in SQLite database module, which you can use by doing `import sqlite3 as sl`, without even any installation step.  Check out [this blog post](https://towardsdatascience.com/do-you-know-python-has-a-built-in-database-d553989c87bd) for more information, and report to the class on its key features.  Ensure that you include at least one complete example of creating a database on disk and then reading values out of it again later with some queries.
 # ```
 # 
+# Now that you're familiar with JSON and APIs through your DataCamp prep work for this class, you can also consider some Learning On Your Own opportunities with data for sports analytics.  Here are three examples.
+# 
+# ```{admonition} Learning on Your Own - College Football Data Python API
+# ---
+# class: alert alert-danger
+# ---
+# [This tutorial](https://gist.github.com/GJMcClintock/29330e26f674d4103c4f7080212a9208) introduces a Python API for accessing college football data.  Investigate the API and write a report that covers:
+# 
+#  * How to get the requisite tools.  (E.g., do we have to install or import anything?  How?)
+#  * What are the most common functions users will probably want to call, and what kind of data do they yield?
+#  * Show a small example investigation to illustrate how the tool could be used, such as creating some visualizations or pivot tables that show something you find interesting in the college football data.
+# ```
+# 
+# ```{admonition} Learning on Your Own - NBA Data Processing Tutorials
+# ---
+# class: alert alert-danger
+# ---
+# [These tutorials](https://github.com/rd11490/NBA_Tutorials) show a lot of methods for querying basketball data from the web.  But they are very specific to the things that the author found useful for their own work, such as underdog strategies, RAPM, and so on.  Create a report that gives a few smaller, more basic tutorials, answering more introductory questions such as the following (or similar ones you come up with).
+# 
+#  * What kinds of NBA data exists on the web that we can query with Python tools?
+#  * For each of the 3 or 4 most common types of data in your answer to the previous question, do all of the following things:
+#     * Show a short snippet of Python code for fetching that type of data.
+#     * Ensure that you explain that Python code and how the reader might customize it to their own needs.
+#     * Explain the content of the resulting data to whatever degree you are able and/or link to documentation online that provides a data dictionary when possible.
+#     * Do something simple and interesting with the output, such as make a plot or pivot table.
+# ```
+# 
+# For those interested in sports analytics, [the Python `sportsreference` module](https://pypi.org/project/sportsreference) also seems excellent, but I do not have any LOYOs to assign based on it, because it seems to come with very comprehensive documentation in the form of well-written blog posts.
+# 

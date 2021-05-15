@@ -10,7 +10,7 @@
 # 
 # You've been learning a lot of data manipulation and analysis in Python.  But Python is an environment that only data professionals and scientists tend to dive into.  What happens when you want to let non-technical people browse your work?
 # 
-# Most of the time, we write reports or create slide decks to share our results.  But sometimes the experience of exploring the data is more powerful than a static report or pre-packaged slide deck can ever be.  Sometimes the manager who asked for the analysis wants to experiment with various parameter values themself, especially if they were a data analyst once, too.
+# Most of the time, we write reports or create slide decks to share our results.  But sometimes *the experience of exploring the data* is more powerful than a static report or pre-packaged slide deck can ever be.  Sometimes the manager who asked for the analysis wants to experiment with various parameter values themself, especially if they were a data analyst once, too.
 # 
 # This is where *dashboards* come in.  A quick [Google image search for "data dashboards"](https://www.google.com/search?q=data+dashboard&tbm=isch) will show you dozens of examples of what dashboards look like.  Their purpose is to let the user explore the data using inputs like buttons and sliders, and seeing outputs that are typically data visualizations and summaries.  Dashboards don't give the user anywhere near as much flexibility as you have in Python, but they're much easier and faster.
 # 
@@ -40,7 +40,7 @@
 # 
 # ### Example begins here
 # 
-# In statistics, the Central Limit Theorem (CLT) says that if have several random variables, and we define a new random variable to be their sum, then that new random variable has a shape vaguely like a normal distribution.  Furthermore, if you increase the number of random variables in the sum, then that sum becomes even more precisely like a normal distribution.  Let's see this in action with some Python simulations.
+# In statistics, the Central Limit Theorem (CLT) says that if we have several random variables, and we define a new random variable to be their sum, then that new random variable has a shape vaguely like a normal distribution.  Furthermore, if you increase the number of random variables in the sum, then that sum becomes even more precisely like a normal distribution.  Let's see this in action with some Python simulations.
 # 
 # First, we'll need NumPy to generate random numbers for us, and we'll use the generic uniform distribution for this simulation.
 
@@ -88,11 +88,16 @@ np.mean( sample ), np.std( sample )
 # ## Step 1: We need a Python script
 # 
 # In this course, I don't make any restrictions on whether you program in Python scripts (`.py`) or Jupyter notebooks (`.ipynb`).  But Streamlit is an exception; it forces us to use Python scripts.  If you're already in the habit of doing all your data work in Python scripts, then you can skim the rest of this section and pick up in Step 2.  But if you're usually a Jupyter user, the good news is that you can convert a notebook into a Python script in just a few clicks, using Jupyter itself.
-#  1. From the File menu, choose Export Notebook As..., and choose Export Notebook to Executable Script.
+# 
+#  1. Export your notebook as a Python script.  How to do this depends on which platform you're using.  Here are some examples.
+#      * If you're using Jupyter, go to the File menu, choose Export Notebook As..., and choose Export Notebook to Executable Script.
+#      * If you're using Deepnote, open a terminal and run the command `jupyter nbconvert --to python notebook.ipynb` (but substituting your notebook's filename in place of `notebook.ipynb`).  Then your files list will contain the converted Python script and you can download it.
+#      * If you're using Colab, go to the File menu, choose Download, and choose Download `.py`.
+#      * If you're editing a notebook in VS Code, the toolbar above the notebook contains an "Export As" button and one of the options is as a Python script.
 #  2. This will download the result as a Python script to your computer.  The browser may warn you that it's dangerous to download and run Python scripts.  Although that's true in general, if you wrote the script, it should be safe for you to download!
 #  3. The file will probably end up in your downloads folder, and you'll want to move it from there to wherever you keep your course work.
 # 
-# If you're a Jupyter user, you can still edit the Python script using Jupyter.  In addition to letting you edit notebooks, Jupyter supports editing of Python files and many other file types.
+# All the tools mentioned above will also let you edit the Python script you created and/or downloaded.  Jupyter, Deepnote, Colab, and VS Code all support editing Python scripts (and many other file types).
 # 
 # If I take the example shown above and run this process on it, I get the following Python script.  Notice how Jupyter turns all the Markdown content of my notebook into Python comments and marks each cell as a numbered input (`In[1]`, `In[2]`, etc.).
 # 
@@ -140,6 +145,10 @@ np.mean( sample ), np.std( sample )
 # np.mean( sample ), np.std( sample )
 # ```
 
+# ```{warning}
+# From this point onward, do the work on your own computer, not a cloud service provider like Deepnote or Colab.  The reason for this is that the tools we'll be using (Streamlit and Heroku) to turn your Python script into an online dashboard cannot be run from within Deepnote or Colab.
+# ```
+# 
 # Running that Python script will produce the same plot that's shown in this Jupyter notebook.  If you're using a Python IDE, it will typically appear in that IDE.  If you're running it from the terminal, it will probably pop up a separate Python window showing the plot, and your script will terminate once you've closed the window.
 # 
 # Although comments in code are great, the comments above look like they belong in an interactive notebook that someone would read, with the output and pictures included.  So they're not the kind of comments we need in a Python script.  To make things more succinct, I'm going to delete them.  That produces the following Python code.
@@ -163,7 +172,7 @@ np.mean( sample ), np.std( sample )
 # 
 # Notice also that three lines in the code don't actually do anything.  In Jupyter, a line of code like `np.random.rand( 10 )` (the second line of the above code), when placed at the end of a cell, will show its output to us in the notebook.  But in a Python script, without a `print()` function call, it won't show us anything.  But that line of code, together with the `my_random_variable()` line later, were both done as little tests to see if our code was working correctly.  We don't need to see their output in our Python script, so I'll delete those lines.
 # 
-# However, the final line of code may be interesting to us, because the CLT actually speaks about the mean and standard deviation of the resulting random variable.  So we might like to see that value.  I'll add some `print()` function calls so that our script displays those values in a readable way.  I'll also clean it up by moving all the imports the top.
+# However, the final line of code may be interesting to us, because the CLT actually speaks about the mean and standard deviation of the resulting random variable.  So we might like to see those values.  I'll add some `print()` function calls so that our script displays those values in a readable way.  I'll also clean it up by moving all the imports the top.
 # 
 # ```python
 # import numpy as np
@@ -418,42 +427,45 @@ np.mean( sample ), np.std( sample )
 # df = load_mortgage_data()
 # ```
 # 
-# The `@st.cache` code tells Streamlit that the function immediately after it should be run only once, the first time the dashboard is launched, and any later attempt to call to the same function can just use the previously-loaded value, without actually re-running the function at all.
-# 
-# More information on Streamlit caching is available [here](https://docs.streamlit.io/en/stable/api.html#optimize-performance).
+# The `@st.cache` code tells Streamlit that the function immediately after it should be run only once, the first time the dashboard is launched, and any later attempt to call to the same function can just use the previously-loaded value, without actually re-running the function at all.  If you'd like more information on Streamlit caching, see [here](https://docs.streamlit.io/en/stable/api.html#optimize-performance).
 
-# You now know how to create dashboard apps with a good bit of flexibility and sophistication!  The next question is how to deploy them to the web.  The second half of today's notes answer that question.
+# You now know how to create dashboard apps with a good bit of flexibility and sophistication!  The next question is how to deploy them to the web.  The second half of today's notes answers that question.
 
 # ## Making your dashboard into a Heroku app
 # 
-# You can deploy a Streamlit dashboard to a website in many different ways.  Here, we will cover a tool used by many developers to deploy websites to a free cloud hosting platorm, Heroku.  While Heroku has paid plans for websites and web apps that get a lot of traffic, the free plan is far more than we need for our purposes.  As mentioned [above](#whats-a-dashboard-and-why-do-we-have-them), I expect that you've already registered for a Heroku account and installed their command line interface tools.  (The lessons I give below are inspired by a very helpful blog post I read on this technology; thanks to [Gilbert Tanner](https://gilberttanner.com/blog/deploying-your-streamlit-dashboard-with-heroku) for the original information.)
+# You can deploy a Streamlit dashboard to a website in many different ways.  Here, we will cover a tool used by many developers to deploy websites to a free cloud hosting platorm, Heroku.  While Heroku has paid plans for websites and web apps that get a lot of traffic, the free plan is far more than we need for our purposes.  As mentioned [above](#what-s-a-dashboard-and-why-do-we-have-them), I expect that you've already registered for a Heroku account and installed their command line interface tools.  (The lessons I give below are inspired by a very helpful blog post I read on this technology; thanks to [Gilbert Tanner](https://gilberttanner.com/blog/deploying-your-streamlit-dashboard-with-heroku) for the original information.)
 # 
 # ### Step 1. Make your project a git repository
 # 
-# This step has several parts.  Parts 1-3 need to be done only once.  Part 4 must be done any time you change your app and want to prepare to deploy a new version to Heroku.
+# This step has several parts.  Parts 1--3 need to be done only once.  Part 4 must be done any time you change your app and want to prepare to deploy a new version to Heroku.
+# 
 #  1. **Make sure your files are in a folder by themselves, dedicated to this dashboard project.**  In the case of the example dashboard I've been using in this chapter, that's just one file, my Python script.  If you had data files, images, or Python modules to go with your Python script, you'd move them into that folder, too.
 #  2. **Change the name of your main Python script to `app.py`.**  Although this is not required, it will make the instructions simpler from here on.
-#  3. **Turn that folder into a git repository.**  How to do this was covered in [this section of the Chapter 8 notes](chapter-8-version-control#create-a-repository).
-#  4. **Commit all the files to the git repository.**  How to do a commit was covered in [this section of that same chapter](chapter-8-version-control#make-a-commit).
+#  3. **Turn that folder into a git repository.**  How to do this was covered in [this section of the Chapter 8 notes](chapter-8-version-control.html#create-a-repository).
+#  4. **Commit all the files to the git repository.**  How to do a commit was covered in [this section of that same chapter](chapter-8-version-control.html#make-a-commit).
 
 # ### Step 2. Connect your repository to Heroku
 # 
 # This step has two parts, and it needs to be done only once.
 #  1. **Log in to Heroku on the command line.**  Go to any terminal and run the command `heroku login`.  For instance, if you're using Jupyter, you can open a new Launcher, run a terminal, and then execute that command.  It should launch your default browser and prompt you to log in there.
-#  2. **Tell your git repository about Heroku.**  While still in the terminal, change into the directory where your dashboard project is located and run `heroku create`.  This will create an online virtual machine in which you can deploy and run your Heroku app.  If you're unsure about how to change directories in the terminal, see the tutorials linked to [above](#Step-2.-Converting-your-script-to-use-Streamlit).
+#  2. **Tell your git repository about Heroku.**  While still in the terminal, change into the directory where your dashboard project is located and run `heroku create`.  This will create an online virtual machine in which you can deploy and run your Heroku app.  If you're unsure about how to change directories in the terminal, see the tutorials linked to [above](#step-2-converting-your-script-to-use-streamlit).
 # 
 # Your online virtual machine will have a funny name, like `careful-muskrat-17.herokuapp.com`.  This is fine for the little test we're running here, but if you make a nice dashboard and want it to have a better name, you can always [change the name later](https://devcenter.heroku.com/articles/renaming-apps).
 
 # ### Step 3. Add files Heroku will need
+# 
+# ```{warning}
+# The instructions in this section are very fiddly, in the sense that if you do not follow them precisely, Heroku will probably not launch your dashboard app.  Pay careful attention to all details.
+# ```
 # 
 # Soon, we will push your git repository to Heroku, and expect Heroku to run your app.  But Heroku is a very generic tool; it's not for Streamlit apps only, nor even for just Python apps.  So we cannot expect Heroku to know what to do with our Python script.  We will need to tell it how to set itself up with the necessary Python modules and how to run our dashboard once it has done so.  This requires putting three configuration files into our git repository.  This step needs to be done only once.
 # 
 # **Requirements:** Create a new text file in your project folder and call it `requirements.txt`.  (You can create text files in Jupyter from the launcher; just choose Text File.)  Requirements files are a Python standard, and list all the Python modules a project will need.  Your `requirements.txt` file will need to list any Python module your dashboard uses.  Since mine uses pandas, matplotlib, and Streamlit, I will list those, with their current versions at the time of this writing.  The versions may be newer when you read this.
 # 
 # ```text
-# pandas==1.0.1
-# matplotlib==3.1.3
-# streamlit==0.57.2
+# pandas==1.2.4
+# matplotlib==3.4.2
+# streamlit==0.82.0
 # ```
 # 
 # **Setup:** The following file will seem quite cryptic to most readers.  Its contents are mostly unimportant for our purposes here.  The short explanation is that Heroku virtual machines run Linux, and the following command is written in the language of the Linux command line, and tells Heroku how to set up your app.  Note that the only change you'll want to make is to replace the text `your-email@bentley.edu` with your actual email address.
@@ -488,11 +500,11 @@ np.mean( sample ), np.std( sample )
 
 # ### Step 4. Deploy your app to the web
 # 
-# You deploy an app to the web with a simple git push.  (Recall that git pushes and pulls were explained in [the chapter on version control](chapter-8-version-control#what-if-i-want-to-collaborate).)  You can do this in one of two ways.
+# You deploy an app to the web with a simple git push.  (Recall that git pushes and pulls were explained in [the chapter on version control](chapter-8-version-control.html#what-if-i-want-to-collaborate).)  You can do this in one of two ways.
 # 
 # In the version control chapter, I suggested using the GitHub Desktop app to push changes to the web, by just clicking the "Publish branch" button.  But when you publish to Heroku, it prints a lot of useful information about whether your app deployed successfully or not and why.  If you use the GitHub Desktop app, you won't see that information; it will all be hidden from you.  So instead, I recommend using the terminal for this task as well.
 # 
-# Assuming your terminal is still in your project folder, issue the command `git push heroku master`.  You will need to wait while Heroku does all the setup for your app, but it will print a lot of messages explaining what it's doing.  If all goes well, the final line of your output will look like the following.
+# Assuming your terminal is still in your project folder, issue the command `git push heroku main`.  You will need to wait while Heroku does all the setup for your app, but it will print a lot of messages explaining what it's doing.  If all goes well, the final line of your output will look like the following.
 # 
 # ```text
 # remote: -----> Launching...
@@ -501,7 +513,7 @@ np.mean( sample ), np.std( sample )
 # remote:
 # remote: Verifying deploy... done.
 # To https://git.heroku.com/careful-muskrat-17.git
-#  * [new branch]      master -> master
+#  * [new branch]      main -> main
 # ```
 # 
 # You can copy and paste the `https://...` URL into your browser to visit the dashboard.  To skip the copy-and-paste step, you can just run `heroku open` in the terminal and it will launch the app in your browser for you.  You can share its URL with anyone in the world and they can see the dashboard online as well.
@@ -511,14 +523,17 @@ np.mean( sample ), np.std( sample )
 # ### Updating your app later
 # 
 # If you later make changes to the dashboard on your computer and want to update the web version to reflect those changes, you'll just need to repeat two of the instructions from above.
+# 
 #  1. Commit all your changes to your git repository.
-#  2. Run `git push heroku master` again.
+#  2. Run `git push heroku main` again.
 # 
 # This will re-deploy an updated version of the app, and if you then refresh your browser, you should see the new version.
 
 # ## Closing remarks
 # 
 # One of the requirements for your final project in MA346 is to include an online dashboard as part of your work.  Early in your project work it would be helpful to think through two strategic questions to help make that possible.  First, be sure to choose a project that lends itself well to having some part of its work showcased in a dashboard.  Second, ensure that at least one person on the project team is familiar enough with the content of this chapter to do it well for the final project.  I realize that this chapter's content is rather technical, but not everyone in the class must master it fully.  But at least one person from each team must do so!
+# 
+# Alternatively, Streamlit has [its own method](https://blog.streamlit.io/introducing-streamlit-sharing/) for publishing dashboards that doesn't require a Heroku account or the same set of three annoying configuration files.  But as of this writing, it's still on an invitation-only basis; you have to request an invite before you can use it.  You might consider that option for publishing your dashboards.
 # 
 # Finally, there are several opportunities for Learning On Your Own projects you can do based on this chapter's content.  Here are a few.
 # 
@@ -529,10 +544,29 @@ np.mean( sample ), np.std( sample )
 # A more flexible and powerful dashboard module for Python is called [Dash](https://pypi.org/project/dash/).  However, Dash requires deeper programming knowledge than Streamlit does, so we chose to use Streamlit.  Take a few Dash tutorials, such as [this one on DataCamp](https://www.datacamp.com/community/tutorials/learn-build-dash-python), build an app or two, and report back to the class on its strengths and weaknesses, plus where the reader could go to learn more.
 # ```
 # 
-# ```{admonition} Learning on Your Own - Alternative to Streamlit: Voila
+# ```{admonition} Learning on Your Own - Alternative to Streamlit: Voilà
 # ---
 # class: alert alert-danger
 # ---
 # [Voilà](https://github.com/voila-dashboards/voila) is a different type of dashboard toolkit; it converts your Jupyter notebook directly into a dashboard.  However, it seems more complex to use than Streamlit, so it wasn't my choice for this course.  As in the previous LOYO, try a Voilà tutorial, build an app using it, and report back to the class on its strengths and weaknesses, plus where the reader could go to learn more.
 # ```
+# 
+# ```{admonition} Learning on Your Own - Alternative to Streamlit: Gradio
+# ---
+# class: alert alert-danger
+# ---
+# [Gradio](https://www.gradio.app/) is a much easier way to publish dashboards online, but it comes with the significant limitation that you can only publish one function.  If you have a complex set of inputs and outputs with explanations that surround them, Gradio may be insufficient for your needs.  It has a platform similar to Streamlit Sharing for publishing to Gradio from a public GitHub repository.
+# 
+# Investigate whether it is possible to create in Gradio the a dashboard like the one we created in this chapter of the course notes.  Describe the process, share a link to your code and the resulting dashboard, and document any limitations you came up against.
+# ```
+# 
+# ```{admonition} Learning on Your Own - Alternative to Streamlit: Deepnote Interactive Blocks
+# ---
+# class: alert alert-danger
+# ---
+# Deepnote has some basic interactivity built in, as shown in [this demo video](https://www.loom.com/share/15e1df8bb28746cba03cbf855af6cd0f).  Its limitations are that your code cells can't be 100% hidden (just mostly hidden) and there are only three types of inputs (and sliders are not one of them).
+# 
+# Investigate whether it is possible to create in Deepnote a dashboard like the one we created in this chapter of the course notes.  Describe the process, share a link to your code and the resulting dashboard, and document any limitations you came up against.
+# ```
+# 
 # 

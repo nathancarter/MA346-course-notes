@@ -31,7 +31,7 @@
 #     * [Chapter 4: Python review focusing on pandas and mathematical foundations](chapter-4-review-of-python-and-pandas) (prepares for next week)
 #  * **Other**
 #     * If you don't already have a Python environment installed on your computer, [see these instructions for installing one](anaconda-installation).  As part of that process, ensure that you can open both Jupyter Lab and VS Code.
-#     * Optional: There are many LOYO opportunities from this week's course notes (chapters 1 and 2).  See the syllabus for a definition of LOYO (Learning on Your Own) and consider forming a team and siezing one of the opportunities.
+#     * Optional: There are many LOYO opportunities from today's course notes (chapters 1 and 2).  See the syllabus for a definition of LOYO (Learning on Your Own) and consider forming a team and siezing one of the opportunities.
 
 # ---
 
@@ -116,17 +116,16 @@
 #     * Extract the table from that page into a CSV file (for example, by copying and pasting into Excel, then touching it up as needed).
 #     * Write a Jupyter notebook that imports the CSV file.
 #     * Ensure that you remove all rows that are not for entire states (which you can do in Excel or Jupyter, whichever you prefer).
-#     * Publish the notebook and the dataset together to a Deepnote or Colab project.
-#     * Share the project URL with your instructor by email.
-#     * We will use this dataset in class next week.
+#     * Follow [Deepnote's instructions](https://docs.deepnote.com/importing-and-exporing/export-to-pdf) for how to export the resulting notebook as a PDF.
+#     * Submit that notebook to your instructor through [Blackboard](https://blackboard.bentley.edu).
 #  * **DataCamp**
 #     * [Merging DataFrames with pandas](https://learn.datacamp.com/courses/merging-dataframes-with-pandas), chapters 1-3
-#        * **NOTE:** We will not cover this content in class next week.  We will cover it the subsequent week instead.  But I'm assigning you to do it this week because then you won't have any homework next week, when the project is due, and you'll be able to focus on that instead.
+#        * **NOTE:** We will not cover this content in class next time.  We will cover it the subsequent class meeting instead.  But I'm assigning you to do it now because then you won't have any homework next time, when the project is due, and you'll be able to focus on that instead.
 #     * [See here for a cheat sheet](big-cheat-sheet.html#before-day-6) of all the content of the above DataCamp lessons.
 #  * **Reading**
 #     * [Chapter 11: Processing the rows of a `DataFrame`](chapter-11-processing-rows)
 #  * **Other**
-#     * Optional: There are several LOYO opportunities from this week's course notes (chapters 9 and 10).  Consider forming a team and siezing one of the opportunities.
+#     * Optional: There are several LOYO opportunities from today's course notes (chapters 9 and 10).  Consider forming a team and siezing one of the opportunities.
 
 # ---
 
@@ -138,11 +137,11 @@
 # 
 # ### Due before next class
 # 
-#  * **No DataCamp this week, so that you can focus on the project.**
+#  * **No DataCamp today, so that you can focus on the project.**
 #  * **Reading**
 #     * [Chapter 12: Concatenation and Merging](chapter-12-concat-and-merge)
 #  * **Other**
-#     * Optional: There are a few LOYO opportunities from this week's course notes (chapter 11).  Consider forming a team and siezing one of the opportunities.
+#     * Optional: There are a few LOYO opportunities from today's course notes (chapter 11).  Consider forming a team and siezing one of the opportunities.
 
 # ---
 
@@ -180,9 +179,28 @@
 #  * **Reading**
 #     * [Chapter 14: Dashboards](chapter-14-dashboards)
 #  * **Other**
-#     * Install [Streamlit](https://www.streamlit.io/) (`pip install streamlit`).  Take a screenshot to prove you did so.
-#     * [Create a Heroku account](https://signup.heroku.com/).  Then [install the Heroku command-line tools](https://devcenter.heroku.com/articles/getting-started-with-python#set-up).  Ensure that after doing so, you can get to a terminal and run `heroku login` successfully.  Take a screenshot to prove you did so.
-#     * Email both screenshots in one email to your instructor.
+#     * Ensure that you have the `git` command installed on your own computer (again, *not* on Deepnote or Colab).
+#        * If you're on Windows and have already installed the GitHub Desktop app, then you just need to tell Windows where to find the `git.exe` command that's built into that app.  The folder containing it will be something like `C:\Users\YOUR-USERNAME\AppData\Local\GitHubDeskttop\app-2.8.1\resources\app\git\cmd`.  Investigate using Windows Explorer to find the correct path for your system.  You may need to reveal hidden files and folders to find the AppData folder.  (Yes, this is a pain.)
+#        * If you're on Mac, you might not have the `git` command unless you've installed Xcode at some time in the past.  You can run `xcode-select --install` to install just the minimal Xcode tools to get `git`.  If that doesn't work, download them [directly from Apple](https://developer.apple.com/download/more/?=xcode), which may require creating a free developer account.
+#        * To prove that you successfully got the `git` command installed, run `git --version`.
+#        * Take a screenshot of your terminal window showing the results of the successful `git --version` so I can see that you got this to work.
+#     * Install [Streamlit](https://www.streamlit.io/) on your own computer.
+#        * The command you need is `pip install streamlit`.
+#        * *Do not run this command on Deepnote or Colab, but on your own computer.*
+#        * Once you've installed it, you should be able to run the command `streamlit --version` to see what version is installed.  Do so to ensure that your installation succeeded.
+#     * Create a Heroku account.
+#        * [Here is the signup page.](https://signup.heroku.com/)
+#        * Then [install the Heroku command-line tools](https://devcenter.heroku.com/articles/getting-started-with-python#set-up) on your own computer (again, *not* on Deepnote or Colab).
+#        * Ensure that after doing so, you can get to a terminal and run `heroku login` successfully.
+#        * If you're on Windows and it can't find the `heroku` command even though you just installed it, you may need to add `C:\Program Files\Heroku\bin` to your system path variable.  [Follow this tutorial to do so.](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)
+#     * Take a screenshot to prove that all this worked.
+#        * After you've run `heroku login` and can still see its successful output, just re-run the `git --version` and `streamlit --version` commands so that all three outputs are on one screen, making it obvious that you've got all three tools installed correctly.
+#        * Take a screenshot of that terminal window showing those three commands' successful output.
+#        * Submit that screenshot via [Blackboard](https://blackboard.bentley.edu) as your homework.
+#        * It should look something like this:
+# 
+# ![An image of the screenshot described in the text above](./_images/command-line-setup-screenshot.png)
+# 
 #  * **Project Planning**
 #     * Optional: If you want to get ahead on the final project in a way that's rather easy and fun, start hunting for datasets that cover a topic you're interested in and might want to analyze.  Try to find a dataset that's pretty comprehensive, so that there are plenty of options for ways to analyze, visualize, and manipulate it.
 # 
@@ -202,11 +220,12 @@
 #     * <a href='../../_static/shipping1997.xlsx'>Download this Excel workbook</a> of shipping data among U.S. states in 1997.
 #     * Look over all the sheets in the workbook to familiarize yourself with their meaning.
 #     * Create a Jupyter notebook that reads all the sheets from the workbook.
+#        * **Note:** Reading Excel files requires installing the `openpyxl` module, which is not present by default in some cloud computing environments.  You may need to run `pip install openpyxl` in the terminal, or at the top of the notebook, or place it in a `requirements.txt` file.
 #     * Add code that creates a DataFrame just like the shipping sheet, but with each state abbreviation replaced by its full name.
 #     * The "adjacent" column in the distances DataFrame should be boolean type; convert it.
 #     * Add two columns to the shipping table, one containing the distance between the two states, and the other containing the boolean of whether the two states are adjacent, both taken from the distance table.
-#     * Publish the dataset and your notebook with either Deepnote or Colab, your choice.  **Note:** Reading Excel files requires installing the `xlrd` module, which is not present by default in some cloud computing environments.  You may need to run `pip install xlrd` in the terminal, or at the top of the notebook, or place it in a `requirements.txt` file.
-#     * Send the link to your project to your instructor.
+#     * Follow [Deepnote's instructions](https://docs.deepnote.com/importing-and-exporing/export-to-pdf) for how to export the resulting notebook as a PDF.
+#     * Submit that notebook to your instructor through [Blackboard](https://blackboard.bentley.edu).
 #  * **Reading**
 #     * [Chapter 15: Relations as graphs and network analysis](chapter-15-networks)
 # 
