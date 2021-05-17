@@ -10,7 +10,7 @@
 
 # ## Using matrices for relations other than networks
 # 
-# In [chapter 15 of the notes](chapter-15-networks), we discussed two ways to store network data.  We talked about a table of edges, which listed each connection in the network as its own row in the dataframe, and we talked about an adjacency matrix, which was a table of 0-or-1 entries indicating whether the row heading was connected to the column heading.
+# In [chapter 15 of the notes](chapter-15-networks), we discussed two ways to store network data.  We talked about a table of edges, which listed each connection in the network as its own row in the DataFrame, and we talked about an adjacency matrix, which was a table of 0-or-1 entries indicating whether the row heading was connected to the column heading.
 # 
 # These same patterns can be used for data about other types of relations as well, not only networks.  Recall that a network is always a relation that connects a set to itself.  For instance, in the shipping network, both the row and column headings were the same set, the 50 U.S. states.
 # 
@@ -33,11 +33,19 @@
 # 
 # This is the format for an adjacency matrix for *any* kind of binary relation between any two sets.  Just as when we were dealing with network data, we can choose the data type that goes in the matrix.  If it is boolean (true/false or 0/1) then we are storing only whether an edge exists between the row heading and the column heading.  But if we store something more detailed (like the numeric values in the example above) then we have more information; in that case, it's measuring the quantity of materials shipped from the source to the destination.
 # 
-# If we think of the data stored in an edge list instead, then with networks, the two columns come from the same set (both are lists of dolphins, or both are lists of U.S. states), but when we consider any kind of relation, then the two columns can be different sets.  In the example above, one column would be manufacturing locations and the other would be retail locations.
+# If we think of the data stored in an edge list instead, then with networks, the two columns come from the same set (both are lists of dolphins, or both are lists of U.S. states).  But when we consider any kind of relation, then the two columns can be different sets.  If we converted the adjacency matrix above into an edge list, one column would be manufacturing locations and the other would be retail locations, as shown below.
+# 
+# |   From    |    To   | Amount |
+# |-----------|---------|--------|
+# | Factory 1 | Store 1 |     58 |
+# | Factory 1 | Store 2 |      0 |
+# | Factory 1 | Store 3 |     21 |
+# | Factory 2 | Store 1 |     19 |
+# | etc.      | etc.    |   etc. |
 
 # ## Pivoting an edge list
 # 
-# Recall from [the chapter 15 notes](chapter-15-networks) that if you have an edge list, you can turn it into an adjacency matrix with a single pivot command.  For instance, if we had the following edge list among a few factories and stores, we can create an adjacency matrix with the code shown.
+# Recall from [the chapter 15 notes](chapter-15-networks.html#storing-graphs-in-tables) that if you have an edge list, you can turn it into an adjacency matrix with a single pivot command.  For instance, if we had the following edge list among a few factories and stores, we can create an adjacency matrix with the code shown.
 
 # In[1]:
 
@@ -98,7 +106,7 @@ prefs
 # In[4]:
 
 
-X = pd.Series( [ 1,0,0,1,0,0,1], index=prefs.columns )
+X = pd.Series( [ 1,0,0,1,0,0,1 ], index=prefs.columns )
 X
 
 
@@ -108,7 +116,7 @@ X
 # 
 # A pandas DataFrame is a grid of data, and when that grid contains only numbers, it can be referred to as a *matrix.*  A single pandas Series of numbers can be referred to as a *vector.*  These are the standard terms from linear algebra for grids and lists of numbers, respectively.  Throughout the rest of this chapter, because we'll be dealing only with numerical data, I may say "matrix" or "DataFrame" to mean the same thing, and I may say "vector" or "pandas Series" to mean the same thing.
 # 
-# First, a matrix can be multiplied by another matrix or vector.  The important step for us here is the multiplication of the preferences matrix for all users with the preferences vector for user X.  Such a multiplication is a combination of the columns in the matrix, using the vector as the weights when combining.  In Python, the symbol for matrix multiplication is `@`, so we can do the computation as follows.
+# A matrix can be multiplied by another matrix or vector.  The important step for us here is the multiplication of the preferences matrix for all users with the preferences vector for user X.  Such a multiplication is a combination of the columns in the matrix, using the vector as the weights when combining.  In Python, the symbol for matrix multiplication is `@`, so we can do the computation as follows.
 
 # In[5]:
 
@@ -124,7 +132,7 @@ prefs @ X
 # 
 # There is a bit of a problem, however, with the method just described.  What if user A really liked movies, and clicked the "like" button very often, so that most of the first row of our matrix were ones instead of zeros?  Then no matter who user X was, they would probably get ranked as at least a little bit similar to user A.  In fact, everyone would.  This is probably not what we want, because it means that people who click the "like" button a lot will have their preferences dominating the movie recommendations.
 # 
-# So instead, we will scale each row of the preferences matrix down.  The standard way to do this begins by treating each one as a vector in $n$-dimensional space; in this case we have 7 columns, so we're considering 7-dimensional space.  (Don't try to picture it; nobody can.)  The length of any vector $(v_1,v_2,\ldots,v_n)$ is computed as $\sqrt{v_1^2+v_2^2+\cdots+v_n^2}$, and this feature is built into numpy as the standard "linear algebra norm" for a vector.
+# So instead, we will scale each row of the preferences matrix down.  The standard way to do this begins by treating each row as a vector in $n$-dimensional space; in this case we have 7 columns, so we're considering 7-dimensional space.  (Don't try to picture it; nobody can.)  The length of any vector $(v_1,v_2,\ldots,v_n)$ is computed as $\sqrt{v_1^2+v_2^2+\cdots+v_n^2}$, and this feature is built into NumPy as the standard "linear algebra norm" for a vector.
 # 
 # For example, the length of user X's vector is $\sqrt{1^2+0^2+0^2+1^2+0^2+0^2+1^2}=\sqrt{3}\approx1.732$.
 
@@ -179,9 +187,9 @@ normalized_prefs @ normalized_X
 # In[11]:
 
 
-liked_by_E = prefs.loc['E',:] > 0
-liked_by_B = prefs.loc['B',:] > 0
-liked_by_X = X > 0
+liked_by_E = prefs.loc['E',:] > 0  # wherever E's preferences are > 0
+liked_by_B = prefs.loc['B',:] > 0  # wherever B's preferences are > 0
+liked_by_X = X > 0                 # wherever X's preferences are > 0
 # liked by E or by B but not by X:
 recommend = ( liked_by_E | liked_by_B ) & ~liked_by_X
 recommend
@@ -193,7 +201,7 @@ recommend
 # 
 # Sometimes hidden in the pattern of user preferences is a general shape or structure of overall movie preferences.  For instance, we can clearly see that some of the movies in our library are biographies and others are monster movies.  Shouldn't these themes somehow influence our recommendations?
 # 
-# Furthermore, what if there is a theme among moviegoers' preferences that none of us as humans would notice in the data, or maybe not even have a name for, but that matters a lot to moviegoers?  Perhaps there's a set of movies that combines suspense, comedy, and excitement in just the right amounts, and doesn't have a specific word in our vocabulary, but it hits home for many viewers, and could be detected by examining their preferences?  Or maybe what a certain set of moviegoers has in common is the love of a particular director, actress, or soundtrack composer.  Any of these patterns should be detectable with enough data.
+# Furthermore, what if there is a theme among moviegoers' preferences that none of us as humans would notice in the data, or maybe not even have a name for, but that matters a lot to moviegoers?  Perhaps there's a set of movies that combines suspense, comedy, and excitement in just the right amounts, and doesn't have a specific word in our vocabulary, but it hits home for many viewers, and could be detected by examining their preferences.  Or maybe what a certain set of moviegoers has in common is the love of a particular director, actress, or soundtrack composer.  Any of these patterns should be detectable with enough data.
 # 
 # Now, in the tiny 6-by-7 matrix of preferences we have here, we're not going to create any brilliant insights of that nature.  But with a very large database (like Netflix has), maybe we could.  How would we go about it?
 # 
@@ -205,7 +213,7 @@ recommend
 # 
 # ### Matrices as actions
 # 
-# When we speak of multiplying a matrix by a vector, as we did in `prefs @ X` and then later with `normalized_prefs @ normalized_X`, we are using the matrix not just as a piece of data, but as an action we're using on the vector.  In fact, if we think of matrix multiplication as a binary function, and we see ourselves as binding the matrix as the first argument to that function, then the result is actually a function (an action) we can take on vectors like `X`.
+# When we speak of multiplying a matrix by a vector, as we did in `prefs @ X` and then later with `normalized_prefs @ normalized_X`, we are using the matrix not just as a piece of data, but as an action we're using on the vector.  In fact, if we think of matrix multiplication as a binary function, and we see ourselves as binding the matrix as the first argument to that function, then the result is actually a unary function, an action we can take on vectors like `X`.
 # 
 # I mentioned earlier that matrix multiplication also shows up in MA307, a Bentley course on the math of computer graphics.  This is because the action that results from multiplying a matrix by a vector is one that moves points through space in a way that's useful in two- and three-dimensional computer graphics applications.
 # 
@@ -433,6 +441,6 @@ scores[~liked_by_X].sort_values( ascending=False )
 
 # ## Conclusion
 # 
-# In class, we will apply this same technique to an actual database of song recommendations from millions of users.  Be sure to download and prepare the data as part of [the homework assigned this week](course-schedule#week-10-11-5-2020-relations-graphs-and-networks).
+# In class, we will apply this same technique to an actual database of song recommendations from millions of users.  Be sure to download and prepare the data as part of [the homework assigned this week](course-schedule.html#day-10-6-17-21-relations-graphs-and-networks).
 # 
 # If you want to know more about the concepts of matrix multiplication and factorization, which were covered only extremely briefly in this chapter, consider taking MA239, Linear Algebra.

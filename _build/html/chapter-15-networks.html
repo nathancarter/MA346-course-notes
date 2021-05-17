@@ -216,6 +216,11 @@
    5. GB213 Review in Python
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loyo-list.html">
+   6. All Learning On Your Own Opportunities
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -379,19 +384,24 @@
 <p><a href="../../_slides/chapter-15-slides.html">See also the slides that summarize a portion of this content.</a></p>
 <div class="section" id="what-is-a-graph">
 <h2><span class="section-number">15.1. </span>What is a graph?<a class="headerlink" href="#what-is-a-graph" title="Permalink to this headline">¶</a></h2>
-<p>In mathematics, the word <em>graph</em> has two meanings.  The more common one is what most people learned in algebra class, which is the graph of a function, on the ordinary Cartesian plane of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> axes.  The less common meaning is a visualization of an interconnected network of objects.  In such a network, the objects being connected are called <em>nodes</em> or <em>vertices,</em> and the connections are called <em>edges,</em> <em>arrows,</em> or <em>links.</em>  While we call it a graph in mathematics, data scientists might refer to it instead as <em>network data.</em></p>
-<p>Let’s start with a small, pretend example.  Let’s say we spoke to five friends and asked them which of the others they’d turn to for advice about an important life decision.  We could depict their answers with a picture like the following.</p>
+<p>In mathematics, the word <em>graph</em> has two meanings.</p>
+<ul class="simple">
+<li><p><strong>Meaning #1 (more common):</strong> The graph of a function on the ordinary Cartesian plane of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> axes.</p></li>
+<li><p><strong>Meaning #2 (less common):</strong> A visualization of an interconnected network of objects.</p></li>
+</ul>
+<p>We’re focused on the second meaning here.  In such a network, the objects being connected are called <em>nodes</em> or <em>vertices,</em> and the connections are called <em>edges,</em> <em>arrows,</em> or <em>links.</em>  While we call it a graph in mathematics, data scientists might refer to it instead as <em>network data.</em></p>
+<p>Let’s start with a small, pretend example.  Let’s say we spoke to five friends and asked them which of the others they’d turn to for advice about an important life decision.  We could depict their answers with a visualization like the following.</p>
 <p><img alt="Image of five ovals, labeled Augustus, Beatriz, Cyrano, Dauphine, Englebert, some connected in pairs by arrows" src="_images/friends-graph.png" /></p>
-<p>In that image, the five friends are shown in ovals; these are the vertices of the graph.  The connections among them are the edges of the graph, representing the friends’ answers to the question about advice.  For instance, the arrow from Augustus to Cyrano says that Augustus would consult Cyrano when needing advice about an important life decision, but the absence of an arrow from Beatriz to Englebert means that she would not consult him.</p>
+<p>The five friends are the graph’s <em>vertices,</em> and are drawn with ovals in the image.  The connections among them are the graph’s <em>edges,</em> representing the friends’ answers to the question about advice.  For instance, the arrow from Augustus to Cyrano says that Augustus would consult Cyrano when needing advice about an important life decision, but the absence of an arrow from Beatriz to Englebert means that she would not consult him.</p>
 <p>Now that we’ve seen a small (but pretend) example, let’s consider some more realistic examples.</p>
 <ul class="simple">
-<li><p>To prepare for class, you were asked to consider a spreadsheet recording shipping records between every two U.S. states in the year 1997.  In that data, the vertices were the 50 states and the edges were the records of how much money/weight of goods were shipped.</p></li>
-<li><p>In today’s notes, we’ll also look at a spreadsheet created by marine biologists recording the interaction among a community of dolphins living off Doubtful Sound in New Zealand.  The vertices of that network are the dolphins and the edges represent social interactions among them.  (The data comes from <a class="reference external" href="http://www-personal.umich.edu/~mejn/netdata/">Mark Newman’s website</a>, which cites the biologists who collected it.)</p></li>
+<li><p>To prepare for class, you were asked to consider a spreadsheet recording shipping records between every two U.S. states in the year 1997.  In that data, the vertices were the 50 states and the edges were the records of how much money (or weight) of goods were shipped.</p></li>
+<li><p>In this chapter, we’ll look at a spreadsheet created by marine biologists recording the interaction among a community of dolphins living off Doubtful Sound in New Zealand.  The vertices of that network are the dolphins and the edges represent social interactions among them.  (The data comes from <a class="reference external" href="http://www-personal.umich.edu/~mejn/netdata/">Mark Newman’s website</a>, which cites the biologists who collected it.)</p></li>
 <li><p>One of the largest examples of network data has as its vertices the collection of all pages on the internet, and edges are links between them.  Google does linear algebra-based computations on this enormous graph regularly, to update their search engine to reflect the latest changes on the web.</p></li>
 </ul>
 <div class="alert alert-primary admonition">
 <p class="admonition-title">Big Picture - A graph depicts a binary relation of a set with itself</p>
-<p>Notice that a graph is nothing but a picture representing a <em>binary relation,</em> a term we first defined in <a class="reference internal" href="chapter-2-mathematical-foundations.html"><span class="doc std std-doc">the notes on Chapter 2</span></a>.  In the case of a graph, the two sets involved in the relation are the same; we’re connecting friends to friends in the picture above, or states to states with shipping information, or pages to pages with hyperlinks.  In a graph, the relation connects the set of vertices to itself, not to some other set.</p>
+<p>Notice that a graph is nothing but a picture representing a <em>binary relation,</em> a term we first defined in <a class="reference internal" href="chapter-2-mathematical-foundations.html"><span class="doc std std-doc">the notes on Chapter 2</span></a>.  In the case of a graph, the two sets involved in the relation are actually the same set, even though that’s not a requirement for binary relations in general.  In the examples above, we connected friends to friends for advice, and states to states with shipping information, and pages to pages with hyperlinks.  In a graph, the relation connects the set of vertices to itself, not to some other set.</p>
 </div>
 <p>The graph of five friends shown above is a <em>directed graph,</em> because the edges have arrowheads to indicate that they make sense in only one direction.  While Augustus said he would seek advice from Cyrano, Cyrano did not say the same about Augustus.</p>
 <p>In an <em>undirected graph,</em> every connection goes in both directions.  For instance, the relation recorded in the dolphin data is about spending time together.  If dolphin A is spending time with dolphin B, then the reverse is obviously also true.  So in the dolphin data, all connections go in both directions, and we can thus draw them without arrowheads; they are all “two-way streets.”</p>
@@ -399,7 +409,7 @@
 <div class="section" id="storing-graphs-in-tables">
 <h2><span class="section-number">15.2. </span>Storing graphs in tables<a class="headerlink" href="#storing-graphs-in-tables" title="Permalink to this headline">¶</a></h2>
 <p>In our course, we store almost all of our data in tables, such as pandas DataFrames, CSV files, etc.  How can a graph be represented in a table?  There are two primary ways.</p>
-<p>First, we can use an <em>adjacency matrix,</em> which is a table that tells which vertices are adjacent.  Its row headings are the vertices in the network, and the column headings are the same vertices again.  Each entry says whether the row connects to the column.  Here’s the adjacency matrix for the five friends graph shown above.</p>
+<p>First, we can use an <em>adjacency matrix,</em> which is a table that tells which pairs of vertices are adjacent.  Its row headings are the vertices in the network, and the column headings are the same vertices again.  Each entry says whether the row connects to the column.  Here’s the adjacency matrix for the five friends graph shown above.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
@@ -449,7 +459,7 @@
 </tbody>
 </table>
 <p>Order is important here.  If we want to know whether Augustus <span class="math notranslate nohighlight">\(\to\)</span> Cyrano, we must look in the Augustus <strong>row</strong> and the Cyrano <strong>column.</strong>  (This is not hard to remember, because the row headings are actually visually to the left of the column headings, which fits the “row <span class="math notranslate nohighlight">\(\to\)</span> column” orientation of the arrow.)</p>
-<p>Alternately, we could represent a relation the way we’ve discussed in the past.  We can just store in a table the list of pairs that make up the relation.  Each row in such a table represents an arrow in the graph.  For the five friends, that table looks like the following.</p>
+<p>Alternately, we could represent a relation the way we’ve discussed in <a class="reference internal" href="chapter-2-mathematical-foundations.html"><span class="doc std std-doc">Chapter 2</span></a>.  We can just store in a table the list of pairs that make up the relation.  Each row in such a table represents an arrow in the graph.  For the five friends, that table looks like the following.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>From</p></th>
@@ -480,7 +490,8 @@
 </tr>
 </tbody>
 </table>
-<p>We will call this kind of table a <em>list of ordered pairs,</em> because the ordering of each pair often matters.  From Augustus to Cyrano is not the same as from Cyrano to Augustus.  We can also call it an <em>edge list,</em> because the connections in a graph are called edges.</p>
+<p>Or we could name the columns something more descriptive, such as “Advice seeker” and “Advice giver.”  I chose “From” and “To” to show that a similar table could be used to store any directed graph data.</p>
+<p>We will call this kind of two-column table a <em>list of ordered pairs,</em> because the ordering of each pair of vertices often matters.  An edge from Augustus to Cyrano does not mean the same thing as an edge from Cyrano to Augustus.  We can also call it an <em>edge list,</em> because the connections in a graph are called edges.</p>
 <div class="alert alert-primary admonition">
 <p class="admonition-title">Big Picture - How pivoting/melting impacts graph data</p>
 <p>These two ways to store the data are very related.  If we just imagine a third column for this last table, “From,” “To,” and “Connected (True/False),” then the two tables could be converted from one to the other using pivot and melt from <a class="reference internal" href="chapter-6-single-table-verbs.html"><span class="doc std std-doc">Chapter 6 of the course notes</span></a>.  In that chapter, we learned that it is typically easier for a computer to process melted (tall) data, but easier for humans to read pivoted (wide) data.  To make our computations easier, we will work with this second, two-column form.</p>
@@ -630,12 +641,11 @@
 </div></div></div>
 </div>
 <p>It seems as if the first sheet gives each dolphin, by name, a unique ID, while the second sheet shows the social connections of which dolphins spend time with which other ones.  This is just how we discussed storing the data above; there is a list of vertices in the first table and a list of edges in the second table.</p>
-<p>But the data is not formatted conveniently.  The second table would be more convenient if it included dolphin names instead of IDs.  Let’s use Python dictionaries and <code class="docutils literal notranslate"><span class="pre">map()</span></code> to fix it.</p>
+<p>But the data is not formatted conveniently.  The second table would be more convenient if it included dolphin names instead of IDs.  Let’s use Python dictionaries and <code class="docutils literal notranslate"><span class="pre">replace()</span></code> to fix it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">convert_id_to_name</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">df1</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">df1</span><span class="o">.</span><span class="n">name</span> <span class="p">)</span> <span class="p">)</span>
-<span class="n">df2</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">map</span><span class="p">(</span> <span class="n">convert_id_to_name</span> <span class="p">)</span>
-<span class="n">df2</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">map</span><span class="p">(</span> <span class="n">convert_id_to_name</span> <span class="p">)</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="n">convert_id_to_name</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
 <span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -696,7 +706,14 @@
 </div>
 <div class="section" id="python-s-networkx-module">
 <h3><span class="section-number">15.3.2. </span>Python’s NetworkX module<a class="headerlink" href="#python-s-networkx-module" title="Permalink to this headline">¶</a></h3>
-<p>Your Anaconda installation came with the <code class="docutils literal notranslate"><span class="pre">networkx</span></code> module for working with network data in Python.  If you have a non-Anaconda setup on your machine, or you plan to work in a cloud provider that doesn’t have it installed by default, you can install it with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">networkx</span></code>.  The standard way to import it is using the abbreviation <code class="docutils literal notranslate"><span class="pre">nx</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">networkx</span></code> module is pospular for working with network data in Python.  You might already have it installed:</p>
+<ul class="simple">
+<li><p>If you’re using Deepnote, then when you attempt to import NetworkX using the code below, Deepnote will prompt you to install it first; just follow the prompts.</p></li>
+<li><p>If you’re using Google Colab, NetworkX is pre-installed there.</p></li>
+<li><p>If you installed Python on your own computer through any of the methods described in <a class="reference internal" href="chapter-3-jupyter.html"><span class="doc std std-doc">Chapter 3</span></a> (including Anaconda or VSCode with Docker), that included NetworkX.</p></li>
+<li><p>If you have a non-Anaconda Python setup on your machine, you can install NetworkX with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">networkx</span></code>.</p></li>
+</ul>
+<p>The standard way to import NetworkX into your notebook or script is using the abbreviation <code class="docutils literal notranslate"><span class="pre">nx</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
@@ -712,7 +729,7 @@
 </div>
 </div>
 </div>
-<p>We will now add vertices and edges to that graph.  Let’s start with the vertices.  Each NetworkX <code class="docutils literal notranslate"><span class="pre">Graph</span></code> object lets you add vertices with the function <code class="docutils literal notranslate"><span class="pre">.add_nodes_from(your_list)</span></code>.  We will use that function to add all the dolphin names to our graph.  We can even check the size of the graph to be sure it worked.</p>
+<p>We will now add vertices and edges to that graph.  Let’s start with the vertices.  Each NetworkX <code class="docutils literal notranslate"><span class="pre">Graph</span></code> object lets you add vertices with the function <code class="docutils literal notranslate"><span class="pre">add_nodes_from(your_list)</span></code>.  We will use that function to add all the dolphin names to our graph.  We can even check the size of the graph to be sure it worked.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dolphins</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span> <span class="n">df1</span><span class="o">.</span><span class="n">name</span> <span class="p">)</span>  <span class="c1"># the column of all dolphin names</span>
@@ -726,7 +743,7 @@
 </div>
 </div>
 </div>
-<p>Similarly, we can add edges with the function <code class="docutils literal notranslate"><span class="pre">.add_edges_from(your_list)</span></code>, but the list must be a list of ordered pairs.  For instance, in our dolphin data case, we’d want it to be something like <code class="docutils literal notranslate"><span class="pre">[('Double','CCL'),('Feather','DN16'),('Feather','DN21'),...]</span></code> and so on.  But we don’t want to have to type out the entire dolphin relationships table as ordered pairs; it’s too big!</p>
+<p>Similarly, we can add edges with the function <code class="docutils literal notranslate"><span class="pre">add_edges_from(your_list)</span></code>, but the list must be a list of ordered pairs.  For instance, in our dolphin data case, we’d want it to be something like <code class="docutils literal notranslate"><span class="pre">[('Double','CCL'),('Feather','DN16'),('Feather','DN21'),...]</span></code> and so on.  But we don’t want to have to type out the entire dolphin relationships table as ordered pairs; it’s too big!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span> <span class="n">df2</span> <span class="p">)</span>
@@ -820,7 +837,7 @@
 </div>
 </div>
 <p>As you can see, no dolphin had zero friends, and thus we know that all dolphins appeared in some edge in the network.</p>
-<p>We see that some dolphins had many more social associations.  If this were a network of humans, we might ask which people were the most influential in the social network.  There are many ways to measure influencce.  One way is by a notion called “betweenness,” which considers all the paths through which information might flow in a network, and asks which vertices are on the largest proportion of those paths.  This measure is called “betweenness centrality” and can be used to rank the vertices in a network by a measure of their importance.</p>
+<p>We see that some dolphins had many more social associations.  If this were a network of humans, we might ask which people were the most influential in the social network.  There are many ways to measure influence.  One way is by a notion called “betweenness,” which considers all the paths through which information might flow in a network, and asks which vertices are on the largest proportion of those paths.  This measure is called “betweenness centrality” and can be used to rank the vertices in a network by a measure of their importance.</p>
 <p>Although it doesn’t make a lot of sense to measure this for dolphins (as opposed to humans), the code below illustrates how do to the computation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -842,6 +859,15 @@ dtype: float64
 </div>
 </div>
 <p>Although the particular numbers don’t have units we can easily interpret, higher numbers are vertices that sit along a higher proportion of the network’s pathways.  There are many other ways to measure important nodes in a network; these are called centrality measures, and the full list of ways that NetworkX supports them appears <a class="reference external" href="https://networkx.github.io/documentation/stable/reference/algorithms/centrality.html">here</a>.</p>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - Centrality Measures</p>
+<p>Choose 3 centrality measures from the documentation linked to in the previous paragraph.  Write a brief report or slide deck for your classmates that provides the following information for each of the three measures you chose.</p>
+<ol class="simple">
+<li><p>the purpose/intent behind the measure</p></li>
+<li><p>the formula for the measure</p></li>
+<li><p>the Python code for using that measure it on a NetworkX <code class="docutils literal notranslate"><span class="pre">Graph</span></code> object</p></li>
+</ol>
+</div>
 <p>Let us turn now to how we can visualize the dolphin network.</p>
 </div>
 <div class="section" id="visualization-of-graphs">
@@ -883,6 +909,20 @@ dtype: float64
 </pre></div>
 </div>
 <p>You can then import the <code class="docutils literal notranslate"><span class="pre">dolphins.graphml</span></code> file into either of those other pieces of software to visualize it more conveniently.  Similarly, if you have data exported from either of those pieces of software that you want to bring into Python for use with NetworkX, you can use the <a class="reference external" href="https://networkx.github.io/documentation/networkx-1.10/reference/generated/networkx.readwrite.graphml.read_graphml.html"><code class="docutils literal notranslate"><span class="pre">nx.read_graphml()</span></code> function</a>.</p>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - Gephi</p>
+<ol class="simple">
+<li><p>Obtain some large network data.  One easy option is to use the shipping data that you prepared for class today.</p></li>
+<li><p>Export that network data in GraphML format, as described above.</p></li>
+<li><p>Download and install <a class="reference external" href="https://gephi.org/">Gephi</a>.</p></li>
+<li><p>Import the data into Gephi and try visualizing it.</p></li>
+<li><p>Create a tutorial with instructions and screenshots that teaches the process to your classmates.</p></li>
+</ol>
+</div>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - Cytoscape</p>
+<p>This exercise is the same as the previous one, but using <a class="reference external" href="https://cytoscape.org/">Cytoscape</a> instead of Gephi.</p>
+</div>
 </div>
 <div class="section" id="drawing-larger-networks">
 <h3><span class="section-number">15.5.3. </span>Drawing larger networks<a class="headerlink" href="#drawing-larger-networks" title="Permalink to this headline">¶</a></h3>

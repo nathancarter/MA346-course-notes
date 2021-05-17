@@ -216,6 +216,11 @@
    5. GB213 Review in Python
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loyo-list.html">
+   6. All Learning On Your Own Opportunities
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -426,7 +431,7 @@
 <p><strong>Supervised learning</strong> provides to the computer a dataset of inputs and their corresponding outputs, and asks the computer to learn something about the relationships between the inputs and the outputs.  One of the most commonly used examples is to provide small photographs of handwritten digits as the inputs (like those shown below, <a class="reference external" href="https://en.wikipedia.org/wiki/MNIST_database#/media/File:MnistExamples.png">from this source</a>) and make the corresponding outputs the integer represented.  For instance, for the top left input shown below, the output would be the integer 0.</p>
 <p><img alt="A grid of handwritten numerical digits shown in grayscale" src="_images/MnistExamples.png" /></p>
 <p>This is called supervised learning because the data scientist is providing the outputs that the computer <em>should</em> be giving for each input.  It is as if the data scientist is looking over the computer’s shoulder, teaching it what kinds of outputs it should learn to create.  A mathematical model trained on a large enough set of inputs and outputs like those can learn to recognize handwritten digits with a high degree of accuracy.  The most common technique of doing so is with neural networks and deep learning, topics covered in MA707.</p>
-<p><strong>Unsupervised learning</strong> provides to the computer a dataset, but does not break it into input-output pairs.  Rather, the data scientist asks the computer to detect some kind of structure within the data.  One example of this is cluster analysis, covered in MA347, but you saw another example in <a class="reference internal" href="chapter-16-matrices.html"><span class="doc std std-doc">the Chapter 16 notes</span></a>.  When we used SVD to approximate a network, thus revealing more of its latent structure than the precise data itself revealed, we were having the computer do unsupervised learning.  Another example of unsupervised learning is principal components analysis (PCA), covered in many statistics courses.</p>
+<p><strong>Unsupervised learning</strong> provides to the computer a dataset, but does not break it into input-output pairs.  Rather, the data scientist asks the computer to detect some kind of structure within the data.  One example of this is cluster analysis, covered in MA347, but you saw another example in <a class="reference internal" href="chapter-16-matrices.html"><span class="doc std std-doc">the Chapter 16 notes</span></a>.  When we used SVD to approximate a network, thus revealing more of its latent structure than the precise data itself revealed, we were having the computer do unsupervised learning.  Other examples of unsupervised learning include a wide variety of dimensionality reduction techniques, such as principal components analysis (PCA), covered in many statistics courses.</p>
 <p>Today, we will focus on supervised learning.  For this reason, when we look at data, we will designate one column as the output that we want the computer to learn to predict from all the other columns as inputs.  The terminology for inputs and output varies:</p>
 <ul class="simple">
 <li><p>Computer science typically speaks of the <em>inputs</em> and the <em>output.</em></p></li>
@@ -439,7 +444,7 @@
 <h2><span class="section-number">17.2. </span>Seen and unseen data<a class="headerlink" href="#seen-and-unseen-data" title="Permalink to this headline">¶</a></h2>
 <div class="alert alert-primary admonition">
 <p class="admonition-title">Big Picture - A central issue: overfitting vs. underfitting</p>
-<p>Probably the most significant concern in mathematical modeling in general (and machine learning in particular) is <em>overfitting</em> vs. <em>underfitting</em> for a mathematical model, sometimes also called <em>bias</em> vs. <em>variance.</em>  We explore its meaning in this section, and we will find that it is intimately tied up with how mathematical models perform on unseen data.</p>
+<p>Probably the most significant concern in mathematical modeling in general (and machine learning in particular) is <em>overfitting</em> vs. <em>underfitting,</em> sometimes also called <em>bias</em> vs. <em>variance.</em>  We explore its meaning in this section, and we will find that it is intimately tied up with how mathematical models perform on unseen data.</p>
 </div>
 <div class="section" id="what-is-a-mathematical-model">
 <h3><span class="section-number">17.2.1. </span>What is a mathematical model?<a class="headerlink" href="#what-is-a-mathematical-model" title="Permalink to this headline">¶</a></h3>
@@ -452,26 +457,22 @@
 <p>Data science, however, is typically applied to more complex systems, such as economies, markets, sports, medicine, and so on, where simple patterns aren’t always the rule.  In fact, when we see a dataset and try to create a mathematical model (say, a formula) that describes it well, it won’t always be obvious when we’ve done a good job.  A physicist can often go and get more data through an experiment, but a data scientist may not be able to do so; sometimes one dataset is all you have.  Is it enough data to validate when we’ve made a good model?</p>
 <p>That raises the question:  <em>What is a good model?</em>  The answer is that a good model is one that is reliable enough to be useful, often for prediction.  For example, if we write a formula that predicts the expected increase in sales that will come from a given amount of marketing spending in a certain channel, we’ll want to use that to consider possible future scenarios when making strategic decisions.  It’s a good model if it’s reliable enough to make decent predictions about the future (with some uncertainty of course).</p>
 <p>In that example, the formula for sales based on marketing spending would have been built from some past experience (<em>seen data,</em> that is, data we’ve actually seen, in the past).  But we’re using it to predict something that could happen in the future, asking “what if we spent this much?”  We’re hoping the model will still be good on <em>unseen data,</em> that is, inputs to the model that we haven’t yet seen happen.</p>
-<p>Consider another example.  When researchers work on developing self-driving cars, they gather lots of data from cameras and sensors in actual vehicles, and train their algorithms to make the correct decisions in all of those situations.  But of course, if self-driving cars are ever to succeed, the models the researchers create will need to work correctly on new, unseen data as well–that is, the new camera and sensor inputs the system experiences when it’s actually driving a car around the real world.  The model will be built using known/seen data, but it has to work well also on unkown, or not-yet-seen, data.</p>
+<p>Consider another example.  When researchers work on developing self-driving cars, they gather lots of data from cameras and sensors in actual vehicles, and train their algorithms to make the correct decisions in all of those situations.  But of course, if self-driving cars are ever to succeed, the models the researchers create will need to work correctly on new, unseen data as well—that is, the new camera and sensor inputs the system experiences when it’s actually driving a car around the real world.  The model will be built using known/seen data, but it has to work well also on unkown, or not-yet-seen, data.</p>
 </div>
 <div class="section" id="overfitting-and-underfitting">
 <h3><span class="section-number">17.2.3. </span>Overfitting and underfitting<a class="headerlink" href="#overfitting-and-underfitting" title="Permalink to this headline">¶</a></h3>
 <p>This brings us to the big dilemma introduced above.  There are two big mistakes that a data scientist can make when fitting a model to existing data.</p>
+<p><strong>The data scientist could make a model that tailors itself to every detail of the known data precisely.</strong></p>
 <ul class="simple">
-<li><p>The data scientist could make a model that tailors itself to every detail of the known data precisely.</p>
-<ul>
 <li><p>This is called <em>overfitting,</em> because the model is too much dependent on the peculiarities of that one dataset, and so it won’t behave well on new data.</p></li>
 <li><p>It typically happens if the model is too complex and/or customized to the data.</p></li>
 <li><p>It is also called <em>variance,</em> because the model follows too much the tiny variations of the dataset, rather than just its underlying structure.</p></li>
 </ul>
-</li>
-<li><p>The data scientist could make a model that captures only very simple characteristics of the known data and ignores some important details.</p>
-<ul>
+<p><strong>The data scientist could make a model that captures only very simple characteristics of the known data and ignores some important details.</strong></p>
+<ul class="simple">
 <li><p>This is called <em>underfitting,</em> because the model is too simple, and missed some signals that the data scientist could have learned from the known data.</p></li>
 <li><p>It typically happens if the model is not complex enough.</p></li>
 <li><p>It is also called <em>bias,</em> because just as a social bias may pigeonhole a complex person into a simple stereotype, making the decision to use too simple a mathematical model also pigeonholes a complex problem into a simple stereotype, and limits the values of the results.</p></li>
-</ul>
-</li>
 </ul>
 <p>So we have a spectrum, from simple models to complex models, and there’s some happy medium in between.  Finding that happy medium is the job of a mathematical modeler.</p>
 <p>This issue is intimiately related to the common terms of signal and noise, so it’s worth exploring this important issue from that viewpoint as well.</p>
@@ -482,11 +483,11 @@
 <p><img alt="Three images, on the left, a blue parabola, in the center, a red curve that wiggles a lot, and on the right, in black, the sum of the two" src="_images/signal-and-noise.png" /></p>
 <p>Let’s imagine for a moment a simple scenario with one input variable and one output variable, such as the example earlier of marketing spend in a particular channel vs. expected sales increase.</p>
 <ol class="simple">
-<li><p>If we could see with perfect clarity how the world worked, we would know exactly how customers respond to our marketing spending.  This omniscient knowledge about marketing nobody has, but we can imagine that it exists somewhere, even if no one knows it (except God).  That knowledge is the signal that we are trying to detect.  It’s shown on the left above.  (That curve doesn’t necessarily have anything to do with marketing; it’s just an example curve.)</p></li>
-<li><p>Whenever we try to gather data about the phenomenon we care about, inevitably some problems mess things up.  We might make mistakes when measuring or recording data.  Some of our data might be recorded at times that are special (like a holiday weekend) that make them not representative of the whole picture.  And other variables might be influencing our data that we didn’t measure, such as the weather or other companies’ marketing campaigns.  All of this creates fluctuations we call noise, as shown in the middle.</p></li>
-<li><p>What we actually measure when we gather data is the combination of these two things, as shown on the right, above.  Of course, when we get data, we see only that final graph, the signal plus the noise together, and we don’t know how to separate them.</p></li>
+<li><p>If we could see with perfect clarity how the world worked, we would know exactly how customers respond to our marketing spending.  This omniscient knowledge about marketing nobody has, but we can imagine that it exists somewhere, even if no one knows it (except God).  That knowledge is the signal that we are trying to detect.  It’s shown on the left above, the blue curve.  (That blue curve doesn’t necessarily have anything to do with marketing; it’s just an example curve.)</p></li>
+<li><p>Whenever we try to gather data about the phenomenon we care about, inevitably some problems mess things up.  We might make mistakes when measuring or recording data.  Some of our data might be recorded at times that are special (like a holiday weekend) that make them not representative of the whole picture.  And other variables might be influencing our data that we didn’t measure, such as the weather or other companies’ marketing campaigns.  All of this creates fluctuations we call noise, as shown in the middle, the red wiggles.</p></li>
+<li><p>What we actually measure when we gather data is the combination of these two things, as shown on the right, above, as a black (and wiggly) curve.  Of course, when we get data, we see only that final graph, the signal plus the noise together, and we don’t know how to separate them.</p></li>
 </ol>
-<p>Not knowing that the original signal was parabolic, we might make either of two mistakes.  First, we might make a model that is too simple, an underfit model, such as a linear one.</p>
+<p>Because I generated this example, I know that the original signal (in blue) was a parabola.  But if we had access only to the data (in black), that wouldn’t be obvious.  We might make either of two mistakes.  First, we might make a model that is too simple, an underfit model, such as a linear one.</p>
 <p><img alt="A linear regression line drawn through the data from the right of the previous figure" src="_images/signal-and-noise-2.png" /></p>
 <p>You can see that the model is a bit higher than the center of the data on each end, and a bit lower than the center of the data in the middle.  This is because the model is missing some key feature of the data, its slight downward curvature.  The model is <em>underfit;</em> it should be more fit to the unique characteristics this data is showing.</p>
 <p>Second, we might make a model that is too complex, an overfit model, such as a high-degree polynomial model.</p>
@@ -519,7 +520,7 @@
 </li>
 <li><p>We choose which model we want to use (such as linear regression, for example) and fit the model to <code class="docutils literal notranslate"><span class="pre">df_train</span></code> only.</p>
 <ul class="simple">
-<li><p>This is called the <em>training</em> phase; what statisticians call “fitting a model,” machine learning people call “training the model.”</p></li>
+<li><p>This is called the <em>training</em> phase.  What statisticians call “fitting a model,” machine learning practitioners call “training the model.”</p></li>
 </ul>
 </li>
 <li><p>We use the model to predict outputs for each input in <code class="docutils literal notranslate"><span class="pre">df_test</span></code> and compare them to the known outputs in <code class="docutils literal notranslate"><span class="pre">df_test</span></code>, and see how well the model does.</p>
@@ -530,10 +531,10 @@
 </li>
 <li><p>If the model seems acceptable, you would then proceed to re-fit the same model on the entire dataset <code class="docutils literal notranslate"><span class="pre">df</span></code> before you use it for predictions, because more data tends to improve model quality.</p></li>
 </ol>
-<p>It is easy to split a DataFrame’s rows into two different sets like this with random sampling.  Use code like the following.</p>
+<p>Step 2 requires us to split a DataFrame’s rows into two different sets.  This is easy to do with random sampling, using code like the following.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create some fake data to use for demonstrating the technique:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, I create some fake data to use for demonstrating the technique:</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span> <span class="s1">&#39;Totally&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;Fake&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;Data&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="p">}</span> <span class="p">)</span>
@@ -776,13 +777,14 @@
 </div>
 <div class="section" id="data-leakage">
 <h3><span class="section-number">17.3.2. </span>Data leakage<a class="headerlink" href="#data-leakage" title="Permalink to this headline">¶</a></h3>
-<p>It is is essential, in the above five-step process, not to touch (or typically even look at) the testing data (in <code class="docutils literal notranslate"><span class="pre">df_test</span></code>) until the testing phase.  It is also essential not to repeat back to step 1, 2, or 3 once you’ve reached step 4.  Otherwise <code class="docutils literal notranslate"><span class="pre">df_test</span></code> no longer represents unseen data.  (Like that embarrassing social media post, you can’t unsee it.)  In fact, in machine learning competitions, the group running the competition will typically split the data into training and testing sets before the competition, and distribute only the training set to competitors, leaving the testing set secret, to be used for judging the winner.  It’s truly unseen data!</p>
+<p>It is is essential, in the above five-step process, not to touch (or typically even look at) the testing data (in <code class="docutils literal notranslate"><span class="pre">df_test</span></code>) until the testing phase.  It is also essential not to repeat back to step 1, 2, or 3 once you’ve reached step 4.  Otherwise <code class="docutils literal notranslate"><span class="pre">df_test</span></code> no longer represents unseen data.  (Like that embarrassing social media post, you can’t unsee it.)</p>
+<p>In fact, in machine learning competitions, the group running the competition will typically split the data into training and testing sets before the competition, and distribute only the training set to competitors, leaving the testing set secret, to be used for judging the winner.  It’s truly unseen data!</p>
 <p>If a data scientist even looks at the test data or does summary statistics about it, this information can influence how they do the modeling process on training data.  This error is called <em>data leakage,</em> because some aspects of the test data have leaked out of where they’re supposed to be safely contained at the end of the whole process, and have contaminated the beginning of the process instead.  The five-step process given above is designed, in part, to eliminate data leakage.</p>
 </div>
 <div class="section" id="validation">
 <h3><span class="section-number">17.3.3. </span>Validation<a class="headerlink" href="#validation" title="Permalink to this headline">¶</a></h3>
 <p>But this restriction on seeing <code class="docutils literal notranslate"><span class="pre">df_test</span></code> only once introduces a significant drawback.  What if you have several different models you’d like to try, and you’re not sure which one will work best on unseen data?  How can we compare multiple models if we can test only one?  The question is even more complex if the model comes with parameters that a data scientist is supposed to choose (so-called hyperparameters), which may require some iterative experimentation.</p>
-<p>The answer to this problem involves introducing a new phase, called <em>validation,</em> in between training and testing, and creating a three-way data split.  Perhaps you’ve heard of the technique of <em>cross-validation,</em> one particular way to do the validation step.  In this chapter, since we are just doing a quick introduction to the machine learning process, we will not dive deeply into the validation phase, but will just keep the five-step process shown above, which uses only a train/test split of the data.</p>
+<p>The answer to this problem involves introducing a new phase, called <em>validation,</em> in between training and testing, and creating a three-way data split.  Perhaps you’ve heard of the technique of <em>cross-validation,</em> one particular way to do the validation step.  Since this chapter is just a quick introduction to the machine learning process, we will not dive include a validation phase in our work, and will instead stick to the five-step process shown above.  But techniques like cross-validation are an important part of any machine learning course.</p>
 </div>
 </div>
 <div class="section" id="logistic-regression">
@@ -927,7 +929,8 @@
 </div>
 <div class="section" id="logistic-regression-in-scikit-learn">
 <h3><span class="section-number">17.4.3. </span>Logistic regression in scikit-learn<a class="headerlink" href="#logistic-regression-in-scikit-learn" title="Permalink to this headline">¶</a></h3>
-<p>A very popular machine learning toolit is called scikit-learn, and is distributed as the Python module <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.  If your Python installation came from Anaconda, you already have <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> installed.  We can use the logistic regression tools built into scikit-learn to create a logistic regression model that will use the first three columns above as inputs from which it should predict the final column as the output.</p>
+<p>A very popular machine learning toolit is called scikit-learn, and is distributed as the Python module <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.  It comes pre-installed in both Deepnote and Colab, and with any Anaconda installation you may have used on your own computer.</p>
+<p>We can use the logistic regression tools built into scikit-learn to create a logistic regression model that will use the first three columns above as inputs from which it should predict the final column as the output.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the module</span>
@@ -936,9 +939,21 @@
 <span class="c1"># Create a model and fit it to the data</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
 <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span> <span class="n">predictors</span><span class="p">,</span> <span class="n">response</span> <span class="p">)</span>
-
-<span class="c1"># Let&#39;s see how close it came.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LogisticRegression()
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s it!  We’ve created our logistic regression in just two lines of code!  (Okay, plus one line for importing the module.)  Scikit-learn is a powerful tool.  But we haven’t yet checked to see if the model we created is useful.  Let’s write some code for doing so now.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the model to predict the output variable based on the input variables:</span>
 <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Prediction&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span> <span class="n">predictors</span> <span class="p">)</span>
+<span class="c1"># Check whether each prediction was correct or not, and show the results:</span>
 <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Correct&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Prediction&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Response&#39;</span><span class="p">]</span>
 <span class="n">df_drug_response</span>
 </pre></div>
@@ -1068,7 +1083,8 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Correct&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_drug_response</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What proportion of the predictions were correct?</span>
+<span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Correct&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_drug_response</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1200,7 +1216,6 @@ dtype: float64
 </div>
 <p>Here we can see that height and weight negatively impacted the drug response and blood pressure positively impacted it.  The magnitude of each variable (in absolute value) shows which variables are more important than others.  A higher absolute value for the variable’s coefficient means it is more important.</p>
 <p>This is a rather simple way to compare the importance of variables, and classes like MA252 and MA347 will cover more statistically sophisticated methods.</p>
-<p>So the good news is that fitting a logistic model to data is just a few lines of Python code!  But there are several additional details that it will be helpful to know about the context in which we apply logistic regression.  We cover each of those details in the remaining sections of this chapter.</p>
 </div>
 </div>
 <div class="section" id="measuring-success">
@@ -1210,8 +1225,8 @@ dtype: float64
 <ul class="simple">
 <li><p>Use <span class="math notranslate nohighlight">\(TP\)</span> to stand for the number of true positives among our model’s predictions.  (In the example above, <span class="math notranslate nohighlight">\(TP=6\)</span>, for the six rows 1, 4, 5, 6, 8, and 9.</p></li>
 <li><p>Similarly, let <span class="math notranslate nohighlight">\(TN\)</span>, <span class="math notranslate nohighlight">\(FP\)</span>, and <span class="math notranslate nohighlight">\(FN\)</span> stand for true negatives, false positives, and false negatives, respectively.  (Above, we had <span class="math notranslate nohighlight">\(TN=2\)</span>, <span class="math notranslate nohighlight">\(FP=2\)</span>, and <span class="math notranslate nohighlight">\(FN=0\)</span>.)</p></li>
-<li><p>We define the classifier’s <strong>precision</strong> to be <span class="math notranslate nohighlight">\(\frac{TP}{TP+FP}\)</span>.  This answers the question:  If the test said “positive,” what are the odds that it’s a true positive?  This is the measure that a patient who just got a positive diagnosis cares about.  What are the odds it’s real?</p></li>
-<li><p>We define the classifier’s <strong>recall</strong> to be <span class="math notranslate nohighlight">\(\frac{TP}{TP+FN}\)</span>.  This answers the question:  If the reality is “positive,” what are the odds the test will detect that?  This is the measure that the credit card company cares about.  What percentage of fraud does our system catch?</p></li>
+<li><p>We define the classifier’s <strong>precision</strong> to be <span class="math notranslate nohighlight">\(\frac{TP}{TP+FP}\)</span>.  This answers the question:  If the test said “positive,” what is the probability that it’s a true positive?  This is the measure that a patient who just got a positive diagnosis cares about.  What is the probability that it’s real?</p></li>
+<li><p>We define the classifier’s <strong>recall</strong> to be <span class="math notranslate nohighlight">\(\frac{TP}{TP+FN}\)</span>.  This answers the question:  If the reality is “positive,” what is the probability the test will detect that?  This is the measure that the credit card company cares about.  What percentage of fraud does our system catch?</p></li>
 </ul>
 <p>Let’s see how to code these measurements in Python.</p>
 <div class="cell docutils container">
@@ -1243,11 +1258,23 @@ dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F1</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">precision</span> <span class="o">*</span> <span class="n">recall</span> <span class="o">/</span> <span class="p">(</span> <span class="n">precision</span> <span class="o">+</span> <span class="n">recall</span> <span class="p">)</span>
+<span class="n">F1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7692307692307692
 </pre></div>
 </div>
 </div>
 </div>
 <p>Just as a higher score is better for both precision and recall, a higher score is also better for <span class="math notranslate nohighlight">\(F_1\)</span>.  We can use this measure to compare models, prioritizing a balance of both precision and recall.</p>
+<div class="alert alert-danger admonition">
+<p class="admonition-title">Learning on Your Own - ROC and AUC</p>
+<p>A more sophisticated measure of the performance of a classifier is the Receiver Operator Characteristic Curve (ROC Curve), and the area under that curve (AUC).  Research these two concepts and prepare a brief report explaining them at a level appropriate for your classmates.</p>
+</div>
+<p>Notice that computing <span class="math notranslate nohighlight">\(TP\)</span>, <span class="math notranslate nohighlight">\(TN\)</span>, <span class="math notranslate nohighlight">\(FP\)</span>, and <span class="math notranslate nohighlight">\(FN\)</span>, are all map-reduce operations, which we studied in <a class="reference internal" href="chapter-11-processing-rows.html"><span class="doc std std-doc">Chapter 11</span></a>.  They compute a boolean value from each row (the map step), then sum them (the reduce step).  This means that computing precision, recall, and <span class="math notranslate nohighlight">\(F_1\)</span> are also just big map-reduce operations.</p>
+<p>If the model had been a regression model instead, with numerical outputs instead of boolean ones, you could judge its quality using a measurement like RMSE (introduced in <a class="reference internal" href="chapter-11-processing-rows.html"><span class="doc std std-doc">Chapter 11</span></a>) instead of <span class="math notranslate nohighlight">\(F_1\)</span>.</p>
 </div>
 <div class="section" id="categorical-input-variables">
 <h2><span class="section-number">17.6. </span>Categorical input variables<a class="headerlink" href="#categorical-input-variables" title="Permalink to this headline">¶</a></h2>
@@ -1592,19 +1619,24 @@ dtype: float64
 <p>These variables could then be added to our <code class="docutils literal notranslate"><span class="pre">predictors</span></code> DataFrame and used as numerical inputs to our model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictors</span> <span class="o">=</span> <span class="n">predictors</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># handle warnings about slices</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictors</span> <span class="o">=</span> <span class="n">predictors</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># prevent warnings about slices</span>
 <span class="n">predictors</span><span class="p">[</span><span class="s1">&#39;Race=Black&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race=Black&#39;</span><span class="p">]</span>
 <span class="n">predictors</span><span class="p">[</span><span class="s1">&#39;Race=Indian&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_drug_response</span><span class="p">[</span><span class="s1">&#39;Race=Indian&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>If no medical opinion had been present to suggest which races the model should focus on, we could create a boolean variable for each possible race.  There are some disadvantages to adding too many columns to your data, which we won’t cover here, but this is a common practice.  If all categories are converted into boolean variables, the result is called a <em>one-hot encoding,</em> because each row will have just one of the race columns equal to 1 and all others equal to 0.</p>
+<p>If no medical opinion had been present to suggest which races the model should focus on, we could create a boolean variable for each possible race.  There are some disadvantages to adding too many columns to your data, which we won’t cover here, but this is a common practice.</p>
+<p>If all categories are converted into boolean variables, the result is called a <em>one-hot encoding,</em> because each row will have just one of the race columns equal to 1 and all others equal to 0.  It is important to treat each category independently, rather than just numbering the categories <span class="math notranslate nohighlight">\(0,1,2,\ldots\)</span>, because placing them on the same numeric scale makes them behave as if they have values that follow an ordered progression, when that is unlikely to be true.</p>
 </div>
 <div class="section" id="overfitting-and-underfitting-in-this-example">
 <h2><span class="section-number">17.7. </span>Overfitting and underfitting in this example<a class="headerlink" href="#overfitting-and-underfitting-in-this-example" title="Permalink to this headline">¶</a></h2>
 <p>Let’s return to the major theme introduced at the start of this chapter.  One way to overfit a regression or classification model is to throw in every variable you have access to as inputs to the model.  This is very similar to the example of polynomial regression used earlier, because polynomial regression essentially adds new columns <span class="math notranslate nohighlight">\(x^2,x^3,x^4,\ldots\)</span> as inputs.  A simple model will use just the most important variables, not necessarily every possible variable.</p>
-<p>Statistics has many methods for evaluating which variables should be included or excluded from a model, and MA252 (Regression Analysis) covers such techniques.  But we have seen one way to discern which variables are the most impactful in logistic regression–examining the coefficients on those variables.  Variables whose coefficients are closer to zero are less likely to be indicative of signal and more likely to be indicative of noise.  Variables whose coefficients are larger (in absolute value, that is, farther from zero) are more likely to be indicative of the actual underlying structure of the problem.</p>
+<p>Statistics has many methods for evaluating which variables should be included or excluded from a model, and MA252 (Regression Analysis) covers such techniques.  But we have seen two ways to discern which variables are the most impactful.</p>
+<ol class="simple">
+<li><p>Examine the coefficients on the variables, after standardizing the predictors.  Variables whose coefficients are closer to zero are less likely to be indicative of signal and more likely to be indicative of noise.  Variables whose coefficients are larger (in absolute value, that is, farther from zero) are more likely to be indicative of the actual underlying structure of the problem.</p></li>
+<li><p>In <a class="reference internal" href="chapter-10-visualization.html"><span class="doc std std-doc">Chapter 10</span></a>, we learned how to make pair plots, which help us visualize which variables are most likely to be useful in modeling.  Pair plots don’t work well on categorical predictors, but work better for numerical ones.</p></li>
+</ol>
 <p>Our in-class exercise on mortgage data will assess variable relevance using logistic regression coefficients.</p>
 </div>
 </div>

@@ -27,7 +27,7 @@
 # 
 # This is called supervised learning because the data scientist is providing the outputs that the computer *should* be giving for each input.  It is as if the data scientist is looking over the computer's shoulder, teaching it what kinds of outputs it should learn to create.  A mathematical model trained on a large enough set of inputs and outputs like those can learn to recognize handwritten digits with a high degree of accuracy.  The most common technique of doing so is with neural networks and deep learning, topics covered in MA707.
 # 
-# **Unsupervised learning** provides to the computer a dataset, but does not break it into input-output pairs.  Rather, the data scientist asks the computer to detect some kind of structure within the data.  One example of this is cluster analysis, covered in MA347, but you saw another example in [the Chapter 16 notes](chapter-16-matrices).  When we used SVD to approximate a network, thus revealing more of its latent structure than the precise data itself revealed, we were having the computer do unsupervised learning.  Another example of unsupervised learning is principal components analysis (PCA), covered in many statistics courses.
+# **Unsupervised learning** provides to the computer a dataset, but does not break it into input-output pairs.  Rather, the data scientist asks the computer to detect some kind of structure within the data.  One example of this is cluster analysis, covered in MA347, but you saw another example in [the Chapter 16 notes](chapter-16-matrices).  When we used SVD to approximate a network, thus revealing more of its latent structure than the precise data itself revealed, we were having the computer do unsupervised learning.  Other examples of unsupervised learning include a wide variety of dimensionality reduction techniques, such as principal components analysis (PCA), covered in many statistics courses.
 # 
 # Today, we will focus on supervised learning.  For this reason, when we look at data, we will designate one column as the output that we want the computer to learn to predict from all the other columns as inputs.  The terminology for inputs and output varies:
 #  * Computer science typically speaks of the *inputs* and the *output.*
@@ -42,7 +42,7 @@
 # ---
 # class: alert alert-primary
 # ---
-# Probably the most significant concern in mathematical modeling in general (and machine learning in particular) is *overfitting* vs. *underfitting* for a mathematical model, sometimes also called *bias* vs. *variance.*  We explore its meaning in this section, and we will find that it is intimately tied up with how mathematical models perform on unseen data.
+# Probably the most significant concern in mathematical modeling in general (and machine learning in particular) is *overfitting* vs. *underfitting,* sometimes also called *bias* vs. *variance.*  We explore its meaning in this section, and we will find that it is intimately tied up with how mathematical models perform on unseen data.
 # ```
 # 
 # ### What is a mathematical model?
@@ -63,19 +63,23 @@
 # 
 # In that example, the formula for sales based on marketing spending would have been built from some past experience (*seen data,* that is, data we've actually seen, in the past).  But we're using it to predict something that could happen in the future, asking "what if we spent this much?"  We're hoping the model will still be good on *unseen data,* that is, inputs to the model that we haven't yet seen happen.
 # 
-# Consider another example.  When researchers work on developing self-driving cars, they gather lots of data from cameras and sensors in actual vehicles, and train their algorithms to make the correct decisions in all of those situations.  But of course, if self-driving cars are ever to succeed, the models the researchers create will need to work correctly on new, unseen data as well--that is, the new camera and sensor inputs the system experiences when it's actually driving a car around the real world.  The model will be built using known/seen data, but it has to work well also on unkown, or not-yet-seen, data.
+# Consider another example.  When researchers work on developing self-driving cars, they gather lots of data from cameras and sensors in actual vehicles, and train their algorithms to make the correct decisions in all of those situations.  But of course, if self-driving cars are ever to succeed, the models the researchers create will need to work correctly on new, unseen data as well---that is, the new camera and sensor inputs the system experiences when it's actually driving a car around the real world.  The model will be built using known/seen data, but it has to work well also on unkown, or not-yet-seen, data.
 # 
 # ### Overfitting and underfitting
 # 
 # This brings us to the big dilemma introduced above.  There are two big mistakes that a data scientist can make when fitting a model to existing data.
-#  * The data scientist could make a model that tailors itself to every detail of the known data precisely.
-#     * This is called *overfitting,* because the model is too much dependent on the peculiarities of that one dataset, and so it won't behave well on new data.
-#     * It typically happens if the model is too complex and/or customized to the data.
-#     * It is also called *variance,* because the model follows too much the tiny variations of the dataset, rather than just its underlying structure.
-#  * The data scientist could make a model that captures only very simple characteristics of the known data and ignores some important details.
-#     * This is called *underfitting,* because the model is too simple, and missed some signals that the data scientist could have learned from the known data.
-#     * It typically happens if the model is not complex enough.
-#     * It is also called *bias,* because just as a social bias may pigeonhole a complex person into a simple stereotype, making the decision to use too simple a mathematical model also pigeonholes a complex problem into a simple stereotype, and limits the values of the results.
+# 
+# **The data scientist could make a model that tailors itself to every detail of the known data precisely.**
+# 
+#  * This is called *overfitting,* because the model is too much dependent on the peculiarities of that one dataset, and so it won't behave well on new data.
+#  * It typically happens if the model is too complex and/or customized to the data.
+#  * It is also called *variance,* because the model follows too much the tiny variations of the dataset, rather than just its underlying structure.
+# 
+# **The data scientist could make a model that captures only very simple characteristics of the known data and ignores some important details.**
+# 
+#  * This is called *underfitting,* because the model is too simple, and missed some signals that the data scientist could have learned from the known data.
+#  * It typically happens if the model is not complex enough.
+#  * It is also called *bias,* because just as a social bias may pigeonhole a complex person into a simple stereotype, making the decision to use too simple a mathematical model also pigeonholes a complex problem into a simple stereotype, and limits the values of the results.
 # 
 # So we have a spectrum, from simple models to complex models, and there's some happy medium in between.  Finding that happy medium is the job of a mathematical modeler.
 # 
@@ -88,11 +92,12 @@
 # ![Three images, on the left, a blue parabola, in the center, a red curve that wiggles a lot, and on the right, in black, the sum of the two](_images/signal-and-noise.png)
 
 # Let's imagine for a moment a simple scenario with one input variable and one output variable, such as the example earlier of marketing spend in a particular channel vs. expected sales increase.
-#  1. If we could see with perfect clarity how the world worked, we would know exactly how customers respond to our marketing spending.  This omniscient knowledge about marketing nobody has, but we can imagine that it exists somewhere, even if no one knows it (except God).  That knowledge is the signal that we are trying to detect.  It's shown on the left above.  (That curve doesn't necessarily have anything to do with marketing; it's just an example curve.)
-#  2. Whenever we try to gather data about the phenomenon we care about, inevitably some problems mess things up.  We might make mistakes when measuring or recording data.  Some of our data might be recorded at times that are special (like a holiday weekend) that make them not representative of the whole picture.  And other variables might be influencing our data that we didn't measure, such as the weather or other companies' marketing campaigns.  All of this creates fluctuations we call noise, as shown in the middle.
-#  3. What we actually measure when we gather data is the combination of these two things, as shown on the right, above.  Of course, when we get data, we see only that final graph, the signal plus the noise together, and we don't know how to separate them.
 # 
-# Not knowing that the original signal was parabolic, we might make either of two mistakes.  First, we might make a model that is too simple, an underfit model, such as a linear one.
+#  1. If we could see with perfect clarity how the world worked, we would know exactly how customers respond to our marketing spending.  This omniscient knowledge about marketing nobody has, but we can imagine that it exists somewhere, even if no one knows it (except God).  That knowledge is the signal that we are trying to detect.  It's shown on the left above, the blue curve.  (That blue curve doesn't necessarily have anything to do with marketing; it's just an example curve.)
+#  2. Whenever we try to gather data about the phenomenon we care about, inevitably some problems mess things up.  We might make mistakes when measuring or recording data.  Some of our data might be recorded at times that are special (like a holiday weekend) that make them not representative of the whole picture.  And other variables might be influencing our data that we didn't measure, such as the weather or other companies' marketing campaigns.  All of this creates fluctuations we call noise, as shown in the middle, the red wiggles.
+#  3. What we actually measure when we gather data is the combination of these two things, as shown on the right, above, as a black (and wiggly) curve.  Of course, when we get data, we see only that final graph, the signal plus the noise together, and we don't know how to separate them.
+# 
+# Because I generated this example, I know that the original signal (in blue) was a parabola.  But if we had access only to the data (in black), that wouldn't be obvious.  We might make either of two mistakes.  First, we might make a model that is too simple, an underfit model, such as a linear one.
 # 
 # ![A linear regression line drawn through the data from the right of the previous figure](_images/signal-and-noise-2.png)
 # 
@@ -128,23 +133,24 @@
 # ### Training vs. testing
 # 
 # If we take the advice above into account, the process of mathematical modeling would then proceed like this:
+# 
 #  1. We get a dataset `df` that we're going to use to build a model.
 #  2. We split the data into two parts, a larger part `df_train` that we'll use for "training" (creating the model) and a smaller part `df_test` that we'll use for testing the model after it's been created.
 #      * Since `df_test` isn't used to create the model, it's "unseen data" from the model's point of view, and can give us a hint on how the model will perform on data that's entirely outside of `df`.
 #      * Typically, `df_train` is a random sample of about 70%-80% of `df`, and `df_test` is the other 20%-30%.
 #  3. We choose which model we want to use (such as linear regression, for example) and fit the model to `df_train` only.
-#      * This is called the *training* phase; what statisticians call "fitting a model," machine learning people call "training the model."
+#      * This is called the *training* phase.  What statisticians call "fitting a model," machine learning practitioners call "training the model."
 #  4. We use the model to predict outputs for each input in `df_test` and compare them to the known outputs in `df_test`, and see how well the model does.
 #      * For example, you might compute the distribution of percent errors, and see if they're within the tolerance you can accept in your business application.
 #      * This is called the *testing* phase.
 #  5. If the model seems acceptable, you would then proceed to re-fit the same model on the entire dataset `df` before you use it for predictions, because more data tends to improve model quality.
 # 
-# It is easy to split a DataFrame's rows into two different sets like this with random sampling.  Use code like the following.
+# Step 2 requires us to split a DataFrame's rows into two different sets.  This is easy to do with random sampling, using code like the following.
 
 # In[1]:
 
 
-# Create some fake data to use for demonstrating the technique:
+# First, I create some fake data to use for demonstrating the technique:
 import pandas as pd
 import numpy as np
 df = pd.DataFrame( { 'Totally': np.linspace(1,2,10), 'Fake': np.linspace(3,4,10), 'Data': np.linspace(5,6,10) } )
@@ -178,7 +184,9 @@ df_test
 
 # ### Data leakage
 # 
-# It is is essential, in the above five-step process, not to touch (or typically even look at) the testing data (in `df_test`) until the testing phase.  It is also essential not to repeat back to step 1, 2, or 3 once you've reached step 4.  Otherwise `df_test` no longer represents unseen data.  (Like that embarrassing social media post, you can't unsee it.)  In fact, in machine learning competitions, the group running the competition will typically split the data into training and testing sets before the competition, and distribute only the training set to competitors, leaving the testing set secret, to be used for judging the winner.  It's truly unseen data!
+# It is is essential, in the above five-step process, not to touch (or typically even look at) the testing data (in `df_test`) until the testing phase.  It is also essential not to repeat back to step 1, 2, or 3 once you've reached step 4.  Otherwise `df_test` no longer represents unseen data.  (Like that embarrassing social media post, you can't unsee it.)
+# 
+# In fact, in machine learning competitions, the group running the competition will typically split the data into training and testing sets before the competition, and distribute only the training set to competitors, leaving the testing set secret, to be used for judging the winner.  It's truly unseen data!
 # 
 # If a data scientist even looks at the test data or does summary statistics about it, this information can influence how they do the modeling process on training data.  This error is called *data leakage,* because some aspects of the test data have leaked out of where they're supposed to be safely contained at the end of the whole process, and have contaminated the beginning of the process instead.  The five-step process given above is designed, in part, to eliminate data leakage.
 # 
@@ -186,7 +194,7 @@ df_test
 # 
 # But this restriction on seeing `df_test` only once introduces a significant drawback.  What if you have several different models you'd like to try, and you're not sure which one will work best on unseen data?  How can we compare multiple models if we can test only one?  The question is even more complex if the model comes with parameters that a data scientist is supposed to choose (so-called hyperparameters), which may require some iterative experimentation.
 # 
-# The answer to this problem involves introducing a new phase, called *validation,* in between training and testing, and creating a three-way data split.  Perhaps you've heard of the technique of *cross-validation,* one particular way to do the validation step.  In this chapter, since we are just doing a quick introduction to the machine learning process, we will not dive deeply into the validation phase, but will just keep the five-step process shown above, which uses only a train/test split of the data.
+# The answer to this problem involves introducing a new phase, called *validation,* in between training and testing, and creating a three-way data split.  Perhaps you've heard of the technique of *cross-validation,* one particular way to do the validation step.  Since this chapter is just a quick introduction to the machine learning process, we will not dive include a validation phase in our work, and will instead stick to the five-step process shown above.  But techniques like cross-validation are an important part of any machine learning course.
 
 # ## Logistic Regression
 # 
@@ -233,7 +241,9 @@ response   = df_drug_response['Response']
 
 # ### Logistic regression in scikit-learn
 # 
-# A very popular machine learning toolit is called scikit-learn, and is distributed as the Python module `sklearn`.  If your Python installation came from Anaconda, you already have `sklearn` installed.  We can use the logistic regression tools built into scikit-learn to create a logistic regression model that will use the first three columns above as inputs from which it should predict the final column as the output.
+# A very popular machine learning toolit is called scikit-learn, and is distributed as the Python module `sklearn`.  It comes pre-installed in both Deepnote and Colab, and with any Anaconda installation you may have used on your own computer.
+# 
+# We can use the logistic regression tools built into scikit-learn to create a logistic regression model that will use the first three columns above as inputs from which it should predict the final column as the output.
 
 # In[7]:
 
@@ -245,15 +255,23 @@ from sklearn.linear_model import LogisticRegression
 model = LogisticRegression()
 model.fit( predictors, response )
 
-# Let's see how close it came.
-df_drug_response['Prediction'] = model.predict( predictors )
-df_drug_response['Correct'] = df_drug_response['Prediction'] == df_drug_response['Response']
-df_drug_response
 
+# That's it!  We've created our logistic regression in just two lines of code!  (Okay, plus one line for importing the module.)  Scikit-learn is a powerful tool.  But we haven't yet checked to see if the model we created is useful.  Let's write some code for doing so now.
 
 # In[8]:
 
 
+# Use the model to predict the output variable based on the input variables:
+df_drug_response['Prediction'] = model.predict( predictors )
+# Check whether each prediction was correct or not, and show the results:
+df_drug_response['Correct'] = df_drug_response['Prediction'] == df_drug_response['Response']
+df_drug_response
+
+
+# In[9]:
+
+
+# What proportion of the predictions were correct?
 df_drug_response['Correct'].sum() / len(df_drug_response)
 
 
@@ -265,14 +283,14 @@ df_drug_response['Correct'].sum() / len(df_drug_response)
 # 
 # Right now, however, our model is fit using predictors that have very different scales.  Height is a two-digit number, weight is a three-digit number, and blood pressure varies in between.  So the coefficients, which must interact with these different units, are not currently comparable.  It is therefore common to create a standardized copy of the predictors and re-fit the model to it, just for comparing coefficients, because then they are all on the same scale.  Standardization is the process of subtracting the mean of a sample and dividing by its standard deviation.  (Note that this makes the units in the column headers no longer accurate.)
 
-# In[9]:
+# In[10]:
 
 
 standardized = ( predictors - predictors.mean() ) / predictors.std()
 standardized
 
 
-# In[10]:
+# In[11]:
 
 
 standardized_model = LogisticRegression()
@@ -284,8 +302,6 @@ pd.Series( coefficients, index=predictors.columns )
 # Here we can see that height and weight negatively impacted the drug response and blood pressure positively impacted it.  The magnitude of each variable (in absolute value) shows which variables are more important than others.  A higher absolute value for the variable's coefficient means it is more important.
 # 
 # This is a rather simple way to compare the importance of variables, and classes like MA252 and MA347 will cover more statistically sophisticated methods.
-# 
-# So the good news is that fitting a logistic model to data is just a few lines of Python code!  But there are several additional details that it will be helpful to know about the context in which we apply logistic regression.  We cover each of those details in the remaining sections of this chapter.
 
 # ## Measuring success
 # 
@@ -294,12 +310,12 @@ pd.Series( coefficients, index=predictors.columns )
 # Two common measurements of binary classification accuracy are *precision* and *recall.*  Let's make the following definitions.
 #  * Use $TP$ to stand for the number of true positives among our model's predictions.  (In the example above, $TP=6$, for the six rows 1, 4, 5, 6, 8, and 9.
 #  * Similarly, let $TN$, $FP$, and $FN$ stand for true negatives, false positives, and false negatives, respectively.  (Above, we had $TN=2$, $FP=2$, and $FN=0$.)
-#  * We define the classifier's **precision** to be $\frac{TP}{TP+FP}$.  This answers the question:  If the test said "positive," what are the odds that it's a true positive?  This is the measure that a patient who just got a positive diagnosis cares about.  What are the odds it's real?
-#  * We define the classifier's **recall** to be $\frac{TP}{TP+FN}$.  This answers the question:  If the reality is "positive," what are the odds the test will detect that?  This is the measure that the credit card company cares about.  What percentage of fraud does our system catch?
+#  * We define the classifier's **precision** to be $\frac{TP}{TP+FP}$.  This answers the question:  If the test said "positive," what is the probability that it's a true positive?  This is the measure that a patient who just got a positive diagnosis cares about.  What is the probability that it's real?
+#  * We define the classifier's **recall** to be $\frac{TP}{TP+FN}$.  This answers the question:  If the reality is "positive," what is the probability the test will detect that?  This is the measure that the credit card company cares about.  What percentage of fraud does our system catch?
 # 
 # Let's see how to code these measurements in Python.
 
-# In[11]:
+# In[12]:
 
 
 # True positive means the answer and the prediction were positive.
@@ -320,13 +336,25 @@ precision, recall
 # 
 # $$F_1=\frac{2\times\text{precision}\times\text{recall}}{\text{precision}+\text{recall}}$$
 
-# In[12]:
+# In[13]:
 
 
 F1 = 2 * precision * recall / ( precision + recall )
+F1
 
 
 # Just as a higher score is better for both precision and recall, a higher score is also better for $F_1$.  We can use this measure to compare models, prioritizing a balance of both precision and recall.
+# 
+# ```{admonition} Learning on Your Own - ROC and AUC
+# ---
+# class: alert alert-danger
+# ---
+# A more sophisticated measure of the performance of a classifier is the Receiver Operator Characteristic Curve (ROC Curve), and the area under that curve (AUC).  Research these two concepts and prepare a brief report explaining them at a level appropriate for your classmates.
+# ```
+# 
+# Notice that computing $TP$, $TN$, $FP$, and $FN$, are all map-reduce operations, which we studied in [Chapter 11](chapter-11-processing-rows).  They compute a boolean value from each row (the map step), then sum them (the reduce step).  This means that computing precision, recall, and $F_1$ are also just big map-reduce operations.
+# 
+# If the model had been a regression model instead, with numerical outputs instead of boolean ones, you could judge its quality using a measurement like RMSE (introduced in [Chapter 11](chapter-11-processing-rows)) instead of $F_1$.
 
 # ## Categorical input variables
 # 
@@ -334,7 +362,7 @@ F1 = 2 * precision * recall / ( precision + recall )
 # 
 # Let's say we had patient race, and there were several categories, including Black, White, Latino, Indian, Asian, and Other.  I will add data of this type to the original data we saw above.  Of course, this, too, is fictitious data.
 
-# In[13]:
+# In[14]:
 
 
 df_drug_response['Race'] = ['Asian','Black','Black','Latino','White','White','Indian','White','Asian','Latino']
@@ -343,7 +371,7 @@ df_drug_response['Race'] = df_drug_response['Race'].astype( 'category' )
 
 # Suppose that the medical professionals believe, from past studies in this area, that Black and Indian patients might respond differently to the drug, but everyone else should be similar to one another.  We can therefore convert this categorical variable into two boolean variables, one answering the question, "Is the patient Black?" and the other answering the question, "Is the patient Indian?"
 
-# In[14]:
+# In[15]:
 
 
 df_drug_response['Race=Black'] = df_drug_response['Race'] == 'Black'
@@ -353,7 +381,7 @@ df_drug_response
 
 # The value of having done this is that boolean inputs can be represented using numerical values 0 and 1, just as boolean outputs can.
 
-# In[15]:
+# In[16]:
 
 
 df_drug_response['Race=Black'] = df_drug_response['Race=Black'].astype( int )
@@ -363,20 +391,25 @@ df_drug_response
 
 # These variables could then be added to our `predictors` DataFrame and used as numerical inputs to our model.
 
-# In[16]:
+# In[17]:
 
 
-predictors = predictors.copy()  # handle warnings about slices
+predictors = predictors.copy()  # prevent warnings about slices
 predictors['Race=Black'] = df_drug_response['Race=Black']
 predictors['Race=Indian'] = df_drug_response['Race=Indian']
 
 
-# If no medical opinion had been present to suggest which races the model should focus on, we could create a boolean variable for each possible race.  There are some disadvantages to adding too many columns to your data, which we won't cover here, but this is a common practice.  If all categories are converted into boolean variables, the result is called a *one-hot encoding,* because each row will have just one of the race columns equal to 1 and all others equal to 0.
+# If no medical opinion had been present to suggest which races the model should focus on, we could create a boolean variable for each possible race.  There are some disadvantages to adding too many columns to your data, which we won't cover here, but this is a common practice.
+# 
+# If all categories are converted into boolean variables, the result is called a *one-hot encoding,* because each row will have just one of the race columns equal to 1 and all others equal to 0.  It is important to treat each category independently, rather than just numbering the categories $0,1,2,\ldots$, because placing them on the same numeric scale makes them behave as if they have values that follow an ordered progression, when that is unlikely to be true.
 
 # ## Overfitting and underfitting in this example
 # 
 # Let's return to the major theme introduced at the start of this chapter.  One way to overfit a regression or classification model is to throw in every variable you have access to as inputs to the model.  This is very similar to the example of polynomial regression used earlier, because polynomial regression essentially adds new columns $x^2,x^3,x^4,\ldots$ as inputs.  A simple model will use just the most important variables, not necessarily every possible variable.
 # 
-# Statistics has many methods for evaluating which variables should be included or excluded from a model, and MA252 (Regression Analysis) covers such techniques.  But we have seen one way to discern which variables are the most impactful in logistic regression--examining the coefficients on those variables.  Variables whose coefficients are closer to zero are less likely to be indicative of signal and more likely to be indicative of noise.  Variables whose coefficients are larger (in absolute value, that is, farther from zero) are more likely to be indicative of the actual underlying structure of the problem.
+# Statistics has many methods for evaluating which variables should be included or excluded from a model, and MA252 (Regression Analysis) covers such techniques.  But we have seen two ways to discern which variables are the most impactful.
+# 
+#  1. Examine the coefficients on the variables, after standardizing the predictors.  Variables whose coefficients are closer to zero are less likely to be indicative of signal and more likely to be indicative of noise.  Variables whose coefficients are larger (in absolute value, that is, farther from zero) are more likely to be indicative of the actual underlying structure of the problem.
+#  2. In [Chapter 10](chapter-10-visualization), we learned how to make pair plots, which help us visualize which variables are most likely to be useful in modeling.  Pair plots don't work well on categorical predictors, but work better for numerical ones.
 # 
 # Our in-class exercise on mortgage data will assess variable relevance using logistic regression coefficients.

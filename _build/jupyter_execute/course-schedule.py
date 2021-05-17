@@ -251,7 +251,8 @@
 #     * To give a song a unique name string, let's combine the artist and song title into a single column.  That is, rather than a column with "Don't Stop Believin'" for song title and "Journey" as artist, create a new column called "song" that contains text like "Don't Stop Believin', by Journey".
 #     * Drop the original title and artist columns so that your final jams DataFrame contains just two columns, user and song.
 #     * Export that DataFrame to a new CSV file that we will analyze in class.  Call it `jam-sample.csv`.
-#     * It should be less than 3MB, so you can email it to your instructor to demonstrate that you have done this prep work.
+#     * Follow [Deepnote's instructions](https://docs.deepnote.com/importing-and-exporing/export-to-pdf) for how to export the resulting notebook as a PDF.
+#     * Submit that notebook to your instructor through [Blackboard](https://blackboard.bentley.edu).
 #  * **Reading**
 #     * [Chapter 16: Relations as matrices](chapter-16-matrices)
 
@@ -275,7 +276,8 @@
 #     * The `action_taken` column contains only 1s and 3s.  This is because this dataset was filtered to include only accepted or rejected mortgages (no withdrawals, pre-approvals, etc.).  Replace this column with another boolean column, still using 0/1 for False/True, meaning "application accepted."
 #     * The debt-to-income ratio column is categorical instead of numeric.  Make it numeric by replacing each category with a central value in that category.  For instance, the category "20%-<30%" can be replaced with the number 25, the category "43" can be just the number 43, etc.  Let's use 70 for ">60%."
 #     * Your newly cleaned data should have all numeric columns.  Export it as a CSV file and bring it with you to class for an in-class activity in Week 12.
-#     * To receive credit for having done this preparatory homework, also email the file to your instructor before class on Week 12.
+#     * Follow [Deepnote's instructions](https://docs.deepnote.com/importing-and-exporing/export-to-pdf) for how to export the resulting notebook as a PDF.
+#     * Submit that notebook to your instructor through [Blackboard](https://blackboard.bentley.edu).
 #  * **Reading**
 #     * [Chapter 17: Introduction to machine learning](chapter-17-machine-learning)
 # 
