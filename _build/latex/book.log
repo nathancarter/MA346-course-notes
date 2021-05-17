@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.10.21)  17 MAY 2021 17:55
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.10.21)  17 MAY 2021 18:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2999,7 +2999,23 @@ Chapter 23.
 LaTeX Info: Redefining \rmfamily on input line 15862.
 LaTeX Info: Redefining \sffamily on input line 15862.
 LaTeX Info: Redefining \ttfamily on input line 15862.
- [292] (./book.ind)
+ [292]
+LaTeX Info: Redefining \rmfamily on input line 15939.
+LaTeX Info: Redefining \sffamily on input line 15939.
+LaTeX Info: Redefining \ttfamily on input line 15939.
+ [293]
+LaTeX Info: Redefining \rmfamily on input line 15939.
+LaTeX Info: Redefining \sffamily on input line 15939.
+LaTeX Info: Redefining \ttfamily on input line 15939.
+ [294
+
+]
+Chapter 24.
+[295]
+LaTeX Info: Redefining \rmfamily on input line 16087.
+LaTeX Info: Redefining \sffamily on input line 16087.
+LaTeX Info: Redefining \ttfamily on input line 16087.
+ [296] (./book.ind)
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -3034,30 +3050,30 @@ braces):
 >  {english/babelname}  =>  {american}
 >  {english/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {english/Localnumeral}  =>  {polyglossia@C@localnumeral}.
-LaTeX Info: Redefining \rmfamily on input line 15946.
-LaTeX Info: Redefining \sffamily on input line 15946.
-LaTeX Info: Redefining \ttfamily on input line 15946.
- [293]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 15946.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 15946.
+LaTeX Info: Redefining \rmfamily on input line 16146.
+LaTeX Info: Redefining \sffamily on input line 16146.
+LaTeX Info: Redefining \ttfamily on input line 16146.
+ [297]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 16146.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 16146.
  (./book.aux
 LaTeX Info: Redefining \rmfamily on input line 19.
 LaTeX Info: Redefining \sffamily on input line 19.
 LaTeX Info: Redefining \ttfamily on input line 19.
 )
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 15946.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 15946
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 16146.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 16146
 .
 Package rerunfilecheck Info: File `book.out' has not changed.
-(rerunfilecheck)             Checksum: 5923803FBA173397A4B48B63D1FE94E6;40876.
+(rerunfilecheck)             Checksum: A78CA76BE8F9AEBEFD281425978F621C;45862.
  ) 
 Here is how much of TeX's memory you used:
- 42005 strings out of 481804
- 969736 string characters out of 5937875
+ 42025 strings out of 481804
+ 970702 string characters out of 5937875
  1758582 words of memory out of 5000000
- 58160 multiletter control sequences out of 15000+600000
+ 58180 multiletter control sequences out of 15000+600000
  540168 words of font info for 129 fonts, out of 8000000 for 9000
  15 hyphenation exceptions out of 8191
  71i,20n,109p,1032b,564s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on book.pdf (301 pages).
+Output written on book.pdf (305 pages).

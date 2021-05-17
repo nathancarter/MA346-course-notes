@@ -425,3 +425,21 @@
 \contentsline {section}{\numberline {23.15}From Chapter 15 \sphinxhyphen {} Relations as Graphs \sphinxhyphen {} Network Analysis}{293}{section.23.15}%
 \contentsline {section}{\numberline {23.16}From Chapter 16 \sphinxhyphen {} Relations as Matrices}{293}{section.23.16}%
 \contentsline {section}{\numberline {23.17}From Chapter 17 \sphinxhyphen {} Introduction to Machine Learning}{293}{section.23.17}%
+\contentsline {chapter}{\numberline {24}All Big Picture Concepts}{295}{chapter.24}%
+\contentsline {section}{\numberline {24.1}From Chapter 1 \sphinxhyphen {} Introduction to Data Science}{295}{section.24.1}%
+\contentsline {section}{\numberline {24.2}From Chapter 2 \sphinxhyphen {} Mathematical Foundations}{295}{section.24.2}%
+\contentsline {section}{\numberline {24.3}From Chapter 3 \sphinxhyphen {} Jupyter}{295}{section.24.3}%
+\contentsline {section}{\numberline {24.4}From Chapter 4 \sphinxhyphen {} Review of Python and pandas}{295}{section.24.4}%
+\contentsline {section}{\numberline {24.5}From Chapter 5 \sphinxhyphen {} Before and After}{295}{section.24.5}%
+\contentsline {section}{\numberline {24.6}From Chapter 6 \sphinxhyphen {} Single\sphinxhyphen {}Table Verbs}{296}{section.24.6}%
+\contentsline {section}{\numberline {24.7}From Chapter 7 \sphinxhyphen {} Abstraction}{296}{section.24.7}%
+\contentsline {section}{\numberline {24.8}From Chapter 8 \sphinxhyphen {} Version Control}{296}{section.24.8}%
+\contentsline {section}{\numberline {24.9}From Chapter 9 \sphinxhyphen {} Mathematics and Statistics in Python}{296}{section.24.9}%
+\contentsline {section}{\numberline {24.10}From Chapter 10 \sphinxhyphen {} Visualization}{296}{section.24.10}%
+\contentsline {section}{\numberline {24.11}From Chapter 11 \sphinxhyphen {} Processing the Rows of a DataFrame}{296}{section.24.11}%
+\contentsline {section}{\numberline {24.12}From Chapter 12 \sphinxhyphen {} Concatenating and Merging DataFrames}{296}{section.24.12}%
+\contentsline {section}{\numberline {24.13}From Chapter 13 \sphinxhyphen {} Miscellaneous Munging Methods (ETL)}{296}{section.24.13}%
+\contentsline {section}{\numberline {24.14}From Chapter 14 \sphinxhyphen {} Dashboards}{297}{section.24.14}%
+\contentsline {section}{\numberline {24.15}From Chapter 15 \sphinxhyphen {} Relations as Graphs \sphinxhyphen {} Network Analysis}{297}{section.24.15}%
+\contentsline {section}{\numberline {24.16}From Chapter 16 \sphinxhyphen {} Relations as Matrices}{297}{section.24.16}%
+\contentsline {section}{\numberline {24.17}From Chapter 17 \sphinxhyphen {} Introduction to Machine Learning}{297}{section.24.17}%
