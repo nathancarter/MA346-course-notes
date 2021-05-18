@@ -270,7 +270,7 @@
 \contentsline {subsection}{\numberline {17.4.4}Model coefficients}{230}{subsection.17.4.4}%
 \contentsline {section}{\numberline {17.5}Measuring success}{231}{section.17.5}%
 \contentsline {section}{\numberline {17.6}Categorical input variables}{232}{section.17.6}%
-\contentsline {section}{\numberline {17.7}Overfitting and underfitting in this example}{233}{section.17.7}%
+\contentsline {section}{\numberline {17.7}Overfitting and underfitting in this example}{234}{section.17.7}%
 \contentsline {part}{VI\hspace {1em}Appendices}{235}{part.6}%
 \contentsline {chapter}{\numberline {18}Detailed Course Schedule}{237}{chapter.18}%
 \contentsline {section}{\numberline {18.1}Day 1 \sphinxhyphen {} 5/18/21 \sphinxhyphen {} Introduction and mathematical foundations}{237}{section.18.1}%
@@ -382,7 +382,7 @@
 \contentsline {chapter}{\numberline {21}VS Code for Python Installation}{281}{chapter.21}%
 \contentsline {section}{\numberline {21.1}Open the Anaconda Navigator}{281}{section.21.1}%
 \contentsline {section}{\numberline {21.2}Find and Install the VS Code application}{281}{section.21.2}%
-\contentsline {section}{\numberline {21.3}Installing and Configuring Code Runner}{281}{section.21.3}%
+\contentsline {section}{\numberline {21.3}Adding Support for Jupyter Notebooks}{281}{section.21.3}%
 \contentsline {section}{\numberline {21.4}Testing your Installation}{282}{section.21.4}%
 \contentsline {chapter}{\numberline {22}GB213 Review in Python}{283}{chapter.22}%
 \contentsline {section}{\numberline {22.1}We’re not covering everything}{283}{section.22.1}%
@@ -407,3 +407,39 @@
 \contentsline {section}{\numberline {22.7}Other Topics}{289}{section.22.7}%
 \contentsline {subsection}{\numberline {22.7.1}ANOVA}{289}{subsection.22.7.1}%
 \contentsline {subsection}{\numberline {22.7.2}\(\mitchi ^2\) Tests}{290}{subsection.22.7.2}%
+\contentsline {chapter}{\numberline {23}All Learning On Your Own Opportunities}{291}{chapter.23}%
+\contentsline {section}{\numberline {23.1}From Chapter 1 \sphinxhyphen {} Introduction to Data Science}{291}{section.23.1}%
+\contentsline {section}{\numberline {23.2}From Chapter 2 \sphinxhyphen {} Mathematical Foundations}{291}{section.23.2}%
+\contentsline {section}{\numberline {23.3}From Chapter 3 \sphinxhyphen {} Jupyter}{291}{section.23.3}%
+\contentsline {section}{\numberline {23.4}From Chapter 4 \sphinxhyphen {} Review of Python and pandas}{291}{section.23.4}%
+\contentsline {section}{\numberline {23.5}From Chapter 5 \sphinxhyphen {} Before and After}{291}{section.23.5}%
+\contentsline {section}{\numberline {23.6}From Chapter 6 \sphinxhyphen {} Single\sphinxhyphen {}Table Verbs}{292}{section.23.6}%
+\contentsline {section}{\numberline {23.7}From Chapter 7 \sphinxhyphen {} Abstraction}{292}{section.23.7}%
+\contentsline {section}{\numberline {23.8}From Chapter 8 \sphinxhyphen {} Version Control}{292}{section.23.8}%
+\contentsline {section}{\numberline {23.9}From Chapter 9 \sphinxhyphen {} Mathematics and Statistics in Python}{292}{section.23.9}%
+\contentsline {section}{\numberline {23.10}From Chapter 10 \sphinxhyphen {} Visualization}{292}{section.23.10}%
+\contentsline {section}{\numberline {23.11}From Chapter 11 \sphinxhyphen {} Processing the Rows of a DataFrame}{292}{section.23.11}%
+\contentsline {section}{\numberline {23.12}From Chapter 12 \sphinxhyphen {} Concatenating and Merging DataFrames}{293}{section.23.12}%
+\contentsline {section}{\numberline {23.13}From Chapter 13 \sphinxhyphen {} Miscellaneous Munging Methods (ETL)}{293}{section.23.13}%
+\contentsline {section}{\numberline {23.14}From Chapter 14 \sphinxhyphen {} Dashboards}{293}{section.23.14}%
+\contentsline {section}{\numberline {23.15}From Chapter 15 \sphinxhyphen {} Relations as Graphs \sphinxhyphen {} Network Analysis}{293}{section.23.15}%
+\contentsline {section}{\numberline {23.16}From Chapter 16 \sphinxhyphen {} Relations as Matrices}{293}{section.23.16}%
+\contentsline {section}{\numberline {23.17}From Chapter 17 \sphinxhyphen {} Introduction to Machine Learning}{293}{section.23.17}%
+\contentsline {chapter}{\numberline {24}All Big Picture Concepts}{295}{chapter.24}%
+\contentsline {section}{\numberline {24.1}From Chapter 1 \sphinxhyphen {} Introduction to Data Science}{295}{section.24.1}%
+\contentsline {section}{\numberline {24.2}From Chapter 2 \sphinxhyphen {} Mathematical Foundations}{295}{section.24.2}%
+\contentsline {section}{\numberline {24.3}From Chapter 3 \sphinxhyphen {} Jupyter}{295}{section.24.3}%
+\contentsline {section}{\numberline {24.4}From Chapter 4 \sphinxhyphen {} Review of Python and pandas}{295}{section.24.4}%
+\contentsline {section}{\numberline {24.5}From Chapter 5 \sphinxhyphen {} Before and After}{295}{section.24.5}%
+\contentsline {section}{\numberline {24.6}From Chapter 6 \sphinxhyphen {} Single\sphinxhyphen {}Table Verbs}{296}{section.24.6}%
+\contentsline {section}{\numberline {24.7}From Chapter 7 \sphinxhyphen {} Abstraction}{296}{section.24.7}%
+\contentsline {section}{\numberline {24.8}From Chapter 8 \sphinxhyphen {} Version Control}{296}{section.24.8}%
+\contentsline {section}{\numberline {24.9}From Chapter 9 \sphinxhyphen {} Mathematics and Statistics in Python}{296}{section.24.9}%
+\contentsline {section}{\numberline {24.10}From Chapter 10 \sphinxhyphen {} Visualization}{296}{section.24.10}%
+\contentsline {section}{\numberline {24.11}From Chapter 11 \sphinxhyphen {} Processing the Rows of a DataFrame}{296}{section.24.11}%
+\contentsline {section}{\numberline {24.12}From Chapter 12 \sphinxhyphen {} Concatenating and Merging DataFrames}{296}{section.24.12}%
+\contentsline {section}{\numberline {24.13}From Chapter 13 \sphinxhyphen {} Miscellaneous Munging Methods (ETL)}{296}{section.24.13}%
+\contentsline {section}{\numberline {24.14}From Chapter 14 \sphinxhyphen {} Dashboards}{297}{section.24.14}%
+\contentsline {section}{\numberline {24.15}From Chapter 15 \sphinxhyphen {} Relations as Graphs \sphinxhyphen {} Network Analysis}{297}{section.24.15}%
+\contentsline {section}{\numberline {24.16}From Chapter 16 \sphinxhyphen {} Relations as Matrices}{297}{section.24.16}%
+\contentsline {section}{\numberline {24.17}From Chapter 17 \sphinxhyphen {} Introduction to Machine Learning}{297}{section.24.17}%

@@ -73,7 +73,7 @@
         
 
 \title{MA346 Course Notes}
-\date{May 15, 2021}
+\date{May 17, 2021}
 \release{}
 \author{Nathan Carter}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -2849,7 +2849,7 @@ In pandas, we call them the \sphinxcode{\sphinxupquote{values}} of the pivot.
 (The animation below can be viewed \sphinxhref{https://nathancarter.github.io/dataframe-animations/pivot.html}{in its own page here}.)
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}IPython.lib.display.IFrame at 0x7f32793317c0\PYGZgt{}
+\PYGZlt{}IPython.lib.display.IFrame at 0x7f5935a4a7c0\PYGZgt{}
 \end{sphinxVerbatim}
 
 
@@ -3076,7 +3076,7 @@ Because we’re collecting all scores into a single column, these will stack up 
 (This animation can be viewed \sphinxhref{https://nathancarter.github.io/dataframe-animations/melt.html}{in its own page here}.)
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}IPython.lib.display.IFrame at 0x7f32792ca310\PYGZgt{}
+\PYGZlt{}IPython.lib.display.IFrame at 0x7f59359e3310\PYGZgt{}
 \end{sphinxVerbatim}
 
 
@@ -3159,7 +3159,7 @@ This is why a \sphinxcode{\sphinxupquote{pivot\_table}} operation doesn’t make
 (This animation can be viewed \sphinxhref{https://nathancarter.github.io/dataframe-animations/pivot-table.html}{in its own page here}.)
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}IPython.lib.display.IFrame at 0x7f32792ca340\PYGZgt{}
+\PYGZlt{}IPython.lib.display.IFrame at 0x7f59359e3d90\PYGZgt{}
 \end{sphinxVerbatim}
 
 
@@ -3290,7 +3290,7 @@ The reverse operation is exactly \sphinxcode{\sphinxupquote{df.stack( level=1 )}
 (This animation can be viewed \sphinxhref{https://nathancarter.github.io/dataframe-animations/stack-1.html}{in its own page here}.)
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}IPython.lib.display.IFrame at 0x7f32792cabe0\PYGZgt{}
+\PYGZlt{}IPython.lib.display.IFrame at 0x7f59359e3f40\PYGZgt{}
 \end{sphinxVerbatim}
 
 
@@ -3306,7 +3306,7 @@ The reverse operation is therefore actually a combination of \sphinxcode{\sphinx
 (This animation can be viewed \sphinxhref{https://nathancarter.github.io/dataframe-animations/stack-0.html}{in its own page here}.)
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}IPython.lib.display.IFrame at 0x7f32792caeb0\PYGZgt{}
+\PYGZlt{}IPython.lib.display.IFrame at 0x7f59359e3a30\PYGZgt{}
 \end{sphinxVerbatim}
 
 
@@ -4605,12 +4605,12 @@ We will return to vectorization and loops in Chapter 11 of these notes.  For now
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.50646602, 0.75032473, 0.36978167, 0.24338862, 0.86928584,
-       0.61087898, 0.41725923, 0.68248565, 0.70025244, 0.67955357,
-       0.84634515, 0.45029793, 0.97671329, 0.58913147, 0.53921354,
-       0.82226886, 0.78767825, 0.51479276, 0.04469714, 0.38558719,
-       0.55095945, 0.19427569, 0.27005155, 0.46125863, 0.87005439,
-       0.84361393, 0.31240745, 0.13754436, 0.58704445, 0.38434153])
+array([0.5803052 , 0.13095283, 0.68052874, 0.68720198, 0.01077386,
+       0.09388662, 0.3921616 , 0.25386808, 0.56086497, 0.1094453 ,
+       0.2728649 , 0.53292254, 0.7966416 , 0.82450511, 0.96511528,
+       0.06109199, 0.88571677, 0.21389455, 0.98178195, 0.72728041,
+       0.84968786, 0.35849711, 0.8062754 , 0.08198351, 0.12997253,
+       0.87787459, 0.60008002, 0.0234442 , 0.7745522 , 0.49158892])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -4618,9 +4618,9 @@ array([0.50646602, 0.75032473, 0.36978167, 0.24338862, 0.86928584,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.51, 0.75, 0.37, 0.24, 0.87, 0.61, 0.42, 0.68, 0.7 , 0.68, 0.85,
-       0.45, 0.98, 0.59, 0.54, 0.82, 0.79, 0.51, 0.04, 0.39, 0.55, 0.19,
-       0.27, 0.46, 0.87, 0.84, 0.31, 0.14, 0.59, 0.38])
+array([0.58, 0.13, 0.68, 0.69, 0.01, 0.09, 0.39, 0.25, 0.56, 0.11, 0.27,
+       0.53, 0.8 , 0.82, 0.97, 0.06, 0.89, 0.21, 0.98, 0.73, 0.85, 0.36,
+       0.81, 0.08, 0.13, 0.88, 0.6 , 0.02, 0.77, 0.49])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -4628,12 +4628,12 @@ array([0.51, 0.75, 0.37, 0.24, 0.87, 0.61, 0.42, 0.68, 0.7 , 0.68, 0.85,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([1.65941647, 2.11768758, 1.44741856, 1.27556423, 2.38520682,
-       1.84204981, 1.51779593, 1.97879021, 2.01426113, 1.97299672,
-       2.33111141, 1.5687795 , 2.65571332, 1.80242227, 1.71465783,
-       2.27565713, 2.19828662, 1.67329169, 1.04571111, 1.47047751,
-       1.73491678, 1.21443104, 1.31003198, 1.586069  , 2.38704069,
-       2.32475332, 1.36671145, 1.1474526 , 1.79866451, 1.46864694])
+array([1.78658361, 1.13991401, 1.97492167, 1.98814487, 1.01083211,
+       1.0984352 , 1.48017689, 1.28900175, 1.75218743, 1.11565904,
+       1.31372275, 1.70390476, 2.21807922, 2.28075176, 2.62509025,
+       1.0629967 , 2.42472174, 1.23849205, 2.66920841, 2.06944491,
+       2.33891666, 1.4311769 , 2.23955101, 1.08543791, 1.1387971 ,
+       2.40578099, 1.82226461, 1.02372118, 2.16962034, 1.6349119 ])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -4641,12 +4641,14 @@ array([1.65941647, 2.11768758, 1.44741856, 1.27556423, 2.38520682,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.25650783, 0.5629872 , 0.13673848, 0.05923802, 0.75565787,
-       0.37317313, 0.17410527, 0.46578667, 0.49035348, 0.46179305,
-       0.71630012, 0.20276822, 0.95396885, 0.34707589, 0.29075124,
-       0.67612608, 0.62043702, 0.26501158, 0.00199783, 0.14867748,
-       0.30355631, 0.03774304, 0.07292784, 0.21275952, 0.75699465,
-       0.71168447, 0.09759841, 0.01891845, 0.34462118, 0.14771841])
+array([3.36754123e\PYGZhy{}01, 1.71486428e\PYGZhy{}02, 4.63119365e\PYGZhy{}01, 4.72246561e\PYGZhy{}01,
+       1.16076128e\PYGZhy{}04, 8.81469742e\PYGZhy{}03, 1.53790720e\PYGZhy{}01, 6.44490025e\PYGZhy{}02,
+       3.14569511e\PYGZhy{}01, 1.19782729e\PYGZhy{}02, 7.44552541e\PYGZhy{}02, 2.84006431e\PYGZhy{}01,
+       6.34637844e\PYGZhy{}01, 6.79808676e\PYGZhy{}01, 9.31447497e\PYGZhy{}01, 3.73223179e\PYGZhy{}03,
+       7.84494202e\PYGZhy{}01, 4.57508804e\PYGZhy{}02, 9.63895806e\PYGZhy{}01, 5.28936795e\PYGZhy{}01,
+       7.21969452e\PYGZhy{}01, 1.28520180e\PYGZhy{}01, 6.50080027e\PYGZhy{}01, 6.72129620e\PYGZhy{}03,
+       1.68928583e\PYGZhy{}02, 7.70663791e\PYGZhy{}01, 3.60096030e\PYGZhy{}01, 5.49630696e\PYGZhy{}04,
+       5.99931103e\PYGZhy{}01, 2.41659664e\PYGZhy{}01])
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -4726,8 +4728,8 @@ In fact, SciPy’s built\sphinxhyphen{}in random number generating procedures le
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([81.89838604, 39.63876788, 62.25114606, 98.69228835, 67.02679363,
-       34.7777246 , 68.74711836, 19.45904399, 16.26959351, 69.98110444])
+array([33.76056181, 71.55467636, 62.17326604, 40.99783089, 78.2954576 ,
+       69.34967112, 42.08800166, 33.57335771, 44.31031373, 90.36367567])
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -4739,8 +4741,8 @@ Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two a
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([87.06880945, 38.03928705, 55.20257852, 51.11438033, 13.40440654,
-       50.32498671,  8.538218  ,  5.98286909,  9.57828632, 22.96587111])
+array([39.3352463 ,  2.30018238, 84.48584757, 77.93166105, 46.37109003,
+       81.9744226 , 26.76709806, 16.03852554, 54.68228053, 10.79848677])
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -9435,27 +9437,40 @@ See also the slides that summarize a portion of this content.
 \section{What is a graph?}
 \label{\detokenize{chapter-15-networks:what-is-a-graph}}
 \sphinxAtStartPar
-In mathematics, the word \sphinxstyleemphasis{graph} has two meanings.  The more common one is what most people learned in algebra class, which is the graph of a function, on the ordinary Cartesian plane of \(x\) and \(y\) axes.  The less common meaning is a visualization of an interconnected network of objects.  In such a network, the objects being connected are called \sphinxstyleemphasis{nodes} or \sphinxstyleemphasis{vertices,} and the connections are called \sphinxstyleemphasis{edges,} \sphinxstyleemphasis{arrows,} or \sphinxstyleemphasis{links.}  While we call it a graph in mathematics, data scientists might refer to it instead as \sphinxstyleemphasis{network data.}
+In mathematics, the word \sphinxstyleemphasis{graph} has two meanings.
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Meaning \#1 (more common):} The graph of a function on the ordinary Cartesian plane of \(x\) and \(y\) axes.
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Meaning \#2 (less common):} A visualization of an interconnected network of objects.
+
+\end{itemize}
 
 \sphinxAtStartPar
-Let’s start with a small, pretend example.  Let’s say we spoke to five friends and asked them which of the others they’d turn to for advice about an important life decision.  We could depict their answers with a picture like the following.
+We’re focused on the second meaning here.  In such a network, the objects being connected are called \sphinxstyleemphasis{nodes} or \sphinxstyleemphasis{vertices,} and the connections are called \sphinxstyleemphasis{edges,} \sphinxstyleemphasis{arrows,} or \sphinxstyleemphasis{links.}  While we call it a graph in mathematics, data scientists might refer to it instead as \sphinxstyleemphasis{network data.}
+
+\sphinxAtStartPar
+Let’s start with a small, pretend example.  Let’s say we spoke to five friends and asked them which of the others they’d turn to for advice about an important life decision.  We could depict their answers with a visualization like the following.
 
 \sphinxAtStartPar
 \sphinxincludegraphics{{friends-graph}.png}
 
 \sphinxAtStartPar
-In that image, the five friends are shown in ovals; these are the vertices of the graph.  The connections among them are the edges of the graph, representing the friends’ answers to the question about advice.  For instance, the arrow from Augustus to Cyrano says that Augustus would consult Cyrano when needing advice about an important life decision, but the absence of an arrow from Beatriz to Englebert means that she would not consult him.
+The five friends are the graph’s \sphinxstyleemphasis{vertices,} and are drawn with ovals in the image.  The connections among them are the graph’s \sphinxstyleemphasis{edges,} representing the friends’ answers to the question about advice.  For instance, the arrow from Augustus to Cyrano says that Augustus would consult Cyrano when needing advice about an important life decision, but the absence of an arrow from Beatriz to Englebert means that she would not consult him.
 
 \sphinxAtStartPar
 Now that we’ve seen a small (but pretend) example, let’s consider some more realistic examples.
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-To prepare for class, you were asked to consider a spreadsheet recording shipping records between every two U.S. states in the year 1997.  In that data, the vertices were the 50 states and the edges were the records of how much money/weight of goods were shipped.
+To prepare for class, you were asked to consider a spreadsheet recording shipping records between every two U.S. states in the year 1997.  In that data, the vertices were the 50 states and the edges were the records of how much money (or weight) of goods were shipped.
 
 \item {} 
 \sphinxAtStartPar
-In today’s notes, we’ll also look at a spreadsheet created by marine biologists recording the interaction among a community of dolphins living off Doubtful Sound in New Zealand.  The vertices of that network are the dolphins and the edges represent social interactions among them.  (The data comes from \sphinxhref{http://www-personal.umich.edu/~mejn/netdata/}{Mark Newman’s website}, which cites the biologists who collected it.)
+In this chapter, we’ll look at a spreadsheet created by marine biologists recording the interaction among a community of dolphins living off Doubtful Sound in New Zealand.  The vertices of that network are the dolphins and the edges represent social interactions among them.  (The data comes from \sphinxhref{http://www-personal.umich.edu/~mejn/netdata/}{Mark Newman’s website}, which cites the biologists who collected it.)
 
 \item {} 
 \sphinxAtStartPar
@@ -9466,7 +9481,7 @@ One of the largest examples of network data has as its vertices the collection o
 \begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} A graph depicts a binary relation of a set with itself}
 
 \sphinxAtStartPar
-Notice that a graph is nothing but a picture representing a \sphinxstyleemphasis{binary relation,} a term we first defined in {\hyperref[\detokenize{chapter-2-mathematical-foundations::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{the notes on Chapter 2}}}}.  In the case of a graph, the two sets involved in the relation are the same; we’re connecting friends to friends in the picture above, or states to states with shipping information, or pages to pages with hyperlinks.  In a graph, the relation connects the set of vertices to itself, not to some other set.
+Notice that a graph is nothing but a picture representing a \sphinxstyleemphasis{binary relation,} a term we first defined in {\hyperref[\detokenize{chapter-2-mathematical-foundations::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{the notes on Chapter 2}}}}.  In the case of a graph, the two sets involved in the relation are actually the same set, even though that’s not a requirement for binary relations in general.  In the examples above, we connected friends to friends for advice, and states to states with shipping information, and pages to pages with hyperlinks.  In a graph, the relation connects the set of vertices to itself, not to some other set.
 \end{sphinxadmonition}
 
 \sphinxAtStartPar
@@ -9482,7 +9497,7 @@ In an \sphinxstyleemphasis{undirected graph,} every connection goes in both dire
 In our course, we store almost all of our data in tables, such as pandas DataFrames, CSV files, etc.  How can a graph be represented in a table?  There are two primary ways.
 
 \sphinxAtStartPar
-First, we can use an \sphinxstyleemphasis{adjacency matrix,} which is a table that tells which vertices are adjacent.  Its row headings are the vertices in the network, and the column headings are the same vertices again.  Each entry says whether the row connects to the column.  Here’s the adjacency matrix for the five friends graph shown above.
+First, we can use an \sphinxstyleemphasis{adjacency matrix,} which is a table that tells which pairs of vertices are adjacent.  Its row headings are the vertices in the network, and the column headings are the same vertices again.  Each entry says whether the row connects to the column.  Here’s the adjacency matrix for the five friends graph shown above.
 
 
 \begin{savenotes}\sphinxattablestart
@@ -9612,7 +9627,7 @@ False
 Order is important here.  If we want to know whether Augustus \(\to\) Cyrano, we must look in the Augustus \sphinxstylestrong{row} and the Cyrano \sphinxstylestrong{column.}  (This is not hard to remember, because the row headings are actually visually to the left of the column headings, which fits the “row \(\to\) column” orientation of the arrow.)
 
 \sphinxAtStartPar
-Alternately, we could represent a relation the way we’ve discussed in the past.  We can just store in a table the list of pairs that make up the relation.  Each row in such a table represents an arrow in the graph.  For the five friends, that table looks like the following.
+Alternately, we could represent a relation the way we’ve discussed in {\hyperref[\detokenize{chapter-2-mathematical-foundations::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Chapter 2}}}}.  We can just store in a table the list of pairs that make up the relation.  Each row in such a table represents an arrow in the graph.  For the five friends, that table looks like the following.
 
 
 \begin{savenotes}\sphinxattablestart
@@ -9681,7 +9696,10 @@ Beatriz
 \sphinxattableend\end{savenotes}
 
 \sphinxAtStartPar
-We will call this kind of table a \sphinxstyleemphasis{list of ordered pairs,} because the ordering of each pair often matters.  From Augustus to Cyrano is not the same as from Cyrano to Augustus.  We can also call it an \sphinxstyleemphasis{edge list,} because the connections in a graph are called edges.
+Or we could name the columns something more descriptive, such as “Advice seeker” and “Advice giver.”  I chose “From” and “To” to show that a similar table could be used to store any directed graph data.
+
+\sphinxAtStartPar
+We will call this kind of two\sphinxhyphen{}column table a \sphinxstyleemphasis{list of ordered pairs,} because the ordering of each pair of vertices often matters.  An edge from Augustus to Cyrano does not mean the same thing as an edge from Cyrano to Augustus.  We can also call it an \sphinxstyleemphasis{edge list,} because the connections in a graph are called edges.
 
 \begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} How pivoting/melting impacts graph data}
 
@@ -9752,12 +9770,11 @@ There are two sheets in the workbook, one called \sphinxcode{\sphinxupquote{"ids
 It seems as if the first sheet gives each dolphin, by name, a unique ID, while the second sheet shows the social connections of which dolphins spend time with which other ones.  This is just how we discussed storing the data above; there is a list of vertices in the first table and a list of edges in the second table.
 
 \sphinxAtStartPar
-But the data is not formatted conveniently.  The second table would be more convenient if it included dolphin names instead of IDs.  Let’s use Python dictionaries and \sphinxcode{\sphinxupquote{map()}} to fix it.
+But the data is not formatted conveniently.  The second table would be more convenient if it included dolphin names instead of IDs.  Let’s use Python dictionaries and \sphinxcode{\sphinxupquote{replace()}} to fix it.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{convert\PYGZus{}id\PYGZus{}to\PYGZus{}name} \PYG{o}{=} \PYG{n+nb}{dict}\PYG{p}{(} \PYG{n+nb}{zip}\PYG{p}{(} \PYG{n}{df1}\PYG{o}{.}\PYG{n}{id}\PYG{p}{,} \PYG{n}{df1}\PYG{o}{.}\PYG{n}{name} \PYG{p}{)} \PYG{p}{)}
-\PYG{n}{df2}\PYG{o}{.}\PYG{n}{source} \PYG{o}{=} \PYG{n}{df2}\PYG{o}{.}\PYG{n}{source}\PYG{o}{.}\PYG{n}{map}\PYG{p}{(} \PYG{n}{convert\PYGZus{}id\PYGZus{}to\PYGZus{}name} \PYG{p}{)}
-\PYG{n}{df2}\PYG{o}{.}\PYG{n}{target} \PYG{o}{=} \PYG{n}{df2}\PYG{o}{.}\PYG{n}{target}\PYG{o}{.}\PYG{n}{map}\PYG{p}{(} \PYG{n}{convert\PYGZus{}id\PYGZus{}to\PYGZus{}name} \PYG{p}{)}
+\PYG{n}{df2}\PYG{o}{.}\PYG{n}{replace}\PYG{p}{(} \PYG{n}{convert\PYGZus{}id\PYGZus{}to\PYGZus{}name}\PYG{p}{,} \PYG{n}{inplace}\PYG{o}{=}\PYG{k+kc}{True} \PYG{p}{)}
 \PYG{n}{df2}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
 \end{sphinxVerbatim}
 
@@ -9774,7 +9791,28 @@ But the data is not formatted conveniently.  The second table would be more conv
 \subsection{Python’s NetworkX module}
 \label{\detokenize{chapter-15-networks:python-s-networkx-module}}
 \sphinxAtStartPar
-Your Anaconda installation came with the \sphinxcode{\sphinxupquote{networkx}} module for working with network data in Python.  If you have a non\sphinxhyphen{}Anaconda setup on your machine, or you plan to work in a cloud provider that doesn’t have it installed by default, you can install it with \sphinxcode{\sphinxupquote{pip install networkx}}.  The standard way to import it is using the abbreviation \sphinxcode{\sphinxupquote{nx}}.
+The \sphinxcode{\sphinxupquote{networkx}} module is pospular for working with network data in Python.  You might already have it installed:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+If you’re using Deepnote, then when you attempt to import NetworkX using the code below, Deepnote will prompt you to install it first; just follow the prompts.
+
+\item {} 
+\sphinxAtStartPar
+If you’re using Google Colab, NetworkX is pre\sphinxhyphen{}installed there.
+
+\item {} 
+\sphinxAtStartPar
+If you installed Python on your own computer through any of the methods described in {\hyperref[\detokenize{chapter-3-jupyter::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Chapter 3}}}} (including Anaconda or VSCode with Docker), that included NetworkX.
+
+\item {} 
+\sphinxAtStartPar
+If you have a non\sphinxhyphen{}Anaconda Python setup on your machine, you can install NetworkX with \sphinxcode{\sphinxupquote{pip install networkx}}.
+
+\end{itemize}
+
+\sphinxAtStartPar
+The standard way to import NetworkX into your notebook or script is using the abbreviation \sphinxcode{\sphinxupquote{nx}}.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k+kn}{import} \PYG{n+nn}{networkx} \PYG{k}{as} \PYG{n+nn}{nx}
@@ -9788,7 +9826,7 @@ This module lets us turn tables of data (like the edge list for dolphins we just
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
-We will now add vertices and edges to that graph.  Let’s start with the vertices.  Each NetworkX \sphinxcode{\sphinxupquote{Graph}} object lets you add vertices with the function \sphinxcode{\sphinxupquote{.add\_nodes\_from(your\_list)}}.  We will use that function to add all the dolphin names to our graph.  We can even check the size of the graph to be sure it worked.
+We will now add vertices and edges to that graph.  Let’s start with the vertices.  Each NetworkX \sphinxcode{\sphinxupquote{Graph}} object lets you add vertices with the function \sphinxcode{\sphinxupquote{add\_nodes\_from(your\_list)}}.  We will use that function to add all the dolphin names to our graph.  We can even check the size of the graph to be sure it worked.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{dolphins}\PYG{o}{.}\PYG{n}{add\PYGZus{}nodes\PYGZus{}from}\PYG{p}{(} \PYG{n}{df1}\PYG{o}{.}\PYG{n}{name} \PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} the column of all dolphin names}
@@ -9800,7 +9838,7 @@ We will now add vertices and edges to that graph.  Let’s start with the vertic
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
-Similarly, we can add edges with the function \sphinxcode{\sphinxupquote{.add\_edges\_from(your\_list)}}, but the list must be a list of ordered pairs.  For instance, in our dolphin data case, we’d want it to be something like \sphinxcode{\sphinxupquote{{[}('Double','CCL'),('Feather','DN16'),('Feather','DN21'),...{]}}} and so on.  But we don’t want to have to type out the entire dolphin relationships table as ordered pairs; it’s too big!
+Similarly, we can add edges with the function \sphinxcode{\sphinxupquote{add\_edges\_from(your\_list)}}, but the list must be a list of ordered pairs.  For instance, in our dolphin data case, we’d want it to be something like \sphinxcode{\sphinxupquote{{[}('Double','CCL'),('Feather','DN16'),('Feather','DN21'),...{]}}} and so on.  But we don’t want to have to type out the entire dolphin relationships table as ordered pairs; it’s too big!
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n+nb}{len}\PYG{p}{(} \PYG{n}{df2} \PYG{p}{)}
@@ -9888,7 +9926,7 @@ The number of connections any one particular dolphin has is called the \sphinxst
 As you can see, no dolphin had zero friends, and thus we know that all dolphins appeared in some edge in the network.
 
 \sphinxAtStartPar
-We see that some dolphins had many more social associations.  If this were a network of humans, we might ask which people were the most influential in the social network.  There are many ways to measure influencce.  One way is by a notion called “betweenness,” which considers all the paths through which information might flow in a network, and asks which vertices are on the largest proportion of those paths.  This measure is called “betweenness centrality” and can be used to rank the vertices in a network by a measure of their importance.
+We see that some dolphins had many more social associations.  If this were a network of humans, we might ask which people were the most influential in the social network.  There are many ways to measure influence.  One way is by a notion called “betweenness,” which considers all the paths through which information might flow in a network, and asks which vertices are on the largest proportion of those paths.  This measure is called “betweenness centrality” and can be used to rank the vertices in a network by a measure of their importance.
 
 \sphinxAtStartPar
 Although it doesn’t make a lot of sense to measure this for dolphins (as opposed to humans), the code below illustrates how do to the computation.
@@ -9910,6 +9948,27 @@ dtype: float64
 
 \sphinxAtStartPar
 Although the particular numbers don’t have units we can easily interpret, higher numbers are vertices that sit along a higher proportion of the network’s pathways.  There are many other ways to measure important nodes in a network; these are called centrality measures, and the full list of ways that NetworkX supports them appears \sphinxhref{https://networkx.github.io/documentation/stable/reference/algorithms/centrality.html}{here}.
+
+\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} Centrality Measures}
+
+\sphinxAtStartPar
+Choose 3 centrality measures from the documentation linked to in the previous paragraph.  Write a brief report or slide deck for your classmates that provides the following information for each of the three measures you chose.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+the purpose/intent behind the measure
+
+\item {} 
+\sphinxAtStartPar
+the formula for the measure
+
+\item {} 
+\sphinxAtStartPar
+the Python code for using that measure it on a NetworkX \sphinxcode{\sphinxupquote{Graph}} object
+
+\end{enumerate}
+\end{sphinxadmonition}
 
 \sphinxAtStartPar
 Let us turn now to how we can visualize the dolphin network.
@@ -9961,6 +10020,38 @@ NetworkX emphasizes that there are much more powerful graph\sphinxhyphen{}drawin
 
 \sphinxAtStartPar
 You can then import the \sphinxcode{\sphinxupquote{dolphins.graphml}} file into either of those other pieces of software to visualize it more conveniently.  Similarly, if you have data exported from either of those pieces of software that you want to bring into Python for use with NetworkX, you can use the \sphinxhref{https://networkx.github.io/documentation/networkx-1.10/reference/generated/networkx.readwrite.graphml.read\_graphml.html}{\sphinxcode{\sphinxupquote{nx.read\_graphml()}} function}.
+
+\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} Gephi}
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Obtain some large network data.  One easy option is to use the shipping data that you prepared for class today.
+
+\item {} 
+\sphinxAtStartPar
+Export that network data in GraphML format, as described above.
+
+\item {} 
+\sphinxAtStartPar
+Download and install \sphinxhref{https://gephi.org/}{Gephi}.
+
+\item {} 
+\sphinxAtStartPar
+Import the data into Gephi and try visualizing it.
+
+\item {} 
+\sphinxAtStartPar
+Create a tutorial with instructions and screenshots that teaches the process to your classmates.
+
+\end{enumerate}
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} Cytoscape}
+
+\sphinxAtStartPar
+This exercise is the same as the previous one, but using \sphinxhref{https://cytoscape.org/}{Cytoscape} instead of Gephi.
+\end{sphinxadmonition}
 
 
 \subsection{Drawing larger networks}
@@ -10036,7 +10127,7 @@ See also the slides that summarize a portion of this content.
 \section{Using matrices for relations other than networks}
 \label{\detokenize{chapter-16-matrices:using-matrices-for-relations-other-than-networks}}
 \sphinxAtStartPar
-In {\hyperref[\detokenize{chapter-15-networks::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{chapter 15 of the notes}}}}, we discussed two ways to store network data.  We talked about a table of edges, which listed each connection in the network as its own row in the dataframe, and we talked about an adjacency matrix, which was a table of 0\sphinxhyphen{}or\sphinxhyphen{}1 entries indicating whether the row heading was connected to the column heading.
+In {\hyperref[\detokenize{chapter-15-networks::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{chapter 15 of the notes}}}}, we discussed two ways to store network data.  We talked about a table of edges, which listed each connection in the network as its own row in the DataFrame, and we talked about an adjacency matrix, which was a table of 0\sphinxhyphen{}or\sphinxhyphen{}1 entries indicating whether the row heading was connected to the column heading.
 
 \sphinxAtStartPar
 These same patterns can be used for data about other types of relations as well, not only networks.  Recall that a network is always a relation that connects a set to itself.  For instance, in the shipping network, both the row and column headings were the same set, the 50 U.S. states.
@@ -10262,13 +10353,83 @@ etc.
 This is the format for an adjacency matrix for \sphinxstyleemphasis{any} kind of binary relation between any two sets.  Just as when we were dealing with network data, we can choose the data type that goes in the matrix.  If it is boolean (true/false or 0/1) then we are storing only whether an edge exists between the row heading and the column heading.  But if we store something more detailed (like the numeric values in the example above) then we have more information; in that case, it’s measuring the quantity of materials shipped from the source to the destination.
 
 \sphinxAtStartPar
-If we think of the data stored in an edge list instead, then with networks, the two columns come from the same set (both are lists of dolphins, or both are lists of U.S. states), but when we consider any kind of relation, then the two columns can be different sets.  In the example above, one column would be manufacturing locations and the other would be retail locations.
+If we think of the data stored in an edge list instead, then with networks, the two columns come from the same set (both are lists of dolphins, or both are lists of U.S. states).  But when we consider any kind of relation, then the two columns can be different sets.  If we converted the adjacency matrix above into an edge list, one column would be manufacturing locations and the other would be retail locations, as shown below.
+
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabulary}{\linewidth}[t]{|T|T|T|}
+\hline
+\sphinxstyletheadfamily 
+\sphinxAtStartPar
+From
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+To
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Amount
+\\
+\hline
+\sphinxAtStartPar
+Factory 1
+&
+\sphinxAtStartPar
+Store 1
+&
+\sphinxAtStartPar
+58
+\\
+\hline
+\sphinxAtStartPar
+Factory 1
+&
+\sphinxAtStartPar
+Store 2
+&
+\sphinxAtStartPar
+0
+\\
+\hline
+\sphinxAtStartPar
+Factory 1
+&
+\sphinxAtStartPar
+Store 3
+&
+\sphinxAtStartPar
+21
+\\
+\hline
+\sphinxAtStartPar
+Factory 2
+&
+\sphinxAtStartPar
+Store 1
+&
+\sphinxAtStartPar
+19
+\\
+\hline
+\sphinxAtStartPar
+etc.
+&
+\sphinxAtStartPar
+etc.
+&
+\sphinxAtStartPar
+etc.
+\\
+\hline
+\end{tabulary}
+\par
+\sphinxattableend\end{savenotes}
 
 
 \section{Pivoting an edge list}
 \label{\detokenize{chapter-16-matrices:pivoting-an-edge-list}}
 \sphinxAtStartPar
-Recall from {\hyperref[\detokenize{chapter-15-networks::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{the chapter 15 notes}}}} that if you have an edge list, you can turn it into an adjacency matrix with a single pivot command.  For instance, if we had the following edge list among a few factories and stores, we can create an adjacency matrix with the code shown.
+Recall from \sphinxhref{chapter-15-networks.html\#storing-graphs-in-tables}{the chapter 15 notes} that if you have an edge list, you can turn it into an adjacency matrix with a single pivot command.  For instance, if we had the following edge list among a few factories and stores, we can create an adjacency matrix with the code shown.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k+kn}{import} \PYG{n+nn}{pandas} \PYG{k}{as} \PYG{n+nn}{pd}
@@ -10351,7 +10512,7 @@ When a new user (let’s say user X) joins this tiny movie watching service, we 
 Let’s imagine that user X joins the club and indicates that they like Godzilla, JFK, and Macbeth.  We represent user X’s preferences as a Pandas series that could be another row in the preferences DataFrame, if we chose to add it.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{X} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{Series}\PYG{p}{(} \PYG{p}{[} \PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,} \PYG{n}{index}\PYG{o}{=}\PYG{n}{prefs}\PYG{o}{.}\PYG{n}{columns} \PYG{p}{)}
+\PYG{n}{X} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{Series}\PYG{p}{(} \PYG{p}{[} \PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1} \PYG{p}{]}\PYG{p}{,} \PYG{n}{index}\PYG{o}{=}\PYG{n}{prefs}\PYG{o}{.}\PYG{n}{columns} \PYG{p}{)}
 \PYG{n}{X}
 \end{sphinxVerbatim}
 
@@ -10376,7 +10537,7 @@ There is an entire subject within mathematics that studies matrices and how to w
 A pandas DataFrame is a grid of data, and when that grid contains only numbers, it can be referred to as a \sphinxstyleemphasis{matrix.}  A single pandas Series of numbers can be referred to as a \sphinxstyleemphasis{vector.}  These are the standard terms from linear algebra for grids and lists of numbers, respectively.  Throughout the rest of this chapter, because we’ll be dealing only with numerical data, I may say “matrix” or “DataFrame” to mean the same thing, and I may say “vector” or “pandas Series” to mean the same thing.
 
 \sphinxAtStartPar
-First, a matrix can be multiplied by another matrix or vector.  The important step for us here is the multiplication of the preferences matrix for all users with the preferences vector for user X.  Such a multiplication is a combination of the columns in the matrix, using the vector as the weights when combining.  In Python, the symbol for matrix multiplication is \sphinxcode{\sphinxupquote{@}}, so we can do the computation as follows.
+A matrix can be multiplied by another matrix or vector.  The important step for us here is the multiplication of the preferences matrix for all users with the preferences vector for user X.  Such a multiplication is a combination of the columns in the matrix, using the vector as the weights when combining.  In Python, the symbol for matrix multiplication is \sphinxcode{\sphinxupquote{@}}, so we can do the computation as follows.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{prefs} \PYG{o}{@} \PYG{n}{X}
@@ -10405,7 +10566,7 @@ Again, this notion of matrix\sphinxhyphen{}by\sphinxhyphen{}vector multiplicatio
 There is a bit of a problem, however, with the method just described.  What if user A really liked movies, and clicked the “like” button very often, so that most of the first row of our matrix were ones instead of zeros?  Then no matter who user X was, they would probably get ranked as at least a little bit similar to user A.  In fact, everyone would.  This is probably not what we want, because it means that people who click the “like” button a lot will have their preferences dominating the movie recommendations.
 
 \sphinxAtStartPar
-So instead, we will scale each row of the preferences matrix down.  The standard way to do this begins by treating each one as a vector in \(n\)\sphinxhyphen{}dimensional space; in this case we have 7 columns, so we’re considering 7\sphinxhyphen{}dimensional space.  (Don’t try to picture it; nobody can.)  The length of any vector \((v_1,v_2,\ldots,v_n)\) is computed as \(\sqrt{v_1^2+v_2^2+\cdots+v_n^2}\), and this feature is built into numpy as the standard “linear algebra norm” for a vector.
+So instead, we will scale each row of the preferences matrix down.  The standard way to do this begins by treating each row as a vector in \(n\)\sphinxhyphen{}dimensional space; in this case we have 7 columns, so we’re considering 7\sphinxhyphen{}dimensional space.  (Don’t try to picture it; nobody can.)  The length of any vector \((v_1,v_2,\ldots,v_n)\) is computed as \(\sqrt{v_1^2+v_2^2+\cdots+v_n^2}\), and this feature is built into NumPy as the standard “linear algebra norm” for a vector.
 
 \sphinxAtStartPar
 For example, the length of user X’s vector is \(\sqrt{1^2+0^2+0^2+1^2+0^2+0^2+1^2}=\sqrt{3}\approx1.732\).
@@ -10496,9 +10657,9 @@ We now have a clearer ranking of the users than we did before.  User X is most s
 At this point, we could stop and build a very simple recommender system.  We could simply suggest to user X all the movies that were rated highly by perhaps the top two on the “similar existing users” list we just generated, E and B.  (We might also filter out movies that user X already indicated that they had seen and liked.)  That’s a simple algorithm we could apply.  It would take just a few lines of code.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{liked\PYGZus{}by\PYGZus{}E} \PYG{o}{=} \PYG{n}{prefs}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{E}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}
-\PYG{n}{liked\PYGZus{}by\PYGZus{}B} \PYG{o}{=} \PYG{n}{prefs}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{B}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}
-\PYG{n}{liked\PYGZus{}by\PYGZus{}X} \PYG{o}{=} \PYG{n}{X} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}
+\PYG{n}{liked\PYGZus{}by\PYGZus{}E} \PYG{o}{=} \PYG{n}{prefs}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{E}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}  \PYG{c+c1}{\PYGZsh{} wherever E\PYGZsq{}s preferences are \PYGZgt{} 0}
+\PYG{n}{liked\PYGZus{}by\PYGZus{}B} \PYG{o}{=} \PYG{n}{prefs}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{B}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}  \PYG{c+c1}{\PYGZsh{} wherever B\PYGZsq{}s preferences are \PYGZgt{} 0}
+\PYG{n}{liked\PYGZus{}by\PYGZus{}X} \PYG{o}{=} \PYG{n}{X} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}                 \PYG{c+c1}{\PYGZsh{} wherever X\PYGZsq{}s preferences are \PYGZgt{} 0}
 \PYG{c+c1}{\PYGZsh{} liked by E or by B but not by X:}
 \PYG{n}{recommend} \PYG{o}{=} \PYG{p}{(} \PYG{n}{liked\PYGZus{}by\PYGZus{}E} \PYG{o}{|} \PYG{n}{liked\PYGZus{}by\PYGZus{}B} \PYG{p}{)} \PYG{o}{\PYGZam{}} \PYG{o}{\PYGZti{}}\PYG{n}{liked\PYGZus{}by\PYGZus{}X}
 \PYG{n}{recommend}
@@ -10525,7 +10686,7 @@ But there’s a big missed opportunity here.
 Sometimes hidden in the pattern of user preferences is a general shape or structure of overall movie preferences.  For instance, we can clearly see that some of the movies in our library are biographies and others are monster movies.  Shouldn’t these themes somehow influence our recommendations?
 
 \sphinxAtStartPar
-Furthermore, what if there is a theme among moviegoers’ preferences that none of us as humans would notice in the data, or maybe not even have a name for, but that matters a lot to moviegoers?  Perhaps there’s a set of movies that combines suspense, comedy, and excitement in just the right amounts, and doesn’t have a specific word in our vocabulary, but it hits home for many viewers, and could be detected by examining their preferences?  Or maybe what a certain set of moviegoers has in common is the love of a particular director, actress, or soundtrack composer.  Any of these patterns should be detectable with enough data.
+Furthermore, what if there is a theme among moviegoers’ preferences that none of us as humans would notice in the data, or maybe not even have a name for, but that matters a lot to moviegoers?  Perhaps there’s a set of movies that combines suspense, comedy, and excitement in just the right amounts, and doesn’t have a specific word in our vocabulary, but it hits home for many viewers, and could be detected by examining their preferences.  Or maybe what a certain set of moviegoers has in common is the love of a particular director, actress, or soundtrack composer.  Any of these patterns should be detectable with enough data.
 
 \sphinxAtStartPar
 Now, in the tiny 6\sphinxhyphen{}by\sphinxhyphen{}7 matrix of preferences we have here, we’re not going to create any brilliant insights of that nature.  But with a very large database (like Netflix has), maybe we could.  How would we go about it?
@@ -10543,7 +10704,7 @@ We’ll see an illustration of this in the next section.
 \subsection{Matrices as actions}
 \label{\detokenize{chapter-16-matrices:matrices-as-actions}}
 \sphinxAtStartPar
-When we speak of multiplying a matrix by a vector, as we did in \sphinxcode{\sphinxupquote{prefs @ X}} and then later with \sphinxcode{\sphinxupquote{normalized\_prefs @ normalized\_X}}, we are using the matrix not just as a piece of data, but as an action we’re using on the vector.  In fact, if we think of matrix multiplication as a binary function, and we see ourselves as binding the matrix as the first argument to that function, then the result is actually a function (an action) we can take on vectors like \sphinxcode{\sphinxupquote{X}}.
+When we speak of multiplying a matrix by a vector, as we did in \sphinxcode{\sphinxupquote{prefs @ X}} and then later with \sphinxcode{\sphinxupquote{normalized\_prefs @ normalized\_X}}, we are using the matrix not just as a piece of data, but as an action we’re using on the vector.  In fact, if we think of matrix multiplication as a binary function, and we see ourselves as binding the matrix as the first argument to that function, then the result is actually a unary function, an action we can take on vectors like \sphinxcode{\sphinxupquote{X}}.
 
 \sphinxAtStartPar
 I mentioned earlier that matrix multiplication also shows up in MA307, a Bentley course on the math of computer graphics.  This is because the action that results from multiplying a matrix by a vector is one that moves points through space in a way that’s useful in two\sphinxhyphen{} and three\sphinxhyphen{}dimensional computer graphics applications.
@@ -10956,7 +11117,7 @@ Of course, we don’t want to recommend all of these movies; there’s even a ne
 \section{Conclusion}
 \label{\detokenize{chapter-16-matrices:conclusion}}
 \sphinxAtStartPar
-In class, we will apply this same technique to an actual database of song recommendations from millions of users.  Be sure to download and prepare the data as part of \sphinxhref{course-schedule\#week-10-11-5-2020-relations-graphs-and-networks}{the homework assigned this week}.
+In class, we will apply this same technique to an actual database of song recommendations from millions of users.  Be sure to download and prepare the data as part of \sphinxhref{course-schedule.html\#day-10-6-17-21-relations-graphs-and-networks}{the homework assigned this week}.
 
 \sphinxAtStartPar
 If you want to know more about the concepts of matrix multiplication and factorization, which were covered only extremely briefly in this chapter, consider taking MA239, Linear Algebra.
@@ -10995,7 +11156,7 @@ Machine learning is broken into two categories, supervised and unsupervised.  Th
 This is called supervised learning because the data scientist is providing the outputs that the computer \sphinxstyleemphasis{should} be giving for each input.  It is as if the data scientist is looking over the computer’s shoulder, teaching it what kinds of outputs it should learn to create.  A mathematical model trained on a large enough set of inputs and outputs like those can learn to recognize handwritten digits with a high degree of accuracy.  The most common technique of doing so is with neural networks and deep learning, topics covered in MA707.
 
 \sphinxAtStartPar
-\sphinxstylestrong{Unsupervised learning} provides to the computer a dataset, but does not break it into input\sphinxhyphen{}output pairs.  Rather, the data scientist asks the computer to detect some kind of structure within the data.  One example of this is cluster analysis, covered in MA347, but you saw another example in {\hyperref[\detokenize{chapter-16-matrices::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{the Chapter 16 notes}}}}.  When we used SVD to approximate a network, thus revealing more of its latent structure than the precise data itself revealed, we were having the computer do unsupervised learning.  Another example of unsupervised learning is principal components analysis (PCA), covered in many statistics courses.
+\sphinxstylestrong{Unsupervised learning} provides to the computer a dataset, but does not break it into input\sphinxhyphen{}output pairs.  Rather, the data scientist asks the computer to detect some kind of structure within the data.  One example of this is cluster analysis, covered in MA347, but you saw another example in {\hyperref[\detokenize{chapter-16-matrices::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{the Chapter 16 notes}}}}.  When we used SVD to approximate a network, thus revealing more of its latent structure than the precise data itself revealed, we were having the computer do unsupervised learning.  Other examples of unsupervised learning include a wide variety of dimensionality reduction techniques, such as principal components analysis (PCA), covered in many statistics courses.
 
 \sphinxAtStartPar
 Today, we will focus on supervised learning.  For this reason, when we look at data, we will designate one column as the output that we want the computer to learn to predict from all the other columns as inputs.  The terminology for inputs and output varies:
@@ -11023,7 +11184,7 @@ I may use any of these terms in this chapter and in class; you should become fam
 \begin{sphinxadmonition}{note}{Big Picture \sphinxhyphen{} A central issue: overfitting vs. underfitting}
 
 \sphinxAtStartPar
-Probably the most significant concern in mathematical modeling in general (and machine learning in particular) is \sphinxstyleemphasis{overfitting} vs. \sphinxstyleemphasis{underfitting} for a mathematical model, sometimes also called \sphinxstyleemphasis{bias} vs. \sphinxstyleemphasis{variance.}  We explore its meaning in this section, and we will find that it is intimately tied up with how mathematical models perform on unseen data.
+Probably the most significant concern in mathematical modeling in general (and machine learning in particular) is \sphinxstyleemphasis{overfitting} vs. \sphinxstyleemphasis{underfitting,} sometimes also called \sphinxstyleemphasis{bias} vs. \sphinxstyleemphasis{variance.}  We explore its meaning in this section, and we will find that it is intimately tied up with how mathematical models perform on unseen data.
 \end{sphinxadmonition}
 
 
@@ -11051,17 +11212,16 @@ That raises the question:  \sphinxstyleemphasis{What is a good model?}  The answ
 In that example, the formula for sales based on marketing spending would have been built from some past experience (\sphinxstyleemphasis{seen data,} that is, data we’ve actually seen, in the past).  But we’re using it to predict something that could happen in the future, asking “what if we spent this much?”  We’re hoping the model will still be good on \sphinxstyleemphasis{unseen data,} that is, inputs to the model that we haven’t yet seen happen.
 
 \sphinxAtStartPar
-Consider another example.  When researchers work on developing self\sphinxhyphen{}driving cars, they gather lots of data from cameras and sensors in actual vehicles, and train their algorithms to make the correct decisions in all of those situations.  But of course, if self\sphinxhyphen{}driving cars are ever to succeed, the models the researchers create will need to work correctly on new, unseen data as well–that is, the new camera and sensor inputs the system experiences when it’s actually driving a car around the real world.  The model will be built using known/seen data, but it has to work well also on unkown, or not\sphinxhyphen{}yet\sphinxhyphen{}seen, data.
+Consider another example.  When researchers work on developing self\sphinxhyphen{}driving cars, they gather lots of data from cameras and sensors in actual vehicles, and train their algorithms to make the correct decisions in all of those situations.  But of course, if self\sphinxhyphen{}driving cars are ever to succeed, the models the researchers create will need to work correctly on new, unseen data as well—that is, the new camera and sensor inputs the system experiences when it’s actually driving a car around the real world.  The model will be built using known/seen data, but it has to work well also on unkown, or not\sphinxhyphen{}yet\sphinxhyphen{}seen, data.
 
 
 \subsection{Overfitting and underfitting}
 \label{\detokenize{chapter-17-machine-learning:overfitting-and-underfitting}}
 \sphinxAtStartPar
 This brings us to the big dilemma introduced above.  There are two big mistakes that a data scientist can make when fitting a model to existing data.
-\begin{itemize}
-\item {} 
+
 \sphinxAtStartPar
-The data scientist could make a model that tailors itself to every detail of the known data precisely.
+\sphinxstylestrong{The data scientist could make a model that tailors itself to every detail of the known data precisely.}
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -11077,9 +11237,8 @@ It is also called \sphinxstyleemphasis{variance,} because the model follows too 
 
 \end{itemize}
 
-\item {} 
 \sphinxAtStartPar
-The data scientist could make a model that captures only very simple characteristics of the known data and ignores some important details.
+\sphinxstylestrong{The data scientist could make a model that captures only very simple characteristics of the known data and ignores some important details.}
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -11092,8 +11251,6 @@ It typically happens if the model is not complex enough.
 \item {} 
 \sphinxAtStartPar
 It is also called \sphinxstyleemphasis{bias,} because just as a social bias may pigeonhole a complex person into a simple stereotype, making the decision to use too simple a mathematical model also pigeonholes a complex problem into a simple stereotype, and limits the values of the results.
-
-\end{itemize}
 
 \end{itemize}
 
@@ -11118,20 +11275,20 @@ Let’s imagine for a moment a simple scenario with one input variable and one o
 \sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 \sphinxAtStartPar
-If we could see with perfect clarity how the world worked, we would know exactly how customers respond to our marketing spending.  This omniscient knowledge about marketing nobody has, but we can imagine that it exists somewhere, even if no one knows it (except God).  That knowledge is the signal that we are trying to detect.  It’s shown on the left above.  (That curve doesn’t necessarily have anything to do with marketing; it’s just an example curve.)
+If we could see with perfect clarity how the world worked, we would know exactly how customers respond to our marketing spending.  This omniscient knowledge about marketing nobody has, but we can imagine that it exists somewhere, even if no one knows it (except God).  That knowledge is the signal that we are trying to detect.  It’s shown on the left above, the blue curve.  (That blue curve doesn’t necessarily have anything to do with marketing; it’s just an example curve.)
 
 \item {} 
 \sphinxAtStartPar
-Whenever we try to gather data about the phenomenon we care about, inevitably some problems mess things up.  We might make mistakes when measuring or recording data.  Some of our data might be recorded at times that are special (like a holiday weekend) that make them not representative of the whole picture.  And other variables might be influencing our data that we didn’t measure, such as the weather or other companies’ marketing campaigns.  All of this creates fluctuations we call noise, as shown in the middle.
+Whenever we try to gather data about the phenomenon we care about, inevitably some problems mess things up.  We might make mistakes when measuring or recording data.  Some of our data might be recorded at times that are special (like a holiday weekend) that make them not representative of the whole picture.  And other variables might be influencing our data that we didn’t measure, such as the weather or other companies’ marketing campaigns.  All of this creates fluctuations we call noise, as shown in the middle, the red wiggles.
 
 \item {} 
 \sphinxAtStartPar
-What we actually measure when we gather data is the combination of these two things, as shown on the right, above.  Of course, when we get data, we see only that final graph, the signal plus the noise together, and we don’t know how to separate them.
+What we actually measure when we gather data is the combination of these two things, as shown on the right, above, as a black (and wiggly) curve.  Of course, when we get data, we see only that final graph, the signal plus the noise together, and we don’t know how to separate them.
 
 \end{enumerate}
 
 \sphinxAtStartPar
-Not knowing that the original signal was parabolic, we might make either of two mistakes.  First, we might make a model that is too simple, an underfit model, such as a linear one.
+Because I generated this example, I know that the original signal (in blue) was a parabola.  But if we had access only to the data (in black), that wouldn’t be obvious.  We might make either of two mistakes.  First, we might make a model that is too simple, an underfit model, such as a linear one.
 
 \sphinxAtStartPar
 \sphinxincludegraphics{{signal-and-noise-2}.png}
@@ -11206,7 +11363,7 @@ We choose which model we want to use (such as linear regression, for example) an
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-This is called the \sphinxstyleemphasis{training} phase; what statisticians call “fitting a model,” machine learning people call “training the model.”
+This is called the \sphinxstyleemphasis{training} phase.  What statisticians call “fitting a model,” machine learning practitioners call “training the model.”
 
 \end{itemize}
 
@@ -11231,10 +11388,10 @@ If the model seems acceptable, you would then proceed to re\sphinxhyphen{}fit th
 \end{enumerate}
 
 \sphinxAtStartPar
-It is easy to split a DataFrame’s rows into two different sets like this with random sampling.  Use code like the following.
+Step 2 requires us to split a DataFrame’s rows into two different sets.  This is easy to do with random sampling, using code like the following.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+c1}{\PYGZsh{} Create some fake data to use for demonstrating the technique:}
+\PYG{c+c1}{\PYGZsh{} First, I create some fake data to use for demonstrating the technique:}
 \PYG{k+kn}{import} \PYG{n+nn}{pandas} \PYG{k}{as} \PYG{n+nn}{pd}
 \PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
 \PYG{n}{df} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{(} \PYG{p}{\PYGZob{}} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Totally}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Fake}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Data}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{l+m+mi}{6}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{)} \PYG{p}{\PYGZcb{}} \PYG{p}{)}
@@ -11277,8 +11434,8 @@ Let’s see the resulting split.
 2  1.222222  3.222222  5.222222
 3  1.333333  3.333333  5.333333
 4  1.444444  3.444444  5.444444
+5  1.555556  3.555556  5.555556
 6  1.666667  3.666667  5.666667
-7  1.777778  3.777778  5.777778
 8  1.888889  3.888889  5.888889
 9  2.000000  4.000000  6.000000
 \end{sphinxVerbatim}
@@ -11290,14 +11447,17 @@ Let’s see the resulting split.
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
     Totally      Fake      Data
 1  1.111111  3.111111  5.111111
-5  1.555556  3.555556  5.555556
+7  1.777778  3.777778  5.777778
 \end{sphinxVerbatim}
 
 
 \subsection{Data leakage}
 \label{\detokenize{chapter-17-machine-learning:data-leakage}}
 \sphinxAtStartPar
-It is is essential, in the above five\sphinxhyphen{}step process, not to touch (or typically even look at) the testing data (in \sphinxcode{\sphinxupquote{df\_test}}) until the testing phase.  It is also essential not to repeat back to step 1, 2, or 3 once you’ve reached step 4.  Otherwise \sphinxcode{\sphinxupquote{df\_test}} no longer represents unseen data.  (Like that embarrassing social media post, you can’t unsee it.)  In fact, in machine learning competitions, the group running the competition will typically split the data into training and testing sets before the competition, and distribute only the training set to competitors, leaving the testing set secret, to be used for judging the winner.  It’s truly unseen data!
+It is is essential, in the above five\sphinxhyphen{}step process, not to touch (or typically even look at) the testing data (in \sphinxcode{\sphinxupquote{df\_test}}) until the testing phase.  It is also essential not to repeat back to step 1, 2, or 3 once you’ve reached step 4.  Otherwise \sphinxcode{\sphinxupquote{df\_test}} no longer represents unseen data.  (Like that embarrassing social media post, you can’t unsee it.)
+
+\sphinxAtStartPar
+In fact, in machine learning competitions, the group running the competition will typically split the data into training and testing sets before the competition, and distribute only the training set to competitors, leaving the testing set secret, to be used for judging the winner.  It’s truly unseen data!
 
 \sphinxAtStartPar
 If a data scientist even looks at the test data or does summary statistics about it, this information can influence how they do the modeling process on training data.  This error is called \sphinxstyleemphasis{data leakage,} because some aspects of the test data have leaked out of where they’re supposed to be safely contained at the end of the whole process, and have contaminated the beginning of the process instead.  The five\sphinxhyphen{}step process given above is designed, in part, to eliminate data leakage.
@@ -11309,7 +11469,7 @@ If a data scientist even looks at the test data or does summary statistics about
 But this restriction on seeing \sphinxcode{\sphinxupquote{df\_test}} only once introduces a significant drawback.  What if you have several different models you’d like to try, and you’re not sure which one will work best on unseen data?  How can we compare multiple models if we can test only one?  The question is even more complex if the model comes with parameters that a data scientist is supposed to choose (so\sphinxhyphen{}called hyperparameters), which may require some iterative experimentation.
 
 \sphinxAtStartPar
-The answer to this problem involves introducing a new phase, called \sphinxstyleemphasis{validation,} in between training and testing, and creating a three\sphinxhyphen{}way data split.  Perhaps you’ve heard of the technique of \sphinxstyleemphasis{cross\sphinxhyphen{}validation,} one particular way to do the validation step.  In this chapter, since we are just doing a quick introduction to the machine learning process, we will not dive deeply into the validation phase, but will just keep the five\sphinxhyphen{}step process shown above, which uses only a train/test split of the data.
+The answer to this problem involves introducing a new phase, called \sphinxstyleemphasis{validation,} in between training and testing, and creating a three\sphinxhyphen{}way data split.  Perhaps you’ve heard of the technique of \sphinxstyleemphasis{cross\sphinxhyphen{}validation,} one particular way to do the validation step.  Since this chapter is just a quick introduction to the machine learning process, we will not dive include a validation phase in our work, and will instead stick to the five\sphinxhyphen{}step process shown above.  But techniques like cross\sphinxhyphen{}validation are an important part of any machine learning course.
 
 
 \section{Logistic Regression}
@@ -11387,7 +11547,10 @@ When we apply logistic regression to this dataset, we will want to make it clear
 \subsection{Logistic regression in scikit\sphinxhyphen{}learn}
 \label{\detokenize{chapter-17-machine-learning:logistic-regression-in-scikit-learn}}
 \sphinxAtStartPar
-A very popular machine learning toolit is called scikit\sphinxhyphen{}learn, and is distributed as the Python module \sphinxcode{\sphinxupquote{sklearn}}.  If your Python installation came from Anaconda, you already have \sphinxcode{\sphinxupquote{sklearn}} installed.  We can use the logistic regression tools built into scikit\sphinxhyphen{}learn to create a logistic regression model that will use the first three columns above as inputs from which it should predict the final column as the output.
+A very popular machine learning toolit is called scikit\sphinxhyphen{}learn, and is distributed as the Python module \sphinxcode{\sphinxupquote{sklearn}}.  It comes pre\sphinxhyphen{}installed in both Deepnote and Colab, and with any Anaconda installation you may have used on your own computer.
+
+\sphinxAtStartPar
+We can use the logistic regression tools built into scikit\sphinxhyphen{}learn to create a logistic regression model that will use the first three columns above as inputs from which it should predict the final column as the output.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{\PYGZsh{} Import the module}
@@ -11396,9 +11559,19 @@ A very popular machine learning toolit is called scikit\sphinxhyphen{}learn, and
 \PYG{c+c1}{\PYGZsh{} Create a model and fit it to the data}
 \PYG{n}{model} \PYG{o}{=} \PYG{n}{LogisticRegression}\PYG{p}{(}\PYG{p}{)}
 \PYG{n}{model}\PYG{o}{.}\PYG{n}{fit}\PYG{p}{(} \PYG{n}{predictors}\PYG{p}{,} \PYG{n}{response} \PYG{p}{)}
+\end{sphinxVerbatim}
 
-\PYG{c+c1}{\PYGZsh{} Let\PYGZsq{}s see how close it came.}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+LogisticRegression()
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+That’s it!  We’ve created our logistic regression in just two lines of code!  (Okay, plus one line for importing the module.)  Scikit\sphinxhyphen{}learn is a powerful tool.  But we haven’t yet checked to see if the model we created is useful.  Let’s write some code for doing so now.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Use the model to predict the output variable based on the input variables:}
 \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Prediction}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{model}\PYG{o}{.}\PYG{n}{predict}\PYG{p}{(} \PYG{n}{predictors} \PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} Check whether each prediction was correct or not, and show the results:}
 \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Correct}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Prediction}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Response}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
 \PYG{n}{df\PYGZus{}drug\PYGZus{}response}
 \end{sphinxVerbatim}
@@ -11418,6 +11591,7 @@ A very popular machine learning toolit is called scikit\sphinxhyphen{}learn, and
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} What proportion of the predictions were correct?}
 \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Correct}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)} \PYG{o}{/} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{)}
 \end{sphinxVerbatim}
 
@@ -11476,9 +11650,6 @@ Here we can see that height and weight negatively impacted the drug response and
 \sphinxAtStartPar
 This is a rather simple way to compare the importance of variables, and classes like MA252 and MA347 will cover more statistically sophisticated methods.
 
-\sphinxAtStartPar
-So the good news is that fitting a logistic model to data is just a few lines of Python code!  But there are several additional details that it will be helpful to know about the context in which we apply logistic regression.  We cover each of those details in the remaining sections of this chapter.
-
 
 \section{Measuring success}
 \label{\detokenize{chapter-17-machine-learning:measuring-success}}
@@ -11498,11 +11669,11 @@ Similarly, let \(TN\), \(FP\), and \(FN\) stand for true negatives, false positi
 
 \item {} 
 \sphinxAtStartPar
-We define the classifier’s \sphinxstylestrong{precision} to be \(\frac{TP}{TP+FP}\).  This answers the question:  If the test said “positive,” what are the odds that it’s a true positive?  This is the measure that a patient who just got a positive diagnosis cares about.  What are the odds it’s real?
+We define the classifier’s \sphinxstylestrong{precision} to be \(\frac{TP}{TP+FP}\).  This answers the question:  If the test said “positive,” what is the probability that it’s a true positive?  This is the measure that a patient who just got a positive diagnosis cares about.  What is the probability that it’s real?
 
 \item {} 
 \sphinxAtStartPar
-We define the classifier’s \sphinxstylestrong{recall} to be \(\frac{TP}{TP+FN}\).  This answers the question:  If the reality is “positive,” what are the odds the test will detect that?  This is the measure that the credit card company cares about.  What percentage of fraud does our system catch?
+We define the classifier’s \sphinxstylestrong{recall} to be \(\frac{TP}{TP+FN}\).  This answers the question:  If the reality is “positive,” what is the probability the test will detect that?  This is the measure that the credit card company cares about.  What percentage of fraud does our system catch?
 
 \end{itemize}
 
@@ -11535,10 +11706,27 @@ In many cases, however, both precision and recall matter.  A common way to combi
 \end{equation*}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{F1} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{precision} \PYG{o}{*} \PYG{n}{recall} \PYG{o}{/} \PYG{p}{(} \PYG{n}{precision} \PYG{o}{+} \PYG{n}{recall} \PYG{p}{)}
+\PYG{n}{F1}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+0.7692307692307692
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
 Just as a higher score is better for both precision and recall, a higher score is also better for \(F_1\).  We can use this measure to compare models, prioritizing a balance of both precision and recall.
+
+\begin{sphinxadmonition}{note}{Learning on Your Own \sphinxhyphen{} ROC and AUC}
+
+\sphinxAtStartPar
+A more sophisticated measure of the performance of a classifier is the Receiver Operator Characteristic Curve (ROC Curve), and the area under that curve (AUC).  Research these two concepts and prepare a brief report explaining them at a level appropriate for your classmates.
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+Notice that computing \(TP\), \(TN\), \(FP\), and \(FN\), are all map\sphinxhyphen{}reduce operations, which we studied in {\hyperref[\detokenize{chapter-11-processing-rows::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Chapter 11}}}}.  They compute a boolean value from each row (the map step), then sum them (the reduce step).  This means that computing precision, recall, and \(F_1\) are also just big map\sphinxhyphen{}reduce operations.
+
+\sphinxAtStartPar
+If the model had been a regression model instead, with numerical outputs instead of boolean ones, you could judge its quality using a measurement like RMSE (introduced in {\hyperref[\detokenize{chapter-11-processing-rows::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Chapter 11}}}}) instead of \(F_1\).
 
 
 \section{Categorical input variables}
@@ -11628,13 +11816,16 @@ The value of having done this is that boolean inputs can be represented using nu
 These variables could then be added to our \sphinxcode{\sphinxupquote{predictors}} DataFrame and used as numerical inputs to our model.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{predictors} \PYG{o}{=} \PYG{n}{predictors}\PYG{o}{.}\PYG{n}{copy}\PYG{p}{(}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} handle warnings about slices}
+\PYG{n}{predictors} \PYG{o}{=} \PYG{n}{predictors}\PYG{o}{.}\PYG{n}{copy}\PYG{p}{(}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} prevent warnings about slices}
 \PYG{n}{predictors}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race=Black}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race=Black}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
 \PYG{n}{predictors}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race=Indian}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{df\PYGZus{}drug\PYGZus{}response}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Race=Indian}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
-If no medical opinion had been present to suggest which races the model should focus on, we could create a boolean variable for each possible race.  There are some disadvantages to adding too many columns to your data, which we won’t cover here, but this is a common practice.  If all categories are converted into boolean variables, the result is called a \sphinxstyleemphasis{one\sphinxhyphen{}hot encoding,} because each row will have just one of the race columns equal to 1 and all others equal to 0.
+If no medical opinion had been present to suggest which races the model should focus on, we could create a boolean variable for each possible race.  There are some disadvantages to adding too many columns to your data, which we won’t cover here, but this is a common practice.
+
+\sphinxAtStartPar
+If all categories are converted into boolean variables, the result is called a \sphinxstyleemphasis{one\sphinxhyphen{}hot encoding,} because each row will have just one of the race columns equal to 1 and all others equal to 0.  It is important to treat each category independently, rather than just numbering the categories \(0,1,2,\ldots\), because placing them on the same numeric scale makes them behave as if they have values that follow an ordered progression, when that is unlikely to be true.
 
 
 \section{Overfitting and underfitting in this example}
@@ -11643,7 +11834,18 @@ If no medical opinion had been present to suggest which races the model should f
 Let’s return to the major theme introduced at the start of this chapter.  One way to overfit a regression or classification model is to throw in every variable you have access to as inputs to the model.  This is very similar to the example of polynomial regression used earlier, because polynomial regression essentially adds new columns \(x^2,x^3,x^4,\ldots\) as inputs.  A simple model will use just the most important variables, not necessarily every possible variable.
 
 \sphinxAtStartPar
-Statistics has many methods for evaluating which variables should be included or excluded from a model, and MA252 (Regression Analysis) covers such techniques.  But we have seen one way to discern which variables are the most impactful in logistic regression–examining the coefficients on those variables.  Variables whose coefficients are closer to zero are less likely to be indicative of signal and more likely to be indicative of noise.  Variables whose coefficients are larger (in absolute value, that is, farther from zero) are more likely to be indicative of the actual underlying structure of the problem.
+Statistics has many methods for evaluating which variables should be included or excluded from a model, and MA252 (Regression Analysis) covers such techniques.  But we have seen two ways to discern which variables are the most impactful.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Examine the coefficients on the variables, after standardizing the predictors.  Variables whose coefficients are closer to zero are less likely to be indicative of signal and more likely to be indicative of noise.  Variables whose coefficients are larger (in absolute value, that is, farther from zero) are more likely to be indicative of the actual underlying structure of the problem.
+
+\item {} 
+\sphinxAtStartPar
+In {\hyperref[\detokenize{chapter-10-visualization::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Chapter 10}}}}, we learned how to make pair plots, which help us visualize which variables are most likely to be useful in modeling.  Pair plots don’t work well on categorical predictors, but work better for numerical ones.
+
+\end{enumerate}
 
 \sphinxAtStartPar
 Our in\sphinxhyphen{}class exercise on mortgage data will assess variable relevance using logistic regression coefficients.
@@ -12451,7 +12653,11 @@ Export that DataFrame to a new CSV file that we will analyze in class.  Call it 
 
 \item {} 
 \sphinxAtStartPar
-It should be less than 3MB, so you can email it to your instructor to demonstrate that you have done this prep work.
+Follow \sphinxhref{https://docs.deepnote.com/importing-and-exporing/export-to-pdf}{Deepnote’s instructions} for how to export the resulting notebook as a PDF.
+
+\item {} 
+\sphinxAtStartPar
+Submit that notebook to your instructor through \sphinxhref{https://blackboard.bentley.edu}{Blackboard}.
 
 \end{itemize}
 
@@ -12528,7 +12734,11 @@ Your newly cleaned data should have all numeric columns.  Export it as a CSV fil
 
 \item {} 
 \sphinxAtStartPar
-To receive credit for having done this preparatory homework, also email the file to your instructor before class on Week 12.
+Follow \sphinxhref{https://docs.deepnote.com/importing-and-exporing/export-to-pdf}{Deepnote’s instructions} for how to export the resulting notebook as a PDF.
+
+\item {} 
+\sphinxAtStartPar
+Submit that notebook to your instructor through \sphinxhref{https://blackboard.bentley.edu}{Blackboard}.
 
 \end{itemize}
 
@@ -15027,12 +15237,12 @@ contain a “Launch” button.
 Click that button now to launch VS Code.
 
 
-\section{Installing and Configuring Code Runner}
-\label{\detokenize{vs-code-installation:installing-and-configuring-code-runner}}
+\section{Adding Support for Jupyter Notebooks}
+\label{\detokenize{vs-code-installation:adding-support-for-jupyter-notebooks}}
 \sphinxAtStartPar
-VS Code is all ready to let you edit Python code, but there’s an
-Extension to VS Code, called Code Runner, that makes it more convenient
-to run Python code when testing your work. Let’s install it now.
+VS Code is all ready to let you edit Python code, but much data work happen in
+Jupyter notebooks rather than Python scripts.  Let’s install a VS Code extension
+to support Jupyter notebooks.
 
 \sphinxAtStartPar
 Click the Extensions button on the left of the VS Code window.  It is the bottom button shown below, which looks like four squares:
@@ -15041,93 +15251,54 @@ Click the Extensions button on the left of the VS Code window.  It is the bottom
 
 
 \sphinxAtStartPar
-Then search for the Code Runner Extension as shown below and click its
-install button.  (The install button is green and is just below and to the right of hte large orange “.run” icon.)
+Then search for Jupyter, as shown in the search box below.  The first result,
+also shown in the image, is the Jupyer extension made by Microsoft.  Once you’ve
+verified that you’re looking at the official extension made by Microsoft (as in
+the image below), click its Install button.
 
 \sphinxAtStartPar
 
-
-\sphinxAtStartPar
-The Code Runner Extension in the Extensions list will then have a
-settings gear icon, as shown below.
-
-
-
-\sphinxAtStartPar
-Click that gear icon to bring up the settings menu for Code Runner, as shown below.
-
-
-
-\sphinxAtStartPar
-Choose “Configure Extension Settings,” the bottom item on that menu.
-
-\sphinxAtStartPar
-It will bring up a settings window as shown below.
-
-
-
-\sphinxAtStartPar
-Scroll down until you find the settings for saving files before running,
-and check both boxes, as shown here.
-
-
-
-\sphinxAtStartPar
-Your Code Runner Extension is correctly configured. Try it out as shown
-on the next page.
 
 
 \section{Testing your Installation}
 \label{\detokenize{vs-code-installation:testing-your-installation}}
 \sphinxAtStartPar
-Let’s verify now that you can successfully run Python code.
+Let’s verify now that you can successfully run Python code in a Jupyter notebook
+in VS Code.
 
 \sphinxAtStartPar
-Create a new file:
-
+Create a new Jupyter notebook:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
 \sphinxAtStartPar
+Open the command palette (Windows: Ctrl+Shift+P, Mac: Command+Shift+P).
 
-
-
-
+\item {} 
 \sphinxAtStartPar
-Save the file and give it the name \sphinxcode{\sphinxupquote{test.py}} to indicate that it is a Python file.
+Search for “notebook” as shown in the image below.
 
-
-
+\item {} 
 \sphinxAtStartPar
-Enter the following small amount of Python code in the new, empty file.
+Choose “Jupyter: Create New Blank Notebook,” as shown in the image.
 
-\sphinxAtStartPar
-\sphinxstyleemphasis{Be sure to press Enter after the code to start a new line!}
-
-
-
-\sphinxAtStartPar
-Save the file again.
-
-\sphinxAtStartPar
-Run the file by clicking the small Run icon (which looks like a “Play”
-triangle) on the top right of the window.  (If you don’t see this button,
-check your work above—did you save the file with a \sphinxcode{\sphinxupquote{.py}} extension?)
+\end{enumerate}
 
 
 
 \sphinxAtStartPar
-You should see the following output at the bottom of the window,
-indicating that your code was run, and produced the output \sphinxcode{\sphinxupquote{4}} (which is
-the result of 2+2, of course).
+Place your cursor in the first input cell of the notebook, as shown in the image
+below, and type some very simple Python code, such as \sphinxcode{\sphinxupquote{1+1}}.  Press Shift+Enter
+to run the code, and you should see the output (obviously 2 in that case).
 
 
 
 \sphinxAtStartPar
-(The first line means that the “python” command was run on the \sphinxcode{\sphinxupquote{test.py}}
-file you saved. The final line means the process ended with error code
-0, which means no errors, and took 0.102 seconds in total.)
+Feel free to save the notebook, but it is not necessary to do so; you can close
+without saving after this brief test.
 
 \sphinxAtStartPar
-You have a successful Python installation that you can run from Visual
-Studio!
+You have a successful Python and Jupyter installation that you can run from VS Code!
 
 
 \chapter{GB213 Review in Python}
@@ -15193,7 +15364,7 @@ The same code works for any random variable, not just \sphinxcode{\sphinxupquote
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([1, 0, 0, 0, 0, 1, 0, 1, 0, 1])
+array([0, 0, 0, 0, 0, 1, 0, 0, 0, 1])
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -15292,9 +15463,9 @@ The same code works for any continuous random variable, not just \sphinxcode{\sp
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([ 98.65522997,  92.42686989,  87.93399829,  99.89599075,
-       100.13652866,  94.67244195,  97.28548555, 100.72083596,
-       102.59073093,  94.03755861])
+array([ 98.48694675,  93.79902918,  98.89800793,  94.67193563,
+       109.55883889, 105.59212361, 100.55059356,  98.11358436,
+        99.52043865,  95.14637592])
 \end{sphinxVerbatim}
 
 
@@ -15535,6 +15706,434 @@ Analysis of variance is an optional topic your GB213 class may or may not have c
 \label{\detokenize{GB213-review-in-Python:chi-2-tests}}
 \sphinxAtStartPar
 Chi\sphinxhyphen{}squared (\(\chi^2\)) tests are another optional GB213 topic that your class may or may not have covered.  If you are familiar with it and would like to see how to do it in Python, check out \sphinxhref{https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chisquare.html}{the Scipy documentation for \sphinxcode{\sphinxupquote{chisquare}}}.
+
+
+\chapter{All Learning On Your Own Opportunities}
+\label{\detokenize{loyo-list:all-learning-on-your-own-opportunities}}\label{\detokenize{loyo-list::doc}}
+
+\section{From Chapter 1 \sphinxhyphen{} Introduction to Data Science}
+\label{\detokenize{loyo-list:from-chapter-1-introduction-to-data-science}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+File Explorers and Shell Commands
+
+\item {} 
+\sphinxAtStartPar
+Numerical Analysis
+
+\end{itemize}
+
+
+\section{From Chapter 2 \sphinxhyphen{} Mathematical Foundations}
+\label{\detokenize{loyo-list:from-chapter-2-mathematical-foundations}}
+\sphinxAtStartPar
+(None)
+
+
+\section{From Chapter 3 \sphinxhyphen{} Jupyter}
+\label{\detokenize{loyo-list:from-chapter-3-jupyter}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Problems with Notebooks
+
+\item {} 
+\sphinxAtStartPar
+Math in Notebooks
+
+\end{itemize}
+
+
+\section{From Chapter 4 \sphinxhyphen{} Review of Python and pandas}
+\label{\detokenize{loyo-list:from-chapter-4-review-of-python-and-pandas}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Basic pandas work in Excel
+
+\end{itemize}
+
+
+\section{From Chapter 5 \sphinxhyphen{} Before and After}
+\label{\detokenize{loyo-list:from-chapter-5-before-and-after}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Technical Writing Tips
+
+\end{itemize}
+
+
+\section{From Chapter 6 \sphinxhyphen{} Single\sphinxhyphen{}Table Verbs}
+\label{\detokenize{loyo-list:from-chapter-6-single-table-verbs}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Mito
+
+\item {} 
+\sphinxAtStartPar
+xlwings
+
+\end{itemize}
+
+
+\section{From Chapter 7 \sphinxhyphen{} Abstraction}
+\label{\detokenize{loyo-list:from-chapter-7-abstraction}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Writing Python modules
+
+\item {} 
+\sphinxAtStartPar
+Jupyter \sphinxcode{\sphinxupquote{\%run}} magic
+
+\end{itemize}
+
+
+\section{From Chapter 8 \sphinxhyphen{} Version Control}
+\label{\detokenize{loyo-list:from-chapter-8-version-control}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+VS Code’s git features
+
+\item {} 
+\sphinxAtStartPar
+Deepnote’s git features
+
+\end{itemize}
+
+
+\section{From Chapter 9 \sphinxhyphen{} Mathematics and Statistics in Python}
+\label{\detokenize{loyo-list:from-chapter-9-mathematics-and-statistics-in-python}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Pingouin
+
+\end{itemize}
+
+
+\section{From Chapter 10 \sphinxhyphen{} Visualization}
+\label{\detokenize{loyo-list:from-chapter-10-visualization}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Visual EDA Tools
+
+\item {} 
+\sphinxAtStartPar
+SandDance
+
+\item {} 
+\sphinxAtStartPar
+Plot with Less Code
+
+\item {} 
+\sphinxAtStartPar
+Geographical Plots
+
+\item {} 
+\sphinxAtStartPar
+Tableau
+
+\item {} 
+\sphinxAtStartPar
+Charticulator
+
+\item {} 
+\sphinxAtStartPar
+Visualization Design Principles
+
+\end{itemize}
+
+
+\section{From Chapter 11 \sphinxhyphen{} Processing the Rows of a DataFrame}
+\label{\detokenize{loyo-list:from-chapter-11-processing-the-rows-of-a-dataframe}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+CuPy (fastest option)
+
+\item {} 
+\sphinxAtStartPar
+NumExpr (easiest option)
+
+\item {} 
+\sphinxAtStartPar
+Cython (most flexible)
+
+\end{itemize}
+
+
+\section{From Chapter 12 \sphinxhyphen{} Concatenating and Merging DataFrames}
+\label{\detokenize{loyo-list:from-chapter-12-concatenating-and-merging-dataframes}}
+\sphinxAtStartPar
+(None)
+
+
+\section{From Chapter 13 \sphinxhyphen{} Miscellaneous Munging Methods (ETL)}
+\label{\detokenize{loyo-list:from-chapter-13-miscellaneous-munging-methods-etl}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+SQL in Jupyter
+
+\item {} 
+\sphinxAtStartPar
+SQLite in Python
+
+\item {} 
+\sphinxAtStartPar
+College Football Data Python API
+
+\item {} 
+\sphinxAtStartPar
+NBA Data Processing Tutorials
+
+\end{itemize}
+
+
+\section{From Chapter 14 \sphinxhyphen{} Dashboards}
+\label{\detokenize{loyo-list:from-chapter-14-dashboards}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Alternative to Streamlit: Dash
+
+\item {} 
+\sphinxAtStartPar
+Alternative to Streamlit: Voilà
+
+\item {} 
+\sphinxAtStartPar
+Alternative to Streamlit: Gradio
+
+\item {} 
+\sphinxAtStartPar
+Alternative to Streamlit: Deepnote Interactive Blocks
+
+\end{itemize}
+
+
+\section{From Chapter 15 \sphinxhyphen{} Relations as Graphs \sphinxhyphen{} Network Analysis}
+\label{\detokenize{loyo-list:from-chapter-15-relations-as-graphs-network-analysis}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Centrality Measures
+
+\item {} 
+\sphinxAtStartPar
+Gephi
+
+\item {} 
+\sphinxAtStartPar
+Cytoscape
+
+\end{itemize}
+
+
+\section{From Chapter 16 \sphinxhyphen{} Relations as Matrices}
+\label{\detokenize{loyo-list:from-chapter-16-relations-as-matrices}}
+\sphinxAtStartPar
+(None)
+
+
+\section{From Chapter 17 \sphinxhyphen{} Introduction to Machine Learning}
+\label{\detokenize{loyo-list:from-chapter-17-introduction-to-machine-learning}}
+\sphinxAtStartPar
+(None)
+
+
+\chapter{All Big Picture Concepts}
+\label{\detokenize{bigpic-list:all-big-picture-concepts}}\label{\detokenize{bigpic-list::doc}}
+
+\section{From Chapter 1 \sphinxhyphen{} Introduction to Data Science}
+\label{\detokenize{bigpic-list:from-chapter-1-introduction-to-data-science}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+The importance of Learning on Your Own
+
+\item {} 
+\sphinxAtStartPar
+The importance of communication
+
+\end{itemize}
+
+
+\section{From Chapter 2 \sphinxhyphen{} Mathematical Foundations}
+\label{\detokenize{bigpic-list:from-chapter-2-mathematical-foundations}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Functions and relations
+
+\item {} 
+\sphinxAtStartPar
+Every table represents a relation.
+
+\end{itemize}
+
+
+\section{From Chapter 3 \sphinxhyphen{} Jupyter}
+\label{\detokenize{bigpic-list:from-chapter-3-jupyter}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+The structure of Jupyter
+
+\item {} 
+\sphinxAtStartPar
+How to shut down Jupyter
+
+\end{itemize}
+
+
+\section{From Chapter 4 \sphinxhyphen{} Review of Python and pandas}
+\label{\detokenize{bigpic-list:from-chapter-4-review-of-python-and-pandas}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Writing to a slice of a DataFrame
+
+\end{itemize}
+
+
+\section{From Chapter 5 \sphinxhyphen{} Before and After}
+\label{\detokenize{bigpic-list:from-chapter-5-before-and-after}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Explanations before and after code
+
+\end{itemize}
+
+
+\section{From Chapter 6 \sphinxhyphen{} Single\sphinxhyphen{}Table Verbs}
+\label{\detokenize{bigpic-list:from-chapter-6-single-table-verbs}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+The relationship between tall and wide data
+
+\end{itemize}
+
+
+\section{From Chapter 7 \sphinxhyphen{} Abstraction}
+\label{\detokenize{bigpic-list:from-chapter-7-abstraction}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+The value of abstraction in programming
+
+\end{itemize}
+
+
+\section{From Chapter 8 \sphinxhyphen{} Version Control}
+\label{\detokenize{bigpic-list:from-chapter-8-version-control}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Why people use tools like git
+
+\end{itemize}
+
+
+\section{From Chapter 9 \sphinxhyphen{} Mathematics and Statistics in Python}
+\label{\detokenize{bigpic-list:from-chapter-9-mathematics-and-statistics-in-python}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Vectorization and its benefits
+
+\item {} 
+\sphinxAtStartPar
+Models vs. fit models
+
+\end{itemize}
+
+
+\section{From Chapter 10 \sphinxhyphen{} Visualization}
+\label{\detokenize{bigpic-list:from-chapter-10-visualization}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Visualizing relations vs. functions
+
+\end{itemize}
+
+
+\section{From Chapter 11 \sphinxhyphen{} Processing the Rows of a DataFrame}
+\label{\detokenize{bigpic-list:from-chapter-11-processing-the-rows-of-a-dataframe}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Informally, map is the same as apply
+
+\item {} 
+\sphinxAtStartPar
+Important phrases: map\sphinxhyphen{}reduce and split\sphinxhyphen{}apply\sphinxhyphen{}combine
+
+\end{itemize}
+
+
+\section{From Chapter 12 \sphinxhyphen{} Concatenating and Merging DataFrames}
+\label{\detokenize{bigpic-list:from-chapter-12-concatenating-and-merging-dataframes}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Concat adds rows and merge adds columns (usually!)
+
+\end{itemize}
+
+
+\section{From Chapter 13 \sphinxhyphen{} Miscellaneous Munging Methods (ETL)}
+\label{\detokenize{bigpic-list:from-chapter-13-miscellaneous-munging-methods-etl}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Munging/ETL is a large portion of data work
+
+\item {} 
+\sphinxAtStartPar
+Information = Data + Context
+
+\item {} 
+\sphinxAtStartPar
+Summary of key points about missing values
+
+\end{itemize}
+
+
+\section{From Chapter 14 \sphinxhyphen{} Dashboards}
+\label{\detokenize{bigpic-list:from-chapter-14-dashboards}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Uses for data dashboards
+
+\end{itemize}
+
+
+\section{From Chapter 15 \sphinxhyphen{} Relations as Graphs \sphinxhyphen{} Network Analysis}
+\label{\detokenize{bigpic-list:from-chapter-15-relations-as-graphs-network-analysis}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+A graph depicts a binary relation of a set with itself
+
+\item {} 
+\sphinxAtStartPar
+How pivoting/melting impacts graph data
+
+\end{itemize}
+
+
+\section{From Chapter 16 \sphinxhyphen{} Relations as Matrices}
+\label{\detokenize{bigpic-list:from-chapter-16-relations-as-matrices}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+What is a recommender system?
+
+\item {} 
+\sphinxAtStartPar
+The SVD and approximation
+
+\end{itemize}
+
+
+\section{From Chapter 17 \sphinxhyphen{} Introduction to Machine Learning}
+\label{\detokenize{bigpic-list:from-chapter-17-introduction-to-machine-learning}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Supervised vs. unsupervised machine learning
+
+\item {} 
+\sphinxAtStartPar
+A central issue: overfitting vs. underfitting
+
+\item {} 
+\sphinxAtStartPar
+Why we split data into train and test sets
+
+\end{itemize}
 
 
 

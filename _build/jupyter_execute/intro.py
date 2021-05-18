@@ -64,5 +64,7 @@
 # anaconda-installation.md
 # vs-code-installation.md
 # GB213-review-in-Python.ipynb
+# loyo-list.md
+# bigpic-list.md
 # ```
 # 
