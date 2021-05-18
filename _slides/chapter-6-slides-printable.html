@@ -1,64 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta charset="utf-8" />
 
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-
-<title>chapter-2-slides slides</title>
+<title>chapter-6-slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
-<!-- General and theme style sheets -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/simple.css" id="theme">
 
-<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-<script>
-if( window.location.search.match( /print-pdf/gi ) ) {
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/pdf.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-}
-
-</script>
-
-<!--[if lt IE 9]>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/html5shiv.js"></script>
-<![endif]-->
-
-<!-- Loading the mathjax macro -->
-<!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        // Center justify equations in code and markdown cells. Elsewhere
-        // we use CSS to left justify single line equations in code cells.
-        displayAlign: 'center',
-        "HTML-CSS": {
-            styles: {'.MathJax_Display': {"margin": 0}},
-            linebreaks: { automatic: true }
-        }
-    });
-    </script>
-    <!-- End of mathjax configuration -->
-
-<!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
 <style type="text/css">
     /*!
@@ -13077,1188 +13026,341 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <style type="text/css">
 /* Overrides of notebook CSS for static HTML export */
-.reveal {
-  font-size: 160%;
+body {
+  overflow: visible;
+  padding: 8px;
 }
-.reveal pre {
-  width: inherit;
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-}
-.reveal pre code {
-  padding: 0px;
-}
-.reveal section img {
-  border: 0px solid black;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-}
-.reveal i {
-  font-style: normal;
-  font-family: FontAwesome;
-  font-size: 2em;
-}
-.reveal .slides {
-  text-align: left;
-}
-.reveal.fade {
-  opacity: 1;
-}
-.reveal .progress {
-  position: static;
-}
-.reveal .controls .navigate-left,
-.reveal .controls .navigate-left.enabled {
-  border-right-color: #727272;
-}
-.reveal .controls .navigate-left.enabled:hover,
-.reveal .controls .navigate-left.enabled.enabled:hover {
-  border-right-color: #dfdfdf;
-}
-.reveal .controls .navigate-right,
-.reveal .controls .navigate-right.enabled {
-  border-left-color: #727272;
-}
-.reveal .controls .navigate-right.enabled:hover,
-.reveal .controls .navigate-right.enabled.enabled:hover {
-  border-left-color: #dfdfdf;
-}
-.reveal .controls .navigate-up,
-.reveal .controls .navigate-up.enabled {
-  border-bottom-color: #727272;
-}
-.reveal .controls .navigate-up.enabled:hover,
-.reveal .controls .navigate-up.enabled.enabled:hover {
-  border-bottom-color: #dfdfdf;
-}
-.reveal .controls .navigate-down,
-.reveal .controls .navigate-down.enabled {
-  border-top-color: #727272;
-}
-.reveal .controls .navigate-down.enabled:hover,
-.reveal .controls .navigate-down.enabled.enabled:hover {
-  border-top-color: #dfdfdf;
-}
-.reveal .progress span {
-  background: #727272;
-}
-div.input_area {
-  padding: 0.06em;
-}
-div.code_cell {
-  background-color: transparent;
-}
-div.prompt {
-  width: 11ex;
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-  text-align: right;
-}
-div.output_area pre {
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-}
-div.output_prompt {
-  /* 5px right shift to account for margin in parent container */
-  margin: 5px 5px 0 0;
-}
-div.text_cell.rendered .rendered_html {
-  /* The H1 height seems miscalculated, we are just hidding the scrollbar */
-  overflow-y: hidden;
-}
-a.anchor-link {
-  /* There is still an anchor, we are only hidding it */
-  display: none;
-}
-.rendered_html p {
-  text-align: inherit;
-}
-::-webkit-scrollbar
-{
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar *
-{
-  background:transparent;
-}
-::-webkit-scrollbar-thumb
-{
-  background: #727272 !important;
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
+}@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
 }
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
 <link rel="stylesheet" href="custom.css">
 
-</head>
-
-
-<body>
-
-
-<div class="reveal">
-<div class="slides">
-<section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Chapter-2---Mathematical-Foundations">Chapter 2 - Mathematical Foundations<a class="anchor-link" href="#Chapter-2---Mathematical-Foundations">&#182;</a></h1><p><a href="../_build/html/chapter-2-mathematical-foundations.html">See also the corresponding course notes, here.</a></p>
-<p><a href="./chapter-2-slides-printable.html">View a printable version of these slides here.</a></p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Definition-of-a-function">Definition of a function<a class="anchor-link" href="#Definition-of-a-function">&#182;</a></h1><blockquote><p>Any method for taking a list of inputs and determining the corresponding output.</p>
-</blockquote>
-<p>&nbsp;</p>
-<p>Important words:</p>
-<ul>
-<li>method</li>
-<li>input</li>
-<li>output</li>
-</ul>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Mathematical-functions">Mathematical functions<a class="anchor-link" href="#Mathematical-functions">&#182;</a></h1><p>Examples:</p>
-$$f(x)=x^2-5$$$$g(x,y,z)=\frac{x^2-y^2}{z}$$
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="English-functions">English functions<a class="anchor-link" href="#English-functions">&#182;</a></h1><p>Examples:</p>
-<ul>
-<li>the capitol of <u>&nbsp; &nbsp; &nbsp; &nbsp;</u></li>
-<li>the difference in ages between <u>&nbsp; &nbsp; &nbsp; &nbsp;</u> and <u>&nbsp; &nbsp; &nbsp; &nbsp;</u></li>
-</ul>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Python-functions">Python functions<a class="anchor-link" href="#Python-functions">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">square</span> <span class="p">(</span> <span class="n">x</span> <span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-
-<span class="k">def</span> <span class="nf">is_a_long_word</span> <span class="p">(</span> <span class="n">word</span> <span class="p">):</span>
-    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">8</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Functions-in-tables">Functions in tables<a class="anchor-link" href="#Functions-in-tables">&#182;</a></h1><table>
-<thead><tr>
-<th>Bentley Email ID</th>
-<th>Real Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>aaltidor</td>
-<td>Alina Altidor</td>
-</tr>
-<tr>
-<td>mbhaduri</td>
-<td>Moinak Bhaduri</td>
-</tr>
-<tr>
-<td>wbuckley</td>
-<td>Winston Buckley</td>
-</tr>
-<tr>
-<td>ncarter</td>
-<td>Nathan Carter</td>
-</tr>
-<tr>
-<td>lcherveny</td>
-<td>Luke Cherveny</td>
-</tr>
-</tbody>
-</table>
-<p>(Imagine the table continuing, containing the User ID and Name of each memeber of Bentley's Mathematical Sciences Department.)</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Practice-writing-Python-functions">Practice writing Python functions<a class="anchor-link" href="#Practice-writing-Python-functions">&#182;</a></h1><p>See the course notes for three exercises to try now.</p>
-<p>Inputs and outputs to use when testing your implementations are shown below.</p>
-<h2 id="Exercise-1---from-mathematics">Exercise 1 - from mathematics<a class="anchor-link" href="#Exercise-1---from-mathematics">&#182;</a></h2><table>
-<thead><tr>
-<th>Difficulty</th>
-<th>Test inputs</th>
-<th>Correct output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Easy</td>
-<td><code>solve_quadratic(1,0,-4)</code></td>
-<td><code>[-2,2]</code></td>
-</tr>
-<tr>
-<td>Medium</td>
-<td><code>solve_quadratic(1,-2,100)</code></td>
-<td><code>[10]</code></td>
-</tr>
-<tr>
-<td>Medium</td>
-<td><code>solve_quadratic(3,0,3)</code></td>
-<td><code>[]</code></td>
-</tr>
-<tr>
-<td>Hard</td>
-<td><code>solve_quadratic(0,1,2)</code></td>
-<td><code>[-2]</code></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-2---from-English">Exercise 2 - from English<a class="anchor-link" href="#Exercise-2---from-English">&#182;</a></h2><table>
-<thead><tr>
-<th>Difficulty</th>
-<th>Test inputs</th>
-<th>Correct output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Easy</td>
-<td><code>last_closing_price('GOOG')</code></td>
-<td>(varies by day, roughly \$1500)</td>
-</tr>
-<tr>
-<td>Hard</td>
-<td><code>last_closing_price('FOO')</code></td>
-<td><code>None</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="Exercise-3---from-a-table">Exercise 3 - from a table<a class="anchor-link" href="#Exercise-3---from-a-table">&#182;</a></h2><table>
-<thead><tr>
-<th>Difficulty</th>
-<th>Test inputs</th>
-<th>Correct output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Easy</td>
-<td><code>country_capitol('LESOTHO')</code></td>
-<td><code>'MASERU'</code></td>
-</tr>
-<tr>
-<td>Medium</td>
-<td><code>country_capitol('malta')</code></td>
-<td><code>'VALLETTA</code></td>
-</tr>
-<tr>
-<td>Hard</td>
-<td><code>country_capitol('nowhere')</code></td>
-<td><code>None</code></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Terminology-review">Terminology review<a class="anchor-link" href="#Terminology-review">&#182;</a></h1><p>Let's discuss the meaning of each term below, covered in the course notes.</p>
-<ul>
-<li>data type</li>
-<li>input type(s), and output type</li>
-<li>map</li>
-<li>arity</li>
-<li>unary, binary, and ternary</li>
-</ul>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Definition-of-a-relation">Definition of a relation<a class="anchor-link" href="#Definition-of-a-relation">&#182;</a></h1><blockquote><p>A function whose output type is <code>bool</code></p>
-</blockquote>
-<p>&nbsp;</p>
-<p>In this sense, a relation is a particular type of function.</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Mathematical-relations">Mathematical relations<a class="anchor-link" href="#Mathematical-relations">&#182;</a></h1><p>Examples:</p>
-$$x^2+y^2\ge z^2$$$$x&lt;0$$
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="English-relations">English relations<a class="anchor-link" href="#English-relations">&#182;</a></h1><p>Examples:</p>
-<ul>
-<li><u>&nbsp; &nbsp; &nbsp; &nbsp;</u> is the capitol of <u>&nbsp; &nbsp; &nbsp; &nbsp;</u></li>
-<li><u>&nbsp; &nbsp; &nbsp; &nbsp;</u> is a fruit</li>
-</ul>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Python-relations">Python relations<a class="anchor-link" href="#Python-relations">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">R</span> <span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-
-<span class="k">def</span> <span class="nf">is_a_primary_color</span> <span class="p">(</span> <span class="n">c</span> <span class="p">):</span>
-    <span class="k">return</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="s1">&#39;blue&#39;</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Relations-in-tables">Relations in tables<a class="anchor-link" href="#Relations-in-tables">&#182;</a></h1><p>This is an extremely common way to encounter relations in data science.</p>
-<table>
-<thead><tr>
-<th>Bentley Email ID</th>
-<th>Real Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>aaltidor</td>
-<td>Alina Altidor</td>
-</tr>
-<tr>
-<td>mbhaduri</td>
-<td>Moinak Bhaduri</td>
-</tr>
-<tr>
-<td>wbuckley</td>
-<td>Winston Buckley</td>
-</tr>
-<tr>
-<td>ncarter</td>
-<td>Nathan Carter</td>
-</tr>
-<tr>
-<td>lcherveny</td>
-<td>Luke Cherveny</td>
-</tr>
-</tbody>
-</table>
-<p>Here we use the same table as earlier (still imagining it contains the whole department), but now it is interpreted as a relation instead of a function.</p>
-<p>How would you express the relation in English?</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Example-uses-of-relations">Example uses of relations<a class="anchor-link" href="#Example-uses-of-relations">&#182;</a></h1><p>The following code builds a simple pandas DataFrame we will manipulate in the subsequent slides.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span>
-    <span class="s1">&#39;ID&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">257</span><span class="p">,</span> <span class="mi">876</span><span class="p">,</span> <span class="mi">329</span><span class="p">,</span> <span class="mi">392</span><span class="p">,</span> <span class="mi">780</span> <span class="p">],</span>
-    <span class="s1">&#39;age&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">5</span> <span class="p">],</span>
-    <span class="s1">&#39;height&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">41</span> <span class="p">]</span>
-<span class="p">}</span> <span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[4]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>age</th>
-      <th>height</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>257</td>
-      <td>12</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>876</td>
-      <td>73</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>329</td>
-      <td>60</td>
-      <td>73</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>392</td>
-      <td>28</td>
-      <td>75</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>780</td>
-      <td>5</td>
-      <td>41</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">is_a_minor</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">18</span>   <span class="c1"># in years</span>
-<span class="n">is_tall</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">72</span>  <span class="c1"># in inches</span>
-
-<span class="n">df</span><span class="p">[</span><span class="n">is_a_minor</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[5]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>age</th>
-      <th>height</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>257</td>
-      <td>12</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>780</td>
-      <td>5</td>
-      <td>41</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[6]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>age</th>
-      <th>height</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>257</td>
-      <td>12</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>876</td>
-      <td>73</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>329</td>
-      <td>60</td>
-      <td>73</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>392</td>
-      <td>28</td>
-      <td>75</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>780</td>
-      <td>5</td>
-      <td>41</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">is_a_minor</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[7]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>age</th>
-      <th>height</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>876</td>
-      <td>73</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>329</td>
-      <td>60</td>
-      <td>73</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>392</td>
-      <td>28</td>
-      <td>75</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>age</th>
-      <th>height</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>257</td>
-      <td>12</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>876</td>
-      <td>73</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>329</td>
-      <td>60</td>
-      <td>73</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>392</td>
-      <td>28</td>
-      <td>75</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>780</td>
-      <td>5</td>
-      <td>41</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">is_a_minor</span> <span class="o">&amp;</span> <span class="n">is_tall</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>age</th>
-      <th>height</th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[10]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>age</th>
-      <th>height</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>257</td>
-      <td>12</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>876</td>
-      <td>73</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>329</td>
-      <td>60</td>
-      <td>73</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>392</td>
-      <td>28</td>
-      <td>75</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>780</td>
-      <td>5</td>
-      <td>41</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">is_a_minor</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">is_tall</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[11]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>age</th>
-      <th>height</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>876</td>
-      <td>73</td>
-      <td>65</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Practice-writing-Python-relations">Practice writing Python relations<a class="anchor-link" href="#Practice-writing-Python-relations">&#182;</a></h1><p>See the course notes for three exercises to try now.</p>
-<h2 id="Exercise-4---food-inspections">Exercise 4 - food inspections<a class="anchor-link" href="#Exercise-4---food-inspections">&#182;</a></h2><p>We will discuss in class the answers to these questions:</p>
-<ol>
-<li>Name at least two relations expressed by the contents of this table.  (You need not use all the columns.)</li>
-<li>What are the input types, output type, and arity of each of your relations?</li>
-<li>Does the table contain any sets of columns that define a function?</li>
-<li>If so, what are the input types, output type, and arity of the function(s)?</li>
-</ol>
-<h2 id="Exercise-5---tech-companies">Exercise 5 - tech companies<a class="anchor-link" href="#Exercise-5---tech-companies">&#182;</a></h2><p>We will discuss in class the same four questions for this exercise.</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Questions-from-the-notes">Questions from the notes<a class="anchor-link" href="#Questions-from-the-notes">&#182;</a></h1><ul>
-<li>In what way is a relation a special kind of function?</li>
-<li>In what way is a function a special kind of relation?</li>
-<li>What does it mean to do "lookup" in a table representing a function?</li>
-<li>What does it mean to do "lookup" in a table representing a relation?</li>
-<li>How can you tell, from a table, whether a function has an inverse?</li>
-<li>How is a Python list like a function?</li>
-<li>How is a Python dictionary like a function?</li>
-<li>How can we convert any two-column table into a Python dictionary?</li>
-</ul>
-
-</div>
-</div>
-</div></section></section>
-</div>
-</div>
-
-<script>
-
-require(
-    {
-      // it makes sense to wait a little bit when you are loading
-      // reveal from a cdn in a slow connection environment
-      waitSeconds: 15
-    },
-    [
-      "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.js"
-    ],
-
-    function(head, Reveal){
-
-        // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-            controls: true,
-            progress: true,
-            history: true,
-
-            transition: "slide",
-
-            // Optional libraries used to extend on reveal.js
-            dependencies: [
-                { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/classList.js",
-                  condition: function() { return !document.body.classList; } },
-                { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.js",
-                  async: true,
-                  condition: function() { return !!document.body.classList; } }
-            ]
-        });
-
-        var update = function(event){
-          if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
-            MathJax.Hub.Rerender(Reveal.getCurrentSlide());
-          }
-        };
-
-        Reveal.addEventListener('slidechanged', update);
-
-        function setScrollingSlide() {
-            var scroll = false
-            if (scroll === true) {
-              var h = $('.reveal').height() * 0.95;
-              $('section.present').find('section')
-                .filter(function() {
-                  return $(this).height() > h;
-                })
-                .css('height', 'calc(95vh)')
-                .css('overflow-y', 'scroll')
-                .css('margin-top', '20px');
-            }
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
         }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
+<body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
 
-        // check and set the scrolling slide every time the slide change
-        Reveal.addEventListener('slidechanged', setScrollingSlide);
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Chapter-6---Single-Table-Verbs">Chapter 6 - Single-Table Verbs<a class="anchor-link" href="#Chapter-6---Single-Table-Verbs">&#182;</a></h1><p><a href="../_build/html/chapter-6-single-table-verbs.html">See also the corresponding course notes, here.</a></p>
+<p><a href="./chapter-6-slides-printable.html">View a printable version of these slides here.</a></p>
+<p><font color='red'>These slides have not yet been updated for Summer 2021.  Check back soon.</font></p>
 
-    }
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Data-in-&quot;tall&quot;-form">Data in "tall" form<a class="anchor-link" href="#Data-in-&quot;tall&quot;-form">&#182;</a></h2><table>
+<thead><tr>
+<th>First</th>
+<th>Last</th>
+<th>Day</th>
+<th>Sales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amy</td>
+<td>Smith</td>
+<td>Monday</td>
+<td>39</td>
+</tr>
+<tr>
+<td>Amy</td>
+<td>Smith</td>
+<td>Tuesday</td>
+<td>68</td>
+</tr>
+<tr>
+<td>Amy</td>
+<td>Smith</td>
+<td>Wednesday</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>Jones</td>
+<td>Monday</td>
+<td>93</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>Jones</td>
+<td>Tuesday</td>
+<td>85</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>Jones</td>
+<td>Wednesday</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>From the reading, what is the value of this form of data?</p>
+<p>And what is the other name for this form of data?</p>
 
-);
-</script>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Data-in-&quot;wide&quot;-form">Data in "wide" form<a class="anchor-link" href="#Data-in-&quot;wide&quot;-form">&#182;</a></h2><table>
+<thead><tr>
+<th>First</th>
+<th>Last</th>
+<th>Monday</th>
+<th>Tuesday</th>
+<th>Wednesday</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amy</td>
+<td>Smith</td>
+<td>39</td>
+<td>68</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>Jones</td>
+<td>93</td>
+<td>85</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>From the reading, what is the value of this form of data?</p>
+<p>And what are the verbs used to convert from tall to wide form, or wide to tall form?</p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Pivot">Pivot<a class="anchor-link" href="#Pivot">&#182;</a></h2><p><img alt="Overview of the pivot operation" src="../_images/table-verb-pivot.png"/></p>
+<p><a href="https://nathancarter.github.io/dataframe-animations/pivot.html">See also this animation.</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Pivot-details">Pivot details<a class="anchor-link" href="#Pivot-details">&#182;</a></h2><p>Names</p>
+<ul>
+<li>Gray cells are called <code>index</code></li>
+<li>Blue cells are called <code>columns</code></li>
+<li>Green cells are called <code>values</code></li>
+</ul>
+<p>Requirements</p>
+<ul>
+<li>The relationship from <code>index</code> and <code>columns</code> to <code>values</code> must be a <em>function</em>.</li>
+</ul>
+<p>Guarantees</p>
+<ul>
+<li>That one function will become many functions, each in its own column, one for each value in the original <code>columns</code> column.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Melt">Melt<a class="anchor-link" href="#Melt">&#182;</a></h2><p><img alt="Overview of the melt operation" src="../_images/table-verb-melt.png"/></p>
+<p><a href="https://nathancarter.github.io/dataframe-animations/melt.html">See also this animation.</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Melt-details">Melt details<a class="anchor-link" href="#Melt-details">&#182;</a></h2><p>Names</p>
+<ul>
+<li>Gray columns are called <code>id_vars</code></li>
+<li>Red column headers are called <code>value_vars</code></li>
+</ul>
+<p>Requirements</p>
+<ul>
+<li>The <code>id_vars</code> uniquely identify each row.</li>
+<li>The relationship from <code>id_vars</code> to each <code>value_vars</code> column is a <em>function</em>.</li>
+</ul>
+<p>Guarantees</p>
+<ul>
+<li>The <code>value_vars</code> column headers will be merged into one single column entitled <code>variable</code>.</li>
+<li>The <code>value_vars</code> column entries will be merged into one single column entitled <code>value</code>.</li>
+<li>The <code>id_vars</code> entries will be replicated so that the result is still a function from <code>id_vars</code> and <code>variable</code> to <code>value</code>.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Pivot-table">Pivot table<a class="anchor-link" href="#Pivot-table">&#182;</a></h2><p><img alt="Overview of the pivot table operation" src="../_images/table-verb-pivot-table.png"/></p>
+<p><a href="https://nathancarter.github.io/dataframe-animations/pivot-table.html">See also this animation.</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Pivot-table-details">Pivot table details<a class="anchor-link" href="#Pivot-table-details">&#182;</a></h2><p>Same as pivot, except:</p>
+<ul>
+<li>The relationship between <code>index</code> and <code>columns</code> need not be a function.</li>
+<li>Therefore some values will need to be combined.</li>
+<li>And so we must provide a function that will combine them, called <code>aggfunc</code>.</li>
+</ul>
+<p>Pivot tables are extremely common for summarizing data, especially since there are so many different aggregation functions.
+<a href="https://cmdlinetips.com/2019/10/pandas-groupby-13-functions-to-aggregate/">Here is a list of all the built-in ones</a>, and you can also code your own.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">&#182;</a></h2><p>After the break in class today, you'll be diving into working on some datasets for practice.</p>
+<p>To prepare for that, let's do a few exercises for discussion, to refresh your memory on other pandas tools, functions, and syntax.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">&#182;</a></h3><p>Which of the following sentences correctly describes the uses of the pandas functions loc and iloc?</p>
+<ol>
+<li>For a DataFrame <code>df</code>, you can use <code>df.loc[...]</code> to look up rows, columns, or cells by their names, and <code>df.iloc[...]</code> to look up rows, columns, or cells by their zero-based numerical index.</li>
+<li>For a DataFrame <code>df</code>, you can use <code>df.loc[...]</code> to access rows and <code>df.iloc[...]</code> to access columns.</li>
+<li>For a DataFrame <code>df</code>, you can use <code>df.loc[...]</code> to look up one or more rows by integer index and <code>df.iloc[...]</code> to do the same, but counting from the end of the DataFrame (<code>iloc</code> = "inverted loc").</li>
+<li>For a DataFrame <code>df</code>, you can use <code>df[...]</code>, <code>df.loc[...]</code>, and <code>df.iloc[...]</code> interchangeably to get access to individual entries in the DataFrame.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h3><p>If you have a DataFrame in the variable <code>df</code>, which of the following are situations in which you would want to execute the code <code>df["sales"] = 0</code>?</p>
+<ol>
+<li>You want to remove from your DataFrame a column entitled "sales"</li>
+<li>You want to replace the data in an existing "sales" row with zero entries</li>
+<li>You want to add a new row entitled "sales," initially populated with zero entries</li>
+<li>You want to remove from your DataFrame a row entitled "sales"</li>
+<li>You want to replace the data in an existing "sales" column with zero entries</li>
+<li>You want to add a new column entitled "sales," initially populated with zero entries</li>
+<li>You want to replace one existing entry, named "sales," with a zero</li>
+<li>You want to add one new entry, named "sales," initially containing a zero</li>
+<li>You want to remove from your DataFrame one entry, the one named "sales"</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-3">Exercise 3<a class="anchor-link" href="#Exercise-3">&#182;</a></h3><p>Assume we have a DataFrame <code>df</code> with several columns, including "Salary" and "Job Title". How would we find the salaries of anyone whose job title is "Engineer"?  (Fill in the blanks.)</p>
+<div class="highlight"><pre><span></span><span class="n">indices</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">___________</span><span class="p">]</span> <span class="o">==</span> <span class="n">__________</span>
+<span class="n">salaries</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">____________________</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-4">Exercise 4<a class="anchor-link" href="#Exercise-4">&#182;</a></h3><p>What happens when we run the code <code>df["column"].apply( f )</code>?</p>
+<ol>
+<li>Python replaces each entry <code>x</code> in <code>df["column"]</code> with the result of <code>f(x)</code></li>
+<li>Python computes and returns the result of <code>f(df["column"])</code></li>
+<li>Python computes and returns a new Series containing <code>f(x)</code> for each entry <code>x</code> in <code>df["columns"]</code></li>
+<li>Python replaces the column <code>df["column"]</code> with the result of <code>f(df["column"])</code></li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-5">Exercise 5<a class="anchor-link" href="#Exercise-5">&#182;</a></h3><p>Assume that we have read a DataFrame <code>df</code> from a CSV file, and provided no default index, so that its index is the integers from 0 to 9.</p>
+<p>Assume further that the rows in df each represent data collected in one particular year.  The data were collected beginning with the year 1970, and repeating the data collection every five years, so that the first row is from 1970, the second row is from 1975, and so on.</p>
+<p>We want the index of <code>df</code> to represent the year of data collection, which is not currently stored in any of the columns of the DataFrame.  Which of the following pieces of code would accomplish that goal?</p>
+<div class="highlight"><pre><span></span><span class="c1"># Option 1:</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">*</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">1965</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Year&#39;</span>
+<span class="c1"># Option 2:</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">*</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">1970</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Year&#39;</span>  
+<span class="c1"># Option 3:</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1965</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Year&#39;</span>
+<span class="c1"># Option 4:</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1970</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Year&#39;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+    </div>
+  </div>
 </body>
+
+ 
 
 
 </html>

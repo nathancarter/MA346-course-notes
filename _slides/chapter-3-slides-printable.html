@@ -1,64 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta charset="utf-8" />
 
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-
-<title>chapter-2-slides slides</title>
+<title>chapter-3-slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
-<!-- General and theme style sheets -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/simple.css" id="theme">
 
-<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-<script>
-if( window.location.search.match( /print-pdf/gi ) ) {
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/pdf.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-}
-
-</script>
-
-<!--[if lt IE 9]>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/html5shiv.js"></script>
-<![endif]-->
-
-<!-- Loading the mathjax macro -->
-<!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        // Center justify equations in code and markdown cells. Elsewhere
-        // we use CSS to left justify single line equations in code cells.
-        displayAlign: 'center',
-        "HTML-CSS": {
-            styles: {'.MathJax_Display': {"margin": 0}},
-            linebreaks: { automatic: true }
-        }
-    });
-    </script>
-    <!-- End of mathjax configuration -->
-
-<!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
 <style type="text/css">
     /*!
@@ -13077,182 +13026,90 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <style type="text/css">
 /* Overrides of notebook CSS for static HTML export */
-.reveal {
-  font-size: 160%;
+body {
+  overflow: visible;
+  padding: 8px;
 }
-.reveal pre {
-  width: inherit;
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-}
-.reveal pre code {
-  padding: 0px;
-}
-.reveal section img {
-  border: 0px solid black;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-}
-.reveal i {
-  font-style: normal;
-  font-family: FontAwesome;
-  font-size: 2em;
-}
-.reveal .slides {
-  text-align: left;
-}
-.reveal.fade {
-  opacity: 1;
-}
-.reveal .progress {
-  position: static;
-}
-.reveal .controls .navigate-left,
-.reveal .controls .navigate-left.enabled {
-  border-right-color: #727272;
-}
-.reveal .controls .navigate-left.enabled:hover,
-.reveal .controls .navigate-left.enabled.enabled:hover {
-  border-right-color: #dfdfdf;
-}
-.reveal .controls .navigate-right,
-.reveal .controls .navigate-right.enabled {
-  border-left-color: #727272;
-}
-.reveal .controls .navigate-right.enabled:hover,
-.reveal .controls .navigate-right.enabled.enabled:hover {
-  border-left-color: #dfdfdf;
-}
-.reveal .controls .navigate-up,
-.reveal .controls .navigate-up.enabled {
-  border-bottom-color: #727272;
-}
-.reveal .controls .navigate-up.enabled:hover,
-.reveal .controls .navigate-up.enabled.enabled:hover {
-  border-bottom-color: #dfdfdf;
-}
-.reveal .controls .navigate-down,
-.reveal .controls .navigate-down.enabled {
-  border-top-color: #727272;
-}
-.reveal .controls .navigate-down.enabled:hover,
-.reveal .controls .navigate-down.enabled.enabled:hover {
-  border-top-color: #dfdfdf;
-}
-.reveal .progress span {
-  background: #727272;
-}
-div.input_area {
-  padding: 0.06em;
-}
-div.code_cell {
-  background-color: transparent;
-}
-div.prompt {
-  width: 11ex;
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-  text-align: right;
-}
-div.output_area pre {
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-}
-div.output_prompt {
-  /* 5px right shift to account for margin in parent container */
-  margin: 5px 5px 0 0;
-}
-div.text_cell.rendered .rendered_html {
-  /* The H1 height seems miscalculated, we are just hidding the scrollbar */
-  overflow-y: hidden;
-}
-a.anchor-link {
-  /* There is still an anchor, we are only hidding it */
-  display: none;
-}
-.rendered_html p {
-  text-align: inherit;
-}
-::-webkit-scrollbar
-{
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar *
-{
-  background:transparent;
-}
-::-webkit-scrollbar-thumb
-{
-  background: #727272 !important;
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
+}@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
 }
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
 <link rel="stylesheet" href="custom.css">
 
-</head>
-
-
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
 <body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
 
-
-<div class="reveal">
-<div class="slides">
-<section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Chapter-2---Mathematical-Foundations">Chapter 2 - Mathematical Foundations<a class="anchor-link" href="#Chapter-2---Mathematical-Foundations">&#182;</a></h1><p><a href="../_build/html/chapter-2-mathematical-foundations.html">See also the corresponding course notes, here.</a></p>
-<p><a href="./chapter-2-slides-printable.html">View a printable version of these slides here.</a></p>
+<h1 id="Chapter-3---Jupyter">Chapter 3 - Jupyter<a class="anchor-link" href="#Chapter-3---Jupyter">&#182;</a></h1><p><a href="../_build/html/chapter-3-jupyter.html">See also the corresponding course notes, here.</a></p>
+<p><a href="./chapter-3-slides-printable.html">View a printable version of these slides here.</a></p>
+<p><font color='red'>These slides have not yet been updated for Summer 2021.  Check back soon.</font></p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Definition-of-a-function">Definition of a function<a class="anchor-link" href="#Definition-of-a-function">&#182;</a></h1><blockquote><p>Any method for taking a list of inputs and determining the corresponding output.</p>
-</blockquote>
-<p>&nbsp;</p>
-<p>Important words:</p>
+<p>Jupyter lets you do all this in one place:</p>
 <ul>
-<li>method</li>
-<li>input</li>
-<li>output</li>
+<li>write and run code</li>
+<li>write explanations of code and data, including with mathematical formulas</li>
+<li>view tables, plots, and other visualizations of data</li>
+<li>interact with certain types of data visualizations</li>
 </ul>
+<p>Notice that these things can be summarized as "math, stats, coding, visualizing, and explaining."</p>
+<p>These are the bread and butter of data science, which is why people use Jupyter.</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Mathematical-functions">Mathematical functions<a class="anchor-link" href="#Mathematical-functions">&#182;</a></h1><p>Examples:</p>
-$$f(x)=x^2-5$$$$g(x,y,z)=\frac{x^2-y^2}{z}$$
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="English-functions">English functions<a class="anchor-link" href="#English-functions">&#182;</a></h1><p>Examples:</p>
-<ul>
-<li>the capitol of <u>&nbsp; &nbsp; &nbsp; &nbsp;</u></li>
-<li>the difference in ages between <u>&nbsp; &nbsp; &nbsp; &nbsp;</u> and <u>&nbsp; &nbsp; &nbsp; &nbsp;</u></li>
-</ul>
+<p>Jupyter notebooks contain input-output pairs, like this:</p>
 
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Python-functions">Python functions<a class="anchor-link" href="#Python-functions">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13261,1004 +13118,146 @@ $$f(x)=x^2-5$$$$g(x,y,z)=\frac{x^2-y^2}{z}$$
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">square</span> <span class="p">(</span> <span class="n">x</span> <span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-
-<span class="k">def</span> <span class="nf">is_a_long_word</span> <span class="p">(</span> <span class="n">word</span> <span class="p">):</span>
-    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">8</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span> <span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Functions-in-tables">Functions in tables<a class="anchor-link" href="#Functions-in-tables">&#182;</a></h1><table>
-<thead><tr>
-<th>Bentley Email ID</th>
-<th>Real Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>aaltidor</td>
-<td>Alina Altidor</td>
-</tr>
-<tr>
-<td>mbhaduri</td>
-<td>Moinak Bhaduri</td>
-</tr>
-<tr>
-<td>wbuckley</td>
-<td>Winston Buckley</td>
-</tr>
-<tr>
-<td>ncarter</td>
-<td>Nathan Carter</td>
-</tr>
-<tr>
-<td>lcherveny</td>
-<td>Luke Cherveny</td>
-</tr>
-</tbody>
-</table>
-<p>(Imagine the table continuing, containing the User ID and Name of each memeber of Bentley's Mathematical Sciences Department.)</p>
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[1]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([-1.5528848 ,  0.12957022, -0.91807189, -0.60007748, -0.50769516,
+        0.67810184,  0.16894859,  2.25543421,  1.0799978 ,  1.57562487,
+       -0.94228657,  0.80518276, -0.67946273,  0.87518185, -0.40811446,
+       -0.65385804, -1.28785419,  0.7768802 , -0.36092852, -0.0990758 ])</pre>
+</div>
+
+</div>
 
 </div>
 </div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Practice-writing-Python-functions">Practice writing Python functions<a class="anchor-link" href="#Practice-writing-Python-functions">&#182;</a></h1><p>See the course notes for three exercises to try now.</p>
-<p>Inputs and outputs to use when testing your implementations are shown below.</p>
-<h2 id="Exercise-1---from-mathematics">Exercise 1 - from mathematics<a class="anchor-link" href="#Exercise-1---from-mathematics">&#182;</a></h2><table>
-<thead><tr>
-<th>Difficulty</th>
-<th>Test inputs</th>
-<th>Correct output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Easy</td>
-<td><code>solve_quadratic(1,0,-4)</code></td>
-<td><code>[-2,2]</code></td>
-</tr>
-<tr>
-<td>Medium</td>
-<td><code>solve_quadratic(1,-2,100)</code></td>
-<td><code>[10]</code></td>
-</tr>
-<tr>
-<td>Medium</td>
-<td><code>solve_quadratic(3,0,3)</code></td>
-<td><code>[]</code></td>
-</tr>
-<tr>
-<td>Hard</td>
-<td><code>solve_quadratic(0,1,2)</code></td>
-<td><code>[-2]</code></td>
-</tr>
-</tbody>
-</table>
 
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-2---from-English">Exercise 2 - from English<a class="anchor-link" href="#Exercise-2---from-English">&#182;</a></h2><table>
-<thead><tr>
-<th>Difficulty</th>
-<th>Test inputs</th>
-<th>Correct output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Easy</td>
-<td><code>last_closing_price('GOOG')</code></td>
-<td>(varies by day, roughly \$1500)</td>
-</tr>
-<tr>
-<td>Hard</td>
-<td><code>last_closing_price('FOO')</code></td>
-<td><code>None</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="Exercise-3---from-a-table">Exercise 3 - from a table<a class="anchor-link" href="#Exercise-3---from-a-table">&#182;</a></h2><table>
-<thead><tr>
-<th>Difficulty</th>
-<th>Test inputs</th>
-<th>Correct output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Easy</td>
-<td><code>country_capitol('LESOTHO')</code></td>
-<td><code>'MASERU'</code></td>
-</tr>
-<tr>
-<td>Medium</td>
-<td><code>country_capitol('malta')</code></td>
-<td><code>'VALLETTA</code></td>
-</tr>
-<tr>
-<td>Hard</td>
-<td><code>country_capitol('nowhere')</code></td>
-<td><code>None</code></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Terminology-review">Terminology review<a class="anchor-link" href="#Terminology-review">&#182;</a></h1><p>Let's discuss the meaning of each term below, covered in the course notes.</p>
-<ul>
-<li>data type</li>
-<li>input type(s), and output type</li>
-<li>map</li>
-<li>arity</li>
-<li>unary, binary, and ternary</li>
-</ul>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Definition-of-a-relation">Definition of a relation<a class="anchor-link" href="#Definition-of-a-relation">&#182;</a></h1><blockquote><p>A function whose output type is <code>bool</code></p>
-</blockquote>
-<p>&nbsp;</p>
-<p>In this sense, a relation is a particular type of function.</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Mathematical-relations">Mathematical relations<a class="anchor-link" href="#Mathematical-relations">&#182;</a></h1><p>Examples:</p>
-$$x^2+y^2\ge z^2$$$$x&lt;0$$
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="English-relations">English relations<a class="anchor-link" href="#English-relations">&#182;</a></h1><p>Examples:</p>
-<ul>
-<li><u>&nbsp; &nbsp; &nbsp; &nbsp;</u> is the capitol of <u>&nbsp; &nbsp; &nbsp; &nbsp;</u></li>
-<li><u>&nbsp; &nbsp; &nbsp; &nbsp;</u> is a fruit</li>
-</ul>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Python-relations">Python relations<a class="anchor-link" href="#Python-relations">&#182;</a></h1>
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">R</span> <span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-
-<span class="k">def</span> <span class="nf">is_a_primary_color</span> <span class="p">(</span> <span class="n">c</span> <span class="p">):</span>
-    <span class="k">return</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="s1">&#39;blue&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-</div></section></section><section><section>
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&lt;matplotlib.lines.Line2D at 0x121307860&gt;]</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Relations-in-tables">Relations in tables<a class="anchor-link" href="#Relations-in-tables">&#182;</a></h1><p>This is an extremely common way to encounter relations in data science.</p>
-<table>
-<thead><tr>
-<th>Bentley Email ID</th>
-<th>Real Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>aaltidor</td>
-<td>Alina Altidor</td>
-</tr>
-<tr>
-<td>mbhaduri</td>
-<td>Moinak Bhaduri</td>
-</tr>
-<tr>
-<td>wbuckley</td>
-<td>Winston Buckley</td>
-</tr>
-<tr>
-<td>ncarter</td>
-<td>Nathan Carter</td>
-</tr>
-<tr>
-<td>lcherveny</td>
-<td>Luke Cherveny</td>
-</tr>
-</tbody>
-</table>
-<p>Here we use the same table as earlier (still imagining it contains the whole department), but now it is interpreted as a relation instead of a function.</p>
-<p>How would you express the relation in English?</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Example-uses-of-relations">Example uses of relations<a class="anchor-link" href="#Example-uses-of-relations">&#182;</a></h1><p>The following code builds a simple pandas DataFrame we will manipulate in the subsequent slides.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">{</span>
-    <span class="s1">&#39;ID&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">257</span><span class="p">,</span> <span class="mi">876</span><span class="p">,</span> <span class="mi">329</span><span class="p">,</span> <span class="mi">392</span><span class="p">,</span> <span class="mi">780</span> <span class="p">],</span>
-    <span class="s1">&#39;age&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">5</span> <span class="p">],</span>
-    <span class="s1">&#39;height&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">41</span> <span class="p">]</span>
-<span class="p">}</span> <span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[4]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>age</th>
-      <th>height</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>257</td>
-      <td>12</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>876</td>
-      <td>73</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>329</td>
-      <td>60</td>
-      <td>73</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>392</td>
-      <td>28</td>
-      <td>75</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>780</td>
-      <td>5</td>
-      <td>41</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">is_a_minor</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">18</span>   <span class="c1"># in years</span>
-<span class="n">is_tall</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">72</span>  <span class="c1"># in inches</span>
-
-<span class="n">df</span><span class="p">[</span><span class="n">is_a_minor</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[5]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>age</th>
-      <th>height</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>257</td>
-      <td>12</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>780</td>
-      <td>5</td>
-      <td>41</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[6]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>age</th>
-      <th>height</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>257</td>
-      <td>12</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>876</td>
-      <td>73</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>329</td>
-      <td>60</td>
-      <td>73</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>392</td>
-      <td>28</td>
-      <td>75</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>780</td>
-      <td>5</td>
-      <td>41</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">is_a_minor</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[7]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>age</th>
-      <th>height</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>876</td>
-      <td>73</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>329</td>
-      <td>60</td>
-      <td>73</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>392</td>
-      <td>28</td>
-      <td>75</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>age</th>
-      <th>height</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>257</td>
-      <td>12</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>876</td>
-      <td>73</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>329</td>
-      <td>60</td>
-      <td>73</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>392</td>
-      <td>28</td>
-      <td>75</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>780</td>
-      <td>5</td>
-      <td>41</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">is_a_minor</span> <span class="o">&amp;</span> <span class="n">is_tall</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>age</th>
-      <th>height</th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[10]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>age</th>
-      <th>height</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>257</td>
-      <td>12</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>876</td>
-      <td>73</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>329</td>
-      <td>60</td>
-      <td>73</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>392</td>
-      <td>28</td>
-      <td>75</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>780</td>
-      <td>5</td>
-      <td>41</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">is_a_minor</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">is_tall</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[11]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>age</th>
-      <th>height</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>876</td>
-      <td>73</td>
-      <td>65</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Practice-writing-Python-relations">Practice writing Python relations<a class="anchor-link" href="#Practice-writing-Python-relations">&#182;</a></h1><p>See the course notes for three exercises to try now.</p>
-<h2 id="Exercise-4---food-inspections">Exercise 4 - food inspections<a class="anchor-link" href="#Exercise-4---food-inspections">&#182;</a></h2><p>We will discuss in class the answers to these questions:</p>
-<ol>
-<li>Name at least two relations expressed by the contents of this table.  (You need not use all the columns.)</li>
-<li>What are the input types, output type, and arity of each of your relations?</li>
-<li>Does the table contain any sets of columns that define a function?</li>
-<li>If so, what are the input types, output type, and arity of the function(s)?</li>
+<h2 id="Important!!!">Important!!!<a class="anchor-link" href="#Important!!!">&#182;</a></h2><h3 id="Jupyter-is-made-of-two-pieces:">Jupyter is made of two pieces:<a class="anchor-link" href="#Jupyter-is-made-of-two-pieces:">&#182;</a></h3><ol>
+<li>The notebook interface, which shows you a document with code and visualizations in it, called "a Jupyter notebook."  (This runs on your computer.)</li>
+<li>The engine behind the notebook, which runs your code, and is doing its work invisibly in the background; this engine is called the "kernel."  (This can run in the cloud or on your computer, your choice.)</li>
 </ol>
-<h2 id="Exercise-5---tech-companies">Exercise 5 - tech companies<a class="anchor-link" href="#Exercise-5---tech-companies">&#182;</a></h2><p>We will discuss in class the same four questions for this exercise.</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Questions-from-the-notes">Questions from the notes<a class="anchor-link" href="#Questions-from-the-notes">&#182;</a></h1><ul>
-<li>In what way is a relation a special kind of function?</li>
-<li>In what way is a function a special kind of relation?</li>
-<li>What does it mean to do "lookup" in a table representing a function?</li>
-<li>What does it mean to do "lookup" in a table representing a relation?</li>
-<li>How can you tell, from a table, whether a function has an inverse?</li>
-<li>How is a Python list like a function?</li>
-<li>How is a Python dictionary like a function?</li>
-<li>How can we convert any two-column table into a Python dictionary?</li>
+<h2 id="Jupyter-in-the-cloud">Jupyter in the cloud<a class="anchor-link" href="#Jupyter-in-the-cloud">&#182;</a></h2><p>Let's start with a cloud provider, for simplicity.  (You won't have to worry about starting up or shutting down the kernel; the cloud provider handles that.)</p>
+<p>I've gotten us all <a href="https://deepnote.com/">Deepnote</a> accounts for the semester.</p>
+<h2 id="Jupyter-on-your-computer">Jupyter on your computer<a class="anchor-link" href="#Jupyter-on-your-computer">&#182;</a></h2><p>Later, if you choose, you can install Jupyter on your laptop.</p>
+<p><a href="../_build/html/chapter-3-jupyter.html#jupyter-on-your-machine">See the instructions in the course notes for doing so.</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Why-scientists-love-Jupyter-notebooks">Why scientists love Jupyter notebooks<a class="anchor-link" href="#Why-scientists-love-Jupyter-notebooks">&#182;</a></h2><ol>
+<li>Markdown cells let the author explain the <strong>motivation behind each computation,</strong> and the <strong>interpretation of the results.</strong></li>
+<li>Unlike a script, the notebook is <strong>run interactively,</strong> so lengthy computations can be done just once, and then built on without re-running the whole notebook (at least, not very often).</li>
+<li>Good notebooks are <strong>self-documenting.</strong>  Scientists can write “lab reports,” data scientists can write “reports” (typically to other tech people), and computer scientists can write “documentation.”</li>
+<li>Anyone can re-run the notebook as a <strong>reproducibility</strong> check.  Even the author can re-run it later, on <strong>new or updated data,</strong> to get the latest results.  (Contrast this with a spreadsheet.)</li>
+<li><strong>Visualizations are included</strong> inline and automatically updated with all other computations.</li>
+</ol>
+<p><a href="https://github.com/jupyter/jupyter/wiki/A-gallery-of-interesting-Jupyter-Notebooks#statistics-machine-learning-and-data-science">See these interesting example data science notebooks</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Why-scientists-hate-Jupyter-notebooks">Why scientists hate Jupyter notebooks<a class="anchor-link" href="#Why-scientists-hate-Jupyter-notebooks">&#182;</a></h2><ol>
+<li>With a script, you have to understand only the script.  With a notebook, you also have to <strong>know what code you’ve already run</strong> and what it did.  This is easy to mess up.<ul>
+<li>Running cells out-of-order</li>
+<li>Running cells and then changing/deleting them, or forgetting to run them after editing them</li>
 </ul>
+</li>
+<li>Because a notebook encourages experimentation, it seems informal, and so people don’<strong>t always apply good coding practices,</strong> such as abstraction and testing.</li>
+<li>Notebooks <strong>lack helpful coding features</strong> that IDEs have, and that help you avoid errors.</li>
+<li>Just sharing a notebook itself gives the <strong>illusion of reproducibility.</strong>  Many people don’t follow best practices such as GitHub and Binder when sharing notebooks.</li>
+</ol>
 
 </div>
 </div>
-</div></section></section>
 </div>
-</div>
-
-<script>
-
-require(
-    {
-      // it makes sense to wait a little bit when you are loading
-      // reveal from a cdn in a slow connection environment
-      waitSeconds: 15
-    },
-    [
-      "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.js"
-    ],
-
-    function(head, Reveal){
-
-        // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-            controls: true,
-            progress: true,
-            history: true,
-
-            transition: "slide",
-
-            // Optional libraries used to extend on reveal.js
-            dependencies: [
-                { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/classList.js",
-                  condition: function() { return !document.body.classList; } },
-                { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.js",
-                  async: true,
-                  condition: function() { return !!document.body.classList; } }
-            ]
-        });
-
-        var update = function(event){
-          if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
-            MathJax.Hub.Rerender(Reveal.getCurrentSlide());
-          }
-        };
-
-        Reveal.addEventListener('slidechanged', update);
-
-        function setScrollingSlide() {
-            var scroll = false
-            if (scroll === true) {
-              var h = $('.reveal').height() * 0.95;
-              $('section.present').find('section')
-                .filter(function() {
-                  return $(this).height() > h;
-                })
-                .css('height', 'calc(95vh)')
-                .css('overflow-y', 'scroll')
-                .css('margin-top', '20px');
-            }
-        }
-
-        // check and set the scrolling slide every time the slide change
-        Reveal.addEventListener('slidechanged', setScrollingSlide);
-
-    }
-
-);
-</script>
-
+    </div>
+  </div>
 </body>
+
+ 
 
 
 </html>
