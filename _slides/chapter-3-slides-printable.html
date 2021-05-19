@@ -12947,11 +12947,11 @@ ul.typeahead-list  > li > a.pull-right {
 /*# sourceMappingURL=style.min.css.map */
     </style>
 <style type="text/css">
-    pre { line-height: 125%; }
-td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    pre { line-height: 125%; margin: 0; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
 .highlight .hll { background-color: #ffffcc }
 .highlight { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
@@ -13084,7 +13084,6 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Chapter-3---Jupyter">Chapter 3 - Jupyter<a class="anchor-link" href="#Chapter-3---Jupyter">&#182;</a></h1><p><a href="../_build/html/chapter-3-jupyter.html">See also the corresponding course notes, here.</a></p>
 <p><a href="./chapter-3-slides-printable.html">View a printable version of these slides here.</a></p>
-<p><font color='red'>These slides have not yet been updated for Summer 2021.  Check back soon.</font></p>
 
 </div>
 </div>
@@ -13202,7 +13201,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Important!!!">Important!!!<a class="anchor-link" href="#Important!!!">&#182;</a></h2><h3 id="Jupyter-is-made-of-two-pieces:">Jupyter is made of two pieces:<a class="anchor-link" href="#Jupyter-is-made-of-two-pieces:">&#182;</a></h3><ol>
+<h2 id="Important!!!">Important!!!<a class="anchor-link" href="#Important!!!">&#182;</a></h2><p>(Well, okay, it's important <em>if</em> you're running Jupyter on your own computer.)</p>
+<h3 id="Jupyter-is-made-of-two-pieces:">Jupyter is made of two pieces:<a class="anchor-link" href="#Jupyter-is-made-of-two-pieces:">&#182;</a></h3><ol>
 <li>The notebook interface, which shows you a document with code and visualizations in it, called "a Jupyter notebook."  (This runs on your computer.)</li>
 <li>The engine behind the notebook, which runs your code, and is doing its work invisibly in the background; this engine is called the "kernel."  (This can run in the cloud or on your computer, your choice.)</li>
 </ol>
@@ -13214,7 +13214,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Jupyter-in-the-cloud">Jupyter in the cloud<a class="anchor-link" href="#Jupyter-in-the-cloud">&#182;</a></h2><p>Let's start with a cloud provider, for simplicity.  (You won't have to worry about starting up or shutting down the kernel; the cloud provider handles that.)</p>
-<p>I've gotten us all <a href="https://deepnote.com/">Deepnote</a> accounts for the semester.</p>
+<p>You can get a free <a href="https://deepnote.com/">Deepnote</a> account using your Bentley email, which doubles as a Google account.</p>
 <h2 id="Jupyter-on-your-computer">Jupyter on your computer<a class="anchor-link" href="#Jupyter-on-your-computer">&#182;</a></h2><p>Later, if you choose, you can install Jupyter on your laptop.</p>
 <p><a href="../_build/html/chapter-3-jupyter.html#jupyter-on-your-machine">See the instructions in the course notes for doing so.</a></p>
 
@@ -13247,7 +13247,7 @@ div#notebook {
 </li>
 <li>Because a notebook encourages experimentation, it seems informal, and so people don’<strong>t always apply good coding practices,</strong> such as abstraction and testing.</li>
 <li>Notebooks <strong>lack helpful coding features</strong> that IDEs have, and that help you avoid errors.</li>
-<li>Just sharing a notebook itself gives the <strong>illusion of reproducibility.</strong>  Many people don’t follow best practices such as GitHub and Binder when sharing notebooks.</li>
+<li>Just sharing a notebook itself gives the <strong>illusion of reproducibility,</strong> although this problem is decreasing as more people use sandboxed computation in the cloud.</li>
 </ol>
 
 </div>
