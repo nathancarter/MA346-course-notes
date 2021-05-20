@@ -1,0 +1,65 @@
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/opt/conda/lib/python3.9/site-packages/nbclient/client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/conda/lib/python3.9/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/opt/conda/lib/python3.9/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/conda/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/opt/conda/lib/python3.9/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/opt/conda/lib/python3.9/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/opt/conda/lib/python3.9/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import networkx as nx
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mImportError[0m                               Traceback (most recent call last)
+[0;32m<ipython-input-5-f17d728e971c>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0;32mimport[0m [0mnetworkx[0m [0;32mas[0m [0mnx[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m/opt/conda/lib/python3.9/site-packages/networkx/__init__.py[0m in [0;36m<module>[0;34m[0m
+[1;32m    112[0m [0;32mfrom[0m [0mnetworkx[0m[0;34m.[0m[0mrelabel[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    113[0m [0;34m[0m[0m
+[0;32m--> 114[0;31m [0;32mimport[0m [0mnetworkx[0m[0;34m.[0m[0mgenerators[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    115[0m [0;32mfrom[0m [0mnetworkx[0m[0;34m.[0m[0mgenerators[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    116[0m [0;34m[0m[0m
+
+[0;32m/opt/conda/lib/python3.9/site-packages/networkx/generators/__init__.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     12[0m [0;32mfrom[0m [0mnetworkx[0m[0;34m.[0m[0mgenerators[0m[0;34m.[0m[0mexpanders[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     13[0m [0;32mfrom[0m [0mnetworkx[0m[0;34m.[0m[0mgenerators[0m[0;34m.[0m[0mgeometric[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 14[0;31m [0;32mfrom[0m [0mnetworkx[0m[0;34m.[0m[0mgenerators[0m[0;34m.[0m[0mintersection[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     15[0m [0;32mfrom[0m [0mnetworkx[0m[0;34m.[0m[0mgenerators[0m[0;34m.[0m[0mjoint_degree_seq[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     16[0m [0;32mfrom[0m [0mnetworkx[0m[0;34m.[0m[0mgenerators[0m[0;34m.[0m[0mlattice[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/opt/conda/lib/python3.9/site-packages/networkx/generators/intersection.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     11[0m [0;32mimport[0m [0mrandom[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     12[0m [0;32mimport[0m [0mnetworkx[0m [0;32mas[0m [0mnx[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 13[0;31m [0;32mfrom[0m [0mnetworkx[0m[0;34m.[0m[0malgorithms[0m [0;32mimport[0m [0mbipartite[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     14[0m [0;32mfrom[0m [0mnetworkx[0m[0;34m.[0m[0mutils[0m [0;32mimport[0m [0mpy_random_state[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     15[0m [0;34m[0m[0m
+
+[0;32m/opt/conda/lib/python3.9/site-packages/networkx/algorithms/__init__.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     14[0m [0;32mfrom[0m [0mnetworkx[0m[0;34m.[0m[0malgorithms[0m[0;34m.[0m[0mcycles[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     15[0m [0;32mfrom[0m [0mnetworkx[0m[0;34m.[0m[0malgorithms[0m[0;34m.[0m[0mcuts[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 16[0;31m [0;32mfrom[0m [0mnetworkx[0m[0;34m.[0m[0malgorithms[0m[0;34m.[0m[0mdag[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     17[0m [0;32mfrom[0m [0mnetworkx[0m[0;34m.[0m[0malgorithms[0m[0;34m.[0m[0mdistance_measures[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     18[0m [0;32mfrom[0m [0mnetworkx[0m[0;34m.[0m[0malgorithms[0m[0;34m.[0m[0mdistance_regular[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/opt/conda/lib/python3.9/site-packages/networkx/algorithms/dag.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     21[0m [0;34m[0m[0m
+[1;32m     22[0m [0;32mfrom[0m [0mcollections[0m [0;32mimport[0m [0mdefaultdict[0m[0;34m,[0m [0mdeque[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 23[0;31m [0;32mfrom[0m [0mfractions[0m [0;32mimport[0m [0mgcd[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     24[0m [0;32mfrom[0m [0mfunctools[0m [0;32mimport[0m [0mpartial[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     25[0m [0;32mfrom[0m [0mitertools[0m [0;32mimport[0m [0mchain[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mImportError[0m: cannot import name 'gcd' from 'fractions' (/opt/conda/lib/python3.9/fractions.py)
+ImportError: cannot import name 'gcd' from 'fractions' (/opt/conda/lib/python3.9/fractions.py)
+
