@@ -1,10 +1,10 @@
 # Fdb version 3
-["makeindex book.idx"] 1621515623 "book.idx" "book.ind" "book" 1621515640
-  "book.idx" 1621515633 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex book.idx"] 1621632588 "book.idx" "book.ind" "book" 1621632605
+  "book.idx" 1621632598 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "book.ilg"
   "book.ind"
-["pdflatex"] 1621515632 "book.tex" "book.pdf" "book" 1621515640
+["pdflatex"] 1621632597 "book.tex" "book.pdf" "book" 1621632605
   "/etc/texmf/web2c/texmf.cnf" 1620809776 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -241,11 +241,11 @@
   "GB213-review-in-Python_26_0.png" 1621515573 12214 5ccc35126cc945f19e151e3996cfc3f7 ""
   "GB213-review-in-Python_45_0.png" 1621515573 11991 6830e22f447c23f08ae288a1b831d3bc ""
   "MnistExamples.png" 1620911549 70938 16ddab2ee3bcd9e22d96f267e473a2f4 ""
-  "book.aux" 1621515640 124054 7f03f168388969d2f5e66d7ec1ba5565 "pdflatex"
-  "book.ind" 1621515623 0 d41d8cd98f00b204e9800998ecf8427e "makeindex book.idx"
-  "book.out" 1621515640 45862 a78ca76be8f9aebefd281425978f621c "pdflatex"
-  "book.tex" 1621515613 973487 c00e8bfd9b4490cb0f05d89c716952e0 ""
-  "book.toc" 1621515640 44326 006a918d18c0101b56a99a5a4e10ab12 "pdflatex"
+  "book.aux" 1621632605 124054 bc611c38a939b49d601f73148956e3e4 "pdflatex"
+  "book.ind" 1621632588 0 d41d8cd98f00b204e9800998ecf8427e "makeindex book.idx"
+  "book.out" 1621632605 45862 a78ca76be8f9aebefd281425978f621c "pdflatex"
+  "book.tex" 1621632578 973087 edccb886d0fff3374890d5ea158c9f2b ""
+  "book.toc" 1621632605 44326 fa4fd0224a666bfffb386d408b8e57da "pdflatex"
   "cave-man-public-domain.jpg" 1620911549 623810 b4117fb517385df486b9604dbc42e35d ""
   "chapter-10-visualization_10_0.png" 1621515464 54570 0e5a4fdd5747bb3b3a18cf81121b327a ""
   "chapter-10-visualization_12_0.png" 1621515464 19344 f7e01f12f798fef807855e07958b6573 ""
@@ -300,9 +300,9 @@
   "signal-and-noise-4.png" 1620911549 54043 06209640ed59ecf0fa1303b7dca71854 ""
   "signal-and-noise.png" 1620911549 104721 7654581e06ce42cb4ad1b220668f022d ""
   "sphinx.sty" 1620937146 91458 532cd893425be1ee8212ce283449999c ""
-  "sphinxhighlight.sty" 1621515611 6615 02ef3c01e6bb67d3cc0658d354509680 ""
+  "sphinxhighlight.sty" 1621632576 6615 02ef3c01e6bb67d3cc0658d354509680 ""
   "sphinxmanual.cls" 1620937146 4236 124cd90deb92742b5d3922bfc2cd70c0 ""
-  "sphinxmessages.sty" 1621515614 745 3f5fcd6cdd7964ed608767954a8ced6f ""
+  "sphinxmessages.sty" 1621632579 745 3f5fcd6cdd7964ed608767954a8ced6f ""
   "sphinxmulticell.sty" 1620937146 14606 0b6edc2b1a83546ed92026d1f6a311b5 ""
   "split-apply-combine.png" 1620911549 151404 aa29ddb59ee43b6825f73622ce438455 ""
   "streamlit-menu.png" 1620911549 11375 cadcca3b528f6a57d036962f6ec0a7c1 ""
@@ -319,8 +319,8 @@
   "tqdm-progress-bar.png" 1620911550 10210 f595b6a59da0c44fb2db4675b5180be5 ""
   (generated)
   "book.idx"
-  "book.aux"
-  "book.toc"
   "book.log"
-  "book.out"
   "book.pdf"
+  "book.out"
+  "book.toc"
+  "book.aux"

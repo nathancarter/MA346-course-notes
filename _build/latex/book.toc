@@ -44,7 +44,7 @@
 \contentsline {section}{\numberline {4.2}Adding a new column}{42}{section.4.2}%
 \contentsline {section}{\numberline {4.3}What if you don’t remember CS230 very well?}{42}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}DataCamp}{43}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Bentley faculty}{43}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.2}Your instructor}{43}{subsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.3.3}Stack Overflow}{43}{subsection.4.3.3}%
 \contentsline {subsection}{\numberline {4.3.4}O’Reilly books}{43}{subsection.4.3.4}%
 \contentsline {subsection}{\numberline {4.3.5}Official documentation}{43}{subsection.4.3.5}%

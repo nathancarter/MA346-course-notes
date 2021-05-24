@@ -70,12 +70,9 @@
 # 
 # I will regularly assign you exercises from [DataCamp](http://www.datacamp.com), some of which will review CS230 materials.  If you remember everything from CS230, the first few weeks of these exercises should be easy and quick for you.  If not, you will need to put in more time, but it will help you catch up.
 # 
-# ### Bentley faculty
+# ### Your instructor
 # 
 # I'm glad to meet with students who need help catching up on material from CS230 they may not remember.  Please feel free to come to office hours!
-# 
-# I know that Prof. Masloff, who teaches CS230, made an extensive set of course notes available to her students.  You may wish to review key portions of that document to help you stay caught up in MA346.  If you did not have Prof. Masloff, you might consider [contacting her](https://faculty.bentley.edu/details.asp?uname=jmasloff) and asking for her course notes anyway.
-# 
 # 
 # ### Stack Overflow
 # 
