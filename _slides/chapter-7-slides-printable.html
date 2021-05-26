@@ -12947,11 +12947,11 @@ ul.typeahead-list  > li > a.pull-right {
 /*# sourceMappingURL=style.min.css.map */
     </style>
 <style type="text/css">
-    pre { line-height: 125%; }
-td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    pre { line-height: 125%; margin: 0; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
 .highlight .hll { background-color: #ffffcc }
 .highlight { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
@@ -13084,7 +13084,6 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Chapter-7---Abstraction">Chapter 7 - Abstraction<a class="anchor-link" href="#Chapter-7---Abstraction">&#182;</a></h1><p><a href="../_build/html/chapter-7-abstraction.html">See also the corresponding course notes, here.</a></p>
 <p><a href="./chapter-7-slides-printable.html">View a printable version of these slides here.</a></p>
-<p><font color='red'>These slides have not yet been updated for Summer 2021.  Check back soon.</font></p>
 
 </div>
 </div>
@@ -13103,7 +13102,7 @@ $$ \text{Concrete (or specific)} ~ ~ \longleftrightarrow ~ ~ \text{Abstract (or 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Example-of-generalization-in-mathematical-formula">Example of generalization in mathematical formula<a class="anchor-link" href="#Example-of-generalization-in-mathematical-formula">&#182;</a></h2><p><strong>Specific:</strong></p>
+<h2 id="Example-of-generalization-in-a-mathematical-formula">Example of generalization in a mathematical formula<a class="anchor-link" href="#Example-of-generalization-in-a-mathematical-formula">&#182;</a></h2><p><strong>Specific:</strong></p>
 <p>If it's $50^\circ$F outside, we can convert it $\frac59(50-32)=\frac59(18)=10$ and find that it's $10^\circ$C outside.</p>
 
 </div>
@@ -13174,7 +13173,7 @@ $$ \text{Concrete (or specific)} ~ ~ \longleftrightarrow ~ ~ \text{Abstract (or 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Example-of-generalization-in-programming">Example of generalization in programming<a class="anchor-link" href="#Example-of-generalization-in-programming">&#182;</a></h2><p>Creating a variable for what's in common really highlights the repetition:</p>
+<h2 id="Example-of-generalization-in-programming">Example of generalization in programming<a class="anchor-link" href="#Example-of-generalization-in-programming">&#182;</a></h2><p>Creating a variable for what's changing really highlights the repetition:</p>
 <div class="highlight"><pre><span></span><span class="n">column</span> <span class="o">=</span> <span class="s1">&#39;Tuition&#39;</span>
 <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
 <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>

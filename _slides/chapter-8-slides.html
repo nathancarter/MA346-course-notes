@@ -12998,11 +12998,11 @@ ul.typeahead-list  > li > a.pull-right {
 /*# sourceMappingURL=style.min.css.map */
     </style>
 <style type="text/css">
-    pre { line-height: 125%; }
-td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    pre { line-height: 125%; margin: 0; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
 .highlight .hll { background-color: #ffffcc }
 .highlight { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
@@ -13209,7 +13209,6 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Chapter-8---Version-control">Chapter 8 - Version control<a class="anchor-link" href="#Chapter-8---Version-control">&#182;</a></h1><p><a href="../_build/html/chapter-8-version-control.html">See also the corresponding course notes, here.</a></p>
 <p><a href="./chapter-8-slides-printable.html">View a printable version of these slides here.</a></p>
-<p><font color='red'>These slides have not yet been updated for Summer 2021.  Check back soon.</font></p>
 
 </div>
 </div>
@@ -13328,11 +13327,7 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Homework">Homework<a class="anchor-link" href="#Homework">&#182;</a></h2><p>Add a Python script or Jupyter notebook to your Project 1 repository.</p>
-<p>In that script or notebook, write a Python function that behaves as follows:</p>
-<ol>
-<li>It takes as input the abbreviation of a state in the U.S., such as <code>"MA"</code> or <code>"TX"</code>.</li>
-<li>It returns as output a pandas Series of the number of confirmed cases of COVID-19 in that state over time.</li>
-</ol>
+<p>In that script or notebook, complete steps 2--3 from the Project 1 assignment document.  That is, you will end up with a function that can take as input a state name (such as <code>"Idaho"</code>) and a column name from the vaccinations DataFrame (such as <code>"people_vaccinated"</code>) and return a pandas Series of just that column of data, indexed by date.</p>
 <p>We will use that function in class next time, so the work is due before class next week.</p>
 <p>Submit your work by committing and pushing to the repository.  I will be able to see it because you have already invited me to the repository as a collaborator.</p>
 

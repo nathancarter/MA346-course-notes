@@ -73,13 +73,13 @@
 # 
 # ```python
 # df_cases.drop( columns=df_cases.columns[8:], inplace=True )
-# df_cases.columns = [ 'State, 'Country', 'Latitude', 'Longitude',
+# df_cases.columns = [ 'State', 'Country', 'Latitude', 'Longitude',
 #                      'January', 'February', 'March', 'April' ]
 # df_deaths.drop( columns=df_deaths.columns[8:], inplace=True )
-# df_deaths.columns = [ 'State, 'Country', 'Latitude', 'Longitude',
+# df_deaths.columns = [ 'State', 'Country', 'Latitude', 'Longitude',
 #                       'January', 'February', 'March', 'April' ]
 # df_recoveries.drop( columns=df_recoveries.columns[8:], inplace=True )
-# df_recoveries.columns = [ 'State, 'Country', 'Latitude', 'Longitude',
+# df_recoveries.columns = [ 'State', 'Country', 'Latitude', 'Longitude',
 #                           'January', 'February', 'March', 'April' ]
 # ```
 # 
@@ -90,7 +90,7 @@
 # ```python
 # def drop_unneeded_columns ( df ):
 #     df.drop( columns=df.columns[8:], inplace=True )
-#     df.columns = [ 'State, 'Country', 'Latitude', 'Longitude',
+#     df.columns = [ 'State', 'Country', 'Latitude', 'Longitude',
 #                    'January', 'February', 'March', 'April' ]
 # ```
 # 
@@ -120,7 +120,7 @@
 # ```python
 # for df in [ df_cases, df_deaths, df_recoveries ]:
 #     df.drop( columns=df.columns[8:], inplace=True )
-#     df.columns = [ 'State, 'Country', 'Latitude', 'Longitude',
+#     df.columns = [ 'State', 'Country', 'Latitude', 'Longitude',
 #                    'January', 'February', 'March', 'April' ]
 # ```
 # 
@@ -131,7 +131,7 @@
 # ```python
 # def drop_unneeded_columns ( df ):
 #     df.drop( columns=df.columns[8:], inplace=True )
-#     df.columns = [ 'State, 'Country', 'Latitude', 'Longitude',
+#     df.columns = [ 'State', 'Country', 'Latitude', 'Longitude',
 #                    'January', 'February', 'March', 'April' ]
 # 
 # for df in [ df_cases, df_deaths, df_recoveries ]:
