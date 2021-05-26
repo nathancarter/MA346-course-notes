@@ -342,7 +342,7 @@ found_betas, covariance = curve_fit( my_model, xs, ys, p0=my_guessed_betas )
 
 # So how does SciPy's found model look?
 # 
-# ### 4. Describe and show the fit model
+# ### Describe and show the fit model
 # 
 # Rounding to a few decimal places, our model is therefore the following:
 # 

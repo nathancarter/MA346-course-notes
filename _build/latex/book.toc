@@ -125,7 +125,7 @@
 \contentsline {subsection}{\numberline {9.6.1}Let’s say we have some data…}{87}{subsection.9.6.1}%
 \contentsline {subsection}{\numberline {9.6.2}Choose a model}{88}{subsection.9.6.2}%
 \contentsline {subsection}{\numberline {9.6.3}Ask SciPy to find the \(\mitbeta \)s}{88}{subsection.9.6.3}%
-\contentsline {subsection}{\numberline {9.6.4}4. Describe and show the fit model}{90}{subsection.9.6.4}%
+\contentsline {subsection}{\numberline {9.6.4}Describe and show the fit model}{90}{subsection.9.6.4}%
 \contentsline {chapter}{\numberline {10}Visualization}{93}{chapter.10}%
 \contentsline {section}{\numberline {10.1}What if I have two columns of numeric data?}{94}{section.10.1}%
 \contentsline {section}{\numberline {10.2}But can my two columns of data look more awesome?}{100}{section.10.2}%

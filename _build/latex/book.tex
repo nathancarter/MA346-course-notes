@@ -73,7 +73,7 @@
         
 
 \title{MA346 Course Notes}
-\date{May 21, 2021}
+\date{May 26, 2021}
 \release{}
 \author{Nathan Carter}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -4602,12 +4602,12 @@ We will return to vectorization and loops in Chapter 11 of these notes.  For now
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.5803052 , 0.13095283, 0.68052874, 0.68720198, 0.01077386,
-       0.09388662, 0.3921616 , 0.25386808, 0.56086497, 0.1094453 ,
-       0.2728649 , 0.53292254, 0.7966416 , 0.82450511, 0.96511528,
-       0.06109199, 0.88571677, 0.21389455, 0.98178195, 0.72728041,
-       0.84968786, 0.35849711, 0.8062754 , 0.08198351, 0.12997253,
-       0.87787459, 0.60008002, 0.0234442 , 0.7745522 , 0.49158892])
+array([0.98788364, 0.71222102, 0.26808924, 0.53753306, 0.13962464,
+       0.04031122, 0.12466567, 0.51649099, 0.37923142, 0.93540818,
+       0.89473007, 0.29816425, 0.31174214, 0.17913121, 0.4734839 ,
+       0.47045086, 0.01207153, 0.82202383, 0.78079948, 0.38247946,
+       0.32368566, 0.7849592 , 0.20796903, 0.47653814, 0.17169848,
+       0.9157383 , 0.76749245, 0.21545758, 0.76825225, 0.44130175])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -4615,9 +4615,9 @@ array([0.5803052 , 0.13095283, 0.68052874, 0.68720198, 0.01077386,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([0.58, 0.13, 0.68, 0.69, 0.01, 0.09, 0.39, 0.25, 0.56, 0.11, 0.27,
-       0.53, 0.8 , 0.82, 0.97, 0.06, 0.89, 0.21, 0.98, 0.73, 0.85, 0.36,
-       0.81, 0.08, 0.13, 0.88, 0.6 , 0.02, 0.77, 0.49])
+array([0.99, 0.71, 0.27, 0.54, 0.14, 0.04, 0.12, 0.52, 0.38, 0.94, 0.89,
+       0.3 , 0.31, 0.18, 0.47, 0.47, 0.01, 0.82, 0.78, 0.38, 0.32, 0.78,
+       0.21, 0.48, 0.17, 0.92, 0.77, 0.22, 0.77, 0.44])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -4625,12 +4625,12 @@ array([0.58, 0.13, 0.68, 0.69, 0.01, 0.09, 0.39, 0.25, 0.56, 0.11, 0.27,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([1.78658361, 1.13991401, 1.97492167, 1.98814487, 1.01083211,
-       1.0984352 , 1.48017689, 1.28900175, 1.75218743, 1.11565904,
-       1.31372275, 1.70390476, 2.21807922, 2.28075176, 2.62509025,
-       1.0629967 , 2.42472174, 1.23849205, 2.66920841, 2.06944491,
-       2.33891666, 1.4311769 , 2.23955101, 1.08543791, 1.1387971 ,
-       2.40578099, 1.82226461, 1.02372118, 2.16962034, 1.6349119 ])
+array([2.68554487, 2.03851382, 1.30746381, 1.7117788 , 1.14984211,
+       1.04113475, 1.13276967, 1.67613575, 1.46116114, 2.54825338,
+       2.44667528, 1.34738308, 1.36580246, 1.19617768, 1.60557814,
+       1.60071572, 1.01214468, 2.2750996 , 2.18321701, 1.46591477,
+       1.38221275, 2.1923175 , 1.23117504, 1.61048945, 1.18731978,
+       2.49861929, 2.15435732, 1.24042936, 2.15599483, 1.55472978])
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -4638,14 +4638,14 @@ array([1.78658361, 1.13991401, 1.97492167, 1.98814487, 1.01083211,
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([3.36754123e\PYGZhy{}01, 1.71486428e\PYGZhy{}02, 4.63119365e\PYGZhy{}01, 4.72246561e\PYGZhy{}01,
-       1.16076128e\PYGZhy{}04, 8.81469742e\PYGZhy{}03, 1.53790720e\PYGZhy{}01, 6.44490025e\PYGZhy{}02,
-       3.14569511e\PYGZhy{}01, 1.19782729e\PYGZhy{}02, 7.44552541e\PYGZhy{}02, 2.84006431e\PYGZhy{}01,
-       6.34637844e\PYGZhy{}01, 6.79808676e\PYGZhy{}01, 9.31447497e\PYGZhy{}01, 3.73223179e\PYGZhy{}03,
-       7.84494202e\PYGZhy{}01, 4.57508804e\PYGZhy{}02, 9.63895806e\PYGZhy{}01, 5.28936795e\PYGZhy{}01,
-       7.21969452e\PYGZhy{}01, 1.28520180e\PYGZhy{}01, 6.50080027e\PYGZhy{}01, 6.72129620e\PYGZhy{}03,
-       1.68928583e\PYGZhy{}02, 7.70663791e\PYGZhy{}01, 3.60096030e\PYGZhy{}01, 5.49630696e\PYGZhy{}04,
-       5.99931103e\PYGZhy{}01, 2.41659664e\PYGZhy{}01])
+array([9.75914085e\PYGZhy{}01, 5.07258787e\PYGZhy{}01, 7.18718398e\PYGZhy{}02, 2.88941793e\PYGZhy{}01,
+       1.94950394e\PYGZhy{}02, 1.62499475e\PYGZhy{}03, 1.55415296e\PYGZhy{}02, 2.66762947e\PYGZhy{}01,
+       1.43816473e\PYGZhy{}01, 8.74988455e\PYGZhy{}01, 8.00541903e\PYGZhy{}01, 8.89019208e\PYGZhy{}02,
+       9.71831609e\PYGZhy{}02, 3.20879903e\PYGZhy{}02, 2.24187007e\PYGZhy{}01, 2.21324007e\PYGZhy{}01,
+       1.45721775e\PYGZhy{}04, 6.75723177e\PYGZhy{}01, 6.09647831e\PYGZhy{}01, 1.46290541e\PYGZhy{}01,
+       1.04772404e\PYGZhy{}01, 6.16160952e\PYGZhy{}01, 4.32511191e\PYGZhy{}02, 2.27088597e\PYGZhy{}01,
+       2.94803684e\PYGZhy{}02, 8.38576628e\PYGZhy{}01, 5.89044661e\PYGZhy{}01, 4.64219690e\PYGZhy{}02,
+       5.90211525e\PYGZhy{}01, 1.94747238e\PYGZhy{}01])
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -4725,8 +4725,8 @@ In fact, SciPy’s built\sphinxhyphen{}in random number generating procedures le
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([33.76056181, 71.55467636, 62.17326604, 40.99783089, 78.2954576 ,
-       69.34967112, 42.08800166, 33.57335771, 44.31031373, 90.36367567])
+array([50.59180032, 75.70056926, 19.96731551, 85.32979568, 38.48335377,
+       77.19369499, 90.95433134, 45.0654761 , 53.60207761, 44.96519081])
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -4738,8 +4738,8 @@ Or we can use built\sphinxhyphen{}in SciPy functionality to bind the first two a
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([39.3352463 ,  2.30018238, 84.48584757, 77.93166105, 46.37109003,
-       81.9744226 , 26.76709806, 16.03852554, 54.68228053, 10.79848677])
+array([75.18471032, 41.64270098,  4.76206886, 47.43396395, 49.88918431,
+        4.34055395, 44.51880292, 32.72645068,  1.92546984, 19.8175979 ])
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -4976,7 +4976,7 @@ Yyyyyyeah…  Our model is nowhere near the data.  That’s why we need SciPy to
 So how does SciPy’s found model look?
 
 
-\subsection{4. Describe and show the fit model}
+\subsection{Describe and show the fit model}
 \label{\detokenize{chapter-9-math-and-stats:describe-and-show-the-fit-model}}
 \sphinxAtStartPar
 Rounding to a few decimal places, our model is therefore the following:
@@ -9821,35 +9821,35 @@ The standard way to import NetworkX into your notebook or script is using the ab
 \PYG{o}{\PYGZlt{}}\PYG{n}{ipython}\PYG{o}{\PYGZhy{}}\PYG{n+nb}{input}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{5}\PYG{o}{\PYGZhy{}}\PYG{n}{f17d728e971c}\PYG{o}{\PYGZgt{}} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
 \PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{1} \PYG{k+kn}{import} \PYG{n+nn}{networkx} \PYG{k}{as} \PYG{n+nn}{nx}
 
-\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{l+m+mf}{.9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
+\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{o}{.}\PYG{l+m+mi}{9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
 \PYG{g+gWhitespace}{    }\PYG{l+m+mi}{112} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{relabel} \PYG{k+kn}{import} \PYG{o}{*}
 \PYG{g+gWhitespace}{    }\PYG{l+m+mi}{113} 
 \PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{114} \PYG{k+kn}{import} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators}
 \PYG{g+gWhitespace}{    }\PYG{l+m+mi}{115} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators} \PYG{k+kn}{import} \PYG{o}{*}
 \PYG{g+gWhitespace}{    }\PYG{l+m+mi}{116} 
 
-\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{l+m+mf}{.9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n}{generators}\PYG{o}{/}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
+\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{o}{.}\PYG{l+m+mi}{9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n}{generators}\PYG{o}{/}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
 \PYG{g+gWhitespace}{     }\PYG{l+m+mi}{12} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators}\PYG{n+nn}{.}\PYG{n+nn}{expanders} \PYG{k+kn}{import} \PYG{o}{*}
 \PYG{g+gWhitespace}{     }\PYG{l+m+mi}{13} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators}\PYG{n+nn}{.}\PYG{n+nn}{geometric} \PYG{k+kn}{import} \PYG{o}{*}
 \PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{14} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators}\PYG{n+nn}{.}\PYG{n+nn}{intersection} \PYG{k+kn}{import} \PYG{o}{*}
 \PYG{g+gWhitespace}{     }\PYG{l+m+mi}{15} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators}\PYG{n+nn}{.}\PYG{n+nn}{joint\PYGZus{}degree\PYGZus{}seq} \PYG{k+kn}{import} \PYG{o}{*}
 \PYG{g+gWhitespace}{     }\PYG{l+m+mi}{16} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators}\PYG{n+nn}{.}\PYG{n+nn}{lattice} \PYG{k+kn}{import} \PYG{o}{*}
 
-\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{l+m+mf}{.9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n}{generators}\PYG{o}{/}\PYG{n}{intersection}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
+\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{o}{.}\PYG{l+m+mi}{9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n}{generators}\PYG{o}{/}\PYG{n}{intersection}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
 \PYG{g+gWhitespace}{     }\PYG{l+m+mi}{11} \PYG{k+kn}{import} \PYG{n+nn}{random}
 \PYG{g+gWhitespace}{     }\PYG{l+m+mi}{12} \PYG{k+kn}{import} \PYG{n+nn}{networkx} \PYG{k}{as} \PYG{n+nn}{nx}
 \PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{13} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{algorithms} \PYG{k+kn}{import} \PYG{n}{bipartite}
 \PYG{g+gWhitespace}{     }\PYG{l+m+mi}{14} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{utils} \PYG{k+kn}{import} \PYG{n}{py\PYGZus{}random\PYGZus{}state}
 \PYG{g+gWhitespace}{     }\PYG{l+m+mi}{15} 
 
-\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{l+m+mf}{.9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n}{algorithms}\PYG{o}{/}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
+\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{o}{.}\PYG{l+m+mi}{9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n}{algorithms}\PYG{o}{/}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
 \PYG{g+gWhitespace}{     }\PYG{l+m+mi}{14} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{algorithms}\PYG{n+nn}{.}\PYG{n+nn}{cycles} \PYG{k+kn}{import} \PYG{o}{*}
 \PYG{g+gWhitespace}{     }\PYG{l+m+mi}{15} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{algorithms}\PYG{n+nn}{.}\PYG{n+nn}{cuts} \PYG{k+kn}{import} \PYG{o}{*}
 \PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{16} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{algorithms}\PYG{n+nn}{.}\PYG{n+nn}{dag} \PYG{k+kn}{import} \PYG{o}{*}
 \PYG{g+gWhitespace}{     }\PYG{l+m+mi}{17} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{algorithms}\PYG{n+nn}{.}\PYG{n+nn}{distance\PYGZus{}measures} \PYG{k+kn}{import} \PYG{o}{*}
 \PYG{g+gWhitespace}{     }\PYG{l+m+mi}{18} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{algorithms}\PYG{n+nn}{.}\PYG{n+nn}{distance\PYGZus{}regular} \PYG{k+kn}{import} \PYG{o}{*}
 
-\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{l+m+mf}{.9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n}{algorithms}\PYG{o}{/}\PYG{n}{dag}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
+\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{o}{.}\PYG{l+m+mi}{9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n}{algorithms}\PYG{o}{/}\PYG{n}{dag}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
 \PYG{g+gWhitespace}{     }\PYG{l+m+mi}{21} 
 \PYG{g+gWhitespace}{     }\PYG{l+m+mi}{22} \PYG{k+kn}{from} \PYG{n+nn}{collections} \PYG{k+kn}{import} \PYG{n}{defaultdict}\PYG{p}{,} \PYG{n}{deque}
 \PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{23} \PYG{k+kn}{from} \PYG{n+nn}{fractions} \PYG{k+kn}{import} \PYG{n}{gcd}
