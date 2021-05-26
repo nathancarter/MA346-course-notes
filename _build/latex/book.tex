@@ -73,7 +73,7 @@
         
 
 \title{MA346 Course Notes}
-\date{May 17, 2021}
+\date{May 21, 2021}
 \release{}
 \author{Nathan Carter}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -1859,7 +1859,7 @@ Explore the data using pandas’s built\sphinxhyphen{}in \sphinxcode{\sphinxupqu
 
 \item {} 
 \sphinxAtStartPar
-The dataset has many columns we won’t use.  Drop all columns except for \sphinxcode{\sphinxupquote{interest\_rate}}, \sphinxcode{\sphinxupquote{property\_value}}, \sphinxcode{\sphinxupquote{state\_code}}, \sphinxcode{\sphinxupquote{tract\_minority\_population\_percent}}, \sphinxcode{\sphinxupquote{derived\_race}}, \sphinxcode{\sphinxupquote{derived\_sex}}, and \sphinxcode{\sphinxupquote{applicant\_age}}.
+The dataset has many columns we won’t use.  Drop all columns except for \sphinxcode{\sphinxupquote{loan\_amount}}, \sphinxcode{\sphinxupquote{interest\_rate}}, \sphinxcode{\sphinxupquote{property\_value}}, \sphinxcode{\sphinxupquote{state\_code}}, \sphinxcode{\sphinxupquote{tract\_minority\_population\_percent}}, \sphinxcode{\sphinxupquote{derived\_race}}, \sphinxcode{\sphinxupquote{derived\_sex}}, and \sphinxcode{\sphinxupquote{applicant\_age}}.
 
 \item {} 
 \sphinxAtStartPar
@@ -1953,13 +1953,10 @@ I have several recommendations of resources you can use:
 I will regularly assign you exercises from \sphinxhref{http://www.datacamp.com}{DataCamp}, some of which will review CS230 materials.  If you remember everything from CS230, the first few weeks of these exercises should be easy and quick for you.  If not, you will need to put in more time, but it will help you catch up.
 
 
-\subsection{Bentley faculty}
-\label{\detokenize{chapter-4-review-of-python-and-pandas:bentley-faculty}}
+\subsection{Your instructor}
+\label{\detokenize{chapter-4-review-of-python-and-pandas:your-instructor}}
 \sphinxAtStartPar
 I’m glad to meet with students who need help catching up on material from CS230 they may not remember.  Please feel free to come to office hours!
-
-\sphinxAtStartPar
-I know that Prof. Masloff, who teaches CS230, made an extensive set of course notes available to her students.  You may wish to review key portions of that document to help you stay caught up in MA346.  If you did not have Prof. Masloff, you might consider \sphinxhref{https://faculty.bentley.edu/details.asp?uname=jmasloff}{contacting her} and asking for her course notes anyway.
 
 
 \subsection{Stack Overflow}
@@ -9818,6 +9815,50 @@ The standard way to import NetworkX into your notebook or script is using the ab
 \PYG{k+kn}{import} \PYG{n+nn}{networkx} \PYG{k}{as} \PYG{n+nn}{nx}
 \end{sphinxVerbatim}
 
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{g+gt}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+ne}{ImportError}\PYG{g+gWhitespace}{                               }Traceback (most recent call last)
+\PYG{o}{\PYGZlt{}}\PYG{n}{ipython}\PYG{o}{\PYGZhy{}}\PYG{n+nb}{input}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{5}\PYG{o}{\PYGZhy{}}\PYG{n}{f17d728e971c}\PYG{o}{\PYGZgt{}} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
+\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{1} \PYG{k+kn}{import} \PYG{n+nn}{networkx} \PYG{k}{as} \PYG{n+nn}{nx}
+
+\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{l+m+mf}{.9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
+\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{112} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{relabel} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{113} 
+\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{114} \PYG{k+kn}{import} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators}
+\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{115} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{116} 
+
+\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{l+m+mf}{.9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n}{generators}\PYG{o}{/}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{12} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators}\PYG{n+nn}{.}\PYG{n+nn}{expanders} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{13} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators}\PYG{n+nn}{.}\PYG{n+nn}{geometric} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{14} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators}\PYG{n+nn}{.}\PYG{n+nn}{intersection} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{15} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators}\PYG{n+nn}{.}\PYG{n+nn}{joint\PYGZus{}degree\PYGZus{}seq} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{16} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{generators}\PYG{n+nn}{.}\PYG{n+nn}{lattice} \PYG{k+kn}{import} \PYG{o}{*}
+
+\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{l+m+mf}{.9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n}{generators}\PYG{o}{/}\PYG{n}{intersection}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{11} \PYG{k+kn}{import} \PYG{n+nn}{random}
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{12} \PYG{k+kn}{import} \PYG{n+nn}{networkx} \PYG{k}{as} \PYG{n+nn}{nx}
+\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{13} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{algorithms} \PYG{k+kn}{import} \PYG{n}{bipartite}
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{14} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{utils} \PYG{k+kn}{import} \PYG{n}{py\PYGZus{}random\PYGZus{}state}
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{15} 
+
+\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{l+m+mf}{.9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n}{algorithms}\PYG{o}{/}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{14} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{algorithms}\PYG{n+nn}{.}\PYG{n+nn}{cycles} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{15} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{algorithms}\PYG{n+nn}{.}\PYG{n+nn}{cuts} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{16} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{algorithms}\PYG{n+nn}{.}\PYG{n+nn}{dag} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{17} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{algorithms}\PYG{n+nn}{.}\PYG{n+nn}{distance\PYGZus{}measures} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{18} \PYG{k+kn}{from} \PYG{n+nn}{networkx}\PYG{n+nn}{.}\PYG{n+nn}{algorithms}\PYG{n+nn}{.}\PYG{n+nn}{distance\PYGZus{}regular} \PYG{k+kn}{import} \PYG{o}{*}
+
+\PYG{o}{/}\PYG{n}{opt}\PYG{o}{/}\PYG{n}{conda}\PYG{o}{/}\PYG{n}{lib}\PYG{o}{/}\PYG{n}{python3}\PYG{l+m+mf}{.9}\PYG{o}{/}\PYG{n}{site}\PYG{o}{\PYGZhy{}}\PYG{n}{packages}\PYG{o}{/}\PYG{n}{networkx}\PYG{o}{/}\PYG{n}{algorithms}\PYG{o}{/}\PYG{n}{dag}\PYG{o}{.}\PYG{n}{py} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{21} 
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{22} \PYG{k+kn}{from} \PYG{n+nn}{collections} \PYG{k+kn}{import} \PYG{n}{defaultdict}\PYG{p}{,} \PYG{n}{deque}
+\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{23} \PYG{k+kn}{from} \PYG{n+nn}{fractions} \PYG{k+kn}{import} \PYG{n}{gcd}
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{24} \PYG{k+kn}{from} \PYG{n+nn}{functools} \PYG{k+kn}{import} \PYG{n}{partial}
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{25} \PYG{k+kn}{from} \PYG{n+nn}{itertools} \PYG{k+kn}{import} \PYG{n}{chain}
+
+\PYG{n+ne}{ImportError}: cannot import name \PYGZsq{}gcd\PYGZsq{} from \PYGZsq{}fractions\PYGZsq{} (/opt/conda/lib/python3.9/fractions.py)
+\end{sphinxVerbatim}
+
 \sphinxAtStartPar
 This module lets us turn tables of data (like the edge list for dolphins we just saw) into Python \sphinxcode{\sphinxupquote{Graph}} objects, which we can use for both computation and visualization.  The first step in creating a \sphinxcode{\sphinxupquote{Graph}} object is always the same; just call the \sphinxcode{\sphinxupquote{nx.Graph()}} function and it will create a new, empty graph with no vertices and no edges.
 
@@ -10747,7 +10788,7 @@ We see that \(U\) is \(6\times6\), \(V\) is \(7\times 7\), and \(\Sigma\) is act
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 array([1.71057805e+00, 1.30272528e+00, 9.26401065e\PYGZhy{}01, 6.73800315e\PYGZhy{}01,
-       2.54172767e\PYGZhy{}01, 8.83953137e\PYGZhy{}18])
+       2.54172767e\PYGZhy{}01, 2.79327791e\PYGZhy{}17])
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -10779,12 +10820,12 @@ The sixth singular value is so tiny (about \(1.84\times10^{-17}\)) that it round
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([[ 0.71, \PYGZhy{}0.  , \PYGZhy{}0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.  ],
-       [ 0.  ,  0.5 ,  0.  ,  0.5 ,  0.  ,  0.5 ,  0.5 ],
-       [\PYGZhy{}0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.  ],
-       [ 0.58,  0.58, \PYGZhy{}0.  ,  0.  ,  0.58,  0.  ,  0.  ],
-       [ 0.58,  0.  , \PYGZhy{}0.  ,  0.58, \PYGZhy{}0.  ,  0.58,  0.  ],
-       [\PYGZhy{}0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  , \PYGZhy{}0.  ]])
+array([[ 0.71, \PYGZhy{}0.  ,  0.  ,  0.  ,  0.71, \PYGZhy{}0.  , \PYGZhy{}0.  ],
+       [\PYGZhy{}0.  ,  0.5 , \PYGZhy{}0.  ,  0.5 ,  0.  ,  0.5 ,  0.5 ],
+       [ 0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.71,  0.  , \PYGZhy{}0.  ],
+       [ 0.58,  0.58, \PYGZhy{}0.  ,  0.  ,  0.58, \PYGZhy{}0.  ,  0.  ],
+       [ 0.58, \PYGZhy{}0.  , \PYGZhy{}0.  ,  0.58, \PYGZhy{}0.  ,  0.58,  0.  ],
+       [ 0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  , \PYGZhy{}0.  ]])
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -10805,12 +10846,12 @@ Recall that the reason we embarked upon the SVD exploration was to find a way to
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-array([[ 0.71, \PYGZhy{}0.  , \PYGZhy{}0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.  ],
-       [ 0.  ,  0.5 ,  0.  ,  0.5 ,  0.  ,  0.5 ,  0.5 ],
-       [\PYGZhy{}0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.  ],
-       [ 0.58,  0.58, \PYGZhy{}0.  ,  0.  ,  0.58,  0.  ,  0.  ],
-       [ 0.58,  0.  , \PYGZhy{}0.  ,  0.58, \PYGZhy{}0.  ,  0.58,  0.  ],
-       [\PYGZhy{}0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  , \PYGZhy{}0.  ]])
+array([[ 0.71, \PYGZhy{}0.  ,  0.  ,  0.  ,  0.71, \PYGZhy{}0.  , \PYGZhy{}0.  ],
+       [\PYGZhy{}0.  ,  0.5 , \PYGZhy{}0.  ,  0.5 ,  0.  ,  0.5 ,  0.5 ],
+       [ 0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.71,  0.  , \PYGZhy{}0.  ],
+       [ 0.58,  0.58, \PYGZhy{}0.  ,  0.  ,  0.58, \PYGZhy{}0.  ,  0.  ],
+       [ 0.58, \PYGZhy{}0.  , \PYGZhy{}0.  ,  0.58, \PYGZhy{}0.  ,  0.58,  0.  ],
+       [ 0.  , \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  ,  0.71, \PYGZhy{}0.  , \PYGZhy{}0.  ]])
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -10921,7 +10962,7 @@ There is a measurement called \(\rho\) (Greek letter rho) that can let you know 
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-1.8996640677931257e\PYGZhy{}09
+3.37690824654076e\PYGZhy{}09
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -10932,7 +10973,7 @@ We see that \(\rho\) says the error is tiny if we replace only the last singular
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-0.32212667929693095
+0.3221266792969309
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -10977,11 +11018,11 @@ Now that we have a sense of what SVD\sphinxhyphen{}based approximations do in ge
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 [1.0,
- 1.8996640677931257e\PYGZhy{}09,
- 0.32212667929693095,
+ 3.37690824654076e\PYGZhy{}09,
+ 0.3221266792969309,
  0.5422162727569354,
  0.6921213328320459,
- 0.8460293400488615,
+ 0.8460293400488614,
  1.0]
 \end{sphinxVerbatim}
 
@@ -11431,13 +11472,13 @@ Let’s see the resulting split.
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
     Totally      Fake      Data
 0  1.000000  3.000000  5.000000
+1  1.111111  3.111111  5.111111
 2  1.222222  3.222222  5.222222
 3  1.333333  3.333333  5.333333
 4  1.444444  3.444444  5.444444
-5  1.555556  3.555556  5.555556
 6  1.666667  3.666667  5.666667
+7  1.777778  3.777778  5.777778
 8  1.888889  3.888889  5.888889
-9  2.000000  4.000000  6.000000
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -11446,8 +11487,8 @@ Let’s see the resulting split.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
     Totally      Fake      Data
-1  1.111111  3.111111  5.111111
-7  1.777778  3.777778  5.777778
+5  1.555556  3.555556  5.555556
+9  2.000000  4.000000  6.000000
 \end{sphinxVerbatim}
 
 

@@ -22,7 +22,7 @@
 #  2. Upload the data file into the project.
 #  3. Start a new Jupyter notebook in the same project and load the data file into a pandas DataFrame in that notebook.
 #  4. Explore the data using pandas's built-in `info` and/or `head` methods.
-#  5. The dataset has many columns we won't use.  Drop all columns except for `interest_rate`, `property_value`, `state_code`, `tract_minority_population_percent`, `derived_race`, `derived_sex`, and `applicant_age`.
+#  5. The dataset has many columns we won't use.  Drop all columns except for `loan_amount`, `interest_rate`, `property_value`, `state_code`, `tract_minority_population_percent`, `derived_race`, `derived_sex`, and `applicant_age`.
 #  6. Reading a CSV file does not always ensure that columns are assigned the correct data type.  Use pandas's built-in `astype` function to correct any columns that have the wrong data type.
 #  7. Practice selecting just a subset of the DataFrame by trying each of these things:
 #      * Define a new variable `female_applicants` that contains just the rows of the dataset containing mortgage applications from females.  How many are there?  What are the mean and median loan amounts for that group?
@@ -70,12 +70,9 @@
 # 
 # I will regularly assign you exercises from [DataCamp](http://www.datacamp.com), some of which will review CS230 materials.  If you remember everything from CS230, the first few weeks of these exercises should be easy and quick for you.  If not, you will need to put in more time, but it will help you catch up.
 # 
-# ### Bentley faculty
+# ### Your instructor
 # 
 # I'm glad to meet with students who need help catching up on material from CS230 they may not remember.  Please feel free to come to office hours!
-# 
-# I know that Prof. Masloff, who teaches CS230, made an extensive set of course notes available to her students.  You may wish to review key portions of that document to help you stay caught up in MA346.  If you did not have Prof. Masloff, you might consider [contacting her](https://faculty.bentley.edu/details.asp?uname=jmasloff) and asking for her course notes anyway.
-# 
 # 
 # ### Stack Overflow
 # 

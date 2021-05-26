@@ -44,7 +44,7 @@
 \contentsline {section}{\numberline {4.2}Adding a new column}{42}{section.4.2}%
 \contentsline {section}{\numberline {4.3}What if you don’t remember CS230 very well?}{42}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}DataCamp}{43}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Bentley faculty}{43}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.2}Your instructor}{43}{subsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.3.3}Stack Overflow}{43}{subsection.4.3.3}%
 \contentsline {subsection}{\numberline {4.3.4}O’Reilly books}{43}{subsection.4.3.4}%
 \contentsline {subsection}{\numberline {4.3.5}Official documentation}{43}{subsection.4.3.5}%
@@ -228,12 +228,12 @@
 \contentsline {section}{\numberline {15.3}Loading network data}{196}{section.15.3}%
 \contentsline {subsection}{\numberline {15.3.1}Dolphin dataset}{196}{subsection.15.3.1}%
 \contentsline {subsection}{\numberline {15.3.2}Python’s NetworkX module}{197}{subsection.15.3.2}%
-\contentsline {section}{\numberline {15.4}Computations on graphs}{198}{section.15.4}%
-\contentsline {section}{\numberline {15.5}Visualization of graphs}{200}{section.15.5}%
-\contentsline {subsection}{\numberline {15.5.1}Drawing the dolphin network}{200}{subsection.15.5.1}%
-\contentsline {subsection}{\numberline {15.5.2}Better drawing tools}{202}{subsection.15.5.2}%
-\contentsline {subsection}{\numberline {15.5.3}Drawing larger networks}{202}{subsection.15.5.3}%
-\contentsline {section}{\numberline {15.6}Directed draphs in NetworkX}{202}{section.15.6}%
+\contentsline {section}{\numberline {15.4}Computations on graphs}{199}{section.15.4}%
+\contentsline {section}{\numberline {15.5}Visualization of graphs}{201}{section.15.5}%
+\contentsline {subsection}{\numberline {15.5.1}Drawing the dolphin network}{201}{subsection.15.5.1}%
+\contentsline {subsection}{\numberline {15.5.2}Better drawing tools}{203}{subsection.15.5.2}%
+\contentsline {subsection}{\numberline {15.5.3}Drawing larger networks}{203}{subsection.15.5.3}%
+\contentsline {section}{\numberline {15.6}Directed draphs in NetworkX}{203}{section.15.6}%
 \contentsline {chapter}{\numberline {16}Relations as Matrices}{205}{chapter.16}%
 \contentsline {section}{\numberline {16.1}Using matrices for relations other than networks}{205}{section.16.1}%
 \contentsline {section}{\numberline {16.2}Pivoting an edge list}{206}{section.16.2}%
