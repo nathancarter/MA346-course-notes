@@ -13209,7 +13209,6 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Chapter-9---Math-and-Stats-in-Python">Chapter 9 - Math and Stats in Python<a class="anchor-link" href="#Chapter-9---Math-and-Stats-in-Python">&#182;</a></h1><p><a href="../_build/html/chapter-9-math-and-stats.html">See also the corresponding course notes, here.</a></p>
 <p><a href="./chapter-9-slides-printable.html">View a printable version of these slides here.</a></p>
-<p><font color='red'>These slides have not yet been updated for Summer 2021.  Check back soon.</font></p>
 
 </div>
 </div>
@@ -13431,10 +13430,10 @@ $$ y=\frac{\beta_0}{1+e^{\beta_1(-x+\beta_2)}} $$<p>In Python, it is:</p>
 <p><strong>Exercise 1:</strong></p>
 <p>(This follows the 4-step process in <a href="../_build/html/chapter-9-math-and-stats.html#curve-fitting-in-general">the curve fitting section of today's notes.</a>.)</p>
 <ol>
-<li>Load your notebook or script that contains the function you did for homework, that can get COVID-19 data for a state, and run that function to fetch the data for a state of your choosing.</li>
+<li>Load your notebook or script that contains the function you did for homework, that can get COVID vaccination data for a state, and run that function to fetch the data for a state of your choosing.</li>
 <li>We will use a logistic model, so add the code from the previous slide to your notebook or script.</li>
 <li>Import the <code>curve_fit</code> function and use it to find the $\beta$s, as suggested in <a href="../_build/html/chapter-9-math-and-stats.html#curve-fitting-in-general">the curve fitting section of today's notes.</a>  To choose somewhat sensible initial guesses for the $\beta$s, the Project 1 assignment suggests:<ul>
-<li>$\beta_0=$ the maximum number of cases in the data, <code>data.max()</code></li>
+<li>$\beta_0=$ the maximum number of vaccinations in the data, <code>data.max()</code></li>
 <li>$\beta_1=1$</li>
 <li>$\beta_2=$ the half way point from the beginning until now, <code>len(data) / 2</code></li>
 </ul>
@@ -13454,16 +13453,6 @@ $$ y=\frac{\beta_0}{1+e^{\beta_1(-x+\beta_2)}} $$<p>In Python, it is:</p>
 <li>Another takes as input the data and the model function and produces a plot showing the scattered data and the model as a curve, on the same plot.</li>
 </ol>
 <p>Run your new function on several states to see how well or poorly it works in various situations.</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Question:</strong></p>
-<p>As stated in the Project 1 assignment, a logistic curve is a very simple model of infectious disease spread.  (See <a href="https://ncase.me/covid-19">this website</a> for an epidemiologist's explanation (with cool animations) of more realistic models.)</p>
-<p>Which parts of the logistic model are realistic and which are unrealistic?</p>
 
 </div>
 </div>
