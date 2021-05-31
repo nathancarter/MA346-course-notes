@@ -21,7 +21,11 @@
 #     * Required (though it may still be review):
 #        * [Intermediate Python](https://www.datacamp.com/courses/intermediate-python-for-data-science), chapters 1-4
 #        * [pandas Foundations](https://www.datacamp.com/courses/pandas-foundations), just chapter 1
+#          (This course is archived on DataCamp; in the future I will replace it with an available
+#          course instead.)
 #        * [Manipulating DataFrames with pandas](https://www.datacamp.com/courses/manipulating-dataframes-with-pandas), just chapter 1
+#          (This course is archived on DataCamp; in the future I will replace it with an available
+#          course instead.)
 #     * [See here for a cheat sheet](big-cheat-sheet.html#before-day-2-review-of-cs230) of all the content of the above DataCamp lessons.
 #  * **Reading**
 #     * Each week, you are expected to read the appropriate chapters from the course notes *before* class.  Since this is the first day for the course, I did not expect you to have read Chapters 1-2 in advance.  But that means that you must now read them together with Chapters 3-4 before next week.
@@ -46,6 +50,8 @@
 # 
 #  * **DataCamp**
 #     * [Manipulating DataFrames with pandas](https://www.datacamp.com/courses/manipulating-dataframes-with-pandas), chapters 2-4
+#       (This course is archived on DataCamp; in the future I will replace it with an available
+#       course instead.)
 #     * [See here for a cheat sheet](big-cheat-sheet.html#before-day-3) of all the content of the above DataCamp lessons.
 #  * **Reading**
 #     * [Chapter 5: Before and after, in mathematics and communication](chapter-5-before-and-after)
@@ -70,6 +76,8 @@
 #     * Submit that notebook to your instructor through [Blackboard](https://blackboard.bentley.edu).
 #  * **DataCamp**
 #     * [pandas Foundations](https://www.datacamp.com/courses/pandas-foundations), just chapter 2
+#       (This course is archived on DataCamp; in the future I will replace it with an available
+#       course instead.)
 #     * [See here for a cheat sheet](big-cheat-sheet.html#before-day-4-review-of-visualization-in-cs230) of all the content of the above DataCamp lessons.
 #  * **Reading**
 #     * [Chapter 7: Abstraction in mathematics and computing](chapter-7-abstraction)
@@ -92,8 +100,12 @@
 #  * **DataCamp**
 #     * [Intermediate Python](https://www.datacamp.com/courses/intermediate-python-for-data-science), chapter 5
 #     * [Statistical Thinking in Python, Part 1](https://www.datacamp.com/courses/statistical-thinking-in-python-part-1), all chapters
-#     * [Introduction to Data Visualization with Python](https://www.datacamp.com/courses/introduction-to-data-visualization-in-python), chapters 1 and 3 only
+#     * [Introduction to Data Visualization with Matplotlib](https://campus.datacamp.com/courses/introduction-to-data-visualization-with-matplotlib/introduction-to-matplotlib), just chapter 1
+#     * [Introduction to Data Visualization with Seaborn](https://campus.datacamp.com/courses/introduction-to-data-visualization-with-seaborn/introduction-to-seaborn), chapters 1 and 3
 #     * [See here for a cheat sheet](big-cheat-sheet.html#before-day-5) of all the content of the above DataCamp lessons.
+#       (The cheat sheet needs updating to reflect a recent change in the DataCamp assignments,
+#       due to DataCamp's having archived some old courses.  The cheat sheet is very similar to
+#       the new content, however.)
 #  * **Reading**
 #     * [Chapter 9: Math and stats in Python](chapter-9-math-and-stats)
 #     * [Chapter 10: New visualization tools](chapter-10-visualization)
@@ -119,9 +131,12 @@
 #     * Follow [Deepnote's instructions](https://docs.deepnote.com/importing-and-exporing/export-to-pdf) for how to export the resulting notebook as a PDF.
 #     * Submit that notebook to your instructor through [Blackboard](https://blackboard.bentley.edu).
 #  * **DataCamp**
-#     * [Merging DataFrames with pandas](https://learn.datacamp.com/courses/merging-dataframes-with-pandas), chapters 1-3
+#     * [Joining Data with pandas](https://learn.datacamp.com/courses/joining-data-with-pandas), all chapters
 #        * **NOTE:** We will not cover this content in class next time.  We will cover it the subsequent class meeting instead.  But I'm assigning you to do it now because then you won't have any homework next time, when the project is due, and you'll be able to focus on that instead.
 #     * [See here for a cheat sheet](big-cheat-sheet.html#before-day-6) of all the content of the above DataCamp lessons.
+#       (The cheat sheet needs updating to reflect a recent change in the DataCamp assignments,
+#       due to DataCamp's having archived some old courses.  The cheat sheet is very similar to
+#       the new content, however.)
 #  * **Reading**
 #     * [Chapter 11: Processing the rows of a `DataFrame`](chapter-11-processing-rows)
 #  * **Other**
