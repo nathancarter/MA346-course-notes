@@ -13209,7 +13209,6 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Chapter-12---Concatenation-and-Merging-of-DataFrames">Chapter 12 - Concatenation and Merging of DataFrames<a class="anchor-link" href="#Chapter-12---Concatenation-and-Merging-of-DataFrames">&#182;</a></h1><p><a href="../_build/html/chapter-12-concat-and-merge.html">See also the corresponding course notes, here.</a></p>
 <p><a href="./chapter-12-slides-printable.html">View a printable version of these slides here.</a></p>
-<p><font color='red'>These slides have not yet been updated for Summer 2021.  Check back soon.</font></p>
 
 </div>
 </div>
@@ -13283,7 +13282,7 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Code-for-an-inner-join-(merge)">Code for an inner join (merge)<a class="anchor-link" href="#Code-for-an-inner-join-(merge)">&#182;</a></h3><p>An inner join is the default, so you can omit <code>how='inner'</code> in this case.</p>
-<div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_big</span><span class="p">,</span> <span class="n">df_climate</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_players</span><span class="p">,</span> <span class="n">df_plays</span><span class="p">,</span>
     <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;fullname&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span> <span class="p">)</span>
 </pre></div>
 
@@ -13294,6 +13293,16 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Merging-of-two-datasets-is-horizontal">Merging of two datasets is <em>horizontal</em><a class="anchor-link" href="#Merging-of-two-datasets-is-horizontal">&#182;</a></h2><h3 id="Example-3:-Keeping-all-observations-appearing-in-either-table">Example 3: Keeping all observations appearing in either table<a class="anchor-link" href="#Example-3:-Keeping-all-observations-appearing-in-either-table">&#182;</a></h3><p><img src="../_images/merge-of-firm-data.png" alt="Merging data about corporate executives with data about marketing spending for a fictitious set of firms"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Code-for-an-outer-join-(merge)">Code for an outer join (merge)<a class="anchor-link" href="#Code-for-an-outer-join-(merge)">&#182;</a></h3><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_execs</span><span class="p">,</span> <span class="n">df_marketing</span><span class="p">,</span>
+    <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;fullname&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span> <span class="p">)</span>
+</pre></div>
 
 </div>
 </div>
