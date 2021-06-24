@@ -312,22 +312,19 @@
 
 # ---
 
-# ## Day 13 - 6/29/21 - Thanksgiving break, no class
+# ## Day 13 - 6/29/21 - Final Project Workshop
 # 
-# No assignments over break, but it would be wise to continue to make progress on the Final Project.
+# We will begin class today answering questions to help you review for the final exam, which is on Thursday, 7/1/21.  Then we will end class at the regular Zoom link and transition to the office hours Zoom link...
 # 
+# The second half of class today, at the office hours Zoom link, will consist entirely of help with individuals and teams working on their final project, which is due at 11:59pm on this day.
 
 # ---
 
-# ## Day 14 - 7/1/21 - Final Exam Review and Final Project Workshop
+# ## Day 14 - 7/1/21 - Final Exam
 # 
-# ### Final Exam
+# We will take the final exam in class, and students may leave when they complete it.
 # 
-# * Based on the review we do in class today, study for the Final Exam.
-# 
-# ### Final Project
-# 
-# * Come to class today ready to use half of class to work on your final project in class, and ask questions of the instructor if/when you get stuck on anything.
+# Recall that the topics for the final exam appear online [here](bigpic-list.md).
 
 # In[ ]:
 

@@ -308,10 +308,8 @@
 \contentsline {subsection}{\numberline {18.11.2}Due before next class}{245}{subsection.18.11.2}%
 \contentsline {section}{\numberline {18.12}Day 12 \sphinxhyphen {} 6/24/21 \sphinxhyphen {} Introduction to machine learning}{246}{section.18.12}%
 \contentsline {subsection}{\numberline {18.12.1}Content}{246}{subsection.18.12.1}%
-\contentsline {section}{\numberline {18.13}Day 13 \sphinxhyphen {} 6/29/21 \sphinxhyphen {} Thanksgiving break, no class}{246}{section.18.13}%
-\contentsline {section}{\numberline {18.14}Day 14 \sphinxhyphen {} 7/1/21 \sphinxhyphen {} Final Exam Review and Final Project Workshop}{246}{section.18.14}%
-\contentsline {subsection}{\numberline {18.14.1}Final Exam}{246}{subsection.18.14.1}%
-\contentsline {subsection}{\numberline {18.14.2}Final Project}{246}{subsection.18.14.2}%
+\contentsline {section}{\numberline {18.13}Day 13 \sphinxhyphen {} 6/29/21 \sphinxhyphen {} Final Project Workshop}{246}{section.18.13}%
+\contentsline {section}{\numberline {18.14}Day 14 \sphinxhyphen {} 7/1/21 \sphinxhyphen {} Final Exam}{246}{section.18.14}%
 \contentsline {chapter}{\numberline {19}Big Cheat Sheet}{247}{chapter.19}%
 \contentsline {section}{\numberline {19.1}Before Day 2: Review of CS230}{247}{section.19.1}%
 \contentsline {subsection}{\numberline {19.1.1}Introduction to Python (optional, basic review)}{247}{subsection.19.1.1}%
